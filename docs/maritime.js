@@ -12,7 +12,7 @@ function sourceLabel(paper) {
 
 function compareRecommendation(a,b) {
   if (!a.recommendation || !b.recommendation) return b.assessment.score-a.assessment.score;
-  const vector = p => {const r=p.recommendation,q=p.quality||{};return [r.low_priority?0:1,r.direct_relevance,r.maritime?1:0,q.high_journal||q.high_conference?1:0,r.method_transfer_signal?1:0];};
+  const vector = p => {const r=p.recommendation,q=p.quality||{};return [r.low_priority?0:1,q.ccf_a?1:0,q.high_journal||q.high_conference?1:0,r.direct_relevance,r.maritime?1:0,r.method_transfer_signal?1:0];};
   const av=vector(a),bv=vector(b);
   for(let i=0;i<av.length;i++) if(av[i]!==bv[i]) return bv[i]-av[i];
   return (b.publication_date||b.published).localeCompare(a.publication_date||a.published) || b.assessment.score-a.assessment.score;
@@ -96,7 +96,7 @@ if (typeof document !== 'undefined') {
     if(filters.window && filters.window!=='history') {
       const quotas=data.recommendation_policy?.quotas||{water:12,land:6,general:2};
       const counts={};papers=papers.filter(p=>{const s=p.recommendation?.bucket;if(!(s in quotas))return false;counts[s]=(counts[s]||0)+1;return counts[s]<=quotas[s];});
-      const labels={water:'水路',land:'陆上强相关',general:'通用高水平'};
+      const labels={water:'水路',land:'陆上强相关',general:'通用方法（顶会优先）'};
       quotaSummary=' ｜ 目标60%/30%/10%；'+Object.entries(quotas).map(([k,n])=>`${labels[k]} ${Math.min(counts[k]||0,n)}/${n}`).join('，')+'；不足不补位';
     }
     const day = data.days[filters.date];
@@ -120,6 +120,7 @@ if (typeof document !== 'undefined') {
         node('p', `第一作者：${paper.first_author||paper.authors[0]||'暂未获取'} ｜单位：${paper.affiliation_verified ? paper.first_author_affiliations.join('; ') : '暂未获取'}`, 'muted'));
       if(paper.venue_type==='journal') article.append(node('p', `中科院大类（${quality.cas_year||2025}）：${paper.cas_partition ? paper.cas_partition+'区':'待核验'} ｜ JCR JIF：${quality.jcr_records?.map(r=>`${r.year} ${r.category} ${r.quartile}`).join('；')||'待核验'} ｜ DOI：${paper.doi||'暂未获取'}`, 'muted'));
       else if(paper.doi) article.append(node('p',`DOI：${paper.doi}`,'muted'));
+      if(quality.ccf_a) article.append(node('p','CCF A 类会议（已核验发表来源，优先推荐）','muted'));
       const proof=node('details');proof.append(node('summary','发表/分区证据与推荐理由'),node('pre',JSON.stringify({publication:paper.publication_evidence,cas:quality.cas_records,jcr:quality.jcr_records,reasons:paper.recommendation?.reasons},null,2),'analysis'));article.append(proof);
       const links = node('div', undefined, 'actions');
       for (const [text, href] of [['原始论文', paper.open_access_url||paper.pdf_url||paper.original_url||paper.arxiv_url||''], ['ChatGPT 网页', 'https://chatgpt.com/'], ['DeepSeek 网页', 'https://chat.deepseek.com/']]) {

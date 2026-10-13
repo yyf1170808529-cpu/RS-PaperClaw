@@ -45,9 +45,13 @@ def venue_quality(paper, venues, policy):
         conference = ((source in ("Crossref", "OpenAlex") or any(evidence_valid(r) for r in paper.get("conference_evidence", [])))
                       and not re.search(r"\b(workshops?|symposium)\b", paper.get("venue", ""), re.I)
                       and any(re.search(r"\b" + re.escape(name) + r"\b", paper.get("venue", ""), re.I) for name in policy["conference_names"]))
+    ccf_a = bool(conference and not re.search(r"\b(short|demo|findings|technical brief|summary)\b", paper.get("venue", ""), re.I)
+                 and any(re.search(r"\b" + re.escape(name) + r"\b", paper.get("venue", ""), re.I)
+                         for name in policy.get("ccf_a", {}).get("names", [])))
     journal_eligible = bool(paper.get("venue_type") == "journal" and paper.get("publication_status") == "published" and (cas_ok or jcr_ok))
     return {"cas_one": bool(cas_ok), "jcr_q1": bool(jcr_ok), "both": bool(cas_ok and jcr_ok),
-        "high_journal": journal_eligible, "high_conference": bool(conference), "cas_year": policy["cas_year"],
+        "high_journal": journal_eligible, "high_conference": bool(conference), "ccf_a": ccf_a,
+        "ccf_evidence": policy.get("ccf_a") if ccf_a else None, "cas_year": policy["cas_year"],
         "cas_records": cas, "jcr_records": jcr, "jcr_latest_year": latest,
         "status": "verified" if cas or jcr else "unverified", "venue_id": journal.get("id"),
         "note": "CAS官方大类一区 OR 已核验最新JCR JIF学科Q1；缺少证据不补猜"}
@@ -111,13 +115,14 @@ def annotate(paper, key, venues, policy):
             section = "preprints"
     paper["recommendation"] = {"section": section, "direct_relevance": direct, "maritime": maritime,
         "bucket": ("water" if related and not low and maritime and perception else
-                   "land" if related and not low and signals["traffic"] and perception and paper["assessment"]["level"] == "high" else
-                   "general" if related and not low and not maritime and not signals["traffic"] and formal and (perception or method) else "candidate"),
+                   "land" if related and not low and signals["traffic"] and perception and paper["assessment"]["level"] in ("high", "transfer") and (formal or arxiv) else
+                   "general" if related and not low and not maritime and not signals["traffic"] and (formal or arxiv) and (perception or method) and paper["assessment"]["level"] in ("high", "transfer") else "candidate"),
         "application": "maritime" if maritime else "traffic" if signals["traffic"] else "general",
         "publication_quality": "high_journal" if q["high_journal"] else "high_conference" if q["high_conference"] else "unverified",
         "method_transfer_signal": method, "low_priority": low,
         "reasons": [f"感知联系={signals['perception']}", f"海事场景={signals['maritime']}",
             f"方法证据={signals['method']}", f"低优先级={signals['low'] or (signals['trajectory'] if low else [])}",
+            f"陆上场景={signals['traffic']}；已核验CCF A正式会议={q['ccf_a']}",
             f"发表质量={q['status']}；CAS一区={q['cas_one']}，JIF Q1={q['jcr_q1']}"],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"}
     return paper
@@ -126,8 +131,8 @@ def annotate(paper, key, venues, policy):
 def rank_key(paper):
     r = paper.get("recommendation", {})
     q = paper.get("quality", {})
-    return (not r.get("low_priority", False), r.get("direct_relevance", 0), r.get("maritime", False),
-            bool(q.get("high_journal") or q.get("high_conference")), r.get("method_transfer_signal", False),
+    return (not r.get("low_priority", False), bool(q.get("ccf_a")),
+            bool(q.get("high_journal") or q.get("high_conference")), r.get("direct_relevance", 0), r.get("maritime", False), r.get("method_transfer_signal", False),
             paper.get("publication_date") or paper.get("published", ""), paper.get("assessment", {}).get("score", 0))
 
 

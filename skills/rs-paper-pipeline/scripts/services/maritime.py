@@ -161,7 +161,7 @@ def render_daily(data, library):
         if "recommendations" in data:
             section = p["recommendation"]["bucket"]
             if section != last_section:
-                lines.extend(["## " + {"water": "水路感知与关联", "land": "陆上强相关", "general": "通用计算机高水平"}[section], ""])
+                lines.extend(["## " + {"water": "水路感知与关联", "land": "陆上强相关", "general": "通用方法（顶会优先，含arXiv）"}[section], ""])
                 last_section = section
         lines.extend([f'### {html.escape(p["title"])}', "", f'[原文]({p.get("original_url") or p.get("arxiv_url", "")}) · [PDF]({p.get("pdf_url", "")})',
             f'作者：{html.escape(", ".join(p["authors"]))}  ', f'发布日期：{p["published"]}  ',

@@ -36,20 +36,37 @@ class V2Tests(unittest.TestCase):
         self.assertEqual(len(result["general"]), 0)
         self.assertEqual(len(result["water"]), 12)
 
-    def test_direction_requires_content_and_general_requires_verified_quality(self):
+    def test_direction_allows_related_arxiv_and_does_not_guess_journal_quality(self):
         def tagged(title, level="high", formal=False):
             p = {**paper(title=title, abstract=""), "assessment": {"level": level}}
             if formal:
                 p.update(self.formal)
                 p.update(title=title, abstract="", assessment={"level": level})
+                p.pop("arxiv_id", None)
             return v.annotate(p, "test-id", self.venues, self.policy)["recommendation"]["bucket"]
         self.assertEqual(tagged("Ship object detection"), "water")
         self.assertEqual(tagged("Vehicle object detection"), "land")
+        self.assertEqual(tagged("Vehicle object detection", "transfer"), "land")
         self.assertEqual(tagged("Vehicle object detection", "general"), "candidate")
+        self.assertEqual(tagged("General visual perception"), "general")
         self.assertEqual(tagged("Ship structural mechanics"), "candidate")
         self.assertEqual(tagged("General visual perception", formal=True), "candidate")
         self.venues["journals"][0]["jcr_records"] = [record()]
         self.assertEqual(tagged("General visual perception", formal=True), "general")
+
+    def test_ccf_a_requires_verified_publication_and_outranks_arxiv(self):
+        fake = {**paper(title="CVPR visual perception"), "assessment": {"level": "high"}}
+        fake = v.annotate(fake, "arxiv", self.venues, self.policy)
+        self.assertFalse(fake["quality"]["ccf_a"])
+        formal = {**fake, "venue_type": "conference", "publication_status": "published", "venue": "CVPR 2025",
+                  "doi": "10.1234/cvpr", "publication_evidence": {"source": "Crossref"}}
+        formal = v.annotate(formal, "formal", self.venues, self.policy)
+        self.assertTrue(formal["quality"]["ccf_a"])
+        self.assertGreater(v.rank_key(formal), v.rank_key(fake))
+        formal["venue"] = "CVPR Workshop"
+        self.assertFalse(v.venue_quality(formal, self.venues, self.policy)["ccf_a"])
+        formal["venue"] = "CVPR Short Papers"
+        self.assertFalse(v.venue_quality(formal, self.venues, self.policy)["ccf_a"])
 
     def setUp(self):
         self.rules = m.load_maritime_assets()

@@ -1,6 +1,12 @@
 {
   "schema_version": 2,
   "quotas": {"water": 12, "land": 6, "general": 2},
+  "ccf_a": {
+    "names": ["CVPR", "ICCV", "NeurIPS", "ICML", "AAAI", "IJCAI", "ACL", "ACM Multimedia", "ACM MM"],
+    "checked_at": "2026-10-13",
+    "sources": ["https://www.ccf.org.cn/Academic_Evaluation/AI/", "https://www.ccf.org.cn/Academic_Evaluation/CGAndMT/"],
+    "note": "已核验官方在线目录的相关会议；清单之外不推断CCF等级。只对有正式发表证据且非Workshop/Short/Demo/Findings的论文加优先级。"
+  },
   "cas_year": 2025,
   "query_terms": [
     "maritime ship vessel detection fusion tracking perception",
@@ -14,7 +20,7 @@
     "NeurIPS",
     "ICLR",
     "ICML",
-    "ACM Multimedia"
+    "ACM Multimedia", "ACM MM", "AAAI", "IJCAI", "ACL"
   ],
   "limits": {
     "maritime": 12,
