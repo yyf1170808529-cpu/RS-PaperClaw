@@ -1,0 +1,66 @@
+name: Personal Papers (No LLM API)
+on:
+  schedule:
+    - cron: '20 1 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Optional replay date YYYYMMDD'
+        type: string
+      days:
+        description: 'Recent days (overlap handles arXiv publication delays)'
+        default: '7'
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: maritime-no-api
+  cancel-in-progress: false
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONUNBUFFERED: '1'
+      INPUT_DATE: ${{ inputs.date }}
+      INPUT_DAYS: ${{ inputs.days || '7' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/papers/previews/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: No-API regression tests
+        run: python -m unittest discover -s tests -p test_maritime.py
+      - name: Environment check
+        run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action doctor
+      - name: Retrieve and build (original client retries each request)
+        shell: bash
+        run: |
+          args=(--days "$INPUT_DAYS")
+          if [[ -n "$INPUT_DATE" ]]; then args=(--date "$INPUT_DATE"); fi
+          python skills/rs-paper-pipeline/scripts/cli.py maritime "${args[@]}" > maritime-run.log 2>&1
+          cat maritime-run.log
+      - name: Commit static archives to this repository
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/maritime/library.json daily_reports/maritime docs/maritime-data
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update personal paper archive (no API)'
+            git push
+          fi
+      - name: Preserve logs including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maritime-run-logs
+          path: |
+            maritime-run.log
+            papers/maritime/logs/
+          retention-days: 14

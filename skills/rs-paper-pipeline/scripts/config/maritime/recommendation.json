@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "quotas": {"water": 12, "land": 6, "general": 2},
+  "cas_year": 2025,
+  "query_terms": [
+    "maritime ship vessel detection fusion tracking perception",
+    "cross modal sensor fusion object detection",
+    "visual perception object association"
+  ],
+  "conference_names": [
+    "CVPR",
+    "ICCV",
+    "ECCV",
+    "NeurIPS",
+    "ICLR",
+    "ICML",
+    "ACM Multimedia"
+  ],
+  "limits": {
+    "maritime": 12,
+    "methods": 3,
+    "preprints": 3
+  },
+  "signals": {
+    "maritime": [
+      "maritime",
+      "ship",
+      "ships",
+      "vessel",
+      "vessels",
+      "marine",
+      "harbor",
+      "harbour",
+      "automatic identification system",
+      "inland waterway", "waterway", "waterborne", "inland navigation", "river", "canal"
+    ],
+    "perception": [
+      "object detection",
+      "ship detection",
+      "vessel detection",
+      "target detection",
+      "segmentation",
+      "depth estimation",
+      "image enhancement",
+      "image restoration",
+      "visual tracking",
+      "multi-object tracking",
+      "data association",
+      "target association",
+      "sensor fusion",
+      "multimodal fusion",
+      "multi-modal fusion",
+      "cross-modal",
+      "multimodal perception",
+      "visual perception"
+    ],
+    "method": [
+      "representation learning",
+      "feature fusion",
+      "feature alignment",
+      "cross-modal",
+      "contrastive learning",
+      "self-supervised",
+      "vision-language",
+      "visual foundation",
+      "missing modalities",
+      "robust fusion"
+    ],
+    "traffic": [
+      "autonomous driving",
+      "traffic",
+      "vehicle",
+      "vehicles",
+      "robot",
+      "robotics",
+      "road", "pedestrian", "railway"
+    ],
+    "low": [
+      "medical",
+      "lesion",
+      "clinical",
+      "MRI",
+      "MR",
+      "EEG",
+      "electroencephal",
+      "brain",
+      "language-only",
+      "NLP",
+      "motion planning",
+      "shipping economics",
+      "structural mechanics"
+    ],
+    "trajectory": [
+      "trajectory prediction",
+      "motion forecasting",
+      "trajectory forecasting"
+    ]
+  }
+}

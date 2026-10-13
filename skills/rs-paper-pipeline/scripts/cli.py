@@ -2,6 +2,12 @@
 from __future__ import annotations
 
 import argparse
+import sys
+
+# Independent mode must dispatch before importing Issue/LLM dependencies.
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "maritime":
+    from services.maritime import main as maritime_main
+    raise SystemExit(maritime_main(sys.argv[2:]))
 
 import daily_arxiv_cross_filter
 import daily_digest_llm_upgrade
@@ -15,7 +21,8 @@ from pipeline_config import get_repo, load_config
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="RS-PaperClaw pipeline CLI")
+    parser = argparse.ArgumentParser(description="RS-PaperClaw pipeline CLI",
+        epilog="独立无 API 模式：python scripts/cli.py maritime --help")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     doctor_parser = subparsers.add_parser("doctor", help="检查运行环境")

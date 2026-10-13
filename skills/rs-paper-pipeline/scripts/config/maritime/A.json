@@ -1,0 +1,44 @@
+{
+  "name": "多模态感知与信息融合",
+  "queries": [
+    "all:\"sensor fusion\"",
+    "all:\"cross-modal\" AND (all:perception OR all:alignment OR all:matching)",
+    "all:multimodal AND (all:detection OR all:tracking OR all:\"missing modality\")",
+    "all:\"cooperative perception\""
+  ],
+  "groups": {
+    "fusion": [
+      "sensor fusion",
+      "multisensor",
+      "multi-sensor",
+      "multimodal fusion",
+      "multi-modal fusion",
+      "cross-modal",
+      "cross modal",
+      "multimodal perception"
+    ],
+    "task": [
+      "object detection",
+      "object tracking",
+      "target tracking",
+      "perception",
+      "alignment",
+      "association",
+      "matching",
+      "missing modality",
+      "missing modalities"
+    ],
+    "robust": [
+      "uncertainty",
+      "asynchronous",
+      "robust fusion",
+      "distributed perception",
+      "cooperative perception"
+    ]
+  },
+  "required": [
+    "fusion",
+    "robust"
+  ],
+  "min_groups": 2
+}

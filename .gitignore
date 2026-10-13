@@ -27,3 +27,8 @@ logs/
 
 # Temp
 /tmp/
+
+# Personal reading assets must never be published by Git/Pages.
+papers/maritime/private/
+papers/maritime/backups/
+.venv-maritime/

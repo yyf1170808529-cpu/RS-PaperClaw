@@ -1,0 +1,50 @@
+{
+  "name": "目标关联与时空动态理解",
+  "queries": [
+    "all:\"data association\" OR all:\"target association\"",
+    "all:\"trajectory prediction\" OR all:\"trajectory fusion\"",
+    "all:\"spatio-temporal\" AND (all:tracking OR all:motion OR all:traffic)",
+    "all:\"multi-object tracking\" OR all:\"motion forecasting\""
+  ],
+  "groups": {
+    "task": [
+      "data association",
+      "target association",
+      "target matching",
+      "identity preservation",
+      "multi-object tracking",
+      "trajectory prediction",
+      "trajectory fusion",
+      "motion forecasting",
+      "behavior prediction",
+      "anomaly detection"
+    ],
+    "dynamic": [
+      "trajectory",
+      "spatio-temporal",
+      "spatiotemporal",
+      "temporal",
+      "motion",
+      "tracking",
+      "traffic",
+      "interaction",
+      "dynamic scene",
+      "sequence"
+    ],
+    "contribution": [
+      "association",
+      "matching",
+      "prediction",
+      "fusion",
+      "relation",
+      "learning",
+      "modeling",
+      "modelling"
+    ]
+  },
+  "required": [
+    "task",
+    "dynamic"
+  ],
+  "min_groups": 2
+}

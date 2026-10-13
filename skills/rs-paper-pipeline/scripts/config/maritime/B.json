@@ -1,0 +1,48 @@
+{
+  "name": "计算机视觉与图像智能处理",
+  "queries": [
+    "all:\"object detection\"",
+    "all:\"multi-object tracking\" OR all:\"person re-identification\"",
+    "all:\"image restoration\" OR all:\"image enhancement\"",
+    "all:\"depth estimation\" OR all:\"semantic segmentation\"",
+    "all:\"vision foundation\" AND (all:adaptation OR all:efficient)"
+  ],
+  "groups": {
+    "task": [
+      "object detection",
+      "object recognition",
+      "visual tracking",
+      "multi-object tracking",
+      "re-identification",
+      "semantic segmentation",
+      "instance segmentation",
+      "depth estimation",
+      "3d vision",
+      "image enhancement",
+      "image restoration",
+      "low-light",
+      "vision foundation",
+      "ship detection",
+      "vessel detection",
+      "target detection"
+    ],
+    "contribution": [
+      "robust",
+      "generalization",
+      "efficient",
+      "real-time",
+      "lightweight",
+      "adaptation",
+      "domain",
+      "occlusion",
+      "multi-task",
+      "feature",
+      "learning",
+      "representation"
+    ]
+  },
+  "required": [
+    "task"
+  ],
+  "min_groups": 1
+}

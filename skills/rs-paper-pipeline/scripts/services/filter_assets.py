@@ -70,3 +70,11 @@ def load_ai_signal_patterns() -> list[re.Pattern[str]]:
 def render_filter_prompt(candidate_lines: list[str]) -> str:
     template = load_filter_prompt_template()
     return template.replace("{{candidate_lines}}", "\n".join(candidate_lines))
+
+
+def load_maritime_assets() -> dict:
+    """Independent topic files; legacy RS configuration remains unchanged."""
+    directory = Path(__file__).resolve().parents[1] / "config" / "maritime"
+    rules = _read_json(directory / "rules.json")
+    rules["topics"] = {key: _read_json(directory / f"{key}.json") for key in "ABCD"}
+    return rules

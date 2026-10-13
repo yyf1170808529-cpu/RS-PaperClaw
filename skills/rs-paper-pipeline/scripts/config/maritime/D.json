@@ -1,0 +1,56 @@
+{
+  "name": "通用深度学习与多模态基础方法",
+  "queries": [
+    "all:\"representation learning\" AND (all:visual OR all:multimodal)",
+    "all:\"self-supervised\" AND (all:vision OR all:\"cross-modal\")",
+    "all:\"multimodal\" AND (all:alignment OR all:\"missing modalities\" OR all:generalization)",
+    "all:\"learnable matching\" OR (all:\"relational reasoning\" AND all:visual)"
+  ],
+  "groups": {
+    "method": [
+      "representation learning",
+      "self-supervised",
+      "contrastive learning",
+      "pretraining",
+      "pre-training",
+      "foundation model",
+      "vision-language",
+      "feature disentanglement",
+      "knowledge transfer",
+      "domain generalization",
+      "learnable matching",
+      "relational reasoning",
+      "graph representation"
+    ],
+    "link": [
+      "visual",
+      "vision",
+      "cross-modal",
+      "multimodal",
+      "multi-modal",
+      "object detection",
+      "tracking",
+      "matching",
+      "perception",
+      "missing modalities",
+      "feature fusion"
+    ],
+    "contribution": [
+      "alignment",
+      "robust",
+      "uncertainty",
+      "adaptation",
+      "generalization",
+      "efficient",
+      "transfer",
+      "relation",
+      "representation",
+      "feature selection"
+    ]
+  },
+  "required": [
+    "method"
+  ],
+  "min_groups": 2,
+  "must_groups": ["method", "link"]
+}

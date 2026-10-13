@@ -14,6 +14,10 @@
 
 English version: **[README_EN.md](./README_EN.md)**
 
+新增个人科研论文库：**[简明操作指南](./简明操作指南.md)** · **[无 LLM API 模式使用说明](./MARITIME_README.md)** · **[独立阅读页](./docs/maritime.html)**。支持 A/B/C/D 多专题规则排序、本地日报、ChatGPT / DeepSeek 网页分析 Prompt、分析/阅读状态备份与 CLI 导入；原遥感流程保留。
+
+V2：**[正式来源、双分区筛选与PDF精读操作指南](./MARITIME_V2_README.md)**。期刊门槛为 CAS 2025官方大类一区或已核实 JCR JIF Q1；离线翻译为可选模块。
+
 </div>
 
 ---

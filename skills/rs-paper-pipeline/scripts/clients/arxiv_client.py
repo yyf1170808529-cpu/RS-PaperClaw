@@ -144,7 +144,8 @@ def fetch_url_with_retry(url: str, retries: int = 6, timeout: int = 90) -> str:
     raise last_err
 
 
-def fetch_query_with_fallback(params: dict[str, object], retries: int = 6, timeout: int = 90) -> str:
+def fetch_query_with_fallback(params: dict[str, object], retries: int = 6, timeout: int = 90,
+                              fallback_server_errors: bool = False) -> str:
     endpoints = _arxiv_api_candidates(CONFIG.arxiv_api)
     last_err: Exception | None = None
     for index, endpoint in enumerate(endpoints):
@@ -153,8 +154,9 @@ def fetch_query_with_fallback(params: dict[str, object], retries: int = 6, timeo
             return fetch_url_with_retry(url, retries=retries, timeout=timeout)
         except HTTPError as exc:
             last_err = exc
-            if exc.code != 406:
-                raise ArxivUnavailableError(f"arXiv API unavailable: HTTP {exc.code}") from exc
+            detail = _http_error_body(exc)
+            if exc.code != 406 and not (fallback_server_errors and exc.code in (500, 502, 504)):
+                raise ArxivUnavailableError(f"arXiv API unavailable: HTTP {exc.code}: {detail}") from exc
             if index < len(endpoints) - 1:
                 next_endpoint = endpoints[index + 1]
                 print(f"  [arXiv] endpoint rejected request; fallback to {next_endpoint}")
@@ -279,6 +281,60 @@ def fetch_recent_candidates(
         print("  [arXiv] 日期限定查询返回 0，回退到提交时间扫描")
 
     return run_query(base_query, max_scan=3000, page_size=min(max_results, 100 if target_date else 200))
+
+
+def canonical_arxiv_id(value: str) -> str:
+    value = re.sub(r"^https?://[^/]+/(?:abs|pdf)/", "", value.strip())
+    value = re.sub(r"\.pdf$", "", value)
+    value = re.sub(r"v\d+$", "", value)
+    if not re.fullmatch(r"(?:\d{4}\.\d{4,5}|[a-zA-Z.-]+/\d{7})", value):
+        raise ValueError(f"Invalid arXiv ID: {value}")
+    return value
+
+
+def fetch_topic_candidates(query: str, start_date: str, end_date: str,
+                           page_size: int = 100, max_pages: int = 30,
+                           retries: int = 6, timeout: int = 90) -> list[dict]:
+    """Generic date-scoped retrieval using the original transport and backoff.
+
+    A scan limit is an error, never silently reported as a complete daily result.
+    """
+    scoped = f'({query}) AND submittedDate:[{start_date.replace("-", "")}0000 TO {end_date.replace("-", "")}2359]'
+    items = {}
+    for page in range(max_pages):
+        if page:
+            time.sleep(3)
+        xml = fetch_query_with_fallback({"search_query": scoped, "start": page * page_size,
+            "max_results": page_size, "sortBy": "submittedDate", "sortOrder": "descending"},
+            retries=retries, timeout=timeout, fallback_server_errors=True)
+        try:
+            root = ET.fromstring(xml)
+            if root.tag != "{http://www.w3.org/2005/Atom}feed":
+                raise ValueError("Response is not an Atom feed")
+            entries = root.findall("atom:entry", ATOM_NAMESPACE)
+            for entry in entries:
+                get = lambda tag: entry.findtext(f"atom:{tag}", "", ATOM_NAMESPACE).strip()
+                version_id = re.sub(r"^https?://[^/]+/abs/", "", get("id"))
+                aid = canonical_arxiv_id(version_id)
+                published = get("published")[:10]
+                datetime.strptime(published, "%Y-%m-%d")
+                if not start_date <= published <= end_date:
+                    continue
+                items[aid] = {"arxiv_id": aid, "version_id": version_id,
+                    "title": " ".join(get("title").split()),
+                    "abstract": " ".join(get("summary").split()), "published": published,
+                    "updated": get("updated"),
+                    "doi": entry.findtext("arxiv:doi", "", ATOM_NAMESPACE).strip().lower(),
+                    "journal_ref": entry.findtext("arxiv:journal_ref", "", ATOM_NAMESPACE).strip(),
+                    "authors": [n.findtext("atom:name", "", ATOM_NAMESPACE)
+                        for n in entry.findall("atom:author", ATOM_NAMESPACE)],
+                    "arxiv_url": f"https://arxiv.org/abs/{aid}", "pdf_url": f"https://arxiv.org/pdf/{aid}"}
+            total = root.findtext("{http://a9.com/-/spec/opensearch/1.1/}totalResults")
+            if len(entries) < page_size or (total is not None and (page + 1) * page_size >= int(total)):
+                return list(items.values())
+        except (ET.ParseError, ValueError) as exc:
+            raise ArxivUnavailableError(f"Invalid arXiv response: {exc}") from exc
+    raise ArxivUnavailableError(f"Candidate scan exceeded {max_pages} pages; narrow dates/topics or increase --max-pages")
 
 
 def download_pdf(arxiv_id: str) -> tuple[Path | None, bool]:

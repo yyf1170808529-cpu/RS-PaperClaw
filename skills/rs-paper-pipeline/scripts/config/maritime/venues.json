@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "journals": [
+    {
+      "id": "joes",
+      "name": "Journal of Ocean Engineering and Science",
+      "issn": [
+        "2468-0133",
+        "2096-675X"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "ocean-engineering",
+      "name": "Ocean Engineering",
+      "issn": [
+        "0029-8018"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "joe",
+      "name": "IEEE Journal of Oceanic Engineering",
+      "issn": [
+        "0364-9059",
+        "1558-1691"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tiv",
+      "name": "IEEE Transactions on Intelligent Vehicles",
+      "issn": [
+        "2379-8858",
+        "2379-8904"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tits",
+      "name": "IEEE Transactions on Intelligent Transportation Systems",
+      "issn": [
+        "1524-9050",
+        "1558-0016"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tim",
+      "name": "IEEE Transactions on Instrumentation and Measurement",
+      "issn": [
+        "0018-9456",
+        "1557-9662"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [
+        {
+          "scheme": "JCR",
+          "metric": "JIF Quartile",
+          "year": 2025,
+          "category": "INSTRUMENTS & INSTRUMENTATION",
+          "quartile": "Q1",
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://ieee-ims.org/publication/ieee-tim/metrics",
+            "checked_at": "2026-10-12",
+            "supporting_url": "https://www.iit.comillas.edu/publicacion/info_revista/en/29/ieee-transactions-on-instrumentation-and-measurement",
+            "jif": 7.0,
+            "jif_percentile": 94.4,
+            "verification_method": "Official IEEE JCR JIF category percentile exceeds 75; university explicitly lists 2025 JCR-JIF=7.0 Q1. Category quartile derived from verified JIF percentile, not JCI or SJR."
+          }
+        },
+        {
+          "scheme": "JCR",
+          "metric": "JIF Quartile",
+          "year": 2025,
+          "category": "ENGINEERING, ELECTRICAL & ELECTRONIC",
+          "quartile": "Q1",
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://ieee-ims.org/publication/ieee-tim/metrics",
+            "checked_at": "2026-10-12",
+            "supporting_url": "https://www.iit.comillas.edu/publicacion/info_revista/en/29/ieee-transactions-on-instrumentation-and-measurement",
+            "jif": 7.0,
+            "jif_percentile": 87.9,
+            "verification_method": "Official IEEE JCR JIF category percentile exceeds 75; university explicitly lists 2025 JCR-JIF=7.0 Q1. Category quartile derived from verified JIF percentile, not JCI or SJR."
+          }
+        }
+      ],
+      "verification_status": "jcr_verified_cas_pending",
+      "notes": "JIF2025 and categories cross-checked; CAS official major 2025 remains unverified."
+    },
+    {
+      "id": "information-fusion",
+      "name": "Information Fusion",
+      "issn": [
+        "1566-2535"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tmm",
+      "name": "IEEE Transactions on Multimedia",
+      "issn": [
+        "1520-9210",
+        "1941-0077"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tcyb",
+      "name": "IEEE Transactions on Cybernetics",
+      "issn": [
+        "2168-2267",
+        "2168-2275"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "information-sciences",
+      "name": "Information Sciences",
+      "issn": [
+        "0020-0255"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "kbs",
+      "name": "Knowledge-Based Systems",
+      "issn": [
+        "0950-7051"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tpami",
+      "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "issn": [
+        "0162-8828",
+        "1939-3539"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tip",
+      "name": "IEEE Transactions on Image Processing",
+      "issn": [
+        "1057-7149",
+        "1941-0042"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tcsvt",
+      "name": "IEEE Transactions on Circuits and Systems for Video Technology",
+      "issn": [
+        "1051-8215",
+        "1558-2205"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "pattern-recognition",
+      "name": "Pattern Recognition",
+      "issn": [
+        "0031-3203"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "trc",
+      "name": "Transportation Research Part C: Emerging Technologies",
+      "issn": [
+        "0968-090X"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "tgrs",
+      "name": "IEEE Transactions on Geoscience and Remote Sensing",
+      "issn": [
+        "0196-2892",
+        "1558-0644"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "rse",
+      "name": "Remote Sensing of Environment",
+      "issn": [
+        "0034-4257"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    },
+    {
+      "id": "isprs",
+      "name": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "issn": [
+        "0924-2716"
+      ],
+      "identifier_status": "seed_requires_crossref_identity_check",
+      "enabled": true,
+      "cas_records": [],
+      "jcr_records": [],
+      "verification_status": "unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+    }
+  ],
+  "conference_records": [
+    {
+      "doi": "10.1007/978-3-031-20047-2_1",
+      "venue": "ECCV 2022",
+      "scheme": "official_proceedings",
+      "year": 2022,
+      "verified": true,
+      "evidence": {
+        "kind": "official",
+        "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136820001.pdf",
+        "supporting_url": "https://link.springer.com/chapter/10.1007/978-3-031-20047-2_1",
+        "checked_at": "2026-10-12"
+      },
+      "open_access_url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136820001.pdf"
+    }
+  ]
+}

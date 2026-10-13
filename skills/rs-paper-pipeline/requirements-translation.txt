@@ -1,0 +1,2 @@
+# Optional, retrieval does not import these dependencies.
+argostranslate>=1.9,<2
