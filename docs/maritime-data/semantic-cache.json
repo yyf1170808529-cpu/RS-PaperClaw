@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "records": {
+    "7a362a4c6f983461d42ba635c96c120d57314d7b1b55e277798173bc81008215": {
+      "paper_id": "2605.26524",
+      "title": "CmIVTP: Cross-Modal Interaction-Based Vessel Trajectory Prediction for Maritime Intelligence",
+      "fingerprint": "7a362a4c6f983461d42ba635c96c120d57314d7b1b55e277798173bc81008215",
+      "evaluation": {
+        "paper_id": "2605.26524",
+        "task_type": "AIS-CCTV跨模态船舶轨迹预测",
+        "direct_relevance": 5,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "we propose a cross-modal interaction-based vessel trajectory prediction (named CmIVTP) framework to model the intricate interactions between vessel dynamics and environmental constraints",
+            "interpretation_zh": "提出跨模态交互的船舶轨迹预测框架，建模船舶动态与环境约束交互。",
+            "inference": false
+          },
+          {
+            "quote_en": "we propose a cross-modal interaction transformer, which integrates AIS-derived motion features, CCTV-based environmental features, and scene representations",
+            "interpretation_zh": "提出跨模态交互Transformer，融合AIS运动特征、CCTV环境特征与场景表征。",
+            "inference": false
+          },
+          {
+            "quote_en": "we introduce the maritime multimodal dataset plus (named Maritime-MmD$^+$), a large-scale dataset that synchronizes AIS data and CCTV video data",
+            "interpretation_zh": "构建同步AIS与CCTV视频的大规模多模态数据集。",
+            "inference": false
+          }
+        ],
+        "limitations": [
+          "重点是轨迹预测而非AIS与雷达/视觉的直接关联匹配",
+          "未涉及Radar-AIS时空关联",
+          "对AIS缺失模态处理的描述有限"
+        ],
+        "decision": "重点推荐",
+        "reason_zh": "明确使用AIS与CCTV跨模态融合进行船舶轨迹预测，符合视觉-AIS关联与多模态融合方向，证据充分。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "b867c11b-9ad9-4052-bfca-901246fe13f7"
+    },
+    "4d2818baa81182db4da40ad1c2019a9a529a24fd5dc15c7011a67fc394b2a5cd": {
+      "paper_id": "2610.08573",
+      "title": "Sparse2comm: Towards Robust Cooperative 3D Object Detection",
+      "fingerprint": "4d2818baa81182db4da40ad1c2019a9a529a24fd5dc15c7011a67fc394b2a5cd",
+      "evaluation": {
+        "paper_id": "2610.08573",
+        "task_type": "Land-based cooperative 3D object detection with cross-agent feature alignment (not maritime)",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Cooperative perception improves autonomous driving by sharing complementary observations among vehicles and roadside infrastructure for 3D object detection.",
+            "interpretation_zh": "该工作面向自动驾驶多智能体协同3D目标检测，涉及多源观测共享与融合，属于多传感器感知与融合方向。",
+            "inference": true
+          },
+          {
+            "quote_en": "Latency-Aware Alignment predicts motion flow to compensate delayed messages, and Self-Calibrating Fusion estimates residual spatial offsets in a self-supervised manner before adaptive cross-agent fusion.",
+            "interpretation_zh": "摘要明确提出跨智能体特征对齐、延迟补偿与自适应融合机制，与跨模态/多源对齐匹配、鲁棒感知方向相关。",
+            "inference": false
+          },
+          {
+            "quote_en": "Sparse2comm therefore restores semantic completeness, temporal consistency, and spatial alignment in an ordered pipeline.",
+            "interpretation_zh": "该句表明方法在语义、时序一致性与空间对齐上进行恢复式处理，可迁移到AIS-视觉时空关联中的缺失与错位补偿思路。",
+            "inference": true
+          }
+        ],
+        "limitations": [
+          "论文场景为陆上自动驾驶，未涉及船舶、雷达或AIS数据。",
+          "摘要未提供跨模态对齐在异构传感器（如AIS与视觉）上的实验证据。",
+          "所声称的泛化能力与鲁棒性仅由摘要支持的陆上数据集实验给出，不能直接假定海事可迁移。"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上多智能体协同3D检测与鲁棒对齐，与多源融合及跨模态匹配方向有方法迁移潜力，但非海事AIS/雷达场景，需验证迁移性。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "98dc90ee-d717-4468-943e-60af57f4abe8"
+    },
+    "fd6d8668e961f7caf4c46ab92a0f48e56b3060e99a103d293df5c3e833d79897": {
+      "paper_id": "2610.07192",
+      "title": "Sim-to-Real Transfer of Vision-Language Navigation in Continuous Environments Using an Ackermann-Steered Mobile Robot",
+      "fingerprint": "fd6d8668e961f7caf4c46ab92a0f48e56b3060e99a103d293df5c3e833d79897",
+      "evaluation": {
+        "paper_id": "2610.07192",
+        "task_type": "Vision-language navigation with cross-modal attention and sim-to-real transfer (ground robot)",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "The proposed system integrates vision-language models that align visual inputs and linguistic instructions within a shared embedding space, facilitating natural language-driven navigation.",
+            "interpretation_zh": "摘要明确将视觉输入与语言指令对齐到共享嵌入空间，属于跨模态表征对齐方向。",
+            "inference": false
+          },
+          {
+            "quote_en": "We employ a Cross-Modal Attention (CMA) based architecture trained on an existing dataset in a simulated environment and fine-tune it using real-world data collected from a custom-built Ackermann-steered robot equipped with a camera and a LiDAR sensor.",
+            "interpretation_zh": "所述交叉模态注意力架构结合仿真到实机微调，可借鉴到视觉-雷达或视觉-AIS的跨模态对齐与领域适应。",
+            "inference": true
+          },
+          {
+            "quote_en": "By utilising linear photometric adjustments and fine-tuning on a limited number of episodes, our model successfully adapts to real-world environments, achieving effective navigation while running offline on dedicated hardware.",
+            "interpretation_zh": "摘要提及有限样本微调与实机部署，与鲁棒感知和缺失/有限监督下的适应有一定关联，但任务为导航而非船舶感知。",
+            "inference": true
+          }
+        ],
+        "limitations": [
+          "研究对象为陆上机器人视觉-语言导航，不涉及船舶、雷达或AIS。",
+          "摘要未给出与海事目标检测或AIS关联任务的实验证据。",
+          "跨模态对齐主要针对语言-视觉，而非视觉-雷达/AIS异构传感匹配，迁移距离较大。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "视觉-语言导航与跨模态注意力虽涉及对齐，但任务和模态均非海事AIS/雷达/船舶感知，仅方法概念上可轻微借鉴。",
+        "confidence": 0.75
+      },
+      "model": "deepseek-flash",
+      "request_id": "98dc90ee-d717-4468-943e-60af57f4abe8"
+    },
+    "1498cc9699ec1c8d78cde5e0f6b66be608e675b5f25f57dac9630fb2830552bd": {
+      "paper_id": "2610.02784",
+      "title": "SimpleTouch: Can Vision-Language-Action Models Master Contact-Rich Manipulation Without Tactile Policy Pretraining?",
+      "fingerprint": "1498cc9699ec1c8d78cde5e0f6b66be608e675b5f25f57dac9630fb2830552bd",
+      "evaluation": {
+        "paper_id": "2610.02784",
+        "task_type": "Tactile-visual-language-action model for contact-rich robotic manipulation",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "A common concern is that simply introducing touch during task-specific fine-tuning may fail to bridge the cross-modal gap, yielding limited gains or even reduced success.",
+            "interpretation_zh": "摘要讨论触觉与视觉-语言模型之间的跨模态鸿沟，属于跨模态表征问题，但与船舶视觉/AIS/雷达关联无直接证据。",
+            "inference": true
+          },
+          {
+            "quote_en": "Leveraging all tokens from a frozen pretrained tactile encoder, the expert learns from action supervision and multi-horizon prediction of future tactile latents.",
+            "interpretation_zh": "描述触觉编码器与未来表征预测的训练方式，与多模态鲁棒感知有一定方法类比，但任务为机器人操作。",
+            "inference": true
+          }
+        ],
+        "limitations": [
+          "任务为触觉-视觉-语言驱动的机器人操作，与海事感知、AIS关联、船舶检测等无关。",
+          "摘要未提供任何与雷达、AIS或船舶视觉相关的实验或方法细节。",
+          "跨模态对齐仅在触觉-VLA语境中讨论，迁移到AIS-视觉匹配缺乏依据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "触觉-视觉-语言模型面向机器人接触操作，与用户关注的海事AIS关联、船舶视觉检测及通用多传感器融合方向无明确关联。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "98dc90ee-d717-4468-943e-60af57f4abe8"
+    },
+    "1a4b17593c75f490d6fd2aac781822eef59cb6448eef80c966ed989987028663": {
+      "paper_id": "2610.03717",
+      "title": "Less Decoder is More Encoder: Geometric Representation Learning from Novel View Synthesis",
+      "fingerprint": "1a4b17593c75f490d6fd2aac781822eef59cb6448eef80c966ed989987028663",
+      "evaluation": {
+        "paper_id": "2610.03717",
+        "task_type": "Self-supervised geometric representation learning from novel view synthesis",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "SNAP also performs competitively against self-supervised representations across five tasks: visual localization, pose estimation, point correspondence, depth estimation, and robot manipulation.",
+            "interpretation_zh": "摘要明确涉及视觉定位、位姿估计、点对应和深度估计等任务，与船舶视觉中的深度估计、点匹配及跨视角表征相关。",
+            "inference": false
+          },
+          {
+            "quote_en": "We present SNAP, a self-supervised encoder-decoder transformer that addresses both through a pose-conditioned local decoder and a latent-space reconstruction objective.",
+            "interpretation_zh": "自监督编解码器与潜在空间重建方法，可迁移到无标注船舶视觉表征学习和跨模态对齐预训练。",
+            "inference": true
+          },
+          {
+            "quote_en": "Under camera shifts where standard 2D representations collapse, SNAP degrades more gracefully, revealing that restricting decoder expressivity actively prevents the suppression of transferable geometric structure.",
+            "interpretation_zh": "相机偏移下的鲁棒性对未来海上视觉多视角/跨模态匹配中的视角变化问题有借鉴价值。",
+            "inference": true
+          }
+        ],
+        "limitations": [
+          "摘要未涉及船舶、雷达或AIS，场景为通用视觉与机器人。",
+          "缺少海事环境下的验证，跨域迁移到船舶视觉需额外实验。",
+          "方法虽包含深度估计和点对应，但未针对水面反光、动态目标等海事挑战做讨论。"
+        ],
+        "decision": "候选",
+        "reason_zh": "自监督几何表征学习覆盖深度估计、点对应与视觉定位，与船舶视觉及通用匹配方向相关，但无AIS/雷达及海事验证。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "98dc90ee-d717-4468-943e-60af57f4abe8"
+    },
+    "e9aba8be9c42dc1bfe9ea4ceff21e06d22a7ff7a752db0c2c83fc79101a369e6": {
+      "paper_id": "2609.39514",
+      "title": "Spike-driven Vision-Language-Action Model",
+      "fingerprint": "e9aba8be9c42dc1bfe9ea4ceff21e06d22a7ff7a752db0c2c83fc79101a369e6",
+      "evaluation": {
+        "paper_id": "2609.39514",
+        "task_type": "Spiking vision-language-action model for robotic manipulation",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "First, we develop spiking visual and instruction encoders for multimodal perception, encoding visual observations and language instructions into sparse, reliable spike representations for subsequent cross-modal fusion.",
+            "interpretation_zh": "摘要提到多模态感知与跨模态融合的脉冲编码器，与跨模态对齐/融合主题有宽泛关联，但任务为机器人操作。",
+            "inference": true
+          },
+          {
+            "quote_en": "Then, we introduce Multi-Winner Spike Fusion for instruction-guided scene understanding, using bidirectional top-$k$ winner-take-all spike routing to suppress background interference and yield fused memory.",
+            "interpretation_zh": "指令引导的场景理解与背景抑制可类比到视觉目标检测中的干扰抑制，但摘要未涉及船舶或AIS。",
+            "inference": true
+          }
+        ],
+        "limitations": [
+          "任务为脉冲视觉-语言-动作机器人操作，与海事AIS关联、船舶检测/分割/深度估计无关。",
+          "模态为视觉与语言，不含雷达或AIS，无法支持跨模态异构传感匹配。",
+          "低功耗脉冲计算与用户优先级方向无直接对应关系。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "脉冲VLA面向机器人操作，虽含跨模态融合术语，但不涉及海事、AIS或船舶视觉任务，与关注方向直接相关性低。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "98dc90ee-d717-4468-943e-60af57f4abe8"
+    }
+  }
+}
