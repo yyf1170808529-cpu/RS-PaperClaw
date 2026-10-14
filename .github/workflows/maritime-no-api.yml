@@ -25,6 +25,7 @@ jobs:
       INPUT_DATE: ${{ inputs.date }}
       INPUT_BOOTSTRAP: ${{ inputs.bootstrap || false }}
       OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -51,6 +52,13 @@ jobs:
         run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action install-model
       - name: Environment check
         run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action doctor
+      - uses: actions/cache/restore@v4
+        id: ai_usage
+        with:
+          path: |
+            papers/maritime/private/deepseek/usage.json
+          key: daily-deepseek-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: daily-deepseek-${{ github.repository_id }}-
       - name: Retrieve all sources and build
         id: retrieve
         continue-on-error: true
@@ -82,3 +90,8 @@ jobs:
             maritime-run.log
             papers/maritime/logs/
           retention-days: 14
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: papers/maritime/private/deepseek/usage.json
+          key: ${{ steps.ai_usage.outputs.cache-primary-key }}

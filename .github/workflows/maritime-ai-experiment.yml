@@ -11,7 +11,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: maritime-deepseek-budget
+  group: maritime-no-api
   cancel-in-progress: false
 jobs:
   evaluate:
@@ -28,12 +28,23 @@ jobs:
           python-version: '3.11'
       - uses: actions/cache@v4
         with:
-          path: papers/maritime/private/deepseek
+          path: papers/maritime/private/deepseek/cache
           key: deepseek-experiment-${{ github.repository_id }}-${{ github.run_id }}
           restore-keys: deepseek-experiment-${{ github.repository_id }}-
+      - uses: actions/cache/restore@v4
+        id: ai_usage
+        with:
+          path: papers/maritime/private/deepseek/usage.json
+          key: daily-deepseek-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: daily-deepseek-${{ github.repository_id }}-
       - run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action evaluate-ai --sample-size "$SAMPLE_SIZE" --ai-budget "$BUDGET"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: semantic-evaluation
           path: evaluations/maritime-v3-4/
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: papers/maritime/private/deepseek/usage.json
+          key: ${{ steps.ai_usage.outputs.cache-primary-key }}

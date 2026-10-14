@@ -207,6 +207,17 @@ def run_update(args, library, rules):
     keys = focused_new + focus + new_keys + translation_order(library)
     translations = translate_budget(library, keys, args.translation_limit, args.translation_timeout, save, args.retry_failed)
     print(f"[3/4] 完成：{translations}，耗时 {time.monotonic()-stage:.1f}s", flush=True)
+    print('[AI] DeepSeek语义重排序：开始（失败回退规则）',flush=True)
+    from services.semantic_evaluation import daily_evaluate,CONFIG
+    semantic_config=json.loads(CONFIG.read_text(encoding='utf8'))
+    library['semantic_enabled']=bool(semantic_config['enabled'] and not getattr(args,'no_ai',False))
+    try:
+        ai=daily_evaluate(args.root,library,new_keys,end,getattr(args,'ai_limit',None),getattr(args,'ai_budget',None),getattr(args,'no_ai',False))
+    except Exception as exc:
+        ai={'status':'fallback','processed':0,'cached':0,'cost_upper_cny':0,'priced_cost_cny':0,'reason':type(exc).__name__}
+    save()
+    write_json(args.root/'papers/maritime/logs/latest-ai.json',ai)
+    print('[AI] '+json.dumps(ai,ensure_ascii=False),flush=True)
     stage = time.monotonic()
     print("[4/4] 生成网页和日报：开始", flush=True)
     build(args.root, library, rules)
@@ -220,6 +231,7 @@ def run_update(args, library, rules):
                "added": added, "filled": metadata["filled"], "merged": merged,
                "before_count": before_count, "after_count": len(library["papers"]), "translation": translations,
                "translation_failed": translations["failed"], "suspected_duplicates": dedup["suspected"],
+               "ai":ai, "daily_selected":len(json.loads((args.root/'docs/maritime-data/mobile/latest.json').read_text(encoding='utf8'))['papers']),
                "github_sync": "not_attempted", "pages_publish": "not_attempted"}
     write_json(args.root / "papers/maritime/logs/latest-update.json", summary)
     public = args.root / "docs/maritime-data/library.json"

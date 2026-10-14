@@ -245,7 +245,7 @@ python3 scripts/cli.py reconcile --date 20260317 --dry-run
 顶部只显示简短更新状态，来源汇总默认折叠；检索截断、限流与失败的原始记录仍在日志。正常个人模式检索只保存元数据；PDF准备仍为用户主动操作。磁盘与真实验收见 [MARITIME_V3_2_FINAL_REPORT.md](MARITIME_V3_2_FINAL_REPORT.md)。
 # V3.4：可选 DeepSeek 筛选试验
 
-普通检索、翻译及手机日报继续使用无API流程，不会因设置密钥而自动付费。独立试验通过用户环境变量 `DEEPSEEK_API_KEY` 读取密钥，偏好与每日预算在 `skills/rs-paper-pipeline/scripts/config/maritime/semantic.json`，默认人民币2元、Flash非思考模式。
+V3.5的“论文更新”已接入可回退的DeepSeek阶段：有Key时最多新评价20篇，单次预算默认2元，没有Key仍使用规则生成并发布。偏好和开关在 `skills/rs-paper-pipeline/scripts/config/maritime/semantic.json`；`更新论文.cmd --no-ai` 可完全使用原规则。以下50篇试验命令是可选诊断，不是日常必需步骤。
 
 ```powershell
 python skills/rs-paper-pipeline/scripts/cli.py maritime --action evaluate-ai --sample-size 50 --ai-budget 2
@@ -257,4 +257,4 @@ python skills/rs-paper-pipeline/scripts/cli.py maritime --action evaluate-ai --s
 python skills/rs-paper-pipeline/scripts/cli.py maritime --action score-ai-labels
 ```
 
-本轮试验与限制详见 `MARITIME_V3_4_API_EVALUATION_REPORT.md`。正式手机AI排序尚未启用；Actions仅新增手动试验工作流，需用户自行设置同名Secret，没有新增定时付费任务。
+V3.4试验限制详见 `MARITIME_V3_4_API_EVALUATION_REPORT.md`。V3.5手机使用“硬条件＋AI重排”，不凭决策标签单独排除船舶视觉论文；日常Actions复用同一代码，从Secret读取Key，未配置时回退规则。预算是每个运行环境的账本，不是账户全局封顶；成功AI缓存随静态数据同步复用。

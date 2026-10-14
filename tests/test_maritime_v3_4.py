@@ -45,9 +45,9 @@ class SemanticTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory,patch.object(ds,'request',return_value=response):
             _,cost=ds.complete(Path(directory),{'max_tokens':300,'messages':[{'content':'test'}]},self.config)
             self.assertAlmostEqual(cost,(80*.04+20*2+50*8)/1e6)
-    def test_default_rollout_disabled(self):
-        self.assertFalse(self.config['enabled'])
-        self.assertFalse(self.config['mobile_ai_enabled'])
+    def test_daily_is_limited_and_stage_two_disabled(self):
+        self.assertTrue(self.config['enabled'])
+        self.assertEqual(self.config['daily_limit'],20)
         self.assertFalse(self.config['stage_two']['enabled'])
 
     def test_human_precision_requires_labels_not_ai_ground_truth(self):

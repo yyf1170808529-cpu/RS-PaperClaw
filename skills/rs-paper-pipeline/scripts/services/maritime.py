@@ -199,8 +199,15 @@ def build(root, library, rules):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(render_daily(data, library), encoding="utf-8")
     _, policy = assets()
+    from services.semantic_evaluation import ranking_info
+    public_papers=[]
+    for p in library['papers'].values():
+        item={k:v for k,v in p.items() if k not in ('raw_abstract','abstract_history','translation_history','metadata_records','merge_conflicts')}
+        info=ranking_info(p) if library.get('semantic_enabled',True) else {'score':None,'demoted':False}
+        item.update(ai_score=info['score'],ai_demoted=info['demoted'])
+        public_papers.append(item)
     payload = {"schema_version": 2, "topics": {k: v["name"] for k, v in rules["topics"].items()},
-               "papers": [{k:v for k,v in p.items() if k not in ('raw_abstract','abstract_history','translation_history','metadata_records','merge_conflicts')} for p in library["papers"].values()], "days": days,
+               "papers": public_papers, "days": days,
                "aliases": library.get("aliases", {}), "source_runs": library.get("source_runs", []),
                "update_summary": read_json(root / "papers/maritime/logs/latest-update.json", None),
                "recommendation_policy": policy,
@@ -265,6 +272,8 @@ def main(argv=None):
     parser.add_argument("--days", type=int, default=7)
     parser.add_argument('--sample-size',type=int,default=50,help='独立AI评估试验样本数')
     parser.add_argument('--ai-budget',type=float,help='本日DeepSeek预算上限人民币，默认2元')
+    parser.add_argument('--ai-limit',type=int,help='本次日更最多新评价篇数，默认20')
+    parser.add_argument('--no-ai',action='store_true',help='本次更新完全使用规则排序，不调用AI')
     parser.add_argument("--date", help="指定一天 YYYYMMDD 或 YYYY-MM-DD")
     parser.add_argument("--topic", choices=list("ABCD"), action="append", help="可重复，默认全部")
     parser.add_argument("--max-pages", type=int, default=30)

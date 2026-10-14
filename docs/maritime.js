@@ -49,6 +49,10 @@ function sourceLabel(paper) {
 }
 
 function compareRecommendation(a,b) {
+  if(Boolean(a.ai_demoted)!==Boolean(b.ai_demoted)) return a.ai_demoted?1:-1;
+  if(typeof a.ai_score==='number' || typeof b.ai_score==='number') {
+    const difference=(b.ai_score??50)-(a.ai_score??50);if(difference)return difference;
+  }
   if (!a.recommendation || !b.recommendation) return b.assessment.score-a.assessment.score;
   const vector = p => {const r=p.recommendation,q=p.quality||{};return [r.low_priority?0:1,q.ccf_a?1:0,q.high_journal||q.high_conference?1:0,r.direct_relevance,r.maritime?1:0,r.method_transfer_signal?1:0];};
   const av=vector(a),bv=vector(b);
@@ -157,7 +161,7 @@ if (typeof document !== 'undefined') {
       const reading = readingFor(paper, readings);
       const id=paperId(paper),quality=paper.quality||{};
       article.append(node('h2', paper.title), node('p', `${paper.authors.join(', ')} · ${paper.published}`, 'muted'),
-        node('p', `${LEVELS[assessment.level]} ${assessment.score} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
+        node('p', `${LEVELS[assessment.level]} ${assessment.score}${typeof paper.ai_score==='number'?` · AI相关分 ${paper.ai_score}/100`:''} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
       const source=sourceLabel(paper);
       article.append(node('p', source),
         node('p', `第一作者：${paper.first_author||paper.authors[0]||'暂未获取'} ｜单位：${paper.affiliation_verified ? paper.first_author_affiliations.join('; ') : '暂未获取'}`, 'muted'));

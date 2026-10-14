@@ -83,6 +83,8 @@ def execute_update(root, path, arguments):
     summary = json.loads(summary_path.read_text(encoding="utf-8")) if summary_path.exists() and summary_path.stat().st_mtime >= started else {}
     label = "更新完成" if code == 0 else "部分完成" if code == 2 else "更新失败"
     print(f"{label}：新增 {summary.get('added', 0)} 篇，补全 {summary.get('filled', 0)} 篇，合并重复 {summary.get('merged', 0)} 篇，中文翻译成功 {summary.get('translation', {}).get('translated', 0)} 篇，失败 {summary.get('failed', 0) + summary.get('translation_failed', 0)} 项。", flush=True)
+    ai=summary.get('ai',{})
+    print(f"AI新评价 {ai.get('processed',0)} 篇，复用 {ai.get('cached',0)} 篇；本次API计价约 ¥{ai.get('priced_cost_cny',0):.6f}，预算记账上界 ¥{ai.get('cost_upper_cny',0):.6f}；每日精选 {summary.get('daily_selected',0)} 篇。",flush=True)
     print(f"结束时间：{datetime.now().astimezone().isoformat()}；退出码 {code}；日志：{path}", flush=True)
     if code in (0,2):
         from services.maritime_sync import sync
