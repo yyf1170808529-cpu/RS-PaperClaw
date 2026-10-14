@@ -72,4 +72,28 @@ class DailyTests(unittest.TestCase):
         counts={b:sum(ps[p['paper_id']]['recommendation']['bucket']==b for p in payload['papers']) for b in ('water','land','general')}
         self.assertEqual(counts,{'water':3,'land':1,'general':1})
 
+    def fake_git(self,command,**kwargs):
+        from types import SimpleNamespace
+        if 'get-url' in command:out='https://github.com/yyf1170808529-cpu/RS-PaperClaw.git'
+        elif 'rev-parse' in command:out='same-head'
+        else:out=''
+        return SimpleNamespace(returncode=1 if 'show' in command else 0,stdout=out,stderr='')
+    def prepare_repository(self,root):
+        m.write_json(root/'skills/rs-paper-pipeline/scripts/config/maritime/publication.json',{'repository':'yyf1170808529-cpu/RS-PaperClaw','branch':'main'})
+    def test_timeout_still_produces_daily_and_keeps_quality(self):
+        lib={'papers':{self.p['paper_id']:self.p},'days':{}}
+        old=copy.deepcopy(self.p['quality'])
+        with tempfile.TemporaryDirectory() as directory,patch('subprocess.run',side_effect=self.fake_git),patch('clients.deepseek_client.api_key',return_value='unit-test'),patch('services.maritime_sync.api',return_value={'workflow_runs':[]}),patch('clients.deepseek_client.complete',side_effect=RuntimeError('timeout')):
+            root=Path(directory);self.prepare_repository(root)
+            outcome=ai.daily_evaluate(root,lib,[],date(2026,10,14))
+            self.assertEqual(outcome['status'],'fallback')
+            self.assertEqual(len(build_mobile_digest(root,lib,date(2026,10,14))['papers']),1)
+        self.assertEqual(old,self.p['quality'])
+    def test_remote_update_or_active_cloud_prevents_duplicate_paid_work(self):
+        lib={'papers':{self.p['paper_id']:self.p},'days':{}}
+        with tempfile.TemporaryDirectory() as directory,patch('subprocess.run',side_effect=self.fake_git),patch('clients.deepseek_client.api_key',return_value='unit-test'),patch('services.maritime_sync.api',return_value={'workflow_runs':[{'id':999,'path':'.github/workflows/maritime-no-api.yml'}]}),patch('clients.deepseek_client.complete') as call:
+            root=Path(directory);self.prepare_repository(root)
+            outcome=ai.daily_evaluate(root,lib,[],date(2026,10,14))
+            self.assertEqual(outcome['status'],'fallback');call.assert_not_called()
+
 if __name__=='__main__':unittest.main()

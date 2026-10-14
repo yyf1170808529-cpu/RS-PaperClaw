@@ -26,6 +26,7 @@ jobs:
       INPUT_BOOTSTRAP: ${{ inputs.bootstrap || false }}
       OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -95,3 +96,14 @@ jobs:
         with:
           path: papers/maritime/private/deepseek/usage.json
           key: ${{ steps.ai_usage.outputs.cache-primary-key }}
+      - name: Preserve generated archives if sync was stopped
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maritime-pending-archives
+          path: |
+            papers/maritime/library.json
+            daily_reports/maritime/
+            docs/maritime-data/
+            docs/maritime-daily.html
+          retention-days: 14

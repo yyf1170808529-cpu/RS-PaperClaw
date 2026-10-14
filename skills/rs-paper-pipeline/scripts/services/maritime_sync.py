@@ -12,7 +12,9 @@ def allowed(path, config):
     return not any(part in {'private','backups','.venv-maritime','logs'} for part in Path(path).parts) and any(fnmatch.fnmatchcase(path,pattern) for pattern in config['paths'])
 
 def api(url, timeout=20):
-    request=urllib.request.Request(url,headers={'User-Agent':'RS-PaperClaw','Accept':'application/vnd.github+json'})
+    headers={'User-Agent':'RS-PaperClaw','Accept':'application/vnd.github+json'}
+    if os.environ.get('GITHUB_TOKEN'):headers['Authorization']='Bearer '+os.environ['GITHUB_TOKEN']
+    request=urllib.request.Request(url,headers=headers)
     with urllib.request.urlopen(request,timeout=timeout) as response:return json.load(response)
 
 def sync(root, wait_seconds=180):

@@ -208,8 +208,8 @@ def run_update(args, library, rules):
     translations = translate_budget(library, keys, args.translation_limit, args.translation_timeout, save, args.retry_failed)
     print(f"[3/4] 完成：{translations}，耗时 {time.monotonic()-stage:.1f}s", flush=True)
     print('[AI] DeepSeek语义重排序：开始（失败回退规则）',flush=True)
-    from services.semantic_evaluation import daily_evaluate,CONFIG
-    semantic_config=json.loads(CONFIG.read_text(encoding='utf8'))
+    from services.semantic_evaluation import daily_evaluate,settings
+    semantic_config=settings()
     library['semantic_enabled']=bool(semantic_config['enabled'] and not getattr(args,'no_ai',False))
     try:
         ai=daily_evaluate(args.root,library,new_keys,end,getattr(args,'ai_limit',None),getattr(args,'ai_budget',None),getattr(args,'no_ai',False))

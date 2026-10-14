@@ -85,15 +85,19 @@ def execute_update(root, path, arguments):
     print(f"{label}：新增 {summary.get('added', 0)} 篇，补全 {summary.get('filled', 0)} 篇，合并重复 {summary.get('merged', 0)} 篇，中文翻译成功 {summary.get('translation', {}).get('translated', 0)} 篇，失败 {summary.get('failed', 0) + summary.get('translation_failed', 0)} 项。", flush=True)
     ai=summary.get('ai',{})
     print(f"AI新评价 {ai.get('processed',0)} 篇，复用 {ai.get('cached',0)} 篇；本次API计价约 ¥{ai.get('priced_cost_cny',0):.6f}，预算记账上界 ¥{ai.get('cost_upper_cny',0):.6f}；每日精选 {summary.get('daily_selected',0)} 篇。",flush=True)
-    print(f"结束时间：{datetime.now().astimezone().isoformat()}；退出码 {code}；日志：{path}", flush=True)
+    if ai.get('unsettled_upper_cny'):
+        print(f"API可能存在未决计费，保留预算上界 ¥{ai['unsettled_upper_cny']:.6f}；不是已核实扣款。",flush=True)
+    print(f"本地阶段已结束；AI状态：{ai.get('status','未执行')}；日志：{path}", flush=True)
     if code in (0,2):
         from services.maritime_sync import sync
+        print('[同步] 提交公开数据、推送并检查Pages，请等全部结束后关闭窗口。',flush=True)
         result=sync(root)
         print(f"本地更新：{label}；GitHub同步：{result['github_sync']}；Pages发布：{result['pages_publish']}。",flush=True)
         if result['github_sync']!='success' or result['pages_publish'] not in ('success','workflow_run_pending'):
             code=2
     else:
         print("本地更新失败；未执行GitHub同步。",flush=True)
+    print(f"全部结束时间：{datetime.now().astimezone().isoformat()}；退出码 {code}。",flush=True)
     return code
 
 

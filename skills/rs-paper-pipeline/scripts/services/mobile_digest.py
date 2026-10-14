@@ -9,7 +9,8 @@ BASE = 'https://yyf1170808529-cpu.github.io/RS-PaperClaw/'
 def build_mobile_digest(root, library, date):
     from services.maritime import write_json, LEVELS
     from services.maritime_v2 import assets, recommendation_view, rank_key, compact_source
-    from services.semantic_evaluation import ranking_info
+    from services.semantic_evaluation import ranking_info,settings
+    semantic_settings=settings()
     directory=root/'docs/maritime-data/mobile'
     directory.mkdir(parents=True,exist_ok=True)
     target=directory/(str(date)+'.json')
@@ -20,12 +21,13 @@ def build_mobile_digest(root, library, date):
             seen.update(p['paper_id'] for p in json.loads(path.read_text(encoding='utf8'))['papers'])
     _,policy=assets()
     ids=recommendation_view(list(library['papers'].values()),policy,date)['paper_ids']
-    use_ai=library.get('semantic_enabled',True)
-    info=lambda p:ranking_info(p) if use_ai else {'score':None,'demoted':False,'reason':None}
-    chosen=[library['papers'][k] for k in ids if k not in seen and not info(library['papers'][k])['demoted']]
+    use_ai=library.get('semantic_enabled',True) and semantic_settings['mobile_ai_enabled']
+    info=lambda p:ranking_info(p,semantic_settings) if use_ai else {'score':None,'demoted':False,'reason':None}
+    chosen=[library['papers'][k] for k in ids if k not in seen and library['papers'][k].get('abstract') and not info(library['papers'][k])['demoted']]
     # Keep today's existing choices stable during repeat builds if still eligible.
     old=json.loads(target.read_text(encoding='utf8'))['papers'] if target.exists() else []
-    stable=[library['papers'][p['paper_id']] for p in old if p['paper_id'] in ids and p['paper_id'] not in seen and not info(library['papers'][p['paper_id']])['demoted']]
+    chosen_ids={p['paper_id'] for p in chosen}
+    stable=[library['papers'][p['paper_id']] for p in old if p['paper_id'] in chosen_ids]
     order=lambda p:(info(p)['score'] if info(p)['score'] is not None else 50,rank_key(p))
     pool=sorted(chosen,key=order,reverse=True)
     # Same-day repeat builds stay stable unless new valid AI evidence is available.

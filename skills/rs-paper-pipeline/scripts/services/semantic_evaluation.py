@@ -8,6 +8,10 @@ import re
 CONFIG=Path(__file__).resolve().parents[1]/'config/maritime/semantic.json'
 FIELDS={'paper_id','task_type','direct_relevance','transferability','method_evidence','limitations','decision','reason_zh','confidence'}
 
+def settings():
+    try:return json.loads(CONFIG.read_text(encoding='utf8'))
+    except (OSError,ValueError):return {'enabled':False,'mobile_ai_enabled':False,'error':'AI configuration unavailable; rule fallback'}
+
 def fingerprint(p,config):
     data={k:p.get(k) for k in ('title','abstract','publication_status','venue','quality','assessment','recommendation')}
     data.update(model=config['model'],preferences=config['preferences'],schema=1)
@@ -61,9 +65,9 @@ def ship_vision(paper):
     return any(sea(s) and vision(s) and re.search(r'\b(propose\w*|present\w*|develop\w*|our|study)\b',s,re.I) for s in re.split(r'(?<=[.!?])\s+',paper.get('abstract','')))
 
 def current_evaluation(paper,config=None):
-    config=config or json.loads(CONFIG.read_text(encoding='utf8'))
+    config=config or settings()
     record=paper.get('semantic')
-    if not config['enabled'] or not config['mobile_ai_enabled'] or not record or record.get('fingerprint')!=fingerprint(paper,config):return None
+    if not config['enabled'] or not record or record.get('fingerprint')!=fingerprint(paper,config):return None
     try:return validate(record['evaluation'],paper)
     except (ValueError,KeyError,TypeError):return None
 
@@ -86,8 +90,9 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     from services.maritime import read_json,write_json
     from services.maritime_v2 import assets,recommendation_view
     from update_maritime import update_lock
-    config=json.loads(CONFIG.read_text(encoding='utf8'))
-    summary={'status':'disabled','processed':0,'cached':0,'failed':0,'cost_upper_cny':0.0,'priced_cost_cny':0.0,'tokens':0,'missing_abstract':0}
+    config=settings()
+    summary={'status':'disabled','processed':0,'cached':0,'failed':0,'cost_upper_cny':0.0,'priced_cost_cny':0.0,'unsettled_upper_cny':0.0,'tokens':0,'missing_abstract':0}
+    if config.get('error'):summary.update(status='fallback',reason=config['error']);return summary
     if disabled or not config['enabled']:return summary
     cache_path=root/'docs/maritime-data/semantic-cache.json'
     shared=read_json(cache_path,{'schema_version':1,'records':{}})
@@ -127,6 +132,10 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         run('fetch','origin',publication['branch'])
         remote=run('rev-parse','origin/'+publication['branch'])
         if remote!=run('rev-parse','HEAD'):raise RuntimeError('Remote/local commits differ; skip new paid requests')
+        from services.maritime_sync import api
+        active=api('https://api.github.com/repos/'+publication['repository']+'/actions/runs?status=in_progress&per_page=20')['workflow_runs']
+        if any(str(r['id'])!=os.environ.get('GITHUB_RUN_ID') and r.get('path') in ('.github/workflows/maritime-no-api.yml','.github/workflows/maritime-ai-experiment.yml') for r in active):
+            raise RuntimeError('Another cloud paper task is active; defer new paid requests')
         remote_cache=subprocess.run(git+['show',f'origin/{publication["branch"]}:docs/maritime-data/semantic-cache.json'],cwd=root,capture_output=True,text=True,encoding='utf8',errors='replace',timeout=20)
         if remote_cache.returncode==0:
             for digest,record in json.loads(remote_cache.stdout).get('records',{}).items():shared['records'].setdefault(digest,record)
@@ -147,9 +156,12 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         from datetime import datetime
         account=ledger['days'].get(str(datetime.now(TZ).date()),{})
         config={**config,'daily_budget_cny':min(config['daily_budget_cny'],account.get('charged_upper_cny',0)+account.get('reserved_cny',0)+run_budget)}
+        attempted=False
+        starting_reserved=account.get('reserved_cny',0)
         with update_lock(directory/'experiment.lock'):
             for offset in range(0,len(pending),config['batch_size']):
                 batch=pending[offset:offset+config['batch_size']]
+                attempted=True
                 response,cost=complete(root,payload_for(batch,config),config)
                 summary['cost_upper_cny']+=cost
                 summary['tokens']+=response['usage']['total_tokens']
@@ -172,6 +184,9 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         summary['status']='partial' if summary['failed'] else 'success'
     except Exception as exc:
         summary['status']='fallback';summary['reason']=str(exc)
+        if locals().get('attempted'):
+            latest=read_json(directory/'usage.json',{'days':{}})['days'].get(str(datetime.now(TZ).date()),{})
+            summary['unsettled_upper_cny']=max(0,latest.get('reserved_cny',0)-starting_reserved)
     write_json(cache_path,shared)
     write_json(root/'papers/maritime/logs/latest-ai.json',summary)
     return summary
