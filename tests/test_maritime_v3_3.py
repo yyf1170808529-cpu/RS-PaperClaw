@@ -82,5 +82,7 @@ class RepairTests(unittest.TestCase):
             html=(root/'docs/maritime-daily.html').read_text(encoding='utf8')
             self.assertNotIn('library.json',html)
             self.assertIn('查看摘要',html)
+            self.assertIn('推荐评分',html)
+            self.assertNotIn('不评价真实创新性',html)
 
 if __name__=='__main__':unittest.main()
