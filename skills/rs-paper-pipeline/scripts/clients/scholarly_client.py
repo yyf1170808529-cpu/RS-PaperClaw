@@ -10,6 +10,23 @@ import time
 import urllib.parse
 import urllib.request
 from urllib.error import HTTPError
+from datetime import datetime, timezone, timedelta
+
+
+class OpenAlexLimited(RuntimeError):
+    pass
+
+
+def openalex_key():
+    value = os.environ.get("OPENALEX_API_KEY")
+    if not value and os.name == "nt":
+        import winreg
+        try:
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as key:
+                value = winreg.QueryValueEx(key, "OPENALEX_API_KEY")[0]
+        except OSError:
+            pass
+    return value
 
 
 def doi_id(value):
@@ -21,9 +38,11 @@ def doi_id(value):
 
 def json_request(url, params=None, root=None, timeout=20, retries=3):
     query = dict(params or {})
-    if "api.openalex.org" in url and os.environ.get("OPENALEX_API_KEY"):
+    is_openalex = urllib.parse.urlsplit(url).hostname == "api.openalex.org"
+    api_key = openalex_key() if is_openalex else None
+    if api_key:
         # Header avoids persisting credentials in URL/cache/logs.
-        headers = {"Authorization": "Bearer " + os.environ["OPENALEX_API_KEY"]}
+        headers = {"Authorization": "Bearer " + api_key}
     else:
         headers = {}
     mailto = os.environ.get("CROSSREF_MAILTO") or os.environ.get("OPENALEX_MAILTO")
@@ -33,6 +52,11 @@ def json_request(url, params=None, root=None, timeout=20, retries=3):
     cache = Path(root) / "papers/maritime/private/metadata-cache" / (hashlib.sha256(full.encode()).hexdigest() + ".json") if root else None
     if cache and cache.exists() and time.time() - cache.stat().st_mtime < 86400:
         return json.loads(cache.read_text(encoding="utf-8"))
+    limit_file = Path(root) / "papers/maritime/private/openalex-cooldown.json" if root else None
+    scope = hashlib.sha256(api_key.encode()).hexdigest() if api_key else "anonymous"
+    cooldowns = json.loads(limit_file.read_text(encoding="utf-8")) if is_openalex and limit_file and limit_file.exists() else {}
+    if is_openalex and cooldowns.get(scope, {}).get("until", 0) > time.time():
+        raise OpenAlexLimited(f"api.openalex.org HTTP 429: {cooldowns[scope]['reason']}; paused until {cooldowns[scope]['until']} (cached metadata still usable)")
     headers.update({"User-Agent": "RS-PaperClaw-Maritime/2.0", "Accept": "application/json"})
     for attempt in range(retries):
         try:
@@ -43,7 +67,25 @@ def json_request(url, params=None, root=None, timeout=20, retries=3):
                 cache.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             return data
         except HTTPError as exc:
-            detail = exc.read(200).decode("utf-8", "replace")
+            detail = exc.read(1000).decode("utf-8", "replace")
+            if api_key:
+                detail = detail.replace(api_key, "[redacted]")
+            if is_openalex and exc.code == 429:
+                budget = any(term in detail.lower() for term in ("insufficient budget", "daily budget", "credits", "quota"))
+                now = datetime.now(timezone.utc)
+                reset = (now.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)).timestamp()
+                reset_header = (exc.headers or {}).get("X-RateLimit-Reset", "")
+                if reset_header.isdigit():
+                    value = int(reset_header)
+                    reset = value if value > time.time() else time.time() + min(86400, max(1, value))
+                delay = (exc.headers or {}).get("Retry-After", "60")
+                until = reset if budget else time.time() + min(300, max(1, int(delay) if delay.isdigit() else 60))
+                reason = "budget_exhausted" if budget else "rate_limited"
+                cooldowns[scope] = {"until": until, "reason": reason}
+                if limit_file:
+                    limit_file.parent.mkdir(parents=True, exist_ok=True)
+                    limit_file.write_text(json.dumps(cooldowns), encoding="utf-8")
+                raise OpenAlexLimited(f"api.openalex.org HTTP 429: {reason}; {detail}; requests paused, no batch retry") from None
             if attempt + 1 == retries or exc.code in (400, 401, 403, 404):
                 raise RuntimeError(f"{urllib.parse.urlsplit(url).hostname} HTTP {exc.code}: {detail}") from None
             wait = max(3 * (2 ** attempt), int(exc.headers.get("Retry-After", "0")) if exc.headers.get("Retry-After", "0").isdigit() else 0)
@@ -123,9 +165,9 @@ def openalex_paper(item):
     oa_locations = [loc for loc in item.get("locations") or [] if loc.get("is_oa") and loc.get("pdf_url")]
     pdf = oa_locations[0]["pdf_url"] if oa_locations else ""
     return {"paper_id": "doi:" + doi if doi else "openalex:" + item["id"].rsplit("/", 1)[-1],
-        "doi": doi, "arxiv_id": arxiv, "title": item.get("title") or item.get("display_name", ""),
+        "doi": doi, "arxiv_id": arxiv, "title": item.get("title") or item.get("display_name") or "",
         "abstract": inverted_abstract(item.get("abstract_inverted_index")),
-        "authors": [a.get("author", {}).get("display_name", "") for a in authorships],
+        "authors": [a.get("author", {}).get("display_name") or "" for a in authorships],
         "published": date, "publication_date": date, "source_type": kind if published else "preprint" if arxiv or item.get("type") == "preprint" else "metadata",
         "publication_status": "published" if published else "unknown", "venue": source.get("display_name", ""),
         "venue_type": kind if published else "unknown", "issn": source.get("issn") or [], "openalex_source_id": source.get("id"),
@@ -135,6 +177,7 @@ def openalex_paper(item):
         "first_author": first.get("author", {}).get("display_name", ""), "first_author_affiliations": affiliations,
         "affiliation_source": "OpenAlex first authorship" if affiliations else "", "affiliation_verified": bool(affiliations),
         "metadata_source": ["OpenAlex"], "publication_evidence": {"source": "OpenAlex", "url": item["id"], "type": item.get("type")},
+        "is_retracted": item.get("is_retracted") is True,
         "identity_evidence": {"source": item["id"], "relation": "arxiv landing location"} if arxiv else {}}
 
 

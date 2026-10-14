@@ -1,0 +1,11 @@
+{
+  "daily": {
+    "max_papers": 5,
+    "seconds": 180
+  },
+  "history": {
+    "max_papers": 25,
+    "seconds": 180
+  },
+  "retry_failed": false
+}

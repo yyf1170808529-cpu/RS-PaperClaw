@@ -7,10 +7,10 @@ on:
       date:
         description: 'Optional replay date YYYYMMDD'
         type: string
-      days:
-        description: 'Recent days (overlap handles arXiv publication delays)'
-        default: '7'
-        type: string
+      bootstrap:
+        description: 'First maritime journal search: backfill 12 months'
+        default: false
+        type: boolean
 permissions:
   contents: write
 concurrency:
@@ -23,7 +23,8 @@ jobs:
     env:
       PYTHONUNBUFFERED: '1'
       INPUT_DATE: ${{ inputs.date }}
-      INPUT_DAYS: ${{ inputs.days || '7' }}
+      INPUT_BOOTSTRAP: ${{ inputs.bootstrap || false }}
+      OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,17 +36,33 @@ jobs:
         with:
           python-version: '3.11'
       - name: No-API regression tests
-        run: python -m unittest discover -s tests -p test_maritime.py
+        run: python -m unittest discover -s tests -p 'test_maritime*.py'
+      - name: Install optional CPU translation
+        continue-on-error: true
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r skills/rs-paper-pipeline/requirements-translation.txt
+      - uses: actions/cache@v4
+        with:
+          path: papers/maritime/private/translation
+          key: argos-en-zh-v3-${{ hashFiles('skills/rs-paper-pipeline/requirements-translation.txt') }}
+      - name: Prepare translation model (reuse cache)
+        continue-on-error: true
+        run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action install-model
       - name: Environment check
         run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action doctor
-      - name: Retrieve and build (original client retries each request)
+      - name: Retrieve all sources and build
+        id: retrieve
+        continue-on-error: true
         shell: bash
         run: |
-          args=(--days "$INPUT_DAYS")
+          args=()
           if [[ -n "$INPUT_DATE" ]]; then args=(--date "$INPUT_DATE"); fi
-          python skills/rs-paper-pipeline/scripts/cli.py maritime "${args[@]}" > maritime-run.log 2>&1
+          if [[ "$INPUT_BOOTSTRAP" == 'true' ]]; then args+=(--bootstrap); fi
+          python skills/rs-paper-pipeline/scripts/cli.py maritime --action update --timeout 30 --retries 2 --max-pages 5 "${args[@]}" > maritime-run.log 2>&1
           cat maritime-run.log
       - name: Commit static archives to this repository
+        id: sync
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
@@ -55,6 +72,12 @@ jobs:
             git commit -m 'Update personal paper archive (no API)'
             git push
           fi
+          echo 'GitHub archive sync succeeded. Pages publishing is a separate workflow.'
+      - name: Report incomplete source update
+        if: steps.retrieve.outcome == 'failure'
+        run: |
+          echo 'Source update failed or was incomplete. Successful batches were preserved and sync was attempted; inspect logs.'
+          exit 1
       - name: Preserve logs including failures
         if: always()
         uses: actions/upload-artifact@v4

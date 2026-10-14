@@ -44,7 +44,7 @@ test('untrusted text and Markdown use safe text nodes, no HTML execution',()=>{
 });
 
 // Exercise the actual event wiring with a lightweight DOM adapter, no browser dependency.
-async function setupUI(saved) {
+async function setupUI(saved, suppliedDataset) {
   const vm = require('node:vm');
   class Element {
     constructor(tag) {this.tag=tag;this.children=[];this.value='';this.textContent='';this.handlers={};}
@@ -56,10 +56,10 @@ async function setupUI(saved) {
     focus() {}
     select() {}
   }
-  const nodes=new Map(['date','topic','level','sort','search','summary','report','message','papers','export','import'].map(id=>[id,new Element(id)]));
+  const nodes=new Map(['date','topic','level','sort','search','summary','report','message','papers','export','import','window','quality','bucket','language'].map(id=>[id,new Element(id)]));
   const storage=new Map(saved ? [['rs-paperclaw-maritime-readings-v1',saved]] : []);
   const downloaded=[];let copied='';
-  const dataset={papers:papers.slice(0,2),topics:{A:'Fusion',D:'Methods'},days:{'2026-10-10':{candidate_ids:['2610.00001'],candidate_count:1,selected_count:1,high_count:1,topic_counts:{A:1}}},prompt_template:'{{title}}\n{{abstract}}\n{{authors}}'};
+  const dataset=suppliedDataset || {papers:papers.slice(0,2),topics:{A:'Fusion',D:'Methods'},days:{'2026-10-10':{candidate_ids:['2610.00001'],candidate_count:1,selected_count:1,high_count:1,topic_counts:{A:1}}},prompt_template:'{{title}}\n{{abstract}}\n{{authors}}'};
   for(const p of dataset.papers) p.assessment.applications=['通用计算机视觉'];
   const context=vm.createContext({console,Date,Set,JSON,Object,Error,Promise,
     document:{getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag)},
@@ -125,4 +125,78 @@ test('V2 windows and independent recommendation ranking reduce low priority pape
   assert.equal(filterPapers([low,maritime],{window:'7',today:'2026-10-12'}, {}).length,2);
   assert.equal(filterPapers([low,maritime],{window:'1',today:'2026-10-12'}, {}).length,0);
   assert.equal(filterPapers([low,maritime],{section:'candidate'}, {}).length,1);
+});
+
+const {recommendationSummary} = require('../docs/maritime.js');
+test('no full text gives a short request; resources get no paper prompt',()=>{
+  const template=fs.readFileSync(path.join(__dirname,'../skills/rs-paper-pipeline/scripts/prompts/maritime_analysis.md'),'utf8');
+  const noPDF={...papers[0],pdf_url:'',open_access_url:''};
+  const short=makePrompt(template,noPDF);
+  assert.ok(short.includes(noPDF.title));
+  assert.ok(short.includes('请我上传 PDF'));
+  assert.ok(!short.includes('Q/K/V'));
+  assert.ok(!short.includes('13.'));
+  const full=makePrompt(template,papers[0]);
+  assert.ok(full.includes('只有实际获取全文后'));
+  assert.ok(full.includes('13.'));
+  assert.equal(makePrompt(template,{...papers[0],resource_type:'dataset'}),'');
+  assert.equal(makePrompt(template,{...papers[0],resource_type:'software'}),'');
+});
+test('summary follows filtered results, unique categories, and exclusions',()=>{
+  const water={...papers[0],resource_type:'journal_article',quality:{high_journal:true},recommendation:{bucket:'water'}};
+  const land={...papers[1],resource_type:'preprint',assessment:{...papers[1].assessment,level:'high'},recommendation:{bucket:'land'}};
+  const deleted={...water,arxiv_id:'deleted',validity:{status:'deleted'}};
+  const dataset={...water,arxiv_id:'dataset',resource_type:'dataset'};
+  const all=[water,water,land,deleted,dataset];
+  assert.equal(recommendationSummary(all),'水路 1 篇 · 陆上 1 篇 · 通用方法 0 篇');
+  assert.equal(recommendationSummary(filterPapers(all,{topic:'D'},{})),'水路 0 篇 · 陆上 1 篇 · 通用方法 0 篇');
+  assert.equal(filterPapers(all,{window:'history'},{}).length,3);
+});
+
+test('rendered summary updates on search, date and time range without quota text',async()=>{
+  const a={...papers[0],resource_type:'journal_article',quality:{high_journal:true},recommendation:{bucket:'water'}};
+  const b={...papers[1],resource_type:'preprint',assessment:{...papers[1].assessment,level:'high'},recommendation:{bucket:'land'}};
+  const dataset={papers:[a,b],topics:{A:'Fusion',D:'Methods'},days:{'2026-10-10':{candidate_ids:[a.arxiv_id],paper_ids:[a.arxiv_id]}},prompt_template:'{{title}}',recommendation_views:{recent:{paper_ids:[a.arxiv_id,b.arxiv_id],counts:{water:99,land:99,general:99}}}};
+  const app=await setupUI(undefined,dataset);
+  const change=(id,value)=>{app.nodes.get(id).value=value;app.nodes.get(id).handlers.input();};
+  change('window','recent');
+  assert.equal(app.nodes.get('summary').textContent,'水路 1 篇 · 陆上 1 篇 · 通用方法 0 篇');
+  change('topic','D');
+  assert.equal(app.nodes.get('summary').textContent,'水路 0 篇 · 陆上 1 篇 · 通用方法 0 篇');
+  change('topic','');change('date','2026-10-10');
+  assert.equal(app.nodes.get('summary').textContent,'水路 1 篇 · 陆上 0 篇 · 通用方法 0 篇');
+  change('window','history');
+  assert.ok(app.nodes.get('summary').textContent.includes('总收录 2'));
+});
+
+test('old DOI browser backup migrates to canonical arxiv and keeps both analyses',async()=>{
+  const merged={...papers[0],doi:'10.1109/tits.2026.3703388',venue:'IEEE Transactions on Intelligent Transportation Systems',venue_type:'journal',resource_type:'journal_article',quality:{one_type:'JCR一区',jif:9.1,high_journal:true},reading:{state:'值得精读',analysis:'repository notes'}};
+  const old='doi:10.1109/tits.2026.3703388';
+  const dataset={papers:[merged],topics:{A:'Fusion'},days:{},aliases:{[old]:merged.arxiv_id},prompt_template:'{{title}}'};
+  const saved=JSON.stringify({schema_version:1,readings:{[old]:{state:'已精读',analysis:'browser notes'}}});
+  const app=await setupUI(saved,dataset);
+  assert.equal(app.elements().find(e=>e.tag==='select').value,'已精读');
+  assert.ok(app.elements().some(e=>e.tag==='pre' && e.textContent==='browser notes'));
+  assert.equal(app.find('期刊 DOI').href,'https://doi.org/10.1109/tits.2026.3703388');
+  assert.equal(app.find('arXiv 页面').href,merged.arxiv_url);
+  app.nodes.get('export').click();
+  const backup=JSON.parse(app.downloaded.at(-1));
+  assert.equal(backup.readings[old].analysis,'browser notes');
+  assert.equal(backup.readings[merged.arxiv_id].analysis,'browser notes');
+});
+
+const {updateStatus} = require('../docs/maritime.js');
+test('latest update status is concise; grouped details distinguish rate limit, truncation and empty runs',()=>{
+  const rows=[{run_id:'new',source:'crossref',status:'success',candidate_count:2},{run_id:'new',source:'crossref',status:'success',candidate_count:1}];
+  let s=updateStatus({source_runs:rows});
+  assert.equal(s.text,'最近更新成功');
+  assert.ok(!s.text.includes('crossref'));
+  assert.equal(s.details.split('crossref').length,2);
+  s=updateStatus({source_runs:[...rows,{run_id:'new',source:'openalex',status:'failed',error:'HTTP 429 budget_exhausted'}]});
+  assert.equal(s.text,'最近更新部分完成，部分来源未成功，其余数据已保存');
+  assert.ok(s.details.includes('限流1'));
+  s=updateStatus({source_runs:[{source:'crossref',status:'incomplete'}]});
+  assert.ok(s.text.includes('部分完成'));assert.ok(s.details.includes('截断1'));
+  assert.equal(updateStatus({source_runs:[{source:'arxiv',status:'failed',error:'timeout'}]}).text,'最近更新失败，请查看日志');
+  assert.ok(updateStatus({source_runs:[{source:'arxiv',status:'success',candidate_count:0}]}).text.includes('本次没有新论文'));
 });

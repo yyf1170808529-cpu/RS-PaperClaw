@@ -1,11 +1,27 @@
 {
   "schema_version": 2,
-  "quotas": {"water": 12, "land": 6, "general": 2},
+  "quotas": {
+    "water": 10,
+    "land": 6,
+    "general": 4
+  },
   "ccf_a": {
-    "names": ["CVPR", "ICCV", "NeurIPS", "ICML", "AAAI", "IJCAI", "ACL", "ACM Multimedia", "ACM MM"],
+    "names": [
+      "CVPR",
+      "ICCV",
+      "NeurIPS",
+      "ICML",
+      "ICLR",
+      "AAAI",
+      "ACL",
+      "ACM MM"
+    ],
     "checked_at": "2026-10-13",
-    "sources": ["https://www.ccf.org.cn/Academic_Evaluation/AI/", "https://www.ccf.org.cn/Academic_Evaluation/CGAndMT/"],
-    "note": "已核验官方在线目录的相关会议；清单之外不推断CCF等级。只对有正式发表证据且非Workshop/Short/Demo/Findings的论文加优先级。"
+    "sources": [
+      "https://www.ccf.org.cn/Academic_Evaluation/By_category/2026-03-31/870181.shtml",
+      "https://scdm-shu.github.io/ccf/2026-CCF-Ranking.pdf"
+    ],
+    "version": "2026第七版，正式发布2026-03-31；官方2026-04-09勘误说明已核对"
   },
   "cas_year": 2025,
   "query_terms": [
@@ -20,7 +36,11 @@
     "NeurIPS",
     "ICLR",
     "ICML",
-    "ACM Multimedia", "ACM MM", "AAAI", "IJCAI", "ACL"
+    "ACM Multimedia",
+    "ACM MM",
+    "AAAI",
+    "IJCAI",
+    "ACL"
   ],
   "limits": {
     "maritime": 12,
@@ -38,7 +58,12 @@
       "harbor",
       "harbour",
       "automatic identification system",
-      "inland waterway", "waterway", "waterborne", "inland navigation", "river", "canal"
+      "inland waterway",
+      "waterway",
+      "waterborne",
+      "inland navigation",
+      "river",
+      "canal"
     ],
     "perception": [
       "object detection",
@@ -79,7 +104,9 @@
       "vehicles",
       "robot",
       "robotics",
-      "road", "pedestrian", "railway"
+      "road",
+      "pedestrian",
+      "railway"
     ],
     "low": [
       "medical",
@@ -101,5 +128,102 @@
       "motion forecasting",
       "trajectory forecasting"
     ]
+  },
+  "version": 3,
+  "windows": {
+    "water": 90,
+    "land": 30,
+    "general": 30
+  },
+  "ccf": {
+    "version": "2026第七版，正式发布2026-03-31；官方2026-04-09勘误说明已核对",
+    "checked_at": "2026-10-13",
+    "official_release": "https://www.ccf.org.cn/Academic_Evaluation/By_category/2026-03-31/870181.shtml",
+    "catalog_copy": "https://scdm-shu.github.io/ccf/2026-CCF-Ranking.pdf",
+    "conferences": [
+      {
+        "name": "CVPR",
+        "grade": "A",
+        "aliases": [
+          "CVPR",
+          "Conference on Computer Vision and Pattern Recognition"
+        ]
+      },
+      {
+        "name": "ICCV",
+        "grade": "A",
+        "aliases": [
+          "ICCV",
+          "International Conference on Computer Vision"
+        ]
+      },
+      {
+        "name": "NeurIPS",
+        "grade": "A",
+        "aliases": [
+          "NeurIPS",
+          "NIPS",
+          "Neural Information Processing Systems"
+        ]
+      },
+      {
+        "name": "ICML",
+        "grade": "A",
+        "aliases": [
+          "ICML",
+          "International Conference on Machine Learning"
+        ]
+      },
+      {
+        "name": "ICLR",
+        "grade": "A",
+        "aliases": [
+          "ICLR",
+          "International Conference on Learning Representations"
+        ]
+      },
+      {
+        "name": "AAAI",
+        "grade": "A",
+        "aliases": [
+          "AAAI",
+          "AAAI Conference on Artificial Intelligence"
+        ]
+      },
+      {
+        "name": "ACL",
+        "grade": "A",
+        "aliases": [
+          "ACL",
+          "Annual Meeting of the Association for Computational Linguistics"
+        ]
+      },
+      {
+        "name": "ACM MM",
+        "grade": "A",
+        "aliases": [
+          "ACM MM",
+          "ACM Multimedia",
+          "ACM International Conference on Multimedia"
+        ]
+      },
+      {
+        "name": "IJCAI",
+        "grade": "B",
+        "aliases": [
+          "IJCAI",
+          "International Joint Conference on Artificial Intelligence"
+        ]
+      },
+      {
+        "name": "ECCV",
+        "grade": "B",
+        "aliases": [
+          "ECCV",
+          "European Conference on Computer Vision"
+        ]
+      }
+    ],
+    "note": "官网发布说明与勘误声明、CCF原目录高校镜像表核对；仅Full/Regular主会，排除Workshop/Demo/Short/Findings。未列入的会议待核验。"
   }
 }

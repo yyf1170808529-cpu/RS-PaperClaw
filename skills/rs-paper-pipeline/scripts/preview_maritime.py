@@ -5,6 +5,16 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import Timer
 import webbrowser
+import urllib.request
+
+
+def existing_service(port):
+    try:
+        with urllib.request.urlopen(f"http://127.0.0.1:{port}/maritime.html", timeout=2) as response:
+            text = response.read(20000).decode("utf-8")
+        return "maritime.js" in text and "个人科研论文库" in text
+    except (OSError, UnicodeError):
+        return False
 
 
 def main():
@@ -15,6 +25,11 @@ def main():
     docs = Path(__file__).resolve().parents[3] / "docs"
     if not (docs / "maritime.html").is_file() or not (docs / "maritime-data/library.json").is_file():
         parser.exit(1, "Missing reading page/data. Run maritime --action site first.\n")
+    if existing_service(args.port):
+        print("Reusing existing personal reading service.")
+        if not args.check:
+            webbrowser.open(f"http://127.0.0.1:{args.port}/maritime.html")
+        return
     try:
         server = ThreadingHTTPServer(("127.0.0.1", args.port), partial(SimpleHTTPRequestHandler, directory=str(docs)))
     except OSError as exc:

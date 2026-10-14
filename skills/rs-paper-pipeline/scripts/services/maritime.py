@@ -95,28 +95,28 @@ def load_library(root):
 
 
 def merge_candidates(library, candidates, dates, rules, source_topics):
+    from services.maritime_v2 import merge_records
     stamp = datetime.now(timezone.utc).isoformat()
-    identity_keys = {p["arxiv_id"]: key for key, p in library["papers"].items() if p.get("arxiv_id")}
+    prepared = []
     for paper in candidates:
         aid = canonical_arxiv_id(paper["arxiv_id"])
-        key = identity_keys.get(aid, aid)
-        identity_keys[aid] = key
-        previous = library["papers"].get(key, {})
-        merged = dict(previous)
-        # An older version from a date replay must not replace newer metadata.
-        if not previous or paper.get("updated", "") >= previous.get("updated", ""):
-            merged.update({k: v for k, v in paper.items() if v not in (None, "", [], {})
-                           and not (previous.get("publication_status") == "published" and k == "published")})
-        merged["arxiv_id"] = aid
-        merged["assessment"] = score_paper(merged, rules)
-        merged["first_seen"] = previous.get("first_seen", stamp)
-        merged["last_seen"] = stamp
-        merged["retrieved_dates"] = sorted(set(previous.get("retrieved_dates", [])) | {today().isoformat()})
-        merged["retrieved_topics"] = sorted(set(previous.get("retrieved_topics", [])) | set(source_topics))
-        library["papers"][key] = merged
+        previous = next((p for p in library["papers"].values() if p.get("arxiv_id") == aid), {})
+        # Preserve newer arXiv versions during date replay.
+        record = dict(previous) if previous and paper.get("updated", "") < previous.get("updated", "") else dict(paper)
+        record.update(paper_id=aid, arxiv_id=aid, metadata_source=sorted(set(record.get("metadata_source", [])) | {"arXiv"}))
+        record.setdefault("publication_date", paper["published"])
+        prepared.append(record)
+    original_schema = library.get("schema_version", 1)
+    merge_records(library, prepared, rules)
+    library["schema_version"] = original_schema
+    identities = {p["arxiv_id"]: k for k, p in library["papers"].items() if p.get("arxiv_id")}
+    for paper in candidates:
+        p = library["papers"][identities[canonical_arxiv_id(paper["arxiv_id"])]]
+        p["retrieved_dates"] = sorted(set(p.get("retrieved_dates", [])) | {today().isoformat()})
+        p["retrieved_topics"] = sorted(set(p.get("retrieved_topics", [])) | set(source_topics))
     for date in dates:
         day = library["days"].setdefault(date, {"candidate_ids": [], "searched_topics": []})
-        day["candidate_ids"] = sorted(set(day["candidate_ids"]) | {identity_keys[canonical_arxiv_id(p["arxiv_id"])] for p in candidates if p["published"] == date})
+        day["candidate_ids"] = sorted(set(day["candidate_ids"]) | {identities[canonical_arxiv_id(p["arxiv_id"])] for p in candidates if p["published"] == date})
         day["searched_topics"] = sorted(set(day["searched_topics"]) | set(source_topics))
         day["last_success"] = stamp
 
@@ -124,7 +124,8 @@ def merge_candidates(library, candidates, dates, rules, source_topics):
 def daily_data(library, date, rules):
     day = library["days"][date]
     candidates = [library["papers"][aid] for aid in day["candidate_ids"]]
-    selected = [p for p in candidates if p["assessment"]["level"] != "excluded"]
+    from services.maritime_validity import eligible_paper
+    selected = [p for p in candidates if p["assessment"]["level"] != "excluded" and eligible_paper(p)]
     selected.sort(key=lambda p: (-p["assessment"]["score"], p.get("paper_id") or p["arxiv_id"]))
     counts = Counter(p["assessment"]["primary_topic"] for p in selected)
     data = {"date": date, "candidate_count": len(candidates), "selected_count": len(selected),
@@ -135,24 +136,26 @@ def daily_data(library, date, rules):
             "paper_ids": [p.get("paper_id") or p["arxiv_id"] for p in selected[:rules["daily_limit"]]],
             "omitted_count": max(0, len(selected) - rules["daily_limit"])}
     if library.get("schema_version") == 2:
-        from services.maritime_v2 import assets, select_sections, select_recommendations
+        from services.maritime_v2 import assets, select_sections, recommendation_view
         _, policy = assets()
         data["sections"] = select_sections(selected, policy)
-        data["recommendations"] = select_recommendations(selected, policy)
+        view = recommendation_view(list(library["papers"].values()), policy, date)
+        data["recommendation_view"] = view
+        data["recommendations"] = view["groups"]
         data["recommendation_shortfalls"] = {k: limit - len(data["recommendations"][k]) for k, limit in policy["quotas"].items()}
         data["paper_ids"] = [aid for ids in data["recommendations"].values() for aid in ids]
-        data["omitted_count"] = len(selected) - len(data["paper_ids"])
+        data["omitted_count"] = sum(p.get("paper_id") not in data["paper_ids"] for p in selected)
     return data
 
 
 def render_daily(data, library):
     lines = [f'# 论文日报 {data["date"]}', "", "规则相关性仅用于启发式排序，不代表创新性或学术价值判断。", "",
         f'候选 {data["candidate_count"]}；入选 {data["selected_count"]}；高度相关 {data["high_count"]}；主专题统计 {data["topic_counts"]}。',
-        f'检索范围：{", ".join(data["searched_topics"])}；日报最多展示 {len(data["paper_ids"])} 篇，其余 {data["omitted_count"]} 篇可在候选库查看。', ""]
+        f'当日发表检索范围：{", ".join(data["searched_topics"])}；近期精选展示 {len(data["paper_ids"])} 篇，完整库仍保留。', ""]
     if not data["paper_ids"]:
         lines.append("本次重点推荐无入选论文；一般候选可在网页查看。" if "sections" in data else "本次成功检索范围内无入选论文。")
     if "recommendations" in data:
-        lines.extend(["重点推荐目标：水路60% / 陆上强相关30% / 通用高水平10%（12/6/2篇）。不足不补位。",
+        lines.extend(["重点推荐目标：水上交通50% / 陆上交通30% / 通用视觉多模态20%（10/6/4篇）。不足不补位。水上90天，陆上/通用30天；历史回溯按真实发表日期，不代表当日新发表。",
                       f'实际数量：{ {k: len(v) for k, v in data["recommendations"].items()} }；缺口：{data["recommendation_shortfalls"]}。', ""])
     last_section = None
     for aid in data["paper_ids"]:
@@ -161,18 +164,19 @@ def render_daily(data, library):
         if "recommendations" in data:
             section = p["recommendation"]["bucket"]
             if section != last_section:
-                lines.extend(["## " + {"water": "水路感知与关联", "land": "陆上强相关", "general": "通用方法（顶会优先，含arXiv）"}[section], ""])
+                lines.extend(["## " + {"water": "水路高水平期刊", "land": "陆上交通高水平期刊 / CCF A / arXiv", "general": "通用视觉多模态高水平期刊 / CCF A / arXiv"}[section], ""])
                 last_section = section
         lines.extend([f'### {html.escape(p["title"])}', "", f'[原文]({p.get("original_url") or p.get("arxiv_url", "")}) · [PDF]({p.get("pdf_url", "")})',
             f'作者：{html.escape(", ".join(p["authors"]))}  ', f'发布日期：{p["published"]}  ',
             f'主专题：{a["primary_topic"]}；专题：{", ".join(a["topics"])}；场景：{", ".join(a["applications"])}  ',
             f'相关性：{LEVELS[a["level"]]} ({a["score"]})  ', html.escape("；".join(a["reasons"])), "",
             html.escape(p["abstract"]), "", "<details><summary>中文阅读提示</summary>", "",
-            "请先核查研究问题与命中理由，再阅读方法和实验。此处未翻译摘要。若需深入分析，请在阅读页复制 Prompt 并向 DeepSeek 上传 PDF。", "", "</details>", ""])
+            "请核查研究问题和命中理由，再阅读方法和实验。中文如提供，为机器翻译或人工修订，英文原文保留。精读可复制Prompt到ChatGPT或DeepSeek，并确认实际读到PDF全文。", "", "</details>", ""])
+        if p.get("abstract_source", {}).get("license_url"):
+            lines.extend([f'[摘要许可]({p["abstract_source"]["license_url"]})', ""])
         if "quality" in p:
-            q = p["quality"]
-            lines.extend([f'发表：{html.escape(p.get("venue") or "未确认来源")}；状态 {p["publication_status"]}；DOI {p.get("doi") or "暂无"}',
-                f'中科院大类：{p.get("cas_partition") or "待核验"}（2025）；JCR JIF：' + ("；".join(f'{r["year"]} {r["category"]} {r["quartile"]}' for r in q["jcr_records"]) or "待核验"),
+            from services.maritime_v2 import compact_source
+            lines.extend([compact_source(p), f'DOI：{p.get("doi") or "暂无"}',
                 "第一作者单位：" + html.escape("；".join(p.get("first_author_affiliations", [])) or "暂未获取"), ""])
             translation = p.get("translation", {})
             if translation.get("zh") and translation.get("status") in ("machine", "manual"):
@@ -181,7 +185,7 @@ def render_daily(data, library):
 
 
 def build(root, library, rules):
-    from services.maritime_v2 import normalize_library, assets, select_sections
+    from services.maritime_v2 import normalize_library, assets, recommendation_view
     normalize_library(library, rules)
     days = {}
     for date in sorted(library["days"], reverse=True):
@@ -196,7 +200,10 @@ def build(root, library, rules):
     payload = {"schema_version": 2, "topics": {k: v["name"] for k, v in rules["topics"].items()},
                "papers": list(library["papers"].values()), "days": days,
                "aliases": library.get("aliases", {}), "source_runs": library.get("source_runs", []),
+               "update_summary": read_json(root / "papers/maritime/logs/latest-update.json", None),
                "recommendation_policy": policy,
+               "recommendation_views": {window: recommendation_view(list(library["papers"].values()), policy, today(), window)
+                                        for window in ("recent", "7", "14")},
                "prompt_template": (Path(__file__).resolve().parents[1] / "prompts/maritime_analysis.md").read_text(encoding="utf-8")}
     write_json(root / "docs/maritime-data/library.json", payload)
 
@@ -214,12 +221,23 @@ def import_backup(library, backup):
     if backup.get("schema_version") != 1 or not isinstance(backup.get("readings"), dict):
         raise ValueError("Expected schema_version=1 and readings object")
     records = {}
+    conflicts = []
+    record_sources = {}
     for raw_id, value in backup["readings"].items():
         aid = resolve_paper_id(library, raw_id)
         if aid not in library["papers"]:
             raise ValueError(f"Unknown paper {aid}; retrieve it first (nothing imported)")
-        records[aid] = validate_reading(value)
+        validated = validate_reading(value)
+        if aid in records and records[aid] != validated:
+            conflicts.append((aid, {"from": record_sources[aid], "field": "reading", "value": records[aid]}))
+        records[aid] = validated
+        record_sources[aid] = raw_id
+    for aid, conflict in conflicts:
+        library["papers"][aid].setdefault("merge_conflicts", []).append(conflict)
     for aid, value in records.items():
+        prior = library["papers"][aid].get("reading")
+        if prior and prior != value:
+            library["papers"][aid].setdefault("merge_conflicts", []).append({"from": aid, "field": "reading", "value": prior})
         library["papers"][aid]["reading"] = value
 
 
@@ -239,13 +257,18 @@ def resolve_paper_id(library, value):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="个人论文库（无 API Key，无第三方 Python 依赖）")
     parser.add_argument("--root", type=Path, default=REPO, help="归档根目录，默认仓库根目录")
-    parser.add_argument("--action", choices=["fetch", "rescore", "digest", "site", "import", "export", "doctor", "fetch-journals", "fetch-openalex", "fetch-all", "import-venues", "venue-audit", "translate", "install-model", "revise-translation", "prepare-pdf", "review-audit"], default="fetch")
+    parser.add_argument("--action", choices=["fetch", "update", "rescore", "digest", "site", "import", "export", "doctor", "fetch-journals", "fetch-openalex", "fetch-all", "import-venues", "venue-audit", "translate", "install-model", "revise-translation", "prepare-pdf", "review-audit", "verify", "dedup", "enrich", "translate-history"], default="fetch")
     parser.add_argument("--days", type=int, default=7)
     parser.add_argument("--date", help="指定一天 YYYYMMDD 或 YYYY-MM-DD")
     parser.add_argument("--topic", choices=list("ABCD"), action="append", help="可重复，默认全部")
     parser.add_argument("--max-pages", type=int, default=30)
     parser.add_argument("--page-size", type=int, default=100)
     parser.add_argument("--retries", type=int, default=3)
+    parser.add_argument("--task-timeout", type=int, default=180, help="单来源任务总上限秒；0仅用于明确禁用")
+    parser.add_argument("--translation-limit", type=int, help="覆盖配置中的每批最大翻译篇数")
+    parser.add_argument("--batches", type=int, default=1, help="历史翻译批次数；成功缓存自动断点续跑")
+    parser.add_argument("--retry-failed", action="store_true", help="将既往失败摘要重新纳入翻译队列")
+    parser.add_argument("--translation-timeout", type=int, help="中文翻译阶段总上限秒")
     parser.add_argument("--timeout", type=int, default=90)
     parser.add_argument("--file", type=Path, help="import/export 文件；import 支持网页 JSON 或单篇 Markdown")
     parser.add_argument("--id", help="导入 Markdown 的 arXiv ID")
@@ -255,18 +278,51 @@ def main(argv=None):
     parser.add_argument("--doi", help="按 DOI 获取正式元信息；仍独立核验质量")
     parser.add_argument("--limit", type=int, default=5, help="翻译/人工审查导出数量")
     parser.add_argument("--extract-text", action="store_true", help="prepare-pdf 时使用 pdftotext")
+    parser.add_argument("--all-history", action="store_true", help="verify 可选历史批量复查，仍受 --limit 限制")
+    parser.add_argument("--bootstrap", action="store_true", help="首次水上期刊回溯12个月")
     args = parser.parse_args(argv)
+    settings = read_json(Path(__file__).resolve().parents[1] / "config/maritime/translation.json", {})
+    mode = "history" if args.action == "translate-history" else "daily"
+    defaults = settings.get(mode, {"max_papers": 5, "seconds": 180})
+    args.translation_limit = args.translation_limit if args.translation_limit is not None else args.limit if args.limit != 5 else defaults["max_papers"]
+    args.translation_timeout = args.translation_timeout or defaults["seconds"]
+    args.retry_failed = args.retry_failed or settings.get("retry_failed", False)
     root = args.root.resolve()
     args.root = root
     rules = load_maritime_assets()
     library = load_library(root)
     try:
         from services import maritime_v2 as v2
+        if args.action == "update":
+            if not (1 <= args.page_size <= 100 and args.max_pages > 0 and args.retries > 0 and args.timeout > 0 and args.task_timeout >= 0 and args.translation_timeout > 0 and args.limit >= 0 and args.translation_limit >= 0):
+                raise ValueError("Invalid update paging/retry limits")
+            from services.maritime_update import run_update
+            return run_update(args, library, rules)
         if args.action.startswith("fetch-"):
             if not (1 <= args.days <= 366 and 1 <= args.page_size <= 2000 and args.max_pages > 0 and args.retries > 0 and args.timeout > 0):
                 raise ValueError("Invalid date/paging/retry limits")
             return v2.fetch_sources(args, library, rules)
-        if args.action == "import-venues":
+        if args.action == "translate-history":
+            if args.translation_limit < 1 or args.translation_timeout <= 0 or args.batches < 1:
+                raise ValueError("Positive translation limit/time/batches required")
+            from services.maritime_reading import translate_history
+            results = translate_history(root, library, rules, args.translation_limit, args.translation_timeout, args.batches, args.retry_failed)
+            print(json.dumps(results, ensure_ascii=False))
+            return 2 if any(r["failed"] for r in results) else 0
+        if args.action == "dedup":
+            print(json.dumps(v2.deduplicate_library(library, rules), ensure_ascii=False))
+        elif args.action == "enrich":
+            from services.maritime_metadata import enrich_missing
+            keys = [resolve_paper_id(library, args.id)] if args.id else None
+            print(json.dumps(enrich_missing(library, rules, root, keys, args.limit, args.timeout, args.retries), ensure_ascii=False))
+        elif args.action == "verify":
+            from services.maritime_validity import verify_records
+            v2.normalize_library(library, rules)
+            _, policy = v2.assets()
+            keys = [resolve_paper_id(library, args.id)] if args.id else (list(library["papers"]) if args.all_history else v2.recommendation_view(list(library["papers"].values()), policy, today())["paper_ids"])
+            checked = verify_records(library, keys, args.timeout, force=True, limit=args.limit)
+            print(json.dumps({"verified_count": len(checked), "records": {k: library["papers"][k]["validity"] for k in checked}}, ensure_ascii=False))
+        elif args.action == "import-venues":
             if not args.file:
                 raise ValueError("--file required")
             v2.import_venues(args.file)

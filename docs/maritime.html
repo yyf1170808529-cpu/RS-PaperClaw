@@ -12,16 +12,15 @@ main{max-width:1180px;margin:auto;padding:24px 20px}h1{margin:0}header{border-bo
 <p class="muted">基于 RS-PaperClaw。相关性为规则排序，不代表创新性评价。阅读状态和分析保存在本浏览器；请导出备份，跨设备使用需手动导入。</p>
 <a href="index.html">原遥感页面</a> · <a href="https://chatgpt.com/" target="_blank" rel="noreferrer">打开 ChatGPT</a> · <a href="https://chat.deepseek.com/" target="_blank" rel="noreferrer">打开 DeepSeek</a></header>
 <section class="toolbar" aria-label="筛选">
-<label>阅读范围<select id="window"><option value="history">全部已收录论文</option><option value="7">最近7天重点推荐</option><option value="14">最近14天重点推荐</option><option value="1">每日新论文</option></select></label>
+<label>阅读范围<select id="window"><option value="recent">近期精选（水上90天／陆上30天／通用30天）</option><option value="today">今日新发现</option><option value="7">最近7天重点推荐（水上90天）</option><option value="14">最近14天重点推荐（水上90天）</option><option value="history">全部已收录论文</option></select></label>
 <label>日期<select id="date"><option value="">全部日期 / 最新列表</option></select></label>
 <label>专题<select id="topic"><option value="">全部专题</option></select></label>
-<label>应用方向<select id="bucket"><option value="">全部方向</option><option value="water">水路</option><option value="land">陆上强相关</option><option value="general">通用方法（顶会优先）</option><option value="candidate">其他候选</option></select></label>
+<label>应用方向<select id="bucket"><option value="">全部方向</option><option value="water">水路</option><option value="land">陆上强相关</option><option value="general">通用方法</option><option value="candidate">其他候选</option></select></label>
 <label>相关性<select id="level"><option value="">全部入选</option><option value="high">高度相关</option><option value="transfer">方法可借鉴</option><option value="general">一般相关</option><option value="excluded">不相关候选</option></select></label>
 <label>排序<select id="sort"><option value="score">相关性优先</option><option value="date">最新发布</option></select></label>
 <label>期刊门槛<select id="quality"><option value="">全部来源</option><option value="high_journal">全部高水平期刊（OR）</option><option value="cas_one">中科院一区</option><option value="jcr_q1">JCR JIF Q1</option><option value="both">同时一区</option><option value="unverified">分区待核验</option></select></label>
-<label>推荐组<select id="section"><option value="">全部组</option><option value="maritime">海事重点推荐</option><option value="methods">跨领域高水平方法</option><option value="preprints">arXiv</option><option value="candidate">一般候选</option></select></label>
 <label>摘要<select id="language"><option value="both">中英对照</option><option value="zh">中文</option><option value="en">English</option></select></label>
 <input id="search" type="search" placeholder="搜索标题、摘要、关键词、作者" aria-label="搜索论文"></section>
 <section class="toolbar"><button id="export">导出 JSON 备份</button><label>导入 JSON 备份<input id="import" type="file" accept=".json"></label><span id="summary" class="muted"></span><a id="report" hidden>查看 Markdown 日报</a></section>
-<p id="message" role="status" aria-live="polite"></p><section id="papers" aria-label="论文列表"></section>
+<p id="message" role="status" aria-live="polite"></p><details id="update-details" hidden><summary>查看更新详情</summary><p id="update-detail-text" class="muted"></p></details><section id="papers" aria-label="论文列表"></section>
 </main><script src="maritime.js"></script></body></html>

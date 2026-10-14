@@ -9,15 +9,17 @@ if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "maritime":
     from services.maritime import main as maritime_main
     raise SystemExit(maritime_main(sys.argv[2:]))
 
-import daily_arxiv_cross_filter
-import daily_digest_llm_upgrade
-import doctor
-import paper_processor
-import reconcile_daily_issue_set
-import run_rs_daily_workday
-import sync_daily_reports_to_repo
-from services.issue_index import rebuild_index, save_index
-from pipeline_config import get_repo, load_config
+# Windows multiprocessing workers must not load the legacy Unix/LLM mode.
+if __name__ != "__mp_main__":
+    import daily_arxiv_cross_filter
+    import daily_digest_llm_upgrade
+    import doctor
+    import paper_processor
+    import reconcile_daily_issue_set
+    import run_rs_daily_workday
+    import sync_daily_reports_to_repo
+    from services.issue_index import rebuild_index, save_index
+    from pipeline_config import get_repo, load_config
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -11,48 +11,78 @@ import urllib.request
 import importlib.util
 
 
+def configure_argos():
+    private = Path(__file__).resolve().parents[4] / "papers/maritime/private/translation"
+    for variable, folder in (("XDG_DATA_HOME", "data"), ("XDG_CONFIG_HOME", "config"), ("XDG_CACHE_HOME", "cache"), ("STANZA_RESOURCES_DIR", "stanza")):
+        os.environ.setdefault(variable, str(private / folder))
+    os.environ["ARGOS_DEVICE_TYPE"] = "cpu"
+    os.environ.setdefault("ARGOS_INTRA_THREADS", "2")
+    os.environ.setdefault("OMP_NUM_THREADS", "2")
+
+
 def translate_one(paper, translator=None):
     original = paper.get("abstract", "")
     digest = hashlib.sha256(original.encode()).hexdigest()
     previous = paper.get("translation", {})
-    if previous.get("status") == "manual" or (previous.get("english_hash") == digest and previous.get("status") == "machine"):
+    if previous.get("status") == "manual" or (previous.get("english_hash") == digest and previous.get("status") == "machine" and previous.get("protection_revision") in (4, 5)):
         return previous
     if not original:
-        return {"status": "missing_english", "zh": "", "english_hash": digest}
+        return {"status": "missing_english", "error_type": "missing_english", "zh": "", "english_hash": digest}
     try:
         if translator is None:
-            os.environ["ARGOS_DEVICE_TYPE"] = "cpu"
+            configure_argos()
             from argostranslate import translate
             languages = translate.get_installed_languages()
             en = next((lang for lang in languages if lang.code == "en"), None)
             zh = next((lang for lang in languages if lang.code == "zh"), None)
             if not en or not zh:
                 raise RuntimeError("Install the optional en→zh Argos model first")
-            translator = en.get_translation(zh).translate
-        protected = {}
-        def protect(match):
-            token = f"ZXQTERM{len(protected)}QXZ"
-            protected[token] = match.group(0)
-            return token
-        text = re.sub(r"\$[^$]+\$|\b(?:AIS|Radar|LiDAR|DETR|[A-Z][A-Z0-9_-]{2,})\b", protect, original)
-        translated = translator(text)
-        if any(token not in translated for token in protected):
-            raise RuntimeError("Model changed protected technical terms; manual revision required")
-        for token, term in protected.items():
-            translated = translated.replace(token, term)
+            pair = en.get_translation(zh)
+            packaged = getattr(pair, "underlying", pair)
+            sentencizer = getattr(packaged, "sentencizer", None)
+            if sentencizer is not None and hasattr(sentencizer, "stanza_pipeline") and sentencizer.stanza_pipeline is None:
+                import stanza
+                # Argos' packaged Stanza tokenizer is already installed. Ordinary
+                # translation must not refresh remote resources or download models.
+                sentencizer.stanza_pipeline = stanza.Pipeline(lang=sentencizer.stanza_lang_code,
+                    dir=str(packaged.pkg.package_path / "stanza"), processors="tokenize", use_gpu=False,
+                    download_method=None, logging_level="WARNING")
+            translator = pair.translate
+        terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf-8"))
+        phrases = "|".join(re.escape(t) for t in sorted(terms, key=len, reverse=True))
+        pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z]{2,}(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{2,})\b)"
+        parts = re.split(pattern, original)
+        # Both word and number placeholders altered model output in real tests.
+        # Keep terms and boundary punctuation outside the model instead.
+        def prose(part):
+            if not re.search(r"[A-Za-z]", part):
+                return part
+            match = re.fullmatch(r"(\W*)(.*?)(\W*)", part, re.S)
+            leading, body, trailing = match.groups()
+            return leading + translator(body) + trailing
+        translated = "".join(terms.get(part.lower(), part) if i % 2 else prose(part)
+                             for i, part in enumerate(parts))
+        if any(terms.get(part.lower(), part) not in translated for part in parts[1::2]):
+            raise ValueError("term_restoration_failed: protected terminology missing")
         if not re.search(r"[\u4e00-\u9fff]", translated):
             raise RuntimeError("Translation contains no Chinese text")
         return {"status": "machine", "engine": "Argos Translate (CPU)", "zh": translated,
-            "english_hash": digest, "updated_at": datetime.now(timezone.utc).isoformat()}
+            "english_hash": digest, "protection_revision": 5, "updated_at": datetime.now(timezone.utc).isoformat()}
     except Exception as exc:
-        return {**previous, "status": "failed", "zh": previous.get("zh", ""), "error": str(exc), "english_hash": digest}
+        category = "dependency_missing" if isinstance(exc, ModuleNotFoundError) else "model_missing" if "optional en" in str(exc) else "term_restoration_failed" if "term_restoration_failed" in str(exc) else "model_runtime_error"
+        return {**previous, "status": "failed", "zh": previous.get("zh", ""), "error": str(exc), "error_type": category,
+                "english_hash": digest, "updated_at": datetime.now(timezone.utc).isoformat()}
 
 
 def install_model(path=None):
+    configure_argos()
     from argostranslate import package
     if path:
         package.install_from_path(path)
     else:
+        if any(p.from_code == "en" and p.to_code == "zh" for p in package.get_installed_packages()):
+            print("English-to-Chinese model already installed; no download needed.")
+            return
         package.update_package_index()
         model = next(p for p in package.get_available_packages() if p.from_code == "en" and p.to_code == "zh")
         package.install_from_path(model.download())
@@ -60,15 +90,23 @@ def install_model(path=None):
 
 def translate_available(library, keys):
     """Fetch never installs/downloads translation dependencies or models."""
-    if importlib.util.find_spec("argostranslate") is None:
-        return
+    counts = {"translated": 0, "cached": 0, "failed": 0, "missing_english": 0, "manual": 0}
     for key in keys:
         paper = library["papers"][key]
-        if paper.get("abstract") and paper.get("assessment", {}).get("level") != "excluded":
+        if paper.get("assessment", {}).get("level") != "excluded":
+            previous = paper.get("translation", {})
             paper["translation"] = translate_one(paper)
+            result = paper["translation"]
+            outcome = "manual" if result["status"] == "manual" else "cached" if result is previous else "translated" if result["status"] == "machine" else "missing_english" if result["status"] == "missing_english" else "failed"
+            counts[outcome] += 1
+            print(f"翻译 {key}: {outcome}" + (f" ({result.get('error_type')})" if outcome == "failed" else ""), flush=True)
+    return counts
 
 
 def prepare_pdf(paper, root, local_file=None, extract=False, timeout=20):
+    from services.maritime_validity import eligible_paper
+    if not eligible_paper(paper):
+        raise ValueError("Only valid research papers use the full-paper reading template")
     private = root / "papers/maritime/private/reading" / hashlib.sha256(paper["paper_id"].encode()).hexdigest()[:16]
     private.mkdir(parents=True, exist_ok=True)
     target = private / "paper.pdf"
@@ -112,3 +150,31 @@ def prepare_pdf(paper, root, local_file=None, extract=False, timeout=20):
     (private / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"PDF + Prompt prepared privately: {private}")
     return manifest
+
+
+def translation_order(library):
+    from services.maritime_v2 import rank_key
+    return [p["paper_id"] for p in sorted(library["papers"].values(), key=lambda p: (p.get("assessment", {}).get("level") == "high", bool(p.get("quality", {}).get("high_journal") or p.get("quality", {}).get("ccf_a")), rank_key(p)), reverse=True)]
+
+
+def translate_history(root, library, rules, max_papers, seconds, batches=1, retry_failed=False):
+    from services.maritime import library_path, write_json, build, load_library
+    from services.maritime_update import translate_budget
+    from update_maritime import update_lock
+    results = []
+    with update_lock(root / "papers/maritime/private/update.lock"):
+        library.clear()
+        library.update(load_library(root))
+        for index in range(batches):
+            started = datetime.now(timezone.utc).isoformat()
+            print(f"历史翻译批次 {index+1}/{batches}：每批最多{max_papers}篇，预算{seconds}s", flush=True)
+            result = translate_budget(library, translation_order(library), max_papers, seconds, lambda: write_json(library_path(root), library), retry_failed)
+            result.update(started_at=started, completed_at=datetime.now(timezone.utc).isoformat())
+            library.setdefault("translation_batches", []).append(result)
+            write_json(library_path(root), library)
+            results.append(result)
+            if not result["pending"] or result["failed"]:
+                break
+        build(root, library, rules)
+        write_json(library_path(root), library)
+    return results

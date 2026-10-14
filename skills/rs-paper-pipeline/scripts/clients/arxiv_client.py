@@ -523,3 +523,22 @@ def extract_abs_info(arxiv_id: str) -> dict[str, str]:
             "abstract_en": "",
             "date": datetime.now().strftime("%Y-%m-%d"),
         }
+
+
+def fetch_maritime_metadata(arxiv_id, timeout=20, retries=1):
+    """Bounded single-paper metadata lookup, reusing the existing arXiv transport."""
+    arxiv_id = canonical_arxiv_id(arxiv_id)
+    xml = fetch_query_with_fallback({"id_list": arxiv_id}, retries=retries, timeout=timeout)
+    entry = ET.fromstring(xml).find("atom:entry", ATOM_NAMESPACE)
+    if entry is None or canonical_arxiv_id(entry.findtext("atom:id", "", ATOM_NAMESPACE)) != arxiv_id:
+        raise ValueError("arXiv identity mismatch or missing entry")
+    return {"paper_id": arxiv_id, "arxiv_id": arxiv_id,
+            "title": " ".join(entry.findtext("atom:title", "", ATOM_NAMESPACE).split()),
+            "abstract": " ".join(entry.findtext("atom:summary", "", ATOM_NAMESPACE).split()),
+            "authors": [a.findtext("atom:name", "", ATOM_NAMESPACE) for a in entry.findall("atom:author", ATOM_NAMESPACE)],
+            "published": entry.findtext("atom:published", "", ATOM_NAMESPACE)[:10],
+            "publication_date": entry.findtext("atom:published", "", ATOM_NAMESPACE)[:10],
+            "doi": entry.findtext("arxiv:doi", "", ATOM_NAMESPACE).strip().lower(),
+            "journal_ref": entry.findtext("arxiv:journal_ref", "", ATOM_NAMESPACE).strip(),
+            "arxiv_url": "https://arxiv.org/abs/" + arxiv_id, "pdf_url": "https://arxiv.org/pdf/" + arxiv_id,
+            "metadata_source": ["arXiv"], "abstract_source": {"sources": ["arXiv"], "url": "https://arxiv.org/abs/" + arxiv_id}}

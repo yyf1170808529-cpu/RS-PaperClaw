@@ -31,10 +31,10 @@ class V2Tests(unittest.TestCase):
             for i in range(count):
                 samples.append({"paper_id": f"{bucket}-{i}", "recommendation": {"bucket": bucket}})
         result = v.select_recommendations(samples, self.policy)
-        self.assertEqual({k: len(ids) for k, ids in result.items()}, {"water": 12, "land": 6, "general": 2})
+        self.assertEqual({k: len(ids) for k, ids in result.items()}, {"water": 10, "land": 6, "general": 4})
         result = v.select_recommendations([p for p in samples if p["recommendation"]["bucket"] != "general"], self.policy)
         self.assertEqual(len(result["general"]), 0)
-        self.assertEqual(len(result["water"]), 12)
+        self.assertEqual(len(result["water"]), 10)
 
     def test_direction_allows_related_arxiv_and_does_not_guess_journal_quality(self):
         def tagged(title, level="high", formal=False):
@@ -44,15 +44,16 @@ class V2Tests(unittest.TestCase):
                 p.update(title=title, abstract="", assessment={"level": level})
                 p.pop("arxiv_id", None)
             return v.annotate(p, "test-id", self.venues, self.policy)["recommendation"]["bucket"]
-        self.assertEqual(tagged("Ship object detection"), "water")
+        self.assertEqual(tagged("Ship object detection"), "candidate")
         self.assertEqual(tagged("Vehicle object detection"), "land")
-        self.assertEqual(tagged("Vehicle object detection", "transfer"), "land")
+        self.assertEqual(tagged("Vehicle object detection", "transfer"), "candidate")
         self.assertEqual(tagged("Vehicle object detection", "general"), "candidate")
         self.assertEqual(tagged("General visual perception"), "general")
         self.assertEqual(tagged("Ship structural mechanics"), "candidate")
         self.assertEqual(tagged("General visual perception", formal=True), "candidate")
         self.venues["journals"][0]["jcr_records"] = [record()]
         self.assertEqual(tagged("General visual perception", formal=True), "general")
+        self.assertEqual(tagged("Ship object detection", formal=True), "water")
 
     def test_ccf_a_requires_verified_publication_and_outranks_arxiv(self):
         fake = {**paper(title="CVPR visual perception"), "assessment": {"level": "high"}}
@@ -72,7 +73,7 @@ class V2Tests(unittest.TestCase):
         self.rules = m.load_maritime_assets()
         self.venues, self.policy = v.assets()
         self.venues = {"journals": [{"id": "test", "name": "Test Journal", "issn": ["1234-5678"], "cas_records": [], "jcr_records": []}]}
-        self.formal = {**paper(), "issn": ["1234-5678"], "doi": "10.1234/a", "venue": "Test Journal", "venue_type": "journal", "publication_status": "published"}
+        self.formal = {**paper(), "issn": ["1234-5678"], "doi": "10.1234/a", "venue": "Test Journal", "venue_type": "journal", "publication_status": "published", "publication_evidence": {"source": "Crossref", "type": "journal-article", "url": "https://api.crossref.org/works/10.1234/a"}}
 
     def test_or_cas_only_jcr_only_both_and_unverified(self):
         journal = self.venues["journals"][0]

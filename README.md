@@ -225,3 +225,21 @@ python3 scripts/cli.py reconcile --date 20260317 --dry-run
    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=thinson/RS-PaperClaw&type=date&legend=top-left&sealed_token=0MxBU6_td-V1EzNAbnCRYKVXLAqwKtr5RKH-HgXo8QT7XJDEMeAc-yb7ISDKomfsK5rPEYmPuDywBcC-02-GKFvrThXHHdsXhPEmrVhNkpYX5fFLAwHt7HdecdjruzRiKUL6uxUeds8qm09ZJHCCO3m30-7zp7YBPnTTM0BzAvZwHG1tnFaXxtF3L5ns" />
  </picture>
 </a>
+
+
+### 个人阅读模式：V3.1 元数据修复
+
+日常双击桌面“论文更新”；只打开页面用 `start-maritime.cmd`。详见[简明操作指南](简明操作指南.md)。更新显示四阶段与最终退出状态，使用本地锁防止重复启动；单来源任务默认180秒上限、翻译阶段默认180秒，每次最多处理5篇新译文，成功缓存和人工修订不重翻。可用 `--task-timeout`、`--translation-timeout`、`--limit` 调整。
+
+历史库可单独执行 `maritime --action dedup` 去重，或 `maritime --action enrich --limit 5 --timeout 15 --retries 1` 补齐缺失英文摘要。不会重新全量检索，不生成替代摘要。正式发表信息优先，旧ID别名、分析冲突和翻译缓存保留。期刊指标按ISSN/eISSN或完全匹配的核验名称统一复用；网页只显示期刊名、一区标记与实际IF。
+
+真实修复与验证结果见 [MARITIME_V3_1_REPAIR_REPORT.md](MARITIME_V3_1_REPAIR_REPORT.md)。
+
+
+### V3.2 摘要覆盖与增量维护
+
+历史中文入口：双击 `补齐中文摘要.cmd`，或运行 `maritime --action translate-history --translation-limit 25 --batches 3 --translation-timeout 180`（使用 `.venv-maritime` 的Python）。逐篇保存，重复执行自动跳过成功缓存；`--retry-failed` 可重新尝试失败记录。日常更新优先新入选重点论文；最大篇数及时间预算可通过 `config/maritime/translation.json` 或CLI配置，不改变论文推荐配额。
+
+`enrich` 按本地历史/缓存→已关联arXiv→Crossref→OpenAlex→有限官方出版社页面补齐。OpenAlex免费Key读取环境变量 `OPENALEX_API_KEY`，Windows也读取用户环境变量；匿名额度耗尽后暂停到服务端重置时间，缓存仍可用，不无限重试。出版社内容必须核对DOI与完整标题，只把明确可再发布的CC BY/CC0摘要写入公开库；其他可读取摘要仅存于忽略提交的私有目录，禁止绕过登录、验证码和付费墙。
+
+顶部只显示简短更新状态，来源汇总默认折叠；检索截断、限流与失败的原始记录仍在日志。正常个人模式检索只保存元数据；PDF准备仍为用户主动操作。磁盘与真实验收见 [MARITIME_V3_2_FINAL_REPORT.md](MARITIME_V3_2_FINAL_REPORT.md)。

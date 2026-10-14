@@ -66,9 +66,42 @@
       "identifier_status": "seed_requires_crossref_identity_check",
       "enabled": true,
       "cas_records": [],
-      "jcr_records": [],
-      "verification_status": "unverified",
-      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+      "jcr_records": [
+        {
+          "scheme": "JCR",
+          "metric": "JIF Quartile",
+          "year": 2025,
+          "scope": "journal_overall",
+          "category": null,
+          "quartile": "Q1",
+          "verified": true,
+          "evidence": {
+            "kind": "institution",
+            "url": "https://www.iit.comillas.edu/publicacion/info_revista/en/204/ieee-transactions-on-intelligent-transportation-systems",
+            "checked_at": "2026-10-13",
+            "note": "University table explicitly labels JCR-JIF 2025 9.100 Q1, separately from SJR. Discipline breakdown not supplied; no disciplines inferred."
+          }
+        }
+      ],
+      "verification_status": "JIF verified; CAS2025 official major unverified",
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。",
+      "verified_aliases": [
+        "IEEE Transactions on Intelligent Transportation Systems"
+      ],
+      "jif_records": [
+        {
+          "metric": "Journal Impact Factor",
+          "value": 9.1,
+          "year": 2025,
+          "verified": true,
+          "evidence": {
+            "kind": "official",
+            "url": "https://ieee-itss.org/pub/t-its/",
+            "checked_at": "2026-10-13",
+            "note": "Official society page explicitly lists T-ITS Impact Factor: 9.1 (2025)"
+          }
+        }
+      ]
     },
     {
       "id": "tim",
@@ -117,7 +150,21 @@
         }
       ],
       "verification_status": "jcr_verified_cas_pending",
-      "notes": "JIF2025 and categories cross-checked; CAS official major 2025 remains unverified."
+      "notes": "JIF2025 and categories cross-checked; CAS official major 2025 remains unverified.",
+      "jif_records": [
+        {
+          "metric": "Journal Impact Factor",
+          "value": 7.0,
+          "year": 2025,
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://ieee-ims.org/publication/ieee-tim/metrics",
+            "checked_at": "2026-10-13"
+          },
+          "note": "出版社/学会Impact Factor快照；原页面未明确统计年份时保存null，不根据刊期年份推断。"
+        }
+      ]
     },
     {
       "id": "information-fusion",
@@ -130,7 +177,21 @@
       "cas_records": [],
       "jcr_records": [],
       "verification_status": "unverified",
-      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。",
+      "jif_records": [
+        {
+          "metric": "Journal Impact Factor",
+          "value": 15.5,
+          "year": null,
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://www.sciencedirect.com/journal/information-fusion/vol/50/suppl/C",
+            "checked_at": "2026-10-13"
+          },
+          "note": "出版社/学会Impact Factor快照；原页面未明确统计年份时保存null，不根据刊期年份推断。"
+        }
+      ]
     },
     {
       "id": "tmm",
@@ -184,7 +245,21 @@
       "cas_records": [],
       "jcr_records": [],
       "verification_status": "unverified",
-      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。",
+      "jif_records": [
+        {
+          "metric": "Journal Impact Factor",
+          "value": 7.6,
+          "year": null,
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems/about/policies",
+            "checked_at": "2026-10-13"
+          },
+          "note": "出版社/学会Impact Factor快照；原页面未明确统计年份时保存null，不根据刊期年份推断。"
+        }
+      ]
     },
     {
       "id": "tpami",
@@ -212,7 +287,21 @@
       "cas_records": [],
       "jcr_records": [],
       "verification_status": "unverified",
-      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。",
+      "jif_records": [
+        {
+          "metric": "Journal Impact Factor",
+          "value": 13.7,
+          "year": null,
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://signalprocessingsociety.org/publications-resources/ieee-transactions-image-processing/about-transactions-image-processing",
+            "checked_at": "2026-10-13"
+          },
+          "note": "出版社/学会Impact Factor快照；原页面未明确统计年份时保存null，不根据刊期年份推断。"
+        }
+      ]
     },
     {
       "id": "tcsvt",
@@ -239,7 +328,21 @@
       "cas_records": [],
       "jcr_records": [],
       "verification_status": "unverified",
-      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。"
+      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。",
+      "jif_records": [
+        {
+          "metric": "Journal Impact Factor",
+          "value": 7.6,
+          "year": null,
+          "verified": true,
+          "evidence": {
+            "kind": "publisher",
+            "url": "https://www.sciencedirect.com/journal/pattern-recognition/vol/178/suppl/C",
+            "checked_at": "2026-10-13"
+          },
+          "note": "出版社/学会Impact Factor快照；原页面未明确统计年份时保存null，不根据刊期年份推断。"
+        }
+      ]
     },
     {
       "id": "trc",

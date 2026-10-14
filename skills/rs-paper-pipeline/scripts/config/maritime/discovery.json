@@ -1,0 +1,28 @@
+{
+  "water": {
+    "days": 90,
+    "journal_ids": ["joes", "ocean-engineering", "joe", "tim", "information-fusion", "tgrs", "tip"],
+    "crossref": ["ship detection", "maritime fusion"],
+    "openalex": ["maritime ship visual detection fusion"]
+  },
+  "land": {
+    "days": 30,
+    "journal_ids": ["tiv", "tits", "tim", "information-fusion", "tip", "tmm", "tcsvt"],
+    "crossref": ["vehicle detection"],
+    "openalex": ["autonomous driving object detection sensor fusion"],
+    "arxiv": [
+      "(all:vehicle OR all:driving OR all:pedestrian) AND (all:\"object detection\" OR all:\"multi-object tracking\")",
+      "(all:driving OR all:robotics) AND (all:\"sensor fusion\" OR all:\"cross-modal\")"
+    ]
+  },
+  "general": {
+    "days": 30,
+    "journal_ids": ["tpami", "tip", "information-fusion", "pattern-recognition", "kbs", "tmm", "tcyb"],
+    "crossref": ["object detection", "multimodal fusion"],
+    "openalex": ["cross modal visual representation object detection"],
+    "arxiv": [
+      "(all:\"object detection\" OR all:segmentation OR all:tracking) AND (all:\"self-supervised\" OR all:\"foundation model\")",
+      "(all:visual OR all:vision) AND (all:\"missing modalities\" OR all:\"feature alignment\" OR all:\"relational reasoning\")"
+    ]
+  }
+}

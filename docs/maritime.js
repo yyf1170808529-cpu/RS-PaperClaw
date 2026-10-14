@@ -3,9 +3,47 @@ const STATES = ['待读', '已浏览', '值得精读', '已精读', '值得复�
 const LEVELS = {high: '高度相关', transfer: '方法可借鉴', general: '一般相关', excluded: '不相关'};
 const STORAGE = 'rs-paperclaw-maritime-readings-v1';
 const paperId = paper => paper.paper_id || paper.arxiv_id;
+const INVALID = new Set(['deleted','withdrawn','invalid']);
+const RESOURCE_TYPES = new Set(['dataset','software','other']);
+function recommendable(p) {
+  const b=p.recommendation?.bucket,q=p.quality||{};
+  return !INVALID.has(p.validity?.status) && !RESOURCE_TYPES.has(p.resource_type) && p.resource_type!=='unknown' && p.assessment?.level!=='excluded' &&
+    (b==='water' ? p.resource_type==='journal_article' && q.high_journal : ['land','general'].includes(b) && p.assessment.level==='high' && !p.recommendation.low_priority && ((p.resource_type==='journal_article' && q.high_journal) || (p.resource_type==='conference_paper' && q.ccf_a) || (p.resource_type==='preprint' && p.publication_status!=='published')));
+}
+function recommendationSummary(papers) {
+  const counts={water:0,land:0,general:0},seen=new Set();
+  for(const p of papers) if(!seen.has(paperId(p)) && recommendable(p)) {seen.add(paperId(p));counts[p.recommendation.bucket]++;}
+  return `水路 ${counts.water} 篇 · 陆上 ${counts.land} 篇 · 通用方法 ${counts.general} 篇`;
+}
 const SECTIONS = {maritime:'海事重点推荐',methods:'跨领域高水平方法',preprints:'arXiv',candidate:'一般候选库'};
 
+function updateStatus(data) {
+  const last=data.source_runs?.at(-1);
+  if(!last) return {text:'尚无更新记录',details:''};
+  const run=last.run_id?data.source_runs.filter(r=>r.run_id===last.run_id):[last];
+  const good=run.filter(r=>['success','incomplete'].includes(r.status)).length;
+  const complete=run.every(r=>r.status==='success');
+  const summary=data.update_summary?.run_id===last.run_id?data.update_summary:null;
+  const noNew=summary ? summary.added===0 : complete && run.every(r=>r.candidate_count===0);
+  let text=complete?'最近更新成功':good?'最近更新部分完成，部分来源未成功，其余数据已保存':'最近更新失败，请查看日志';
+  if(complete && noNew) text+='（本次没有新论文）';
+  const groups={};
+  for(const r of run) {
+    const name=r.source||'unknown';
+    const group=groups[name] ||= {success:0,failed:0,incomplete:0,limited:0};
+    if(r.status==='success') group.success++;
+    else if(r.status==='incomplete') group.incomplete++;
+    else if(/429|rate.?limit|budget_exhausted|额度/i.test(r.error||'')) group.limited++;
+    else group.failed++;
+  }
+  const details=Object.entries(groups).map(([name,g])=>`${name}：成功${g.success}，失败${g.failed}，限流${g.limited}，截断${g.incomplete}`).join('；');
+  return {text,details,complete,noNew};
+}
+
 function sourceLabel(paper) {
+  const q=paper.quality||{};
+  if(paper.venue_type==='journal') return `${paper.venue||'期刊'} · ${q.one_type||'待核验'} · IF ${q.jif==null?'暂无':Number.isInteger(q.jif)?q.jif.toFixed(1):q.jif}`;
+  if(paper.venue_type==='conference' && paper.publication_status==='published') return `${q.conference_name||paper.venue}${q.ccf_a?' · CCF A':['B','C'].includes(q.ccf_grade)?' · CCF '+q.ccf_grade:''}`;
   if(paper.publication_status==='published' && paper.venue) return paper.venue;
   return paper.arxiv_id ? 'arXiv' : paper.venue||'其他来源';
 }
@@ -19,12 +57,13 @@ function compareRecommendation(a,b) {
 }
 
 function filterPapers(papers, filters, days) {
-  const ids = filters.date ? new Set(days[filters.date]?.candidate_ids || days[filters.date]?.all_ids || []) : null;
+  const ids = filters.date ? new Set((filters.window && filters.window!=='history' ? days[filters.date]?.paper_ids : null) || days[filters.date]?.candidate_ids || days[filters.date]?.all_ids || []) : null;
   const search = (filters.search || '').toLowerCase();
   const end = filters.today || new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Shanghai'});
-  const start = !filters.date && filters.window && filters.window!=='history' ? new Date(new Date(`${end}T00:00:00Z`).getTime()-(Number(filters.window)-1)*86400000).toISOString().slice(0,10) : '';
-  return papers.filter(p => (!ids || ids.has(paperId(p))) &&
+  const start = !filters.date && ['7','14','1'].includes(filters.window) && !filters.backendView ? new Date(new Date(`${end}T00:00:00Z`).getTime()-(Number(filters.window)-1)*86400000).toISOString().slice(0,10) : '';
+  return papers.filter(p => !INVALID.has(p.validity?.status) && !RESOURCE_TYPES.has(p.resource_type) && (!ids || ids.has(paperId(p))) &&
     (!start || ((p.publication_date||p.published)>=start && (p.publication_date||p.published)<=end)) &&
+    (filters.window!=='today' || p.discovery_date===end) &&
     (!filters.section || p.recommendation?.section===filters.section) &&
     (!filters.bucket || p.recommendation?.bucket===filters.bucket) &&
     (!filters.quality || (filters.quality==='unverified' ? p.quality?.status==='unverified' : p.venue_type==='journal' && p.publication_status==='published' && p.quality?.[filters.quality])) &&
@@ -36,8 +75,12 @@ function filterPapers(papers, filters, days) {
 }
 
 function makePrompt(template, paper) {
-  const values = {...paper, pdf_url: paper.open_access_url || paper.pdf_url, authors: paper.authors.join(', ')};
-  return template.replace(/\{\{(title|authors|published|arxiv_url|pdf_url|abstract|doi|original_url|venue)\}\}/g, (_, key) => values[key]||'暂未获取');
+  if(RESOURCE_TYPES.has(paper.resource_type) || paper.resource_type==='unknown' || INVALID.has(paper.validity?.status)) return '';
+  const pdf = (paper.oa_evidence || /\.pdf(?:[?#]|$)/i.test(paper.open_access_url||'') ? paper.open_access_url : '') || paper.pdf_url;
+  let text=template;
+  if(!/^https?:\/\//.test(pdf||'')) text=text.split('<!-- FULLTEXT -->')[0];
+  const values = {...paper, pdf_url: pdf, authors: paper.authors.join(', ')};
+  return text.replace('<!-- FULLTEXT -->','').replace(/\{\{(title|authors|published|arxiv_url|pdf_url|abstract|doi|original_url|venue)\}\}/g, (_, key) => values[key]||'暂未获取');
 }
 
 function validateBackup(backup) {
@@ -57,7 +100,7 @@ function readingFor(paper, readings) {
   return readings[paperId(paper)] || paper.reading || {analysis: '', state: '待读'};
 }
 
-if (typeof module !== 'undefined') module.exports = {filterPapers, makePrompt, validateBackup, readingFor, STATES,compareRecommendation,paperId,sourceLabel};
+if (typeof module !== 'undefined') module.exports = {filterPapers, makePrompt, validateBackup, readingFor, STATES,compareRecommendation,paperId,sourceLabel,recommendationSummary,recommendable,updateStatus};
 
 if (typeof document !== 'undefined') {
   const $ = id => document.getElementById(id);
@@ -91,17 +134,17 @@ if (typeof document !== 'undefined') {
   }
   function render() {
     const filters = Object.fromEntries(['date', 'topic', 'level', 'sort', 'search','window','quality','section','bucket','language'].map(id => [id, $(id)?.value||'']));
+    const view=filters.date ? data.days[filters.date]?.recommendation_view : data.recommendation_views?.[filters.window];
+    filters.backendView=!!view;
     let papers = filterPapers(data.papers, filters, data.days);
-    let quotaSummary='';
-    if(filters.window && filters.window!=='history') {
-      const quotas=data.recommendation_policy?.quotas||{water:12,land:6,general:2};
-      const counts={};papers=papers.filter(p=>{const s=p.recommendation?.bucket;if(!(s in quotas))return false;counts[s]=(counts[s]||0)+1;return counts[s]<=quotas[s];});
-      const labels={water:'水路',land:'陆上强相关',general:'通用方法（顶会优先）'};
-      quotaSummary=' ｜ 目标60%/30%/10%；'+Object.entries(quotas).map(([k,n])=>`${labels[k]} ${Math.min(counts[k]||0,n)}/${n}`).join('，')+'；不足不补位';
+    if(view && filters.window!=='history' && filters.window!=='today') {
+      const ids=new Set(view.paper_ids);papers=papers.filter(p=>ids.has(paperId(p)) && recommendable(p));
+    } else if(filters.window && !['history','today'].includes(filters.window)) {
+      const quotas=data.recommendation_policy?.quotas||{water:10,land:6,general:4};
+      const counts={};papers=papers.filter(p=>{const s=p.recommendation?.bucket;if(!(s in quotas) || !recommendable(p))return false;counts[s]=(counts[s]||0)+1;return counts[s]<=quotas[s];});
     }
     const day = data.days[filters.date];
-    $('summary').textContent = day ? `候选 ${day.candidate_count} / 入选 ${day.selected_count} / 高度相关 ${day.high_count} / 主专题 ${Object.entries(day.topic_counts).map(([k,v]) => `${k}:${v}`).join(' ')} / 当前 ${papers.length}` : `当前 ${papers.length} 篇 / 候选库 ${data.papers.length} 篇`;
-    $('summary').textContent += quotaSummary;
+    $('summary').textContent = filters.window==='history' ? `当前 ${papers.length} 篇 / 总收录 ${data.papers.length} 条` : recommendationSummary(papers);
     $('report').hidden = !day;
     if (day) $('report').href = `maritime-data/reports/${filters.date.slice(0,7).replace('-', '')}/${filters.date.replaceAll('-', '')}.md`;
     $('papers').replaceChildren();
@@ -116,24 +159,23 @@ if (typeof document !== 'undefined') {
       article.append(node('h2', paper.title), node('p', `${paper.authors.join(', ')} · ${paper.published}`, 'muted'),
         node('p', `${LEVELS[assessment.level]} ${assessment.score} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
       const source=sourceLabel(paper);
-      article.append(node('p', source==='arXiv' ? source : `${SECTIONS[paper.recommendation?.section]||'一般候选库'} · ${source}`),
+      article.append(node('p', source),
         node('p', `第一作者：${paper.first_author||paper.authors[0]||'暂未获取'} ｜单位：${paper.affiliation_verified ? paper.first_author_affiliations.join('; ') : '暂未获取'}`, 'muted'));
-      if(paper.venue_type==='journal') article.append(node('p', `中科院大类（${quality.cas_year||2025}）：${paper.cas_partition ? paper.cas_partition+'区':'待核验'} ｜ JCR JIF：${quality.jcr_records?.map(r=>`${r.year} ${r.category} ${r.quartile}`).join('；')||'待核验'} ｜ DOI：${paper.doi||'暂未获取'}`, 'muted'));
-      else if(paper.doi) article.append(node('p',`DOI：${paper.doi}`,'muted'));
-      if(quality.ccf_a) article.append(node('p','CCF A 类会议（已核验发表来源，优先推荐）','muted'));
-      const proof=node('details');proof.append(node('summary','发表/分区证据与推荐理由'),node('pre',JSON.stringify({publication:paper.publication_evidence,cas:quality.cas_records,jcr:quality.jcr_records,reasons:paper.recommendation?.reasons},null,2),'analysis'));article.append(proof);
+      if(paper.doi) article.append(node('p',`DOI：${paper.doi}`,'muted'));
       const links = node('div', undefined, 'actions');
-      for (const [text, href] of [['原始论文', paper.open_access_url||paper.pdf_url||paper.original_url||paper.arxiv_url||''], ['ChatGPT 网页', 'https://chatgpt.com/'], ['DeepSeek 网页', 'https://chat.deepseek.com/']]) {
+      for (const [text, href] of [['原始论文', paper.open_access_url||paper.pdf_url||paper.original_url||paper.arxiv_url||''], ['ChatGPT 网页', 'https://chatgpt.com/'], ['DeepSeek 网页', 'https://chat.deepseek.com/'], [paper.venue_type==='journal' ? '期刊 DOI' : 'DOI 原文', paper.doi ? 'https://doi.org/'+paper.doi : ''], ['arXiv 页面', paper.arxiv_url||''], ['arXiv PDF', paper.arxiv_id ? 'https://arxiv.org/pdf/'+paper.arxiv_id : '']]) {
         if(!/^https?:\/\//.test(href)) continue;
         const link = node('a', text); link.href = href; link.target = '_blank'; link.rel = 'noreferrer'; links.append(link);
       }
       const prompt = makePrompt(data.prompt_template, paper);
-      const fallback = node('details'); fallback.append(node('summary', '查看 / 手动复制分析 Prompt'));
+      const fallback = node('details');
+      if(prompt) { fallback.append(node('summary', '查看 / 手动复制分析 Prompt'));
       const promptText = node('textarea'); promptText.value = prompt; promptText.readOnly = true; promptText.setAttribute('aria-label', '论文分析 Prompt'); fallback.append(promptText);
       links.append(button('复制分析 Prompt', async () => {
         try { await navigator.clipboard.writeText(prompt); message('Prompt 已复制。请粘贴到 ChatGPT 或 DeepSeek；如果无法读取 PDF 链接，再手动上传 PDF。'); }
         catch { fallback.open = true; promptText.focus(); promptText.select(); message('剪贴板不可用，请从展开区域手动复制 Prompt。'); }
       }));
+      }
       const stateLabel = node('label', '阅读状态'); const state = node('select');
       for (const name of STATES) { const option = node('option', name); option.value = name; state.append(option); }
       state.value = reading.state;
@@ -147,14 +189,23 @@ if (typeof document !== 'undefined') {
       const abstractTools=node('div',undefined,'actions');
       for(const [label,text]of [['复制英文摘要',paper.abstract],['复制中文摘要',chinese]]) if(text) abstractTools.append(button(label,async()=>{try{await navigator.clipboard.writeText(text);message('摘要已复制');}catch{message('剪贴板不可用，请选择摘要手动复制');}}));
       details.append(abstractTools,node('p',assessment.reasons.join('；')));
-      article.append(details, fallback);
+      const license=paper.abstract_source?.license_url;
+      if(/^https?:\/\//.test(license||'')) {const link=node('a','摘要来源与许可');link.href=license;link.target='_blank';link.rel='noreferrer';details.append(link);}
+      article.append(details); if(prompt) article.append(fallback);
       const analysis = node('details'); analysis.append(node('summary', reading.analysis ? '查看 / 编辑已有分析' : '粘贴论文分析'));
       const preview = node('pre', reading.analysis || '尚未保存分析', 'analysis');
       const editor = node('textarea'); editor.value = reading.analysis; editor.placeholder = '将 ChatGPT 或 DeepSeek 返回的 Markdown 粘贴到这里'; editor.setAttribute('aria-label', `${paper.title} 分析 Markdown`);
       const tools = node('div', undefined, 'actions');
       tools.append(button('保存分析', () => { if (persist(id, {analysis: editor.value, state: state.value})) preview.textContent = editor.value; }),
         button('导出 Markdown', () => download(`${id.replaceAll('/', '_').replaceAll(':','_')}-analysis.md`, editor.value, 'text/markdown;charset=utf-8')));
-      analysis.append(preview, editor, tools); article.append(analysis); $('papers').append(article);
+      analysis.append(preview, editor, tools);
+      const alternateReadings=[...(paper.merge_conflicts||[]).filter(c=>c.field==='reading'), ...Object.entries(data.aliases||{}).filter(([old,current])=>current===id && readings[old] && JSON.stringify(readings[old])!==JSON.stringify(reading)).map(([old])=>({from:old,value:readings[old]}))];
+      if(alternateReadings.length) {
+        const alternatives=node('details');alternatives.append(node('summary','合并前的阅读记录（已安全保留）'));
+        for(const c of alternateReadings) alternatives.append(node('p',c.from||'旧记录'),node('pre',c.value.analysis||c.value.state||''));
+        analysis.append(alternatives);
+      }
+      article.append(analysis); $('papers').append(article);
     }
   }
   async function init() {
@@ -168,7 +219,9 @@ if (typeof document !== 'undefined') {
       for (const date of Object.keys(data.days).sort().reverse()) { const option = node('option', date); option.value = date; $('date').append(option); }
       for (const [old,canonical] of Object.entries(data.aliases||{})) if(readings[old]&&!readings[canonical]) readings[canonical]=readings[old];
       for (const id of ['date','topic','level','sort','search','window','quality','section','bucket','language']) $(id)?.addEventListener('input', render);
-      if(data.source_runs?.length) {const last=data.source_runs.at(-1);const run=last.run_id?data.source_runs.filter(r=>r.run_id===last.run_id):[last];message(`最近来源任务：${run.some(r=>r.status!=='success')?'检索不完整':'指定来源检索成功'}；${run.map(r=>`${r.source}${r.journal?' / '+r.journal:''}: ${r.status}`).join('；')}。已成功的数据仍保留。`);}
+      const status=updateStatus(data);message(status.text);
+      if($('update-detail-text')) $('update-detail-text').textContent=status.details;
+      if($('update-details')) $('update-details').hidden=!status.details;
       $('export').addEventListener('click', () => {
         if (brokenStorage !== null) { download('maritime-readings-recovery.json', brokenStorage, 'application/json'); return; }
         const all = {...Object.fromEntries(data.papers.filter(p => p.reading).map(p => [paperId(p),p.reading])), ...readings};
