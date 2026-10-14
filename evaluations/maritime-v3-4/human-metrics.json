@@ -1,0 +1,8 @@
+{
+  "labeled": 0,
+  "ground_truth": "user supplied, never inferred from AI",
+  "rule_precision_at_5": null,
+  "rule_precision_at_10": null,
+  "ai_precision_at_5": null,
+  "ai_precision_at_10": null
+}

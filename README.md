@@ -243,3 +243,18 @@ python3 scripts/cli.py reconcile --date 20260317 --dry-run
 `enrich` 按本地历史/缓存→已关联arXiv→Crossref→OpenAlex→有限官方出版社页面补齐。OpenAlex免费Key读取环境变量 `OPENALEX_API_KEY`，Windows也读取用户环境变量；匿名额度耗尽后暂停到服务端重置时间，缓存仍可用，不无限重试。出版社内容必须核对DOI与完整标题，只把明确可再发布的CC BY/CC0摘要写入公开库；其他可读取摘要仅存于忽略提交的私有目录，禁止绕过登录、验证码和付费墙。
 
 顶部只显示简短更新状态，来源汇总默认折叠；检索截断、限流与失败的原始记录仍在日志。正常个人模式检索只保存元数据；PDF准备仍为用户主动操作。磁盘与真实验收见 [MARITIME_V3_2_FINAL_REPORT.md](MARITIME_V3_2_FINAL_REPORT.md)。
+# V3.4：可选 DeepSeek 筛选试验
+
+普通检索、翻译及手机日报继续使用无API流程，不会因设置密钥而自动付费。独立试验通过用户环境变量 `DEEPSEEK_API_KEY` 读取密钥，偏好与每日预算在 `skills/rs-paper-pipeline/scripts/config/maritime/semantic.json`，默认人民币2元、Flash非思考模式。
+
+```powershell
+python skills/rs-paper-pipeline/scripts/cli.py maritime --action evaluate-ai --sample-size 50 --ai-budget 2
+```
+
+结果及可人工标注表在 `evaluations/maritime-v3-4/`。成功缓存复用，原论文记录不覆盖；模型判断不能替代期刊/会议硬门槛。缺英文摘要先用既有 `--action enrich` 补全，不送模型猜测。填好 `human-labels.csv` 的0/1标签后：
+
+```powershell
+python skills/rs-paper-pipeline/scripts/cli.py maritime --action score-ai-labels
+```
+
+本轮试验与限制详见 `MARITIME_V3_4_API_EVALUATION_REPORT.md`。正式手机AI排序尚未启用；Actions仅新增手动试验工作流，需用户自行设置同名Secret，没有新增定时付费任务。

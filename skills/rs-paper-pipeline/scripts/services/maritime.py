@@ -261,8 +261,10 @@ def resolve_paper_id(library, value):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="个人论文库（无 API Key，无第三方 Python 依赖）")
     parser.add_argument("--root", type=Path, default=REPO, help="归档根目录，默认仓库根目录")
-    parser.add_argument("--action", choices=["fetch", "update", "rescore", "digest", "site", "import", "export", "doctor", "fetch-journals", "fetch-openalex", "fetch-all", "import-venues", "venue-audit", "translate", "install-model", "revise-translation", "prepare-pdf", "review-audit", "verify", "dedup", "enrich", "translate-history"], default="fetch")
+    parser.add_argument("--action", choices=["fetch", "update", "rescore", "digest", "site", "import", "export", "doctor", "fetch-journals", "fetch-openalex", "fetch-all", "import-venues", "venue-audit", "translate", "install-model", "revise-translation", "prepare-pdf", "review-audit", "verify", "dedup", "enrich", "translate-history", "evaluate-ai", "score-ai-labels"], default="fetch")
     parser.add_argument("--days", type=int, default=7)
+    parser.add_argument('--sample-size',type=int,default=50,help='独立AI评估试验样本数')
+    parser.add_argument('--ai-budget',type=float,help='本日DeepSeek预算上限人民币，默认2元')
     parser.add_argument("--date", help="指定一天 YYYYMMDD 或 YYYY-MM-DD")
     parser.add_argument("--topic", choices=list("ABCD"), action="append", help="可重复，默认全部")
     parser.add_argument("--max-pages", type=int, default=30)
@@ -297,6 +299,17 @@ def main(argv=None):
     library = load_library(root)
     try:
         from services import maritime_v2 as v2
+        if args.action=='score-ai-labels':
+            from services.semantic_evaluation import label_metrics
+            print(json.dumps(label_metrics(root),ensure_ascii=False))
+            return 0
+        if args.action=='evaluate-ai':
+            from services.semantic_evaluation import evaluate
+            if not 1<=args.sample_size<=50:raise ValueError('Experiment size must be 1..50')
+            result=evaluate(root,library,args.sample_size,args.ai_budget)
+            print(json.dumps({'evaluated':len(result['records']),'errors':len(result['errors']),
+                              'cost_upper_cny':result['cost_upper_cny'],'balance_delta_cny':result['balance_delta_cny']},ensure_ascii=False))
+            return 0 if len(result['records'])==args.sample_size else 2
         if args.action == "update":
             if not (1 <= args.page_size <= 100 and args.max_pages > 0 and args.retries > 0 and args.timeout > 0 and args.task_timeout >= 0 and args.translation_timeout > 0 and args.limit >= 0 and args.translation_limit >= 0):
                 raise ValueError("Invalid update paging/retry limits")

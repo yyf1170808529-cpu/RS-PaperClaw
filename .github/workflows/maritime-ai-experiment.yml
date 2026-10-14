@@ -1,0 +1,39 @@
+name: Maritime DeepSeek experiment (manual only)
+on:
+  workflow_dispatch:
+    inputs:
+      sample_size:
+        default: '50'
+        description: 'Real sample count 1..50'
+      budget_cny:
+        default: '2'
+        description: 'Daily upper budget in RMB'
+permissions:
+  contents: read
+concurrency:
+  group: maritime-deepseek-budget
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      SAMPLE_SIZE: ${{ inputs.sample_size }}
+      BUDGET: ${{ inputs.budget_cny }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: papers/maritime/private/deepseek
+          key: deepseek-experiment-${{ github.repository_id }}-${{ github.run_id }}
+          restore-keys: deepseek-experiment-${{ github.repository_id }}-
+      - run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action evaluate-ai --sample-size "$SAMPLE_SIZE" --ai-budget "$BUDGET"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: semantic-evaluation
+          path: evaluations/maritime-v3-4/
