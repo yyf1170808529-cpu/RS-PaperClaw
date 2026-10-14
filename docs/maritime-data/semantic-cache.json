@@ -218,6 +218,134 @@
       },
       "model": "deepseek-flash",
       "request_id": "98dc90ee-d717-4468-943e-60af57f4abe8"
+    },
+    "8c5e757fd0ebb31529608c6650893590fe12c415e5239586e15778f5e56a75b6": {
+      "paper_id": "2610.11113",
+      "title": "DiscoVL: Unveiling Disentangled C ross-Modal Representation Learning via Orthogonal Adversarial Regularization for V ision-Language Models",
+      "fingerprint": "8c5e757fd0ebb31529608c6650893590fe12c415e5239586e15778f5e56a75b6",
+      "evaluation": {
+        "paper_id": "2610.11113",
+        "task_type": "跨模态表征学习与对齐",
+        "direct_relevance": 4,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "a disentangled cross-modal representation learning framework that couples orthogonal adversarial regularization with structured cross-modal alignment for vision-language models",
+            "interpretation_zh": "提出解耦跨模态表征学习框架，结合正交对抗正则与结构化跨模态对齐，适用于视觉-语言模型。",
+            "inference": false
+          },
+          {
+            "quote_en": "enables bidirectional cross-modal feedback between visual and textual streams at each layer",
+            "interpretation_zh": "在每层实现视觉与文本流之间的双向跨模态反馈，增强跨模态交互。",
+            "inference": false
+          }
+        ],
+        "limitations": [
+          "未涉及雷达/AIS或船舶视觉任务",
+          "未验证在海上场景或传感器融合中的迁移性能"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态对齐与表征学习框架可迁移至视觉-AIS关联或跨模态匹配任务，但未涉及海上场景，需进一步验证迁移性。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "0e9de3cc-157f-4507-8d29-dba6d13b4b1a"
+    },
+    "609eef0a5fa8cf31cc7254646e79194a85ae73e1f183823676a0b8a8354e4f6d": {
+      "paper_id": "2610.11342",
+      "title": "Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation",
+      "fingerprint": "609eef0a5fa8cf31cc7254646e79194a85ae73e1f183823676a0b8a8354e4f6d",
+      "evaluation": {
+        "paper_id": "2610.11342",
+        "task_type": "三维点云表征学习",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a point cloud representation learning network that closely aligns with biological vision which employs an active, foveation-inspired processing strategy",
+            "interpretation_zh": "提出一种基于生物视觉启发的点云表征学习网络，采用主动注视处理策略。",
+            "inference": false
+          },
+          {
+            "quote_en": "design a point-focused attention, which simulates foveal vision at the visual focus through a competitive normalized attention mechanism",
+            "interpretation_zh": "设计点聚焦注意力，模拟中央凹视觉，通过竞争性归一化注意力机制增强局部特征。",
+            "inference": false
+          }
+        ],
+        "limitations": [
+          "面向点云数据，未涉及雷达/AIS或船舶图像",
+          "未验证在海上感知任务中的有效性"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "点云表征学习方法与船舶视觉或雷达-AIS关联任务相关性低，迁移到二维视觉-AIS关联需较大改动。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "0e9de3cc-157f-4507-8d29-dba6d13b4b1a"
+    },
+    "07538a2bdf5c1e7ec78b218f309e6925a5554f9de99869f6db268be2233964f4": {
+      "paper_id": "2610.09700",
+      "title": "What Makes Synthetic Hard Negatives Work in Vision-Language Pretraining?",
+      "fingerprint": "07538a2bdf5c1e7ec78b218f309e6925a5554f9de99869f6db268be2233964f4",
+      "evaluation": {
+        "paper_id": "2610.09700",
+        "task_type": "视觉-语言预训练中的难负样本挖掘",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "We analyze six representation-space synthesis strategies and identify two failure modes in their transfer to vision-language pretraining",
+            "interpretation_zh": "分析六种表征空间合成策略，识别其在视觉-语言预训练迁移中的两种失败模式。",
+            "inference": false
+          },
+          {
+            "quote_en": "SNAP, which generates intra-modal hard negatives that never involve the positive from either modality, avoiding both failure modes entirely",
+            "interpretation_zh": "提出SNAP方法，生成不包含正样本的模态内难负样本，避免两种失败模式。",
+            "inference": false
+          }
+        ],
+        "limitations": [
+          "未涉及雷达/AIS或船舶视觉数据",
+          "未在海上跨模态关联任务中评估"
+        ],
+        "decision": "候选",
+        "reason_zh": "通用视觉-语言难负样本挖掘方法，可能迁移至视觉-AIS跨模态匹配，但未验证海上场景。",
+        "confidence": 0.75
+      },
+      "model": "deepseek-flash",
+      "request_id": "0e9de3cc-157f-4507-8d29-dba6d13b4b1a"
+    },
+    "e10ca2530e41363a98bfa9c623e21cbe509014d9936e017949edcce988f8c661": {
+      "paper_id": "2610.09863",
+      "title": "Global Average Precision for Representation Learning",
+      "fingerprint": "e10ca2530e41363a98bfa9c623e21cbe509014d9936e017949edcce988f8c661",
+      "evaluation": {
+        "paper_id": "2610.09863",
+        "task_type": "表征学习中的排序损失",
+        "direct_relevance": 3,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "Swapping it into established recipes improves supervised metric learning, cross-modal alignment, and self-supervised pretraining",
+            "interpretation_zh": "将gSAP替换到现有流程中，可改进监督度量学习、跨模态对齐和自监督预训练。",
+            "inference": false
+          },
+          {
+            "quote_en": "it is a drop-in replacement for them and agnostic to the encoder, the modality, and the source of supervision",
+            "interpretation_zh": "gSAP可作为现有损失的即插即用替代，且与编码器、模态及监督来源无关。",
+            "inference": false
+          }
+        ],
+        "limitations": [
+          "未涉及雷达/AIS数据或船舶视觉任务",
+          "未在海上跨模态关联或检测任务中验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "通用排序损失gSAP可迁移至跨模态对齐任务，如视觉-AIS关联，但需在海上场景验证。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "0e9de3cc-157f-4507-8d29-dba6d13b4b1a"
     }
   }
 }

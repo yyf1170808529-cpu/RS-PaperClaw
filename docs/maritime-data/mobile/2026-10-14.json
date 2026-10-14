@@ -32,12 +32,12 @@
       "paper_id": "2610.11113",
       "title": "DiscoVL: Unveiling Disentangled C ross-Modal Representation Learning via Orthogonal Adversarial Regularization for V ision-Language Models",
       "source": "arXiv",
-      "reason": "通用方法与感知任务强相关；符合当前来源门槛；专题D",
+      "reason": "跨模态对齐与表征学习框架可迁移至视觉-AIS关联或跨模态匹配任务，但未涉及海上场景，需进一步验证迁移性。",
       "original_url": "https://arxiv.org/abs/2610.11113",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.11113",
       "score": 27,
       "level": "高度相关",
-      "ai_score": null,
+      "ai_score": 80,
       "abstract": "Pre-trained vision-language models excel across varied perception tasks, but adapting them to novel downstream settings without sacrificing generalization remains non-trivial. Existing parameter-efficient prompt learning method often yields inconsistent representations and fails to account for semantic distribution shifts. In this work, we present DiscoVL, a disentangled cross-modal representation learning framework that couples orthogonal adversarial regularization with structured cross-modal alignment for vision-language models. To address the insufficient cross-modal interaction, our DiscoVL designs a multi-branch low-rank residual aligner that decomposes representations into subspaces and enables bidirectional cross-modal feedback between visual and textual streams at each layer. Furthermore, while conventional triplet constraints overfit features to class centroids, we design an orthogonal regularization for adversarial triplet loss, which prevents centroid collapse and substantially boosts generalization. Evaluations on 15 benchmarks demonstrate that DiscoVL delivers consistent improvements over state-of-the-art methods for base-to-novel generalization, cross-dataset evaluation, and few-shot learning",
       "abstract_zh": "训练有素的视觉语言模式在各种感知任务中表现优异,但使其适应新的下游环境而不牺牲一般化仍然是非三角性的。 现有的参数高效的即时学习方法往往产生不一致的表示,并且不能说明语义分布的转变. 在这项工作中,我们介绍 DiscoVL, 一种分散的跨模式代表学习框架,即夫妇正统对抗性正规化,为视觉语言模式结构化的跨模式组合。 为了解决跨模式互动不足的问题,我们 DiscoVL 设计一个多分支的低阶剩余对齐器,将表达式分解为子空间,并使得每个层的视觉流和文字流之间能够双向的交叉模式反馈. 此外,虽然传统的三胞胎限制对类人称机器人的过度适应性,但我们设计了对抗性三胞胎损失的正交正规化,这可以防止人称机器人崩溃,并大大促进通化。 对15项基准的评价表明: DiscoVL 持续改进基础至创新通用、跨数据集评价和少时学习的先进方法"
     },
@@ -55,17 +55,17 @@
       "abstract_zh": "本文考察小说视图综合的作用 (NVS) 在几何表达学习中。 原则上, NVS 应说明三维场景结构的理由,从而允许可转移的多视图几何表示。 然而,现有的编码器 NVS 方法造成不良表现。 这并不是因为缺乏监督信号,而是因为建筑选择不引人注目:\\textit{spatily expresentive decodes},淡化了场景编码器的表示能力,和\\textit{低级像素-空间目标}阻碍特征学习. 我们在此 SNAP, (单位:千美元) 自监督 编码器-解码器变压器,既通过装设条件的本地解码器处理,又通过潜在空间重建目标处理. SNAP 任务不可知,我们显示它与特殊用途的几何监督方法具有竞争力. SNAP 也进行竞争性竞争 自监督 表现跨越五个任务:视觉本地化,姿势估计,点对等,深度估计,机器人操纵. 显著, SNAP'尽管计算和数据预算较低,但补丁特性呈现出新观点,即采用受到严格监督的模型。 在2D标准表示崩溃的相机移动下, SNAP 更优雅地降解,揭示出限制解码器的表达力会积极防止压制可转移几何结构. https://snap-nvs.github.io (英语)."
     },
     {
-      "paper_id": "2610.11342",
-      "title": "Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation",
+      "paper_id": "2610.09863",
+      "title": "Global Average Precision for Representation Learning",
       "source": "arXiv",
-      "reason": "通用方法与感知任务强相关；符合当前来源门槛；专题D",
-      "original_url": "https://arxiv.org/abs/2610.11342",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.11342",
+      "reason": "通用排序损失gSAP可迁移至跨模态对齐任务，如视觉-AIS关联，但需在海上场景验证。",
+      "original_url": "https://arxiv.org/abs/2610.09863",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.09863",
       "score": 22,
       "level": "高度相关",
-      "ai_score": null,
-      "abstract": "Synergistically capturing intricate local structures and global contextual dependencies has become a critical challenge in point cloud representation learning. To address this, we introduce PointLearner, a point cloud representation learning network that closely aligns with biological vision which employs an active, foveation-inspired processing strategy, thus enabling local geometric modeling and long-range dependency interactions simultaneously. Specifically, we first design a point-focused attention, which simulates foveal vision at the visual focus through a competitive normalized attention mechanism between local neighbors and spatially downsampled features. The spatially downsampled features are extracted by a pooling method based on learnable inducing points, which can flexibly adapt to the non-uniform distribution of point clouds as the number of inducing points is controlled and they interact directly with point clouds. Second, we propose a context-scan state space that mimics eye's saccade inference, which infers the overall semantic structure and spatial content in the scene through a scan path guided by the Hilbert curve for the bidirectional S6. With this focus-then-context biomimetic design, PointLearner demonstrates remarkable robustness and achieves state-of-the-art performance across multiple point cloud tasks.",
-      "abstract_zh": "协同捕捉复杂的地方结构和全球背景依赖性已成为点云表现学习中的一项关键挑战。 为了解决这个问题,我们介绍 PointLearner, 与生物视觉紧密结合的点云表示学习网络,采用积极、引力激发的处理策略,从而能够同时进行局部几何模型和远距离依赖相互作用。 具体地说,我们首先设计了一个以点为焦点的注意点,它通过当地邻居之间的竞争性正常化注意机制以及空间下取样的特征来模拟视觉焦点上的浮影。 空间下取样的特征是通过基于可学习诱导点的集合法提取的,随着诱导点数的控制,它们可以灵活地适应点云的非统一分布,并与点云直接相互作用. 其次,我们提出一个上下文扫描状态空间,以模仿眼的圣杯推论,通过希尔伯特曲线为双向S6引导的扫描路径,推断现场的整体语义结构和空间内容. 有了这个重点,当时的文字 生化设计, PointLearner 展现出显著的稳健性,在多点云任务中实现最先进的性能.."
+      "ai_score": 67,
+      "abstract": "Standard information retrieval metrics, such as mean Average Precision (mAP), assess performance one query at a time, based on how the similarities between a query and its positives compare against those with its negatives. The same holds for common representation learning losses, such as InfoNCE and per-query AP surrogates. None of them considers whether similarities are comparable across queries, which any system with a single decision threshold relies on. Global Average Precision (gAP) does, by ranking all query-candidate pairs in one list and computing a single AP. We introduce gSAP, a differentiable surrogate of gAP. It needs only a similarity matrix and a binary matrix marking the positive pairs, the same input as existing losses, so it is a drop-in replacement for them and agnostic to the encoder, the modality, and the source of supervision. Since it considers all possible pairwise comparisons in the batch jointly, it also remains trainable at low temperatures, a regime where per-query surrogates run out of gradient. Swapping it into established recipes improves supervised metric learning, cross-modal alignment, and self-supervised pretraining, where, to our knowledge, it is the first ranking loss to replace the community standard InfoNCE in the latter two. Its similarities are more consistent across queries, which drives the gains under a universal threshold. gSAP retrieves up to four times as many positive pairs as the strongest AP surrogate at the same precision, and it degrades the least when queries with no positives in the database are added. Beyond thresholding, models trained with gSAP also learn better representations, with higher transfer, $k$NN and zero-shot classification accuracy.",
+      "abstract_zh": "标准信息检索指标,例如: 平均精度均值 (mAP), 一次评估一个查询的性能,其依据是查询与正数之间的相似性如何与其负数相比较。 同样的情况也适用于共同的代表学习损失,例如: InfoNCE 和过油的AP代孕。 没有一个系统考虑在任何具有单一决定门槛的系统所依赖的查询中是否有相似之处。 全球平均精度 (gAP) does,通过将所有查询-扫描对数排在一个列表中并计算一个AP. 我们介绍 gSAP, 不同代孕者 gAP. 它只需要一个相似性矩阵和一个二进制矩阵来标记正对,与现有的损失一样输入,因此它是对正对的倒置替代,并且对编码器,模式,以及监督的来源不可知. 由于它考虑在批量中所有可能的对等比较,它在低温下仍然可以训练,这种制度是每桶代孕用完梯度的。 将其切入既定的食谱中,可改进监督的计量学习、跨模式的配合,以及 自监督 据我们所知,这是第一个取代社区标准的排名损失 InfoNCE 在后两段。 它的相似性在各种查询中更为一致,这推动了在普遍阈值下的收益. gSAP 以同样精度检索到最多为最强AP代位数四倍的正对,当数据库中没有正对的查询被添加时,其降解性最小. 在门槛之外,通过下列方法培训的模型: gSAP 也学习更好的表现,增加调动, $k$NN和零射门分类精确度."
     }
   ]
 }
