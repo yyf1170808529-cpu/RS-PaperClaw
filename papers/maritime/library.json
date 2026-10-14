@@ -200982,7 +200982,7 @@
         "Crossref"
       ],
       "first_seen": "2026-10-12T11:43:56.954968+00:00",
-      "last_seen": "2026-10-14T03:15:25.317583+00:00",
+      "last_seen": "2026-10-14T04:32:20.316813+00:00",
       "assessment": {
         "score": 0,
         "topic_scores": {},
@@ -201153,7 +201153,7 @@
         "Crossref"
       ],
       "first_seen": "2026-10-12T11:43:56.954968+00:00",
-      "last_seen": "2026-10-14T03:15:42.862364+00:00",
+      "last_seen": "2026-10-14T04:32:20.316813+00:00",
       "assessment": {
         "score": 13,
         "topic_scores": {
@@ -267843,6 +267843,29 @@
             "url": "https://openalex.org/W7169604068",
             "type": "article"
           }
+        },
+        {
+          "doi": "10.58286/33659",
+          "arxiv_id": null,
+          "title": "Traversing blades and where to find them in visual-language latent landscapes: Exploring contextual computer-vision domains and model compression for tower-radar rotor monitoring",
+          "authors": [
+            "Verein für Datenwissenschaften",
+            "Christian Kexel",
+            "SERCAN ALIPEK",
+            "Jochen Moll"
+          ],
+          "abstract": "Tower-radar computer vision (TRCV) represents an emerging application-oriented field of study. Here, image-type measurements are acquired from radar transceivers bound to the mast of wind power turbines and these radargrams subsequently get analyzed using data-driven algorithms. TRCV shows promise for reducing downtime and increasing safety of such renewable energy plants, accordingly, the respective monitoring systems should long-term perform real-time recognition of moving objects like rotor blades and their condition, disregard maintenance workers, identify birds and bats or unauthorized aerial vehicles, in order to trigger appropriate multi-faceted responses. This article focuses on the radar-only computer-vision task of classifying rotors without complementary costly instrumentation [1]. Progress in TRCV for blade monitoring remains, however, hindered by the limited publicly available data [2]. For this specialized task, recently [3] general-purpose feature extractors have proven robust to environmental and operational conditions and as a valuable building block in TRCV processing pipelines. Such large models, like OpenCLIP, have been pre-trained on internet-scale amounts of text-image pairs. They however (i) commonly still require additional data for transfer to dedicated use cases, as well as (ii) exhibit power demands or latencies incompatible with real-time resource-constrained application scenarios, models hence need to be compressed. In this paper, measured radargrams from field experiments are therefore complemented with the novel synthetic dataset SiWiRoRa as well as further open imagery. Here, several specialized image-type datasets are carefully compiled to span a context around the focal measured radargrams. Second, the main geometrical directions of this context landscape are explained by classical image statistics and with human perceptions collected from annotators. Third, large models are distilled towards lightweight capacity where it is found that both the synthetic dataset but also seemingly unrelated imagery can improve performance in blade classification. Accordingly, routes for enhancing the SiWiRoRa dataset are suggested and moreover implemented so as to further advance TRCV.",
+          "metadata_source": [
+            "OpenAlex"
+          ],
+          "publication_date": "2026-07-17",
+          "venue": "e-Journal of Nondestructive Testing",
+          "first_author_affiliations": [],
+          "publication_evidence": {
+            "source": "OpenAlex",
+            "url": "https://openalex.org/W7169604068",
+            "type": "article"
+          }
         }
       ],
       "doi": "10.58286/33659",
@@ -281515,6 +281538,30 @@
             "url": "https://openalex.org/W7204104650",
             "type": "editorial"
           }
+        },
+        {
+          "doi": "10.3389/fpls.2026.1924539",
+          "arxiv_id": null,
+          "title": "Editorial: Plant pest and disease model forecasting: enhancing precise and data-driven agricultural practices",
+          "authors": [
+            "Nathaniel K. Newlands",
+            "Vittorio Rossi",
+            "T. Thomidis"
+          ],
+          "abstract": "",
+          "metadata_source": [
+            "OpenAlex"
+          ],
+          "publication_date": "2026-08-24",
+          "venue": "Frontiers in Plant Science",
+          "first_author_affiliations": [
+            "Summerland Research and Development Centre, Science and Technology, Agriculture and Agri-Food Canada"
+          ],
+          "publication_evidence": {
+            "source": "OpenAlex",
+            "url": "https://openalex.org/W7204104650",
+            "type": "editorial"
+          }
         }
       ],
       "doi": "10.3389/fpls.2026.1924539",
@@ -281632,7 +281679,15 @@
         "reason": "unusually_long",
         "raw_hash": "5d1c99b252996363965292ad1903df2e5c0cc1dfc191c2b224d1450d1449d3de"
       },
-      "application_bucket": "other"
+      "application_bucket": "other",
+      "abstract_source": {
+        "sources": [
+          "OpenAlex"
+        ],
+        "url": "https://openalex.org/W7204104650",
+        "kind": "local_version"
+      },
+      "translation_pending": true
     },
     "2606.14741": {
       "metadata_records": [
@@ -371272,6 +371327,27 @@
             "url": "https://openalex.org/W7221001149",
             "type": "dataset"
           }
+        },
+        {
+          "doi": "10.5281/zenodo.23202720",
+          "arxiv_id": null,
+          "title": "Robustness Analysis of Reliability-Based Adaptive Sensor Fusion: Implementation and In-Depth Evaluation Based on CARLA InterFuser",
+          "authors": [
+            "Yoon Seok Choi",
+            "Sunjun Hwang"
+          ],
+          "abstract": "",
+          "metadata_source": [
+            "OpenAlex"
+          ],
+          "publication_date": "2026-10-07",
+          "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+          "first_author_affiliations": [],
+          "publication_evidence": {
+            "source": "OpenAlex",
+            "url": "https://openalex.org/W7221001149",
+            "type": "dataset"
+          }
         }
       ],
       "doi": "10.5281/zenodo.23202720",
@@ -371382,7 +371458,15 @@
         "reason": "unusually_long,possibly_glued_text",
         "raw_hash": "0106ae7365622f095317c8ca127619345939a5b8f42b3fbf224a2ca0be2fb359"
       },
-      "application_bucket": "general"
+      "application_bucket": "general",
+      "abstract_source": {
+        "sources": [
+          "OpenAlex"
+        ],
+        "url": "https://openalex.org/W7221001149",
+        "kind": "local_version"
+      },
+      "translation_pending": true
     },
     "doi:10.1088/1742-6596/3330/1/012023": {
       "metadata_records": [
@@ -514167,6 +514251,28 @@
             "url": "https://openalex.org/W7213956427",
             "type": "article"
           }
+        },
+        {
+          "doi": "10.31673/2409-7292.2026.032817",
+          "arxiv_id": null,
+          "title": "REAL-TIME SPATIO-TEMPORAL DEDUPLICATION IN DISTRIBUTED MULTITARGET TRACKING VIA A BOUNDED-DEGRADATION ARCHITECTURE",
+          "authors": [
+            "Д.І. Черноусов"
+          ],
+          "abstract": "Distributed multi-target tracking systems tend to fall apart under heavy load: processing delays grow, tracks mergeinto each other, and the root cause is usually unbounded algorithmic complexity combined with unpredictable memoryaccess patterns. This paper focuses on state estimation and spatio-temporal track deduplication across decentralizedprocessing nodes. The goal is to keep frame execution time deterministic and prevent identity swaps between tracks, evenduring dense swarm engagements. To accomplish this, the study uses maneuvering target models reaching 10gacceleration and simulated telemetry streams pushed to an 11× clutter saturation limit. The approach combines lock-freering buffering, structure-of-arrays memory layouts, flat prime-product spatial hash-grids with linear probing, andlocalized joint probabilistic data association. The results show that a sub-10 ms processing budget holds at 5,500 clutterpoints per frame, with a peak projected latency of 4.6 ms when all eight crossing locks are active simultaneously. Across1,000 simulated trials of symmetric high-g crossings, the framework produced zero label swaps and maintained consistenttracking through packet loss rates of up to 30%. The core scientific contribution is the formalization of the cache-hotparadox: under heavy clutter, a bounded full-rank Cholesky factorization running entirely in L1 cache outperforms thenominally cheaper Sherman-Morrison-Woodbury low-rank approximation, which gets bottlenecked by global memorylatency. A second contribution is an additive correction term for the NEES selection rule that absorbs the innovationinflation caused by low-rank process noise approximations, preventing false ownership handoffs across lossy networklinks.Keywords: real-time target tracking, hardware-software co-design, distributed state estimation, cache-hotparadox, joint probabilistic data association, track deduplication, bounded degradation, decentralized sensor networks.",
+          "metadata_source": [
+            "OpenAlex"
+          ],
+          "publication_date": "2026-09-15",
+          "venue": "Modern information security",
+          "first_author_affiliations": [
+            "Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського» Київ, Україна"
+          ],
+          "publication_evidence": {
+            "source": "OpenAlex",
+            "url": "https://openalex.org/W7213956427",
+            "type": "article"
+          }
         }
       ],
       "metadata_source": [
@@ -557644,6 +557750,19 @@
       "status": "failed",
       "error": "arXiv API unavailable: HTTP 429: Rate exceeded.",
       "elapsed_seconds": 64.65
+    },
+    {
+      "run_id": "2026-10-14T04:32:17.772562+00:00",
+      "time": "2026-10-14T04:32:17.772594+00:00",
+      "source": "crossref",
+      "direction": "water",
+      "journal": "ocean-engineering",
+      "query": "ship detection",
+      "start": "2026-07-17",
+      "end": "2026-10-14",
+      "status": "incomplete",
+      "candidate_count": 2,
+      "elapsed_seconds": 10.7
     }
   ],
   "aliases": {
@@ -558434,6 +558553,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-14T03:34:47.090588+00:00"
+    },
+    {
+      "missing_before": 918,
+      "missing_after": 918,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-14T04:33:07.192386+00:00"
     }
   ],
   "translation_batches": [

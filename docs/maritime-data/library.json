@@ -157621,7 +157621,7 @@
         "Crossref"
       ],
       "first_seen": "2026-10-12T11:43:56.954968+00:00",
-      "last_seen": "2026-10-14T03:15:25.317583+00:00",
+      "last_seen": "2026-10-14T04:32:20.316813+00:00",
       "assessment": {
         "score": 0,
         "topic_scores": {},
@@ -157749,7 +157749,7 @@
         "Crossref"
       ],
       "first_seen": "2026-10-12T11:43:56.954968+00:00",
-      "last_seen": "2026-10-14T03:15:42.862364+00:00",
+      "last_seen": "2026-10-14T04:32:20.316813+00:00",
       "assessment": {
         "score": 13,
         "topic_scores": {
@@ -217120,7 +217120,15 @@
         "reason": "unusually_long",
         "raw_hash": "5d1c99b252996363965292ad1903df2e5c0cc1dfc191c2b224d1450d1449d3de"
       },
-      "application_bucket": "other"
+      "application_bucket": "other",
+      "abstract_source": {
+        "sources": [
+          "OpenAlex"
+        ],
+        "url": "https://openalex.org/W7204104650",
+        "kind": "local_version"
+      },
+      "translation_pending": true
     },
     {
       "doi": "10.48550/arxiv.2606.14741",
@@ -283598,7 +283606,15 @@
         "reason": "unusually_long,possibly_glued_text",
         "raw_hash": "0106ae7365622f095317c8ca127619345939a5b8f42b3fbf224a2ca0be2fb359"
       },
-      "application_bucket": "general"
+      "application_bucket": "general",
+      "abstract_source": {
+        "sources": [
+          "OpenAlex"
+        ],
+        "url": "https://openalex.org/W7221001149",
+        "kind": "local_version"
+      },
+      "translation_pending": true
     },
     {
       "doi": "10.1088/1742-6596/3330/1/012023",
@@ -442674,28 +442690,41 @@
       "status": "failed",
       "error": "arXiv API unavailable: HTTP 429: Rate exceeded.",
       "elapsed_seconds": 64.65
+    },
+    {
+      "run_id": "2026-10-14T04:32:17.772562+00:00",
+      "time": "2026-10-14T04:32:17.772594+00:00",
+      "source": "crossref",
+      "direction": "water",
+      "journal": "ocean-engineering",
+      "query": "ship detection",
+      "start": "2026-07-17",
+      "end": "2026-10-14",
+      "status": "incomplete",
+      "candidate_count": 2,
+      "elapsed_seconds": 10.7
     }
   ],
   "update_summary": {
-    "run_id": "2026-10-14T03:14:43.113167+00:00",
-    "completed_at": "2026-10-14T03:35:43.881950+00:00",
+    "run_id": "2026-10-14T04:32:17.772562+00:00",
+    "completed_at": "2026-10-14T04:33:24.540142+00:00",
     "local_update": "partial",
-    "jobs": 42,
-    "successful": 37,
+    "jobs": 1,
+    "successful": 0,
     "incomplete": 1,
-    "failed": 4,
-    "added": 255,
+    "failed": 0,
+    "added": 0,
     "filled": 0,
     "merged": 0,
-    "before_count": 3082,
+    "before_count": 3337,
     "after_count": 3337,
     "translation": {
-      "translated": 5,
-      "cached": 189,
+      "translated": 0,
+      "cached": 219,
       "manual": 0,
       "failed": 0,
       "missing_english": 224,
-      "pending": 941,
+      "pending": 915,
       "skipped_failed": 2
     },
     "translation_failed": 0,
