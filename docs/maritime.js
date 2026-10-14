@@ -61,15 +61,15 @@ function filterPapers(papers, filters, days) {
   const search = (filters.search || '').toLowerCase();
   const end = filters.today || new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Shanghai'});
   const start = !filters.date && ['7','14','1'].includes(filters.window) && !filters.backendView ? new Date(new Date(`${end}T00:00:00Z`).getTime()-(Number(filters.window)-1)*86400000).toISOString().slice(0,10) : '';
-  return papers.filter(p => !INVALID.has(p.validity?.status) && !RESOURCE_TYPES.has(p.resource_type) && (!ids || ids.has(paperId(p))) &&
+  return papers.filter(p => !INVALID.has(p.validity?.status) && !RESOURCE_TYPES.has(p.resource_type) && p.resource_type!=='unknown' && (!ids || ids.has(paperId(p))) &&
     (!start || ((p.publication_date||p.published)>=start && (p.publication_date||p.published)<=end)) &&
     (filters.window!=='today' || p.discovery_date===end) &&
     (!filters.section || p.recommendation?.section===filters.section) &&
-    (!filters.bucket || p.recommendation?.bucket===filters.bucket) &&
+    (!filters.bucket || (filters.window==='history' ? (p.application_bucket || ({maritime:'water',traffic:'land',general:'general'}[p.recommendation?.application])) : p.recommendation?.bucket)===filters.bucket) &&
     (!filters.quality || (filters.quality==='unverified' ? p.quality?.status==='unverified' : p.venue_type==='journal' && p.publication_status==='published' && p.quality?.[filters.quality])) &&
     (!filters.topic || p.assessment.topics.includes(filters.topic)) &&
     (filters.level ? p.assessment.level === filters.level : p.assessment.level !== 'excluded') &&
-    `${p.title} ${p.abstract} ${p.authors.join(' ')} ${p.venue||''} ${p.doi||''} ${p.assessment.reasons.join(' ')}`.toLowerCase().includes(search))
+    `${paperId(p)} ${p.title} ${p.abstract} ${p.authors.join(' ')} ${p.venue||''} ${p.doi||''} ${p.assessment.reasons.join(' ')}`.toLowerCase().includes(search))
     .sort((a, b) => filters.sort === 'date' ? b.published.localeCompare(a.published) || b.assessment.score - a.assessment.score :
       compareRecommendation(a,b) || b.published.localeCompare(a.published) || paperId(a).localeCompare(paperId(b)));
 }
@@ -213,6 +213,8 @@ if (typeof document !== 'undefined') {
       const response = await fetch('maritime-data/library.json', {cache: 'no-cache'});
       if (!response.ok) throw new Error(`数据 HTTP ${response.status}；请先运行 maritime --action site`);
       data = await response.json();
+      const selected=typeof location!=='undefined' ? new URLSearchParams(location.search).get('paper') : null;
+      if(selected) { $('window').value='history'; $('search').value=selected; }
       try { const saved = localStorage.getItem(STORAGE); if (saved) { brokenStorage = saved; readings = validateBackup(JSON.parse(saved)); brokenStorage = null; } }
       catch (error) { message(`本地数据无法读取：${error.message}。原始存储未覆盖，请先备份。`); $('export').textContent = '导出备份（本地数据异常，请检查）'; }
       for (const [key, name] of Object.entries(data.topics)) { const option = node('option', `${key}. ${name}`); option.value = key; $('topic').append(option); }

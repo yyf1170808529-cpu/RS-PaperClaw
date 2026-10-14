@@ -6,6 +6,12 @@ const {filterPapers,makePrompt,validateBackup,readingFor} = require('../docs/mar
 const p = (id, topics, score, date, level='transfer') => ({arxiv_id:id,title:'Visual fusion',abstract:'Matching methods',authors:['Alice'],published:date,
   arxiv_url:`https://arxiv.org/abs/${id}`,pdf_url:`https://arxiv.org/pdf/${id}`,assessment:{topics,score,level,reasons:['cross-modal']}});
 const papers = [p('2610.00001',['A','C'],22,'2026-10-10','high'),p('2610.00002',['D'],12,'2026-10-11'),p('2610.00003',[],0,'2026-10-11','excluded')];
+
+test('history water uses scene while focus still uses quality bucket',()=>{
+  const candidate={...papers[0],application_bucket:'water',recommendation:{bucket:'candidate'}};
+  assert.equal(filterPapers([candidate],{window:'history',bucket:'water'},{}).length,1);
+  assert.equal(filterPapers([candidate],{window:'recent',bucket:'water'},{}).length,0);
+});
 test('filters topics, date membership, level, authors, reasons and sorting',()=>{
   const days={'2026-10-10':{candidate_ids:['2610.00001']}};
   assert.equal(filterPapers(papers,{topic:'C'},days).length,1);

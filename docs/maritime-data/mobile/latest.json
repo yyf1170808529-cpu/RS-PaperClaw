@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-14",
+  "notice": "规则推荐供阅读参考，不评价真实创新性；7天内避免重复，质量不足不凑数",
+  "papers": [
+    {
+      "paper_id": "2605.26524",
+      "title": "CmIVTP: Cross-Modal Interaction-Based Vessel Trajectory Prediction for Maritime Intelligence",
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "海事感知方向；已核验一区/Q1正式期刊；专题C",
+      "original_url": "https://doi.org/10.1109/tits.2026.3703388",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2605.26524"
+    },
+    {
+      "paper_id": "doi:10.1109/tits.2026.3710532",
+      "title": "Toward Robust Collaborative 3-D Object Detection via Two-Stage Cross-Domain Knowledge Transfer in Autonomous Driving",
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "陆上感知强相关；符合当前来源门槛；专题D",
+      "original_url": "https://doi.org/10.1109/tits.2026.3710532",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi:10.1109/tits.2026.3710532"
+    },
+    {
+      "paper_id": "2610.11113",
+      "title": "DiscoVL: Unveiling Disentangled C ross-Modal Representation Learning via Orthogonal Adversarial Regularization for V ision-Language Models",
+      "source": "arXiv",
+      "reason": "通用方法与感知任务强相关；符合当前来源门槛；专题D",
+      "original_url": "https://arxiv.org/abs/2610.11113",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.11113"
+    },
+    {
+      "paper_id": "2610.11342",
+      "title": "Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation",
+      "source": "arXiv",
+      "reason": "通用方法与感知任务强相关；符合当前来源门槛；专题D",
+      "original_url": "https://arxiv.org/abs/2610.11342",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.11342"
+    },
+    {
+      "paper_id": "2610.09700",
+      "title": "What Makes Synthetic Hard Negatives Work in Vision-Language Pretraining?",
+      "source": "arXiv",
+      "reason": "通用方法与感知任务强相关；符合当前来源门槛；专题D",
+      "original_url": "https://arxiv.org/abs/2610.09700",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.09700"
+    }
+  ]
+}

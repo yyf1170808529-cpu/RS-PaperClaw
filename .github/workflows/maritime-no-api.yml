@@ -67,12 +67,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add papers/maritime/library.json daily_reports/maritime docs/maritime-data
-          if ! git diff --cached --quiet; then
-            git commit -m 'Update personal paper archive (no API)'
-            git push
-          fi
-          echo 'GitHub archive sync succeeded. Pages publishing is a separate workflow.'
+          python skills/rs-paper-pipeline/scripts/update_maritime.py --sync-only --no-open
       - name: Report incomplete source update
         if: steps.retrieve.outcome == 'failure'
         run: |

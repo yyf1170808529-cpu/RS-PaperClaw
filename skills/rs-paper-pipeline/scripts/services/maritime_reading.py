@@ -21,6 +21,8 @@ def configure_argos():
 
 
 def translate_one(paper, translator=None):
+    from services.abstract_quality import apply_quality
+    apply_quality(paper)
     original = paper.get("abstract", "")
     digest = hashlib.sha256(original.encode()).hexdigest()
     previous = paper.get("translation", {})

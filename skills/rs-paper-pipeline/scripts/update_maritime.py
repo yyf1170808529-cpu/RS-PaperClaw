@@ -84,7 +84,14 @@ def execute_update(root, path, arguments):
     label = "更新完成" if code == 0 else "部分完成" if code == 2 else "更新失败"
     print(f"{label}：新增 {summary.get('added', 0)} 篇，补全 {summary.get('filled', 0)} 篇，合并重复 {summary.get('merged', 0)} 篇，中文翻译成功 {summary.get('translation', {}).get('translated', 0)} 篇，失败 {summary.get('failed', 0) + summary.get('translation_failed', 0)} 项。", flush=True)
     print(f"结束时间：{datetime.now().astimezone().isoformat()}；退出码 {code}；日志：{path}", flush=True)
-    print("本地更新已结束；GitHub同步：未执行；Pages发布：未执行。", flush=True)
+    if code in (0,2):
+        from services.maritime_sync import sync
+        result=sync(root)
+        print(f"本地更新：{label}；GitHub同步：{result['github_sync']}；Pages发布：{result['pages_publish']}。",flush=True)
+        if result['github_sync']!='success' or result['pages_publish'] not in ('success','workflow_run_pending'):
+            code=2
+    else:
+        print("本地更新失败；未执行GitHub同步。",flush=True)
     return code
 
 
@@ -94,6 +101,8 @@ def main():
     logs.mkdir(parents=True, exist_ok=True)
     path = logs / ("update-" + datetime.now().strftime("%Y%m%d-%H%M%S") + ".log")
     arguments = sys.argv[1:]
+    sync_only = '--sync-only' in arguments
+    arguments = [a for a in arguments if a != '--sync-only']
     no_open = "--no-open" in arguments
     arguments = [a for a in arguments if a != "--no-open"]
     proxy_config = root / "papers/maritime/private/network.json"
@@ -116,7 +125,12 @@ def main():
     if not only_open:
         try:
             with update_lock(root / "papers/maritime/private/update.lock"):
-                code = execute_update(root, path, arguments)
+                if sync_only:
+                    from services.maritime_sync import sync
+                    result=sync(root)
+                    code=0 if result['github_sync']=='success' and result['pages_publish'] in ('success','workflow_run_pending') else 2
+                else:
+                    code = execute_update(root, path, arguments)
         except UpdateAlreadyRunning:
             print("已有论文更新正在运行，本次未重复启动。等待原窗口显示结束结果即可。", flush=True)
             return 3

@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "repository": "yyf1170808529-cpu/RS-PaperClaw",
+  "branch": "main",
+  "paths": ["papers/maritime/library.json", "daily_reports/maritime/**", "docs/maritime-data/**", "docs/maritime-daily.html"],
+  "pages_workflow": "maritime-pages.yml"
+}

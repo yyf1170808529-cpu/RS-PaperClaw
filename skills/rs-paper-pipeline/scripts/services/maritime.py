@@ -40,6 +40,8 @@ def has(text, phrase):
 
 
 def score_paper(paper, rules):
+    from services.abstract_quality import apply_quality
+    apply_quality(paper)
     title, abstract = paper["title"], paper["abstract"]
     text = title + "\n" + abstract
     excluded = [term for term in rules["exclude"] if has(text, term)]
@@ -198,7 +200,7 @@ def build(root, library, rules):
             path.write_text(render_daily(data, library), encoding="utf-8")
     _, policy = assets()
     payload = {"schema_version": 2, "topics": {k: v["name"] for k, v in rules["topics"].items()},
-               "papers": list(library["papers"].values()), "days": days,
+               "papers": [{k:v for k,v in p.items() if k not in ('raw_abstract','abstract_history','translation_history','metadata_records','merge_conflicts')} for p in library["papers"].values()], "days": days,
                "aliases": library.get("aliases", {}), "source_runs": library.get("source_runs", []),
                "update_summary": read_json(root / "papers/maritime/logs/latest-update.json", None),
                "recommendation_policy": policy,
@@ -206,6 +208,8 @@ def build(root, library, rules):
                                         for window in ("recent", "7", "14")},
                "prompt_template": (Path(__file__).resolve().parents[1] / "prompts/maritime_analysis.md").read_text(encoding="utf-8")}
     write_json(root / "docs/maritime-data/library.json", payload)
+    from services.mobile_digest import build_mobile_digest
+    build_mobile_digest(root, library, today())
 
 
 def validate_reading(value):

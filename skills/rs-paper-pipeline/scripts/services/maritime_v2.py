@@ -121,7 +121,9 @@ def annotate(paper, key, venues, policy):
     text = paper.get("title", "") + "\n" + paper.get("abstract", "")
     signals = {kind: [term for term in terms if has(text, term)] for kind, terms in policy["signals"].items()}
     perception = bool(signals["perception"])
-    maritime = bool(signals["maritime"])
+    from services.abstract_quality import application
+    paper['application_bucket'] = application(paper, policy)
+    maritime = paper['application_bucket'] == 'water'
     low = bool(signals["low"] or (signals["trajectory"] and not perception))
     method = bool(signals["method"])
     related = paper.get("assessment", {}).get("level") != "excluded" and eligible_paper(paper)
@@ -214,7 +216,10 @@ def normalize_library(library, rules):
     from services.maritime import score_paper
     venues, policy = assets()
     for key, paper in library["papers"].items():
-        paper.setdefault("assessment", score_paper(paper, rules))
+        from services.abstract_quality import apply_quality
+        changed = apply_quality(paper)
+        if changed or 'assessment' not in paper:
+            paper['assessment'] = score_paper(paper, rules)
         annotate(paper, key, venues, policy)
     library["schema_version"] = 2
     return library
