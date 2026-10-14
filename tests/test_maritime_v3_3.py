@@ -81,5 +81,6 @@ class RepairTests(unittest.TestCase):
             self.assertEqual(build_mobile_digest(root,lib,date(2026,10,15))['papers'],[])
             html=(root/'docs/maritime-daily.html').read_text(encoding='utf8')
             self.assertNotIn('library.json',html)
+            self.assertIn('查看摘要',html)
 
 if __name__=='__main__':unittest.main()
