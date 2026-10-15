@@ -34,7 +34,11 @@ def translation_error(english, chinese):
     allowed = Counter(spelled[word.lower()] for word in re.findall(r'\b(?:'+'|'.join(spelled)+r')\b', english, re.I))
     if source_numbers - target_numbers or (target_numbers - source_numbers) - allowed:
         return "numeric_mismatch: numbers or percentages changed"
-    tokens = re.findall(r"\$[^$]+\$|\b(?:[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|\d+[A-Za-z][A-Za-z0-9_-]*|[A-Z][A-Z0-9+/-]{1,})\b", english)
+    for url in re.findall(r'https?://[^\s<>]+', english):
+        if url not in chinese:
+            return 'protected_url_missing: ' + url
+    source_text = re.sub(r'https?://[^\s<>]+', '', english)
+    tokens = re.findall(r"\$[^$]+\$|\b(?:[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|\d+[A-Za-z][A-Za-z0-9_-]*|[A-Z][A-Z0-9+/-]{1,})\b", source_text)
     for token, count in Counter(tokens).items():
         if '-' in token and not (re.search(r'\d', token) or re.match(r'[A-Z]{2}', token)):
             continue
@@ -100,7 +104,7 @@ def translate_one(paper, translator=None):
                 return next((v.value for v in values if v.value.strip() and len(v.value)>=len(text)*.08 and not repeated_text(v.value)), "")
         terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf-8"))
         phrases = "|".join(re.escape(t) for t in sorted(terms, key=len, reverse=True))
-        pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+[A-Za-z][A-Za-z0-9_-]*\b|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{2,})\b)"
+        pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+[A-Za-z][A-Za-z0-9_-]*\b|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{1,})\b)"
         parts = re.split(pattern, original)
         # Both word and number placeholders altered model output in real tests.
         # Keep terms and boundary punctuation outside the model instead.

@@ -61,6 +61,10 @@ class OfflineTranslationTests(unittest.TestCase):
         self.assertIn('numeric_mismatch',reading.translation_error('We tested five benchmarks.', '我们在6个基准上进行了测试。'))
         self.assertIsNone(reading.translation_error('RGB and RGB-T are used by ESMTrack.', 'RGB和RGB-T由ESMTrack使用。'))
         self.assertIn('protected_token_missing',reading.translation_error('RGB and RGB-T are used by ESMTrack.', 'RGB和RGB-T由EMETrack使用。'))
+        model={'abstract':'ESMTrack reports AMOTA/AP and is available at https://example.org/ESMTrack.'}
+        result=reading.translate_one(model,lambda text:'方法'+text)
+        self.assertEqual(result['status'],'machine')
+        self.assertIn('AMOTA/AP',result['zh'])
         english='This is a long description of an approach for associating objects in time. '*5
         sentence='这是一段足够长的中文完整句子，用来检查翻译输出是否出现了重复的长段落和重复描述'
         self.assertIn('repeated_sentence',reading.translation_error(english,sentence+'。'+sentence+'。'))
