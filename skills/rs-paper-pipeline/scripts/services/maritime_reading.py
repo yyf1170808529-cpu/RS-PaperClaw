@@ -1,5 +1,6 @@
 """Optional CPU translation and private single-paper PDF preparation."""
 from datetime import datetime, timezone
+from collections import Counter
 import hashlib
 import json
 import os
@@ -9,6 +10,49 @@ import shutil
 import subprocess
 import urllib.request
 import importlib.util
+
+
+def repeated_text(text):
+    return bool(re.search(r"([\u4e00-\u9fff][\u4e00-\u9fff，、, ]{1,18})\1{3,}", text))
+
+
+def translation_error(english, chinese):
+    """Conservative structural checks; these do not certify translation accuracy."""
+    if not isinstance(chinese, str) or not re.search(r"[\u4e00-\u9fff]", chinese):
+        return "no_chinese: translation contains no Chinese text"
+    if re.search(r"保险丝|硬底片|变压器|硬负面|硬负片", chinese):
+        return "terminology: obvious technical mistranslation"
+    terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf8"))
+    for term, expected in terms.items():
+        if re.search(r"\b" + re.escape(term) + r"\b", english, re.I) and expected not in chinese:
+            return "terminology: missing " + term + " → " + expected
+    numbers = lambda text: Counter(re.sub(r"\s+", "", n) for n in re.findall(r"\d+(?:\.\d+)?(?:\s*%)?", text))
+    source_numbers, target_numbers = numbers(english), numbers(chinese)
+    # Argos may render spelled-out "five benchmarks" as "5个基准". Such a
+    # supported conversion is not an added experimental result.
+    spelled = {word:str(i) for i,word in enumerate(('zero','one','two','three','four','five','six','seven','eight','nine','ten'))}
+    allowed = Counter(spelled[word.lower()] for word in re.findall(r'\b(?:'+'|'.join(spelled)+r')\b', english, re.I))
+    if source_numbers - target_numbers or (target_numbers - source_numbers) - allowed:
+        return "numeric_mismatch: numbers or percentages changed"
+    tokens = re.findall(r"\$[^$]+\$|\b(?:[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|\d+[A-Za-z][A-Za-z0-9_-]*|[A-Z][A-Z0-9+/-]{1,})\b", english)
+    for token, count in Counter(tokens).items():
+        if '-' in token and not (re.search(r'\d', token) or re.match(r'[A-Z]{2}', token)):
+            continue
+        if len(re.findall(r"(?<![A-Za-z0-9_/-])"+re.escape(token)+r"(?![A-Za-z0-9_/-])", chinese)) != count:
+            return "protected_token_missing: " + token
+    if len(chinese) < len(english) * .12 or len(chinese) > len(english) * 2:
+        return "length_mismatch: possible omission or repeated text"
+    sentences = [s.strip() for s in re.split(r"[。！？.!?]", chinese) if len(s.strip()) >= 30]
+    if repeated_text(chinese) or len(sentences) != len(set(sentences)):
+        return "repeated_sentence: duplicated long sentence"
+    return None
+
+
+def cached_translation(paper):
+    value = paper.get("translation", {})
+    return (value.get("status") == "machine"
+            and value.get("english_hash") == hashlib.sha256(paper.get("abstract", "").encode()).hexdigest()
+            and translation_error(paper.get("abstract", ""), value.get("zh")) is None)
 
 
 def configure_argos():
@@ -26,7 +70,7 @@ def translate_one(paper, translator=None):
     original = paper.get("abstract", "")
     digest = hashlib.sha256(original.encode()).hexdigest()
     previous = paper.get("translation", {})
-    if previous.get("status") == "manual" or (previous.get("english_hash") == digest and previous.get("status") == "machine" and previous.get("protection_revision") in (4, 5)):
+    if previous.get("status") == "manual" or cached_translation(paper):
         return previous
     if not original:
         return {"status": "missing_english", "error_type": "missing_english", "zh": "", "english_hash": digest}
@@ -49,10 +93,14 @@ def translate_one(paper, translator=None):
                 sentencizer.stanza_pipeline = stanza.Pipeline(lang=sentencizer.stanza_lang_code,
                     dir=str(packaged.pkg.package_path / "stanza"), processors="tokenize", use_gpu=False,
                     download_method=None, logging_level="WARNING")
-            translator = pair.translate
+            def translator(text):
+                # Reuse the installed Argos decoder's alternate hypotheses when
+                # its first result is empty or loops on a repeated phrase.
+                values = pair.hypotheses(text, num_hypotheses=4)
+                return next((v.value for v in values if v.value.strip() and len(v.value)>=len(text)*.08 and not repeated_text(v.value)), "")
         terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf-8"))
         phrases = "|".join(re.escape(t) for t in sorted(terms, key=len, reverse=True))
-        pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z]{2,}(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{2,})\b)"
+        pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+[A-Za-z][A-Za-z0-9_-]*\b|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{2,})\b)"
         parts = re.split(pattern, original)
         # Both word and number placeholders altered model output in real tests.
         # Keep terms and boundary punctuation outside the model instead.
@@ -61,17 +109,30 @@ def translate_one(paper, translator=None):
                 return part
             match = re.fullmatch(r"(\W*)(.*?)(\W*)", part, re.S)
             leading, body, trailing = match.groups()
-            return leading + translator(body) + trailing
+            connectors = {"a":"", "an":"", "the":"", "and":"和", "or":"或", "of":"的", "on":"在", "with":"结合", "to":"以", "by":"通过", "for":"用于", "in":"在", "from":"来自"}
+            if body.casefold() in connectors:
+                return leading + connectors[body.casefold()] + trailing
+            result = translator(body)
+            if not result.strip():
+                # Stanza can omit an unfinished fragment at a protected term
+                # boundary. Terminal punctuation keeps the same source words.
+                result = translator(body + '.').rstrip('.。')
+            if not isinstance(result, str) or not result.strip() or len(result) < len(body) * .08:
+                raise ValueError("translation_incomplete: model omitted segment: " + body[:80])
+            return leading + result + trailing
         translated = "".join(terms.get(part.lower(), part) if i % 2 else prose(part)
                              for i, part in enumerate(parts))
         if any(terms.get(part.lower(), part) not in translated for part in parts[1::2]):
             raise ValueError("term_restoration_failed: protected terminology missing")
         if not re.search(r"[\u4e00-\u9fff]", translated):
             raise RuntimeError("Translation contains no Chinese text")
+        error = translation_error(original, translated)
+        if error:
+            raise ValueError(error)
         return {"status": "machine", "engine": "Argos Translate (CPU)", "zh": translated,
-            "english_hash": digest, "protection_revision": 5, "updated_at": datetime.now(timezone.utc).isoformat()}
+            "english_hash": digest, "protection_revision": 6, "updated_at": datetime.now(timezone.utc).isoformat()}
     except Exception as exc:
-        category = "dependency_missing" if isinstance(exc, ModuleNotFoundError) else "model_missing" if "optional en" in str(exc) else "term_restoration_failed" if "term_restoration_failed" in str(exc) else "model_runtime_error"
+        category = "dependency_missing" if isinstance(exc, ModuleNotFoundError) else "model_missing" if "optional en" in str(exc) else "translation_validation_failed" if isinstance(exc, ValueError) else "model_runtime_error"
         return {**previous, "status": "failed", "zh": previous.get("zh", ""), "error": str(exc), "error_type": category,
                 "english_hash": digest, "updated_at": datetime.now(timezone.utc).isoformat()}
 

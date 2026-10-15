@@ -56,6 +56,16 @@ test('untrusted text and Markdown use safe text nodes, no HTML execution',()=>{
   assert.ok(source.includes('navigator.clipboard.writeText(prompt)'));
 });
 
+test('full library displays the selected local translation and specific failure',async()=>{
+  const local='跨模态表征用于目标跟踪和数据关联。';
+  const a={...papers[0],display_abstract_zh:local,translation:{status:'machine'},selected_translation:{status:'deepseek',zh:'历史译文'}};
+  const b={...papers[1],display_abstract_zh:'',display_translation_error:'Argos 英译中模型未安装或未就绪'};
+  const app=await setupUI(undefined,{papers:[a,b],topics:{},days:{},prompt_template:'{{title}}'});
+  assert.ok(app.elements().some(e=>e.textContent.includes('Argos 本地翻译') && e.textContent.includes(local)));
+  assert.ok(app.elements().some(e=>e.textContent.includes(b.display_translation_error)));
+  assert.ok(!app.elements().some(e=>e.textContent.includes('历史译文')));
+});
+
 // Exercise the actual event wiring with a lightweight DOM adapter, no browser dependency.
 async function setupUI(saved, suppliedDataset, search='') {
   const vm = require('node:vm');

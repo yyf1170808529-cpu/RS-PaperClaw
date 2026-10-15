@@ -73,7 +73,7 @@ def build_mobile_digest(root, library, date):
     from services.maritime import write_json, LEVELS
     from services.maritime_v2 import compact_source
     from services.semantic_evaluation import settings
-    from services.selected_translation import chosen_zh
+    from services.selected_translation import chosen_zh,translation_issue
     semantic_settings=settings()
     directory=root/'docs/maritime-data/mobile'
     directory.mkdir(parents=True,exist_ok=True)
@@ -91,12 +91,13 @@ def build_mobile_digest(root, library, date):
                       'original_url':p.get('original_url') or p.get('arxiv_url'),'reading_url':BASE+'maritime.html?paper='+quote(p['paper_id'],safe=''),
                       'score':p.get('assessment',{}).get('score',0),'rule_level':LEVELS.get(p.get('assessment',{}).get('level'),'待评估'),'level':final_level,
                       'ai_score':assessment['score'],'selection_source':'近期新论文' if stage==0 else '历史补荐' if stage==3 else '近期候选',
-                      'abstract':p.get('abstract') or '', 'abstract_zh':chosen_zh(p,daily=True)[0],'translation_source':chosen_zh(p,daily=True)[1]})
+                      'abstract':p.get('abstract') or '', 'abstract_zh':chosen_zh(p,daily=True)[0],'translation_source':chosen_zh(p,daily=True)[1],
+                      'translation_error':translation_issue(p)})
     payload={'date':str(date),'papers':items,'selection_audit':audit}
     write_json(target,payload)
     write_json(directory/'latest.json',payload)
     esc=html.escape
-    entries=''.join(f'<article><h2>{esc(p["title"])}</h2><p>{esc(p["source"])}</p><p>{esc(p["level"])} · AI相关分 {p["ai_score"]}/100 · {esc(p["selection_source"])}</p><p>{esc(p["reason"])}</p><details><summary>查看摘要（中文 / English）</summary><p>{esc(p["abstract_zh"] or "中文译文暂未完成，先看下方英文摘要。")}</p><p lang="en">{esc(p["abstract"] or "英文摘要暂未获取。")}</p></details><p><a href="{esc(p["original_url"] or "",quote=True)}">原文</a> · <a href="{esc(p["reading_url"],quote=True)}">阅读与笔记</a> · <button data-paper-id="{esc(p["paper_id"],quote=True)}">收藏</button></p></article>' for p in items)
+    entries=''.join(f'<article><h2>{esc(p["title"])}</h2><p>{esc(p["source"])}</p><p>{esc(p["level"])} · AI相关分 {p["ai_score"]}/100 · {esc(p["selection_source"])}</p><p>{esc(p["reason"])}</p><details><summary>查看摘要（中文 / English）</summary><p>{esc(p["abstract_zh"] or "本地中文翻译未完成：" + p["translation_error"] + "。英文摘要保留如下。")}</p><p lang="en">{esc(p["abstract"] or "英文摘要暂未获取。")}</p></details><p><a href="{esc(p["original_url"] or "",quote=True)}">原文</a> · <a href="{esc(p["reading_url"],quote=True)}">阅读与笔记</a> · <button data-paper-id="{esc(p["paper_id"],quote=True)}">收藏</button></p></article>' for p in items)
     bookmark_script="""<script>const key='rs-paperclaw-maritime-readings-v1';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'{"schema_version":1,"readings":{}}');if(saved.schema_version!==1||!saved.readings||typeof saved.readings!=='object'||Array.isArray(saved.readings))throw Error('bad backup')}catch{saved=null}for(const button of document.querySelectorAll('button[data-paper-id]')){const id=button.dataset.paperId;const update=()=>button.textContent=saved?.favorites?.includes(id)?'取消收藏':'收藏';update();button.onclick=()=>{if(!saved){alert('本地备份格式异常，请到完整论文库导出并修复');return}const favorites=new Set(saved.favorites||[]);if(favorites.has(id))favorites.delete(id);else favorites.add(id);const next={...saved,favorites:[...favorites]};try{localStorage.setItem(key,JSON.stringify(next));saved=next;update()}catch{alert('收藏保存失败')}}}</script>"""
     page=f'<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px}}</style><nav><a href="maritime-daily.html">每日精选</a> | <a href="maritime.html">完整论文库</a></nav><h1>每日精选 {date}</h1>{entries or "<p>今天没有完成AI审核的合格精选。</p>"}<p>收藏仅保存在本浏览器；换设备请在完整论文库导出、导入备份。</p>{bookmark_script}</html>'
     (root/'docs/maritime-daily.html').write_text(page,encoding='utf8')

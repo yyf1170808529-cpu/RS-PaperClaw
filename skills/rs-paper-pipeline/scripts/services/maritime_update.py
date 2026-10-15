@@ -84,7 +84,6 @@ def _translation_worker(queue, papers):
 
 
 def translate_budget(library, keys, limit, seconds, save, retry_failed=True):
-    import hashlib
     import multiprocessing
     from queue import Empty
     from services.maritime_validity import eligible_paper
@@ -99,7 +98,7 @@ def translate_budget(library, keys, limit, seconds, save, retry_failed=True):
             counts["manual"] += 1
         elif not p.get("abstract", "").strip():
             counts["missing_english"] += 1
-        elif t.get("status") == "machine" and t.get("english_hash") == hashlib.sha256(p["abstract"].encode()).hexdigest() and t.get("protection_revision") in (4, 5):
+        elif reading.cached_translation(p):
             counts["cached"] += 1
         elif t.get("status") == "failed" and not retry_failed:
             counts["skipped_failed"] += 1
@@ -121,7 +120,11 @@ def translate_budget(library, keys, limit, seconds, save, retry_failed=True):
                 key, result = queue.get(timeout=min(15, max(.01, deadline-time.monotonic())))
                 if key is None:
                     break
-                library["papers"][key]["translation"] = result
+                paper = library["papers"][key]
+                previous = paper.get("translation")
+                if previous and previous != result:
+                    paper.setdefault("translation_history", []).append(previous)
+                paper["translation"] = result
                 if result["status"] == "machine":
                     library["papers"][key].pop("translation_pending", None)
                 counts["translated" if result["status"] == "machine" else "failed"] += 1
@@ -214,8 +217,8 @@ def run_update(args, library, rules):
     print('[3/4] '+json.dumps(ai,ensure_ascii=False),flush=True)
     print('[译] 精选摘要翻译：开始；普通历史库翻译可单独运行',flush=True)
     from services.selected_translation import translate_selected
-    try:translations=translate_selected(args.root,library,end,semantic_config)
-    except Exception as exc:translations={'selected':0,'translated':0,'cached':0,'manual':0,'unlicensed':0,'failed':0,'cost_upper_cny':0,'priced_cost_cny':0,'reason':type(exc).__name__}
+    try:translations=translate_selected(args.root,library,end,semantic_config,args.translation_timeout)
+    except Exception as exc:translations={'selected':0,'translated':0,'cached':0,'manual':0,'failed':1,'cost_upper_cny':0,'priced_cost_cny':0,'reason':str(exc)}
     save()
     print('[译] '+json.dumps(translations,ensure_ascii=False),flush=True)
     stage = time.monotonic()

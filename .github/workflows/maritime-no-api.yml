@@ -49,8 +49,14 @@ jobs:
           path: papers/maritime/private/translation
           key: argos-en-zh-v3-${{ hashFiles('skills/rs-paper-pipeline/requirements-translation.txt') }}
       - name: Prepare translation model (reuse cache)
+        id: translation_model
         continue-on-error: true
-        run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action install-model
+        run: |
+          set -o pipefail
+          python skills/rs-paper-pipeline/scripts/cli.py maritime --action install-model 2>&1 | tee argos-setup.log
+      - name: Report unavailable local translation model
+        if: steps.translation_model.outcome == 'failure'
+        run: echo '::warning::Argos model preparation failed. See argos-setup.log; selected-paper translation will retain English and record per-paper errors.'
       - name: Environment check
         run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action doctor
       - uses: actions/cache/restore@v4
@@ -89,6 +95,7 @@ jobs:
           name: maritime-run-logs
           path: |
             maritime-run.log
+            argos-setup.log
             papers/maritime/logs/
           retention-days: 14
       - uses: actions/cache/save@v4

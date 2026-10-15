@@ -200,13 +200,13 @@ def build(root, library, rules):
             path.write_text(render_daily(data, library), encoding="utf-8")
     _, policy = assets()
     from services.semantic_evaluation import ranking_info,settings
-    from services.selected_translation import chosen_zh
+    from services.selected_translation import chosen_zh,translation_issue
     semantic_settings=settings()
     public_papers=[]
     for p in library['papers'].values():
         item={k:v for k,v in p.items() if k not in ('raw_abstract','abstract_history','translation_history','metadata_records','merge_conflicts')}
         info=ranking_info(p,semantic_settings if library.get('semantic_enabled',True) else {**semantic_settings,'enabled':False})
-        item.update(ai_score=info['score'],ai_demoted=info['demoted'],recommendation_status=info['path'] or 'candidate',ai_state=info['state'],display_abstract_zh=chosen_zh(p)[0])
+        item.update(ai_score=info['score'],ai_demoted=info['demoted'],recommendation_status=info['path'] or 'candidate',ai_state=info['state'],display_abstract_zh=chosen_zh(p)[0],display_translation_source=chosen_zh(p)[1],display_translation_error=translation_issue(p))
         public_papers.append(item)
     payload = {"schema_version": 2, "topics": {k: v["name"] for k, v in rules["topics"].items()},
                "papers": public_papers, "days": days,

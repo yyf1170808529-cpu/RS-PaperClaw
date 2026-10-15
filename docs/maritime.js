@@ -214,8 +214,8 @@ if (typeof document !== 'undefined') {
       const details = node('details'); details.append(node('summary', '中英文摘要与评分理由'));
       const translation=paper.translation||{};
       const chinese=paper.display_abstract_zh!==undefined ? paper.display_abstract_zh : translation.zh && ['manual','machine'].includes(translation.status) ? translation.zh : '';
-      const chineseSource=translation.status==='manual'?'人工修订':paper.selected_translation?.status==='deepseek' && paper.display_abstract_zh===paper.selected_translation.zh?'DeepSeek 翻译':'机器翻译';
-      if(filters.language!=='en') details.append(node('p', chinese ? `中文（${chineseSource}）：\n${chinese}` : '中文暂不可用；英文原文仍保留。','abstract'));
+      const chineseSource=translation.status==='manual'?'人工修订':'Argos 本地翻译';
+      if(filters.language!=='en') details.append(node('p', chinese ? `中文（${chineseSource}）：\n${chinese}` : `中文暂不可用：${paper.display_translation_error||'本地翻译尚未完成'}；英文原文仍保留。`,'abstract'));
       if(filters.language!=='zh' || !chinese) details.append(node('p',`English：\n${paper.abstract||'英文摘要暂未获取'}`,'abstract'));
       const abstractTools=node('div',undefined,'actions');
       for(const [label,text]of [['复制英文摘要',paper.abstract],['复制中文摘要',chinese]]) if(text) abstractTools.append(button(label,async()=>{try{await navigator.clipboard.writeText(text);message('摘要已复制');}catch{message('剪贴板不可用，请选择摘要手动复制');}}));
