@@ -31,3 +31,9 @@
 已通过项目Python 93项、Node 15项、原pipeline Python 49项。新增测试覆盖SNAP的具体迁移路径、模糊迁移不能充数、触觉操作降级、船舶/雷达AIS/视觉AIS/陆上协同检测直接路径、旧缓存失效、同日重建剔除旧低质条目。人工仅核对少量真实摘要和模型证据，不能当成完整标注集。
 
 尚有边界：只有摘要时不能验证迁移方法在海事数据上的效果；部分模型输出未过逐字证据校验，会回退保守规则或留在候选库；通用点云方法存在值得复核的可能，不能因为本次未入选就视为无学术价值。50/30/20始终是软比例，今日2篇属正常结果。
+
+## 发布验收与文件
+
+在原有一键更新和白名单同步机制下，先同步代码修复，再由 `services/maritime_sync.py` 仅提交公开数据，数据提交为 `3bbaa277ef08416f775c667e73fd481d82f2a24c`；没有使用force push。Pages运行 [38730231104](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/38730231104) 实际完成且结论为success。公开[手机日报](https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html) 实际HTTP 200，含2篇、2个摘要展开入口；可见SNAP与FFBL-Coop，已无SimpleTouch。本次核验通过公开网页请求，未声称代替用户实体手机操作。
+
+主要修改 `services/semantic_evaluation.py`、`services/mobile_digest.py`、`services/maritime.py`、`config/maritime/semantic.json`、`docs/maritime.js` 及相关Python/Node测试；论文主库中的原始摘要、旧规则评价、阅读记录和旧AI结果继续保留。发布更新 `papers/maritime/library.json`、`docs/maritime-data/library.json`、共享AI缓存、手机日报JSON/HTML/Markdown。桌面 **论文更新** 和云端原定时工作流继续调用同一流程。
