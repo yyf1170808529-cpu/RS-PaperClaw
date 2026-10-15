@@ -85,16 +85,16 @@ def current_evaluation(paper,config=None):
     except (ValueError,KeyError,TypeError):return None
 
 def ranking_info(paper,config=None):
-    fallback=direct_task(paper)
     value=current_evaluation(paper,config)
-    if not value or value['confidence']<.6:
-        return {'score':None,'eligible':fallback,'demoted':not fallback,'path':'direct_rule' if fallback else None,
-                'reason':'标题与摘要明确对应感知任务；AI尚未给出充分判断' if fallback else None,
+    if not value or value['confidence']<.7:
+        return {'score':None,'eligible':False,'demoted':True,'path':None,'reason':None,
                 'state':'unassessed' if not value else 'uncertain'}
+    fallback=direct_task(paper)
     direct=max(value['direct_relevance'],4) if fallback else value['direct_relevance']
     path=value['transfer_path']
-    direct_ok=direct>=4 and bool(value['method_evidence'] or fallback)
-    transfer_ok=value['transferability']>=3 and path is not None and bool(value['method_evidence'])
+    direct_ok=direct>=4 and bool(value['method_evidence'])
+    transfer_ok=(value['decision']!='不推荐' and value['transferability']>=3 and
+                 path is not None and bool(value['method_evidence']))
     eligible=direct_ok or transfer_ok
     reason=value['reason_zh'] if eligible and value['method_evidence'] else None
     if transfer_ok and not direct_ok:
@@ -109,7 +109,7 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     import subprocess
     from clients.deepseek_client import api_key,complete
     from services.maritime import read_json,write_json
-    from services.maritime_v2 import assets,recommendation_view
+    from services.mobile_digest import candidate_pool,select_daily
     from update_maritime import update_lock
     config=settings()
     summary={'status':'disabled','processed':0,'cached':0,'failed':0,'cost_upper_cny':0.0,'priced_cost_cny':0.0,'unsettled_upper_cny':0.0,'tokens':0,'missing_abstract':0}
@@ -119,13 +119,9 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     shared=read_json(cache_path,{'schema_version':1,'records':{}})
     directory=root/'papers/maritime/private/deepseek'
     directory.mkdir(parents=True,exist_ok=True)
-    _,policy=assets()
-    pool_policy={**policy,'quotas':{k:max(20,v) for k,v in policy['quotas'].items()}}
-    groups=recommendation_view(list(library['papers'].values()),pool_policy,end)['groups']
-    ids=[]
-    for offset in range(max(map(len,groups.values()),default=0)):
-        ids.extend(group[offset] for group in groups.values() if offset<len(group))
-    ids=list(dict.fromkeys([k for k in new_keys if k in ids]+ids))
+    rows=candidate_pool(root,library,end,new_keys)
+    ids=[p['paper_id'] for p,_ in rows]
+    summary['candidate_count']=len(ids)
     pending=[]
     for key in ids:
         p=library['papers'][key]
@@ -142,6 +138,10 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     if type(maximum) is not int or maximum<0:raise ValueError('AI candidate limit must be nonnegative integer')
     pending=pending[:maximum]
     try:
+        selected,audit=select_daily(root,library,end,new_keys,config)
+        summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'])
+        if len(selected)>=5:
+            summary['status']='cached';write_json(cache_path,shared);return summary
         if not pending:
             summary['status']='cached';write_json(cache_path,shared);return summary
         api_key()
@@ -185,6 +185,8 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         starting_reserved=account.get('reserved_cny',0)
         with update_lock(directory/'experiment.lock'):
             for offset in range(0,len(pending),config['batch_size']):
+                selected,_=select_daily(root,library,end,new_keys,config)
+                if len(selected)>=5:break
                 batch=pending[offset:offset+config['batch_size']]
                 attempted=True
                 response,cost=complete(root,payload_for(batch,config),config)
@@ -206,9 +208,11 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
                     write_json(directory/'cache'/f'{digest}.json',record)
                     summary['processed']+=1
                 write_json(cache_path,shared)
+        selected,audit=select_daily(root,library,end,new_keys,config)
+        summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'],shortfall=audit['shortfall'])
         summary['status']='partial' if summary['failed'] else 'success'
     except Exception as exc:
-        summary['status']='fallback';summary['reason']=str(exc)
+        summary['status']='partial' if summary['processed'] else 'fallback';summary['reason']=str(exc)
         if locals().get('attempted'):
             latest=read_json(directory/'usage.json',{'days':{}})['days'].get(str(datetime.now(TZ).date()),{})
             summary['unsettled_upper_cny']=max(0,latest.get('reserved_cny',0)-starting_reserved)

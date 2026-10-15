@@ -84,7 +84,8 @@ def execute_update(root, path, arguments):
     label = "更新完成" if code == 0 else "部分完成" if code == 2 else "更新失败"
     print(f"{label}：新增 {summary.get('added', 0)} 篇，补全 {summary.get('filled', 0)} 篇，合并重复 {summary.get('merged', 0)} 篇，中文翻译成功 {summary.get('translation', {}).get('translated', 0)} 篇，失败 {summary.get('failed', 0) + summary.get('translation_failed', 0)} 项。", flush=True)
     ai=summary.get('ai',{})
-    print(f"AI新评价 {ai.get('processed',0)} 篇，复用 {ai.get('cached',0)} 篇；本次API计价约 ¥{ai.get('priced_cost_cny',0):.6f}，预算记账上界 ¥{ai.get('cost_upper_cny',0):.6f}；每日精选 {summary.get('daily_selected',0)} 篇。",flush=True)
+    translation=summary.get('translation',{})
+    print(f"AI新评价 {ai.get('processed',0)} 篇，复用 {ai.get('cached',0)} 篇；精选新译 {translation.get('translated',0)} 篇；本次API计价约 ¥{ai.get('priced_cost_cny',0)+translation.get('priced_cost_cny',0):.6f}（评价 ¥{ai.get('priced_cost_cny',0):.6f}，翻译 ¥{translation.get('priced_cost_cny',0):.6f}），预算记账上界 ¥{ai.get('cost_upper_cny',0)+translation.get('cost_upper_cny',0):.6f}；每日精选 {summary.get('daily_selected',0)} 篇。",flush=True)
     if ai.get('unsettled_upper_cny'):
         print(f"API可能存在未决计费，保留预算上界 ¥{ai['unsettled_upper_cny']:.6f}；不是已核实扣款。",flush=True)
     print(f"本地阶段已结束；AI状态：{ai.get('status','未执行')}；日志：{path}", flush=True)

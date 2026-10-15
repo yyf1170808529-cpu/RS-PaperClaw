@@ -201,13 +201,7 @@ def run_update(args, library, rules):
     save()
     print(f"[2/4] 完成：合并 {merged}，补全 {metadata['filled']}，耗时 {time.monotonic()-stage:.1f}s", flush=True)
     stage = time.monotonic()
-    print("[3/4] 中文摘要翻译：开始，成功缓存不重翻", flush=True)
-    from services.maritime_reading import translation_order
-    focused_new = [k for k in focus if k in new_keys]
-    keys = focused_new + focus + new_keys + translation_order(library)
-    translations = translate_budget(library, keys, args.translation_limit, args.translation_timeout, save, args.retry_failed)
-    print(f"[3/4] 完成：{translations}，耗时 {time.monotonic()-stage:.1f}s", flush=True)
-    print('[AI] DeepSeek语义重排序：开始（失败回退规则）',flush=True)
+    print('[3/4] DeepSeek分批审核：开始（只有有效评价可进入日报）',flush=True)
     from services.semantic_evaluation import daily_evaluate,settings
     semantic_config=settings()
     library['semantic_enabled']=bool(semantic_config['enabled'] and not getattr(args,'no_ai',False))
@@ -217,7 +211,13 @@ def run_update(args, library, rules):
         ai={'status':'fallback','processed':0,'cached':0,'cost_upper_cny':0,'priced_cost_cny':0,'reason':type(exc).__name__}
     save()
     write_json(args.root/'papers/maritime/logs/latest-ai.json',ai)
-    print('[AI] '+json.dumps(ai,ensure_ascii=False),flush=True)
+    print('[3/4] '+json.dumps(ai,ensure_ascii=False),flush=True)
+    print('[译] 精选摘要翻译：开始；普通历史库翻译可单独运行',flush=True)
+    from services.selected_translation import translate_selected
+    try:translations=translate_selected(args.root,library,end,semantic_config)
+    except Exception as exc:translations={'selected':0,'translated':0,'cached':0,'manual':0,'unlicensed':0,'failed':0,'cost_upper_cny':0,'priced_cost_cny':0,'reason':type(exc).__name__}
+    save()
+    print('[译] '+json.dumps(translations,ensure_ascii=False),flush=True)
     stage = time.monotonic()
     print("[4/4] 生成网页和日报：开始", flush=True)
     build(args.root, library, rules)

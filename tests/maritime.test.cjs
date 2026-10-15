@@ -2,7 +2,7 @@ const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const {filterPapers,makePrompt,validateBackup,readingFor} = require('../docs/maritime.js');
+const {filterPapers,makePrompt,validateBackup,validateFavorites,readingFor} = require('../docs/maritime.js');
 const p = (id, topics, score, date, level='transfer') => ({arxiv_id:id,title:'Visual fusion',abstract:'Matching methods',authors:['Alice'],published:date,
   arxiv_url:`https://arxiv.org/abs/${id}`,pdf_url:`https://arxiv.org/pdf/${id}`,assessment:{topics,score,level,reasons:['cross-modal']}});
 const papers = [p('2610.00001',['A','C'],22,'2026-10-10','high'),p('2610.00002',['D'],12,'2026-10-11'),p('2610.00003',[],0,'2026-10-11','excluded')];
@@ -57,7 +57,7 @@ test('untrusted text and Markdown use safe text nodes, no HTML execution',()=>{
 });
 
 // Exercise the actual event wiring with a lightweight DOM adapter, no browser dependency.
-async function setupUI(saved, suppliedDataset) {
+async function setupUI(saved, suppliedDataset, search='') {
   const vm = require('node:vm');
   class Element {
     constructor(tag) {this.tag=tag;this.children=[];this.value='';this.textContent='';this.handlers={};}
@@ -78,7 +78,7 @@ async function setupUI(saved, suppliedDataset) {
     document:{getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag)},
     localStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value)},
     navigator:{clipboard:{writeText:async text=>{copied=text;}}},
-    fetch:async()=>({ok:true,json:async()=>dataset}),
+    fetch:async()=>({ok:true,json:async()=>dataset}),location:{search},URLSearchParams,
     URL:{createObjectURL:blob=>{downloaded.push(blob.parts[0]);return 'blob:test';},revokeObjectURL(){}},
     Blob:class{constructor(parts){this.parts=parts;}},setTimeout:fn=>fn(),
   });
@@ -88,6 +88,31 @@ async function setupUI(saved, suppliedDataset) {
   return {nodes,storage,downloaded,copied:()=>copied,find:(label)=>walk(nodes.get('papers')).find(e=>e.textContent===label),
     elements:()=>walk(nodes.get('papers'))};
 }
+test('favorites survive filters, aliases, backup and a daily deep link locates the paper',async()=>{
+  const old='doi:10.1234/test',id='2610.00001';
+  const dataset={papers:papers.slice(0,2),topics:{A:'Fusion'},days:{},aliases:{[old]:id},prompt_template:'{{title}}'};
+  const saved=JSON.stringify({schema_version:1,readings:{},favorites:[old]});
+  const app=await setupUI(saved,dataset,'?paper='+encodeURIComponent(old));
+  assert.equal(app.nodes.get('window').value,'history');
+  assert.equal(app.nodes.get('search').value,id);
+  assert.equal(app.nodes.get('papers').children.length,1);
+  assert.equal(app.find('取消收藏').textContent,'取消收藏');
+  app.nodes.get('search').value='';app.nodes.get('window').value='favorites';app.nodes.get('window').handlers.input();
+  assert.equal(app.nodes.get('papers').children.length,1);
+  app.find('取消收藏').click();
+  assert.deepEqual(JSON.parse(app.storage.get('rs-paperclaw-maritime-readings-v1')).favorites,[]);
+  app.nodes.get('window').handlers.input();
+  assert.equal(app.find('收藏'),undefined);
+  app.nodes.get('window').value='history';app.nodes.get('window').handlers.input();
+  app.find('收藏').click();app.nodes.get('export').click();
+  const backup=JSON.parse(app.downloaded.at(-1));
+  assert.deepEqual(backup.favorites,[id]);
+  const restored=await setupUI();
+  await restored.nodes.get('import').handlers.change({target:{files:[{text:async()=>JSON.stringify(backup)}],value:'backup'}});
+  restored.nodes.get('window').value='favorites';restored.nodes.get('window').handlers.input();
+  assert.equal(restored.nodes.get('papers').children.length,1);
+  assert.deepEqual([...validateFavorites(backup)],[id]);
+});
 test('UI copies exact prompt, saves analysis and state, exports and restores JSON',async()=>{
   const app=await setupUI();
   assert.equal(app.nodes.get('papers').children.length,2);

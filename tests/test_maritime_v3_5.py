@@ -46,7 +46,7 @@ class DailyTests(unittest.TestCase):
             result=ai.daily_evaluate(root,lib,[],date(2026,10,14))
             self.assertEqual(result['status'],'fallback');call.assert_not_called()
             self.assertEqual(self.p['quality'],old)
-            self.assertEqual(len(build_mobile_digest(root,lib,date(2026,10,14))['papers']),1)
+            self.assertEqual(len(build_mobile_digest(root,lib,date(2026,10,14))['papers']),0)
     def test_shared_cache_reused_without_key_or_new_paid_requests(self):
         self.attach(self.p,self.e)
         lib={'papers':{self.p['paper_id']:self.p},'days':{}}
@@ -66,6 +66,8 @@ class DailyTests(unittest.TestCase):
         ps={}
         for i,bucket in enumerate(['water']*4+['land']*4+['general']*4):
             p=copy.deepcopy(self.p);p['paper_id']=p['arxiv_id']=f'2610.{10000+i}';p['recommendation']['bucket']=bucket
+            p['assessment']={'level':'high','score':25};p['resource_type']='preprint' if bucket!='water' else 'journal_article'
+            self.attach(p,{**self.e,'paper_id':p['paper_id'],'decision':'重点推荐','direct_relevance':5})
             ps[p['paper_id']]=p
         with tempfile.TemporaryDirectory() as directory:
             payload=build_mobile_digest(Path(directory),{'papers':ps,'days':{}},date(2026,10,14))
@@ -87,7 +89,7 @@ class DailyTests(unittest.TestCase):
             root=Path(directory);self.prepare_repository(root)
             outcome=ai.daily_evaluate(root,lib,[],date(2026,10,14))
             self.assertEqual(outcome['status'],'fallback')
-            self.assertEqual(len(build_mobile_digest(root,lib,date(2026,10,14))['papers']),1)
+            self.assertEqual(len(build_mobile_digest(root,lib,date(2026,10,14))['papers']),0)
         self.assertEqual(old,self.p['quality'])
     def test_remote_update_or_active_cloud_prevents_duplicate_paid_work(self):
         lib={'papers':{self.p['paper_id']:self.p},'days':{}}

@@ -19,6 +19,7 @@ class PublicationGateTests(unittest.TestCase):
         self.p.update(paper_id=self.p['arxiv_id'],published='2026-10-15',publication_date='2026-10-15',
                       abstract='We propose SNAP, which generates intra-modal hard negatives without the matched positive for vision-language contrastive learning.',
                       resource_type='preprint',recommendation={'bucket':'general'},quality={'high_journal':False})
+        self.p['assessment']={'level':'high','score':25}
 
     def attach(self,p,direct,transfer,path=None,confidence=.9,decision='候选'):
         value={'paper_id':p['paper_id'],'task_type':'Representation learning','direct_relevance':direct,
@@ -45,6 +46,13 @@ class PublicationGateTests(unittest.TestCase):
             self.assertEqual(build_mobile_digest(root,lib,date(2026,10,15))['papers'],[])
             self.assertIsNone(ai.ranking_info(self.p)['score'])
 
+    def test_explicit_ai_rejection_cannot_publish_generic_transfer(self):
+        self.attach(self.p,1,3,{'source_quote_en':'generates intra-modal hard negatives without the matched positive',
+                    'target_task':'cross_modal_matching','adaptation_zh':'将图文输入替换为视觉和AIS输入，并调整对比目标','inference':True},decision='不推荐')
+        self.assertFalse(ai.ranking_info(self.p)['eligible'])
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(build_mobile_digest(Path(d),{'papers':{self.p['paper_id']:self.p},'days':{}},date(2026,10,15))['papers'],[])
+
     def test_robot_manipulation_low_ai_does_not_get_rule_priority(self):
         p=copy.deepcopy(self.p)
         p['title']='SimpleTouch: Vision-Language-Action for Tactile Robotic Manipulation'
@@ -52,11 +60,11 @@ class PublicationGateTests(unittest.TestCase):
         self.attach(p,1,1,None,decision='不推荐')
         self.assertFalse(ai.ranking_info(p)['eligible'])
 
-    def test_direct_ship_and_radar_ais_survive_missing_api(self):
+    def test_direct_ship_and_radar_ais_wait_for_ai_when_missing(self):
         for title in ('Maritime infrared ship detection','Ship instance segmentation','Radar AIS target association',
                       'Visual AIS cross-modal matching','Collaborative 3-D Object Detection for autonomous driving'):
             p=copy.deepcopy(self.p);p['title']=title;p.pop('semantic',None)
-            self.assertTrue(ai.ranking_info(p)['eligible'])
+            self.assertFalse(ai.ranking_info(p)['eligible'])
             self.assertIsNone(ai.ranking_info(p)['score'])
 
     def test_old_cache_version_is_invalid(self):

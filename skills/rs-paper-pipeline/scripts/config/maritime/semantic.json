@@ -1,7 +1,7 @@
 {
   "enabled": true,
   "mobile_ai_enabled": true,
-  "daily_limit": 20,
+  "daily_limit": 60,
   "update_budget_cny": 2.0,
   "model": "deepseek-flash",
   "daily_budget_cny": 2.0,
