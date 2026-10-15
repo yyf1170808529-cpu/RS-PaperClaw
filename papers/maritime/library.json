@@ -7508,10 +7508,10 @@
       "translation": {
         "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "在代表空间产生的合成硬负数已证明对单式有效 自监督 学习,但将这个想法转移到视觉语言的预训不是直截了当的. 我们分析了六种表达空间综合战略,并确定了两种向视觉语言预训转移的失败模式:产生过于容易的负数或将其拉向查询的跨模式构造,以及包含相应正数的内模式构造。 我们还在使用合成硬底片和可学习温度进行训练时观察到对数尺度饱和,发现温度的固定能改善下游的性能. 我们提议用这个几何分析 SNAP, 它产生模式内硬负数,绝不涉及两种模式的正数,完全避免两种失败模式. SNAP 是模型不可知的,不需要外部基因模型,增加的培训时间不足10%。 顶级评价 CLIP 和 FLIP 跨越多个架构和数据集, SNAP 持续改进零射线检索、零射线分类和线性探测评价.",
+        "zh": "合成 困难负样本 生成于 表征 事实证明,空间对于单式 自监督 学习,但把这个想法转移到 视觉-语言预训不是直截了当的。 我们分析六个 表征-空间合成策略,并找出在向 视觉-语言预训: 跨模态 生产过于简单的建筑 负样本 或把他们引向询问, 模态内 包含匹配的构造 正样本. 我们也观察到 logit-合成训练时的饱和度 困难负样本 和可以学习的温度, 发现温度的固定 改善下游的性能。 我们提议用这个几何分析 SNAP, 生成 模态内 困难负样本 从不涉及 正样本 无论是从 模态, 完全避免两种失败模式. SNAP 是模式不可知的,不需要外部 生成模型, 并增加小于 10% 培训时间为间接费用。 顶级评价 CLIP 和 FLIP 跨越多个架构和数据集, SNAP 持续改进 零样本 检索, 零样本 分类和线性探测评估.",
         "english_hash": "5db97645348994c9f855a6cbb462b47e2639fa8545ff12de14934bb69705baae",
-        "protection_revision": 4,
-        "updated_at": "2026-10-13T10:50:58.324126+00:00"
+        "protection_revision": 6,
+        "updated_at": "2026-10-15T12:59:37.075375+00:00"
       },
       "resource_type": "preprint",
       "resource_type_label": "研究预印本",
@@ -7616,7 +7616,35 @@
         "zh": "在表示空间中生成的合成困难负样本已被证明对单模态自监督学习有效，但将这一思想迁移到视觉-语言预训练中并非易事。我们分析了六种表示空间合成策略，并识别出它们在迁移到视觉-语言预训练时的两种失败模式：跨模态构建产生过于简单的负样本或将其拉向查询，以及模态内构建纳入了匹配的正样本。我们还观察到使用合成困难负样本和可学习温度训练时出现logit尺度饱和，并发现固定温度可提升下游性能。利用这一几何分析，我们提出了SNAP，它生成模态内困难负样本，这些负样本从不涉及来自任一模态的正样本，从而完全避免这两种失败模式。SNAP与模型无关，不需要外部生成模型，且增加的训练时间开销不到10%。在CLIP和FLIP之上跨多种架构和数据集进行评估，SNAP在零样本检索、零样本分类和线性探针评估上均带来一致的改进。",
         "license_url": "http://creativecommons.org/licenses/by/4.0/",
         "updated_at": "2026-10-15T12:21:54.325271+00:00"
-      }
+      },
+      "translation_history": [
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "在代表空间产生的合成硬负数已证明对单式有效 自监督 学习,但将这个想法转移到视觉语言的预训不是直截了当的. 我们分析了六种表达空间综合战略,并确定了两种向视觉语言预训转移的失败模式:产生过于容易的负数或将其拉向查询的跨模式构造,以及包含相应正数的内模式构造。 我们还在使用合成硬底片和可学习温度进行训练时观察到对数尺度饱和,发现温度的固定能改善下游的性能. 我们提议用这个几何分析 SNAP, 它产生模式内硬负数,绝不涉及两种模式的正数,完全避免两种失败模式. SNAP 是模型不可知的,不需要外部基因模型,增加的培训时间不足10%。 顶级评价 CLIP 和 FLIP 跨越多个架构和数据集, SNAP 持续改进零射线检索、零射线分类和线性探测评价.",
+          "english_hash": "5db97645348994c9f855a6cbb462b47e2639fa8545ff12de14934bb69705baae",
+          "protection_revision": 4,
+          "updated_at": "2026-10-13T10:50:58.324126+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "在代表空间产生的合成硬负数已证明对单式有效 自监督 学习,但将这个想法转移到视觉语言的预训不是直截了当的. 我们分析了六种表达空间综合战略,并确定了两种向视觉语言预训转移的失败模式:产生过于容易的负数或将其拉向查询的跨模式构造,以及包含相应正数的内模式构造。 我们还在使用合成硬底片和可学习温度进行训练时观察到对数尺度饱和,发现温度的固定能改善下游的性能. 我们提议用这个几何分析 SNAP, 它产生模式内硬负数,绝不涉及两种模式的正数,完全避免两种失败模式. SNAP 是模型不可知的,不需要外部基因模型,增加的培训时间不足10%。 顶级评价 CLIP 和 FLIP 跨越多个架构和数据集, SNAP 持续改进零射线检索、零射线分类和线性探测评价.",
+          "english_hash": "5db97645348994c9f855a6cbb462b47e2639fa8545ff12de14934bb69705baae",
+          "protection_revision": 4,
+          "updated_at": "2026-10-15T12:54:26.587865+00:00",
+          "error": "[Errno 13] Permission denied: 'D:\\\\desktop\\\\code\\\\paper\\\\RS-PaperClaw\\\\papers\\\\maritime\\\\private\\\\translation\\\\data\\\\argos-translate\\\\packages\\\\translate-en_zh-1_9\\\\stanza\\\\resources.json'",
+          "error_type": "model_runtime_error"
+        },
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合成 困难负样本 生成于 表征 事实证明,空间对于单式 自监督 学习,但把这个想法转移到 视觉-语言预训不是直截了当的。 我们分析六个 表征-空间合成策略,并找出在向 视觉-语言预训: 跨模态 产生过于容易的负数或将其引向查询的构造,以及包含相应正数的模型内部构造。 我们还在人工合成训练时 观察到对数的饱和度 困难负样本 和可以学习的温度, 发现温度的固定 改善下游的性能。 我们提议用这个几何分析 SNAP, 生成内部模式 困难负样本 绝不涉及两种模式的正值,完全避免两种失败模式. SNAP 是模型不可知的,不需要外部基因模型,并添加少于 10% 培训时间为间接费用。 顶级评价 CLIP 和 FLIP 跨越多个架构和数据集, SNAP 持续改进零射线检索、零射线分类和线性探测评价.",
+          "english_hash": "5db97645348994c9f855a6cbb462b47e2639fa8545ff12de14934bb69705baae",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T12:56:14.939929+00:00"
+        }
+      ]
     },
     "2610.10624": {
       "arxiv_id": "2610.10624",
@@ -10044,10 +10072,10 @@
       "translation": {
         "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "动态 多模态 学习的目的是通过对不同模式的信息差异进行适应性模拟来学习强有力的表述。 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 调整战略通常对所有样本施加统一的制约,同时忽略样本的变化,可能导致不合理的过度调整;和(二) 信心或不确定性意识 融合 方法往往未能充分说明不同方式的特征和信心差异。 对于具有显著特征大小差异或小信任差距的模式配对,严格对齐可能不可靠。 融合 以自信为重 为了解决这些问题,我们提议由调整和校准驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三重配对模块,该模块对高自信正配对实施强语义一致性,同时鼓励在高自信正配对和低自信正配对之间根据其信心差距进行多样的表示学习. 临Τ, ACML 引入了认识到差异的注意力校准战略,根据特征大小和不同模式的信心差异,适应性地调整注意力的正规化,从而减轻不合理造成的偏见。 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
+        "zh": "动态 多模态 学习旨在学习强健 表征 适应性地模拟信息差异 模态. 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 对齐 战略通常对所有样本施加统一的限制,同时忽略样本的变异,可能导致不合理。-对齐; 和(二)) 置信度- 或不确定性意识 融合 方法往往不能充分说明 特征幅度 和 置信度 差异 模态. 用于 模态 带有显著的对 特征幅度 差异或小数 置信度 间隙,严格对齐可能不可靠 融合 根据 置信度. 为了解决这些问题,我们提议: 对齐- 和 校准-驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三元组 对齐 模块,用于执行强语义一致性-置信度 正样本对 在鼓励多样性的同时 表征学习 高低之间-置信度 正样本对 根据其 置信度 差距。 临Τ, ACML 引起人们的注意 校准 适应性调整关注正规化的战略 特征幅度 和 置信度 差异 模态, 从而减轻了由不合理因素引起的偏见。 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
         "english_hash": "14834910e40265be1a0b464db9e1cb1735432b757d0429caca303a638ca0adb3",
-        "protection_revision": 5,
-        "updated_at": "2026-10-13T13:30:51.330325+00:00"
+        "protection_revision": 6,
+        "updated_at": "2026-10-15T13:06:17.644801+00:00"
       },
       "raw_abstract": "Dynamic multimodal learning aims to learn robust representations by adaptively modeling information discrepancies across modalities. However, existing methods still suffer from two limitations: (i) static cross-modal alignment strategies usually impose uniform constraints on all samples while overlooking sample-wise variations, potentially leading to unreasonable over-alignment; and (ii) confidence- or uncertainty-aware fusion methods often fail to adequately account for feature magnitude and confidence differences across modalities. For modality pairs with significant feature magnitude differences or small confidence gaps, it might be unreliable to strictly align fusion weights according to confidence. To address these issues, we propose an Alignment- and Calibration-driven Multimodal Learning framework (ACML). Specifically, ACML incorporates a dynamic cross-modal triplet alignment module, which enforces strong semantic consistency for high-confidence positive pairs while encouraging diverse representation learning between high- and low-confidence positive pairs according to their confidence gaps. Additionally, ACML introduces a difference-aware attention calibration strategy that adaptively adjusts attention regularization based on feature magnitude and confidence differences across modalities, thereby mitigating biases caused by unreasonable fusion constraints. Extensive experiments on multiple multimodal benchmark datasets demonstrate that ACML consistently achieves superior performance and robustness over recent state-of-the-art methods.",
       "clean_abstract": "Dynamic multimodal learning aims to learn robust representations by adaptively modeling information discrepancies across modalities. However, existing methods still suffer from two limitations: (i) static cross-modal alignment strategies usually impose uniform constraints on all samples while overlooking sample-wise variations, potentially leading to unreasonable over-alignment; and (ii) confidence- or uncertainty-aware fusion methods often fail to adequately account for feature magnitude and confidence differences across modalities. For modality pairs with significant feature magnitude differences or small confidence gaps, it might be unreliable to strictly align fusion weights according to confidence. To address these issues, we propose an Alignment- and Calibration-driven Multimodal Learning framework (ACML). Specifically, ACML incorporates a dynamic cross-modal triplet alignment module, which enforces strong semantic consistency for high-confidence positive pairs while encouraging diverse representation learning between high- and low-confidence positive pairs according to their confidence gaps. Additionally, ACML introduces a difference-aware attention calibration strategy that adaptively adjusts attention regularization based on feature magnitude and confidence differences across modalities, thereby mitigating biases caused by unreasonable fusion constraints. Extensive experiments on multiple multimodal benchmark datasets demonstrate that ACML consistently achieves superior performance and robustness over recent state-of-the-art methods.",
@@ -10100,7 +10128,53 @@
         },
         "model": "deepseek-flash",
         "request_id": "acf8e31d-d249-4768-aaeb-ce6234028511"
-      }
+      },
+      "translation_history": [
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "动态 多模态 学习的目的是通过对不同模式的信息差异进行适应性模拟来学习强有力的表述。 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 调整战略通常对所有样本施加统一的制约,同时忽略样本的变化,可能导致不合理的过度调整;和(二) 信心或不确定性意识 融合 方法往往未能充分说明不同方式的特征和信心差异。 对于具有显著特征大小差异或小信任差距的模式配对,严格对齐可能不可靠。 融合 以自信为重 为了解决这些问题,我们提议由调整和校准驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三重配对模块,该模块对高自信正配对实施强语义一致性,同时鼓励在高自信正配对和低自信正配对之间根据其信心差距进行多样的表示学习. 临Τ, ACML 引入了认识到差异的注意力校准战略,根据特征大小和不同模式的信心差异,适应性地调整注意力的正规化,从而减轻不合理造成的偏见。 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
+          "english_hash": "14834910e40265be1a0b464db9e1cb1735432b757d0429caca303a638ca0adb3",
+          "protection_revision": 5,
+          "updated_at": "2026-10-13T13:30:51.330325+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "动态 多模态 学习的目的是通过对不同模式的信息差异进行适应性模拟来学习强有力的表述。 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 调整战略通常对所有样本施加统一的制约,同时忽略样本的变化,可能导致不合理的过度调整;和(二) 信心或不确定性意识 融合 方法往往未能充分说明不同方式的特征和信心差异。 对于具有显著特征大小差异或小信任差距的模式配对,严格对齐可能不可靠。 融合 以自信为重 为了解决这些问题,我们提议由调整和校准驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三重配对模块,该模块对高自信正配对实施强语义一致性,同时鼓励在高自信正配对和低自信正配对之间根据其信心差距进行多样的表示学习. 临Τ, ACML 引入了认识到差异的注意力校准战略,根据特征大小和不同模式的信心差异,适应性地调整注意力的正规化,从而减轻不合理造成的偏见。 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
+          "english_hash": "14834910e40265be1a0b464db9e1cb1735432b757d0429caca303a638ca0adb3",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:54:26.588828+00:00",
+          "error": "[Errno 13] Permission denied: 'D:\\\\desktop\\\\code\\\\paper\\\\RS-PaperClaw\\\\papers\\\\maritime\\\\private\\\\translation\\\\data\\\\argos-translate\\\\packages\\\\translate-en_zh-1_9\\\\stanza\\\\resources.json'",
+          "error_type": "model_runtime_error"
+        },
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "动态 多模态 学习旨在学习强健 表征 通过适应性地模拟不同模式的信息差异。 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 调整战略通常对所有样本施加统一的制约,而忽略了样本的变化,可能导致不合理的过度调整;和) 置信度- 或不确定性意识 融合 方法往往无法充分说明特征大小和 置信度 不同模式之间的差异。 对于具有显著特征大小差异或较小的对模式 置信度 间隙,严格对齐可能不可靠 融合 根据 置信度. 为了解决这些问题,我们提议由调整和校准驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三进制对齐模块,对高音执行强语义一致性-置信度 在鼓励多样性的同时正对 表征 在高低之间学习-置信度 根据它们的正对 置信度 差距。 临Τ, ACML 引入了有区别的注意校准策略,根据特征大小和特征调整注意规范化。 置信度 不同模式之间的差异,从而减轻了不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不公平、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理、不合理 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
+          "english_hash": "14834910e40265be1a0b464db9e1cb1735432b757d0429caca303a638ca0adb3",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T12:56:17.954591+00:00"
+        },
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "动态 多模态 学习旨在学习强健 表征 适应性地模拟信息差异 模态. 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 对齐 战略通常对所有样本施加统一的限制,同时忽略样本的变异,可能导致不合理。-对齐; 和(二)) 置信度- 或不确定性意识 融合 方法往往不能充分说明 特征幅度 和 置信度 差异 模态. 用于 模态 带有显著的对 特征幅度 差异或小数 置信度 间隙,严格对齐可能不可靠 融合 根据 置信度. 为了解决这些问题,我们提议: 对齐- 和 校准-驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三元组 对齐 模块,用于执行强语义一致性-置信度 正样本对 在鼓励多样性的同时 表征学习 高低之间-置信度 正样本对 根据其 置信度 差距。 临Τ, ACML 引起人们的注意 校准 适应性调整关注正规化的战略 特征幅度 和 置信度 差异 模态, 从而减轻了由不合理因素引起的偏见。 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
+          "english_hash": "14834910e40265be1a0b464db9e1cb1735432b757d0429caca303a638ca0adb3",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T12:59:38.056557+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "动态 多模态 学习旨在学习强健 表征 适应性地模拟信息差异 模态. 然而,现有方法仍然有两个限制:(一) 静态。 跨模态 对齐 战略通常对所有样本施加统一的限制,同时忽略样本的变异,可能导致不合理。-对齐; 和(二)) 置信度- 或不确定性意识 融合 方法往往不能充分说明 特征幅度 和 置信度 差异 模态. 用于 模态 带有显著的对 特征幅度 差异或小数 置信度 间隙,严格对齐可能不可靠 融合 根据 置信度. 为了解决这些问题,我们提议: 对齐- 和 校准-驱动 多模态 学习框架 (ACML). 具体, ACML 包含动态 跨模态 三元组 对齐 模块,用于执行强语义一致性-置信度 正样本对 在鼓励多样性的同时 表征学习 高低之间-置信度 正样本对 根据其 置信度 差距。 临Τ, ACML 引起人们的注意 校准 适应性调整关注正规化的战略 特征幅度 和 置信度 差异 模态, 从而减轻了由不合理因素引起的偏见。 融合 限制。 多次试验 多模态 基准数据集表明, ACML 持续取得优于最新先进方法的业绩和稳健性.",
+          "english_hash": "14834910e40265be1a0b464db9e1cb1735432b757d0429caca303a638ca0adb3",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T13:04:28.328747+00:00",
+          "error": "protected_token_missing: Calibration-driven",
+          "error_type": "translation_validation_failed"
+        }
+      ]
     },
     "2610.07868": {
       "arxiv_id": "2610.07868",
@@ -128715,10 +128789,10 @@
       "translation": {
         "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "跨模态 知识蒸馏将知识从教师模式转移到学生模式。 现有特征级调整方法通常假定师生特征存在于结构上可协调的表述空间。 然而,这一假设在下述情况下并不适用: 跨模态 特征结构多样,缺乏清晰的单位级对应,如2D空间视觉网格和1D时间音频序列,从而限制了特征级对齐的适用性. 为了应对这一挑战,我们提议 跨模态 蒸馏框架,能够通过矢量化的代码册,在结构多样的特征空间之间有效转让知识。 具体来说,无论原始的特征结构如何,教师特征都被抽象为一套矢量形式代码,所选代码成为学生学习的概念级锚点. 代码选择既遵循任务关联性,也遵循学生兼容性,允许学生获得可转移的教师知识,而不需要直接的单位级特征对齐. 各种实验结果 跨模态 蒸馏方案表明拟议分类和语义分类任务框架的有效性.",
+        "zh": "跨模态 知识蒸馏 向教师传授知识 模态 对学生 模态. 现有特征级别 对齐 教师和学生的特点在结构上可以适应 表征 空间。 然而,这一假设在下述情况下并不适用: 跨模态 特征结构多样,缺乏明确的单位级通信,如 2D 空间视觉网格和 1D 时间音频序列,从而限制特征级的适用性 对齐. 为了应对这一挑战,我们提议 跨模态 通过矢量化的蒸馏框架,在结构多样的特征空间之间实现有效的知识转让 码本. 具体来说,无论原始的特征结构如何,教师特征都被抽象为一套矢量形式代码,所选代码成为学生学习的概念级锚点. 代码选择以任务相关性和学生兼容性为指导,允许学生获得可转移的教师知识而无需直接的单位级特征. 对齐. 各种实验结果 跨模态 蒸馏方案表明拟议分类和语义分类任务框架的有效性.",
         "english_hash": "80142e824beed1e558bdd44046f0dc6f47036dda8632724f1479ab05adcc7a83",
-        "protection_revision": 5,
-        "updated_at": "2026-10-13T13:31:06.000816+00:00"
+        "protection_revision": 6,
+        "updated_at": "2026-10-15T13:06:16.665422+00:00"
       },
       "raw_abstract": "Cross-modal knowledge distillation transfers knowledge from a teacher modality to a student modality. Existing feature-level alignment methods typically assume that teacher and student features reside in structurally alignable representation spaces. However, this assumption does not hold when cross-modal features are structurally heterogeneous and lack clear unit-level correspondence, such as 2D spatial visual grids and 1D temporal audio sequences, thereby limiting the applicability of feature-level alignment. To address this challenge, we propose a cross-modal distillation framework that enables effective knowledge transfer across structurally heterogeneous feature spaces via a vector-quantized codebook. Specifically, teacher features are abstracted into a set of vector-form codes regardless of their original feature structure, and the selected codes serve as concept-level anchors for student learning. Code selection is guided by both task relevance and student compatibility, allowing the student to receive transferable teacher knowledge without requiring direct unit-level feature alignment. Experimental results across diverse cross-modal distillation scenarios demonstrate the effectiveness of the proposed framework on classification and semantic segmentation tasks.",
       "clean_abstract": "Cross-modal knowledge distillation transfers knowledge from a teacher modality to a student modality. Existing feature-level alignment methods typically assume that teacher and student features reside in structurally alignable representation spaces. However, this assumption does not hold when cross-modal features are structurally heterogeneous and lack clear unit-level correspondence, such as 2D spatial visual grids and 1D temporal audio sequences, thereby limiting the applicability of feature-level alignment. To address this challenge, we propose a cross-modal distillation framework that enables effective knowledge transfer across structurally heterogeneous feature spaces via a vector-quantized codebook. Specifically, teacher features are abstracted into a set of vector-form codes regardless of their original feature structure, and the selected codes serve as concept-level anchors for student learning. Code selection is guided by both task relevance and student compatibility, allowing the student to receive transferable teacher knowledge without requiring direct unit-level feature alignment. Experimental results across diverse cross-modal distillation scenarios demonstrate the effectiveness of the proposed framework on classification and semantic segmentation tasks.",
@@ -128770,7 +128844,45 @@
         },
         "model": "deepseek-flash",
         "request_id": "07751d97-8be1-4ed5-bc25-404069a907f1"
-      }
+      },
+      "translation_history": [
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "跨模态 知识蒸馏将知识从教师模式转移到学生模式。 现有特征级调整方法通常假定师生特征存在于结构上可协调的表述空间。 然而,这一假设在下述情况下并不适用: 跨模态 特征结构多样,缺乏清晰的单位级对应,如2D空间视觉网格和1D时间音频序列,从而限制了特征级对齐的适用性. 为了应对这一挑战,我们提议 跨模态 蒸馏框架,能够通过矢量化的代码册,在结构多样的特征空间之间有效转让知识。 具体来说,无论原始的特征结构如何,教师特征都被抽象为一套矢量形式代码,所选代码成为学生学习的概念级锚点. 代码选择既遵循任务关联性,也遵循学生兼容性,允许学生获得可转移的教师知识,而不需要直接的单位级特征对齐. 各种实验结果 跨模态 蒸馏方案表明拟议分类和语义分类任务框架的有效性.",
+          "english_hash": "80142e824beed1e558bdd44046f0dc6f47036dda8632724f1479ab05adcc7a83",
+          "protection_revision": 5,
+          "updated_at": "2026-10-13T13:31:06.000816+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "跨模态 知识蒸馏将知识从教师模式转移到学生模式。 现有特征级调整方法通常假定师生特征存在于结构上可协调的表述空间。 然而,这一假设在下述情况下并不适用: 跨模态 特征结构多样,缺乏清晰的单位级对应,如2D空间视觉网格和1D时间音频序列,从而限制了特征级对齐的适用性. 为了应对这一挑战,我们提议 跨模态 蒸馏框架,能够通过矢量化的代码册,在结构多样的特征空间之间有效转让知识。 具体来说,无论原始的特征结构如何,教师特征都被抽象为一套矢量形式代码,所选代码成为学生学习的概念级锚点. 代码选择既遵循任务关联性,也遵循学生兼容性,允许学生获得可转移的教师知识,而不需要直接的单位级特征对齐. 各种实验结果 跨模态 蒸馏方案表明拟议分类和语义分类任务框架的有效性.",
+          "english_hash": "80142e824beed1e558bdd44046f0dc6f47036dda8632724f1479ab05adcc7a83",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:54:26.587490+00:00",
+          "error": "[Errno 13] Permission denied: 'D:\\\\desktop\\\\code\\\\paper\\\\RS-PaperClaw\\\\papers\\\\maritime\\\\private\\\\translation\\\\data\\\\argos-translate\\\\packages\\\\translate-en_zh-1_9\\\\stanza\\\\resources.json'",
+          "error_type": "model_runtime_error"
+        },
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "跨模态 知识蒸馏将知识从教师模式转移到学生模式。 现有特征级调整方法通常假定师生特征在结构上可以调整 表征 空间。 然而,这一假设在下述情况下并不适用: 跨模态 特征结构多样,缺乏清晰的单位级对应,如2D空间视觉网格和1D时间音频序列,从而限制了特征级对齐的适用性. 为了应对这一挑战,我们提议 跨模态 通过矢量化的蒸馏框架,在结构多样的特征空间之间实现有效的知识转让 码本. 具体来说,无论原始的特征结构如何,教师特征都被抽象为一套矢量形式代码,所选代码成为学生学习的概念级锚点. 代码选择既遵循任务关联性,也遵循学生兼容性,允许学生获得可转移的教师知识,而不需要直接的单位级特征对齐. 各种实验结果 跨模态 蒸馏方案表明拟议分类和语义分类任务框架的有效性.",
+          "english_hash": "80142e824beed1e558bdd44046f0dc6f47036dda8632724f1479ab05adcc7a83",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T12:56:13.991503+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "跨模态 知识蒸馏将知识从教师模式转移到学生模式。 现有特征级调整方法通常假定师生特征在结构上可以调整 表征 空间。 然而,这一假设在下述情况下并不适用: 跨模态 特征结构多样,缺乏清晰的单位级对应,如2D空间视觉网格和1D时间音频序列,从而限制了特征级对齐的适用性. 为了应对这一挑战,我们提议 跨模态 通过矢量化的蒸馏框架,在结构多样的特征空间之间实现有效的知识转让 码本. 具体来说,无论原始的特征结构如何,教师特征都被抽象为一套矢量形式代码,所选代码成为学生学习的概念级锚点. 代码选择既遵循任务关联性,也遵循学生兼容性,允许学生获得可转移的教师知识,而不需要直接的单位级特征对齐. 各种实验结果 跨模态 蒸馏方案表明拟议分类和语义分类任务框架的有效性.",
+          "english_hash": "80142e824beed1e558bdd44046f0dc6f47036dda8632724f1479ab05adcc7a83",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T13:04:27.424352+00:00",
+          "error": "protected_token_missing: Cross-modal",
+          "error_type": "translation_validation_failed"
+        }
+      ]
     },
     "2609.37200": {
       "arxiv_id": "2609.37200",
@@ -129306,10 +129418,10 @@
       "translation": {
         "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "RGB-T 物体跟踪利用可见和热红外模式的互补特性,在不利条件下提高稳健性。 现有监督方法通常依赖费用高昂、方式一致的框框说明,而大多数方法则依赖成本很高的框框说明。 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架注释,ESMTrack通过两个互补目标来学习具有歧视性和时间一致性的表述:在附加说明的初始框架上打下三进制损失和在无标签搜索框架上打下跨框架的三进制损失,通过前向一致性选择可靠的样本。 为解决模式支配地位的偏差,ESMTrack采用了由以下三个分支组成的结构: 融合 分支和两个单式分支 RGB 和热输入。 我们使用平均峰值对折合能源量化方式的贡献,衡量各峰值之间的反应差异。 融合 和单式分支。 由此产生的可靠性估计指导了一种培训时间模式脱钩机制,这种机制压制了主导模式的捷径和适应性加权。 跨模态 任务级对齐的对比学习。 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+        "zh": "RGB-T 目标跟踪 利用可见和热红外线的补充特性。 模态 在不利条件下提高稳健性。 现有监督方法通常依赖成本高的 模态-对齐边框注释,而大多数 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提议 ESMTrack, 一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 只考虑到视觉跟踪中使用的标准初始框架注释, ESMTrack 学习歧视性和时间一致性 表征 实现两个相辅相成的目标: 三元组 附加说明的初始框架和跨框架时间损失 三元组 在无标签的搜索框上丢失,通过前向一致性选择可靠的样本。 处理 模态 支配地位偏见, ESMTrack 采用三分支结构,包括: 融合 分支和两个单式分支 RGB 和热输入。 我们量化 模态 使用平均数 Peak-to-Correlation 通过测量各区域之间反应差异的能量 融合 和单式分支。 由此产生的可靠性估计数指导培训时间 模态 压制支配地位的脱钩机制-模态 快捷键和适应性加权 跨模态 对比学习 任务级别 对齐. 5项的广泛实验 RGB-T 跟踪基准显示: ESMTrack 实现具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
         "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
-        "protection_revision": 5,
-        "updated_at": "2026-10-13T13:31:05.295550+00:00"
+        "protection_revision": 6,
+        "updated_at": "2026-10-15T13:08:45.180350+00:00"
       },
       "raw_abstract": "RGB-T object tracking leverages the complementary characteristics of visible and thermal infrared modalities to improve robustness under adverse conditions. Existing supervised methods typically rely on costly modality-aligned bounding box annotations, while most self-supervised approaches follow a two-stage pseudo-labeling paradigm, making tracker training sensitive to pseudo-label quality and preventing joint end-to-end optimization. In this paper, we propose ESMTrack, a fully end-to-end self-supervised RGB-T tracking framework without offline pseudo-label generation or dense frame-level bounding box annotations. Given only the standard initial-frame annotation used in visual tracking, ESMTrack learns discriminative and temporally consistent representations through two complementary objectives: a grounding triplet loss on annotated initial frames and a cross-frame temporal triplet loss on unlabeled search frames, with reliable samples selected by forward-backward consistency. To address modality dominance bias, ESMTrack employs a three-branch architecture consisting of a fusion branch and two unimodal branches for RGB and thermal inputs. We quantify modality contributions using the Average Peak-to-Correlation Energy by measuring response discrepancies between the fusion and unimodal branches. The resulting reliability estimates guide a training-time modality decoupling mechanism that suppresses dominant-modality shortcuts and adaptively weights cross-modal contrastive learning for task-level alignment. Extensive experiments on five RGB-T tracking benchmarks show that ESMTrack achieves competitive state-of-the-art performance, strong cross-dataset generalization, and real-time inference speed. The source code is available at https://github.com/LiShenglana/ESMTrack.",
       "clean_abstract": "RGB-T object tracking leverages the complementary characteristics of visible and thermal infrared modalities to improve robustness under adverse conditions. Existing supervised methods typically rely on costly modality-aligned bounding box annotations, while most self-supervised approaches follow a two-stage pseudo-labeling paradigm, making tracker training sensitive to pseudo-label quality and preventing joint end-to-end optimization. In this paper, we propose ESMTrack, a fully end-to-end self-supervised RGB-T tracking framework without offline pseudo-label generation or dense frame-level bounding box annotations. Given only the standard initial-frame annotation used in visual tracking, ESMTrack learns discriminative and temporally consistent representations through two complementary objectives: a grounding triplet loss on annotated initial frames and a cross-frame temporal triplet loss on unlabeled search frames, with reliable samples selected by forward-backward consistency. To address modality dominance bias, ESMTrack employs a three-branch architecture consisting of a fusion branch and two unimodal branches for RGB and thermal inputs. We quantify modality contributions using the Average Peak-to-Correlation Energy by measuring response discrepancies between the fusion and unimodal branches. The resulting reliability estimates guide a training-time modality decoupling mechanism that suppresses dominant-modality shortcuts and adaptively weights cross-modal contrastive learning for task-level alignment. Extensive experiments on five RGB-T tracking benchmarks show that ESMTrack achieves competitive state-of-the-art performance, strong cross-dataset generalization, and real-time inference speed. The source code is available at https://github.com/LiShenglana/ESMTrack.",
@@ -129362,7 +129474,75 @@
         },
         "model": "deepseek-flash",
         "request_id": "07751d97-8be1-4ed5-bc25-404069a907f1"
-      }
+      },
+      "translation_history": [
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 物体跟踪利用可见和热红外模式的互补特性,在不利条件下提高稳健性。 现有监督方法通常依赖费用高昂、方式一致的框框说明,而大多数方法则依赖成本很高的框框说明。 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架注释,ESMTrack通过两个互补目标来学习具有歧视性和时间一致性的表述:在附加说明的初始框架上打下三进制损失和在无标签搜索框架上打下跨框架的三进制损失,通过前向一致性选择可靠的样本。 为解决模式支配地位的偏差,ESMTrack采用了由以下三个分支组成的结构: 融合 分支和两个单式分支 RGB 和热输入。 我们使用平均峰值对折合能源量化方式的贡献,衡量各峰值之间的反应差异。 融合 和单式分支。 由此产生的可靠性估计指导了一种培训时间模式脱钩机制,这种机制压制了主导模式的捷径和适应性加权。 跨模态 任务级对齐的对比学习。 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 5,
+          "updated_at": "2026-10-13T13:31:05.295550+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 物体跟踪利用可见和热红外模式的互补特性,在不利条件下提高稳健性。 现有监督方法通常依赖费用高昂、方式一致的框框说明,而大多数方法则依赖成本很高的框框说明。 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架注释,ESMTrack通过两个互补目标来学习具有歧视性和时间一致性的表述:在附加说明的初始框架上打下三进制损失和在无标签搜索框架上打下跨框架的三进制损失,通过前向一致性选择可靠的样本。 为解决模式支配地位的偏差,ESMTrack采用了由以下三个分支组成的结构: 融合 分支和两个单式分支 RGB 和热输入。 我们使用平均峰值对折合能源量化方式的贡献,衡量各峰值之间的反应差异。 融合 和单式分支。 由此产生的可靠性估计指导了一种培训时间模式脱钩机制,这种机制压制了主导模式的捷径和适应性加权。 跨模态 任务级对齐的对比学习。 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:54:26.586374+00:00",
+          "error": "[Errno 13] Permission denied: 'D:\\\\desktop\\\\code\\\\paper\\\\RS-PaperClaw\\\\papers\\\\maritime\\\\private\\\\translation\\\\data\\\\argos-translate\\\\packages\\\\translate-en_zh-1_9\\\\stanza\\\\resources.json'",
+          "error_type": "model_runtime_error"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 物体跟踪利用可见和热红外模式的互补特性,在不利条件下提高稳健性。 现有监督方法通常依赖费用高昂、方式一致的框框说明,而大多数方法则依赖成本很高的框框说明。 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架注释,ESMTrack通过两个互补目标来学习具有歧视性和时间一致性的表述:在附加说明的初始框架上打下三进制损失和在无标签搜索框架上打下跨框架的三进制损失,通过前向一致性选择可靠的样本。 为解决模式支配地位的偏差,ESMTrack采用了由以下三个分支组成的结构: 融合 分支和两个单式分支 RGB 和热输入。 我们使用平均峰值对折合能源量化方式的贡献,衡量各峰值之间的反应差异。 融合 和单式分支。 由此产生的可靠性估计指导了一种培训时间模式脱钩机制,这种机制压制了主导模式的捷径和适应性加权。 跨模态 任务级对齐的对比学习。 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:56:13.226344+00:00",
+          "error": "numeric_mismatch: numbers or percentages changed",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 物体跟踪利用可见和热红外模式的互补特性,在不利条件下提高稳健性。 现有监督方法通常依赖费用高昂、方式一致的框框说明,而大多数方法则依赖成本很高的框框说明。 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架注释,ESMTrack通过两个互补目标来学习具有歧视性和时间一致性的表述:在附加说明的初始框架上打下三进制损失和在无标签搜索框架上打下跨框架的三进制损失,通过前向一致性选择可靠的样本。 为解决模式支配地位的偏差,ESMTrack采用了由以下三个分支组成的结构: 融合 分支和两个单式分支 RGB 和热输入。 我们使用平均峰值对折合能源量化方式的贡献,衡量各峰值之间的反应差异。 融合 和单式分支。 由此产生的可靠性估计指导了一种培训时间模式脱钩机制,这种机制压制了主导模式的捷径和适应性加权。 跨模态 任务级对齐的对比学习。 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:59:36.204983+00:00",
+          "error": "numeric_mismatch: numbers or percentages changed",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 目标跟踪 利用可见和热红外线的补充特性。 模态 在不利条件下提高稳健性。 现有监督方法通常依赖成本高的 模态-对齐边框注释,而大多数 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架说明,ESMTrack学习了歧视性和时间一致性 表征 实现两个相辅相成的目标: 三元组 附加说明的初始框架和跨框架时间损失 三元组 在无标签的搜索框上丢失,通过前向一致性选择可靠的样本。 处理 模态 “EMETrack”采用三分支结构,包括: 融合 分支和两个单式分支 RGB 和热输入。 我们量化 模态 利用平均峰值对折合能源,衡量 融合 和单式分支。 由此产生的可靠性估计数指导培训时间 模态 压制支配地位的脱钩机制-模态 快捷键和适应性加权 跨模态 对比学习 任务级别 对齐. 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T13:01:32.023111+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 目标跟踪 利用可见和热红外线的补充特性。 模态 在不利条件下提高稳健性。 现有监督方法通常依赖成本高的 模态-对齐边框注释,而大多数 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架说明,ESMTrack学习了歧视性和时间一致性 表征 实现两个相辅相成的目标: 三元组 附加说明的初始框架和跨框架时间损失 三元组 在无标签的搜索框上丢失,通过前向一致性选择可靠的样本。 处理 模态 “EMETrack”采用三分支结构,包括: 融合 分支和两个单式分支 RGB 和热输入。 我们量化 模态 利用平均峰值对折合能源,衡量 融合 和单式分支。 由此产生的可靠性估计数指导培训时间 模态 压制支配地位的脱钩机制-模态 快捷键和适应性加权 跨模态 对比学习 任务级别 对齐. 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T13:04:26.621156+00:00",
+          "error": "protected_token_missing: RGB",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "RGB-T 目标跟踪 利用可见和热红外线的补充特性。 模态 在不利条件下提高稳健性。 现有监督方法通常依赖成本高的 模态-对齐边框注释,而大多数 自监督 方法遵循两个阶段的伪标签模式,使跟踪器培训对伪标签质量敏感,并防止联合端对端优化。 在本文中,我们提出ESMTrack,一个完全端到端 自监督 RGB-T 跟踪框架,没有离线伪标签生成或密集帧级的边框说明。 仅考虑到视觉跟踪中使用的标准初始框架说明,ESMTrack学习了歧视性和时间一致性 表征 实现两个相辅相成的目标: 三元组 附加说明的初始框架和跨框架时间损失 三元组 在无标签的搜索框上丢失,通过前向一致性选择可靠的样本。 处理 模态 “EMETrack”采用三分支结构,包括: 融合 分支和两个单式分支 RGB 和热输入。 我们量化 模态 利用平均峰值对折合能源,衡量 融合 和单式分支。 由此产生的可靠性估计数指导培训时间 模态 压制支配地位的脱钩机制-模态 快捷键和适应性加权 跨模态 对比学习 任务级别 对齐. 5项的广泛实验 RGB-T 跟踪基准显示,ESMTrack实现了具有竞争力的先进性能,强跨数据集通用化,实时推论速度. 源代码可见于 https://github.com/LiShenglana/ESMTrack.",
+          "english_hash": "e60039a74ecafa0dab6814caea0323b830c349813aaf38f9a9c9c92668f1ceb8",
+          "protection_revision": 6,
+          "updated_at": "2026-10-15T13:06:15.903028+00:00",
+          "error": "protected_token_missing: ESMTrack",
+          "error_type": "translation_validation_failed"
+        }
+      ]
     },
     "2609.37148": {
       "arxiv_id": "2609.37148",
@@ -138505,10 +138685,10 @@
       "translation": {
         "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+        "zh": "合作社 3D 追踪必须综合各种代理人和时间的补充观察,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop,  融合 首先,将后期框架与身份管理区分开来. 置信度-分级录入 (CSA) 分配数 协同查询 已提供 自车槽位 使用 置信度 和空间接近。 统一 表征 合计 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后, Cooperative-Priority 身份识别 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 一个共享的 码本 在保留时减少传输的有效载荷 AP 和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/AP 的 0.611/0.548 在 V2X-Seq 和 0.688/0.653 在 Griffin-25M. 代码将被发布.",
         "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
-        "protection_revision": 5,
-        "updated_at": "2026-10-13T13:30:59.179986+00:00"
+        "protection_revision": 6,
+        "updated_at": "2026-10-15T13:08:44.021455+00:00"
       },
       "raw_abstract": "Cooperative 3D tracking must integrate complementary observations across agents and time while maintaining consistent identities. When evidence integration and identity inheritance share a matching decision, errors arising from cross-view appearance differences and spatial misalignment can compromise both feature fusion and track continuity. We propose FFBL-Coop, a fuse first, bind later framework that separates instance admission from identity management. Confidence-ranked Slot Admission (CSA) allocates cooperative queries to available ego slots using confidence and spatial proximity. Unified Representation Aggregation (URA) uses cooperative semantic features and aligned anchors to guide ego-feature retrieval, refining the augmented query bank within a shared transformer decoder. After refinement, Cooperative-Priority Identity Anchoring (CPIA) combines learned association with persistent mappings to establish accepted identity assignments across frames. A shared codebook reduces transmitted payload while retaining AP and AMOTA close to the uncompressed variant. FFBL-Coop achieves AMOTA/AP of 0.611/0.548 on V2X-Seq and 0.688/0.653 on Griffin-25M. Code will be released.",
       "clean_abstract": "Cooperative 3D tracking must integrate complementary observations across agents and time while maintaining consistent identities. When evidence integration and identity inheritance share a matching decision, errors arising from cross-view appearance differences and spatial misalignment can compromise both feature fusion and track continuity. We propose FFBL-Coop, a fuse first, bind later framework that separates instance admission from identity management. Confidence-ranked Slot Admission (CSA) allocates cooperative queries to available ego slots using confidence and spatial proximity. Unified Representation Aggregation (URA) uses cooperative semantic features and aligned anchors to guide ego-feature retrieval, refining the augmented query bank within a shared transformer decoder. After refinement, Cooperative-Priority Identity Anchoring (CPIA) combines learned association with persistent mappings to establish accepted identity assignments across frames. A shared codebook reduces transmitted payload while retaining AP and AMOTA close to the uncompressed variant. FFBL-Coop achieves AMOTA/AP of 0.611/0.548 on V2X-Seq and 0.688/0.653 on Griffin-25M. Code will be released.",
@@ -138561,7 +138741,77 @@
         },
         "model": "deepseek-flash",
         "request_id": "7eadbb30-1c87-4427-b3f2-11eb7ea76691"
-      }
+      },
+      "translation_history": [
+        {
+          "status": "machine",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-13T13:30:59.179986+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:54:26.584219+00:00",
+          "error": "[Errno 13] Permission denied: 'D:\\\\desktop\\\\code\\\\paper\\\\RS-PaperClaw\\\\papers\\\\maritime\\\\private\\\\translation\\\\data\\\\argos-translate\\\\packages\\\\translate-en_zh-1_9\\\\stanza\\\\resources.json'",
+          "error_type": "model_runtime_error"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:56:11.991715+00:00",
+          "error": "translation_incomplete: model omitted a text segment",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T12:59:34.936507+00:00",
+          "error": "translation_incomplete: model omitted segment: allocates cooperative queries to available ego slots using",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T13:01:30.835018+00:00",
+          "error": "translation_incomplete: model omitted segment: allocates cooperative queries to available ego slots using",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T13:04:25.433808+00:00",
+          "error": "protected_token_missing: Confidence-ranked",
+          "error_type": "translation_validation_failed"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "合作的立体跟踪必须综合跨物剂和时间的补充观测,同时保持一致的身份。 当证据整合和身份继承共同做出匹配决定时,交叉视图外观差异和空间错位所产生的错误可能会损害两个特征. 融合 并跟踪连续性。 我们提议 FFBL-Coop, 先装保险丝,然后装订框架,将实例承认与身份管理区分开来。 信任排行榜 (CSA) 将合作查询分配到可用自信和空间接近的自负槽。 统一代表制 (URA) 使用合作语义特性和对齐的锚点来引导自定特性检索,完善共享内增强的查询库 Transformer 解码器。 完善后,合作社优先身份确定 (CPIA) 将学习的关联与持续的绘图相结合,确定跨框架的公认身份分配。 共用的代码簿在保留AP和 AMOTA 接近未压缩的变体. FFBL-Coop 实现 AMOTA/亚太 0.611/0.548 打开 V2X-纽约 0.688/0.653 关于格里芬-25M. 代码将被发布.",
+          "english_hash": "bfec33de1986ce0b9605144f1763ee7b4f8d8c9b6cb20f20ddc3d0c0df191ee1",
+          "protection_revision": 5,
+          "updated_at": "2026-10-15T13:06:14.805394+00:00",
+          "error": "protected_token_missing: AMOTA/AP",
+          "error_type": "translation_validation_failed"
+        }
+      ]
     },
     "2610.01655": {
       "arxiv_id": "2610.01655",
