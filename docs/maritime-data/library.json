@@ -7287,9 +7287,9 @@
         "model": "deepseek-flash",
         "request_id": "9ea0e7b4-24f1-4058-9229-56bb46e943b9"
       },
-      "ai_score": 80,
+      "ai_score": 53,
       "ai_demoted": false,
-      "recommendation_status": "direct",
+      "recommendation_status": "transfer",
       "ai_state": "evaluated",
       "display_abstract_zh": "通过在车辆和3D路边基础设施之间共享补充观测结果,合作感可改善自主驾驶 目标检测. 然而,实际部署受到带宽有限和不可靠合作的限制,因为包丢失、传输延迟和空间错位共同降低合作特征流。 现有方法往往减少通信费用或补偿一种退化类型,使混合扰动问题得不到充分解决。 为了解决这个问题,我们提议使用Sparse2comm,一个带宽高效和强大的合作3D 目标检测 将不可靠的合作视为逐步恢复已退化的合作特征。 分页 特征编码 首先将通信编码为由协作者传送的随机遮罩样本前缘特征,自负载体从中重建密度语义表达. 这种零星到密集的机制从零星的观测中可以推断出缺失的以物体为中心的内容,从而能够在同一代表范围内进行超低波段的通信并恢复数据包的损失。 在模拟恢复的特征上,Latency-Aware对齐预测运动流量以补偿延迟的信息,而自我校正的Fusion估计残余空间抵消a 自监督 在适应性交叉物剂聚变之前 因此,Sparse2comm恢复了语义完整性、时间一致性和所订购管道的空间对齐。 广泛试验 DAIR-V2X, OpenV2V, 和V2V4 Real显示,Sparse2comm保持了竞争性的清洁精度,在个体和混合的现实世界退化下持续提高稳健性. 与选择性特征通信基准Where2comm相比,Sparse2comm将混合设置的AP@0.5/AP@0.7分别改进为+20.15+11.79,+12.66/+11.07和+15.36/+12.61三个数据集.."
     },
@@ -111893,9 +111893,9 @@
         "model": "deepseek-flash",
         "request_id": "7eadbb30-1c87-4427-b3f2-11eb7ea76691"
       },
-      "ai_score": 73,
+      "ai_score": 47,
       "ai_demoted": false,
-      "recommendation_status": "direct",
+      "recommendation_status": "transfer",
       "ai_state": "evaluated",
       "display_abstract_zh": ""
     },
