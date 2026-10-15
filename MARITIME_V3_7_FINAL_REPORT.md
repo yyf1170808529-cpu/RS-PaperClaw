@@ -4,7 +4,7 @@
 
 ## 结果与原因
 
-V3.6 只生成 2 篇，是因为原候选窗口与短期去重使合格池偏小，同时还允许没有有效 AI 评价的 FFBL-Coop 依靠规则直接发布。V3.7 改为四层候选：当天新增、近 7 天、近 90 天、未曾推送的更早历史；分批审核，够 5 篇即停止。正式日报仅接纳当前标题、干净英文摘要、研究偏好与结构化证据均匹配的 AI 评价；低置信、过期缓存、明确“不推荐”的普通迁移论文和未评审论文不再充数。50/30/20 仍为软比例。
+V3.6 只生成 2 篇，是因为原候选窗口与短期去重使合格池偏小，同时还允许没有有效 AI 评价的 FFBL-Coop 依靠规则直接发布。V3.7 改为四层候选：当天新增、近 7 天、近 90 天、未曾推送的更早历史；分批审核，够 5 篇即停止。正式日报仅接纳当前标题、干净英文摘要、研究偏好与结构化证据均匹配的 AI 评价；低置信、过期缓存、明确“不推荐”的普通迁移论文和未评审论文不再充数。最后移除了规则 `direct_task()` 对 AI 直接相关分与发布资格的覆盖；若模型仅因“没有 AIS”否定明确船舶视觉任务，该评价失效并等待重审。50/30/20 仍为软比例。
 
 首次补选出现一个额外漏洞：海事预印本 KSG-Net 的 `application_bucket=water`，旧 `recommendation.bucket=land`，因而绕过水路正式期刊资格。我在日报资格入口按实际海事应用重新核查来源，KSG-Net 留在完整论文库，但退出正式精选。这个修正没有改变可信期刊/会议标准。修正后候选池 66 篇，有效 AI 评价 15 篇，最终通过发布资格 5 篇。
 
@@ -34,7 +34,7 @@ SNAP 原 Argos 译文存在术语/语序风险；新 DeepSeek 译文保留了“
 
 Python 回归 **97 项通过**，Node 回归 **24 项通过**。新增测试覆盖四层历史候选、未评审禁止发布、海事预印本不能借陆上桶绕过门槛、授权前不发送摘要、译文数字与术语校验、人工译文优先、收藏/取消收藏与别名备份、深链接和无 PDF Prompt。真实日报 JSON 为 `docs/maritime-data/mobile/2026-10-15.json`，包含 5 个不同 ID，五篇均通过当前 AI 评价。公开数据安全检查未发现密钥或私人阅读记录。
 
-代码提交 `c7ba946`、来源门槛修正 `ead5709`；公开数据已由原白名单同步到用户 Fork，最新数据提交 `8bd7aa4abb9854338da53d6c3fa6e7e2fecd8870`，没有 force push。[Pages 运行 38735250395](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/38735250395) 实际完成，结论为 `success`。公开日报、JSON、完整库与 JS 均返回 HTTP 200；日报 HTML 有 5 个 `<article>`，公开 JSON 有 5 个不同论文 ID，包含 FFBL-Coop、不含不合格的 KSG-Net。此为真实线上请求验收，未声称代替用户实体手机操作。
+代码提交 `c7ba946`、来源门槛修正 `ead5709`、AI 评分覆盖修正 `d3c6a77`；公开数据已由原白名单同步到用户 Fork，最终数据提交 `25f373291a157c45e875a72aae2ff39166bcb3e7`，没有 force push。[最终 Pages 运行 38735877520](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/38735877520) 实际完成，结论为 `success`。公开日报、JSON、完整库与 JS 均返回 HTTP 200；日报 HTML 有 5 个 `<article>`，公开 JSON 的五篇 AI 相关分为 `47/47/47/40/40`，包含 FFBL-Coop、不含 KSG-Net。此为真实线上请求验收，未声称代替用户实体手机操作。
 
 主要修改：`docs/maritime.html`、`docs/maritime.js`、`services/mobile_digest.py`、`services/semantic_evaluation.py`、新增 `services/selected_translation.py`、`services/maritime_update.py`、`services/maritime.py`、`update_maritime.py`、`config/maritime/semantic.json`、相关测试；生成并同步当天手机日报、AI 缓存和论文静态数据。完整库入口：`https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html`；日报入口：`https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html`。
 
