@@ -2,22 +2,6 @@
   "date": "2026-10-15",
   "papers": [
     {
-      "paper_id": "2609.02077",
-      "title": "KSG-Net: Key-Sparse and Global-Context Learning for Maritime 3D Ship Detection",
-      "source": "arXiv",
-      "reason": "直接面向海事3D船舶检测，任务相关度高，KSMA与GCA方法具体，强匹配海事感知优先方向。",
-      "original_url": "https://doi.org/10.48550/arxiv.2609.02077",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.02077",
-      "score": 20,
-      "rule_level": "高度相关",
-      "level": "直接相关",
-      "ai_score": 93,
-      "selection_source": "近期候选",
-      "abstract": "Accurate 3D ship detection in maritime environments is critical for autonomous navigation, yet remains challenging due to large-scale vessel variations, sparse point clouds of small vessels, and severe sea-clutter interference. Existing methods, primarily based on 2D features or dense representations, struggle to balance detection accuracy and computational efficiency, while sparse 3D detectors designed for road scenes generalize poorly to maritime scenarios. This paper focuses on two key challenges in maritime LiDAR perception: weak feature representation for small and sparse vessels, and insufficient global structural modeling for large vessels due to the limited receptive field of local sparse convolutions. To address these issues, we propose KSG-Net, a Key-Sparse and Global-Context learning network for maritime 3D ship detection. The core idea is to jointly enhance local discriminative features and global structural awareness within a unified fully sparse detection framework. Specifically, a Key Sparse Multi-scale Aggregation (KSMA) module is designed to enhance the representation of small and sparse vessels by selecting informative key voxels and aggregating cross-scale neighborhood features. Furthermore, a Global Context Aggregation (GCA) module is introduced to capture long-range geometric dependencies through scene-level context modeling with gated residual interactions, thereby improving the representation of large vessels. Extensive experiments on the Thames River vessel dataset and simulated datasets demonstrate that KSG-Net consistently outperforms existing methods in multi-scale vessel detection and exhibits strong robustness in complex maritime environments.",
-      "abstract_zh": "",
-      "translation_source": "english_only"
-    },
-    {
       "paper_id": "2610.01750",
       "title": "FFBL-Coop: Association-Decoupled Cooperative 3D Multi-Object Tracking",
       "source": "arXiv",
@@ -80,12 +64,28 @@
       "abstract": "Synthetic hard negatives generated in the representation space have proven effective for unimodal self-supervised learning, but transferring this idea to vision-language pretraining is not straightforward. We analyze six representation-space synthesis strategies and identify two failure modes in their transfer to vision-language pretraining: cross-modal constructions that produce overly easy negatives or pull them toward the query, and intra-modal constructions that incorporate the matched positive. We also observe logit-scale saturation when training with synthetic hard negatives and a learnable temperature, and find that fixing the temperature improves downstream performance. Using this geometric analysis we propose SNAP, which generates intra-modal hard negatives that never involve the positive from either modality, avoiding both failure modes entirely. SNAP is model-agnostic, requires no external generative models, and adds less than 10% training time overhead. Evaluated on top of CLIP and FLIP across multiple architectures and datasets, SNAP delivers consistent improvements on zero-shot retrieval, zero-shot classification, and linear probe evaluation.",
       "abstract_zh": "在表示空间中生成的合成困难负样本已被证明对单模态自监督学习有效，但将这一思想迁移到视觉-语言预训练中并非易事。我们分析了六种表示空间合成策略，并识别出它们在迁移到视觉-语言预训练时的两种失败模式：跨模态构建产生过于简单的负样本或将其拉向查询，以及模态内构建纳入了匹配的正样本。我们还观察到使用合成困难负样本和可学习温度训练时出现logit尺度饱和，并发现固定温度可提升下游性能。利用这一几何分析，我们提出了SNAP，它生成模态内困难负样本，这些负样本从不涉及来自任一模态的正样本，从而完全避免这两种失败模式。SNAP与模型无关，不需要外部生成模型，且增加的训练时间开销不到10%。在CLIP和FLIP之上跨多种架构和数据集进行评估，SNAP在零样本检索、零样本分类和线性探针评估上均带来一致的改进。",
       "translation_source": "deepseek"
+    },
+    {
+      "paper_id": "2610.07928",
+      "title": "Dynamic Alignment and Calibration for Multimodal Learning",
+      "source": "arXiv",
+      "reason": "cross_modal_alignment；将动态跨模态三元组对齐用于AIS文本/航迹与视觉船舶检测表征匹配：需把正负样本对定义从通用多模态改为AIS身份/时空邻近为高置信正样本、非同一目标为负样本，",
+      "original_url": "https://arxiv.org/abs/2610.07928",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.07928",
+      "score": 22,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 40,
+      "selection_source": "近期候选",
+      "abstract": "Dynamic multimodal learning aims to learn robust representations by adaptively modeling information discrepancies across modalities. However, existing methods still suffer from two limitations: (i) static cross-modal alignment strategies usually impose uniform constraints on all samples while overlooking sample-wise variations, potentially leading to unreasonable over-alignment; and (ii) confidence- or uncertainty-aware fusion methods often fail to adequately account for feature magnitude and confidence differences across modalities. For modality pairs with significant feature magnitude differences or small confidence gaps, it might be unreliable to strictly align fusion weights according to confidence. To address these issues, we propose an Alignment- and Calibration-driven Multimodal Learning framework (ACML). Specifically, ACML incorporates a dynamic cross-modal triplet alignment module, which enforces strong semantic consistency for high-confidence positive pairs while encouraging diverse representation learning between high- and low-confidence positive pairs according to their confidence gaps. Additionally, ACML introduces a difference-aware attention calibration strategy that adaptively adjusts attention regularization based on feature magnitude and confidence differences across modalities, thereby mitigating biases caused by unreasonable fusion constraints. Extensive experiments on multiple multimodal benchmark datasets demonstrate that ACML consistently achieves superior performance and robustness over recent state-of-the-art methods.",
+      "abstract_zh": "",
+      "translation_source": "english_only"
     }
   ],
   "selection_audit": {
-    "candidate_count": 67,
-    "ai_reviewed": 16,
-    "qualified_count": 6,
+    "candidate_count": 66,
+    "ai_reviewed": 15,
+    "qualified_count": 5,
     "selected_count": 5,
     "shortfall": 0
   }
