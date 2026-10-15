@@ -18,7 +18,7 @@ class DailyTests(unittest.TestCase):
         self.p.update(paper_id=self.p['arxiv_id'],abstract='We propose a ship detection model with regional segmentation for maritime infrared images.',
                       recommendation={'bucket':'water'},quality={'high_journal':True},resource_type='journal_article',published='2026-10-14',publication_date='2026-10-14')
         self.e={'paper_id':self.p['paper_id'],'task_type':'Ship detection','direct_relevance':0,'transferability':2,
-                'confidence':.9,'decision':'不推荐','reason_zh':'没有AIS关联','limitations':[],
+                'confidence':.9,'decision':'不推荐','reason_zh':'没有AIS关联','limitations':[],'transfer_path':None,
                 'method_evidence':[{'quote_en':'ship detection model with regional segmentation','interpretation_zh':'船舶检测','inference':False}]}
     def attach(self,p,e):
         p['semantic']={'fingerprint':ai.fingerprint(p,self.cfg),'evaluation':copy.deepcopy(e),'paper_id':p['paper_id']}

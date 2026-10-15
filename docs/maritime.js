@@ -7,7 +7,7 @@ const INVALID = new Set(['deleted','withdrawn','invalid']);
 const RESOURCE_TYPES = new Set(['dataset','software','other']);
 function recommendable(p) {
   const b=p.recommendation?.bucket,q=p.quality||{};
-  return !INVALID.has(p.validity?.status) && !RESOURCE_TYPES.has(p.resource_type) && p.resource_type!=='unknown' && p.assessment?.level!=='excluded' &&
+  return p.recommendation_status!=='candidate' && !INVALID.has(p.validity?.status) && !RESOURCE_TYPES.has(p.resource_type) && p.resource_type!=='unknown' && p.assessment?.level!=='excluded' &&
     (b==='water' ? p.resource_type==='journal_article' && q.high_journal : ['land','general'].includes(b) && p.assessment.level==='high' && !p.recommendation.low_priority && ((p.resource_type==='journal_article' && q.high_journal) || (p.resource_type==='conference_paper' && q.ccf_a) || (p.resource_type==='preprint' && p.publication_status!=='published')));
 }
 function recommendationSummary(papers) {
@@ -51,7 +51,7 @@ function sourceLabel(paper) {
 function compareRecommendation(a,b) {
   if(Boolean(a.ai_demoted)!==Boolean(b.ai_demoted)) return a.ai_demoted?1:-1;
   if(typeof a.ai_score==='number' || typeof b.ai_score==='number') {
-    const difference=(b.ai_score??50)-(a.ai_score??50);if(difference)return difference;
+    const difference=(b.ai_score??-1)-(a.ai_score??-1);if(difference)return difference;
   }
   if (!a.recommendation || !b.recommendation) return b.assessment.score-a.assessment.score;
   const vector = p => {const r=p.recommendation,q=p.quality||{};return [r.low_priority?0:1,q.ccf_a?1:0,q.high_journal||q.high_conference?1:0,r.direct_relevance,r.maritime?1:0,r.method_transfer_signal?1:0];};
@@ -161,7 +161,7 @@ if (typeof document !== 'undefined') {
       const reading = readingFor(paper, readings);
       const id=paperId(paper),quality=paper.quality||{};
       article.append(node('h2', paper.title), node('p', `${paper.authors.join(', ')} · ${paper.published}`, 'muted'),
-        node('p', `${LEVELS[assessment.level]} ${assessment.score}${typeof paper.ai_score==='number'?` · AI相关分 ${paper.ai_score}/100`:''} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
+        node('p', `规则分 ${assessment.score}（${LEVELS[assessment.level]}） · ${paper.recommendation_status==='direct'||paper.recommendation_status==='direct_rule'?'直接相关':paper.recommendation_status==='transfer'?'方法值得关注':'普通候选'}${typeof paper.ai_score==='number'?` · AI相关分 ${paper.ai_score}/100`:' · AI待评估'} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
       const source=sourceLabel(paper);
       article.append(node('p', source),
         node('p', `第一作者：${paper.first_author||paper.authors[0]||'暂未获取'} ｜单位：${paper.affiliation_verified ? paper.first_author_affiliations.join('; ') : '暂未获取'}`, 'muted'));

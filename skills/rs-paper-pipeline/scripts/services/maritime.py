@@ -204,8 +204,8 @@ def build(root, library, rules):
     public_papers=[]
     for p in library['papers'].values():
         item={k:v for k,v in p.items() if k not in ('raw_abstract','abstract_history','translation_history','metadata_records','merge_conflicts')}
-        info=ranking_info(p,semantic_settings) if library.get('semantic_enabled',True) else {'score':None,'demoted':False}
-        item.update(ai_score=info['score'],ai_demoted=info['demoted'])
+        info=ranking_info(p,semantic_settings if library.get('semantic_enabled',True) else {**semantic_settings,'enabled':False})
+        item.update(ai_score=info['score'],ai_demoted=info['demoted'],recommendation_status=info['path'] or 'candidate',ai_state=info['state'])
         public_papers.append(item)
     payload = {"schema_version": 2, "topics": {k: v["name"] for k, v in rules["topics"].items()},
                "papers": public_papers, "days": days,

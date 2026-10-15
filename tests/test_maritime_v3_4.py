@@ -16,7 +16,7 @@ class SemanticTests(unittest.TestCase):
                     'quality':{'high_journal':False},'publication_status':'unknown','assessment':{'score':25},'recommendation':{'bucket':'candidate'}}
         self.result={'paper_id':'2601.00001','task_type':'Radar AIS匹配','direct_relevance':5,'transferability':4,
             'method_evidence':[{'quote_en':'align radar observations with AIS trajectories','interpretation_zh':'摘要明确给出关联任务','inference':False}],
-            'limitations':['摘要无法确认具体实验'],'decision':'重点推荐','reason_zh':'关注Radar AIS关联','confidence':0.8}
+            'transfer_path':None,'limitations':['摘要无法确认具体实验'],'decision':'重点推荐','reason_zh':'关注Radar AIS关联','confidence':0.8}
     def test_schema_and_exact_evidence_reject_hallucination_or_quality_fields(self):
         self.assertEqual(semantic.validate(self.result,self.paper),self.result)
         for change in [{'direct_relevance':True},{'reason_zh':'x'*101},{'quality':{'high_journal':True}},{'confidence':2},
