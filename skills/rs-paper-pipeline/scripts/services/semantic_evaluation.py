@@ -75,7 +75,7 @@ def direct_task(paper):
     if ship_vision(paper):return True
     title=paper.get('title','')
     if re.search(r'\b(AIS|automatic identification system)\b',title,re.I) and re.search(r'\b(radar|visual|vision|video|camera|associat\w*|match\w*|fusion)\b',title,re.I):return True
-    return bool(re.search(r'\b(multi.sensor|multi.modal|cooperative|radar.camera|camera.lidar)\b',title,re.I) and re.search(r'\b(object|target|vehicle|ship|vessel)\b',title,re.I) and re.search(r'\b(detect\w*|track\w*|associat\w*|match\w*)\b',title,re.I))
+    return bool(re.search(r'\b(multi.sensor|multi.modal|cooperative|collaborative|radar.camera|camera.lidar)\b',title,re.I) and re.search(r'\b(object|target|vehicle|ship|vessel)\b',title,re.I) and re.search(r'\b(detect\w*|track\w*|associat\w*|match\w*)\b',title,re.I))
 
 def current_evaluation(paper,config=None):
     config=config or settings()

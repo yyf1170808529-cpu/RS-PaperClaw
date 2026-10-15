@@ -7,6 +7,13 @@ const p = (id, topics, score, date, level='transfer') => ({arxiv_id:id,title:'Vi
   arxiv_url:`https://arxiv.org/abs/${id}`,pdf_url:`https://arxiv.org/pdf/${id}`,assessment:{topics,score,level,reasons:['cross-modal']}});
 const papers = [p('2610.00001',['A','C'],22,'2026-10-10','high'),p('2610.00002',['D'],12,'2026-10-11'),p('2610.00003',[],0,'2026-10-11','excluded')];
 
+test('an unassessed paper has no invented AI score in sorting',()=>{
+  const {compareRecommendation}=require('../docs/maritime.js');
+  const assessed={...papers[0],ai_score:20,ai_demoted:false,recommendation:{bucket:'general'}};
+  const unassessed={...papers[1],ai_score:null,ai_demoted:false,recommendation:{bucket:'general'}};
+  assert.ok(compareRecommendation(assessed,unassessed)<0);
+});
+
 test('history water uses scene while focus still uses quality bucket',()=>{
   const candidate={...papers[0],application_bucket:'water',recommendation:{bucket:'candidate'}};
   assert.equal(filterPapers([candidate],{window:'history',bucket:'water'},{}).length,1);

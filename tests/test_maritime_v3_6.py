@@ -53,7 +53,8 @@ class PublicationGateTests(unittest.TestCase):
         self.assertFalse(ai.ranking_info(p)['eligible'])
 
     def test_direct_ship_and_radar_ais_survive_missing_api(self):
-        for title in ('Maritime infrared ship detection','Radar AIS target association'):
+        for title in ('Maritime infrared ship detection','Ship instance segmentation','Radar AIS target association',
+                      'Visual AIS cross-modal matching','Collaborative 3-D Object Detection for autonomous driving'):
             p=copy.deepcopy(self.p);p['title']=title;p.pop('semantic',None)
             self.assertTrue(ai.ranking_info(p)['eligible'])
             self.assertIsNone(ai.ranking_info(p)['score'])
@@ -61,6 +62,18 @@ class PublicationGateTests(unittest.TestCase):
     def test_old_cache_version_is_invalid(self):
         old=copy.deepcopy(self.p);old['semantic']={'fingerprint':'old-schema','evaluation':{}}
         self.assertIsNone(ai.current_evaluation(old))
+
+    def test_same_day_rebuild_drops_old_low_pick_and_keeps_new_good_one(self):
+        self.attach(self.p,2,4,{'source_quote_en':'generates intra-modal hard negatives without the matched positive',
+                    'target_task':'cross_modal_matching','adaptation_zh':'改为视觉与AIS轨迹的配对输入和对比训练目标','inference':True})
+        low=copy.deepcopy(self.p);low['paper_id']=low['arxiv_id']='2610.00002';low['title']='Tactile robot action generation';low['recommendation']['bucket']='land'
+        self.attach(low,1,1,None,decision='不推荐')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);target=root/'docs/maritime-data/mobile/2026-10-15.json';target.parent.mkdir(parents=True)
+            target.write_text(json.dumps({'papers':[{'paper_id':low['paper_id']}]}),encoding='utf8')
+            lib={'papers':{low['paper_id']:low,self.p['paper_id']:self.p},'days':{}}
+            result=build_mobile_digest(root,lib,date(2026,10,15))
+            self.assertEqual([x['paper_id'] for x in result['papers']],[self.p['paper_id']])
 
 
 if __name__=='__main__':unittest.main()
