@@ -41,6 +41,9 @@ def validate(value,paper):
         if path['target_task'] not in ('cross_modal_matching','ship_detection','ship_segmentation','ship_depth','ship_enhancement','multi_sensor_detection','multi_object_tracking'):raise ValueError('Invalid transfer target')
         if not isinstance(path['adaptation_zh'],str) or len(path['adaptation_zh'].strip())<12 or type(path['inference']) is not bool:raise ValueError('Incomplete transfer adaptation')
     if value['decision']=='重点推荐' and not value['method_evidence']:raise ValueError('Focus needs abstract evidence')
+    if (ship_vision(paper) and value['direct_relevance']<3 and
+            re.search(r'(?:没有|缺少|未涉及|无).{0,8}AIS',value['reason_zh'])):
+        raise ValueError('Ship-vision review incorrectly requires AIS; reassess')
     return value
 
 def ai_rank(result):
@@ -89,8 +92,7 @@ def ranking_info(paper,config=None):
     if not value or value['confidence']<.7:
         return {'score':None,'eligible':False,'demoted':True,'path':None,'reason':None,
                 'state':'unassessed' if not value else 'uncertain'}
-    fallback=direct_task(paper)
-    direct=max(value['direct_relevance'],4) if fallback else value['direct_relevance']
+    direct=value['direct_relevance']
     path=value['transfer_path']
     direct_ok=direct>=4 and bool(value['method_evidence'])
     transfer_ok=(value['decision']!='不推荐' and value['transferability']>=3 and
@@ -99,7 +101,6 @@ def ranking_info(paper,config=None):
     reason=value['reason_zh'] if eligible and value['method_evidence'] else None
     if transfer_ok and not direct_ok:
         reason=f"{value['task_type']}；{path['adaptation_zh']}"[:100]
-    if fallback and value['decision']=='不推荐':reason=None
     return {'score':round((2*direct+value['transferability'])/15*100),
             'eligible':eligible,'demoted':not eligible,'path':'direct' if direct_ok else 'transfer' if transfer_ok else None,
             'reason':reason,'state':'evaluated'}

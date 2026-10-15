@@ -22,11 +22,13 @@ class DailyTests(unittest.TestCase):
                 'method_evidence':[{'quote_en':'ship detection model with regional segmentation','interpretation_zh':'船舶检测','inference':False}]}
     def attach(self,p,e):
         p['semantic']={'fingerprint':ai.fingerprint(p,self.cfg),'evaluation':copy.deepcopy(e),'paper_id':p['paper_id']}
-    def test_ship_vision_is_not_vetoed_by_missing_ais_or_decision_label(self):
+    def test_ship_vision_review_requiring_ais_is_invalidated_for_reassessment(self):
         self.attach(self.p,self.e)
-        self.assertFalse(ai.ranking_info(self.p)['demoted'])
-        self.assertGreaterEqual(ai.ranking_info(self.p)['score'],60)
-        self.assertIsNone(ai.ranking_info(self.p)['reason'])
+        self.assertIsNone(ai.current_evaluation(self.p))
+        self.assertFalse(ai.ranking_info(self.p)['eligible'])
+        corrected={**self.e,'direct_relevance':5,'decision':'候选','reason_zh':'船舶视觉检测与研究方向直接相关'}
+        self.attach(self.p,corrected)
+        self.assertTrue(ai.ranking_info(self.p)['eligible'])
     def test_high_confidence_medical_and_unrelated_language_are_demoted(self):
         for title,abstract in [('Blood vessel segmentation','We segment vascular tissue for a clinical study.'),('Linguistic landscape of shipping vessels','We study linguistic signs for monolingual schools.')]:
             p={**self.p,'title':title,'abstract':abstract}
@@ -48,7 +50,7 @@ class DailyTests(unittest.TestCase):
             self.assertEqual(self.p['quality'],old)
             self.assertEqual(len(build_mobile_digest(root,lib,date(2026,10,14))['papers']),0)
     def test_shared_cache_reused_without_key_or_new_paid_requests(self):
-        self.attach(self.p,self.e)
+        self.attach(self.p,{**self.e,'direct_relevance':5,'reason_zh':'船舶视觉检测与研究方向直接相关'})
         lib={'papers':{self.p['paper_id']:self.p},'days':{}}
         with tempfile.TemporaryDirectory() as directory,patch('clients.deepseek_client.complete') as call:
             root=Path(directory)
