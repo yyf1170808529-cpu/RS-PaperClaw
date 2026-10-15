@@ -70,5 +70,12 @@ class DailyStrictTests(unittest.TestCase):
         self.assertEqual(chosen_zh(p)[1],'argos')
         self.assertEqual(chosen_zh(p,daily=True)[1],'english_only')
 
+    def test_maritime_preprint_cannot_bypass_water_gate_as_land(self):
+        p=self.make('2610.10009','2026-10-15')
+        p.update(resource_type='preprint',application_bucket='water',quality={'high_journal':False},
+                 recommendation={'bucket':'land','application':'maritime'})
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(candidate_pool(Path(d),{'papers':{p['paper_id']:p}},date(2026,10,15)),[])
+
 
 if __name__=='__main__':unittest.main()

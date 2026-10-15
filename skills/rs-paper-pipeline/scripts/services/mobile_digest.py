@@ -14,6 +14,10 @@ def hard_eligible(p):
     if not p.get('abstract') or p.get('abstract_quality',{}).get('status') in ('review','missing'):
         return False
     kind=p.get('resource_type')
+    # A maritime preprint can be placed in a cross-domain bucket by older rules;
+    # that placement must not bypass the existing water publication threshold.
+    if p.get('application_bucket')=='water' or r.get('application')=='maritime':
+        return kind=='journal_article' and bool(q.get('high_journal'))
     if bucket=='water':return kind=='journal_article' and bool(q.get('high_journal'))
     if p.get('assessment',{}).get('level')!='high' or r.get('low_priority'):return False
     return bool((kind=='journal_article' and q.get('high_journal')) or
