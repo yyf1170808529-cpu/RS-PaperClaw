@@ -346,6 +346,45 @@
       },
       "model": "deepseek-flash",
       "request_id": "0e9de3cc-157f-4507-8d29-dba6d13b4b1a"
+    },
+    "b79afe7c051c6a6cdc7acade44628585fa61ace985426385be1076fcf2c1e2e4": {
+      "paper_id": "2610.11342",
+      "title": "Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation",
+      "fingerprint": "b79afe7c051c6a6cdc7acade44628585fa61ace985426385be1076fcf2c1e2e4",
+      "evaluation": {
+        "paper_id": "2610.11342",
+        "task_type": "点云表示学习/通用视觉感知",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a point cloud representation learning network that closely aligns with biological vision",
+            "interpretation_zh": "该工作提出面向点云表示学习的网络，属于通用三维视觉感知，不是海事或AIS关联任务。",
+            "inference": false
+          },
+          {
+            "quote_en": "we first design a point-focused attention, which simulates foveal vision at the visual focus",
+            "interpretation_zh": "提出点聚焦注意力机制，可能与视觉注意力/匹配学习思路有方法层面的间接可迁移性。",
+            "inference": true
+          },
+          {
+            "quote_en": "we propose a context-scan state space that mimics eye's saccade inference",
+            "interpretation_zh": "提出上下文扫描状态空间建模长程依赖，属于通用表示学习方法，未涉及船舶、AIS、雷达或跨模态关联。",
+            "inference": true
+          }
+        ],
+        "limitations": [
+          "摘要未涉及AIS、雷达、船舶视觉检测/分割/深度估计/图像增强或多传感器融合。",
+          "未提供与海事感知或跨模态匹配任务相关的实验证据。",
+          "点云表示学习方法向用户关注任务的迁移性仅为推测，摘要未验证。",
+          "无法从摘要判断对二维图像跨模态对齐或缺失模态鲁棒感知的适用性。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "摘要为点云表示学习，聚焦生物视觉启发的通用三维感知，未涉及AIS、雷达、船舶视觉或多传感器融合，与关注方向无明确证据关联。",
+        "confidence": 0.86
+      },
+      "model": "deepseek-flash",
+      "request_id": "233dae08-c03b-47c0-923c-3853b026e020"
     }
   }
 }
