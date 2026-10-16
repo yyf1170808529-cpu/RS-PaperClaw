@@ -1613,6 +1613,494 @@
       },
       "model": "deepseek-flash",
       "request_id": "07751d97-8be1-4ed5-bc25-404069a907f1"
+    },
+    "cce293ab62c372e9641a10891e142368655875a1035117d03656bbc762b98201": {
+      "paper_id": "2610.21779",
+      "title": "FuseAdapt: Parameter-Efficient Multimodal Fusion for Semantic Segmentation with Missing Modalities",
+      "fingerprint": "cce293ab62c372e9641a10891e142368655875a1035117d03656bbc762b98201",
+      "evaluation": {
+        "paper_id": "2610.21779",
+        "task_type": "多模态语义分割 / 缺失模态融合",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "we propose \\textbf{FuseAdapt}, a parameter-efficient framework that performs fusion within the adaptation space of a frozen vision foundation model (VFM)",
+            "interpretation_zh": "在冻结视觉基础模型的适配空间内进行多模态融合，可替换为海事多传感器输入（可见光/红外/雷达）并调整适配分支与融合位置。",
+            "inference": true
+          },
+          {
+            "quote_en": "keeping Q/V low-rank adaptation private to each modality and routing only FFN low-rank residual activations across modalities inside the frozen backbone",
+            "interpretation_zh": "模态私有Q/V低秩适配、跨模态仅路由FFN低秩残差的融合结构，可迁移到多传感器检测/分割的跨模态交互设计。",
+            "inference": true
+          },
+          {
+            "quote_en": "we further introduce \\textbf{Predictive Modality Modeling (PMM)}, a direct representation-level objective for cross-modal redundancy.",
+            "interpretation_zh": "PMM为表示级跨模态冗余建模目标，训练时掩蔽某模态并从可见模态预测其嵌入，可用于缺失模态或退化模态下的鲁棒多传感器感知。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we further introduce \\textbf{Predictive Modality Modeling (PMM)}, a direct representation-level objective for cross-modal redundancy. During training, PMM masks a target modality and predicts its embedding from the visible ones, supervised by a teacher target computed under full-modality input.",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将可见光/红外/雷达等多传感器输入的缺失或退化模态作为掩蔽目标，用PMM从可见传感器嵌入预测被掩蔽模态的嵌入表示，教师目标由全模态输入生成；融合结构可替换为冻结视觉/多传感器基础模型适配空间中的低秩适配分支，仅训练时使用PMM。",
+          "inference": true
+        },
+        "limitations": [
+          "论文针对语义分割，非船舶检测、雷达-AIS关联或船舶分割任务。",
+          "PMM为训练时表示级目标，摘要未验证在检测、跨模态匹配或轨迹关联上的有效性。",
+          "摘要未提供海事场景、雷达/红外等异构传感器实验。",
+          "迁移到多传感器检测需要重新设计检测头、标签分配与评估指标，具体调整摘要未涉及。"
+        ],
+        "decision": "候选",
+        "reason_zh": "缺失模态与参数高效跨模态融合方法具体明确，可迁移到多传感器船舶感知，但无直接海事任务验证。",
+        "confidence": 0.78
+      },
+      "model": "deepseek-flash",
+      "request_id": "92eb2732-db17-4916-82f4-e31050acd301"
+    },
+    "9f14154aaaf83b17fdfec03ea49f02dd3774d860e23f7922c2d7aa8e14db2ed1": {
+      "paper_id": "2610.00970",
+      "title": "RelationVGGT: Visual Geometry Transformers for 3D Spatial Relation Segmentation",
+      "fingerprint": "9f14154aaaf83b17fdfec03ea49f02dd3774d860e23f7922c2d7aa8e14db2ed1",
+      "evaluation": {
+        "paper_id": "2610.00970",
+        "task_type": "3D空间关系分割 / 多视图分割",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "We formulate 3D spatial relation segmentation in a feed-forward, pose-free multi-view setting: given a visually specified subject and a relational text query, the model segments the target across views without receiving its category name.",
+            "interpretation_zh": "提出前馈、无位姿多视图的关系分割设定，可用于多视图海上目标分割或跨视角目标关联。",
+            "inference": true
+          },
+          {
+            "quote_en": "integrates semantic features from a visual foundation model with geometry-aware representations from a 3D geometry foundation model and leverages a relation transformer for subject-conditioned, cross-view relation prediction",
+            "interpretation_zh": "融合视觉基础模型语义特征与3D几何基础模型表示，并用关系Transformer进行跨视图关系预测，可迁移到多视图船舶目标分割与关联。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "integrates semantic features from a visual foundation model with geometry-aware representations from a 3D geometry foundation model and leverages a relation transformer for subject-conditioned, cross-view relation prediction -- requiring neither per-scene optimization nor known camera poses.",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将多视图海上图像作为输入，用视觉基础模型提取语义特征，用几何基础模型提取视图几何表示，并调整关系Transformer以主体条件预测跨视图船舶目标掩码；需根据船舶目标外观与海面背景重新定义主体提示和关系查询，并处理无位姿多视图配准。",
+          "inference": true
+        },
+        "limitations": [
+          "论文任务为3D空间关系分割，非船舶检测、分割或雷达-AIS关联。",
+          "摘要未提供海上目标或船舶数据集实验。",
+          "无位姿多视图设定与船舶视觉场景的适配性未验证。",
+          "跨模态迁移到雷达/AIS需额外模态编码与时间对齐，摘要未涉及。"
+        ],
+        "decision": "候选",
+        "reason_zh": "前馈多视图关系分割方法有明确结构，可迁移到多视图船舶分割，但缺乏海事证据，迁移需较大调整。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "92eb2732-db17-4916-82f4-e31050acd301"
+    },
+    "60ec1511cc9c6aa70a38a2ef620d1bed1c5bb9bcf213171383c44c157bc513e3": {
+      "paper_id": "2609.36475",
+      "title": "Similar Choices, Different Attention: Cross-Modal Associations in Humans and Vision-Language Models",
+      "fingerprint": "60ec1511cc9c6aa70a38a2ef620d1bed1c5bb9bcf213171383c44c157bc513e3",
+      "evaluation": {
+        "paper_id": "2609.36475",
+        "task_type": "跨模态关联 / 人机注意力对齐研究",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Cross-modal associations are systematic pairings of features across modalities, such as the association of 'bouba' with round shapes and 'kiki' with sharp shapes.",
+            "interpretation_zh": "研究跨模态特征配对，但聚焦人类与视觉语言模型的伪词-形状关联，不是传感器跨模态匹配。",
+            "inference": false
+          },
+          {
+            "quote_en": "Fine-tuning small VLMs on human choices brings their choice alignment to the level of a human majority-vote reference on unseen words and images, yet their attention still matches human gaze less closely than this baseline.",
+            "interpretation_zh": "展示用人类选择微调小VLM可提升选择对齐，但注意力仍不对齐，属于认知与模型行为分析。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未提供可用于视觉-传感器匹配的具体可微匹配或表征对齐方法。",
+          "研究为人类与VLM跨模态关联及眼动分析，不是雷达-AIS或视觉-AIS关联。",
+          "未涉及船舶、多传感器检测或分割。",
+          "无法具体说明输入、训练目标或结构如何调整到海事跨模态匹配。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属认知科学式跨模态关联分析，无具体可迁移的传感器匹配方法或海事感知任务连接。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "92eb2732-db17-4916-82f4-e31050acd301"
+    },
+    "28ecf972e45b68ca97c542883204bb4d1169ab1ee3f86d76229d89582c87fe0d": {
+      "paper_id": "2609.36348",
+      "title": "Representation by Design in Generation: Cross-View Class-Token Alignment in Diffusion Transformers",
+      "fingerprint": "28ecf972e45b68ca97c542883204bb4d1169ab1ee3f86d76229d89582c87fe0d",
+      "evaluation": {
+        "paper_id": "2609.36348",
+        "task_type": "扩散Transformer表示学习 / 跨视图类令牌对齐",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "we extend this framework with cross-view class-token alignment to further strengthen semantic representations.",
+            "interpretation_zh": "提出跨视图类令牌对齐表示学习目标，目标是增强语义表示而非特定感知任务。",
+            "inference": false
+          },
+          {
+            "quote_en": "we form two independently noised, dual-timestep observations of each image and align each student class-token representation with the stop-gradient EMA-teacher target from the other observation.",
+            "interpretation_zh": "通过两个独立加噪、双时间步观测，将学生类令牌与另一观测的EMA教师目标对齐，可启发跨视图或跨模态表征对齐训练。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we form two independently noised, dual-timestep observations of each image and align each student class-token representation with the stop-gradient EMA-teacher target from the other observation.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将两视图图像观测替换为海上多传感器或AIS关联中的同一目标两种模态/视角观测，学生类令牌与EMA教师目标对齐可用于跨模态匹配表征训练；需调整噪声与时间步设置、模态编码器以及匹配损失。",
+          "inference": true
+        },
+        "limitations": [
+          "论文核心是生成模型中表示学习，非船舶检测、分割或雷达-AIS关联。",
+          "跨视图类令牌对齐为图像生成/表示学习目标，摘要未验证跨模态传感器匹配。",
+          "迁移到跨模态匹配需引入配对标签与模态编码器，摘要未提供相关结构。",
+          "无海事或异构传感器实验。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "跨视图类令牌对齐可作表示学习参考，但原文属生成模型表示学习，缺乏海事任务连接与充分迁移证据。",
+        "confidence": 0.82
+      },
+      "model": "deepseek-flash",
+      "request_id": "92eb2732-db17-4916-82f4-e31050acd301"
+    },
+    "ae9b3d82babf9acd57643f161ea5ead7ebf931831f7705c44021ab6b310a33e1": {
+      "paper_id": "2609.31456",
+      "title": "Diagnosing the Sources of Compositional Failure in Vision-Language Models: A Controlled Analysis",
+      "fingerprint": "ae9b3d82babf9acd57643f161ea5ead7ebf931831f7705c44021ab6b310a33e1",
+      "evaluation": {
+        "paper_id": "2609.31456",
+        "task_type": "vision-language compositional reasoning evaluation",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "COMPASS (COMPositional Analysis of SkillS), a controlled evaluation framework designed to isolate and measure the distinct factors underlying compositional failure",
+            "interpretation_zh": "提出了受控评测框架，用于分离组合失败的独立因素，属评测方法而非跨模态匹配技术",
+            "inference": false
+          },
+          {
+            "quote_en": "object detection, attribute binding, and relation reasoning, using skill-targeted perturbations",
+            "interpretation_zh": "按技能层面分析，其中包含目标检测与关系推理，但与海事感知任务无直接联系",
+            "inference": false
+          },
+          {
+            "quote_en": "primitives of different types provide useful grounding context",
+            "interpretation_zh": "发现不同类型基元提供有用上下文，可视为对跨模态组合的一种经验观察，但不构成可迁移的具体方法",
+            "inference": true
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未给出可用于跨模态匹配的具体可微匹配、困难负样本或对齐损失方法",
+          "未涉及雷达/AIS、视觉-AIS关联或船舶感知任何任务",
+          "仅提供评测分析结论，缺乏明确可移植的输入/训练目标/结构改造方案"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属视觉-语言组合推理的受控评测分析，未提供可落地的跨模态匹配或海事感知方法，识别系数不足。",
+        "confidence": 0.82
+      },
+      "model": "deepseek-flash",
+      "request_id": "89935e87-3775-4bb8-968e-e6756d2d9c64"
+    },
+    "f74a3918ac1cd8f20c6adc791e99c8cb3d183b3785f09ce499b2dd6946b3c6e7": {
+      "paper_id": "2609.24510",
+      "title": "0.5%>100%: Bidirectional Reciprocal Learning for Referring Image Segmentation",
+      "fingerprint": "f74a3918ac1cd8f20c6adc791e99c8cb3d183b3785f09ce499b2dd6946b3c6e7",
+      "evaluation": {
+        "paper_id": "2609.24510",
+        "task_type": "referring image segmentation / parameter-efficient cross-modal adaptation",
+        "direct_relevance": 3,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "a novel adapter-based PEFT framework that facilitates hierarchical, bidirectional information flow within both token-mixing and channel-mixing layers of frozen foundation models",
+            "interpretation_zh": "提出基于适配器的参数高效微调框架，实现冻结基础模型中token与通道层的双向跨模态信息流",
+            "inference": false
+          },
+          {
+            "quote_en": "The Reciprocal Attention Adapter (RAA) performs cross-modal query-key exchanges at the token level, enabling visual and linguistic tokens to mutually attend to each other for fine-grained spatial grounding",
+            "interpretation_zh": "RAA在token级做跨模态query-key交换，实现视觉与语言token互相注意以进行细粒度空间定位",
+            "inference": false
+          },
+          {
+            "quote_en": "The Reciprocal Gate Adapter (RGA) generates cross-modal gating signals at the channel level, allowing global semantic context from one modality to adaptively recalibrate channel activations of the other",
+            "interpretation_zh": "RGA在通道级生成跨模态门控信号，用一模态全局语义重校准另一模态通道激活",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The Reciprocal Attention Adapter (RAA) performs cross-modal query-key exchanges at the token level, enabling visual and linguistic tokens to mutually attend to each other for fine-grained spatial grounding",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将语言token替换为AIS或雷达等文本/结构化模态token，视觉token保留船舶图像特征；在冻结的视觉基础模型适配器中沿用token级query-key互换，实现AIS/雷达与船舶视觉的细粒度空间关联匹配，训练目标由指代分割改为跨模态对应匹配/关联。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅在通用指代图像分割基准上验证，未涉及海事或AIS/雷达数据",
+          "跨模态匹配迁移需替换语言分支输入为AIS/雷达结构化表征，摘要未提供该改造实验",
+          "未验证在缺失模态或强噪声下的鲁棒性"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出可具体迁移的token级跨模态query-key互换与通道门控适配器，能改写为AIS/雷达-视觉匹配路径，虽无海事验证但方法明确。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "89935e87-3775-4bb8-968e-e6756d2d9c64"
+    },
+    "a03031e418f0928347a0ec8e08743738612d10aa993862f12ed91de11b7e1f07": {
+      "paper_id": "2609.24564",
+      "title": "HyperCLIP++: Fine-tuning CLIP forOpen-vocabulary Semantic Segmentation in Hyperbolic Space",
+      "fingerprint": "a03031e418f0928347a0ec8e08743738612d10aa993862f12ed91de11b7e1f07",
+      "evaluation": {
+        "paper_id": "2609.24564",
+        "task_type": "open-vocabulary semantic segmentation / vision-language adaptation",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "HyperCLIP++ directly adjusts the hyperbolic radius of CLIP's embeddings via scaling transformations to achieve a hierarchy alignment to the target task, i.e., segmentation",
+            "interpretation_zh": "通过缩放变换调整CLIP嵌入的双曲半径，实现向分割任务的层级对齐",
+            "inference": false
+          },
+          {
+            "quote_en": "HyperCLIP++ integrates a Dual Cross-Relation Communication (DCRC) module that synchronizes these adjustments between the vision and text pathways",
+            "interpretation_zh": "DCRC模块在视觉与文本通路间同步调整，保持跨模态对齐",
+            "inference": false
+          },
+          {
+            "quote_en": "the hyperbolic radius of CLIP's text embeddings decreases, facilitating better alignment with the pixel-level granularity of visual data",
+            "interpretation_zh": "观察到微调使文本嵌入双曲半径下降以更好对齐像素级视觉粒度",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "HyperCLIP++ integrates a Dual Cross-Relation Communication (DCRC) module that synchronizes these adjustments between the vision and text pathways",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将文本通路替换为AIS/雷达语义通路，视觉通路保留船舶图像；在双曲空间中以缩放变换调整两模态嵌入半径，并用DCRC在视觉与AIS/雷达表征间同步，训练目标改为跨模态匹配而非开放词表分割，以对齐船类语义粒度。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦开放词表语义分割与CLIP层级对齐，未验证跨模态检索或关联匹配任务",
+          "需将AIS/雷达数据构造为类文本语义嵌入，摘要未给出该适配方式",
+          "未涉及海事数据或多传感器噪声场景"
+        ],
+        "decision": "候选",
+        "reason_zh": "双曲半径缩放与DCRC跨模态同步是可具体改写为AIS/雷达-视觉匹配路径的方法，但原文验证限于分割。",
+        "confidence": 0.65
+      },
+      "model": "deepseek-flash",
+      "request_id": "89935e87-3775-4bb8-968e-e6756d2d9c64"
+    },
+    "0cc50d956afe1d39534d6bff685737495daec30f789d14fc21a465304060380e": {
+      "paper_id": "2609.23541",
+      "title": "Towards robust multimodal 3D object detection via visual foundation models",
+      "fingerprint": "0cc50d956afe1d39534d6bff685737495daec30f789d14fc21a465304060380e",
+      "evaluation": {
+        "paper_id": "2609.23541",
+        "task_type": "multimodal 3D object detection / robust perception",
+        "direct_relevance": 4,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "we propose RoboDistill, a robust and generalizable multimodal 3D object detection framework that leverages visual foundation models (VFMs), such as the Segment Anything Model (SAM)",
+            "interpretation_zh": "提出利用视觉基础模型的多模态3D目标检测框架，属多传感器检测与融合方向",
+            "inference": false
+          },
+          {
+            "quote_en": "we design the AD Feature Pyramid Network (AD-FPN) to refine and upsample SAM features at multiple scales for seamless fusion with LiDAR features",
+            "interpretation_zh": "设计AD-FPN多尺度精炼并上采样视觉特征，与LiDAR特征融合",
+            "inference": false
+          },
+          {
+            "quote_en": "we develop the Depth-Guided Wavelet Attention (DGWA) module, which suppresses high-frequency sensor noise while preserving critical contextual information",
+            "interpretation_zh": "利用深度引导小波注意力抑制高频传感器噪声并保留上下文",
+            "inference": false
+          },
+          {
+            "quote_en": "the pretrained SAM-AD serves as a teacher that distills high-quality visual knowledge into a lightweight point-cloud network",
+            "interpretation_zh": "用预训练视觉模型作教师，向轻量点云网络蒸馏视觉知识以增强鲁棒性",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we design the AD Feature Pyramid Network (AD-FPN) to refine and upsample SAM features at multiple scales for seamless fusion with LiDAR features",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将LiDAR分支替换或补充为雷达点云/AIS时序特征，视觉分支保留船舶影像；沿用AD-FPN多尺度视觉特征上采样后与雷达/AIS特征融合，并用DGWA抑制海杂波等高频噪声，训练目标改为海面多传感器船舶检测。",
+          "inference": true
+        },
+        "limitations": [
+          "原文验证在自动驾驶LiDAR-相机场景，未涉及雷达/AIS或海事数据",
+          "迁移到海面场景需重新处理海杂波、AIS异构时序特征，摘要未提供",
+          "KD蒸馏的效果依赖自动驾驶域预训练SAM-AD，海事域需重训"
+        ],
+        "decision": "重点推荐",
+        "reason_zh": "明确的多传感器3D检测与融合框架，含特征金字塔融合与噪声抑制模块，可具体迁移至雷达/AIS-视觉船舶多传感器检测。",
+        "confidence": 0.78
+      },
+      "model": "deepseek-flash",
+      "request_id": "89935e87-3775-4bb8-968e-e6756d2d9c64"
+    },
+    "19464ddb89c6f30b0a2ae2acc9c92c007e3d8f529c8067860b2865af3cd6888b": {
+      "paper_id": "2609.16689",
+      "title": "Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision-Language Models",
+      "fingerprint": "19464ddb89c6f30b0a2ae2acc9c92c007e3d8f529c8067860b2865af3cd6888b",
+      "evaluation": {
+        "paper_id": "2609.16689",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "suppressing hard negatives and enlarging decision margins",
+            "interpretation_zh": "在统一蒸馏框架中显式抑制困难负样本并扩大决策间隔，可迁移到跨模态匹配中的困难负样本挖掘。",
+            "inference": false
+          },
+          {
+            "quote_en": "we design a lightweight cross-attention adapter that enhances non-RGB representations through RGB-guided semantic transfer, narrowing the modality gap",
+            "interpretation_zh": "用交叉注意力适配器以RGB语义引导非RGB模态表示，缩小模态差异，可迁移到视觉–AIS表征对齐。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we design a lightweight cross-attention adapter that enhances non-RGB representations through RGB-guided semantic transfer, narrowing the modality gap",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将RGB与非RGB模态替换为可见光图像与AIS/雷达特征，保留RGB引导的一方作为强模态；调整输入为图像与AIS目标属性/轨迹编码，训练目标加入跨模态对齐与困难负样本抑制，结构上把跨注意力适配器置于两模态编码器之间。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及海事或船舶场景。",
+          "未提供跨模态匹配任务的直接实验。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供困难负样本抑制与RGB引导跨模态适配器，可迁移至视觉–AIS对齐，但无海事验证。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "8da79c7d-2cdf-4de5-842f-095e4025cec9"
+    },
+    "8bdd285392a13351f51b8d92a945cb0e38b821eee7d2e9c8a073cf714604c1eb": {
+      "paper_id": "2609.16811",
+      "title": "Hyper-RED: Scalable Event Pre-training via Semantic Hypergraph Distillation",
+      "fingerprint": "8bdd285392a13351f51b8d92a945cb0e38b821eee7d2e9c8a073cf714604c1eb",
+      "evaluation": {
+        "paper_id": "2609.16811",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 0,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Hyper-RED uses hypergraphs to model and align high-order semantic associations among multiple image and event tokens",
+            "interpretation_zh": "用超图建模并对齐图像与事件token的高阶语义关联，避免刚性一一对应。",
+            "inference": false
+          },
+          {
+            "quote_en": "a hypergraph relational distillation loss that imposes complementary intra- and cross-modal constraints",
+            "interpretation_zh": "超图关系蒸馏损失同时施加模态内与跨模态约束，可迁移到跨模态特征蒸馏。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Hyper-RED uses hypergraphs to model and align high-order semantic associations among multiple image and event tokens",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "把事件模态替换为AIS/雷达token，图像模态保持可见光；调整输入为图像patch与AIS点/轨迹token，用超图连接语义相关token并以蒸馏损失对齐，训练目标由事件预训练改为跨模态检索或关联匹配。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为事件相机预训练，无海事场景。",
+          "未验证在检测/匹配任务上的直接效果。"
+        ],
+        "decision": "候选",
+        "reason_zh": "超图高阶语义对齐与跨模态蒸馏思路可迁移到图像–AIS表征对齐，但仅有事件相机证据。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "8da79c7d-2cdf-4de5-842f-095e4025cec9"
+    },
+    "95d8c4b8ef026213185e8849a5c4870030d82b812d3427dec5198764f92ab9e7": {
+      "paper_id": "2609.17094",
+      "title": "Hub-Spectral Activation of Latent Multimodal Knowledge",
+      "fingerprint": "95d8c4b8ef026213185e8849a5c4870030d82b812d3427dec5198764f92ab9e7",
+      "evaluation": {
+        "paper_id": "2609.17094",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 0,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "combines reliability-weighted matching evidence with source-gated candidate resolution for bidirectional retrieval",
+            "interpretation_zh": "以可靠性加权匹配证据与源门控候选解析进行双向检索匹配，可迁移至跨模态关联匹配。",
+            "inference": false
+          },
+          {
+            "quote_en": "HSA requires no target-pair supervision, gradient optimization, or backbone updates",
+            "interpretation_zh": "方法无需目标域配对监督与骨干更新，适合缺少配对标注的跨模态关联场景。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "combines reliability-weighted matching evidence with source-gated candidate resolution for bidirectional retrieval",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "以冻结视觉与AIS/雷达编码器为源，按HSA方式组合两模态hub边统计并提取谱方向；调整输入为目标候选嵌入，训练目标改为无需配对的可靠性加权双向匹配与候选门控解析。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦检索与原型分类，无探测/关联具体任务。",
+          "无海事数据验证。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供无需配对监督的可靠性加权跨模态匹配机制，可迁移到视觉–AIS关联，但证据为检索任务。",
+        "confidence": 0.65
+      },
+      "model": "deepseek-flash",
+      "request_id": "8da79c7d-2cdf-4de5-842f-095e4025cec9"
+    },
+    "8716c407c8cc664ea842bb8424361c133691065ed11a6334bb178906631d7173": {
+      "paper_id": "2609.16486",
+      "title": "VPRef: A Cross-Domain Benchmark for Referring Remote Sensing Image Segmentation",
+      "fingerprint": "8716c407c8cc664ea842bb8424361c133691065ed11a6334bb178906631d7173",
+      "evaluation": {
+        "paper_id": "2609.16486",
+        "task_type": "ship_segmentation",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Our framework counteracts visual distribution discrepancies through pseudo-label-driven self-training",
+            "interpretation_zh": "用伪标签自训练缓解视觉域分布差异，可迁移到跨域船舶分割适应。",
+            "inference": false
+          },
+          {
+            "quote_en": "addresses textual logic drift via random multi-granularity text prompt mixing",
+            "interpretation_zh": "通过随机多粒度文本提示混合应对语言逻辑漂移，可迁移到AIS文本/指令引导分割。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Our framework counteracts visual distribution discrepancies through pseudo-label-driven self-training",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将遥感跨域分割设置改为船舶分割的跨域（如不同海况/传感器）设置，输入为船舶图像，采用伪标签自训练并与LoRA参数高效适配；若引入AIS文本可加多粒度提示混合。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为遥感referring分割，非船舶场景。",
+          "摘要未涉及AIS或海上数据。"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨域分割的伪标签自训练与低秩适配可迁移到船舶分割，但无海事与AIS证据。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "8da79c7d-2cdf-4de5-842f-095e4025cec9"
     }
   }
 }
