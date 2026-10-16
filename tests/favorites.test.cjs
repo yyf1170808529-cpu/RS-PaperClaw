@@ -57,6 +57,8 @@ test('bad readings do not block migrating valid favorites; malformed legacy rema
   const map=new Map([[F.LEGACY,'{broken JSON']]);const store=F.create(storageApi(map),{});store.configure([snap]);store.add(snap);
   assert.equal(store.list().length,1);assert.equal(store.backup().recovery[F.LEGACY],'{broken JSON');
   store.configure([snap]);assert.equal(store.list().length,1);
+  await full.nodes.get('import').handlers.change({target:{files:[{text:async()=>JSON.stringify({schema_version:1,readings:{}})}],value:'repair'}});
+  assert.ok([...full.storage].some(([k,v])=>k.includes(':legacy-recovery:')&&v===old));
 });
 
 test('alias notes merge without destruction; missing library papers remain visible and exportable',async()=>{
@@ -75,4 +77,18 @@ test('separate stale tabs cannot overwrite another paper; cancellation retains n
   a.note(ff,'保留笔记');b.add(snap);b.note(snap,'另篇笔记');a.remove(ff.paper_id);
   a.configure([ff,snap]);assert.equal(a.list().length,1);assert.equal(a.get(ff.paper_id).note,'保留笔记');
   a.add(ff);assert.equal(b.get(ff.paper_id).note,'保留笔记');assert.equal(a.get(snap.paper_id).note,'另篇笔记');
+});
+
+test('favorites work before large library download completes and after network failure; plain text includes all notes',async()=>{
+  const shared=hub();const daily=await setupUI(undefined,{papers:[ff,snap]},'',{hub:shared,daily:true});
+  for(const holder of daily.nodes.get('papers').children)find(holder,'收藏').click();
+  for(const fetch of [()=>new Promise(()=>{}),async()=>{throw Error('offline');}]){
+    const full=await setupUI(undefined,dataset(),'?view=favorites',{hub:shared,fetch});
+    assert.equal(full.nodes.get('summary').textContent,'本浏览器收藏 2 篇');
+    assert.ok(full.find(ff.title));assert.ok(full.find(snap.title));
+    await find(full.nodes.get('favorite-tools'),'复制全部收藏文本').click();
+    assert.ok(full.copied().includes(ff.title));assert.ok(full.copied().includes(snap.original_url));
+    assert.ok(!full.copied().includes('## '));
+    find(full.nodes.get('favorite-tools'),'导出 TXT').click();assert.equal(full.downloaded.at(-1),full.copied());
+  }
 });

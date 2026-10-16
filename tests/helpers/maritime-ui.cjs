@@ -29,7 +29,7 @@ async function setupUI(saved,dataset,search='',options={}) {
     localStorage:{get length(){return storage.size;},key:i=>[...storage.keys()][i],getItem:key=>storage.get(key)??null,setItem:(key,value)=>{storage.set(key,value);for(const fn of shared.listeners)fn(key);}},
     addEventListener:(name,fn)=>eventHandlers.set(name,fn),
     navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{search},
-    fetch:async url=>{fetched.push(url);return {ok:true,json:async()=>dataset};},
+    fetch:async url=>{fetched.push(url);return options.fetch?options.fetch(url):{ok:true,json:async()=>dataset};},
     URL:{createObjectURL:blob=>{downloaded.push(blob.parts[0]);return 'blob:test';},revokeObjectURL(){}},
     Blob:class{constructor(parts){this.parts=parts;}},setTimeout:fn=>fn(),
   });

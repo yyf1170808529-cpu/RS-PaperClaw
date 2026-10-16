@@ -125,7 +125,7 @@ if (typeof module !== 'undefined') module.exports = {filterPapers, makePrompt, v
 
 if (typeof document !== 'undefined') {
   const $ = id => document.getElementById(id);
-  let data, readings = Object.create(null), favorites = new Set(), brokenStorage = null;
+  let data={papers:[],days:{},topics:{}}, readings = Object.create(null), favorites = new Set(), brokenStorage = null;
   const favoriteStore=FAVORITES_API?.create(localStorage);
   let lastFavoriteIds='';
   const message = text => { $('message').textContent = text; };
@@ -249,6 +249,12 @@ if (typeof document !== 'undefined') {
       if(!FAVORITES_API || FAVORITES_API.VERSION!=='3.7.2')throw Error('收藏脚本版本不一致，请刷新页面；本地数据未修改。');
       FAVORITES_API.toolbar($('favorite-tools'),favoriteStore,message);
       favoriteStore.configure();
+      // Local favorites must remain usable while the much larger library loads or fails.
+      for (const id of ['date','topic','level','sort','search','window','quality','section','bucket','language']) $(id)?.addEventListener('input', render);
+      favoriteStore.subscribe(()=>{const ids=favoriteStore.list().map(p=>p.paper_id).join('|');if(ids!==lastFavoriteIds&&$('window').value==='favorites')render();});
+      if(typeof location!=='undefined'&&new URLSearchParams(location.search).get('view')==='favorites')$('window').value='favorites';
+      if($('window').value==='favorites')render();
+      message('正在加载完整论文库；“我的收藏”可直接查看本浏览器保存的内容。');
       const response = await fetch('maritime-data/library.json', {cache: 'no-cache'});
       if (!response.ok) throw new Error(`数据 HTTP ${response.status}；请先运行 maritime --action site`);
       data = await response.json();
@@ -260,7 +266,6 @@ if (typeof document !== 'undefined') {
       for (const [key, name] of Object.entries(data.topics)) { const option = node('option', `${key}. ${name}`); option.value = key; $('topic').append(option); }
       for (const date of Object.keys(data.days).sort().reverse()) { const option = node('option', date); option.value = date; $('date').append(option); }
       for (const [old,canonical] of Object.entries(data.aliases||{})) if(readings[old]&&!readings[canonical]) readings[canonical]=readings[old];
-      for (const id of ['date','topic','level','sort','search','window','quality','section','bucket','language']) $(id)?.addEventListener('input', render);
       const status=updateStatus(data);message((brokenStorage!==null?'旧阅读记录格式异常，已保留原文；收藏可独立使用。 ':'')+status.text);
       if($('update-detail-text')) $('update-detail-text').textContent=status.details;
       if($('update-details')) $('update-details').hidden=!status.details;
@@ -279,6 +284,7 @@ if (typeof document !== 'undefined') {
           if(!imported&&!hasFavorites)throw readingError;
           if(hasFavorites)favoriteStore.restore(backup);
           if(imported){
+            if(brokenStorage!==null)favoriteStore.preserveLegacy(brokenStorage);
             const next={...readings,...imported};
             let prior={};try{prior=JSON.parse(localStorage.getItem(STORAGE)||'{}');}catch{}
             localStorage.setItem(STORAGE,JSON.stringify({...prior,schema_version:1,readings:next}));
@@ -288,9 +294,8 @@ if (typeof document !== 'undefined') {
         } catch (error) { message(`导入失败：${error.message}，未修改现有记录。`); }
         event.target.value = '';
       });
-      favoriteStore.subscribe(()=>{const ids=favoriteStore.list().map(p=>p.paper_id).join('|');if(ids!==lastFavoriteIds&&$('window').value==='favorites')render();});
       render();
-    } catch (error) { message(`加载失败：${error.message}。请使用本地 HTTP 服务或 GitHub Pages 打开。`); }
+    } catch (error) { message(`完整库加载失败：${error.message}。“我的收藏”仍可查看和导出本地快照。`); }
   }
   init();
 }

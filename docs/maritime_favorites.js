@@ -107,9 +107,11 @@
     function markdown() {
       return '# 我的论文收藏\n\n'+all().map(p=>`## ${p.title||p.paper_id}\n\n原文：${safeUrl(p.original_url)||safeUrl(p.reading_url)||'暂未获取'}\n\n${p.note?'收藏笔记：\n\n'+p.note+'\n':'（未填写笔记）\n'}`).join('\n');
     }
+    function plainText(){return '我的论文收藏\n\n'+all().map(p=>`${p.title||p.paper_id}\n原文：${safeUrl(p.original_url)||safeUrl(p.reading_url)||'暂未获取'}\n收藏笔记：${p.note||'（未填写）'}\n`).join('\n');}
     function refresh(){try{aliases={...aliases,...meta().aliases};changed();}catch(e){warnings.add(e.message);}}
     events?.addEventListener?.('storage',refresh);events?.addEventListener?.('pageshow',refresh);events?.addEventListener?.('focus',refresh);
-    return {configure,list:all,get,add,note,remove,backup,restore,markdown,canonical,
+    return {configure,list:all,get,add,note,remove,backup,restore,markdown,plainText,canonical,
+      preserveLegacy(raw){storage.setItem(KEY+':legacy-recovery:'+now(),raw);},
       subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn);},warnings:()=>[...warnings]};
   }
   function download(name,text,type='text/markdown;charset=utf-8') {
@@ -135,9 +137,14 @@
   function toolbar(holder,store,message=()=>{}) {
     const button=document.createElement('button');button.textContent='导出全部收藏';
     button.addEventListener('click',()=>{try{download('我的论文收藏_'+new Date(Date.now()+8*60*60*1000).toISOString().slice(0,10)+'.md',store.markdown());}catch(e){message(e.message);}});
+    const copy=document.createElement('button');copy.textContent='复制全部收藏文本';
+    const text=document.createElement('textarea');text.hidden=true;text.readOnly=true;text.setAttribute('aria-label','全部收藏纯文本');
+    copy.addEventListener('click',async()=>{text.value=store.plainText();text.hidden=false;try{await navigator.clipboard.writeText(text.value);message('全部收藏已复制为纯文本，可直接粘贴。');}catch{text.focus();text.select();message('请长按文本区域全选复制。');}});
+    const txt=document.createElement('button');txt.textContent='导出 TXT';txt.addEventListener('click',()=>download('我的论文收藏_'+new Date(Date.now()+8*60*60*1000).toISOString().slice(0,10)+'.txt',store.plainText(),'text/plain;charset=utf-8'));
     const json=document.createElement('button');json.textContent='导出收藏 JSON / 恢复原始数据';json.addEventListener('click',()=>download('maritime-favorites.json',JSON.stringify(store.backup(),null,2),'application/json'));
     const label=document.createElement('label');label.textContent='恢复收藏 JSON ';const input=document.createElement('input');input.type='file';input.accept='.json';
-    input.addEventListener('change',async event=>{try{const f=event.target.files[0];if(f){store.restore(JSON.parse(await f.text()));message('收藏和笔记已合并恢复。');}}catch(e){message(e.message);}event.target.value='';});label.append(input);holder.append(button,json,label);
+    input.addEventListener('change',async event=>{try{const f=event.target.files[0];if(f){store.restore(JSON.parse(await f.text()));message('收藏和笔记已合并恢复。');}}catch(e){message(e.message);}event.target.value='';});label.append(input);holder.append(button,json,label,copy,txt,text);
+    const link=document.createElement('a');link.textContent='查看我的收藏';link.href=(typeof location!=='undefined'&&location.pathname?.includes('/maritime-data/mobile/')?'../../':'')+'maritime.html?view=favorites&v=3.7.2.1';holder.append(link);
   }
   const api={VERSION,KEY,LEGACY,normalize,create,mount,toolbar,download};
   if(typeof module!=='undefined')module.exports=api;else root.MaritimeFavorites=api;
