@@ -67,37 +67,7 @@ test('full library displays the selected local translation and specific failure'
 });
 
 // Exercise the actual event wiring with a lightweight DOM adapter, no browser dependency.
-async function setupUI(saved, suppliedDataset, search='') {
-  const vm = require('node:vm');
-  class Element {
-    constructor(tag) {this.tag=tag;this.children=[];this.value='';this.textContent='';this.handlers={};}
-    append(...items) {this.children.push(...items);}
-    replaceChildren(...items) {this.children=items;}
-    addEventListener(name,handler) {this.handlers[name]=handler;}
-    setAttribute() {}
-    click() {return this.handlers.click?.();}
-    focus() {}
-    select() {}
-  }
-  const nodes=new Map(['date','topic','level','sort','search','summary','report','message','papers','export','import','window','quality','bucket','language'].map(id=>[id,new Element(id)]));
-  const storage=new Map(saved ? [['rs-paperclaw-maritime-readings-v1',saved]] : []);
-  const downloaded=[];let copied='';
-  const dataset=suppliedDataset || {papers:papers.slice(0,2),topics:{A:'Fusion',D:'Methods'},days:{'2026-10-10':{candidate_ids:['2610.00001'],candidate_count:1,selected_count:1,high_count:1,topic_counts:{A:1}}},prompt_template:'{{title}}\n{{abstract}}\n{{authors}}'};
-  for(const p of dataset.papers) p.assessment.applications=['通用计算机视觉'];
-  const context=vm.createContext({console,Date,Set,JSON,Object,Error,Promise,
-    document:{getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag)},
-    localStorage:{getItem:key=>storage.get(key),setItem:(key,value)=>storage.set(key,value)},
-    navigator:{clipboard:{writeText:async text=>{copied=text;}}},
-    fetch:async()=>({ok:true,json:async()=>dataset}),location:{search},URLSearchParams,
-    URL:{createObjectURL:blob=>{downloaded.push(blob.parts[0]);return 'blob:test';},revokeObjectURL(){}},
-    Blob:class{constructor(parts){this.parts=parts;}},setTimeout:fn=>fn(),
-  });
-  vm.runInContext(fs.readFileSync(path.join(__dirname,'../docs/maritime.js'),'utf8'),context);
-  await new Promise(resolve=>setImmediate(resolve));
-  const walk=element=>[element,...element.children.flatMap(walk)];
-  return {nodes,storage,downloaded,copied:()=>copied,find:(label)=>walk(nodes.get('papers')).find(e=>e.textContent===label),
-    elements:()=>walk(nodes.get('papers'))};
-}
+const {setupUI}=require('./helpers/maritime-ui.cjs');
 test('favorites survive filters, aliases, backup and a daily deep link locates the paper',async()=>{
   const old='doi:10.1234/test',id='2610.00001';
   const dataset={papers:papers.slice(0,2),topics:{A:'Fusion'},days:{},aliases:{[old]:id},prompt_template:'{{title}}'};
@@ -106,13 +76,13 @@ test('favorites survive filters, aliases, backup and a daily deep link locates t
   assert.equal(app.nodes.get('window').value,'history');
   assert.equal(app.nodes.get('search').value,id);
   assert.equal(app.nodes.get('papers').children.length,1);
-  assert.equal(app.find('取消收藏').textContent,'取消收藏');
+  assert.equal(app.find('已收藏').textContent,'已收藏');
   app.nodes.get('search').value='';app.nodes.get('window').value='favorites';app.nodes.get('window').handlers.input();
   assert.equal(app.nodes.get('papers').children.length,1);
-  app.find('取消收藏').click();
-  assert.deepEqual(JSON.parse(app.storage.get('rs-paperclaw-maritime-readings-v1')).favorites,[]);
+  app.find('取消收藏（保留笔记）').click();
+  assert.deepEqual(JSON.parse(app.storage.get('rs-paperclaw-maritime-readings-v1')).favorites,[old]);
   app.nodes.get('window').handlers.input();
-  assert.equal(app.find('收藏'),undefined);
+  assert.equal(app.find('已收藏'),undefined);
   app.nodes.get('window').value='history';app.nodes.get('window').handlers.input();
   app.find('收藏').click();app.nodes.get('export').click();
   const backup=JSON.parse(app.downloaded.at(-1));
@@ -131,7 +101,7 @@ test('UI copies exact prompt, saves analysis and state, exports and restores JSO
   assert.equal(app.find('准备 PDF 全文与本地精读命令'),undefined);
   await app.find('复制分析 Prompt').click();
   assert.equal(app.copied(),'Visual fusion\nMatching methods\nAlice');
-  const editor=app.elements().find(e=>e.tag==='textarea' && !e.readOnly);
+  const editor=app.elements().find(e=>e.tag==='textarea' && e.placeholder?.startsWith('将 ChatGPT'));
   const analysis='# 核心方法\n\n<script>never execute</script>\n$x$';editor.value=analysis;
   app.find('保存分析').click();
   assert.ok(app.elements().some(e=>e.tag==='pre' && e.textContent===analysis));

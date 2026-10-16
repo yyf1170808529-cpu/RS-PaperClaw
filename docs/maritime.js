@@ -2,6 +2,7 @@
 const STATES = ['待读', '已浏览', '值得精读', '已精读', '值得复现'];
 const LEVELS = {high: '高度相关', transfer: '方法可借鉴', general: '一般相关', excluded: '不相关'};
 const STORAGE = 'rs-paperclaw-maritime-readings-v1';
+const FAVORITES_API = typeof module !== 'undefined' ? require('./maritime_favorites.js') : globalThis.MaritimeFavorites;
 const paperId = paper => paper.paper_id || paper.arxiv_id;
 const INVALID = new Set(['deleted','withdrawn','invalid']);
 const RESOURCE_TYPES = new Set(['dataset','software','other']);
@@ -125,6 +126,8 @@ if (typeof module !== 'undefined') module.exports = {filterPapers, makePrompt, v
 if (typeof document !== 'undefined') {
   const $ = id => document.getElementById(id);
   let data, readings = Object.create(null), favorites = new Set(), brokenStorage = null;
+  const favoriteStore=FAVORITES_API?.create(localStorage);
+  let lastFavoriteIds='';
   const message = text => { $('message').textContent = text; };
   function node(tag, text, className) {
     const element = document.createElement(tag);
@@ -146,32 +149,30 @@ if (typeof document !== 'undefined') {
     if (brokenStorage !== null) { message('本地存储格式异常，请先导出原始备份，再导入有效 JSON 恢复。'); return false; }
     const next = {...readings, [id]: {...record, updated_at: new Date().toISOString()}};
     try {
-      localStorage.setItem(STORAGE, JSON.stringify({schema_version: 1, readings: next, favorites:[...favorites]}));
+      const latest=JSON.parse(localStorage.getItem(STORAGE)||'{"schema_version":1,"readings":{}}');
+      localStorage.setItem(STORAGE, JSON.stringify({...latest,schema_version:1,readings:{...latest.readings,[id]:next[id]}}));
       readings = next;
       message('已保存到本浏览器。请导出 JSON 备份以防浏览器数据被清除。');
       return true;
     } catch (error) { message(`保存失败：${error.message}。请复制文本或导出 Markdown。`); return false; }
   }
-  function toggleFavorite(id) {
-    if(brokenStorage!==null) { message('本地存储异常，请先导出备份。'); return false; }
-    const next=new Set(favorites);
-    if(next.has(id)) next.delete(id); else next.add(id);
-    try { localStorage.setItem(STORAGE,JSON.stringify({schema_version:1,readings,favorites:[...next]}));favorites=next;message(next.has(id)?'已加入我的收藏':'已取消收藏');return true; }
-    catch(error) { message(`收藏保存失败：${error.message}`);return false; }
-  }
   function render() {
     const filters = Object.fromEntries(['date', 'topic', 'level', 'sort', 'search','window','quality','section','bucket','language'].map(id => [id, $(id)?.value||'']));
     const view=filters.date ? data.days[filters.date]?.recommendation_view : data.recommendation_views?.[filters.window];
+    const saved=favoriteStore.list();favorites=new Set(saved.map(p=>p.paper_id));lastFavoriteIds=[...favorites].join('|');
     filters.backendView=!!view;filters.favorites=favorites;
-    let papers = filterPapers(data.papers, filters, data.days);
-    if(view && filters.window!=='history' && filters.window!=='today') {
+    const indexed=new Map(data.papers.map(p=>[paperId(p),p]));
+    const missing=saved.filter(p=>!indexed.has(p.paper_id));
+    let papers = filters.window==='favorites' ? saved.map(p=>indexed.get(p.paper_id)||{...p,_favoriteSnapshot:true}) : filterPapers(data.papers, filters, data.days);
+    if($('favorites-status')) $('favorites-status').textContent=(filters.window==='favorites'&&missing.length?`其中 ${missing.length} 篇暂未匹配主库，已显示本地快照；可用“导出收藏 JSON / 恢复原始数据”恢复。 `:'')+favoriteStore.warnings().join(' ');
+    if(view && !['history','today','favorites'].includes(filters.window)) {
       const ids=new Set(view.paper_ids);papers=papers.filter(p=>ids.has(paperId(p)) && recommendable(p));
     } else if(filters.window && !['history','today','favorites'].includes(filters.window)) {
       const quotas=data.recommendation_policy?.quotas||{water:10,land:6,general:4};
       const counts={};papers=papers.filter(p=>{const s=p.recommendation?.bucket;if(!(s in quotas) || !recommendable(p))return false;counts[s]=(counts[s]||0)+1;return counts[s]<=quotas[s];});
     }
     const day = data.days[filters.date];
-    $('summary').textContent = filters.window==='history' ? `当前 ${papers.length} 篇 / 总收录 ${data.papers.length} 条` : filters.window==='favorites' ? `我的收藏 ${papers.length} 篇` : recommendationSummary(papers);
+    $('summary').textContent = filters.window==='history' ? `当前 ${papers.length} 篇 / 总收录 ${data.papers.length} 条` : filters.window==='favorites' ? `本浏览器收藏 ${saved.length} 篇` : recommendationSummary(papers);
     $('report').hidden = !day;
     if (day) $('report').href = `maritime-data/reports/${filters.date.slice(0,7).replace('-', '')}/${filters.date.replaceAll('-', '')}.md`;
     $('papers').replaceChildren();
@@ -180,6 +181,11 @@ if (typeof document !== 'undefined') {
       '尚未完成成功的在线检索。请运行 maritime --days 7；若请求失败，查看 papers/maritime/logs/errors.jsonl。'));
     for (const paper of papers) {
       const article = node('article');
+      if(paper._favoriteSnapshot){
+        article.append(node('h2',paper.title||paper.paper_id),node('p','当前主库暂未匹配，显示本浏览器保存的收藏快照。','muted'));
+        for(const [label,href] of [['原始论文',paper.original_url],['阅读与笔记',paper.reading_url]]) if(/^https?:\/\//.test(href||'')){const a=node('a',label);a.href=href;article.append(a);}
+        const holder=node('div');article.append(holder);FAVORITES_API.mount(holder,paper,favoriteStore,message);$('papers').append(article);continue;
+      }
       const assessment = paper.assessment;
       const reading = readingFor(paper, readings);
       const id=paperId(paper),quality=paper.quality||{};
@@ -191,8 +197,7 @@ if (typeof document !== 'undefined') {
         node('p', `第一作者：${paper.first_author||paper.authors[0]||'暂未获取'} ｜单位：${paper.affiliation_verified ? paper.first_author_affiliations.join('; ') : '暂未获取'}`, 'muted'));
       if(paper.doi) article.append(node('p',`DOI：${paper.doi}`,'muted'));
       const links = node('div', undefined, 'actions');
-      const favoriteButton=button(favorites.has(id)?'取消收藏':'收藏',()=>{if(toggleFavorite(id)){favoriteButton.textContent=favorites.has(id)?'取消收藏':'收藏';if($('window').value==='favorites')render();}});
-      links.append(favoriteButton);
+      const favoriteHolder=node('div');article.append(favoriteHolder);FAVORITES_API.mount(favoriteHolder,paper,favoriteStore,message);
       for (const [text, href] of [['原始论文', paper.open_access_url||paper.pdf_url||paper.original_url||paper.arxiv_url||''], ['ChatGPT 网页', 'https://chatgpt.com/'], ['DeepSeek 网页', 'https://chat.deepseek.com/'], [paper.venue_type==='journal' ? '期刊 DOI' : 'DOI 原文', paper.doi ? 'https://doi.org/'+paper.doi : ''], ['arXiv 页面', paper.arxiv_url||''], ['arXiv PDF', paper.arxiv_id ? 'https://arxiv.org/pdf/'+paper.arxiv_id : '']]) {
         if(!/^https?:\/\//.test(href)) continue;
         const link = node('a', text); link.href = href; link.target = '_blank'; link.rel = 'noreferrer'; links.append(link);
@@ -241,38 +246,49 @@ if (typeof document !== 'undefined') {
   }
   async function init() {
     try {
+      if(!FAVORITES_API || FAVORITES_API.VERSION!=='3.7.2')throw Error('收藏脚本版本不一致，请刷新页面；本地数据未修改。');
+      FAVORITES_API.toolbar($('favorite-tools'),favoriteStore,message);
+      favoriteStore.configure();
       const response = await fetch('maritime-data/library.json', {cache: 'no-cache'});
       if (!response.ok) throw new Error(`数据 HTTP ${response.status}；请先运行 maritime --action site`);
       data = await response.json();
+      favoriteStore.configure(data.papers,data.aliases||{});
       const selected=typeof location!=='undefined' ? new URLSearchParams(location.search).get('paper') : null;
       if(selected) { $('window').value='history'; $('search').value=data.aliases?.[selected]||selected; }
-      try { const saved = localStorage.getItem(STORAGE); if (saved) { brokenStorage = saved; const backup=JSON.parse(saved);readings = validateBackup(backup);favorites=validateFavorites(backup,data.aliases)||new Set();brokenStorage = null; } }
+      try { const saved = localStorage.getItem(STORAGE); if (saved) { brokenStorage = saved; const backup=JSON.parse(saved);readings = validateBackup(backup);brokenStorage = null; } }
       catch (error) { message(`本地数据无法读取：${error.message}。原始存储未覆盖，请先备份。`); $('export').textContent = '导出备份（本地数据异常，请检查）'; }
       for (const [key, name] of Object.entries(data.topics)) { const option = node('option', `${key}. ${name}`); option.value = key; $('topic').append(option); }
       for (const date of Object.keys(data.days).sort().reverse()) { const option = node('option', date); option.value = date; $('date').append(option); }
       for (const [old,canonical] of Object.entries(data.aliases||{})) if(readings[old]&&!readings[canonical]) readings[canonical]=readings[old];
       for (const id of ['date','topic','level','sort','search','window','quality','section','bucket','language']) $(id)?.addEventListener('input', render);
-      const status=updateStatus(data);message(status.text);
+      const status=updateStatus(data);message((brokenStorage!==null?'旧阅读记录格式异常，已保留原文；收藏可独立使用。 ':'')+status.text);
       if($('update-detail-text')) $('update-detail-text').textContent=status.details;
       if($('update-details')) $('update-details').hidden=!status.details;
       $('export').addEventListener('click', () => {
         if (brokenStorage !== null) { download('maritime-readings-recovery.json', brokenStorage, 'application/json'); return; }
         const all = {...Object.fromEntries(data.papers.filter(p => p.reading).map(p => [paperId(p),p.reading])), ...readings};
-        download('maritime-readings.json', JSON.stringify({schema_version: 1, readings: all, favorites:[...favorites]}, null, 2), 'application/json');
+        download('maritime-readings.json', JSON.stringify({schema_version: 1, readings: all, favorites:favoriteStore.list().map(p=>p.paper_id), favorites_v2:favoriteStore.backup()}, null, 2), 'application/json');
       });
       $('import').addEventListener('change', async event => {
         try {
           const file = event.target.files[0]; if (!file) return;
           const backup=JSON.parse(await file.text());
-          const imported = validateBackup(backup);
-          const importedFavorites=validateFavorites(backup,data.aliases);
-          const next = {...readings, ...imported};
-          const nextFavorites=importedFavorites===null?favorites:new Set([...favorites,...importedFavorites]);
-          localStorage.setItem(STORAGE, JSON.stringify({schema_version: 1, readings: next, favorites:[...nextFavorites]}));
-          readings = next;favorites=nextFavorites; brokenStorage = null; $('export').textContent = '导出 JSON 备份'; render(); message('备份已合并到本浏览器；同一 ID 以导入记录为准。未知论文记录保留，之后检索到该论文即可显示。');
+          let imported,readingError;
+          try{imported=validateBackup(backup);}catch(e){readingError=e;}
+          const hasFavorites=!!backup.favorites_v2||Array.isArray(backup.favorite_records)||Array.isArray(backup.favorites);
+          if(!imported&&!hasFavorites)throw readingError;
+          if(hasFavorites)favoriteStore.restore(backup);
+          if(imported){
+            const next={...readings,...imported};
+            let prior={};try{prior=JSON.parse(localStorage.getItem(STORAGE)||'{}');}catch{}
+            localStorage.setItem(STORAGE,JSON.stringify({...prior,schema_version:1,readings:next}));
+            readings=next;brokenStorage=null;$('export').textContent='导出 JSON 备份';
+          }
+          render();message(readingError?'收藏已恢复；阅读记录格式异常，原阅读数据未覆盖。':'备份已合并到本浏览器，收藏笔记独立保留。');
         } catch (error) { message(`导入失败：${error.message}，未修改现有记录。`); }
         event.target.value = '';
       });
+      favoriteStore.subscribe(()=>{const ids=favoriteStore.list().map(p=>p.paper_id).join('|');if(ids!==lastFavoriteIds&&$('window').value==='favorites')render();});
       render();
     } catch (error) { message(`加载失败：${error.message}。请使用本地 HTTP 服务或 GitHub Pages 打开。`); }
   }
