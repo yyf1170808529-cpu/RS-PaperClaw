@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-17",
+  "papers": [
+    {
+      "paper_id": "2609.18139",
+      "title": "Multi-View Mixture-of-Experts with Vision-Language Reranking for Cross-View Object Geo-Localization",
+      "source": "arXiv",
+      "reason": "cross-view object geo-localization with vision-language reranking；将视觉-语言重排序用于视觉–AIS或Radar–AIS候选关联：把A",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.18139",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.18139",
+      "score": 24,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract": "Cross-view object geo-localization (CVOGL) locates a target in satellite imagery using drone or street-view queries. Existing methods train separate detectors for each viewpoint, leading to parameter redundancy and impeding cross-view knowledge sharing. Moreover, top-ranked satellite candidates are often visually similar, so visual appearance and categorical labels alone are insufficient to resolve such ambiguity. To address these, we propose MVLGeo, an efficient framework designed to unify multiple viewpoints and reduce model redundancy. First, we introduce environmental contextual text from the query view as cues to distinguish visually similar candidates via Vision-Language Reranking (VL-Rerank). Second, we design a multi-view Mixture-of-Experts architecture (MV-MoE) with a shared encoder and view-specific experts to reduce redundancy and promote knowledge sharing, while cross-view contrastive learning aligns their representations for consistency. Third, we introduce an adaptive elliptical prior (ESAM-Prior) as auxiliary positional encoding for anisotropic geometric perception. Extensive experiments on the CVOGL benchmarks confirm that MVLGeo, as a unified model for multiple query viewpoints, achieves state-of-the-art performance, demonstrating robustness to input degradation and generalization across viewpoints. Code and models will be available on GitHub to facilitate future work.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "'packages'"
+    },
+    {
+      "paper_id": "doi:10.1109/tim.2025.3559575",
+      "title": "Maritime Infrared Ship Detection in AAV Imagery Based on Two-Stage Region-Segmentation-Guided Learning Network",
+      "source": "IEEE Transactions on Instrumentation and Measurement · JCR一区 · IF 7.0",
+      "reason": "直接面向海上红外船舶检测，含海天分割引导增强与小目标检测，和船舶视觉方向高度相关；方法实现细节披露有限。",
+      "original_url": "https://doi.org/10.1109/tim.2025.3559575",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftim.2025.3559575",
+      "score": 18,
+      "rule_level": "方法可借鉴",
+      "level": "直接相关",
+      "ai_score": 67,
+      "selection_source": "历史补荐",
+      "abstract": "Infrared (IR) ship detection in unmanned aerial vehicles (UAV) imagery under maritime environments encounters challenges due to the complexity of sea-sky backgrounds. Current research efforts have not fully leveraged the unique characteristics of maritime scenes to distinguish this task from general IR target detection. To overcome these limitations, we propose a Two-Stage Sea-Sky Region-Segmentation-Guided IR Ship Enhancement and Detection (TIRSD) learning network, specifically designed for targeted ship enhancement and detection in maritime environments. The process is structured into two main stages: enhancement and detection. In the enhancement stage, pixel-level sea-sky region segmentation is accomplished via sea-sky line (SSL) detection, which is followed by precise IR ship enhancement and interference suppression, utilizing specially designed morphological filters. For the detection stage, the Bilateral Hierarchical Target Encoding Module (BHTEM) is introduced to encode both high- and low-dimensional features, ensuring optimal detail retention and extraction. Additionally, the Iterative Fusion Enhancement Midlayer (IFEM) with neighborhood reinforcement operations is presented. Furthermore, a newly controllable Local Discrete Attention Mechanism (LDAM) is utilized to focus on small ships, thereby improving detection efficiency. TIRSD surpasses the current leading methods in terms of accuracy, achieving a Mean Average Precision (mAP) of 76.9% on the proposed dataset and 52.4% on a public dataset. Comprehensive experimental results underscore TIRSD’s effective utilization of the unique characteristics of maritime environments, indicating promising application prospects.",
+      "abstract_zh": "红外线( IR)) 船舶检测 无人驾驶飞行器 (UAV) 海洋环境下的图像由于复杂性而面临挑战。 海天背景. 目前的研究工作没有充分利用海洋场景的独特性来区分这项任务和一般的IR目标探测。 为了克服这些限制,我们提议采用两层海基区域-区间-导航的IR型船舶增强和探测系统。 (TIRSD) 学习网络,专门为在海洋环境中有针对性的船舶增强和探测而设计. 这一过程分为两个主要阶段:增强和检测。 在增强阶段, 像素级 海天区域分割 是通过 海天线 (SSL) 探测,然后使用专门设计的形态过滤器进行精确的IR船增强和干扰压制。 关于探测阶段,双边分级目标编码模块 (BHTEM) 用于编码高维和低维特性,确保最佳细节保留和提取。 此外, 迭代融合增强中间层 (IFEM) 提供邻里支援行动 此外,一个新的可控制 局部离散注意力机制 (LDAM) 用于关注小型船舶,从而提高探测效率。. TIRSD 在准确性方面超过目前的主要方法,实现 平均精度均值 (mAP) 在拟议数据集中占76.9%,在公共数据集中占52.4%。 综合实验结果强调 TIRSD’有效利用海洋环境的独特性,显示有希望的应用前景.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 57,
+    "ai_reviewed": 32,
+    "qualified_count": 2,
+    "selected_count": 2,
+    "shortfall": 3
+  }
+}
