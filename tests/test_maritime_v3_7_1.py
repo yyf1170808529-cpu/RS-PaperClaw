@@ -79,7 +79,8 @@ class OfflineTranslationTests(unittest.TestCase):
             item=result['papers'][0]
             self.assertEqual(item['abstract'],p['abstract'])
             self.assertIn('英译中模型未安装',item['translation_error'])
-            self.assertIn('英译中模型未安装',(Path(d)/'docs/maritime-daily.html').read_text(encoding='utf8'))
+            from services.mobile_digest import render_mobile_page
+            self.assertIn('英译中模型未安装',render_mobile_page(result))
 
 
 if __name__=='__main__':unittest.main()

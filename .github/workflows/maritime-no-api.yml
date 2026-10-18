@@ -76,6 +76,21 @@ jobs:
           if [[ "$INPUT_BOOTSTRAP" == 'true' ]]; then args+=(--bootstrap); fi
           python skills/rs-paper-pipeline/scripts/cli.py maritime --action update --timeout 30 --retries 2 --max-pages 5 "${args[@]}" > maritime-run.log 2>&1
           cat maritime-run.log
+      - name: Protect last complete daily selection before sync
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from datetime import date, datetime
+          from pathlib import Path
+          sys.path.insert(0, 'skills/rs-paper-pipeline/scripts')
+          from services.mobile_digest import build_mobile_digest
+          root = Path('.')
+          raw = os.environ.get('INPUT_DATE')
+          day = date.fromisoformat(raw) if raw and '-' in raw else datetime.strptime(raw, '%Y%m%d').date() if raw else date.today()
+          result = build_mobile_digest(root, json.loads((root/'papers/maritime/library.json').read_text(encoding='utf8')), day)
+          print('Daily attempt:', result['publication_status'], 'selected:', len(result['papers']), 'published date:', result['published_date'])
+          PY
       - name: Commit static archives to this repository
         id: sync
         shell: bash

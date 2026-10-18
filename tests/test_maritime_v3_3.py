@@ -78,7 +78,9 @@ class RepairTests(unittest.TestCase):
             first=build_mobile_digest(root,lib,date(2026,10,14))
             self.assertEqual(first,build_mobile_digest(root,lib,date(2026,10,14)))
             self.assertEqual(len(first['papers']),0)
-            html=(root/'docs/maritime-daily.html').read_text(encoding='utf8')
+            from services.mobile_digest import render_mobile_page
+            self.assertFalse((root/'docs/maritime-daily.html').exists())
+            html=render_mobile_page(first)
             self.assertNotIn('library.json',html)
             self.assertNotIn('查看摘要',html)
             self.assertIn('没有完成AI审核',html)

@@ -223,10 +223,13 @@ def run_update(args, library, rules):
     print('[译] '+json.dumps(translations,ensure_ascii=False),flush=True)
     stage = time.monotonic()
     print("[4/4] 生成网页和日报：开始", flush=True)
-    build(args.root, library, rules)
+    build(args.root, library, rules, mobile_date=end)
     save()
     print(f"[4/4] 完成，耗时 {time.monotonic()-stage:.1f}s", flush=True)
     source_status = "success" if all(r["status"] == "success" for r in results) else "partial" if any(r["status"] != "failed" for r in results) else "failed"
+    mobile_directory=args.root/'docs/maritime-data/mobile'
+    publication=json.loads((mobile_directory/'publication-status.json').read_text(encoding='utf8'))
+    latest_path=mobile_directory/'latest.json'
     summary = {"run_id": run_id, "completed_at": datetime.now(timezone.utc).isoformat(),
                "local_update": "partial" if source_status == "success" and translations["failed"] else source_status,
                "jobs": len(results), "successful": sum(r["status"] == "success" for r in results),
@@ -234,7 +237,9 @@ def run_update(args, library, rules):
                "added": added, "filled": metadata["filled"], "merged": merged,
                "before_count": before_count, "after_count": len(library["papers"]), "translation": translations,
                "translation_failed": translations["failed"], "suspected_duplicates": dedup["suspected"],
-               "ai":ai, "daily_selected":len(json.loads((args.root/'docs/maritime-data/mobile/latest.json').read_text(encoding='utf8'))['papers']),
+               "ai":ai, "daily_selected":publication['selection_audit']['selected_count'],
+               "daily_publication":publication['status'],"published_daily_date":publication['published_date'],
+               "published_daily_count":len(json.loads(latest_path.read_text(encoding='utf8'))['papers']) if latest_path.exists() else 0,
                "github_sync": "not_attempted", "pages_publish": "not_attempted"}
     write_json(args.root / "papers/maritime/logs/latest-update.json", summary)
     public = args.root / "docs/maritime-data/library.json"

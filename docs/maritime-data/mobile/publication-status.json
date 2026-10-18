@@ -1,0 +1,24 @@
+{
+  "attempt_date": "2026-10-17",
+  "status": "partial",
+  "published_date": "2026-10-16",
+  "selection_audit": {
+    "candidate_count": 754,
+    "ai_reviewed": 33,
+    "ai_states": {
+      "evaluated": 33,
+      "uncertain": 26,
+      "unassessed": 695
+    },
+    "stage_counts": {
+      "2": 692,
+      "3": 16,
+      "0": 2,
+      "1": 44
+    },
+    "ai_rejected": 31,
+    "qualified_count": 2,
+    "selected_count": 2,
+    "shortfall": 3
+  }
+}

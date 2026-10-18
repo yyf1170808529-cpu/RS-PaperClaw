@@ -186,7 +186,7 @@ def render_daily(data, library):
     return "\n".join(line.rstrip() for line in lines).rstrip() + "\n"
 
 
-def build(root, library, rules):
+def build(root, library, rules, mobile_date=None):
     from services.maritime_v2 import normalize_library, assets, recommendation_view
     normalize_library(library, rules)
     days = {}
@@ -218,7 +218,7 @@ def build(root, library, rules):
                "prompt_template": (Path(__file__).resolve().parents[1] / "prompts/maritime_analysis.md").read_text(encoding="utf-8")}
     write_json(root / "docs/maritime-data/library.json", payload)
     from services.mobile_digest import build_mobile_digest
-    build_mobile_digest(root, library, today())
+    build_mobile_digest(root, library, mobile_date or today())
 
 
 def validate_reading(value):

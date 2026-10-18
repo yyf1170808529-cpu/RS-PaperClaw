@@ -128,23 +128,32 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         p=library['papers'][key]
         if not p.get('abstract') or p.get('abstract_quality',{}).get('status')=='review':summary['missing_abstract']+=1;continue
         digest=fingerprint(p,config)
-        record=shared['records'].get(digest) or read_json(directory/'cache'/f'{digest}.json',None)
+        record=(p.get('semantic') if current_evaluation(p,config) is not None else None) or shared['records'].get(digest) or read_json(directory/'cache'/f'{digest}.json',None)
         if record:
             try:validate(record['evaluation'],p)
             except (ValueError,KeyError,TypeError):record=None
         if record:
             p['semantic']=record;shared['records'][digest]=record;summary['cached']+=1
         else:pending.append(p)
+    def finish():
+        selected,audit=select_daily(root,library,end,new_keys,config)
+        summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'],shortfall=audit['shortfall'],
+                       ai_states=audit['ai_states'],publication_status='complete' if len(selected)==5 else 'partial' if selected else 'failed')
+        write_json(cache_path,shared)
+        write_json(root/'papers/maritime/logs/latest-ai.json',summary)
+        return summary
     maximum=config['daily_limit'] if limit is None else limit
     if type(maximum) is not int or maximum<0:raise ValueError('AI candidate limit must be nonnegative integer')
+    summary['pending_total']=len(pending)
+    summary['limit_deferred']=max(0,len(pending)-maximum)
     pending=pending[:maximum]
     try:
         selected,audit=select_daily(root,library,end,new_keys,config)
         summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'])
         if len(selected)>=5:
-            summary['status']='cached';write_json(cache_path,shared);return summary
+            summary['status']='cached';return finish()
         if not pending:
-            summary['status']='cached';write_json(cache_path,shared);return summary
+            summary['status']='cached';return finish()
         api_key()
         # Read latest shared fingerprints before paying; never overwrite local files.
         proxy=os.environ.get('RS_PROXY_URL') or os.environ.get('HTTPS_PROXY')
@@ -173,7 +182,7 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
                 except (ValueError,KeyError,TypeError):pass
             waiting.append(p)
         pending=waiting
-        if not pending:summary['status']='cached';write_json(cache_path,shared);return summary
+        if not pending:summary['status']='cached';return finish()
         run_budget=config['update_budget_cny'] if budget is None else budget
         import math
         if not math.isfinite(run_budget) or run_budget<0 or config['model']!='deepseek-flash':raise ValueError('Invalid daily AI budget/model')
@@ -202,7 +211,10 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
                 by_id={r['paper_id']:r for r in outputs}
                 for p in batch:
                     try:value=validate(by_id[p['paper_id']],p)
-                    except (ValueError,KeyError,TypeError):summary['failed']+=1;continue
+                    except (ValueError,KeyError,TypeError) as exc:
+                        summary['failed']+=1
+                        summary.setdefault('validation_errors',[]).append({'paper_id':p['paper_id'],'reason':str(exc)})
+                        continue
                     digest=fingerprint(p,config)
                     record={'paper_id':p['paper_id'],'title':p['title'],'fingerprint':digest,'evaluation':value,'model':response.get('model'),'request_id':response.get('id')}
                     p['semantic']=record;shared['records'][digest]=record
@@ -217,9 +229,8 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         if locals().get('attempted'):
             latest=read_json(directory/'usage.json',{'days':{}})['days'].get(str(datetime.now(TZ).date()),{})
             summary['unsettled_upper_cny']=max(0,latest.get('reserved_cny',0)-starting_reserved)
-    write_json(cache_path,shared)
-    write_json(root/'papers/maritime/logs/latest-ai.json',summary)
-    return summary
+    return finish()
+
 
 def label_metrics(root):
     from services.maritime import read_json,write_json

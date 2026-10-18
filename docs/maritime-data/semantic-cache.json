@@ -3193,6 +3193,128 @@
       },
       "model": "deepseek-flash",
       "request_id": "dccc37f1-75b0-47c3-8348-46b456ccf919"
+    },
+    "4aa3c59a9e956f0ff730488abc0c0f6fb393e9f6cdf8cf6aeb1846c8644a6035": {
+      "paper_id": "2609.38716",
+      "title": "SpatialCORE: Confidence-Aware Grounded Spatial Reasoning in Large Vision--Language Models",
+      "fingerprint": "4aa3c59a9e956f0ff730488abc0c0f6fb393e9f6cdf8cf6aeb1846c8644a6035",
+      "evaluation": {
+        "paper_id": "2609.38716",
+        "task_type": "跨模态空间推理与定位（通用视觉-语言）",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a self-regulating spatial reward that weights each predicted bounding box's matching quality by its coordinate-token confidence",
+            "interpretation_zh": "用定位框匹配置信度调节奖励，属于可迁移的置信度加权匹配思路",
+            "inference": false
+          },
+          {
+            "quote_en": "An answer gate further ties grounding optimization to final-answer correctness",
+            "interpretation_zh": "将定位优化与最终答案正确性耦合的门控机制",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a self-regulating spatial reward that weights each predicted bounding box's matching quality by its coordinate-token confidence",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可尝试将该置信度加权匹配思想用于视觉-文本/雷达-视觉匹配打分，但摘要未给出可迁移的跨模态匹配结构，适配细节有限，仅为推断",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦通用视觉-语言空间推理，无海事或传感器匹配场景",
+          "未提供具体的跨模态匹配网络结构",
+          "迁移路径依赖对置信度奖励的再解释，证据不足"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "通用空间推理与置信度奖励，与海事感知或跨模态AIS匹配缺少明确连接，迁移具体性不足。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "2e5ddb2b-8653-4b2d-8e2a-25bc2ae6a2f6"
+    },
+    "ad01dea3e921647e54da28bf37cbe2d2fce8c6eca83e769dee3deb58f6883327": {
+      "paper_id": "2609.28360",
+      "title": "Privacy-Preserving Semantic Segmentation from High-Resolution Depth and Ultra-Low-Resolution RGB",
+      "fingerprint": "ad01dea3e921647e54da28bf37cbe2d2fce8c6eca83e769dee3deb58f6883327",
+      "evaluation": {
+        "paper_id": "2609.28360",
+        "task_type": "语义分割（RGB-D，隐私保护非对称传感）",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a joint 2D framework using HR geometry to guide semantic-oriented RGB reconstruction and RGB-D segmentation",
+            "interpretation_zh": "高分辨率深度引导低分辨率RGB重建与RGB-D分割的联合框架",
+            "inference": false
+          },
+          {
+            "quote_en": "an end-to-end 2D-to-3D pipeline that consolidates 2D semantic features for 3D segmentation",
+            "interpretation_zh": "将2D语义特征整合到3D分割的端到端流程",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a joint 2D framework using HR geometry to guide semantic-oriented RGB reconstruction and RGB-D segmentation",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "可设想用高分辨深度引导低质视觉输入的船舶分割，但摘要未涉及海上数据或跨模态船舶特征，需重新设计输入与训练目标，属推断",
+          "inference": true
+        },
+        "limitations": [
+          "面向机器人隐私场景，非海事",
+          "摘要未给出船舶或水面数据实验",
+          "跨模态引导思路需大量适配，具体性有限"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "隐私保护RGB-D分割与船舶任务关联弱，迁移路径仅泛化设想，证据不足以重点推荐。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "2e5ddb2b-8653-4b2d-8e2a-25bc2ae6a2f6"
+    },
+    "36235df34117e055a356ba98f013257126e4f0525a2430282bdd491d6940edb2": {
+      "paper_id": "2610.21422",
+      "title": "Where, How, and When: Query-Guided Grounding for Video Understanding",
+      "fingerprint": "36235df34117e055a356ba98f013257126e4f0525a2430282bdd491d6940edb2",
+      "evaluation": {
+        "paper_id": "2610.21422",
+        "task_type": "视频查询引导定位（目标检测、关系与时刻定位）",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a query-guided extension of the Detection Transformer for one-shot localization of unseen objects in videos",
+            "interpretation_zh": "面向未见目标单样本定位的查询引导检测Transformer扩展",
+            "inference": false
+          },
+          {
+            "quote_en": "propagates high-confidence object features across frames",
+            "interpretation_zh": "跨帧传播高置信度目标特征以增强少样本检测",
+            "inference": false
+          },
+          {
+            "quote_en": "dual-stage Dynamic Time Warping for pre- and post-fusion alignment",
+            "interpretation_zh": "融合前后使用动态时间规整进行时序对齐",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "propagates high-confidence object features across frames",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将高置信度目标特征跨帧传播用于船舶多目标跟踪，需将视频目标特征替换为船舶检测特征并调整关联/传播结构，属推断",
+          "inference": true
+        },
+        "limitations": [
+          "面向通用视频理解，未涉及海事或AIS",
+          "时序对齐与匹配方法未在跨模态传感器上验证",
+          "迁移需重新设计输入与关联结构"
+        ],
+        "decision": "候选",
+        "reason_zh": "视频目标检测与时序对齐方法对船舶跟踪有潜在借鉴，但需具体适配，海事证据不足。",
+        "confidence": 0.65
+      },
+      "model": "deepseek-flash",
+      "request_id": "2e5ddb2b-8653-4b2d-8e2a-25bc2ae6a2f6"
     }
   }
 }
