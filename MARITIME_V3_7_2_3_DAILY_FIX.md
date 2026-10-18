@@ -57,7 +57,9 @@ retrieve步骤continue-on-error，之后仍执行白名单同步；最后Report 
 - 新测试覆盖完整→部分→空结果保留原日期和5篇、同日重建、后备结果保存、低规则分但AI合格方法论文、历史冷却后补荐、水路预印本仍拒绝、无可见调试版本。
 - 更新旧翻译测试以验证partial结果的译文，不再要求将不足5篇发布成首页。
 - 云端和本地共用候选、AI、select_daily和build_mobile_digest，无第二套推荐逻辑。
-- 发布结果待最后核验后追加；不能仅以测试通过或Actions绿色证明线上内容。
+- 提交4d74645已推送用户Fork；Pages运行39098007866为completed/success。实际HTTPS读取首页HTML、共享收藏脚本、latest.json、publication-status.json、pending/2026-10-17.json及10月16日原归档，规范化换行后全部与本地一致。线上latest真实日期为2026-10-16、论文数为5，首页日期相同，无收藏已就绪及可见版本提示。
+- 另外逐篇用当前主库复核在线五篇：全部hard_eligible=True、AI state=evaluated、eligible=True；10月16日归档与修复前JSON相同。
+- 部署证据：https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/39098007866 。本轮未操作用户实体手机，线上验收针对真实HTTP内容与既有浏览器存储逻辑回归，不冒充实体手机测试。
 
 ## 限制
 
