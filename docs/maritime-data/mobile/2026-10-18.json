@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-18",
+  "papers": [
+    {
+      "paper_id": "2610.15338",
+      "title": "Radio Echo Representation Learning for Semantic Sensing in Multi-Modal ISAC Systems",
+      "source": "arXiv",
+      "reason": "多模态语义感知（无线电–视觉）；将无线电回波编码器替换为雷达或AIS轨迹编码器，视觉空间特征对应船舶图像特征；采用变分接地损失促进雷达/AIS表示与船舶视觉特征的语义一致性，并将编码表示作为语义探针通",
+      "original_url": "https://doi.org/10.48550/arxiv.2610.15338",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.15338",
+      "score": 23,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 67,
+      "selection_source": "近期新论文",
+      "abstract": "Semantic sensing extends integrated sensing and communication (ISAC) beyond physical parameter estimation by exploiting task-oriented representations from radio echoes. Nevertheless, existing multimodal sensing remains largely limited to vision-assisted radio physical parameter estimation or typically processes the visual and radio modalities separately, leaving radio representations underutilized for visual task enhancement. Feature-level fusion enables closer cross-modal interaction, while echo interference complicates the learning of user-specific radio representations and its semantic consistency with the visual entities. To address these challenges, this paper proposes a multimodal semantic sensing framework for orthogonal frequency-division multiplexing (OFDM)-ISAC systems. We propose a radio encoder to learn radio representations oriented toward visual localization from superimposed pilot echoes, together with Variational Radio-Visual Grounding (VRVG) to promote semantic consistency between the learned radio representations and visual spatial features. The radio representations are then formulated as semantic probes to highlight the corresponding entities in the visual scene through cross-modal fusion. Experiments using real-world RCooper dataset show that the resulting synergistic radio-visual embeddings enable accurate radio-visual user matching and significantly improve both user-specific visual localization and physical parameter estimation performance. The results substantiate the benefits of radio representation learning and semantically consistent fusion for multimodal semantic sensing.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "protected_token_missing: ISAC"
+    },
+    {
+      "paper_id": "2610.17707",
+      "title": "Focus on What You Need: Global-to-Local Dynamic Attention for Multimodal Sarcasm Detection",
+      "source": "arXiv",
+      "reason": "多模态讽刺检测；将文本视为AIS信息或雷达元数据，视觉特征视为船舶图像；使用局部门控跨模态注意力过滤与匹配无关的冗余特征，并以多分支学习目标联合优化单模态与跨模态表示，用于视觉–AIS关联匹配。",
+      "original_url": "https://doi.org/10.48550/arxiv.2610.17707",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.17707",
+      "score": 9,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期新论文",
+      "abstract": "Multimodal sarcasm detection has attracted increasing attention due to the widespread use of images and text on social media platforms. Existing studies generally treat the semantic or emotional inconsistency between images and text as a key cue for identifying sarcastic expressions. However, images in real-world scenarios often contain multiple visual objects, many of which are irrelevant to sarcasm-related semantics. Such redundant visual information may introduce noise during cross-modal interaction, distracting models from focusing on critical sarcasm cues and potentially leading to inaccurate predictions. To address this issue, we propose GLDA (Global-to-Local Dynamic Attention), a multimodal sarcasm detection framework that models cross-modal interactions from a global-to-local perspective. Specifically, GLDA first employs a global multimodal fusion module to capture high-level semantic interactions between visual and textual modalities, enabling the model to identify coarse-grained cross-modal inconsistencies. To further reduce the influence of irrelevant objects, GLDA introduces a local gated cross-modal attention mechanism that dynamically filters redundant visual and textual features and refines multimodal representations at a finer granularity. In addition, a multi-branch learning objective is designed to jointly optimize unimodal and multimodal representations. Experimental results demonstrate that GLDA effectively improves sarcasm detection performance and achieves competitive results compared with existing approaches. The code will be available at https://anonymous.4open.science/r/GLDA-DBE6.",
+      "abstract_zh": "多模态 由于在社交媒体平台上广泛使用图像和文字,讽刺检测引起了越来越多的关注. 现有的研究一般将图像和文本之间的语义或情感不一致作为识别讽刺表达的关键提示. 然而,现实世界情景中的图像往往包含多个视觉物体,其中许多与讽刺相关的语义无关. 此类多余的视觉信息可能会在下列期间引起噪音: 跨模态 相互作用,分散模型对关键讽刺提示的关注,并可能导致不准确的预测. 为了解决这一问题,我们提议 GLDA (Global-to-Local 动态注意),a 多模态 模型的讽刺检测框架 跨模态 从全球对地方的角度进行互动。 具体, GLDA 首先使用全局 多模态 融合 模块以获取视觉和文字之间的高级语义互动 模态, 使模型能够识别粗糙的 跨模态 不一致。 进一步减少无关物体的影响, GLDA 引入本地门 跨模态 动态过滤多余的视觉和文字特征并完善的注意机制 多模态 表征 在细颗粒。 此外,还设计了一个多处学习目标,以便联合优化单式和单式教学。 多模态 表征. 实验结果表明, GLDA 与现有方法相比,有效提高讽刺检测性能,实现竞争效果. 该代码将在 https://anonymous.4open.science/r/GLDA-DBE6.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.18417",
+      "title": "Resource-Efficient 3D Shape and Orientation Estimation of Road Users using Roadside RGB Camera and 3D Radar",
+      "source": "arXiv",
+      "reason": "multi_sensor_detection；可把两阶段相机–雷达道路使用者三维位姿估计迁移到船舶多传感器检测：输入改为海上相机与雷达点云，模板尺寸替换为船型先验，偏航角网络需用船舶数据重新训练。",
+      "original_url": "https://arxiv.org/abs/2610.18417",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.18417",
+      "score": 12,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 60,
+      "selection_source": "近期候选",
+      "abstract": "End-to-end deep learning pipelines for camera-radar 3D object detection are well established in driver assistance systems and autonomous vehicles; however, adapting them to roadside-mounted infrastructure presents significant challenges. On vehicles, sensor heights, pitch angles, and relative geometries remain largely uniform, allowing end-to-end models to generalize effectively. On the contrary, roadside sensor installations vary drastically in height, tilt, and field of view across locations, rendering end-to-end models prone to failure and difficult to adapt without massive location-specific datasets. Hence, instead of designing a complex end-to-end pipeline for direct 3D bounding box estimation, a low-cost, resource-efficient two-stage approach is proposed for real-time 3D shape and orientation estimation. The first stage utilizes any off-the-shelf, state-of-the-art method to extract 2D camera bounding boxes and associated 3D radar points for each road user. The proposed second stage then processes these inputs to construct 3D oriented bounding boxes where radar data determines 3D position, predefined templates define size for each road user, and a tiny neural network predicts a site-specific and optimized yaw angle. The algorithm is successfully validated at a curved road with a junction for pedestrians, bicycles, and cars, where it achieves 25 frames per second on an NVIDIA Jetson ORIN for real-time applications.",
+      "abstract_zh": "End-to-end 摄影雷达深层学习管道 3D 目标检测 在驾驶员援助系统和自主车辆中已经建立完善;然而,使这些车辆适应路边基础设施是一大挑战。 在车辆上,传感器高度,投球角度,以及相对的几何美图仍然基本一致,使得端对端模型能够有效通用. 相反,路边传感器装置在高度、倾斜度和不同地点的视场方面差异很大,使端到端的模型容易发生故障,而且没有针对具体位置的大规模数据集就难以适应。 因此,与其设计一个复杂的端到端管道,以便直接 3D 为实时提出一个低成本、资源效率高的两阶段办法 3D 形状和方向估计。 第一阶段采用任何现成的、最先进的方法提取 2D 相机边框和相关 3D 每个道路使用者的雷达点数。 拟议的第二阶段随后处理这些投入以构建 3D 雷达数据确定方向的边框 3D 位置,预定义的模板定义了每个道路用户的大小,一个微小的神经网络预测一个特定地点和优化的yaw角度. 该算法在一条有行人、自行车和汽车交汇处的弯道上成功验证。 25 每秒帧数 NVIDIA 杰森,你好吗? ORIN 用于实时应用程序.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.18139",
+      "title": "Multi-View Mixture-of-Experts with Vision-Language Reranking for Cross-View Object Geo-Localization",
+      "source": "arXiv",
+      "reason": "cross-view object geo-localization with vision-language reranking；将视觉-语言重排序用于视觉–AIS或Radar–AIS候选关联：把A",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.18139",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.18139",
+      "score": 24,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract": "Cross-view object geo-localization (CVOGL) locates a target in satellite imagery using drone or street-view queries. Existing methods train separate detectors for each viewpoint, leading to parameter redundancy and impeding cross-view knowledge sharing. Moreover, top-ranked satellite candidates are often visually similar, so visual appearance and categorical labels alone are insufficient to resolve such ambiguity. To address these, we propose MVLGeo, an efficient framework designed to unify multiple viewpoints and reduce model redundancy. First, we introduce environmental contextual text from the query view as cues to distinguish visually similar candidates via Vision-Language Reranking (VL-Rerank). Second, we design a multi-view Mixture-of-Experts architecture (MV-MoE) with a shared encoder and view-specific experts to reduce redundancy and promote knowledge sharing, while cross-view contrastive learning aligns their representations for consistency. Third, we introduce an adaptive elliptical prior (ESAM-Prior) as auxiliary positional encoding for anisotropic geometric perception. Extensive experiments on the CVOGL benchmarks confirm that MVLGeo, as a unified model for multiple query viewpoints, achieves state-of-the-art performance, demonstrating robustness to input degradation and generalization across viewpoints. Code and models will be available on GitHub to facilitate future work.",
+      "abstract_zh": "Cross-view 对象地理定位 (CVOGL) 利用无人机或街景查询在卫星图像中定位目标. 现有方法为每种观点培训单独的探测器,导致参数冗余,并阻碍交叉视图知识共享。 此外,排名最高的卫星候选者往往在视觉上相似,因此光有视觉外观和直截了当的标签不足以解决这种模糊性. 为了解决这些问题,我们建议 MVLGeo, 一个旨在统一多种观点和减少模型冗余的有效框架。 首先,我们从查询角度引入环境背景文本,作为通过下列方式区分视觉相似候选人的提示: 视觉-语言重排 (VL-Rerank). 第二,我们设计一个多视图 Mixture-of-Experts 结构 (MV-MoE) 与共享编码器和特定视图专家合作,以减少冗余和促进知识共享,同时进行交叉视图 对比学习 校对他们的 表征 为了一致性。 第三,我们引入适应性椭圆前 (ESAM-Prior) 作为异构几何感知的辅助位置编码. 广泛试验 CVOGL 基准证实: MVLGeo, 作为多个查询观点的统一模型,实现最先进的性能,显示输入退化和跨观点的通俗化的强性. 守则和模型将在 GitHub 便利今后的工作.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "doi:10.1109/tim.2025.3559575",
+      "title": "Maritime Infrared Ship Detection in AAV Imagery Based on Two-Stage Region-Segmentation-Guided Learning Network",
+      "source": "IEEE Transactions on Instrumentation and Measurement · JCR一区 · IF 7.0",
+      "reason": "直接面向海上红外船舶检测，含海天分割引导增强与小目标检测，和船舶视觉方向高度相关；方法实现细节披露有限。",
+      "original_url": "https://doi.org/10.1109/tim.2025.3559575",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftim.2025.3559575",
+      "score": 18,
+      "rule_level": "方法可借鉴",
+      "level": "直接相关",
+      "ai_score": 67,
+      "selection_source": "历史补荐",
+      "abstract": "Infrared (IR) ship detection in unmanned aerial vehicles (UAV) imagery under maritime environments encounters challenges due to the complexity of sea-sky backgrounds. Current research efforts have not fully leveraged the unique characteristics of maritime scenes to distinguish this task from general IR target detection. To overcome these limitations, we propose a Two-Stage Sea-Sky Region-Segmentation-Guided IR Ship Enhancement and Detection (TIRSD) learning network, specifically designed for targeted ship enhancement and detection in maritime environments. The process is structured into two main stages: enhancement and detection. In the enhancement stage, pixel-level sea-sky region segmentation is accomplished via sea-sky line (SSL) detection, which is followed by precise IR ship enhancement and interference suppression, utilizing specially designed morphological filters. For the detection stage, the Bilateral Hierarchical Target Encoding Module (BHTEM) is introduced to encode both high- and low-dimensional features, ensuring optimal detail retention and extraction. Additionally, the Iterative Fusion Enhancement Midlayer (IFEM) with neighborhood reinforcement operations is presented. Furthermore, a newly controllable Local Discrete Attention Mechanism (LDAM) is utilized to focus on small ships, thereby improving detection efficiency. TIRSD surpasses the current leading methods in terms of accuracy, achieving a Mean Average Precision (mAP) of 76.9% on the proposed dataset and 52.4% on a public dataset. Comprehensive experimental results underscore TIRSD’s effective utilization of the unique characteristics of maritime environments, indicating promising application prospects.",
+      "abstract_zh": "红外线( IR)) 船舶检测 无人驾驶飞行器 (UAV) 海洋环境下的图像由于复杂性而面临挑战。 海天背景. 目前的研究工作没有充分利用海洋场景的独特性来区分这项任务和一般的IR目标探测。 为了克服这些限制,我们提议采用两层海基区域-区间-导航的IR型船舶增强和探测系统。 (TIRSD) 学习网络,专门为在海洋环境中有针对性的船舶增强和探测而设计. 这一过程分为两个主要阶段:增强和检测。 在增强阶段, 像素级 海天区域分割 是通过 海天线 (SSL) 探测,然后使用专门设计的形态过滤器进行精确的IR船增强和干扰压制。 关于探测阶段,双边分级目标编码模块 (BHTEM) 用于编码高维和低维特性,确保最佳细节保留和提取。 此外, 迭代融合增强中间层 (IFEM) 提供邻里支援行动 此外,一个新的可控制 局部离散注意力机制 (LDAM) 用于关注小型船舶,从而提高探测效率。. TIRSD 在准确性方面超过目前的主要方法,实现 平均精度均值 (mAP) 在拟议数据集中占76.9%,在公共数据集中占52.4%。 综合实验结果强调 TIRSD’有效利用海洋环境的独特性,显示有希望的应用前景.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 767,
+    "ai_reviewed": 47,
+    "ai_states": {
+      "evaluated": 47,
+      "unassessed": 681,
+      "uncertain": 39
+    },
+    "stage_counts": {
+      "0": 13,
+      "1": 35,
+      "2": 703,
+      "3": 16
+    },
+    "ai_rejected": 42,
+    "qualified_count": 5,
+    "selected_count": 5,
+    "shortfall": 0
+  },
+  "publication_status": "complete"
+}
