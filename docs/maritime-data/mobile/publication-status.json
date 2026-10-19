@@ -4,11 +4,11 @@
   "published_date": "2026-10-19",
   "selection_audit": {
     "candidate_count": 773,
-    "ai_reviewed": 60,
+    "ai_reviewed": 101,
     "ai_states": {
-      "evaluated": 60,
-      "uncertain": 53,
-      "unassessed": 660
+      "evaluated": 101,
+      "uncertain": 69,
+      "unassessed": 603
     },
     "stage_counts": {
       "1": 33,
@@ -16,8 +16,8 @@
       "0": 11,
       "3": 15
     },
-    "ai_rejected": 55,
-    "qualified_count": 5,
+    "ai_rejected": 91,
+    "qualified_count": 10,
     "selected_count": 5,
     "shortfall": 0
   }

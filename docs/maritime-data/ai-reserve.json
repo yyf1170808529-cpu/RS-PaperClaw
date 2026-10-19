@@ -7,10 +7,8 @@
       "fingerprint": "01d6a86da9d217bbaa6cbd567e4dd4c910e6b6152027080b758a89db2fb9b3cf",
       "review_version": 2,
       "qualified": true,
-      "pushed_dates": [
-        "2026-10-19"
-      ],
-      "available": false
+      "pushed_dates": [],
+      "available": true
     },
     "2610.11113": {
       "paper_id": "2610.11113",
@@ -197,10 +195,8 @@
       "fingerprint": "d5e30be3e2ac2cf07dd22094cfd26b35b87106a7f2452c3320fd6f6899dc8c93",
       "review_version": 2,
       "qualified": true,
-      "pushed_dates": [
-        "2026-10-19"
-      ],
-      "available": false
+      "pushed_dates": [],
+      "available": true
     },
     "2610.21779": {
       "paper_id": "2610.21779",
@@ -231,7 +227,51 @@
         "2026-10-18"
       ],
       "available": false
+    },
+    "2610.09411": {
+      "paper_id": "2610.09411",
+      "fingerprint": "555a3ebb5960cb6520d4afa242ce81ef931d5022827dcb09c3b021459433e54d",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2610.05074": {
+      "paper_id": "2610.05074",
+      "fingerprint": "09059d9ce8966b5e846f5e21bcd29e6ab4e225e2e2291ba36749950012c16891",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [
+        "2026-10-19"
+      ],
+      "available": false
+    },
+    "2610.03167": {
+      "paper_id": "2610.03167",
+      "fingerprint": "d6dc826b5239982be10c71dcb4e45a75d960c046be0d224f670bd1a6bc687ef1",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2610.03454": {
+      "paper_id": "2610.03454",
+      "fingerprint": "34eef9752d02fcf6fdf637572b8445b3bee4d4e578c43d9e4f0d8b1a96858595",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2610.13788": {
+      "paper_id": "2610.13788",
+      "fingerprint": "80764b366670e385fb1ee91ca63eb7412381960593c87c4dd7230b3890c961bf",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [
+        "2026-10-19"
+      ],
+      "available": false
     }
   },
-  "available_count": 0
+  "available_count": 5
 }

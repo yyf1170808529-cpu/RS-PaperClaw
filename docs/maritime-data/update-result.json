@@ -1,0 +1,125 @@
+{
+  "run_id": "2026-10-19T08:58:48.576793+00:00",
+  "completed_at": "2026-10-19T09:13:11.819639+00:00",
+  "local_update": "partial",
+  "jobs": 42,
+  "successful": 39,
+  "incomplete": 0,
+  "failed": 3,
+  "added": 2,
+  "filled": 0,
+  "merged": 0,
+  "before_count": 3681,
+  "after_count": 3683,
+  "translation": {
+    "translated": 2,
+    "cached": 3,
+    "manual": 0,
+    "failed": 0,
+    "missing_english": 0,
+    "pending": 0,
+    "skipped_failed": 0,
+    "selected": 5,
+    "engine": "Argos Translate (CPU)",
+    "api_calls": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
+    "papers": [
+      {
+        "paper_id": "2610.16749",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2609.29235",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.13788",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.14513",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.05074",
+        "source": "argos",
+        "error": ""
+      }
+    ]
+  },
+  "translation_failed": 0,
+  "suspected_duplicates": [
+    [
+      "doi:10.5281/zenodo.23267832",
+      "doi:10.5281/zenodo.23268955"
+    ],
+    [
+      "doi:10.1080/21622671.2026.2684486",
+      "doi:10.6084/m9.figshare.32835575"
+    ],
+    [
+      "doi:10.21203/rs.3.rs-10724957/v1",
+      "doi:10.1186/s42779-026-00333-6"
+    ],
+    [
+      "openalex:W7213692908",
+      "doi:10.14712/9788024662206"
+    ],
+    [
+      "doi:10.46299/isg.2026.2.6",
+      "doi:10.46299/isg.p.2026.2.6"
+    ]
+  ],
+  "ai": {
+    "status": "partial",
+    "processed": 57,
+    "cached": 113,
+    "failed": 3,
+    "cost_upper_cny": 0.2715972,
+    "priced_cost_cny": 0.2715972,
+    "unsettled_upper_cny": 0.0,
+    "tokens": 84924,
+    "missing_abstract": 0,
+    "candidate_count": 773,
+    "already_attempted_today": 0,
+    "pending_total": 660,
+    "limit_deferred": 600,
+    "selected_count": 5,
+    "ai_reviewed": 101,
+    "validation_errors": [
+      {
+        "paper_id": "2610.14077",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2610.11526",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2610.09841",
+        "reason": "Evidence is not an exact abstract quotation"
+      }
+    ],
+    "shortfall": 0,
+    "ai_states": {
+      "evaluated": 101,
+      "uncertain": 69,
+      "unassessed": 603
+    },
+    "publication_status": "complete",
+    "reserve_available": 5
+  },
+  "daily_selected": 5,
+  "daily_publication": "complete",
+  "published_daily_date": "2026-10-19",
+  "published_daily_count": 5,
+  "github_sync": "not_attempted",
+  "pages_publish": "not_attempted",
+  "retrieval_status": "partial",
+  "github_run_id": "39226498086"
+}

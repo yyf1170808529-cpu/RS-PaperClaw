@@ -36,6 +36,23 @@
       "translation_error": ""
     },
     {
+      "paper_id": "2610.13788",
+      "title": "When LiDAR Fades, Radar Takes Over: LiDAR Reliability-Aware Adaptive Localization Under Airborne Obscurants",
+      "source": "arXiv",
+      "reason": "LiDAR退化检测与雷达/LiDAR自适应定位；可将LiDAR可靠性估计门控从定位模态切换调整为多传感器检测中的视觉/雷达分支加权或切换：输入改为各传感器检测特征及质量线索，训练目标改为正常/退化状态",
+      "original_url": "https://arxiv.org/abs/2610.13788",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.13788",
+      "score": 9,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract": "LiDAR-inertial odometry (LIO) is widely used for real-time localization and mapping, but its reliability can degrade substantially in subterranean environments affected by smoke, dust, and other airborne obscurants, whereas radar remains comparatively robust. This article presents a one-class temporal learning framework for LiDAR degradation detection and reliability-aware localization under such conditions. A broad set of degradation-sensitive cues, including spatial, cross-modal, geometric/motion, intensity, and measurement-recency features, is evaluated to characterize changes in LiDAR sensing quality. Their temporal evolution is modelled over sliding windows using an LSTM autoencoder trained exclusively on nominal operation, enabling deviations from healthy sensor behaviour to be detected without requiring labelled degradation data. The resulting LiDAR reliability estimate governs adaptive selection between LIO and radar inertial odometry (RIO), retaining LIO during reliable sensing and transferring localization authority to RIO when degradation is detected. The framework is evaluated using real-world ground robot data collected in GNSS-denied subterranean tunnels under nominal and dense-smoke conditions. Experimental results demonstrate degradation detection, adaptive modality switching, and continued localization output under severe LiDAR degradation. A feature family ablation study further shows that a reduced feature representation can improve degradation-aware localization performance in the evaluated dense-smoke scenarios, highlighting the importance of feature parsimony in one-class sensor degradation detection. The code will be released as open source to support reproducibility and further research.",
+      "abstract_zh": "LiDAR-惯性偏振 (LIO) 它被广泛用于实时本地化和绘图,但其可靠性在受烟雾、尘埃和其他空气相干者影响的地表环境中会大幅度地降解,而雷达仍然相对坚固。 本条提出了一等时间学习框架。 LiDAR 退化检测和在这种条件下意识到可靠性的本地化。 一系列对降解敏感的广泛提示,包括空间提示, 跨模态, 对几何/运动、强度和度量-承受力特征进行评价,以说明变化的特点。 LiDAR 感应质量. 其时间演化模拟于使用 LSTM 自动编码器专门接受名义操作培训,能够检测出对健康传感器行为的偏差,而不需要标有标签的降解数据。 结果 LiDAR 可靠性估计适用于适应性选择 LIO 和雷达惯性偏振仪 (RIO), 保留 LIO 在可靠感测和将本地化权力移交给 RIO 当检测到降解时。 利用在《京都议定书》之下收集的现实世界地面机器人数据对框架进行评价。 GNSS-denied 地铁隧道在标称和密集烟雾条件下通车. 实验结果表明降解检测、适应性 模态 切换,并在严重下继续本地化产出 LiDAR 退化。 一项特征家庭衰减研究进一步表明,一个缩小的特征 表征 可在评价的稠密烟雾情景中提高降解意识局部化性能,突出特征分解在一等传感器降解检测中的重要性。 该代码将作为开源发布,以支持可复制性和进一步研究.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
       "paper_id": "2610.14513",
       "title": "TartanMatch: Towards Universal Dense Correspondence Across Modalities",
       "source": "arXiv",
@@ -53,47 +70,30 @@
       "translation_error": ""
     },
     {
-      "paper_id": "2610.12871",
-      "title": "ROSETTA: Rotation Subspace Estimation for Training-free Transmodal Alignment",
+      "paper_id": "2610.05074",
+      "title": "ReDiffNet: Differential RGB-Infrared Learning for Low-Light UAV Oriented Vehicle Detection",
       "source": "arXiv",
-      "reason": "training-free_transmodal_alignment；将面向LiDAR/相机/热成像/事件跨模态匹配的免训练旋转校准层迁移到视觉–AIS或雷达–AIS跨模态匹配：源域编码器改为船舶视觉",
-      "original_url": "https://arxiv.org/abs/2610.12871",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.12871",
-      "score": 10,
-      "rule_level": "一般相关",
-      "level": "方法值得关注",
-      "ai_score": 53,
-      "selection_source": "近期候选",
-      "abstract": "When a query must be matched against a database built with a different sensor or processed by a different encoder, the independently trained encoders impose distinct coordinate systems on the feature space. No canonical reference frame exists to which all encoders can be aligned, and no single training procedure has fully closed this gap. We show that the relative transformation between any two such systems is a spatially preserving rotation in whitened feature space, whose angular velocity exhibits white-noise characteristics: large in norm, temporally uncorrelated, and unpredictable from the features themselves. However, the cross-covariance between encoder outputs has low effective rank, constraining only a small fraction of the rotation parameters, therefore local alignment is tractable. ROSETTA is a training-free calibration layer that estimates the local rotation via an expectation-maximization procedure, requiring no coobservation at query time. We validate ROSETTA on three public driving datasets spanning LiDAR, camera, thermal, and event modalities in cross-modal, cross-device, cross-representation, and cross-backbone settings, with milliseconds overhead per query.",
-      "abstract_zh": "当一个查询必须与一个用不同传感器建立或由不同编码器处理的数据库相匹配时,独立训练的编码器对特征空间强制实施不同的坐标系统. 不存在可以对所有编码器进行对齐的划线参考框架,也没有单一的训练程序完全堵住了这一缺口. 我们显示,任何两个这样的系统之间的相对转变都是在白化的特征空间中保持空间旋转,其角速显示出白噪声的特征:在规范中很大,时间上不相关,从特征本身来看是不可预测的。 然而,编码器产出之间的相互交错有效级别较低,只限制了轮调参数的一小部分,因此是本地的。 对齐 可拖动. ROSETTA 无训练 校准 层,通过期望最大化程序估计本地旋转,在查询时不需要共同观察。 我们确认 ROSETTA 三个公共驾驶数据集 LiDAR, 相机、热能和事件 模态 在 跨模态, 交叉设备, 交叉-表征, 和交叉背骨设置,每次查询为毫秒.",
-      "translation_source": "argos",
-      "translation_error": ""
-    },
-    {
-      "paper_id": "2610.14598",
-      "title": "Bidirectional Adaptive Transformers for Multimodal Anomaly Detection",
-      "source": "arXiv",
-      "reason": "多模态异常检测/跨模态特征对齐；将RGB-点云的双向互相预测对齐改为视觉-雷达/AIS模态间对齐：输入改为船舶图像特征与雷达/AIS时空特征，需设计对应的互补预测目标与轻量适配器微调，对齐损失改为跨模",
-      "original_url": "https://arxiv.org/abs/2610.14598",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.14598",
-      "score": 15,
+      "reason": "RGB-infrared low-light vehicle detection；将RGB-红外两模态可靠性选择与差分恢复机制，调整到雷达/视觉或AIS/视觉多传感器船舶检测：输入改为雷达点云或AIS",
+      "original_url": "https://arxiv.org/abs/2610.05074",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.05074",
+      "score": 17,
       "rule_level": "方法可借鉴",
       "level": "方法值得关注",
-      "ai_score": 47,
+      "ai_score": 40,
       "selection_source": "近期候选",
-      "abstract": "The effective integration of features derived from RGB images and 3D point clouds presents a substantial challenge in the field of multimodal anomaly detection (MAD). Existing MAD methods typically rely on static fusion paradigms built upon frozen pre-trained encoders. While these frameworks facilitate spatial alignment, they lack the mechanism to establish latent semantic correspondence, thereby inducing cross-modal interference that degrades anomaly discriminability. To mitigate these limitations, this study proposes a Bidirectional Adaptive Transformers (BAT) framework, which constructs comprehensive and semantically aligned multimodal representations by leveraging complementary attributes across modalities. The BAT framework introduces a Bidirectional Feature Alignment (BFA) module, which employs a mutual predictive mechanism to bridge the gap between 2D textural patterns and 3D geometric structures. This bidirectional interaction explicitly enhances the textural granularity of point cloud descriptors while augmenting the spatial contextual awareness of RGB features. To ensure that the latent representations possess sufficient informational density for alignment, BAT incorporates a parameter-efficient adaptation architecture. By utilizing lightweight image and point cloud adapters, the framework facilitates specialized fine-tuning of pre-trained models, mitigating the information loss inherent in frozen encoders. Extensive experiments conducted on MVTec 3D-AD and Eyecandies confirm that BAT achieves state-of-the-art anomaly detection performance, significantly outperforming existing MAD methods.",
-      "abstract_zh": "有效整合源自于 RGB 图像和 3D 点云 人权领域面临的重大挑战 多模态 异常检测 (MAD). 现有 MAD 方法通常依赖静态 融合 以冷冻的预培训编码器为基础的范式。 虽然这些框架有助于空间 对齐, 它们缺乏建立潜在语义通信的机制,从而诱导 跨模态 干预可降低异常的歧视性。 为减少这些局限性,本研究报告建议采用双向适应方法。 Transformer (BAT) 框架,它构建了全面和整体一致的框架 多模态 表征 利用各种补充性属性 模态.  BAT 框架引入双向特性 对齐 (BFA) 模块,该模块采用一种相互预测机制,以弥合在以下两个方面之间的差距: 2D 纹理图案和 3D 几何结构. 这种双向相互作用明确增强 点云 说明,同时增强空间背景意识 RGB 特性。 确保潜在的 表征 具有足够的信息密度 对齐, BAT 纳入具有参数效率的适应结构。 通过使用轻量级图像和 点云 适配器,框架有利于对预先训练过的模型进行专门微调,减轻冷冻编码器固有的信息损失. 在下列领域进行了广泛的实验: MVTec 3D-AD 眼科医生证实 BAT 达到最新水平 异常检测 业绩,明显超过现有业绩 MAD 方法.",
+      "abstract": "Low-light UAV-based RGB-infrared oriented small-vehicle detection is important for nighttime traffic monitoring, emergency response, and urban inspection. Illumination variations, headlight glare, local shadows, and thermal-response degradation cause spatially varying modality reliability, while the small visual extent of vehicles further weakens boundaries, orientation cues, and thermal responses. Accordingly, selecting trustworthy observations based on local modality reliability while further exploiting complementary discriminative information in regions with ambiguous modality preference is key to constructing effective multimodal representations. Based on this insight, we propose ReDiffNet, a reliability-conditioned differential representation network in which modality reliability guides both evidence selection and complementary recovery. Specifically, degradation-aware reliability learning estimates relative spatial reliability, uncertainty-guided differential recovery exploits cross-modal differences to recover complementary cues in ambiguous regions, and reliability-conditioned reconstruction integrates retained and recovered evidence into a unified representation. ReDiffNet achieves 85.3% and 73.9% mAP50 on DroneVehicle and VEDAI, respectively, supporting its effectiveness.",
+      "abstract_zh": "Low-light UAV-based RGB-infrared 面向小车辆的检测对于夜间交通监测、应急反应和城市检查十分重要。 光照变化、前光光、局部阴影和热反应退化造成空间差异 模态 可靠性,而车辆的视觉能见度小则会进一步削弱边界、方向提示和热反应。 因此,根据当地 模态 * 可靠性,同时在模棱两可的区域进一步利用补充性歧视性信息 模态 偏好是构建有效 多模态 表征. 基于这一见解,我们提议 ReDiffNet, 可靠性条件差异 表征 网络 模态 可靠性指导证据选择和补充性回收。 具体来说,认识到退化的可靠性的学习估计相对的空间可靠性,以不确定性为指导的差分恢复 跨模态 在模棱两可的区域内恢复补充线索的差异,以及可靠条件的重建,将保留和收回的证据纳入统一的 表征. ReDiffNet 实现 85.3% 和 73.9% mAP50 在 DroneVehicle 和 VEDAI, 分别支持其有效性.",
       "translation_source": "argos",
       "translation_error": ""
     }
   ],
   "selection_audit": {
     "candidate_count": 773,
-    "ai_reviewed": 60,
+    "ai_reviewed": 101,
     "ai_states": {
-      "evaluated": 60,
-      "uncertain": 53,
-      "unassessed": 660
+      "evaluated": 101,
+      "uncertain": 69,
+      "unassessed": 603
     },
     "stage_counts": {
       "1": 33,
@@ -101,8 +101,8 @@
       "0": 11,
       "3": 15
     },
-    "ai_rejected": 55,
-    "qualified_count": 5,
+    "ai_rejected": 91,
+    "qualified_count": 10,
     "selected_count": 5,
     "shortfall": 0
   },
