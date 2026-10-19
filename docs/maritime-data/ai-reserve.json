@@ -175,10 +175,8 @@
       "fingerprint": "03dc3cbf57fb437362f5ae43fb1b6786eb0a24c49c9257051900d1b1384e7b96",
       "review_version": 2,
       "qualified": true,
-      "pushed_dates": [
-        "2026-10-19"
-      ],
-      "available": false
+      "pushed_dates": [],
+      "available": true
     },
     "2610.16749": {
       "paper_id": "2610.16749",
@@ -241,10 +239,8 @@
       "fingerprint": "09059d9ce8966b5e846f5e21bcd29e6ab4e225e2e2291ba36749950012c16891",
       "review_version": 2,
       "qualified": true,
-      "pushed_dates": [
-        "2026-10-19"
-      ],
-      "available": false
+      "pushed_dates": [],
+      "available": true
     },
     "2610.03167": {
       "paper_id": "2610.03167",
@@ -271,7 +267,51 @@
         "2026-10-19"
       ],
       "available": false
+    },
+    "2610.09511": {
+      "paper_id": "2610.09511",
+      "fingerprint": "010cbe117df7b08b6022da1651e266156da40196147568a933b917a6ed7a05d1",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2609.38637": {
+      "paper_id": "2609.38637",
+      "fingerprint": "0a444b12cbbc322d07d19cbfa14351fd305efa6dbd9882d82bb4eeb0b141d4f6",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2609.36844": {
+      "paper_id": "2609.36844",
+      "fingerprint": "3fa1eede476814994b8677760d5f6636d6c3b40b863cf863ce000758a1f4657e",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [
+        "2026-10-19"
+      ],
+      "available": false
+    },
+    "2609.16535": {
+      "paper_id": "2609.16535",
+      "fingerprint": "f8892202053a0f5565c7a0ff78a8cbcc0b2eaff95cdfc2d7b63454d2deaaeae7",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [
+        "2026-10-19"
+      ],
+      "available": false
+    },
+    "2609.25067": {
+      "paper_id": "2609.25067",
+      "fingerprint": "86bbc083f2e8d8ec3bd23f1441d7a9a99d2066f62d563ef5e5db79ef83e2d1b9",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 5
+  "available_count": 10
 }
