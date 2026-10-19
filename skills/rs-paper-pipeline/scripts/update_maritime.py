@@ -89,15 +89,7 @@ def execute_update(root, path, arguments):
     if ai.get('unsettled_upper_cny'):
         print(f"API可能存在未决计费，保留预算上界 ¥{ai['unsettled_upper_cny']:.6f}；不是已核实扣款。",flush=True)
     print(f"本地阶段已结束；AI状态：{ai.get('status','未执行')}；日志：{path}", flush=True)
-    if code in (0,2):
-        from services.maritime_sync import sync
-        print('[同步] 提交公开数据、推送并检查Pages，请等全部结束后关闭窗口。',flush=True)
-        result=sync(root)
-        print(f"本地更新：{label}；GitHub同步：{result['github_sync']}；Pages发布：{result['pages_publish']}。",flush=True)
-        if result['github_sync']!='success' or result['pages_publish'] not in ('success','workflow_run_pending'):
-            code=2
-    else:
-        print("本地更新失败；未执行GitHub同步。",flush=True)
+    print('本地维护结果已保存；未执行付费AI、GitHub同步或Pages发布。正式更新请双击默认论文更新。',flush=True)
     print(f"全部结束时间：{datetime.now().astimezone().isoformat()}；退出码 {code}。",flush=True)
     return code
 
@@ -109,6 +101,9 @@ def main():
     path = logs / ("update-" + datetime.now().strftime("%Y%m%d-%H%M%S") + ".log")
     arguments = sys.argv[1:]
     sync_only = '--sync-only' in arguments
+    if sync_only and os.environ.get("GITHUB_ACTIONS")!="true":
+        print("正式数据由云端统一写入；本地不自动推送。请双击默认论文更新。",flush=True)
+        return 2
     arguments = [a for a in arguments if a != '--sync-only']
     no_open = "--no-open" in arguments
     arguments = [a for a in arguments if a != "--no-open"]
@@ -149,6 +144,7 @@ def main():
                     result=sync(root)
                     code=0 if result['github_sync']=='success' and result['pages_publish'] in ('success','workflow_run_pending') else 2
                 else:
+                    if "--no-ai" not in arguments:arguments.append("--no-ai")
                     code = execute_update(root, path, arguments)
         except UpdateAlreadyRunning:
             print("已有论文更新正在运行，本次未重复启动。等待原窗口显示结束结果即可。", flush=True)

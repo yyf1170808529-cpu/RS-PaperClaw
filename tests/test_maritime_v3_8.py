@@ -34,6 +34,11 @@ class CloudReserveTests(unittest.TestCase):
             self.assertEqual(update_maritime.main(),0);cloud.assert_called_once();local.assert_not_called()
             self.assertFalse(cloud.call_args.kwargs['wait'])
 
+    def test_local_maintenance_is_nonpaying_and_not_a_second_cloud_writer(self):
+        with patch.object(sys,'argv',['update_maritime.py','--local','--no-open']),patch('services.cloud_update.cloud_update') as cloud,patch.object(update_maritime,'execute_update',return_value=0) as local:
+            self.assertEqual(update_maritime.main(),0);cloud.assert_not_called()
+            self.assertIn('--no-ai',local.call_args.args[2])
+
     def test_dispatch_uses_request_identity_and_resume_same_workflow(self):
         with patch.object(cloud_update,'credential',return_value='unit-test-only'),patch.object(cloud_update,'api') as api:
             request_id,_=cloud_update.dispatch(['--date','20261019','--resume'])

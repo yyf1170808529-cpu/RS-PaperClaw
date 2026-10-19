@@ -49,6 +49,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: No-API regression tests
+        env:
+          RS_RESUME_ONLY: '0'
         run: python -m unittest discover -s tests -p 'test_maritime*.py'
       - name: Install optional CPU translation
         continue-on-error: true

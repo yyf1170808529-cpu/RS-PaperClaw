@@ -57,3 +57,5 @@ GitHub已核验恢复主库blob与本地字节一致（39534549字节）；线�
 运行39226498086结论success；由原更新论文.cmd实际发起。本次新增2篇，AI新增合法评价57篇、缓存113篇、3篇精确摘要证据校验失败被拒收，84924 tokens；本次按usage计价0.2715972元，无翻译API费用。来源partial仅记警告，五篇complete后成功同步1778621并部署Pages。Ubuntu本地Argos新译2篇、复用3篇，失败0，五篇均有中文。后备可用5篇，低于15目标；继续通过同入口--resume验证恢复及积累，不重复抓取。
 
 核实原桌面快捷方式还指向不存在的C:\Users\yyf\Desktop旧位置；已先备份原lnk，再把同一D:\desktop\论文更新.lnk目标修正为D:\desktop\code\paper\RS-PaperClaw\更新论文.cmd，TargetExists=True，工作目录正确，没有新增按钮。
+
+恢复任务39228826171真实失败于No-API regression tests，未执行AI或翻译：RS_RESUME_ONLY=1从job环境泄漏到测试，令模拟完整检索的测试错误进入恢复分支。已隔离测试步骤环境为0，实际恢复步骤仍为1；不将该失败报告成验收成功。
