@@ -2,8 +2,10 @@ name: Personal Papers (No LLM API)
 run-name: Paper update ${{ inputs.request_id || github.event_name }}
 on:
   schedule:
-    - cron: '20 1 * * *'
-    - cron: '20 7 * * *'
+    # UTC; Beijing 07:20 full update (previous UTC calendar day).
+    - cron: '20 23 * * *'
+    # Beijing 12:20 recovery only; both schedules target off-peak API pricing.
+    - cron: '20 4 * * *'
   workflow_dispatch:
     inputs:
       request_id:
@@ -32,7 +34,7 @@ jobs:
     timeout-minutes: 45
     env:
       PYTHONUNBUFFERED: '1'
-      RS_RESUME_ONLY: ${{ (inputs.resume || github.event.schedule == '20 7 * * *') && '1' || '0' }}
+      RS_RESUME_ONLY: ${{ (inputs.resume || github.event.schedule == '20 4 * * *') && '1' || '0' }}
       INPUT_DATE: ${{ inputs.date }}
       INPUT_BOOTSTRAP: ${{ inputs.bootstrap || false }}
       OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
