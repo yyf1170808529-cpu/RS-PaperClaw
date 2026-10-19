@@ -83,7 +83,7 @@ def _translation_worker(queue, papers):
     queue.put((None, None))
 
 
-def translate_budget(library, keys, limit, seconds, save, retry_failed=True):
+def translate_budget(library, keys, limit, seconds, save, retry_failed=True, selected=False):
     import multiprocessing
     from queue import Empty
     from services.maritime_validity import eligible_paper
@@ -91,7 +91,7 @@ def translate_budget(library, keys, limit, seconds, save, retry_failed=True):
     work = []
     for key in dict.fromkeys(keys):
         p = library["papers"][key]
-        if not eligible_paper(p) or p.get("assessment", {}).get("level") == "excluded":
+        if not eligible_paper(p) or (not selected and p.get("assessment", {}).get("level") == "excluded"):
             continue
         t = p.get("translation", {})
         if t.get("status") == "manual":
@@ -142,8 +142,9 @@ def translate_budget(library, keys, limit, seconds, save, retry_failed=True):
         queue.close()
     for p in work:
         if p["paper_id"] not in done:
-            p["translation"] = {**p.get("translation", {}), "status": "failed", "error_type": "model_runtime_error",
-                                "error": "Translation worker exceeded time budget or exited; English preserved"}
+            if not reading.cached_translation(p) and p.get('translation',{}).get('status')!='manual':
+                p["translation"] = {**p.get("translation", {}), "status": "failed", "error_type": "model_runtime_error",
+                                    "error": "Translation worker exceeded time budget or exited; English preserved"}
             counts["failed"] += 1
     save()
     return counts
@@ -155,8 +156,8 @@ def run_update(args, library, rules):
     from services.maritime_validity import verify_records
     end = datetime.strptime(args.date.replace("-", ""), "%Y%m%d").date() if args.date else today()
     venues, policy = v2.assets()
-    jobs = update_jobs(args, venues)
-    if not jobs:
+    jobs = [] if __import__("os").environ.get("RS_RESUME_ONLY")=="1" else update_jobs(args, venues)
+    if not jobs and __import__("os").environ.get("RS_RESUME_ONLY")!="1":
         raise ValueError("No matching source/query jobs")
     before_count = len(library["papers"])
     run_id = datetime.now(timezone.utc).isoformat()
@@ -241,10 +242,13 @@ def run_update(args, library, rules):
                "daily_publication":publication['status'],"published_daily_date":publication['published_date'],
                "published_daily_count":len(json.loads(latest_path.read_text(encoding='utf8'))['papers']) if latest_path.exists() else 0,
                "github_sync": "not_attempted", "pages_publish": "not_attempted"}
+    summary["retrieval_status"]="not_run_resume" if not jobs else source_status
+    summary["github_run_id"]=__import__("os").environ.get("GITHUB_RUN_ID")
     write_json(args.root / "papers/maritime/logs/latest-update.json", summary)
+    write_json(args.root / "docs/maritime-data/update-result.json", summary)
     public = args.root / "docs/maritime-data/library.json"
     payload = json.loads(public.read_text(encoding="utf-8"))
     payload["update_summary"] = summary
     write_json(public, payload)
     print(json.dumps(summary, ensure_ascii=False), flush=True)
-    return 0 if summary["local_update"] == "success" else 2 if summary["local_update"] == "partial" else 1
+    return 0 if publication['status']=='complete' and not translations['failed'] else 2 if summary["local_update"] != "failed" else 1

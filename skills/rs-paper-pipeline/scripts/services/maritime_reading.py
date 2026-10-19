@@ -68,6 +68,45 @@ def configure_argos():
     os.environ.setdefault("OMP_NUM_THREADS", "2")
 
 
+def argos_translator(resources_path=None):
+    """Use installed Argos decoder; avoid incompatible legacy Stanza sentence splitting."""
+    configure_argos()
+    from argostranslate import translate
+    import stanza
+    languages=translate.get_installed_languages()
+    en=next((x for x in languages if x.code=='en'),None)
+    zh=next((x for x in languages if x.code=='zh'),None)
+    if not en or not zh:raise RuntimeError('Install the optional en→zh Argos model first')
+    pair=en.get_translation(zh)
+    packaged=getattr(pair,'underlying',pair)
+    sentencizer=getattr(packaged,'sentencizer',None)
+    if sentencizer is not None and hasattr(sentencizer,'stanza_pipeline') and sentencizer.stanza_pipeline is None:
+        directory=packaged.pkg.package_path/'stanza'
+        resource=Path(resources_path) if resources_path else directory/'resources.json'
+        content=json.loads(resource.read_text(encoding='utf8'))
+        lang=sentencizer.stanza_lang_code
+        if 'packages' not in content.get(lang,{}):
+            # Legacy Argos tokenizer weights also lack newer Stanza feat_dropout.
+            # Keep the installed Argos decoder; English boundary splitting needs no model.
+            class OfflineEnglishSentencizer:
+                def split_sentences(self,text):
+                    return [x for x in re.split(r'(?<=[.!?])\s+(?=[A-Z])',text) if x.strip()]
+            packaged.sentencizer=OfflineEnglishSentencizer()
+        else:
+            sentencizer.stanza_pipeline=stanza.Pipeline(lang=lang,dir=str(directory),resources_filepath=str(resource),
+                processors='tokenize',use_gpu=False,download_method=None,logging_level='WARNING')
+    def inference(text):
+        values=pair.hypotheses(text,num_hypotheses=4)
+        return next((v.value for v in values if v.value.strip() and len(v.value)>=len(text)*.08 and not repeated_text(v.value)),'')
+    return inference
+
+
+def translation_smoke():
+    result=translate_one({'abstract':'We propose a robust object tracking method.'})
+    if result.get('status')!='machine':raise RuntimeError('Argos smoke failed: '+result.get('error','unknown'))
+    return {'status':'success','english':'We propose a robust object tracking method.','chinese':result['zh']}
+
+
 def translate_one(paper, translator=None):
     from services.abstract_quality import apply_quality
     apply_quality(paper)
@@ -80,28 +119,7 @@ def translate_one(paper, translator=None):
         return {"status": "missing_english", "error_type": "missing_english", "zh": "", "english_hash": digest}
     try:
         if translator is None:
-            configure_argos()
-            from argostranslate import translate
-            languages = translate.get_installed_languages()
-            en = next((lang for lang in languages if lang.code == "en"), None)
-            zh = next((lang for lang in languages if lang.code == "zh"), None)
-            if not en or not zh:
-                raise RuntimeError("Install the optional en→zh Argos model first")
-            pair = en.get_translation(zh)
-            packaged = getattr(pair, "underlying", pair)
-            sentencizer = getattr(packaged, "sentencizer", None)
-            if sentencizer is not None and hasattr(sentencizer, "stanza_pipeline") and sentencizer.stanza_pipeline is None:
-                import stanza
-                # Argos' packaged Stanza tokenizer is already installed. Ordinary
-                # translation must not refresh remote resources or download models.
-                sentencizer.stanza_pipeline = stanza.Pipeline(lang=sentencizer.stanza_lang_code,
-                    dir=str(packaged.pkg.package_path / "stanza"), processors="tokenize", use_gpu=False,
-                    download_method=None, logging_level="WARNING")
-            def translator(text):
-                # Reuse the installed Argos decoder's alternate hypotheses when
-                # its first result is empty or loops on a repeated phrase.
-                values = pair.hypotheses(text, num_hypotheses=4)
-                return next((v.value for v in values if v.value.strip() and len(v.value)>=len(text)*.08 and not repeated_text(v.value)), "")
+            translator = argos_translator()
         terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf-8"))
         phrases = "|".join(re.escape(t) for t in sorted(terms, key=len, reverse=True))
         pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+[A-Za-z][A-Za-z0-9_-]*\b|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{1,})\b)"

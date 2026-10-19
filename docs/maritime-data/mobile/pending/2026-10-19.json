@@ -14,9 +14,9 @@
       "ai_score": 47,
       "selection_source": "近期候选",
       "abstract": "Recent foundation models have drastically improved the generalization of monocular relative depth estimation, yet recovering accurate metric depth from their estimates for depth perception tasks remains challenging due to scale ambiguity and local metric-scale inconsistency. Existing approaches recover metric depth from sparse observations using either explicit global affine transformation algorithms or implicit data-driven depth completion networks. The former cannot accommodate spatially varying relative-to-metric relationships, while the latter are sensitive to the distribution of sparse observations and may not fully exploit generalizable relative depth priors. To simultaneously address these issues, this study extends our previous work MTD and proposes MTDv2, a hybrid metric depth perception framework that combines explicit depth metricization with data-driven metric depth refinement. The explicit depth metricization process performs segment-wise affine transformations to recover spatially varying metric scales while preserving the geometric structure of relative depth, followed by pixel-wise depth refinement that propagates metric observations along paths with minimal accumulated geometric variation. The data-driven depth refinement process subsequently extends the explicit single-path depth propagation to a learnable multi-path formulation while preserving its interpretability. Extensive experiments conducted on 16 public datasets demonstrate the robust and generalizable depth scale recovery capability of MTDv2 across diverse sources of sparse observations and different depth estimation paradigms, as well as its broad applicability to downstream 3D perception tasks. Code will be publicly available at https://mias.group/MTD upon publication.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "最近的基础模型大大改进了对单体相对深度估计的概括性,但由于尺度模糊和地方尺度不一致,从其深度感知任务估计中恢复准确的度量深度仍然具有挑战性。 现有方法利用明显的全球近缘变换算法或暗含的数据驱动深度完成网络,从稀少的观测中恢复测量深度。 前者不能适应空间差异的相对对度量关系,而后者对稀有观测的分布很敏感,可能无法充分利用可概括的相对深度前传. 为了同时解决这些问题,本研究报告扩展了我们先前的工作。 MTD 和提议 MTDv2, 混合度量衡深度感知框架,将明确度量衡与数据驱动的度量深度完善相结合. 清晰的深度测量过程进行断面近缘变换,以恢复空间变化的计量尺度,同时保持相对深度的几何结构,然后对像素深度进行精细调整,沿最小的累积几何变化的路径传播计量观测结果。 数据驱动的深度改进过程随后将明确的单路径深度传播扩大到可学习的多路径配方,同时保持其可解释性。 在下列领域进行了广泛的实验: 16 公共数据集显示有强大和一般的深度尺度回收能力 MTDv2 不同的观测来源和不同的深度估计范式,及其广泛适用于下游 3D 认知任务。 代码将在 https://mias.group/MTD 发表时.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2609.29235",
@@ -31,9 +31,9 @@
       "ai_score": 53,
       "selection_source": "近期候选",
       "abstract": "Camera-LiDAR fusion has become a prevailing paradigm for 3D object detection in autonomous driving. However, existing fusion detectors often establish strong inter-modality dependencies by decoding object queries from tightly coupled multimodal representations. Under corrupted driving conditions, such dependencies make the detector vulnerable to unreliable modalities, where degraded observations may interfere with reliable modality-specific evidence and lead to suboptimal predictions. Moreover, modality reliability can vary across both global driving scenes and individual object queries, requiring adaptive fusion decisions at a finer granularity. To bridge this gap, we reformulate robust camera-LiDAR fusion as a scene-aware branch routing problem and propose SARFusion, a robust 3D object detector. Instead of producing detections from a single fused representation, SARFusion decouples object-query decoding into three parallel reasoning branches: a camera branch, a LiDAR branch, and a camera-LiDAR fusion branch. Guided by a Scene Reliability Prior estimated from the global driving context, SARFusion further incorporates object-level evidence to route each query to the most suitable branch. This query-wise routing strategy alleviates harmful cross-modal interference while preserving the benefits of multimodal fusion when complementary cues are trustworthy. On the nuScenes test set, SARFusion achieves strong performance with 72.5 mAP and 74.4 NDS. Extensive analyses demonstrate its robustness under challenging conditions, including sensor corruptions and environmental changes.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "Camera-LiDAR 融合 已经成为一种盛行的范例 3D 目标检测 在自主驾驶。 然而,现有 融合 探测器常常建立强大的相互间。-模态 通过解码从紧密组合对象查询的依赖性 多模态 表征. 在损坏的驾驶条件下,这种依赖性使得探测器容易不可靠 模态, 退化的观测可能干扰可靠的 模态-具体证据并导致不理想的预测. 还有, 模态 可靠性可能因全球驱动场景和单个物体查询而异,需要适应性强 融合 更细微的颗粒性决定。 为了弥补这一差距,我们重新制定有力的 camera-LiDAR 融合 作为了解场景的分支路线问题 并提出 SARFusion, 一个强壮的 3D 对象探测器。 而不是从单人身上产生检测 融合 表征, SARFusion 脱钩对象清空解码为三个平行推理分支:一个相机分支,一个 LiDAR 分支和a camera-LiDAR 融合 树枝。 以场景可靠性为指南 从全球驱动环境推算, SARFusion 进一步纳入对象级证据,将每个查询都引导到最合适的分支. 这种查询路由策略减轻了危害 跨模态 干涉,同时维护 多模态 融合 当辅助的提示是可信的的时候, 打开 nuScenes 测试集, SARFusion 实现强效 72.5 mAP 和 74.4 NDS. 广泛的分析表明,在具有挑战性的条件下,包括传感器腐败和环境变化的情况下,其稳健性.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2610.14513",
@@ -48,9 +48,9 @@
       "ai_score": 53,
       "selection_source": "近期候选",
       "abstract": "Robotic platforms combine multi-modal sensors to operate across diverse conditions, but most dense correspondence methods are limited to RGB-RGB or a small set of modality pairs. Training a model for each modality pair scales poorly with the number of sensors and forgoes potential positive transfer across modality pairs. We introduce TartanMatch, a unified model for dense correspondence across all 25 ordered pairs among RGB, event, thermal, depth, and projected LiDAR. TartanMatch adapts an RGB-pretrained correspondence model to all modality pairs within one shared network using lightweight modality adaptation and a mixture of real and synthetic data. On zero-shot real-world benchmarks, TartanMatch reduces Endpoint Error (EPE) over the strongest baselines by 61.9% for cross-modal matching and 49.6% for same-modal matching. We further show that joint training across all modality pairs improves average matching accuracy over pair-specific training, especially on challenging cross-modal pairs. These results demonstrate that a single model achieves broad multi-modal coverage and state-of-the-art matching accuracy.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "机器人平台组合 多模态 在不同条件下运行的传感器,但大多数 稠密对应 方法仅限于 RGB-RGB 或一小组 模态 双人 培训每个模式 模态 传感器数量和放弃潜力的对角差 正样本 转帐 模态 双人 我们介绍 TartanMatch, 统一模式 稠密对应 涉及所有领域 25 订购的对 RGB, 事件、热、深度和预测 LiDAR. TartanMatch 调整一个 RGB-pretrained 通信模式 模态 使用轻量级的共享网络中的配对 模态 适应和真实和合成数据的混合。 打开 零样本 现实世界基准, TartanMatch 减少终点错误 (EPE) 超过最强基线 61.9% 用于 跨模态 匹配和 49.6% 用于同一模式的匹配。 我们进一步表明,在所有 模态 配对在配对特定培训中提高平均配对精度,特别是在挑战方面 跨模态 双人 这些结果表明,单一模式可实现广泛的发展。 多模态 覆盖面和最先进的匹配精确度.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2610.12871",
@@ -65,9 +65,9 @@
       "ai_score": 53,
       "selection_source": "近期候选",
       "abstract": "When a query must be matched against a database built with a different sensor or processed by a different encoder, the independently trained encoders impose distinct coordinate systems on the feature space. No canonical reference frame exists to which all encoders can be aligned, and no single training procedure has fully closed this gap. We show that the relative transformation between any two such systems is a spatially preserving rotation in whitened feature space, whose angular velocity exhibits white-noise characteristics: large in norm, temporally uncorrelated, and unpredictable from the features themselves. However, the cross-covariance between encoder outputs has low effective rank, constraining only a small fraction of the rotation parameters, therefore local alignment is tractable. ROSETTA is a training-free calibration layer that estimates the local rotation via an expectation-maximization procedure, requiring no coobservation at query time. We validate ROSETTA on three public driving datasets spanning LiDAR, camera, thermal, and event modalities in cross-modal, cross-device, cross-representation, and cross-backbone settings, with milliseconds overhead per query.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "当一个查询必须与一个用不同传感器建立或由不同编码器处理的数据库相匹配时,独立训练的编码器对特征空间强制实施不同的坐标系统. 不存在可以对所有编码器进行对齐的划线参考框架,也没有单一的训练程序完全堵住了这一缺口. 我们显示,任何两个这样的系统之间的相对转变都是在白化的特征空间中保持空间旋转,其角速显示出白噪声的特征:在规范中很大,时间上不相关,从特征本身来看是不可预测的。 然而,编码器产出之间的相互交错有效级别较低,只限制了轮调参数的一小部分,因此是本地的。 对齐 可拖动. ROSETTA 无训练 校准 层,通过期望最大化程序估计本地旋转,在查询时不需要共同观察。 我们确认 ROSETTA 三个公共驾驶数据集 LiDAR, 相机、热能和事件 模态 在 跨模态, 交叉设备, 交叉-表征, 和交叉背骨设置,每次查询为毫秒.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2610.14598",
@@ -82,23 +82,23 @@
       "ai_score": 47,
       "selection_source": "近期候选",
       "abstract": "The effective integration of features derived from RGB images and 3D point clouds presents a substantial challenge in the field of multimodal anomaly detection (MAD). Existing MAD methods typically rely on static fusion paradigms built upon frozen pre-trained encoders. While these frameworks facilitate spatial alignment, they lack the mechanism to establish latent semantic correspondence, thereby inducing cross-modal interference that degrades anomaly discriminability. To mitigate these limitations, this study proposes a Bidirectional Adaptive Transformers (BAT) framework, which constructs comprehensive and semantically aligned multimodal representations by leveraging complementary attributes across modalities. The BAT framework introduces a Bidirectional Feature Alignment (BFA) module, which employs a mutual predictive mechanism to bridge the gap between 2D textural patterns and 3D geometric structures. This bidirectional interaction explicitly enhances the textural granularity of point cloud descriptors while augmenting the spatial contextual awareness of RGB features. To ensure that the latent representations possess sufficient informational density for alignment, BAT incorporates a parameter-efficient adaptation architecture. By utilizing lightweight image and point cloud adapters, the framework facilitates specialized fine-tuning of pre-trained models, mitigating the information loss inherent in frozen encoders. Extensive experiments conducted on MVTec 3D-AD and Eyecandies confirm that BAT achieves state-of-the-art anomaly detection performance, significantly outperforming existing MAD methods.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "有效整合源自于 RGB 图像和 3D 点云 人权领域面临的重大挑战 多模态 异常检测 (MAD). 现有 MAD 方法通常依赖静态 融合 以冷冻的预培训编码器为基础的范式。 虽然这些框架有助于空间 对齐, 它们缺乏建立潜在语义通信的机制,从而诱导 跨模态 干预可降低异常的歧视性。 为减少这些局限性,本研究报告建议采用双向适应方法。 Transformer (BAT) 框架,它构建了全面和整体一致的框架 多模态 表征 利用各种补充性属性 模态.  BAT 框架引入双向特性 对齐 (BFA) 模块,该模块采用一种相互预测机制,以弥合在以下两个方面之间的差距: 2D 纹理图案和 3D 几何结构. 这种双向相互作用明确增强 点云 说明,同时增强空间背景意识 RGB 特性。 确保潜在的 表征 具有足够的信息密度 对齐, BAT 纳入具有参数效率的适应结构。 通过使用轻量级图像和 点云 适配器,框架有利于对预先训练过的模型进行专门微调,减轻冷冻编码器固有的信息损失. 在下列领域进行了广泛的实验: MVTec 3D-AD 眼科医生证实 BAT 达到最新水平 异常检测 业绩,明显超过现有业绩 MAD 方法.",
+      "translation_source": "argos",
+      "translation_error": ""
     }
   ],
   "selection_audit": {
-    "candidate_count": 769,
+    "candidate_count": 773,
     "ai_reviewed": 60,
     "ai_states": {
       "evaluated": 60,
       "uncertain": 53,
-      "unassessed": 656
+      "unassessed": 660
     },
     "stage_counts": {
       "1": 33,
       "2": 714,
-      "0": 7,
+      "0": 11,
       "3": 15
     },
     "ai_rejected": 55,
@@ -121,9 +121,9 @@
       "ai_score": 47,
       "selection_source": "近期候选",
       "abstract": "Recent foundation models have drastically improved the generalization of monocular relative depth estimation, yet recovering accurate metric depth from their estimates for depth perception tasks remains challenging due to scale ambiguity and local metric-scale inconsistency. Existing approaches recover metric depth from sparse observations using either explicit global affine transformation algorithms or implicit data-driven depth completion networks. The former cannot accommodate spatially varying relative-to-metric relationships, while the latter are sensitive to the distribution of sparse observations and may not fully exploit generalizable relative depth priors. To simultaneously address these issues, this study extends our previous work MTD and proposes MTDv2, a hybrid metric depth perception framework that combines explicit depth metricization with data-driven metric depth refinement. The explicit depth metricization process performs segment-wise affine transformations to recover spatially varying metric scales while preserving the geometric structure of relative depth, followed by pixel-wise depth refinement that propagates metric observations along paths with minimal accumulated geometric variation. The data-driven depth refinement process subsequently extends the explicit single-path depth propagation to a learnable multi-path formulation while preserving its interpretability. Extensive experiments conducted on 16 public datasets demonstrate the robust and generalizable depth scale recovery capability of MTDv2 across diverse sources of sparse observations and different depth estimation paradigms, as well as its broad applicability to downstream 3D perception tasks. Code will be publicly available at https://mias.group/MTD upon publication.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "最近的基础模型大大改进了对单体相对深度估计的概括性,但由于尺度模糊和地方尺度不一致,从其深度感知任务估计中恢复准确的度量深度仍然具有挑战性。 现有方法利用明显的全球近缘变换算法或暗含的数据驱动深度完成网络,从稀少的观测中恢复测量深度。 前者不能适应空间差异的相对对度量关系,而后者对稀有观测的分布很敏感,可能无法充分利用可概括的相对深度前传. 为了同时解决这些问题,本研究报告扩展了我们先前的工作。 MTD 和提议 MTDv2, 混合度量衡深度感知框架,将明确度量衡与数据驱动的度量深度完善相结合. 清晰的深度测量过程进行断面近缘变换,以恢复空间变化的计量尺度,同时保持相对深度的几何结构,然后对像素深度进行精细调整,沿最小的累积几何变化的路径传播计量观测结果。 数据驱动的深度改进过程随后将明确的单路径深度传播扩大到可学习的多路径配方,同时保持其可解释性。 在下列领域进行了广泛的实验: 16 公共数据集显示有强大和一般的深度尺度回收能力 MTDv2 不同的观测来源和不同的深度估计范式,及其广泛适用于下游 3D 认知任务。 代码将在 https://mias.group/MTD 发表时.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2609.29235",
@@ -138,9 +138,9 @@
       "ai_score": 53,
       "selection_source": "近期候选",
       "abstract": "Camera-LiDAR fusion has become a prevailing paradigm for 3D object detection in autonomous driving. However, existing fusion detectors often establish strong inter-modality dependencies by decoding object queries from tightly coupled multimodal representations. Under corrupted driving conditions, such dependencies make the detector vulnerable to unreliable modalities, where degraded observations may interfere with reliable modality-specific evidence and lead to suboptimal predictions. Moreover, modality reliability can vary across both global driving scenes and individual object queries, requiring adaptive fusion decisions at a finer granularity. To bridge this gap, we reformulate robust camera-LiDAR fusion as a scene-aware branch routing problem and propose SARFusion, a robust 3D object detector. Instead of producing detections from a single fused representation, SARFusion decouples object-query decoding into three parallel reasoning branches: a camera branch, a LiDAR branch, and a camera-LiDAR fusion branch. Guided by a Scene Reliability Prior estimated from the global driving context, SARFusion further incorporates object-level evidence to route each query to the most suitable branch. This query-wise routing strategy alleviates harmful cross-modal interference while preserving the benefits of multimodal fusion when complementary cues are trustworthy. On the nuScenes test set, SARFusion achieves strong performance with 72.5 mAP and 74.4 NDS. Extensive analyses demonstrate its robustness under challenging conditions, including sensor corruptions and environmental changes.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "Camera-LiDAR 融合 已经成为一种盛行的范例 3D 目标检测 在自主驾驶。 然而,现有 融合 探测器常常建立强大的相互间。-模态 通过解码从紧密组合对象查询的依赖性 多模态 表征. 在损坏的驾驶条件下,这种依赖性使得探测器容易不可靠 模态, 退化的观测可能干扰可靠的 模态-具体证据并导致不理想的预测. 还有, 模态 可靠性可能因全球驱动场景和单个物体查询而异,需要适应性强 融合 更细微的颗粒性决定。 为了弥补这一差距,我们重新制定有力的 camera-LiDAR 融合 作为了解场景的分支路线问题 并提出 SARFusion, 一个强壮的 3D 对象探测器。 而不是从单人身上产生检测 融合 表征, SARFusion 脱钩对象清空解码为三个平行推理分支:一个相机分支,一个 LiDAR 分支和a camera-LiDAR 融合 树枝。 以场景可靠性为指南 从全球驱动环境推算, SARFusion 进一步纳入对象级证据,将每个查询都引导到最合适的分支. 这种查询路由策略减轻了危害 跨模态 干涉,同时维护 多模态 融合 当辅助的提示是可信的的时候, 打开 nuScenes 测试集, SARFusion 实现强效 72.5 mAP 和 74.4 NDS. 广泛的分析表明,在具有挑战性的条件下,包括传感器腐败和环境变化的情况下,其稳健性.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2610.14513",
@@ -155,9 +155,9 @@
       "ai_score": 53,
       "selection_source": "近期候选",
       "abstract": "Robotic platforms combine multi-modal sensors to operate across diverse conditions, but most dense correspondence methods are limited to RGB-RGB or a small set of modality pairs. Training a model for each modality pair scales poorly with the number of sensors and forgoes potential positive transfer across modality pairs. We introduce TartanMatch, a unified model for dense correspondence across all 25 ordered pairs among RGB, event, thermal, depth, and projected LiDAR. TartanMatch adapts an RGB-pretrained correspondence model to all modality pairs within one shared network using lightweight modality adaptation and a mixture of real and synthetic data. On zero-shot real-world benchmarks, TartanMatch reduces Endpoint Error (EPE) over the strongest baselines by 61.9% for cross-modal matching and 49.6% for same-modal matching. We further show that joint training across all modality pairs improves average matching accuracy over pair-specific training, especially on challenging cross-modal pairs. These results demonstrate that a single model achieves broad multi-modal coverage and state-of-the-art matching accuracy.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "机器人平台组合 多模态 在不同条件下运行的传感器,但大多数 稠密对应 方法仅限于 RGB-RGB 或一小组 模态 双人 培训每个模式 模态 传感器数量和放弃潜力的对角差 正样本 转帐 模态 双人 我们介绍 TartanMatch, 统一模式 稠密对应 涉及所有领域 25 订购的对 RGB, 事件、热、深度和预测 LiDAR. TartanMatch 调整一个 RGB-pretrained 通信模式 模态 使用轻量级的共享网络中的配对 模态 适应和真实和合成数据的混合。 打开 零样本 现实世界基准, TartanMatch 减少终点错误 (EPE) 超过最强基线 61.9% 用于 跨模态 匹配和 49.6% 用于同一模式的匹配。 我们进一步表明,在所有 模态 配对在配对特定培训中提高平均配对精度,特别是在挑战方面 跨模态 双人 这些结果表明,单一模式可实现广泛的发展。 多模态 覆盖面和最先进的匹配精确度.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2610.12871",
@@ -172,9 +172,9 @@
       "ai_score": 53,
       "selection_source": "近期候选",
       "abstract": "When a query must be matched against a database built with a different sensor or processed by a different encoder, the independently trained encoders impose distinct coordinate systems on the feature space. No canonical reference frame exists to which all encoders can be aligned, and no single training procedure has fully closed this gap. We show that the relative transformation between any two such systems is a spatially preserving rotation in whitened feature space, whose angular velocity exhibits white-noise characteristics: large in norm, temporally uncorrelated, and unpredictable from the features themselves. However, the cross-covariance between encoder outputs has low effective rank, constraining only a small fraction of the rotation parameters, therefore local alignment is tractable. ROSETTA is a training-free calibration layer that estimates the local rotation via an expectation-maximization procedure, requiring no coobservation at query time. We validate ROSETTA on three public driving datasets spanning LiDAR, camera, thermal, and event modalities in cross-modal, cross-device, cross-representation, and cross-backbone settings, with milliseconds overhead per query.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "当一个查询必须与一个用不同传感器建立或由不同编码器处理的数据库相匹配时,独立训练的编码器对特征空间强制实施不同的坐标系统. 不存在可以对所有编码器进行对齐的划线参考框架,也没有单一的训练程序完全堵住了这一缺口. 我们显示,任何两个这样的系统之间的相对转变都是在白化的特征空间中保持空间旋转,其角速显示出白噪声的特征:在规范中很大,时间上不相关,从特征本身来看是不可预测的。 然而,编码器产出之间的相互交错有效级别较低,只限制了轮调参数的一小部分,因此是本地的。 对齐 可拖动. ROSETTA 无训练 校准 层,通过期望最大化程序估计本地旋转,在查询时不需要共同观察。 我们确认 ROSETTA 三个公共驾驶数据集 LiDAR, 相机、热能和事件 模态 在 跨模态, 交叉设备, 交叉-表征, 和交叉背骨设置,每次查询为毫秒.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2610.14598",
@@ -189,9 +189,9 @@
       "ai_score": 47,
       "selection_source": "近期候选",
       "abstract": "The effective integration of features derived from RGB images and 3D point clouds presents a substantial challenge in the field of multimodal anomaly detection (MAD). Existing MAD methods typically rely on static fusion paradigms built upon frozen pre-trained encoders. While these frameworks facilitate spatial alignment, they lack the mechanism to establish latent semantic correspondence, thereby inducing cross-modal interference that degrades anomaly discriminability. To mitigate these limitations, this study proposes a Bidirectional Adaptive Transformers (BAT) framework, which constructs comprehensive and semantically aligned multimodal representations by leveraging complementary attributes across modalities. The BAT framework introduces a Bidirectional Feature Alignment (BFA) module, which employs a mutual predictive mechanism to bridge the gap between 2D textural patterns and 3D geometric structures. This bidirectional interaction explicitly enhances the textural granularity of point cloud descriptors while augmenting the spatial contextual awareness of RGB features. To ensure that the latent representations possess sufficient informational density for alignment, BAT incorporates a parameter-efficient adaptation architecture. By utilizing lightweight image and point cloud adapters, the framework facilitates specialized fine-tuning of pre-trained models, mitigating the information loss inherent in frozen encoders. Extensive experiments conducted on MVTec 3D-AD and Eyecandies confirm that BAT achieves state-of-the-art anomaly detection performance, significantly outperforming existing MAD methods.",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "'packages'"
+      "abstract_zh": "有效整合源自于 RGB 图像和 3D 点云 人权领域面临的重大挑战 多模态 异常检测 (MAD). 现有 MAD 方法通常依赖静态 融合 以冷冻的预培训编码器为基础的范式。 虽然这些框架有助于空间 对齐, 它们缺乏建立潜在语义通信的机制,从而诱导 跨模态 干预可降低异常的歧视性。 为减少这些局限性,本研究报告建议采用双向适应方法。 Transformer (BAT) 框架,它构建了全面和整体一致的框架 多模态 表征 利用各种补充性属性 模态.  BAT 框架引入双向特性 对齐 (BFA) 模块,该模块采用一种相互预测机制,以弥合在以下两个方面之间的差距: 2D 纹理图案和 3D 几何结构. 这种双向相互作用明确增强 点云 说明,同时增强空间背景意识 RGB 特性。 确保潜在的 表征 具有足够的信息密度 对齐, BAT 纳入具有参数效率的适应结构。 通过使用轻量级图像和 点云 适配器,框架有利于对预先训练过的模型进行专门微调,减轻冷冻编码器固有的信息损失. 在下列领域进行了广泛的实验: MVTec 3D-AD 眼科医生证实 BAT 达到最新水平 异常检测 业绩,明显超过现有业绩 MAD 方法.",
+      "translation_source": "argos",
+      "translation_error": ""
     }
   ]
 }

@@ -258,3 +258,18 @@ python skills/rs-paper-pipeline/scripts/cli.py maritime --action score-ai-labels
 ```
 
 V3.4试验限制详见 `MARITIME_V3_4_API_EVALUATION_REPORT.md`。V3.5手机使用“硬条件＋AI重排”，不凭决策标签单独排除船舶视觉论文；日常Actions复用同一代码，从Secret读取Key，未配置时回退规则。预算是每个运行环境的账本，不是账户全局封顶；成功AI缓存随静态数据同步复用。
+
+
+### V3.8 日常使用
+
+双击 `更新论文.cmd`（桌面“论文更新”继续使用），即可触发同一 GitHub Actions 流程；无需电脑先检索、付费评价或推送。电脑需要联网，云端每日运行不需要电脑开机。窗口会分别显示检索、AI、翻译、同步及 Pages 结果。
+
+已有 GitHub 授权自动复用；如提示未授权，在项目目录运行一次 `git credential-manager github login` 并按浏览器提示完成授权，不要提供 Token 到聊天中。
+
+- 日报：https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html
+- 仅恢复未完成阶段：`更新论文.cmd --resume`（跳过重新检索）。
+- 维护本地离线副本：`python skills/rs-paper-pipeline/scripts/preview_maritime.py`。
+- 明确需要本地维护流程时才使用 `更新论文.cmd --local`，默认正式写入端为 Actions。
+- 本地可选同步公共仓库：确认工作区无修改后运行 `git -c http.proxy=http://127.0.0.1:7897 pull --ff-only origin main`；不会自动覆盖有修改的副本。
+
+云端每天北京时间09:20检索，15:20恢复AI/翻译/发布；有预算及成功结果缓存，时刻可能因GitHub调度延迟。收藏和笔记仍仅存浏览器，云端不读写私人笔记。

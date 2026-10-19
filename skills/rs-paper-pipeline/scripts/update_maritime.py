@@ -126,6 +126,18 @@ def main():
                 os.environ["OPENALEX_API_KEY"] = winreg.QueryValueEx(key, "OPENALEX_API_KEY")[0]
         except OSError:
             pass
+    local_mode='--local' in arguments
+    arguments=[a for a in arguments if a!='--local']
+    if not local_mode and not sync_only:
+        try:
+            from services.cloud_update import cloud_update
+            only_open='--only-open' in arguments
+            code=0 if only_open else cloud_update(root,arguments,wait='--cloud-no-wait' not in arguments)
+            if not no_open:webbrowser.open('https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html')
+            return code
+        except Exception as exc:
+            print('云端更新未完成：'+str(exc),flush=True)
+            return 2
     only_open = "--only-open" in arguments
     arguments = [a for a in arguments if a != "--only-open"]
     code = 0

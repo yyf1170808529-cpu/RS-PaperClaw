@@ -144,7 +144,7 @@
     const json=document.createElement('button');json.textContent='导出收藏 JSON / 恢复原始数据';json.addEventListener('click',()=>download('maritime-favorites.json',JSON.stringify(store.backup(),null,2),'application/json'));
     const label=document.createElement('label');label.textContent='恢复收藏 JSON ';const input=document.createElement('input');input.type='file';input.accept='.json';
     input.addEventListener('change',async event=>{try{const f=event.target.files[0];if(f){store.restore(JSON.parse(await f.text()));message('收藏和笔记已合并恢复。');}}catch(e){message(e.message);}event.target.value='';});label.append(input);holder.append(button,json,label,copy,txt,text);
-    const link=document.createElement('a');link.textContent='查看我的收藏';link.href=(typeof location!=='undefined'&&location.pathname?.includes('/maritime-data/mobile/')?'../../':'')+'maritime.html?view=favorites&v=3.7.2.3';holder.append(link);
+    const link=document.createElement('a');link.textContent='查看我的收藏';link.href=(typeof location!=='undefined'&&location.pathname?.includes('/maritime-data/mobile/')?'../../':'')+'maritime.html?view=favorites&v=3.8';holder.append(link);
   }
   const api={VERSION,KEY,LEGACY,normalize,create,mount,toolbar,download};
   if(typeof module!=='undefined')module.exports=api;else root.MaritimeFavorites=api;
@@ -156,6 +156,19 @@
       const papers=new Map(data.papers.map(p=>[p.paper_id,p]));
       for(const holder of document.querySelectorAll('[data-favorite-paper]'))mount(holder,papers.get(holder.dataset.favoritePaper),store,message);
       message(store.warnings().join(' '));
+      if(data.date && typeof setInterval==='function'){
+        const fresh=document.createElement('a');fresh.hidden=true;document.getElementById('daily-favorites').append(fresh);
+        async function check(){
+          try{
+            const prefix=location.pathname.includes('/maritime-data/mobile/')?'../../':'';
+            const response=await fetch(prefix+'maritime-data/mobile/publication-status.json',{cache:'no-cache'});
+            if(!response.ok)return;
+            const status=await response.json();
+            if(status.published_date>data.date){fresh.textContent='有新日报，保存笔记后点击查看';fresh.href=prefix+'maritime-daily.html?v=3.8';fresh.hidden=false;}
+          }catch{}
+        }
+        setInterval(check,300000); // Never reload a page containing an unsaved note.
+      }
     }catch(e){message('收藏暂不可用：'+e.message+'；原数据未清空。');}
   }
 })(typeof window!=='undefined'?window:globalThis);

@@ -1,9 +1,18 @@
 name: Personal Papers (No LLM API)
+run-name: Paper update ${{ inputs.request_id || github.event_name }}
 on:
   schedule:
     - cron: '20 1 * * *'
+    - cron: '20 7 * * *'
   workflow_dispatch:
     inputs:
+      request_id:
+        description: Desktop request identity
+        type: string
+      resume:
+        description: Resume AI/translation/publication without fetching sources
+        type: boolean
+        default: false
       date:
         description: 'Optional replay date YYYYMMDD'
         type: string
@@ -22,6 +31,7 @@ jobs:
     timeout-minutes: 45
     env:
       PYTHONUNBUFFERED: '1'
+      RS_RESUME_ONLY: ${{ (inputs.resume || github.event.schedule == '20 7 * * *') && '1' || '0' }}
       INPUT_DATE: ${{ inputs.date }}
       INPUT_BOOTSTRAP: ${{ inputs.bootstrap || false }}
       OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
@@ -47,13 +57,17 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: papers/maritime/private/translation
-          key: argos-en-zh-v3-${{ hashFiles('skills/rs-paper-pipeline/requirements-translation.txt') }}
+          key: argos-en-zh-v4-${{ hashFiles('skills/rs-paper-pipeline/requirements-translation.txt') }}
+          restore-keys: |
+            argos-en-zh-v4-
+            argos-en-zh-v3-
       - name: Prepare translation model (reuse cache)
         id: translation_model
         continue-on-error: true
         run: |
           set -o pipefail
           python skills/rs-paper-pipeline/scripts/cli.py maritime --action install-model 2>&1 | tee argos-setup.log
+          python -c "import sys;sys.path.insert(0,'skills/rs-paper-pipeline/scripts');from services.maritime_reading import translation_smoke;print(translation_smoke())" 2>&1 | tee -a argos-setup.log
       - name: Report unavailable local translation model
         if: steps.translation_model.outcome == 'failure'
         run: echo '::warning::Argos model preparation failed. See argos-setup.log; selected-paper translation will retain English and record per-paper errors.'
@@ -85,9 +99,10 @@ jobs:
           from pathlib import Path
           sys.path.insert(0, 'skills/rs-paper-pipeline/scripts')
           from services.mobile_digest import build_mobile_digest
+          from services.maritime import today
           root = Path('.')
           raw = os.environ.get('INPUT_DATE')
-          day = date.fromisoformat(raw) if raw and '-' in raw else datetime.strptime(raw, '%Y%m%d').date() if raw else date.today()
+          day = date.fromisoformat(raw) if raw and '-' in raw else datetime.strptime(raw, '%Y%m%d').date() if raw else today()
           result = build_mobile_digest(root, json.loads((root/'papers/maritime/library.json').read_text(encoding='utf8')), day)
           print('Daily attempt:', result['publication_status'], 'selected:', len(result['papers']), 'published date:', result['published_date'])
           PY
@@ -102,7 +117,14 @@ jobs:
         if: steps.retrieve.outcome == 'failure'
         run: |
           echo 'Source update failed or was incomplete. Successful batches were preserved and sync was attempted; inspect logs.'
-          exit 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('docs/maritime-data/mobile/publication-status.json')
+          status=json.loads(p.read_text()) if p.exists() else {}
+          summary=json.loads(Path('papers/maritime/logs/latest-update.json').read_text())
+          raise SystemExit(0 if status.get('status')=='complete' and not summary.get('translation_failed') else 1)
+          PY
       - name: Preserve logs including failures
         if: always()
         uses: actions/upload-artifact@v4

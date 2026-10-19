@@ -1,2 +1,4 @@
-# Optional, retrieval does not import these dependencies.
-argostranslate>=1.9,<2
+# Tested CPU translation runtime; existing en-zh model reused.
+argostranslate==1.11.0
+stanza==1.10.1
+ctranslate2==4.8.3

@@ -16,21 +16,21 @@ class FavoritePageTests(unittest.TestCase):
                'reading_url':'https://example.org/maritime.html?paper=2610.01750','note':'PRIVATE_TEST_NOTE'}
         with patch('services.mobile_digest.select_daily',side_effect=AssertionError('Must not reselect')),patch('clients.deepseek_client.complete',side_effect=AssertionError('Must not call API')):
             html=render_mobile_page({'date':'2026-10-15','papers':[paper]},{'doi:10.1234/a':'2610.01750'})
-        self.assertIn('maritime_favorites.js?v=3.7.2.3',html)
+        self.assertIn('maritime_favorites.js?v=3.8',html)
         self.assertIn('data-favorite-paper="2610.01750"',html)
         self.assertIn('doi:10.1234/a',html)
         self.assertNotIn('PRIVATE_TEST_NOTE',html)
         self.assertNotIn('</script><script>bad()',html)
         self.assertNotIn('localStorage',html)
-        self.assertIn('view=favorites&amp;v=3.7.2.3">我的收藏</a>',html)
+        self.assertIn('view=favorites&amp;v=3.8">我的收藏</a>',html)
         self.assertNotIn('收藏已就绪',html)
         self.assertNotIn('版本 3.7.',html)
 
     def test_reading_page_loads_same_version_before_library_script(self):
         html=(Path(__file__).resolve().parents[1]/'docs/maritime.html').read_text(encoding='utf8')
-        self.assertLess(html.index('maritime_favorites.js?v=3.7.2.3'),html.index('maritime.js?v=3.7.2.3'))
+        self.assertLess(html.index('maritime_favorites.js?v=3.8'),html.index('maritime.js?v=3.8'))
         self.assertIn('id="favorite-tools"',html)
-        self.assertIn('view=favorites&amp;v=3.7.2.3">我的收藏</a>',html)
+        self.assertIn('view=favorites&amp;v=3.8">我的收藏</a>',html)
 
 
 if __name__=='__main__':unittest.main()

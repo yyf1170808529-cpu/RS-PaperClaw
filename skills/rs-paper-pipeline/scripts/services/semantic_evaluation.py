@@ -124,6 +124,11 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     ids=[p['paper_id'] for p,_ in rows]
     summary['candidate_count']=len(ids)
     pending=[]
+    attempts_path=root/'docs/maritime-data/semantic-attempts.json'
+    attempts=read_json(attempts_path,{'records':{}})
+    from services.maritime import today
+    attempt_day=str(today())
+    summary['already_attempted_today']=0
     for key in ids:
         p=library['papers'][key]
         if not p.get('abstract') or p.get('abstract_quality',{}).get('status')=='review':summary['missing_abstract']+=1;continue
@@ -134,12 +139,16 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
             except (ValueError,KeyError,TypeError):record=None
         if record:
             p['semantic']=record;shared['records'][digest]=record;summary['cached']+=1
+        elif attempts['records'].get(digest,{}).get('date')==attempt_day:
+            summary['already_attempted_today']+=1
         else:pending.append(p)
     def finish():
         selected,audit=select_daily(root,library,end,new_keys,config)
         summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'],shortfall=audit['shortfall'],
                        ai_states=audit['ai_states'],publication_status='complete' if len(selected)==5 else 'partial' if selected else 'failed')
         write_json(cache_path,shared)
+        from services.mobile_digest import refresh_reserve
+        summary['reserve_available']=refresh_reserve(root,library,end,config)['available_count']
         write_json(root/'papers/maritime/logs/latest-ai.json',summary)
         return summary
     maximum=config['daily_limit'] if limit is None else limit
@@ -150,10 +159,10 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     try:
         selected,audit=select_daily(root,library,end,new_keys,config)
         summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'])
-        if len(selected)>=5:
+        if audit['qualified_count']>=5+config.get('reserve_target',15):
             summary['status']='cached';return finish()
         if not pending:
-            summary['status']='cached';return finish()
+            summary['status']='deferred' if summary['already_attempted_today'] or summary['pending_total'] else 'cached';return finish()
         api_key()
         # Read latest shared fingerprints before paying; never overwrite local files.
         proxy=os.environ.get('RS_PROXY_URL') or os.environ.get('HTTPS_PROXY')
@@ -166,7 +175,7 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         if run('remote','get-url','origin').removesuffix('.git')!='https://github.com/'+publication.get('repository',''):raise RuntimeError('Wrong remote; skip paid evaluation')
         run('fetch','origin',publication['branch'])
         remote=run('rev-parse','origin/'+publication['branch'])
-        if remote!=run('rev-parse','HEAD'):raise RuntimeError('Remote/local commits differ; skip new paid requests')
+        if remote!=run('rev-parse','HEAD') and os.environ.get('GITHUB_ACTIONS')!='true':raise RuntimeError('Remote/local commits differ; skip new paid requests')
         from services.maritime_sync import api
         active=api('https://api.github.com/repos/'+publication['repository']+'/actions/runs?status=in_progress&per_page=20')['workflow_runs']
         if any(str(r['id'])!=os.environ.get('GITHUB_RUN_ID') and r.get('path') in ('.github/workflows/maritime-no-api.yml','.github/workflows/maritime-ai-experiment.yml') for r in active):
@@ -195,9 +204,11 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
         starting_reserved=account.get('reserved_cny',0)
         with update_lock(directory/'experiment.lock'):
             for offset in range(0,len(pending),config['batch_size']):
-                selected,_=select_daily(root,library,end,new_keys,config)
-                if len(selected)>=5:break
+                selected,audit=select_daily(root,library,end,new_keys,config)
+                if audit['qualified_count']>=5+config.get('reserve_target',15):break
                 batch=pending[offset:offset+config['batch_size']]
+                for p in batch:attempts['records'][fingerprint(p,config)]={'paper_id':p['paper_id'],'date':attempt_day,'status':'attempted'}
+                write_json(attempts_path,attempts)
                 attempted=True
                 response,cost=complete(root,payload_for(batch,config),config)
                 summary['cost_upper_cny']+=cost
@@ -218,9 +229,11 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
                     digest=fingerprint(p,config)
                     record={'paper_id':p['paper_id'],'title':p['title'],'fingerprint':digest,'evaluation':value,'model':response.get('model'),'request_id':response.get('id')}
                     p['semantic']=record;shared['records'][digest]=record
+                    attempts['records'][digest]['status']='validated'
                     write_json(directory/'cache'/f'{digest}.json',record)
                     summary['processed']+=1
                 write_json(cache_path,shared)
+                write_json(attempts_path,attempts)
         selected,audit=select_daily(root,library,end,new_keys,config)
         summary.update(selected_count=len(selected),ai_reviewed=audit['ai_reviewed'],shortfall=audit['shortfall'])
         summary['status']='partial' if summary['failed'] else 'success'

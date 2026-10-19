@@ -38,7 +38,8 @@ class OfflineTranslationTests(unittest.TestCase):
     def test_selected_five_use_local_worker_without_history_limit_or_api(self):
         ps=[self.paper(f'2610.{10000+i}') for i in range(5)]
         lib={'papers':{p['paper_id']:p for p in ps}}
-        def budget(library,keys,limit,seconds,save):
+        def budget(library,keys,limit,seconds,save,selected=False):
+            self.assertTrue(selected)
             self.assertEqual(keys,[p['paper_id'] for p in ps])
             self.assertEqual(limit,5)
             for p in ps:p['translation']=self.local(p)

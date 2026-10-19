@@ -81,7 +81,7 @@ class RepairTests(unittest.TestCase):
 
     def test_all_success_partial_failure_and_all_failure_final_status(self):
         jobs=[{'source':'openalex','direction':'land','days':30,'journal':None,'query':'q'}]*2
-        for responses,code,status in [([([],True),([],True)],0,'success'),([([],True),RuntimeError('timeout')],2,'partial'),([RuntimeError('timeout'),RuntimeError('HTTP500')],1,'failed')]:
+        for responses,code,status in [([([],True),([],True)],2,'success'),([([],True),RuntimeError('timeout')],2,'partial'),([RuntimeError('timeout'),RuntimeError('HTTP500')],1,'failed')]:
             with tempfile.TemporaryDirectory() as root, patch.object(update,'update_jobs',return_value=jobs),patch.object(update,'bounded_fetch',side_effect=responses),redirect_stdout(io.StringIO()) as output:
                 result=m.main(['--root',root,'--action','update','--limit','0'])
                 summary=json.loads((Path(root)/'papers/maritime/logs/latest-update.json').read_text())

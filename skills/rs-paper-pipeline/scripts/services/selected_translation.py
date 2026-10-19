@@ -47,7 +47,7 @@ def translate_selected(root, library, day, config=None, seconds=180):
     chosen, _ = select_daily(root, library, day, config=config)
     keys = [p['paper_id'] for p, _, _ in chosen]
     result = translate_budget(library, keys, len(keys), seconds,
-                              lambda: write_json(library_path(root), library))
+                              lambda: write_json(library_path(root), library),selected=True)
     result.update(selected=len(keys), engine='Argos Translate (CPU)', api_calls=0,
                   cost_upper_cny=0.0, priced_cost_cny=0.0)
     result['papers'] = [{'paper_id': key, 'source': chosen_zh(library['papers'][key])[1],

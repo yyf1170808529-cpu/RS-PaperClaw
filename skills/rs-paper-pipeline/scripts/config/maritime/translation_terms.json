@@ -57,5 +57,11 @@
   "vision": "视觉",
   "registration": "配准",
   "diffusion": "扩散",
-  "clustering": "聚类"
+  "clustering": "聚类",
+  "dense correspondence": "稠密对应",
+  "metric depth": "度量深度",
+  "anomaly detection": "异常检测",
+  "point cloud": "点云",
+  "point clouds": "点云",
+  "transformers": "Transformer"
 }
