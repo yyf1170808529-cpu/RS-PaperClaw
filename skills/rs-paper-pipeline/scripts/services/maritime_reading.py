@@ -16,16 +16,23 @@ def repeated_text(text):
     return bool(re.search(r"([\u4e00-\u9fff][\u4e00-\u9fff，、, ]{1,18})\1{3,}", text))
 
 
+def translation_warnings(english,chinese):
+    """Review suggestions do not hide a structurally valid cached translation."""
+    warnings=[]
+    terms=json.loads((Path(__file__).resolve().parents[1]/'config/maritime/translation_terms.json').read_text(encoding='utf8'))
+    for term,expected in terms.items():
+        if re.search(r'\b'+re.escape(term)+r'\b',english,re.I) and expected not in chinese:
+            warnings.append('terminology_review: '+term+' → '+expected)
+    if english and not .25<=len(chinese)/len(english)<=1.5:warnings.append('length_ratio_review')
+    return warnings
+
+
 def translation_error(english, chinese):
     """Conservative structural checks; these do not certify translation accuracy."""
     if not isinstance(chinese, str) or not re.search(r"[\u4e00-\u9fff]", chinese):
         return "no_chinese: translation contains no Chinese text"
     if re.search(r"保险丝|硬底片|变压器|硬负面|硬负片", chinese):
         return "terminology: obvious technical mistranslation"
-    terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf8"))
-    for term, expected in terms.items():
-        if re.search(r"\b" + re.escape(term) + r"\b", english, re.I) and expected not in chinese:
-            return "terminology: missing " + term + " → " + expected
     numbers = lambda text: Counter(re.sub(r"\s+", "", n) for n in re.findall(r"\d+(?:\.\d+)?(?:\s*%)?", text))
     source_numbers, target_numbers = numbers(english), numbers(chinese)
     # Argos may render spelled-out "five benchmarks" as "5个基准". Such a
@@ -85,16 +92,21 @@ def argos_translator(resources_path=None):
         resource=Path(resources_path) if resources_path else directory/'resources.json'
         content=json.loads(resource.read_text(encoding='utf8'))
         lang=sentencizer.stanza_lang_code
+        class OfflineEnglishSentencizer:
+            def split_sentences(self,text):
+                return [x for x in re.split(r'(?<=[.!?])\s+(?=[A-Z])',text) if x.strip()]
         if 'packages' not in content.get(lang,{}):
             # Legacy Argos tokenizer weights also lack newer Stanza feat_dropout.
             # Keep the installed Argos decoder; English boundary splitting needs no model.
-            class OfflineEnglishSentencizer:
-                def split_sentences(self,text):
-                    return [x for x in re.split(r'(?<=[.!?])\s+(?=[A-Z])',text) if x.strip()]
             packaged.sentencizer=OfflineEnglishSentencizer()
         else:
-            sentencizer.stanza_pipeline=stanza.Pipeline(lang=lang,dir=str(directory),resources_filepath=str(resource),
-                processors='tokenize',use_gpu=False,download_method=None,logging_level='WARNING')
+            try:
+                sentencizer.stanza_pipeline=stanza.Pipeline(lang=lang,dir=str(directory),resources_filepath=str(resource),
+                    processors='tokenize',use_gpu=False,download_method=None,logging_level='WARNING')
+            except (KeyError,FileNotFoundError):
+                # A cache may contain refreshed JSON but old or incomplete SBD weights.
+                # This fallback never replaces or hides a missing translation decoder.
+                packaged.sentencizer=OfflineEnglishSentencizer()
     def inference(text):
         values=pair.hypotheses(text,num_hypotheses=4)
         return next((v.value for v in values if v.value.strip() and len(v.value)>=len(text)*.08 and not repeated_text(v.value)),'')
@@ -152,7 +164,8 @@ def translate_one(paper, translator=None):
         if error:
             raise ValueError(error)
         return {"status": "machine", "engine": "Argos Translate (CPU)", "zh": translated,
-            "english_hash": digest, "protection_revision": 6, "updated_at": datetime.now(timezone.utc).isoformat()}
+            "english_hash": digest, "protection_revision": 7, "quality_warnings":translation_warnings(original,translated),
+            "updated_at": datetime.now(timezone.utc).isoformat()}
     except Exception as exc:
         category = "dependency_missing" if isinstance(exc, ModuleNotFoundError) else "model_missing" if "optional en" in str(exc) else "translation_validation_failed" if isinstance(exc, ValueError) else "model_runtime_error"
         return {**previous, "status": "failed", "zh": previous.get("zh", ""), "error": str(exc), "error_type": category,

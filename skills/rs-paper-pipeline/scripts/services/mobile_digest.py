@@ -58,6 +58,7 @@ def hard_eligible(p):
 
 def candidate_pool(root,library,day,new_keys=()):
     """Ordered stages for both the desktop and cloud update paths."""
+    from services.semantic_evaluation import direct_task,ranking_info
     directory=root/'docs/maritime-data/mobile'
     recent=set();aliases=library.get('aliases',{})
     for path in directory.glob('????-??-??.json'):
@@ -73,8 +74,7 @@ def candidate_pool(root,library,day,new_keys=()):
     for p in library['papers'].values():
         key=p['paper_id']
         if key in recent or not hard_eligible(p):continue
-        from services.semantic_evaluation import direct_task
-        if p.get('assessment',{}).get('level')=='excluded' and not direct_task(p):continue
+        if p.get('assessment',{}).get('level')=='excluded' and not direct_task(p) and not ranking_info(p)['eligible']:continue
         raw=p.get('publication_date') or p.get('published') or ''
         try:published=calendar_date.fromisoformat(raw[:10] if len(raw)>=10 else raw[:7]+'-01')
         except ValueError:published=None

@@ -270,6 +270,6 @@ V3.4试验限制详见 `MARITIME_V3_4_API_EVALUATION_REPORT.md`。V3.5手机使�
 - 仅恢复未完成阶段：`更新论文.cmd --resume`（跳过重新检索）。
 - 维护本地离线副本：`python skills/rs-paper-pipeline/scripts/preview_maritime.py`。
 - 明确需要本地维护流程时才使用 `更新论文.cmd --local`，默认正式写入端为 Actions。
-- 本地可选同步公共仓库：确认工作区无修改后运行 `git -c http.proxy=http://127.0.0.1:7897 pull --ff-only origin main`；不会自动覆盖有修改的副本。
+- 云端完成后，工作区干净时自动快进本地公共副本；若有开发修改则保留本地文件，不阻塞云端，不要求日常人工处理Git。
 
 云端每天北京时间09:20检索，15:20恢复AI/翻译/发布；有预算及成功结果缓存，时刻可能因GitHub调度延迟。收藏和笔记仍仅存浏览器，云端不读写私人笔记。

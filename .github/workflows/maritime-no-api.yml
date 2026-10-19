@@ -22,6 +22,7 @@ on:
         type: boolean
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: maritime-no-api
   cancel-in-progress: false
@@ -80,6 +81,32 @@ jobs:
             papers/maritime/private/deepseek/usage.json
           key: daily-deepseek-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: daily-deepseek-${{ github.repository_id }}-
+      - name: Find unsynced results from last completed update
+        id: recovery
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          base='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/'
+          def get(path):
+              request=urllib.request.Request(base+path,headers={'Authorization':'Bearer '+os.environ['GITHUB_TOKEN'],'Accept':'application/vnd.github+json'})
+              with urllib.request.urlopen(request,timeout=25) as response:return json.load(response)
+          runs=get('actions/workflows/maritime-no-api.yml/runs?status=completed&per_page=1')['workflow_runs']
+          if runs and runs[0]['conclusion']!='success':
+              artifacts=get('actions/runs/'+str(runs[0]['id'])+'/artifacts')['artifacts']
+              if any(a['name']=='maritime-pending-archives' and not a['expired'] for a in artifacts):
+                  with open(os.environ['GITHUB_OUTPUT'],'a') as output:output.write('run_id='+str(runs[0]['id'])+'\n')
+          PY
+      - uses: actions/download-artifact@v4
+        if: steps.recovery.outputs.run_id != ''
+        with:
+          name: maritime-pending-archives
+          path: papers/maritime/private/recovery
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.recovery.outputs.run_id }}
+      - name: Merge unsynced results without replacing current data
+        if: steps.recovery.outputs.run_id != ''
+        run: |
+          python -c "import sys;sys.path.insert(0,'skills/rs-paper-pipeline/scripts');from pathlib import Path;from services.cloud_recovery import restore;print(restore(Path('.'),Path('papers/maritime/private/recovery')))"
       - name: Retrieve all sources and build
         id: retrieve
         continue-on-error: true

@@ -90,4 +90,22 @@ def cloud_update(root,arguments,wait=True):
     if run.get('conclusion')!='success':
         print('云端存在未完成阶段，请查看：'+run['html_url'],flush=True)
     public_result(run)
+    print('本地公共副本：'+pull_public(root),flush=True)
     return 0 if run.get('conclusion')=='success' else 2
+
+
+def pull_public(root):
+    """A dirty development checkout never prevents the cloud publication."""
+    prefix=['git']+(['-c','http.proxy='+os.environ['HTTPS_PROXY']] if os.environ.get('HTTPS_PROXY') else [])
+    def git(*args):
+        p=subprocess.run(prefix+list(args),cwd=root,capture_output=True,text=True,timeout=40)
+        if p.returncode:raise RuntimeError(p.stderr.strip())
+        return p.stdout.strip()
+    try:
+        if git('remote','get-url','origin').removesuffix('.git')!='https://github.com/'+REPOSITORY:return '未拉取：仓库地址不匹配'
+        if git('branch','--show-current')!='main':return '未拉取：当前是开发分支'
+        if git('status','--porcelain'):return '未拉取：保留本地开发修改；云端结果已独立保存'
+        git('fetch','origin','main');git('merge','--ff-only','origin/main')
+        return '已安全快进到云端最新数据'
+    except Exception:
+        return '未拉取：不能安全快进；保留本地文件，云端更新不受影响'

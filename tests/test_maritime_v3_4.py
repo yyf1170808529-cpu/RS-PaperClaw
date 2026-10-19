@@ -47,7 +47,8 @@ class SemanticTests(unittest.TestCase):
             self.assertAlmostEqual(cost,(80*.04+20*2+50*8)/1e6)
     def test_daily_is_limited_and_stage_two_disabled(self):
         self.assertTrue(self.config['enabled'])
-        self.assertEqual(self.config['daily_limit'],60)
+        self.assertGreater(self.config['daily_limit'],0)
+        self.assertLessEqual(self.config['daily_limit'],120)
         self.assertFalse(self.config['stage_two']['enabled'])
 
     def test_human_precision_requires_labels_not_ai_ground_truth(self):

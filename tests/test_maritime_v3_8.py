@@ -49,3 +49,43 @@ class CloudReserveTests(unittest.TestCase):
             root=Path(d);write_json(root/'docs/maritime-data/semantic-attempts.json',{'records':{ai.fingerprint(p,self.config):{'date':str(today()),'status':'attempted'}}})
             result=ai.daily_evaluate(root,lib,[],today())
             self.assertEqual(result['already_attempted_today'],1);self.assertEqual(result['processed'],0);call.assert_not_called()
+
+    def test_dirty_local_checkout_never_fetches_or_blocks_cloud_result(self):
+        from types import SimpleNamespace
+        def fake(command,**kwargs):
+            self.assertNotIn('fetch',command)
+            output=' M local-code.py' if 'status' in command else 'main' if 'branch' in command else 'https://github.com/'+cloud_update.REPOSITORY+'.git'
+            return SimpleNamespace(returncode=0,stdout=output,stderr='')
+        with patch('subprocess.run',side_effect=fake):
+            self.assertIn('保留本地开发修改',cloud_update.pull_public(Path('.')))
+
+    def test_legacy_argos_resources_do_not_initialize_incompatible_stanza(self):
+        from types import SimpleNamespace
+        from services.maritime_reading import argos_translator
+        with tempfile.TemporaryDirectory() as d:
+            directory=Path(d);(directory/'stanza').mkdir()
+            (directory/'stanza/resources.json').write_text(json.dumps({'en':{'tokenize':{'ewt':{}}}}))
+            pair=SimpleNamespace(pkg=SimpleNamespace(package_path=directory),sentencizer=SimpleNamespace(stanza_pipeline=None,stanza_lang_code='en'))
+            pair.hypotheses=lambda text,num_hypotheses:[SimpleNamespace(value='中文译文')]
+            langs=[SimpleNamespace(code='en',get_translation=lambda zh:pair),SimpleNamespace(code='zh')]
+            stanza=SimpleNamespace(Pipeline=__import__('unittest.mock',fromlist=['Mock']).Mock())
+            fake=SimpleNamespace(translate=SimpleNamespace(get_installed_languages=lambda:langs))
+            with patch.dict(sys.modules,{'argostranslate':fake,'stanza':stanza}):
+                translator=argos_translator();self.assertEqual(translator('English'),'中文译文')
+                self.assertEqual(pair.sentencizer.split_sentences('First sentence. Second sentence.'),['First sentence.','Second sentence.'])
+                stanza.Pipeline.assert_not_called()
+
+    def test_unsynced_artifact_recovery_is_idempotent_and_preserves_manual_translation(self):
+        from services.cloud_recovery import restore
+        from services.maritime import write_json,read_json
+        p=self.make('2610.30001','2026-10-19');p['translation']={'status':'manual','zh':'人工修订摘要'}
+        fresh=self.make('2610.30002','2026-10-19')
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);artifact=root/'private-recovery'
+            write_json(root/'papers/maritime/library.json',{'papers':{p['paper_id']:p},'days':{}})
+            write_json(artifact/'papers/maritime/library.json',{'papers':{fresh['paper_id']:fresh},'days':{}})
+            self.assertEqual(restore(root,artifact)['added'],1)
+            self.assertEqual(restore(root,artifact)['added'],0)
+            actual=read_json(root/'papers/maritime/library.json',{})
+            self.assertEqual(actual['papers'][p['paper_id']]['translation']['zh'],'人工修订摘要')
+            self.assertEqual(len(actual['papers']),2)

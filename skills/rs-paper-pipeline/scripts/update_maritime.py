@@ -1,4 +1,4 @@
-"""Desktop launcher: logs, multi-source update, then open/reuse local preview."""
+"""Desktop dispatches the single cloud writer; local maintenance is opt-in."""
 from datetime import datetime
 from pathlib import Path
 import subprocess
