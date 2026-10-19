@@ -2,6 +2,7 @@
   "attempt_date": "2026-10-19",
   "status": "complete",
   "published_date": "2026-10-19",
+  "published_revision": "a8ac5ba2fa125a9c",
   "selection_audit": {
     "candidate_count": 773,
     "ai_reviewed": 153,
@@ -19,6 +20,7 @@
     "ai_rejected": 138,
     "qualified_count": 15,
     "selected_count": 5,
-    "shortfall": 0
+    "shortfall": 0,
+    "translation_environment_errors": []
   }
 }

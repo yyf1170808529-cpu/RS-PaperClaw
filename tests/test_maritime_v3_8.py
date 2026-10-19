@@ -94,3 +94,17 @@ class CloudReserveTests(unittest.TestCase):
             actual=read_json(root/'papers/maritime/library.json',{})
             self.assertEqual(actual['papers'][p['paper_id']]['translation']['zh'],'人工修订摘要')
             self.assertEqual(len(actual['papers']),2)
+
+    def test_broken_translation_environment_cannot_replace_a_complete_daily(self):
+        from datetime import date
+        from services.mobile_digest import build_mobile_digest
+        from services.maritime import read_json
+        ps=[self.make(f'2610.{31000+i}','2026-10-19') for i in range(5)]
+        lib={'papers':{p['paper_id']:p for p in ps}}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);first=build_mobile_digest(root,lib,date(2026,10,19))
+            for p in ps:p['translation']={'status':'failed','error_type':'model_runtime_error','error':'Tokenizer environment failure'}
+            failed=build_mobile_digest(root,lib,date(2026,10,19))
+            self.assertEqual(len(failed['papers']),5);self.assertEqual(failed['publication_status'],'partial')
+            self.assertEqual(len(failed['selection_audit']['translation_environment_errors']),5)
+            self.assertEqual(read_json(root/'docs/maritime-data/mobile/latest.json',{})['papers'],first['papers'])

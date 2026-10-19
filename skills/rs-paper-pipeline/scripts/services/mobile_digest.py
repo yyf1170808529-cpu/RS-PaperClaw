@@ -2,10 +2,14 @@
 from datetime import date as calendar_date, timedelta
 import html
 import json
+import hashlib
 from pathlib import Path
 from urllib.parse import quote
 
 BASE = 'https://yyf1170808529-cpu.github.io/RS-PaperClaw/'
+
+def digest_revision(payload):
+    return hashlib.sha256(json.dumps({'date':payload['date'],'papers':payload['papers']},ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]
 
 def refresh_reserve(root,library,day,config=None):
     """Persist verified identities and push history; always revalidate before use."""
@@ -134,7 +138,11 @@ def build_mobile_digest(root, library, date):
                       'ai_score':assessment['score'],'selection_source':'近期新论文' if stage==0 else '历史补荐' if stage==3 else '近期候选',
                       'abstract':p.get('abstract') or '', 'abstract_zh':chosen_zh(p,daily=True)[0],'translation_source':chosen_zh(p,daily=True)[1],
                       'translation_error':translation_issue(p)})
-    status='complete' if len(items)==5 else 'partial' if items else 'failed'
+    environment_errors=[p['paper_id'] for p,_,_ in choices
+                        if not chosen_zh(p,daily=True)[0] and p.get('translation',{}).get('error_type') in
+                        ('dependency_missing','model_missing','model_runtime_error')]
+    audit['translation_environment_errors']=environment_errors
+    status='complete' if len(items)==5 and not environment_errors else 'partial' if items else 'failed'
     payload={'date':str(date),'papers':items,'selection_audit':audit,'publication_status':status}
     # Pending batches are recoverable but never count as previously pushed papers.
     pending_path=directory/'pending'/target.name
@@ -160,7 +168,7 @@ def build_mobile_digest(root, library, date):
         published=payload
     payload['published_date']=published['date'] if published else None
     write_json(directory/'publication-status.json',{'attempt_date':str(date),'status':status,
-               'published_date':payload['published_date'],'selection_audit':audit})
+               'published_date':payload['published_date'],'published_revision':digest_revision(published) if published else None,'selection_audit':audit})
     refresh_reserve(root,library,date,config)
     if published:
         write_json(directory/'latest.json',published)
@@ -179,7 +187,7 @@ def render_mobile_page(payload, aliases=None):
     date=payload['date'];items=payload['papers']
     def score_label(p):
         return ' · AI相关分 '+str(p['ai_score'])+'/100' if isinstance(p.get('ai_score'),(int,float)) else ''
-    entries=''.join(f'<article><h2>{esc(p["title"])}</h2><p>{esc(p["source"])}</p><p>{esc(p["level"])}{score_label(p)} {esc(p.get("selection_source",""))}</p><p>{esc(p["reason"])}</p><details><summary>查看摘要（中文 / English）</summary><p>{esc(p["abstract_zh"] or "本地中文翻译未完成：" + p.get("translation_error", "尚未生成") + "。英文摘要保留如下。")}</p><p lang="en">{esc(p["abstract"] or "英文摘要暂未获取。")}</p></details><p><a href="{esc(p["original_url"] or "",quote=True)}">原文</a> · <a href="{esc(p["reading_url"]+("&" if "?" in p["reading_url"] else "?")+"v=3.8",quote=True)}">阅读与笔记</a></p><div data-favorite-paper="{esc(p["paper_id"],quote=True)}"></div></article>' for p in items)
-    snapshots={'date':date,'papers':[{k:p.get(k,'') for k in ('paper_id','title','original_url','reading_url')} for p in items],'aliases':aliases or {}}
+    entries=''.join(f'<article><h2>{esc(p["title"])}</h2><p>{esc(p["source"])}</p><p>{esc(p["level"])}{score_label(p)} {esc(p.get("selection_source",""))}</p><p>{esc(p["reason"])}</p><details><summary>查看摘要（中文 / English）</summary><p>{esc(p["abstract_zh"] or "本地中文翻译未完成：" + p.get("translation_error", "尚未生成") + "。英文摘要保留如下。")}</p><p lang="en">{esc(p["abstract"] or "英文摘要暂未获取。")}</p></details><p><a href="{esc(p["original_url"] or "",quote=True)}">原文</a> · <a href="{esc(p["reading_url"]+("&" if "?" in p["reading_url"] else "?")+"v=3.8.1",quote=True)}">阅读与笔记</a></p><div data-favorite-paper="{esc(p["paper_id"],quote=True)}"></div></article>' for p in items)
+    snapshots={'date':date,'revision':digest_revision(payload),'papers':[{k:p.get(k,'') for k in ('paper_id','title','original_url','reading_url')} for p in items],'aliases':aliases or {}}
     data=json.dumps(snapshots,ensure_ascii=False).replace('<',r'\u003c')
-    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}</style><nav><a href="maritime-daily.html?v=3.8">每日精选</a> | <a href="maritime.html?v=3.8">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8">我的收藏</a></nav><h1>每日精选 {date}</h1><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p>{entries or "<p>今天没有完成AI审核的合格精选。</p>"}<p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p><script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8"></script></html>'''
+    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1>每日精选 {date}</h1><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p>{entries or "<p>今天没有完成AI审核的合格精选。</p>"}<p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p><script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.1"></script></html>'''

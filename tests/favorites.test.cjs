@@ -92,3 +92,18 @@ test('favorites work before large library download completes and after network f
     find(full.nodes.get('favorite-tools'),'导出 TXT').click();assert.equal(full.downloaded.at(-1),full.copied());
   }
 });
+
+test('lightweight same-day digest revision check preserves an unsaved favorite note',async()=>{
+  let check;
+  const daily=await setupUI(undefined,{date:'2026-10-19',revision:'old',papers:[ff]},'',{
+    daily:true,setInterval:fn=>{check=fn;},
+    fetch:async()=>({ok:true,json:async()=>({published_date:'2026-10-19',published_revision:'new'})})
+  });
+  const holder=daily.nodes.get('papers').children[0];find(holder,'收藏').click();
+  const editor=walk(holder).find(n=>n.tag==='textarea');editor.value='尚未保存 **中文笔记**';editor.handlers.input();
+  await check();
+  const link=find(daily.nodes.get('daily-favorites'),'有新日报，保存笔记后点击查看');
+  assert.equal(link.hidden,false);assert.ok(link.href.includes('update=new'));
+  assert.equal(editor.value,'尚未保存 **中文笔记**');
+  assert.deepEqual(daily.fetched,['maritime-data/mobile/publication-status.json']);
+});

@@ -5,6 +5,7 @@ import subprocess
 import time
 import urllib.request
 import uuid
+import html
 
 REPOSITORY='yyf1170808529-cpu/RS-PaperClaw'
 WORKFLOW='maritime-no-api.yml'
@@ -72,10 +73,21 @@ def public_result(run):
             summary=get('update-result.json')
             if str(summary.get('github_run_id'))!=str(run['id']):
                 time.sleep(30);continue
-            print(json.dumps({'检索':summary.get('retrieval_status',summary.get('local_update')),'新增':summary.get('added'),
-                'AI':summary.get('ai'),'翻译':summary.get('translation'),
-                '本次日报':publication['status'],'发布日期':publication['published_date'],
-                'GitHub同步':'success','Pages':'success'},ensure_ascii=False),flush=True)
+            latest=get('mobile/latest.json')
+            with urllib.request.urlopen('https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html?run='+str(run['id']),timeout=25) as response:
+                page=response.read().decode('utf8')
+            if len(latest.get('papers',[]))!=5 or latest.get('date')!=publication['published_date'] or not all(html.escape(p['title']) in page for p in latest['papers']):
+                time.sleep(30);continue
+            ai=summary.get('ai',{});translation=summary.get('translation',{})
+            source=summary.get('retrieval_status',summary.get('local_update'))
+            source={'success':'完成','partial':'部分来源未成功，其余数据已保存','failed':'来源失败','not_run_resume':'恢复模式，未重新检索'}.get(source,source)
+            daily={'complete':'完整五篇','partial':'部分完成，保留最近完整日报','failed':'本次无新日报，保留最近完整日报'}.get(publication['status'],publication['status'])
+            print(f"检索：{source}；新增 {summary.get('added',0)} 篇。",flush=True)
+            print(f"AI：新评价 {ai.get('processed',0)}，复用 {ai.get('cached',0)}，校验拒收 {ai.get('failed',0)}；本次计价约 ¥{ai.get('priced_cost_cny',0):.6f}。",flush=True)
+            print(f"Argos：新译 {translation.get('translated',0)}，缓存 {translation.get('cached',0)}，失败 {translation.get('failed',0)}。",flush=True)
+            print(f"精选：{daily}；展示日期 {publication['published_date']}；后备 {ai.get('reserve_available',0)} 篇。",flush=True)
+            print('GitHub同步：成功；Pages发布：成功。\n阅读：https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html',flush=True)
+            if ai.get('unsettled_upper_cny'):print('存在未决API计费，请查看详细日志。',flush=True)
             return summary
         time.sleep(30)
     raise TimeoutError('云端更新已结束，但尚未核实本次Pages内容；不能报告发布成功。')
@@ -89,7 +101,8 @@ def cloud_update(root,arguments,wait=True):
     if not wait:return 0
     if run.get('conclusion')!='success':
         print('云端存在未完成阶段，请查看：'+run['html_url'],flush=True)
-    public_result(run)
+    summary=public_result(run)
+    write_json(root/'papers/maritime/logs/latest-cloud-result.json',summary)
     print('本地公共副本：'+pull_public(root),flush=True)
     return 0 if run.get('conclusion')=='success' else 2
 

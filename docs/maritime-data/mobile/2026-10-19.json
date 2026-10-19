@@ -104,7 +104,8 @@
     "ai_rejected": 138,
     "qualified_count": 15,
     "selected_count": 5,
-    "shortfall": 0
+    "shortfall": 0,
+    "translation_environment_errors": []
   },
   "publication_status": "complete"
 }

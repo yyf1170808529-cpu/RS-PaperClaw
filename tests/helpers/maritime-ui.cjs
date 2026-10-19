@@ -28,10 +28,10 @@ async function setupUI(saved,dataset,search='',options={}) {
     document:{getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag),querySelectorAll:()=>holders},
     localStorage:{get length(){return storage.size;},key:i=>[...storage.keys()][i],getItem:key=>storage.get(key)??null,setItem:(key,value)=>{storage.set(key,value);for(const fn of shared.listeners)fn(key);}},
     addEventListener:(name,fn)=>eventHandlers.set(name,fn),
-    navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{search},
+    navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{search,pathname:options.daily?'/RS-PaperClaw/maritime-daily.html':'/RS-PaperClaw/maritime.html'},
     fetch:async url=>{fetched.push(url);return options.fetch?options.fetch(url):{ok:true,json:async()=>dataset};},
     URL:{createObjectURL:blob=>{downloaded.push(blob.parts[0]);return 'blob:test';},revokeObjectURL(){}},
-    Blob:class{constructor(parts){this.parts=parts;}},setTimeout:fn=>fn(),
+    Blob:class{constructor(parts){this.parts=parts;}},setTimeout:fn=>fn(),setInterval:options.setInterval,
   });
   if(!options.oldSource)vm.runInContext(fs.readFileSync(path.join(ROOT,'docs/maritime_favorites.js'),'utf8'),context);
   if(!options.daily)vm.runInContext(options.oldSource||fs.readFileSync(path.join(ROOT,'docs/maritime.js'),'utf8'),context);
