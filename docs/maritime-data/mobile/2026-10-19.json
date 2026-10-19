@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-19",
+  "papers": [
+    {
+      "paper_id": "2610.16749",
+      "title": "The Midas Touch for Metric Depth: Interpretable Metricization for Generalizable Depth Perception",
+      "source": "arXiv",
+      "reason": "metric depth estimation；可将船舶单目相对深度先验通过分段仿射尺度恢复转换为度量深度，并利用稀疏船舶测距或雷达深度观测沿最小几何变化路径进行像素级传播；需要将16个通用数据集的训",
+      "original_url": "https://arxiv.org/abs/2610.16749",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.16749",
+      "score": 9,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract": "Recent foundation models have drastically improved the generalization of monocular relative depth estimation, yet recovering accurate metric depth from their estimates for depth perception tasks remains challenging due to scale ambiguity and local metric-scale inconsistency. Existing approaches recover metric depth from sparse observations using either explicit global affine transformation algorithms or implicit data-driven depth completion networks. The former cannot accommodate spatially varying relative-to-metric relationships, while the latter are sensitive to the distribution of sparse observations and may not fully exploit generalizable relative depth priors. To simultaneously address these issues, this study extends our previous work MTD and proposes MTDv2, a hybrid metric depth perception framework that combines explicit depth metricization with data-driven metric depth refinement. The explicit depth metricization process performs segment-wise affine transformations to recover spatially varying metric scales while preserving the geometric structure of relative depth, followed by pixel-wise depth refinement that propagates metric observations along paths with minimal accumulated geometric variation. The data-driven depth refinement process subsequently extends the explicit single-path depth propagation to a learnable multi-path formulation while preserving its interpretability. Extensive experiments conducted on 16 public datasets demonstrate the robust and generalizable depth scale recovery capability of MTDv2 across diverse sources of sparse observations and different depth estimation paradigms, as well as its broad applicability to downstream 3D perception tasks. Code will be publicly available at https://mias.group/MTD upon publication.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "'packages'"
+    },
+    {
+      "paper_id": "2609.29235",
+      "title": "SARFusion: Scene-Aware Routing Fusion for Robust Camera-LiDAR 3D Object Detection",
+      "source": "arXiv",
+      "reason": "robust camera-LiDAR 3D object detection via scene-aware branch routing fusion；可设想把场景可靠性先验与逐查询分支路由移植到",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.29235",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.29235",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract": "Camera-LiDAR fusion has become a prevailing paradigm for 3D object detection in autonomous driving. However, existing fusion detectors often establish strong inter-modality dependencies by decoding object queries from tightly coupled multimodal representations. Under corrupted driving conditions, such dependencies make the detector vulnerable to unreliable modalities, where degraded observations may interfere with reliable modality-specific evidence and lead to suboptimal predictions. Moreover, modality reliability can vary across both global driving scenes and individual object queries, requiring adaptive fusion decisions at a finer granularity. To bridge this gap, we reformulate robust camera-LiDAR fusion as a scene-aware branch routing problem and propose SARFusion, a robust 3D object detector. Instead of producing detections from a single fused representation, SARFusion decouples object-query decoding into three parallel reasoning branches: a camera branch, a LiDAR branch, and a camera-LiDAR fusion branch. Guided by a Scene Reliability Prior estimated from the global driving context, SARFusion further incorporates object-level evidence to route each query to the most suitable branch. This query-wise routing strategy alleviates harmful cross-modal interference while preserving the benefits of multimodal fusion when complementary cues are trustworthy. On the nuScenes test set, SARFusion achieves strong performance with 72.5 mAP and 74.4 NDS. Extensive analyses demonstrate its robustness under challenging conditions, including sensor corruptions and environmental changes.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "'packages'"
+    },
+    {
+      "paper_id": "2610.14513",
+      "title": "TartanMatch: Towards Universal Dense Correspondence Across Modalities",
+      "source": "arXiv",
+      "reason": "cross_modal_matching；将轻量模态适配模块用于视觉–AIS或Radar–AIS跨模态匹配：保留共享匹配主干，为AIS/雷达增加模态适配层；若无配对真值，可用仿真或按轨迹关联构造合成对",
+      "original_url": "https://arxiv.org/abs/2610.14513",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.14513",
+      "score": 7,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract": "Robotic platforms combine multi-modal sensors to operate across diverse conditions, but most dense correspondence methods are limited to RGB-RGB or a small set of modality pairs. Training a model for each modality pair scales poorly with the number of sensors and forgoes potential positive transfer across modality pairs. We introduce TartanMatch, a unified model for dense correspondence across all 25 ordered pairs among RGB, event, thermal, depth, and projected LiDAR. TartanMatch adapts an RGB-pretrained correspondence model to all modality pairs within one shared network using lightweight modality adaptation and a mixture of real and synthetic data. On zero-shot real-world benchmarks, TartanMatch reduces Endpoint Error (EPE) over the strongest baselines by 61.9% for cross-modal matching and 49.6% for same-modal matching. We further show that joint training across all modality pairs improves average matching accuracy over pair-specific training, especially on challenging cross-modal pairs. These results demonstrate that a single model achieves broad multi-modal coverage and state-of-the-art matching accuracy.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "'packages'"
+    },
+    {
+      "paper_id": "2610.12871",
+      "title": "ROSETTA: Rotation Subspace Estimation for Training-free Transmodal Alignment",
+      "source": "arXiv",
+      "reason": "training-free_transmodal_alignment；将面向LiDAR/相机/热成像/事件跨模态匹配的免训练旋转校准层迁移到视觉–AIS或雷达–AIS跨模态匹配：源域编码器改为船舶视觉",
+      "original_url": "https://arxiv.org/abs/2610.12871",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.12871",
+      "score": 10,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract": "When a query must be matched against a database built with a different sensor or processed by a different encoder, the independently trained encoders impose distinct coordinate systems on the feature space. No canonical reference frame exists to which all encoders can be aligned, and no single training procedure has fully closed this gap. We show that the relative transformation between any two such systems is a spatially preserving rotation in whitened feature space, whose angular velocity exhibits white-noise characteristics: large in norm, temporally uncorrelated, and unpredictable from the features themselves. However, the cross-covariance between encoder outputs has low effective rank, constraining only a small fraction of the rotation parameters, therefore local alignment is tractable. ROSETTA is a training-free calibration layer that estimates the local rotation via an expectation-maximization procedure, requiring no coobservation at query time. We validate ROSETTA on three public driving datasets spanning LiDAR, camera, thermal, and event modalities in cross-modal, cross-device, cross-representation, and cross-backbone settings, with milliseconds overhead per query.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "'packages'"
+    },
+    {
+      "paper_id": "2610.14598",
+      "title": "Bidirectional Adaptive Transformers for Multimodal Anomaly Detection",
+      "source": "arXiv",
+      "reason": "多模态异常检测/跨模态特征对齐；将RGB-点云的双向互相预测对齐改为视觉-雷达/AIS模态间对齐：输入改为船舶图像特征与雷达/AIS时空特征，需设计对应的互补预测目标与轻量适配器微调，对齐损失改为跨模",
+      "original_url": "https://arxiv.org/abs/2610.14598",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.14598",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract": "The effective integration of features derived from RGB images and 3D point clouds presents a substantial challenge in the field of multimodal anomaly detection (MAD). Existing MAD methods typically rely on static fusion paradigms built upon frozen pre-trained encoders. While these frameworks facilitate spatial alignment, they lack the mechanism to establish latent semantic correspondence, thereby inducing cross-modal interference that degrades anomaly discriminability. To mitigate these limitations, this study proposes a Bidirectional Adaptive Transformers (BAT) framework, which constructs comprehensive and semantically aligned multimodal representations by leveraging complementary attributes across modalities. The BAT framework introduces a Bidirectional Feature Alignment (BFA) module, which employs a mutual predictive mechanism to bridge the gap between 2D textural patterns and 3D geometric structures. This bidirectional interaction explicitly enhances the textural granularity of point cloud descriptors while augmenting the spatial contextual awareness of RGB features. To ensure that the latent representations possess sufficient informational density for alignment, BAT incorporates a parameter-efficient adaptation architecture. By utilizing lightweight image and point cloud adapters, the framework facilitates specialized fine-tuning of pre-trained models, mitigating the information loss inherent in frozen encoders. Extensive experiments conducted on MVTec 3D-AD and Eyecandies confirm that BAT achieves state-of-the-art anomaly detection performance, significantly outperforming existing MAD methods.",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "'packages'"
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 769,
+    "ai_reviewed": 60,
+    "ai_states": {
+      "evaluated": 60,
+      "uncertain": 53,
+      "unassessed": 656
+    },
+    "stage_counts": {
+      "1": 33,
+      "2": 714,
+      "0": 7,
+      "3": 15
+    },
+    "ai_rejected": 55,
+    "qualified_count": 5,
+    "selected_count": 5,
+    "shortfall": 0
+  },
+  "publication_status": "complete"
+}
