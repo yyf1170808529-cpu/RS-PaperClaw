@@ -127,11 +127,17 @@ def main():
         try:
             from services.cloud_update import cloud_update
             only_open='--only-open' in arguments
-            code=0 if only_open else cloud_update(root,arguments,wait='--cloud-no-wait' not in arguments)
+            if only_open:code=0
+            else:
+                with update_lock(root/'papers/maritime/private/cloud-update.lock'):
+                    code=cloud_update(root,arguments,wait='--cloud-no-wait' not in arguments)
             if not no_open:webbrowser.open('https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html')
             return code
+        except UpdateAlreadyRunning:
+            print('已有桌面窗口正在触发或查询云端，本窗口不重复触发。',flush=True)
+            return 3
         except Exception as exc:
-            print('云端更新未完成：'+str(exc),flush=True)
+            print('本地触发或查询未完成：'+str(exc)+'；不代表云端任务失败。下次双击将优先恢复已保存任务。',flush=True)
             return 2
     only_open = "--only-open" in arguments
     arguments = [a for a in arguments if a != "--only-open"]
