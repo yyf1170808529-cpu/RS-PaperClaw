@@ -385,7 +385,23 @@
         "2026-10-20"
       ],
       "available": false
+    },
+    "2609.34294": {
+      "paper_id": "2609.34294",
+      "fingerprint": "721c6ee2be4b7d78e5797d7bbfbf5b75e255d2774e81007c8071db1c360dce69",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2609.28159": {
+      "paper_id": "2609.28159",
+      "fingerprint": "e01c68e46ade08919a10ea370980d9d084b3efdbe22700ed74202f2e9e951d8b",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 13
+  "available_count": 15
 }

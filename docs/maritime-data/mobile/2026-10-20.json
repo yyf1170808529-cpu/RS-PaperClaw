@@ -4,16 +4,35 @@
     {
       "paper_id": "2610.26090",
       "title": "RGB--Event Object Detection Across Operating Frequencies via Reliability-Supervised Routing and Asymmetric-Resolution Fusion",
+      "authors": [
+        "Peijun Shi",
+        "Jiannan Zhao",
+        "Xiujin Zhu",
+        "Zhenguo Lao",
+        "Chee-Onn Chow",
+        "Wei Ru Wong"
+      ],
+      "published": "2026-10-19",
+      "arxiv_url": "https://arxiv.org/abs/2610.26090",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.26090",
+      "pdf_url": "https://arxiv.org/pdf/2610.26090",
+      "open_access_url": "https://arxiv.org/pdf/2610.26090",
+      "venue": "",
+      "abstract": "Autonomous vehicles must detect objects faster than a frame camera delivers images. Event cameras record brightness changes with microsecond resolution, so RGB--event detectors can decide between frames, at an operating frequency, the rate of decisions, far above the frame rate. As this rate rises, each decision receives a sparser event window, and the reliability of the events relative to the frame varies over the scene and over time. Existing detectors weight the sensors per sample and encode the frame at the reduced event resolution. Reliability-supervised routing assigns a fusion weight to every location and supervises it with targets from the losses of two single-modality classifiers used only in training, moving loss-based supervision of fusion weights from whole samples to individual locations. Asymmetric-resolution fusion lets the frame carry the decision where the events fail: it encodes the frame at native resolution and pools every feature level onto the event grid, reusing all pretrained weights. On the DSEC-Det dataset, routing halves the accuracy loss from 20 to 180 Hz, from 6.3 to 3.1 mAP, and lowers it in every seed. The resulting detector, ERA-Det, sets a new state of the art at 63.2 mAP, 3.7 mAP above FlexEvent, leads at every operating frequency, and at 180 Hz is more accurate than FlexEvent at 20 Hz. On two DAVIS346 datasets, the router lowers the frame weight at night and in low light and raises it when the events vanish. ERA-Det upgrades released FlexEvent weights in 5,000 iterations on one GPU.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "accessible"
+      },
       "source": "arXiv",
       "reason": "RGB-event object detection；将可靠性监督路由用于雷达与视觉多传感器船舶检测：把每个空间位置的融合权重作为可学习路由，用雷达单模态检测器与视觉单模态检测器的分类损失构造逐位置监",
-      "original_url": "https://arxiv.org/abs/2610.26090",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.26090",
       "score": 10,
       "rule_level": "一般相关",
       "level": "方法值得关注",
       "ai_score": 47,
       "selection_source": "近期新论文",
-      "abstract": "Autonomous vehicles must detect objects faster than a frame camera delivers images. Event cameras record brightness changes with microsecond resolution, so RGB--event detectors can decide between frames, at an operating frequency, the rate of decisions, far above the frame rate. As this rate rises, each decision receives a sparser event window, and the reliability of the events relative to the frame varies over the scene and over time. Existing detectors weight the sensors per sample and encode the frame at the reduced event resolution. Reliability-supervised routing assigns a fusion weight to every location and supervises it with targets from the losses of two single-modality classifiers used only in training, moving loss-based supervision of fusion weights from whole samples to individual locations. Asymmetric-resolution fusion lets the frame carry the decision where the events fail: it encodes the frame at native resolution and pools every feature level onto the event grid, reusing all pretrained weights. On the DSEC-Det dataset, routing halves the accuracy loss from 20 to 180 Hz, from 6.3 to 3.1 mAP, and lowers it in every seed. The resulting detector, ERA-Det, sets a new state of the art at 63.2 mAP, 3.7 mAP above FlexEvent, leads at every operating frequency, and at 180 Hz is more accurate than FlexEvent at 20 Hz. On two DAVIS346 datasets, the router lowers the frame weight at night and in low light and raises it when the events vanish. ERA-Det upgrades released FlexEvent weights in 5,000 iterations on one GPU.",
       "abstract_zh": "自动车辆必须比帧相机更快地探测物体传送图像。 事件相机以微秒分辨率记录亮度变化,所以 RGB--事件探测器可以在帧之间,在一个运行频率,决定的速率,远高于帧速率. 随着这一速度的上升,每个决定都得到一个比较稀疏的事件窗口,事件相对于帧的可靠性因场景和时间而异. 现有探测器对每个样本的传感器进行加权,并在降低事件分辨率时对帧进行编码. Reliability-supervised 路由指定 a 融合 每个地点的重量,并用两个单人损失的目标来监督它-模态 仅用于培训的分类人员,移动基于损失的监管 融合 从整个样本到各个地点的权重. Asymmetric-resolution 融合 让框架在事件失败时带有决定:它将框架以本地分辨率编码,并将每个特性级别集合到事件网格上,重新使用所有预先训练的权重。 打开 DSEC-Det 数据集,路由将准确度损失减半 20 以 180 赫兹,從 6.3 以 3.1 mAP, 并降低它在每个种子中。 由此产生的探测器, ERA-Det, 设定新状态 63.2 mAP, 3.7 mAP 上文 FlexEvent, 在每个操作频率和 180 赫兹比 FlexEvent 时间 20 赫兹 数到二 DAVIS346 数据集,路由器在夜间和低光下降低帧重量并在事件消失时提高. ERA-Det 发布升级 FlexEvent 重量单位 5,000 重迭在一个 GPU.",
       "translation_source": "argos",
       "translation_error": ""
@@ -21,16 +40,35 @@
     {
       "paper_id": "2609.38116",
       "title": "GA-EIRFS: A Geometry-Augmented Repeat-Factor Sampling Method for Long-Tailed LiDAR 3D Object Detection",
+      "authors": [
+        "Taufiq Ahmed",
+        "Constantino Álvarez Casado",
+        "Daniel Herrera Castro",
+        "Sasan Sharifipour",
+        "Abhishek Kumar",
+        "Miguel Bordallo López"
+      ],
+      "published": "2026-09-29",
+      "arxiv_url": "https://arxiv.org/abs/2609.38116",
+      "doi": "10.48550/arxiv.2609.38116",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.38116",
+      "pdf_url": "https://arxiv.org/pdf/2609.38116",
+      "open_access_url": "https://arxiv.org/pdf/2609.38116",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Long-tailed 3D object detection is treated as a class-frequency problem, but LiDAR supervision quality depends on object observability: similar frequencies can hide different geometric evidence. We introduce Geometry-Augmented Exponentially Weighted Instance-Aware Repeat Factor Sampling (GA-EIRFS), a detector-agnostic method that modulates a frequency-based repeat factor with a fixed geometry score combining point count, surface-normal entropy, and surface coverage. GA-EIRFS changes only frame-sampling probabilities, leaving the detector and inference unchanged. On nuScenes it improves mean average precision (mAP) and the nuScenes detection score (NDS) in four converged experiments with CenterPoint and PointPillars over two seeds; for CenterPoint at seed 666, mAP rises from 0.552 to 0.563 and bicycle AP from 0.306 to 0.359. Per-class gains correlate with the class sampling-weight increase (Spearman rho=0.70, p=0.025) but not with geometry score alone (rho=0.32, p=0.37), so geometry amplifies frequency-driven need. KITTI results vary across seeds, most for the rarest class. Code: https://github.com/Multimodal-Sensing-Lab/GA-EIRFS.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
       "source": "arXiv",
       "reason": "长尾三维目标检测重采样；将基于频率的重复采样因子扩展到海面船舶LiDAR检测：几何分可改为船舶点云点数、法向熵和可见表面覆盖率，帧采样概率按船类频率与几何可观测性调制，检测器与推理保持不变。",
-      "original_url": "https://doi.org/10.48550/arxiv.2609.38116",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.38116",
       "score": 5,
       "rule_level": "一般相关",
       "level": "方法值得关注",
       "ai_score": 67,
       "selection_source": "近期候选",
-      "abstract": "Long-tailed 3D object detection is treated as a class-frequency problem, but LiDAR supervision quality depends on object observability: similar frequencies can hide different geometric evidence. We introduce Geometry-Augmented Exponentially Weighted Instance-Aware Repeat Factor Sampling (GA-EIRFS), a detector-agnostic method that modulates a frequency-based repeat factor with a fixed geometry score combining point count, surface-normal entropy, and surface coverage. GA-EIRFS changes only frame-sampling probabilities, leaving the detector and inference unchanged. On nuScenes it improves mean average precision (mAP) and the nuScenes detection score (NDS) in four converged experiments with CenterPoint and PointPillars over two seeds; for CenterPoint at seed 666, mAP rises from 0.552 to 0.563 and bicycle AP from 0.306 to 0.359. Per-class gains correlate with the class sampling-weight increase (Spearman rho=0.70, p=0.025) but not with geometry score alone (rho=0.32, p=0.37), so geometry amplifies frequency-driven need. KITTI results vary across seeds, most for the rarest class. Code: https://github.com/Multimodal-Sensing-Lab/GA-EIRFS.",
       "abstract_zh": "",
       "translation_source": "english_only",
       "translation_error": "numeric_mismatch: numbers or percentages changed"
@@ -38,16 +76,39 @@
     {
       "paper_id": "2609.25860",
       "title": "MatchFusion: Explicit-Implicit Instance Matching for Spatio-Temporal Multimodal Autonomous Driving",
+      "authors": [
+        "Xiaoyu Li",
+        "Jiajia Fu",
+        "Long Shi",
+        "Tianyu Du",
+        "Ruihang Li",
+        "Xian Wu",
+        "Lijun Zhao",
+        "Yingtao Zhang",
+        "Lining Sun",
+        "Ruifeng Li"
+      ],
+      "published": "2026-09-22",
+      "arxiv_url": "https://arxiv.org/abs/2609.25860",
+      "doi": "10.48550/arxiv.2609.25860",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.25860",
+      "pdf_url": "https://arxiv.org/pdf/2609.25860",
+      "open_access_url": "https://arxiv.org/pdf/2609.25860",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Sparse instance representations provide a compact interface for spatial LiDAR-camera and temporal past-current interaction in multimodal perception and E2EAD. Effective interaction requires reliable instance correspondences despite geometric discrepancies and heterogeneous semantic representations. Attention-based methods exploit contextual semantics but often require specialized representation alignment, increasing computational overhead. In contrast, association based on structured object states is efficient and interpretable but lacks contextual evidence to resolve ambiguous matches. To combine these complementary strengths, we propose MatchFusion, a learnable instance matching and fusion module for spatio-temporal multimodal autonomous driving. MatchFusion initializes pairwise affinities using geometric similarity and category consistency, then selectively refines structurally plausible associations using instance embeddings. The resulting soft matchmap guides a common residual aggregation operator for adaptive information exchange. This unified matching-fusion formulation supports spatial LiDAR-camera and temporal past-current interaction, using multi-view image-plane geometry and motion-compensated BEV geometry as the respective structural priors. Experiments on nuScenes demonstrate consistent perception gains across diverse front-end configurations. Compared with a prior instance-centric fusion method, the MatchFusion-equipped system achieves higher perception accuracy while reducing FLOPs by 55.3% and GPU memory usage by 39.3%, with the matching-fusion module accounting for only 3.7% of total perception latency. Integrating temporal MatchFusion into SparseDrive further improves perception within an E2E framework without additional supervision. These results establish explicit-implicit matching as an effective and efficient mechanism for spatio-temporal instance interaction.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
       "source": "arXiv",
       "reason": "跨模态实例匹配与融合（LiDAR-相机、时域时空融合）；将几何相似度与类别一致性初始化、实例嵌入细化的显隐式实例匹配，用于视觉–AIS或Radar–AIS目标关联：输入改为图像检测实例与AIS/雷达航",
-      "original_url": "https://doi.org/10.48550/arxiv.2609.25860",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.25860",
       "score": 17,
       "rule_level": "方法可借鉴",
       "level": "方法值得关注",
       "ai_score": 53,
       "selection_source": "近期候选",
-      "abstract": "Sparse instance representations provide a compact interface for spatial LiDAR-camera and temporal past-current interaction in multimodal perception and E2EAD. Effective interaction requires reliable instance correspondences despite geometric discrepancies and heterogeneous semantic representations. Attention-based methods exploit contextual semantics but often require specialized representation alignment, increasing computational overhead. In contrast, association based on structured object states is efficient and interpretable but lacks contextual evidence to resolve ambiguous matches. To combine these complementary strengths, we propose MatchFusion, a learnable instance matching and fusion module for spatio-temporal multimodal autonomous driving. MatchFusion initializes pairwise affinities using geometric similarity and category consistency, then selectively refines structurally plausible associations using instance embeddings. The resulting soft matchmap guides a common residual aggregation operator for adaptive information exchange. This unified matching-fusion formulation supports spatial LiDAR-camera and temporal past-current interaction, using multi-view image-plane geometry and motion-compensated BEV geometry as the respective structural priors. Experiments on nuScenes demonstrate consistent perception gains across diverse front-end configurations. Compared with a prior instance-centric fusion method, the MatchFusion-equipped system achieves higher perception accuracy while reducing FLOPs by 55.3% and GPU memory usage by 39.3%, with the matching-fusion module accounting for only 3.7% of total perception latency. Integrating temporal MatchFusion into SparseDrive further improves perception within an E2E framework without additional supervision. These results establish explicit-implicit matching as an effective and efficient mechanism for spatio-temporal instance interaction.",
       "abstract_zh": "样本 表征 为空间提供紧凑的接口 LiDAR-相机和时间过去当前交互 多模态 认识和认识 E2EAD. 有效互动需要可靠的实例对应,尽管几何差异和不同语义 表征. Attention-based 方法利用上下文语义,但往往需要专门 表征 对齐, 增加计算间接费用。 相比之下,基于结构化对象状态的关联是高效和可解释的,但缺乏背景证据来解决模棱两可的匹配. 为了结合这些相辅相成的优势,我们提议 MatchFusion, 可学习实例匹配和 融合 时空模块 多模态 自动驾驶. MatchFusion 采用几何相似性和类别一致性初始化配对关联,然后通过实例嵌入有选择地改进结构上可行的关联。 由此产生的软匹配图指导一个通用的剩余汇总操作员进行适应性信息交流。 此统一匹配-融合 配方支持空间 LiDAR-摄影机和时间过去和现在的相互作用,使用多视图图像-平面几何和运动补偿 BEV 几何作为相应的结构前缀. 实验 nuScenes 显示对不同前端配置的一致认识。 与以先前实例为中心的比较 融合 方法,则 MatchFusion-equipped 系统实现更高的感知精度,同时降低 FLOPs 通过 55.3% 和 GPU 内存使用情况 39.3%, 与匹配-融合 仅核算模块 3.7% 完全感觉迟钝。 综合时间 MatchFusion 输入 SparseDrive 进一步提高人们的认识 E2E 框架没有额外的监督。 这些结果确立了明确、隐含的匹配机制,作为时空实例互动的有效和高效机制.",
       "translation_source": "argos",
       "translation_error": ""
@@ -55,16 +116,35 @@
     {
       "paper_id": "2610.09511",
       "title": "LiG-DETR: Local-in-Global Reassembly in Latent Space for Aerial Object Detection",
+      "authors": [
+        "Yupeng Zhang",
+        "Fangzhuo Gao",
+        "Juntao Cheng",
+        "Ziyi Zhao",
+        "Liang Wan",
+        "Ruize Han"
+      ],
+      "published": "2026-10-07",
+      "arxiv_url": "https://arxiv.org/abs/2610.09511",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.09511",
+      "pdf_url": "https://arxiv.org/pdf/2610.09511",
+      "open_access_url": "https://arxiv.org/pdf/2610.09511",
+      "venue": "",
+      "abstract": "Aerial object detection faces substantial scale and density variations. Small objects are easily degraded by downsampling and feature compression, while medium and large objects require sufficient global context. Existing methods mainly follow two paradigms: image slicing provides clearer local evidence but relies on independent crop-level prediction and post-processing, whereas feature- and query-level optimization preserves unified inference but operates on already compressed full-image representations, limiting recovery of fine-grained information. This raises a key question: can aerial detection directly acquire high-fidelity local evidence before feature degradation and integrate it into a unified end-to-end framework? To this end, we propose LiG-DETR, an Efficient Global-Local Reassembly framework that reformulates image slicing as high-fidelity local feature acquisition. A shared encoder extracts global and locally magnified features, which are projected into the detector feature space. The projected local features are reassembled according to their original spatial locations to form a globally aligned local feature level, and a single DETR decoder jointly decodes global and local features. To reduce redundant computation, Context-Preserved Selective Reassembly focuses high-resolution encoding on informative regions while preserving a dense feature layout, and Density-Aware Adaptive Query Allocation adapts the decoder query budget using encoder proposal scores. Experiments show substantial gains on small and medium objects while retaining strong large-object performance, with favorable accuracy--efficiency trade-offs and improved cross-domain generalization. The code will be released.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
       "source": "arXiv",
       "reason": "object_detection；将全局-局部特征重组与联合解码结构迁移到船舶检测：输入为海上图像，保留共享编码器提取全局和局部放大特征，按空间位置重组局部特征后由DETR解码器联合解码，以提升小尺度",
-      "original_url": "https://arxiv.org/abs/2610.09511",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.09511",
       "score": 17,
       "rule_level": "方法可借鉴",
       "level": "方法值得关注",
       "ai_score": 60,
       "selection_source": "近期候选",
-      "abstract": "Aerial object detection faces substantial scale and density variations. Small objects are easily degraded by downsampling and feature compression, while medium and large objects require sufficient global context. Existing methods mainly follow two paradigms: image slicing provides clearer local evidence but relies on independent crop-level prediction and post-processing, whereas feature- and query-level optimization preserves unified inference but operates on already compressed full-image representations, limiting recovery of fine-grained information. This raises a key question: can aerial detection directly acquire high-fidelity local evidence before feature degradation and integrate it into a unified end-to-end framework? To this end, we propose LiG-DETR, an Efficient Global-Local Reassembly framework that reformulates image slicing as high-fidelity local feature acquisition. A shared encoder extracts global and locally magnified features, which are projected into the detector feature space. The projected local features are reassembled according to their original spatial locations to form a globally aligned local feature level, and a single DETR decoder jointly decodes global and local features. To reduce redundant computation, Context-Preserved Selective Reassembly focuses high-resolution encoding on informative regions while preserving a dense feature layout, and Density-Aware Adaptive Query Allocation adapts the decoder query budget using encoder proposal scores. Experiments show substantial gains on small and medium objects while retaining strong large-object performance, with favorable accuracy--efficiency trade-offs and improved cross-domain generalization. The code will be released.",
       "abstract_zh": "飞机 目标检测 面临巨大的规模和密度变化。 小物体容易被下取样和特征压缩所降解,而中大型物体则需要足够的全球背景. 现有方法主要遵循两个范式:图像切分提供了更明确的局部证据,但依赖于独立的作物级预测和后处理,而地物和查询级优化则保留了统一的推论,但运行于已经压缩的全图像上 表征, 限制恢复精细信息。 这提出了一个关键问题:空中探测能否在出现退化之前直接获得高真实性的地方证据并将其纳入统一的端到端框架? 为此,我们提议 LiG-DETR, 高效 Global-Local 重新组装框架,将图像切换为高纯度本地特性获取. 一个共享编码器提取出全球和本地放大的特征,这些特征被投射到探测器特征空间. 预测的局部地貌按其原始空间位置重新组合,形成全球一致的地方地貌水平,以及单一的地貌水平 DETR 解码器联合解码全球和本地特性. 减少冗余计算, Context-Preserved 选择性再组装将高分辨率编码集中在信息区,同时保持密集的地物布局,以及 Density-Aware 适应性查询分配使用编码器建议分数来调整解码器查询预算. 实验显示在中小型物体上取得了很大进展,同时保留了很强的大型物体性能,具有有利的精度-效率取舍,并改进了跨领域通用。 代码将被发布.",
       "translation_source": "argos",
       "translation_error": ""
@@ -72,16 +152,38 @@
     {
       "paper_id": "2609.24152",
       "title": "Graded-Relevance Composed Multimodal Retrieval for E-commerce Visual Search at Scale",
+      "authors": [
+        "Anubhav Gupta",
+        "Hrushikesh Mohapatra",
+        "Prijith Chandra",
+        "Asish Mohapatra",
+        "Anuj Garg",
+        "Arvind Maan",
+        "Sudip Datta",
+        "Venkat Bulusu",
+        "Sitesh Kumar Jalan"
+      ],
+      "published": "2026-09-21",
+      "arxiv_url": "https://arxiv.org/abs/2609.24152",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.24152",
+      "pdf_url": "https://arxiv.org/pdf/2609.24152",
+      "open_access_url": "https://arxiv.org/pdf/2609.24152",
+      "venue": "",
+      "abstract": "Visual search on large e-commerce catalogs must serve both \"similarity\" queries that ask for items resembling an uploaded image and \"modifier\" queries that comprise an image and text describing a desired modification (e.g. a color change or style swap). The latter is the setting known as composed image retrieval (CIR). Existing CIR methods, however, treat relevance as binary and train on triplets with a single positive target - a poor fit for real catalogs where many candidates partially satisfy a user query and ranking across that partial-match spectrum drives the customer experience. We propose a methodology for training CIR retrievers on graded relevance, consisting of: (i) a VLM to curate training data, generating both queries (object detection + modifier synthesis) and 4-level relevance labels without manual annotation, (ii) an iterative relevance-feedback loop that expands the training set by mining hard negatives from the in-training retriever, and (iii) a hierarchy-aware angular objective to train the retriever directly on the graded labels rather than collapsing them to a binary split. We call this methodology GradCIR and instantiate it on a PaliGemma2 bi-encoder trained on 3.5M graded pairs curated from raw Walmart catalog data. A controlled graded-vs-binary ablation isolates the supervision granularity and shows lift of 4.9%-5.9% in NDCG@10. The same recipe applied to other multimodal encoders lifts early-fusion backbones by up to 8.5% NDCG@10. On the public FashionIQ benchmark, GradCIR (applied to PaliGemma2) reaches 0.6703 average recall when fine-tuned, slightly ahead of the strongest peer-reviewed supervised baseline we compare against, and matching or exceeding all published CLIP-L-class zero-shot CIR methods. The system is deployed in production at Walmart, where it's serving live visual-search user traffic.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
       "source": "arXiv",
       "reason": "跨模态检索与匹配；将训练中检索器挖掘困难负样本的迭代反馈机制迁移到视觉-AIS跨模态匹配：以船舶图像与AIS轨迹为双模态输入，将训练中视觉检索器对AIS候选挖掘的高相似但非对应的轨迹作为困难负样本，迭",
-      "original_url": "https://arxiv.org/abs/2609.24152",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.24152",
       "score": 11,
       "rule_level": "一般相关",
       "level": "方法值得关注",
       "ai_score": 47,
       "selection_source": "近期候选",
-      "abstract": "Visual search on large e-commerce catalogs must serve both \"similarity\" queries that ask for items resembling an uploaded image and \"modifier\" queries that comprise an image and text describing a desired modification (e.g. a color change or style swap). The latter is the setting known as composed image retrieval (CIR). Existing CIR methods, however, treat relevance as binary and train on triplets with a single positive target - a poor fit for real catalogs where many candidates partially satisfy a user query and ranking across that partial-match spectrum drives the customer experience. We propose a methodology for training CIR retrievers on graded relevance, consisting of: (i) a VLM to curate training data, generating both queries (object detection + modifier synthesis) and 4-level relevance labels without manual annotation, (ii) an iterative relevance-feedback loop that expands the training set by mining hard negatives from the in-training retriever, and (iii) a hierarchy-aware angular objective to train the retriever directly on the graded labels rather than collapsing them to a binary split. We call this methodology GradCIR and instantiate it on a PaliGemma2 bi-encoder trained on 3.5M graded pairs curated from raw Walmart catalog data. A controlled graded-vs-binary ablation isolates the supervision granularity and shows lift of 4.9%-5.9% in NDCG@10. The same recipe applied to other multimodal encoders lifts early-fusion backbones by up to 8.5% NDCG@10. On the public FashionIQ benchmark, GradCIR (applied to PaliGemma2) reaches 0.6703 average recall when fine-tuned, slightly ahead of the strongest peer-reviewed supervised baseline we compare against, and matching or exceeding all published CLIP-L-class zero-shot CIR methods. The system is deployed in production at Walmart, where it's serving live visual-search user traffic.",
       "abstract_zh": "",
       "translation_source": "english_only",
       "translation_error": "numeric_mismatch: numbers or percentages changed"
@@ -89,11 +191,11 @@
   ],
   "selection_audit": {
     "candidate_count": 781,
-    "ai_reviewed": 218,
+    "ai_reviewed": 277,
     "ai_states": {
-      "evaluated": 218,
-      "uncertain": 191,
-      "unassessed": 372
+      "evaluated": 277,
+      "uncertain": 209,
+      "unassessed": 295
     },
     "stage_counts": {
       "0": 13,
@@ -101,8 +203,8 @@
       "1": 39,
       "3": 15
     },
-    "ai_rejected": 200,
-    "qualified_count": 18,
+    "ai_rejected": 257,
+    "qualified_count": 20,
     "selected_count": 5,
     "shortfall": 0,
     "translation_environment_errors": []
