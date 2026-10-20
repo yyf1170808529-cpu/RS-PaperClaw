@@ -67,13 +67,13 @@
     },
     "457e1e3ee2b2d6d530e67b378f3208da7d7320916db37c6469591bc760de8c06": {
       "paper_id": "2610.14077",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "6647a3193c2017fc896196b110c50e3db7f9c1d7123258e005b612c02f18c64a": {
       "paper_id": "2610.11526",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "cca8f30a52fd8a851b20d9a9058b73ebf89ff90d00261b0f25b9e2c756ec84a2": {
       "paper_id": "2610.12458",
@@ -87,8 +87,8 @@
     },
     "20280f80de5ebb97737b45c20735f18ef701a81d9672f40dadff02ff5da2346e": {
       "paper_id": "2610.09841",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "36d76478919a90207ab84ccb8388043a297509f25a2f1b283f8cdb3ea255fe6c": {
       "paper_id": "2610.10264",
@@ -322,18 +322,18 @@
     },
     "5666b152e244bfed58ac1dc76449e7b43fe1c1f25cc2ae6b9e6d9f0b126d8388": {
       "paper_id": "2609.39681",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "fdc8e5327b82fddc498683ddd587a7fb743c4456df1f11c0bfd2aa43170fa90b": {
       "paper_id": "2609.40362",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "e9c2ce488d2ccfb5813f7158f8a2a854c4d041c29c8071ee3b127fc7531a3f30": {
       "paper_id": "2609.38949",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "50fad75d1b4f6fa6a1651a60acffe20a164af558692a43fbf214ce9d1b99a00e": {
       "paper_id": "2609.39688",
@@ -387,8 +387,8 @@
     },
     "4ec8e912f466937be47fcd25b42f2eaf9e6ee4cf857bf6b99dfca2c0cada6025": {
       "paper_id": "2609.38111",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "0a444b12cbbc322d07d19cbfa14351fd305efa6dbd9882d82bb4eeb0b141d4f6": {
       "paper_id": "2609.38637",
@@ -562,8 +562,8 @@
     },
     "25b02b9528f439813c8f4956b9c046e23e3ccc907234ce413e73fb2cd37df073": {
       "paper_id": "2609.23003",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "13ee171eb57a8c8c766b53eed4bf6c3f610b40d612814b4bae0c8d7d6897edc0": {
       "paper_id": "2609.19991",
@@ -647,8 +647,8 @@
     },
     "9af70468abdda9a2d9988bbee005f1a91fc17844359245b0a2ea0b7e6e62d11c": {
       "paper_id": "2610.14651",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "8fc1e44e3be1a83953cd7195ed3e47a454799072e3cba271aff52e3028c365be": {
       "paper_id": "2610.14274",
@@ -682,8 +682,8 @@
     },
     "70ce90cc6f65fb8015a13083baf9bca2b1d9e580a12be5f6edacb86488ca7b85": {
       "paper_id": "2610.12693",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "7c15169a979f959f239be35a688ff91bc8b66c74b1405be8f5ce4cf56705abe4": {
       "paper_id": "2610.12786",
@@ -697,8 +697,8 @@
     },
     "8f32da6554b05d0a2146c6eb7f761d3e4bb5de1e57e4600bf7857d20f84946c7": {
       "paper_id": "2610.12096",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "09102ccc5caf17c6982843aac8cc88994b24d5fa9fc677e9392cd53caa1ab0a9": {
       "paper_id": "2610.11577",
@@ -727,8 +727,8 @@
     },
     "d8088a6517ea5e6fe7076fbc2ff93b73a96b6d147875a34fee1b87f99b21864e": {
       "paper_id": "2610.12149",
-      "date": "2026-10-19",
-      "status": "attempted"
+      "date": "2026-10-20",
+      "status": "validated"
     },
     "a72982d77e9e1bd78cf1e9a901d76749b2e2729faa3a7abf1facd779e7ed0c8e": {
       "paper_id": "2610.10133",
@@ -747,7 +747,7 @@
     },
     "48b10b77d84416d8c596a7faf48bc8b0af5886221e4414768ddb4aaf58c581e6": {
       "paper_id": "2610.09846",
-      "date": "2026-10-19",
+      "date": "2026-10-20",
       "status": "attempted"
     },
     "0a1a538864442c571a45a41beafb93b8cfd07defe3902ac0750ec3cdbefc007b": {
@@ -899,6 +899,61 @@
       "paper_id": "2610.03187",
       "date": "2026-10-19",
       "status": "validated"
+    },
+    "3d67acb245a79f396dfdcfa538add3487318c02d048203a58125ba8cdb55ef7d": {
+      "paper_id": "2610.25641",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "91424b7c7189594e6ae6ba287bc01e998bda3dab411711375b9f1c03c66da2ec": {
+      "paper_id": "2610.24757",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "7eb46ce7724f2dc25699208b4c2aff113920ce094cc2f79b17b7e27d5182237a": {
+      "paper_id": "2610.24094",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "0651c3e82f9e8c3240b1f04b17e5f0c9a4ee89b1816a8f089bf0a4526c06bcab": {
+      "paper_id": "2610.23915",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "47b09c286f08100d06695a5ea7a714a90d598eae4d9cede9f141b318106178cd": {
+      "paper_id": "2610.24814",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "2e1b512179708f2b31467bedd703d25e268cc173a9513c80637541d2e7411896": {
+      "paper_id": "2610.25810",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "b60c694d2ab26455f23a2ce136c0776e467948ca344d47f775d44137002f7dd5": {
+      "paper_id": "2610.24705",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "81215d9865eb58af6ea686be73f04d34226a1e5757be2ef1e2168f1af1710479": {
+      "paper_id": "2610.24392",
+      "date": "2026-10-20",
+      "status": "validated"
+    },
+    "929bfa4a19900354fadf4b83359413adfcc4267f3dfc9ba19942bd3d5245dd10": {
+      "paper_id": "2610.03403",
+      "date": "2026-10-20",
+      "status": "attempted"
+    },
+    "91b99126707b657bc097e5cce2c9bd979baf3c8f1852a271557c95fe4dda35c0": {
+      "paper_id": "2610.02943",
+      "date": "2026-10-20",
+      "status": "attempted"
+    },
+    "2d3e2336ed4e1c59d9c733e217205019c6ec764c3f7a45060d0996ec622ef36b": {
+      "paper_id": "2610.01022",
+      "date": "2026-10-20",
+      "status": "attempted"
     }
   }
 }
