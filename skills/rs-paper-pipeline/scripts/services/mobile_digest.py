@@ -8,6 +8,37 @@ from urllib.parse import quote
 
 BASE = 'https://yyf1170808529-cpu.github.io/RS-PaperClaw/'
 
+PROMPT_FIELDS=('paper_id','title','authors','published','arxiv_url','doi','original_url',
+               'pdf_url','open_access_url','venue','abstract','resource_type')
+
+def prompt_metadata(paper, papers=None, aliases=None):
+    """Small public snapshot; enrich legacy archives only by their own stable identity."""
+    key=(aliases or {}).get(paper['paper_id'],paper['paper_id'])
+    original=(papers or {}).get(key,{})
+    values={field:paper.get(field) or original.get(field) or '' for field in PROMPT_FIELDS}
+    values['authors']=values['authors'] if isinstance(values['authors'],list) else []
+    values['oa_evidence']=bool(paper.get('oa_evidence') or original.get('oa_evidence'))
+    values['validity']={'status':(paper.get('validity') or original.get('validity') or {}).get('status')}
+    return values
+
+def archive_mobile_page(page):
+    return page.replace('href="maritime.html?', 'href="../../maritime.html?').replace('href="maritime-daily.html?', 'href="../../maritime-daily.html?').replace('src="maritime_', 'src="../../maritime_')
+
+def refresh_mobile_pages(root, library):
+    """Upgrade saved HTML only: do not reselect, translate or change archived JSON."""
+    directory=root/'docs/maritime-data/mobile'
+    count=0
+    for path in sorted(directory.glob('????-??-??.json')):
+        payload=json.loads(path.read_text(encoding='utf8'))
+        page=render_mobile_page(payload,library.get('aliases',{}),library['papers'])
+        path.with_suffix('.html').write_text(archive_mobile_page(page),encoding='utf8')
+        count+=1
+    latest=directory/'latest.json'
+    if latest.exists():
+        payload=json.loads(latest.read_text(encoding='utf8'))
+        (root/'docs/maritime-daily.html').write_text(render_mobile_page(payload,library.get('aliases',{}),library['papers']),encoding='utf8')
+    return count
+
 def digest_revision(payload):
     return hashlib.sha256(json.dumps({'date':payload['date'],'papers':payload['papers']},ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]
 
@@ -132,7 +163,7 @@ def build_mobile_digest(root, library, date):
         topic=p.get('assessment',{}).get('primary_topic')
         reason=assessment['reason'] or reason+(f'；专题{topic}' if topic else '')
         final_level='直接相关' if assessment['path']=='direct' else '方法值得关注'
-        items.append({'paper_id':p['paper_id'],'title':p['title'],'source':compact_source(p),'reason':reason,
+        items.append({**prompt_metadata(p),'paper_id':p['paper_id'],'title':p['title'],'source':compact_source(p),'reason':reason,
                       'original_url':p.get('original_url') or p.get('arxiv_url'),'reading_url':BASE+'maritime.html?paper='+quote(p['paper_id'],safe=''),
                       'score':p.get('assessment',{}).get('score',0),'rule_level':LEVELS.get(p.get('assessment',{}).get('level'),'待评估'),'level':final_level,
                       'ai_score':assessment['score'],'selection_source':'近期新论文' if stage==0 else '历史补荐' if stage==3 else '近期候选',
@@ -172,22 +203,24 @@ def build_mobile_digest(root, library, date):
     refresh_reserve(root,library,date,config)
     if published:
         write_json(directory/'latest.json',published)
-        (root/'docs/maritime-daily.html').write_text(render_mobile_page(published,library.get('aliases',{})),encoding='utf8')
+        (root/'docs/maritime-daily.html').write_text(render_mobile_page(published,library.get('aliases',{}),library['papers']),encoding='utf8')
     if status!='complete':return payload
     page=render_mobile_page(payload,library.get('aliases',{}))
-    (directory/(str(date)+'.html')).write_text(page.replace('href="maritime.html?', 'href="../../maritime.html?').replace('href="maritime-daily.html?', 'href="../../maritime-daily.html?').replace('src="maritime_favorites.js','src="../../maritime_favorites.js'),encoding='utf8')
+    (directory/(str(date)+'.html')).write_text(archive_mobile_page(page),encoding='utf8')
     markdown=f'# 每日精选 {date}\n\n'+ '\n\n'.join(f'## {p["title"]}\n\n{p["source"]}\n\n{p["reason"]}\n\n[原文]({p["original_url"]}) · [阅读页]({p["reading_url"]})' for p in items)
     (directory/(str(date)+'.md')).write_text(markdown,encoding='utf8')
     return payload
 
 
-def render_mobile_page(payload, aliases=None):
+def render_mobile_page(payload, aliases=None, papers=None):
     """Render saved picks without retrieving, ranking or translating papers."""
     esc=html.escape
     date=payload['date'];items=payload['papers']
     def score_label(p):
         return ' · AI相关分 '+str(p['ai_score'])+'/100' if isinstance(p.get('ai_score'),(int,float)) else ''
-    entries=''.join(f'<article><h2>{esc(p["title"])}</h2><p>{esc(p["source"])}</p><p>{esc(p["level"])}{score_label(p)} {esc(p.get("selection_source",""))}</p><p>{esc(p["reason"])}</p><details><summary>查看摘要（中文 / English）</summary><p>{esc(p["abstract_zh"] or "本地中文翻译未完成：" + p.get("translation_error", "尚未生成") + "。英文摘要保留如下。")}</p><p lang="en">{esc(p["abstract"] or "英文摘要暂未获取。")}</p></details><p><a href="{esc(p["original_url"] or "",quote=True)}">原文</a> · <a href="{esc(p["reading_url"]+("&" if "?" in p["reading_url"] else "?")+"v=3.8.1",quote=True)}">阅读与笔记</a></p><div data-favorite-paper="{esc(p["paper_id"],quote=True)}"></div></article>' for p in items)
+    entries=''.join(f'<article><h2>{esc(p["title"])}</h2><p>{esc(p["source"])}</p><p>{esc(p["level"])}{score_label(p)} {esc(p.get("selection_source",""))}</p><p>{esc(p["reason"])}</p><details><summary>查看摘要（中文 / English）</summary><p>{esc(p["abstract_zh"] or "本地中文翻译未完成：" + p.get("translation_error", "尚未生成") + "。英文摘要保留如下。")}</p><p lang="en">{esc(p["abstract"] or "英文摘要暂未获取。")}</p></details><p><a href="{esc(p["original_url"] or "",quote=True)}">原文</a> · <a href="{esc(p["reading_url"]+("&" if "?" in p["reading_url"] else "?")+"v=3.8.1",quote=True)}">阅读与笔记</a> · <button type="button" data-prompt-paper="{esc(p["paper_id"],quote=True)}">Prompt</button></p><div data-favorite-paper="{esc(p["paper_id"],quote=True)}"></div></article>' for p in items)
     snapshots={'date':date,'revision':digest_revision(payload),'papers':[{k:p.get(k,'') for k in ('paper_id','title','original_url','reading_url')} for p in items],'aliases':aliases or {}}
     data=json.dumps(snapshots,ensure_ascii=False).replace('<',r'\u003c')
-    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1>每日精选 {date}</h1><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p>{entries or "<p>今天没有完成AI审核的合格精选。</p>"}<p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p><script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.1"></script></html>'''
+    template=(Path(__file__).resolve().parents[1]/'prompts/maritime_analysis.md').read_text(encoding='utf8')
+    prompts=json.dumps({'prompt_template':template,'papers':[prompt_metadata(p,papers,aliases) for p in items]},ensure_ascii=False).replace('<',r'\u003c')
+    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1>每日精选 {date}</h1><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p>{entries or "<p>今天没有完成AI审核的合格精选。</p>"}<p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p><script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.1"></script><script id="daily-prompt-data" type="application/json">{prompts}</script><script src="maritime_prompt.js?v=3.8.2"></script><script src="maritime_daily_prompt.js?v=3.8.2"></script></html>'''

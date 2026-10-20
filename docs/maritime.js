@@ -84,14 +84,7 @@ function filterPapers(papers, filters, days) {
       compareRecommendation(a,b) || b.published.localeCompare(a.published) || paperId(a).localeCompare(paperId(b)));
 }
 
-function makePrompt(template, paper) {
-  if(RESOURCE_TYPES.has(paper.resource_type) || paper.resource_type==='unknown' || INVALID.has(paper.validity?.status)) return '';
-  const pdf = (paper.oa_evidence || /\.pdf(?:[?#]|$)/i.test(paper.open_access_url||'') ? paper.open_access_url : '') || paper.pdf_url;
-  let text=template;
-  if(!/^https?:\/\//.test(pdf||'')) text=text.split('<!-- FULLTEXT -->')[0];
-  const values = {...paper, pdf_url: pdf, authors: paper.authors.join(', ')};
-  return text.replace('<!-- FULLTEXT -->','').replace(/\{\{(title|authors|published|arxiv_url|pdf_url|abstract|doi|original_url|venue)\}\}/g, (_, key) => values[key]||'暂未获取');
-}
+const {makePrompt} = typeof module !== 'undefined' ? require('./maritime_prompt.js') : globalThis.MaritimePrompt;
 
 function validateBackup(backup) {
   if (!backup || backup.schema_version !== 1 || !backup.readings || typeof backup.readings !== 'object' || Array.isArray(backup.readings))

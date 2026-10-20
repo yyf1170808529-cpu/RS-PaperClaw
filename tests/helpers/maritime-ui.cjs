@@ -34,7 +34,10 @@ async function setupUI(saved,dataset,search='',options={}) {
     Blob:class{constructor(parts){this.parts=parts;}},setTimeout:fn=>fn(),setInterval:options.setInterval,
   });
   if(!options.oldSource)vm.runInContext(fs.readFileSync(path.join(ROOT,'docs/maritime_favorites.js'),'utf8'),context);
-  if(!options.daily)vm.runInContext(options.oldSource||fs.readFileSync(path.join(ROOT,'docs/maritime.js'),'utf8'),context);
+  if(!options.daily){
+    vm.runInContext(fs.readFileSync(path.join(ROOT,'docs/maritime_prompt.js'),'utf8'),context);
+    vm.runInContext(options.oldSource||fs.readFileSync(path.join(ROOT,'docs/maritime.js'),'utf8'),context);
+  }
   await new Promise(resolve=>setImmediate(resolve));
   const walk=element=>[element,...element.children.flatMap(walk)];
   return {nodes,storage,context,shared,downloaded,fetched,copied:()=>copied,find:label=>walk(nodes.get('papers')).find(e=>e.textContent===label),elements:()=>walk(nodes.get('papers')),events:eventHandlers};

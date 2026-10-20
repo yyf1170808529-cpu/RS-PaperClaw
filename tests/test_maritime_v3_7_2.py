@@ -28,7 +28,8 @@ class FavoritePageTests(unittest.TestCase):
 
     def test_reading_page_loads_same_version_before_library_script(self):
         html=(Path(__file__).resolve().parents[1]/'docs/maritime.html').read_text(encoding='utf8')
-        self.assertLess(html.index('maritime_favorites.js?v=3.8.1'),html.index('maritime.js?v=3.8.1'))
+        self.assertLess(html.index('maritime_favorites.js?v=3.8.1'),html.index('maritime.js?v=3.8.2'))
+        self.assertLess(html.index('maritime_prompt.js?v=3.8.2'),html.index('maritime.js?v=3.8.2'))
         self.assertIn('id="favorite-tools"',html)
         self.assertIn('view=favorites&amp;v=3.8.1">我的收藏</a>',html)
 
