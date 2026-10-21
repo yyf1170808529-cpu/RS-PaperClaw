@@ -1,16 +1,16 @@
 {
-  "run_id": "2026-10-21T09:26:32.052830+00:00",
-  "completed_at": "2026-10-21T09:27:33.118524+00:00",
+  "run_id": "2026-10-21T13:36:42.053060+00:00",
+  "completed_at": "2026-10-21T13:46:38.187572+00:00",
   "local_update": "partial",
-  "jobs": 0,
-  "successful": 0,
+  "jobs": 42,
+  "successful": 39,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 3,
+  "added": 4,
   "filled": 0,
   "merged": 0,
   "before_count": 3711,
-  "after_count": 3711,
+  "after_count": 3715,
   "translation": {
     "translated": 0,
     "cached": 4,
@@ -85,17 +85,17 @@
     "unsettled_upper_cny": 0.0,
     "tokens": 0,
     "missing_abstract": 0,
-    "candidate_count": 778,
+    "candidate_count": 780,
     "already_attempted_today": 1,
-    "pending_total": 237,
-    "limit_deferred": 117,
+    "pending_total": 239,
+    "limit_deferred": 119,
     "selected_count": 5,
     "ai_reviewed": 322,
     "shortfall": 0,
     "ai_states": {
       "evaluated": 322,
       "uncertain": 218,
-      "unassessed": 238
+      "unassessed": 240
     },
     "publication_status": "complete",
     "reserve_available": 15
@@ -106,6 +106,6 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "39576829522"
+  "retrieval_status": "partial",
+  "github_run_id": "39609307409"
 }

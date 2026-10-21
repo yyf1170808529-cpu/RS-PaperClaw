@@ -193,16 +193,16 @@
     }
   ],
   "selection_audit": {
-    "candidate_count": 778,
+    "candidate_count": 780,
     "ai_reviewed": 322,
     "ai_states": {
       "evaluated": 322,
       "uncertain": 218,
-      "unassessed": 238
+      "unassessed": 240
     },
     "stage_counts": {
       "2": 728,
-      "0": 2,
+      "0": 4,
       "1": 32,
       "3": 16
     },
