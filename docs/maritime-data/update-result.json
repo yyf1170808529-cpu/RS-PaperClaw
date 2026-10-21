@@ -1,21 +1,21 @@
 {
-  "run_id": "2026-10-20T09:30:20.688320+00:00",
-  "completed_at": "2026-10-20T09:33:45.824972+00:00",
+  "run_id": "2026-10-21T01:39:46.109261+00:00",
+  "completed_at": "2026-10-21T01:50:55.764534+00:00",
   "local_update": "partial",
-  "jobs": 0,
-  "successful": 0,
+  "jobs": 42,
+  "successful": 39,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 3,
+  "added": 5,
   "filled": 0,
   "merged": 0,
   "before_count": 3706,
-  "after_count": 3706,
+  "after_count": 3711,
   "translation": {
-    "translated": 0,
-    "cached": 3,
+    "translated": 2,
+    "cached": 2,
     "manual": 0,
-    "failed": 2,
+    "failed": 1,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
@@ -26,33 +26,33 @@
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2610.26090",
+        "paper_id": "2609.21323",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2609.38116",
+        "paper_id": "2609.19867",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.05074",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.14082",
         "source": "english_only",
-        "error": "numeric_mismatch: numbers or percentages changed"
+        "error": "protected_token_missing: RGB"
       },
       {
-        "paper_id": "2609.25860",
+        "paper_id": "2610.14513",
         "source": "argos",
         "error": ""
-      },
-      {
-        "paper_id": "2610.09511",
-        "source": "argos",
-        "error": ""
-      },
-      {
-        "paper_id": "2609.24152",
-        "source": "english_only",
-        "error": "numeric_mismatch: numbers or percentages changed"
       }
     ]
   },
-  "translation_failed": 2,
+  "translation_failed": 1,
   "suspected_duplicates": [
     [
       "doi:10.5281/zenodo.23267832",
@@ -77,49 +77,41 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 77,
-    "cached": 409,
-    "failed": 3,
-    "cost_upper_cny": 0.33995759999999997,
-    "priced_cost_cny": 0.33995759999999997,
+    "processed": 59,
+    "cached": 481,
+    "failed": 1,
+    "cost_upper_cny": 0.2582672,
+    "priced_cost_cny": 0.2582672,
     "unsettled_upper_cny": 0.0,
-    "tokens": 110888,
+    "tokens": 83317,
     "missing_abstract": 0,
-    "candidate_count": 781,
-    "already_attempted_today": 10,
-    "pending_total": 362,
-    "limit_deferred": 242,
+    "candidate_count": 778,
+    "already_attempted_today": 0,
+    "pending_total": 297,
+    "limit_deferred": 177,
     "selected_count": 5,
-    "ai_reviewed": 277,
+    "ai_reviewed": 322,
     "validation_errors": [
       {
-        "paper_id": "2609.38927",
-        "reason": "Invalid transfer path"
-      },
-      {
         "paper_id": "2609.38913",
-        "reason": "Evidence is not an exact abstract quotation"
-      },
-      {
-        "paper_id": "2610.03792",
-        "reason": "Evidence is not an exact abstract quotation"
+        "reason": "Transfer method is not in abstract"
       }
     ],
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 277,
-      "uncertain": 209,
-      "unassessed": 295
+      "evaluated": 322,
+      "uncertain": 218,
+      "unassessed": 238
     },
     "publication_status": "complete",
-    "reserve_available": 15
+    "reserve_available": 20
   },
   "daily_selected": 5,
   "daily_publication": "complete",
-  "published_daily_date": "2026-10-20",
+  "published_daily_date": "2026-10-21",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "39401022678"
+  "retrieval_status": "partial",
+  "github_run_id": "39528491080"
 }
