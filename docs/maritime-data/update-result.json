@@ -1,19 +1,19 @@
 {
-  "run_id": "2026-10-21T01:39:46.109261+00:00",
-  "completed_at": "2026-10-21T01:50:55.764534+00:00",
+  "run_id": "2026-10-21T09:26:32.052830+00:00",
+  "completed_at": "2026-10-21T09:27:33.118524+00:00",
   "local_update": "partial",
-  "jobs": 42,
-  "successful": 39,
+  "jobs": 0,
+  "successful": 0,
   "incomplete": 0,
-  "failed": 3,
-  "added": 5,
+  "failed": 0,
+  "added": 0,
   "filled": 0,
   "merged": 0,
-  "before_count": 3706,
+  "before_count": 3711,
   "after_count": 3711,
   "translation": {
-    "translated": 2,
-    "cached": 2,
+    "translated": 0,
+    "cached": 4,
     "manual": 0,
     "failed": 1,
     "missing_english": 0,
@@ -76,27 +76,21 @@
     ]
   ],
   "ai": {
-    "status": "partial",
-    "processed": 59,
-    "cached": 481,
-    "failed": 1,
-    "cost_upper_cny": 0.2582672,
-    "priced_cost_cny": 0.2582672,
+    "status": "cached",
+    "processed": 0,
+    "cached": 540,
+    "failed": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "unsettled_upper_cny": 0.0,
-    "tokens": 83317,
+    "tokens": 0,
     "missing_abstract": 0,
     "candidate_count": 778,
-    "already_attempted_today": 0,
-    "pending_total": 297,
-    "limit_deferred": 177,
+    "already_attempted_today": 1,
+    "pending_total": 237,
+    "limit_deferred": 117,
     "selected_count": 5,
     "ai_reviewed": 322,
-    "validation_errors": [
-      {
-        "paper_id": "2609.38913",
-        "reason": "Transfer method is not in abstract"
-      }
-    ],
     "shortfall": 0,
     "ai_states": {
       "evaluated": 322,
@@ -104,7 +98,7 @@
       "unassessed": 238
     },
     "publication_status": "complete",
-    "reserve_available": 20
+    "reserve_available": 15
   },
   "daily_selected": 5,
   "daily_publication": "complete",
@@ -112,6 +106,6 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "partial",
-  "github_run_id": "39528491080"
+  "retrieval_status": "not_run_resume",
+  "github_run_id": "39576829522"
 }

@@ -130036,7 +130036,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-13T12:17:37.275984+00:00",
+        "checked_at": "2026-10-21T09:27:08.417462+00:00",
         "url": "https://arxiv.org/abs/2609.39514",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -143928,7 +143928,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-13T12:17:35.841125+00:00",
+        "checked_at": "2026-10-21T09:27:08.283275+00:00",
         "url": "https://arxiv.org/abs/2610.03717",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -579803,8 +579803,18 @@
         "error": "protected_token_missing: RGB",
         "error_type": "translation_validation_failed",
         "english_hash": "03c3ac7ca3f38be4f200203cf596668cfed56eb48e91fca65496b299a1a72ddc",
-        "updated_at": "2026-10-21T01:50:40.487403+00:00"
-      }
+        "updated_at": "2026-10-21T09:27:21.432865+00:00"
+      },
+      "translation_history": [
+        {
+          "status": "failed",
+          "zh": "",
+          "error": "protected_token_missing: RGB",
+          "error_type": "translation_validation_failed",
+          "english_hash": "03c3ac7ca3f38be4f200203cf596668cfed56eb48e91fca65496b299a1a72ddc",
+          "updated_at": "2026-10-21T01:50:40.487403+00:00"
+        }
+      ]
     },
     "2610.14077": {
       "metadata_records": [
@@ -641454,7 +641464,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104890": {
       "metadata_records": [
@@ -641628,7 +641639,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.27617": {
       "metadata_records": [
@@ -642200,7 +642212,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     }
   },
   "days": {
@@ -656996,6 +657009,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-21T01:48:29.755942+00:00"
+    },
+    {
+      "missing_before": 964,
+      "missing_after": 964,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-21T09:27:08.278618+00:00"
     }
   ],
   "translation_batches": [
