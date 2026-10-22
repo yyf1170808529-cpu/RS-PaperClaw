@@ -29,6 +29,7 @@ test('actual generated action rows include all four controls in one nowrap flex 
   }
   assert.match(html,/\.paper-actions\{display:flex;[^}]*flex-wrap:nowrap/);
   assert.ok(html.includes('@media(max-width:360px)'));
+  assert.ok(html.includes('input[type=file]{display:block;max-width:100%;width:100%;box-sizing:border-box'));
   assert.equal((html.match(/第一作者单位：/g)||[]).length,5);
   assert.equal((html.match(/<p>作者：/g)||[]).length,5);
 });
