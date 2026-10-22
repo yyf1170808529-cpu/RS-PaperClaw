@@ -1,21 +1,21 @@
 {
-  "run_id": "2026-10-22T01:34:54.538059+00:00",
-  "completed_at": "2026-10-22T01:45:57.801596+00:00",
-  "local_update": "partial",
-  "jobs": 42,
-  "successful": 39,
+  "run_id": "2026-10-22T09:29:36.897308+00:00",
+  "completed_at": "2026-10-22T09:32:40.345848+00:00",
+  "local_update": "success",
+  "jobs": 0,
+  "successful": 0,
   "incomplete": 0,
-  "failed": 3,
-  "added": 9,
+  "failed": 0,
+  "added": 0,
   "filled": 0,
   "merged": 0,
-  "before_count": 3715,
+  "before_count": 3724,
   "after_count": 3724,
   "translation": {
     "translated": 0,
-    "cached": 2,
+    "cached": 5,
     "manual": 0,
-    "failed": 3,
+    "failed": 0,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
@@ -26,33 +26,33 @@
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2605.26524",
-        "source": "english_only",
-        "error": "protected_token_missing: AIS-derived"
-      },
-      {
-        "paper_id": "2610.08573",
-        "source": "english_only",
-        "error": "protected_token_missing: AP"
-      },
-      {
-        "paper_id": "2610.11113",
-        "source": "argos",
-        "error": ""
-      },
-      {
         "paper_id": "2610.12871",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.09863",
-        "source": "english_only",
-        "error": "protected_token_missing: $k$"
+        "paper_id": "2610.09411",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.03167",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2609.38637",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2609.25067",
+        "source": "argos",
+        "error": ""
       }
     ]
   },
-  "translation_failed": 3,
+  "translation_failed": 0,
   "suspected_duplicates": [
     [
       "doi:10.5281/zenodo.23267832",
@@ -77,76 +77,67 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 103,
-    "cached": 538,
-    "failed": 5,
-    "cost_upper_cny": 0.45696496,
-    "priced_cost_cny": 0.45696496,
+    "processed": 51,
+    "cached": 636,
+    "failed": 1,
+    "cost_upper_cny": 0.23327224000000002,
+    "priced_cost_cny": 0.23327224000000002,
     "unsettled_upper_cny": 0.0,
-    "tokens": 148598,
+    "tokens": 73752,
     "missing_abstract": 0,
-    "candidate_count": 785,
-    "already_attempted_today": 0,
-    "pending_total": 247,
-    "limit_deferred": 127,
+    "candidate_count": 780,
+    "already_attempted_today": 5,
+    "pending_total": 139,
+    "limit_deferred": 19,
     "selected_count": 5,
-    "ai_reviewed": 407,
+    "ai_reviewed": 443,
     "validation_errors": [
       {
-        "paper_id": "2610.11724",
-        "reason": "Transfer method is not in abstract"
-      },
-      {
-        "paper_id": "2609.37053",
+        "paper_id": "2610.04601",
         "reason": "Evidence is not an exact abstract quotation"
-      },
-      {
-        "paper_id": "2609.35486",
-        "reason": "Invalid transfer path"
-      },
-      {
-        "paper_id": "2609.34353",
-        "reason": "Invalid transfer path"
-      },
-      {
-        "paper_id": "2609.34396",
-        "reason": "Invalid transfer path"
       }
     ],
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 407,
-      "uncertain": 234,
-      "unassessed": 144
+      "evaluated": 443,
+      "uncertain": 244,
+      "unassessed": 93
     },
     "publication_status": "complete",
-    "reserve_available": 20
+    "reserve_available": 16
   },
+  "affiliations": [
+    {
+      "paper_id": "2610.12871",
+      "status": "cached_verified",
+      "source": "arXiv官方论文首页"
+    },
+    {
+      "paper_id": "2610.09411",
+      "status": "cached_verified",
+      "source": "arXiv官方论文首页"
+    },
+    {
+      "paper_id": "2610.03167",
+      "status": "cached_unverified"
+    },
+    {
+      "paper_id": "2609.38637",
+      "status": "cached_verified",
+      "source": "arXiv官方论文首页"
+    },
+    {
+      "paper_id": "2609.25067",
+      "status": "cached_verified",
+      "source": "arXiv官方论文首页"
+    }
+  ],
   "daily_selected": 5,
   "daily_publication": "complete",
   "published_daily_date": "2026-10-22",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "partial",
-  "github_run_id": "39706389177",
-  "maintenance": {
-    "version": "3.8.3",
-    "date": "2026-10-22",
-    "retrieval": "not_run",
-    "ai_new_calls": 0,
-    "ai_valid_cached": 5,
-    "local_translation_valid": 5,
-    "api_translation_calls": 0,
-    "source_affiliations_verified": 4,
-    "source_affiliations_pending": 1,
-    "selected_ids": [
-      "2610.12871",
-      "2610.09411",
-      "2610.03167",
-      "2609.38637",
-      "2609.25067"
-    ],
-    "reserve_available": 11
-  }
+  "retrieval_status": "not_run_resume",
+  "github_run_id": "39755657674"
 }
