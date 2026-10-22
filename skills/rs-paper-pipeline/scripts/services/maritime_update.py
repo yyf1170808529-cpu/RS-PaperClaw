@@ -78,8 +78,18 @@ def bounded_fetch(job, args, start, end):
 
 
 def _translation_worker(queue, papers):
+    translator=None
     for paper in papers:
-        queue.put((paper["paper_id"], reading.translate_one(paper)))
+        if translator is None:
+            try:translator=reading.argos_translator()
+            except Exception:
+                queue.put((paper['paper_id'],reading.translate_one(paper)));continue
+        result=reading.translate_one(paper,translator)
+        if result.get('error_type')=='translation_validation_failed':
+            previous=result
+            result=reading.translate_one(paper,translator)
+            result['retry_attempts']=1;result['previous_attempt_error']=previous.get('error')
+        queue.put((paper["paper_id"], result))
     queue.put((None, None))
 
 
@@ -216,6 +226,11 @@ def run_update(args, library, rules):
     save()
     write_json(args.root/'papers/maritime/logs/latest-ai.json',ai)
     print('[3/4] '+json.dumps(ai,ensure_ascii=False),flush=True)
+    from services.mobile_digest import select_daily
+    from services.maritime_metadata import enrich_first_affiliations
+    picks,_=select_daily(args.root,library,end,config=semantic_config)
+    affiliations=enrich_first_affiliations(args.root,library,[p['paper_id'] for p,_,_ in picks])
+    save()
     print('[译] 精选摘要翻译：开始；普通历史库翻译可单独运行',flush=True)
     from services.selected_translation import translate_selected
     try:translations=translate_selected(args.root,library,end,semantic_config,args.translation_timeout)
@@ -238,7 +253,7 @@ def run_update(args, library, rules):
                "added": added, "filled": metadata["filled"], "merged": merged,
                "before_count": before_count, "after_count": len(library["papers"]), "translation": translations,
                "translation_failed": translations["failed"], "suspected_duplicates": dedup["suspected"],
-               "ai":ai, "daily_selected":publication['selection_audit']['selected_count'],
+               "ai":ai,"affiliations":affiliations, "daily_selected":publication['selection_audit']['selected_count'],
                "daily_publication":publication['status'],"published_daily_date":publication['published_date'],
                "published_daily_count":len(json.loads(latest_path.read_text(encoding='utf8'))['papers']) if latest_path.exists() else 0,
                "github_sync": "not_attempted", "pages_publish": "not_attempted"}

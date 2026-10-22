@@ -68,6 +68,7 @@ class DailyTests(unittest.TestCase):
         ps={}
         for i,bucket in enumerate(['water']*4+['land']*4+['general']*4):
             p=copy.deepcopy(self.p);p['paper_id']=p['arxiv_id']=f'2610.{10000+i}';p['recommendation']['bucket']=bucket
+            p.update(doi='10.1234/'+p['paper_id'],arxiv_url='https://arxiv.org/abs/'+p['paper_id'])
             p['assessment']={'level':'high','score':25};p['resource_type']='preprint' if bucket!='water' else 'journal_article'
             self.attach(p,{**self.e,'paper_id':p['paper_id'],'decision':'重点推荐','direct_relevance':5})
             ps[p['paper_id']]=p

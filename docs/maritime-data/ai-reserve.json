@@ -6,7 +6,7 @@
       "paper_id": "2610.12871",
       "fingerprint": "01d6a86da9d217bbaa6cbd567e4dd4c910e6b6152027080b758a89db2fb9b3cf",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-22"
       ],
@@ -16,7 +16,7 @@
       "paper_id": "2610.11113",
       "fingerprint": "b3ac09303b7ed59e7d69ec6034266361c344ee78dd61c70a1dbbd76efcf75d6b",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-14",
         "2026-10-22"
@@ -27,7 +27,7 @@
       "paper_id": "2610.09700",
       "fingerprint": "67333b31fb2ce0ce9ee4a0927f48ac3591c61d0745b00250fa6a998a3336223e",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-15"
       ],
@@ -37,7 +37,7 @@
       "paper_id": "2610.08573",
       "fingerprint": "d85809cb767169331adb3698d6c8b653c21ee540567ba0cc425e1898b026ff4d",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-14",
         "2026-10-22"
@@ -48,7 +48,7 @@
       "paper_id": "2610.07928",
       "fingerprint": "48ca6f5072087a2964c083501294d33b9d185e81f66036fccbaa64cc9fec85c1",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-15"
       ],
@@ -58,7 +58,7 @@
       "paper_id": "doi:10.1109/tim.2025.3559575",
       "fingerprint": "ac8d1999da384b726ec53528553c776b51befcae726fe9eb705ce8789ab156ad",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-18"
       ],
@@ -68,7 +68,7 @@
       "paper_id": "2609.37243",
       "fingerprint": "cff4832c23c19d08eee8a81366eba8e551dbe6f1c2f0af90e3a9c615d68454e9",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-15"
       ],
@@ -78,7 +78,7 @@
       "paper_id": "2609.37162",
       "fingerprint": "d5ddd497657af538f80468d169e95c0ed8681138b177dc82db0cdbb748f37f1a",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-15"
       ],
@@ -88,7 +88,7 @@
       "paper_id": "2610.01750",
       "fingerprint": "e8c97b1c964beb9a25b7ce34111d74e8ef4092ad1815646c2e479ae69f4bd70a",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-15"
       ],
@@ -98,7 +98,7 @@
       "paper_id": "2605.26524",
       "fingerprint": "bd3cb4aa2dbbfad21914e18bcf8daf5414922c031baf10f0aa6ea62c8493e9ac",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-14",
         "2026-10-22"
@@ -109,7 +109,7 @@
       "paper_id": "2609.29235",
       "fingerprint": "ad7e8c863896e949840e6b1e64e9d4163e15c6afe789addd820d8625983fe4c6",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-19"
       ],
@@ -119,7 +119,7 @@
       "paper_id": "2609.23541",
       "fingerprint": "0cc50d956afe1d39534d6bff685737495daec30f789d14fc21a465304060380e",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-16"
       ],
@@ -129,7 +129,7 @@
       "paper_id": "2609.16689",
       "fingerprint": "19464ddb89c6f30b0a2ae2acc9c92c007e3d8f529c8067860b2865af3cd6888b",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-16"
       ],
@@ -139,7 +139,7 @@
       "paper_id": "2609.18139",
       "fingerprint": "4ecd513acd2711481f7f6f97663942d6caf763f63b375b7da62486ed8f994e6c",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-18"
       ],
@@ -149,7 +149,7 @@
       "paper_id": "2610.00970",
       "fingerprint": "9f14154aaaf83b17fdfec03ea49f02dd3774d860e23f7922c2d7aa8e14db2ed1",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-16"
       ],
@@ -159,7 +159,7 @@
       "paper_id": "2609.24510",
       "fingerprint": "f74a3918ac1cd8f20c6adc791e99c8cb3d183b3785f09ce499b2dd6946b3c6e7",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-16"
       ],
@@ -169,7 +169,7 @@
       "paper_id": "2610.18417",
       "fingerprint": "9fa271756e63f445e504b85b7d9a6be923a30ed6c0c5db545f645fd0e2ea38fb",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-18"
       ],
@@ -179,7 +179,7 @@
       "paper_id": "2610.14513",
       "fingerprint": "03dc3cbf57fb437362f5ae43fb1b6786eb0a24c49c9257051900d1b1384e7b96",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-21"
       ],
@@ -189,7 +189,7 @@
       "paper_id": "2610.16749",
       "fingerprint": "37dbc416c49cb6717ccaa835934d607e1aec62493029a87fd1369b24b01f0a9d",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-19"
       ],
@@ -207,7 +207,7 @@
       "paper_id": "2610.21779",
       "fingerprint": "cce293ab62c372e9641a10891e142368655875a1035117d03656bbc762b98201",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-16"
       ],
@@ -217,7 +217,7 @@
       "paper_id": "2610.15338",
       "fingerprint": "7dd8040adb8bc120880271a9bd84415f4bb35d4eb1be983f04d33c3db796252e",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-18"
       ],
@@ -227,7 +227,7 @@
       "paper_id": "2610.17707",
       "fingerprint": "bd30c27266f94f6356870b3b9e98e9bcae82e435cc087aea1b6d4c9d2a075e69",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-18"
       ],
@@ -237,15 +237,17 @@
       "paper_id": "2610.09411",
       "fingerprint": "555a3ebb5960cb6520d4afa242ce81ef931d5022827dcb09c3b021459433e54d",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-22"
+      ],
+      "available": false
     },
     "2610.05074": {
       "paper_id": "2610.05074",
       "fingerprint": "09059d9ce8966b5e846f5e21bcd29e6ab4e225e2e2291ba36749950012c16891",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-21"
       ],
@@ -255,9 +257,11 @@
       "paper_id": "2610.03167",
       "fingerprint": "d6dc826b5239982be10c71dcb4e45a75d960c046be0d224f670bd1a6bc687ef1",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-22"
+      ],
+      "available": false
     },
     "2610.03454": {
       "paper_id": "2610.03454",
@@ -271,7 +275,7 @@
       "paper_id": "2610.13788",
       "fingerprint": "80764b366670e385fb1ee91ca63eb7412381960593c87c4dd7230b3890c961bf",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-19"
       ],
@@ -281,7 +285,7 @@
       "paper_id": "2610.09511",
       "fingerprint": "010cbe117df7b08b6022da1651e266156da40196147568a933b917a6ed7a05d1",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-20"
       ],
@@ -291,15 +295,17 @@
       "paper_id": "2609.38637",
       "fingerprint": "0a444b12cbbc322d07d19cbfa14351fd305efa6dbd9882d82bb4eeb0b141d4f6",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-22"
+      ],
+      "available": false
     },
     "2609.36844": {
       "paper_id": "2609.36844",
       "fingerprint": "3fa1eede476814994b8677760d5f6636d6c3b40b863cf863ce000758a1f4657e",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-19"
       ],
@@ -309,7 +315,7 @@
       "paper_id": "2609.16535",
       "fingerprint": "f8892202053a0f5565c7a0ff78a8cbcc0b2eaff95cdfc2d7b63454d2deaaeae7",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-19"
       ],
@@ -319,9 +325,11 @@
       "paper_id": "2609.25067",
       "fingerprint": "86bbc083f2e8d8ec3bd23f1441d7a9a99d2066f62d563ef5e5db79ef83e2d1b9",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-22"
+      ],
+      "available": false
     },
     "2610.07689": {
       "paper_id": "2610.07689",
@@ -335,7 +343,7 @@
       "paper_id": "2609.38116",
       "fingerprint": "84203dc76ff4c04d6039e6b2e987ca962439033ffb3db43a0f0a0a320022f56e",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-20"
       ],
@@ -353,7 +361,7 @@
       "paper_id": "2609.25860",
       "fingerprint": "a4fcde22b57fdf80c15c641af362883cdcb8ab1b8ffeffa5110b30feb60cada7",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-20"
       ],
@@ -363,7 +371,7 @@
       "paper_id": "2609.24152",
       "fingerprint": "07c00b96c481ef049fd9f5400e47e92d749955e23976334de22b4f75248e7bdc",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-20"
       ],
@@ -373,7 +381,7 @@
       "paper_id": "2609.19867",
       "fingerprint": "0e10851a59b3327a50dd2ec7172587c3280bfbd09afba814481184715eb19662",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-21"
       ],
@@ -383,7 +391,7 @@
       "paper_id": "2610.14082",
       "fingerprint": "667e117aaff4f15627cdeedc104a7f232905100f1390d9cc3fc281a9521acc84",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-21"
       ],
@@ -393,7 +401,7 @@
       "paper_id": "2610.26090",
       "fingerprint": "5b14440a93ad4fdcf92348e9769921f3c4c819a1e249cfd61b0fe6e2289aeb8e",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-20"
       ],
@@ -451,7 +459,7 @@
       "paper_id": "2609.21323",
       "fingerprint": "3f1c00b3d76aa81c16f164bef99b73609808b27641e38259cacefca4e04a1640",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-21"
       ],
@@ -461,7 +469,7 @@
       "paper_id": "2610.09863",
       "fingerprint": "210bcd3c8efac0e46a743d1505ef785a47522dbb0b4fd65d6216a32e0a8db104",
       "review_version": 2,
-      "qualified": true,
+      "qualified": false,
       "pushed_dates": [
         "2026-10-14",
         "2026-10-22"
@@ -477,5 +485,5 @@
       "available": true
     }
   },
-  "available_count": 15
+  "available_count": 11
 }

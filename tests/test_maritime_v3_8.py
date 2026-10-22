@@ -25,7 +25,7 @@ class CloudReserveTests(unittest.TestCase):
             queue=refresh_reserve(root,lib,date(2026,10,19));r=queue['records'][p['paper_id']]
             self.assertEqual(r['fingerprint'],p['semantic']['fingerprint']);self.assertFalse(r['available'])
             self.assertEqual(r['pushed_dates'],['2026-10-18'])
-            self.assertTrue(refresh_reserve(root,lib,date(2026,10,28))['records'][p['paper_id']]['available'])
+            self.assertFalse(refresh_reserve(root,lib,date(2026,10,28))['records'][p['paper_id']]['available'])
             p['abstract']='Changed actual abstract'
             self.assertFalse(refresh_reserve(root,lib,date(2026,10,28))['records'][p['paper_id']]['qualified'])
 

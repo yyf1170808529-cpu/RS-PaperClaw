@@ -2,113 +2,6 @@
   "date": "2026-10-22",
   "papers": [
     {
-      "paper_id": "2605.26524",
-      "title": "CmIVTP: Cross-Modal Interaction-Based Vessel Trajectory Prediction for Maritime Intelligence",
-      "authors": [
-        "Yuxu Lu",
-        "Dong Yang",
-        "Xiaoyu Li",
-        "Mengwei Bao",
-        "Congcong Zhao"
-      ],
-      "published": "2026-10",
-      "arxiv_url": "https://arxiv.org/abs/2605.26524",
-      "doi": "10.1109/tits.2026.3703388",
-      "original_url": "https://doi.org/10.1109/tits.2026.3703388",
-      "pdf_url": "https://arxiv.org/pdf/2605.26524",
-      "open_access_url": "https://arxiv.org/pdf/2605.26524",
-      "venue": "IEEE Transactions on Intelligent Transportation Systems",
-      "abstract": "Maritime intelligent transportation systems (MITS) are essential for ensuring navigation safety and efficiency in busy waterways. However, accurate vessel trajectory prediction remains challenging due to the limitations of single-source data. Automatic identification system (AIS) data is often sparse or unavailable for small vessels, while closed-circuit television (CCTV) data alone cannot fully capture dynamic vessel behavior. To mitigate these challenges, we propose a cross-modal interaction-based vessel trajectory prediction (named CmIVTP) framework to model the intricate interactions between vessel dynamics and environmental constraints. Specifically, we introduce a target-aware scene encoder to extract scene semantic features, effectively capturing vessel-environment interactions and enhancing trajectory prediction accuracy. In addition, we propose a cross-modal interaction transformer, which integrates AIS-derived motion features, CCTV-based environmental features, and scene representations. It leverages cross-modal attention mechanisms to simultaneously capture intra-modal semantics and inter-modal interactions, ensuring dynamically consistent and environmentally feasible predictions. Furthermore, we construct a vessel group trajectory bank by clustering historical AIS trajectories into representative motion patterns, providing an efficient and scalable approach for candidate trajectory generation. Additionally, we introduce the maritime multimodal dataset plus (named Maritime-MmD$^+$), a large-scale dataset that synchronizes AIS data and CCTV video data, providing robust support for multimodal trajectory prediction research. Extensive experiments demonstrate that CmIVTP achieves better performance on multimodal-driven vessel trajectory prediction benchmarks. The code resources for this work can be available at https://github.com/LouisYxLu/CmIVTP.",
-      "resource_type": "journal_article",
-      "oa_evidence": true,
-      "validity": {
-        "status": "accessible"
-      },
-      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
-      "reason": "海事AIS与CCTV跨模态融合及轨迹预测，与视觉-AIS关联和海事多模态感知相关；但直接任务是轨迹预测而非匹配，方法迁移需调整输出头，证据中等。",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2605.26524",
-      "score": 26,
-      "rule_level": "高度相关",
-      "level": "直接相关",
-      "ai_score": 73,
-      "selection_source": "近期候选",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "protected_token_missing: AIS-derived"
-    },
-    {
-      "paper_id": "2610.08573",
-      "title": "Sparse2comm: Towards Robust Cooperative 3D Object Detection",
-      "authors": [
-        "Lei Yang",
-        "Boqi Li",
-        "Chunmian Lin",
-        "Li Wang",
-        "Ziying Song",
-        "Shaoqing Xu",
-        "Heye Huang",
-        "Haibao Yu",
-        "Chen Lv"
-      ],
-      "published": "2026-10-06",
-      "arxiv_url": "https://arxiv.org/abs/2610.08573",
-      "doi": "",
-      "original_url": "https://arxiv.org/abs/2610.08573",
-      "pdf_url": "https://arxiv.org/pdf/2610.08573",
-      "open_access_url": "https://arxiv.org/pdf/2610.08573",
-      "venue": "",
-      "abstract": "Cooperative perception improves autonomous driving by sharing complementary observations among vehicles and roadside infrastructure for 3D object detection. However, practical deployment is constrained by limited bandwidth and unreliable cooperation, where packet loss, transmission delay, and spatial misalignment jointly degrade the cooperative feature stream. Existing methods often reduce communication cost or compensate for one degradation type, leaving coupled disturbances insufficiently addressed. To address this problem, we propose Sparse2comm, a bandwidth-efficient and robust cooperative 3D object detection framework that treats unreliable cooperation as progressive restoration over degraded cooperative features. Sparse Feature Encoding first encodes communication as randomly mask-sampled foreground features transmitted by collaborating agents, from which the ego vehicle reconstructs dense semantic representations. This sparse-to-dense mechanism learns to infer missing object-centric content from sparse observations, enabling ultra-low-bandwidth communication and packet-loss recovery within the same representation. On the semantically restored features, Latency-Aware Alignment predicts motion flow to compensate delayed messages, and Self-Calibrating Fusion estimates residual spatial offsets in a self-supervised manner before adaptive cross-agent fusion. Sparse2comm therefore restores semantic completeness, temporal consistency, and spatial alignment in an ordered pipeline. Extensive experiments on DAIR-V2X, OpenV2V, and V2V4Real show that Sparse2comm maintains competitive clean accuracy and consistently improves robustness under individual and mixed real-world degradations. Compared with the selective feature communication baseline Where2comm, Sparse2comm improves mixed-setting AP@0.5/AP@0.7 by +20.15/+11.79, +12.66/+11.07, and +15.36/+12.61 on the three datasets, respectively.",
-      "resource_type": "preprint",
-      "oa_evidence": false,
-      "validity": {
-        "status": "accessible"
-      },
-      "source": "arXiv",
-      "reason": "cooperative_3d_object_detection；若迁移到船舶多传感器检测中的缺失模态或丢包恢复，可将协同智能体替换为雷达、AIS、视觉等传感器节点，把稀疏前景特征传输改为跨传感器特征传",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.08573",
-      "score": 22,
-      "rule_level": "高度相关",
-      "level": "方法值得关注",
-      "ai_score": 53,
-      "selection_source": "近期候选",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "protected_token_missing: AP"
-    },
-    {
-      "paper_id": "2610.11113",
-      "title": "DiscoVL: Unveiling Disentangled C ross-Modal Representation Learning via Orthogonal Adversarial Regularization for V ision-Language Models",
-      "authors": [
-        "Mengping Dong",
-        "Jinbao Li",
-        "Fei Li"
-      ],
-      "published": "2026-10-08",
-      "arxiv_url": "https://arxiv.org/abs/2610.11113",
-      "doi": "",
-      "original_url": "https://arxiv.org/abs/2610.11113",
-      "pdf_url": "https://arxiv.org/pdf/2610.11113",
-      "open_access_url": "https://arxiv.org/pdf/2610.11113",
-      "venue": "",
-      "abstract": "Pre-trained vision-language models excel across varied perception tasks, but adapting them to novel downstream settings without sacrificing generalization remains non-trivial. Existing parameter-efficient prompt learning method often yields inconsistent representations and fails to account for semantic distribution shifts. In this work, we present DiscoVL, a disentangled cross-modal representation learning framework that couples orthogonal adversarial regularization with structured cross-modal alignment for vision-language models. To address the insufficient cross-modal interaction, our DiscoVL designs a multi-branch low-rank residual aligner that decomposes representations into subspaces and enables bidirectional cross-modal feedback between visual and textual streams at each layer. Furthermore, while conventional triplet constraints overfit features to class centroids, we design an orthogonal regularization for adversarial triplet loss, which prevents centroid collapse and substantially boosts generalization. Evaluations on 15 benchmarks demonstrate that DiscoVL delivers consistent improvements over state-of-the-art methods for base-to-novel generalization, cross-dataset evaluation, and few-shot learning",
-      "resource_type": "preprint",
-      "oa_evidence": false,
-      "validity": {
-        "status": "accessible"
-      },
-      "source": "arXiv",
-      "reason": "cross_modal_representation_learning_vision_language；若迁移到视觉-AIS跨模态匹配，可将文本流分支替换为AIS序列或结构化属性编码分支，保留多分支低",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.11113",
-      "score": 27,
-      "rule_level": "高度相关",
-      "level": "方法值得关注",
-      "ai_score": 67,
-      "selection_source": "近期候选",
-      "abstract_zh": "训练有素的视觉语言模式在各种感知任务中表现优异,但使其适应新的下游环境而不牺牲一般化仍然是非三角性的。 现有的参数高效的即时学习方法往往产生不一致的表示,并且不能说明语义分布的转变. 在这项工作中,我们介绍 DiscoVL, 一种分散的跨模式代表学习框架,即夫妇正统对抗性正规化,为视觉语言模式结构化的跨模式组合。 为了解决跨模式互动不足的问题,我们 DiscoVL 设计一个多分支的低阶剩余对齐器,将表达式分解为子空间,并使得每个层的视觉流和文字流之间能够双向的交叉模式反馈. 此外,虽然传统的三胞胎限制对类人称机器人的过度适应性,但我们设计了对抗性三胞胎损失的正交正规化,这可以防止人称机器人崩溃,并大大促进通化。 对15项基准的评价表明: DiscoVL 持续改进基础至创新通用、跨数据集评价和少时学习的先进方法",
-      "translation_source": "argos",
-      "translation_error": ""
-    },
-    {
       "paper_id": "2610.12871",
       "title": "ROSETTA: Rotation Subspace Estimation for Training-free Transmodal Alignment",
       "authors": [
@@ -127,6 +20,18 @@
       "validity": {
         "status": "unverified"
       },
+      "first_author": "Alex Junho Lee",
+      "first_author_affiliations": [
+        "School of Mechanical Systems Engineering, Sookmyung Women’s University"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/html/2610.12871v1",
+        "locator": "sole author affiliation footnote in author block",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
+      },
       "source": "arXiv",
       "reason": "training-free_transmodal_alignment；将面向LiDAR/相机/热成像/事件跨模态匹配的免训练旋转校准层迁移到视觉–AIS或雷达–AIS跨模态匹配：源域编码器改为船舶视觉",
       "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.12871",
@@ -140,61 +45,208 @@
       "translation_error": ""
     },
     {
-      "paper_id": "2610.09863",
-      "title": "Global Average Precision for Representation Learning",
+      "paper_id": "2610.09411",
+      "title": "Shared Geometry As A Rosetta Stone: Cross-Modal Alignment Without Paired Data",
       "authors": [
-        "Bill Psomas",
-        "Mohammad Mahdi",
-        "Michalis Thomas",
-        "Danda Pani Paudel",
-        "Giorgos Tolias",
-        "Giorgos Kordopatis-Zilos"
+        "Dominik Schnaus",
+        "Thomas Dagès",
+        "Daniel Cremers",
+        "Xi Wang",
+        "Phillip Isola"
       ],
       "published": "2026-10-07",
-      "arxiv_url": "https://arxiv.org/abs/2610.09863",
-      "doi": "10.48550/arxiv.2610.09863",
-      "original_url": "https://arxiv.org/abs/2610.09863",
-      "pdf_url": "https://arxiv.org/pdf/2610.09863",
-      "open_access_url": "https://arxiv.org/pdf/2610.09863",
-      "venue": "arXiv (Cornell University)",
-      "abstract": "Standard information retrieval metrics, such as mean Average Precision (mAP), assess performance one query at a time, based on how the similarities between a query and its positives compare against those with its negatives. The same holds for common representation learning losses, such as InfoNCE and per-query AP surrogates. None of them considers whether similarities are comparable across queries, which any system with a single decision threshold relies on. Global Average Precision (gAP) does, by ranking all query-candidate pairs in one list and computing a single AP. We introduce gSAP, a differentiable surrogate of gAP. It needs only a similarity matrix and a binary matrix marking the positive pairs, the same input as existing losses, so it is a drop-in replacement for them and agnostic to the encoder, the modality, and the source of supervision. Since it considers all possible pairwise comparisons in the batch jointly, it also remains trainable at low temperatures, a regime where per-query surrogates run out of gradient. Swapping it into established recipes improves supervised metric learning, cross-modal alignment, and self-supervised pretraining, where, to our knowledge, it is the first ranking loss to replace the community standard InfoNCE in the latter two. Its similarities are more consistent across queries, which drives the gains under a universal threshold. gSAP retrieves up to four times as many positive pairs as the strongest AP surrogate at the same precision, and it degrades the least when queries with no positives in the database are added. Beyond thresholding, models trained with gSAP also learn better representations, with higher transfer, $k$NN and zero-shot classification accuracy.",
+      "arxiv_url": "https://arxiv.org/abs/2610.09411",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.09411",
+      "pdf_url": "https://arxiv.org/pdf/2610.09411",
+      "open_access_url": "https://arxiv.org/pdf/2610.09411",
+      "venue": "",
+      "abstract": "Multimodal representations enable zero-shot classification and retrieval, but aligning independently trained models usually requires large amounts of paired data. Yet, the Platonic Representation Hypothesis suggests that models trained on different modalities may converge spontaneously toward a shared representation geometry. But then, do we even need paired examples for cross-modal alignment? Remarkably, we show that paired examples are unnecessary for coarse cross-modal alignment. Our simple Wasserstein Procrustes method with a coarse geometric initialization aligns two disjoint embedding sets by estimating a single orthogonal map without seeing any pairs. Across datasets, modalities, and unimodal models, we show that we can consistently align independently trained representations without pairs, and standard geometric alignment metrics accurately predict when this is possible. Nevertheless, we can naturally benefit from paired examples. In the very few-pair regime, our method substantially outperforms existing ones, while staying competitive with pair-based methods with more added examples. Finally, we demonstrate that the resulting alignments can enable text-to-image generation without paired examples. These results show that independently trained models often share enough geometry to establish cross-modal correspondence with little or no paired data.",
       "resource_type": "preprint",
-      "oa_evidence": true,
+      "oa_evidence": false,
       "validity": {
-        "status": "accessible"
+        "status": "unverified"
+      },
+      "first_author": "Dominik Schnaus",
+      "first_author_affiliations": [
+        "TU Munich"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/pdf/2610.09411",
+        "locator": "page 1: Dominik Schnaus superscripts 1,2; affiliation 1 TU Munich",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
       },
       "source": "arXiv",
-      "reason": "跨模态/度量学习排序损失；可将gSAP作为视觉–AIS跨模态匹配的排序损失：输入为视觉嵌入与AIS轨迹/身份嵌入的相似度矩阵，正样本矩阵由同一船舶关联对构造；训练时替换InfoNCE或逐查询AP替代损",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.09863",
-      "score": 22,
-      "rule_level": "高度相关",
+      "reason": "无配对数据的跨模态对齐；可将两组独立训练嵌入间的正交映射对齐用于视觉–AIS或雷达–AIS跨模态匹配：输入改为视觉检测嵌入与AIS/雷达轨迹嵌入，训练目标改为估计正交对齐映射，结构上可保留几何初始化与",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.09411",
+      "score": 13,
+      "rule_level": "方法可借鉴",
       "level": "方法值得关注",
       "ai_score": 53,
       "selection_source": "近期候选",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "protected_token_missing: $k$"
+      "abstract_zh": "多模态 表征 启用 零样本 分类和检索,但调整独立训练的模型通常需要大量的对接数据. 然而,柏拉图 表征 假想表明,模型经过了不同的培训。 模态 可能自发地趋同到共同的 表征 几何来. 但是,我们甚至需要配对的例子 跨模态 对齐? 值得注意的是,我们显示配对的例子对于粗糙是不必要的 跨模态 对齐. 我们简单的Wasserstein Procrustes 方法,用粗几何初始化,通过估计单个正对映图来对准两套脱节嵌入相机,没有看到任何对. 整个数据集, 模态, 和单模式模式,我们显示,我们能够始终如一地将训练有素的 表征 和标准的几何 对齐 精确预测何时可以做到这一点。 然而,我们可以自然地从对等的例子中受益。 在极少数国家体制中,我们的方法大大超过现有的方法,同时与有更多实例的对等方法保持竞争。 最后,我们表明,由此产生的校正可以使文本到图像生成无需配对的例子。 这些结果显示,经过独立培训的模型往往具有足够的几何特征,可以建立 跨模态 对应数据少或没有对齐的函证.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.03167",
+      "title": "Geometry-Aligned Semantic Matching for Cross-Modal Planar Image Registration",
+      "authors": [
+        "Zhiwei Wang",
+        "Defeng He",
+        "Yuxing Li",
+        "Meilu Zhu",
+        "Edmund Y. Lam"
+      ],
+      "published": "2026-10-02",
+      "arxiv_url": "https://arxiv.org/abs/2610.03167",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.03167",
+      "pdf_url": "https://arxiv.org/pdf/2610.03167",
+      "open_access_url": "https://arxiv.org/pdf/2610.03167",
+      "venue": "",
+      "abstract": "Cross-modal image matching establishes stable and accurate geometric correspondences across modalities for planar registration. Existing semantic representations provide cross-modal consistency, but semantic similarity does not necessarily imply geometric correspondence. Meanwhile, fine-grained CNN features provide accurate local details but lack global cross-modal semantic guidance for stable refinement. To address these issues, we propose CDPM, which first establishes geometrically consistent semantic representations and then preserves their dominant role in correspondence estimation during fine-grained localization. Specifically, we progressively adapt DINOv3 using geometrically consistent cross-modal patch pairs, enabling feature similarity to better reflect true cross-modal spatial correspondences. We then construct a DINO-Centric Feature Pyramid, where multi-scale DINO representations maintain stable cross-modal correspondences, while a lightweight CNN branch provides auxiliary structural details for precise local refinement. Extensive experiments on three cross-modal datasets demonstrate the superior performance of CDPM. On VIS-IR, compared with the dense matcher RoMa, CDPM improves AUC@3/5/10/20 by 7.36, 13.40, 13.75, and 10.42 percentage points, respectively, and reduces mACE from 5.83 to 2.78 pixels. It also outperforms RoMa v2 across all metrics while requiring 45.6% fewer FLOPs. The online demo and dataset are available, and the code will be released on our project page at https://warren-wzw.github.io/CDPM/.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Zhiwei Wang",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "跨模态图像匹配/配准；可将几何一致跨模态块对适配与DINO中心特征金字塔用于视觉–AIS或红外–可见光跨模态匹配：把AIS点投影生成的图像块与视觉图像块配对作为跨模态块对，用几何一致性约束适配DINO",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.03167",
+      "score": 13,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "跨模态 图像匹配建立稳定准确的几何对应 模态 平面图 配准. 现有语义 表征 提供 跨模态 一致性,但语义相似性并不一定意味着几何对应. 同时,精致的 CNN 特性提供准确的当地细节,但缺乏全球 跨模态 语义指导稳定完善. 为了解决这些问题,我们提议 CDPM, 首先确定几何一致的语义 表征 然后在精细的本地化过程中保留其在函证估计中的主导作用. 具体来说,我们逐渐适应 DINOv3 使用几何一致性 跨模态 补丁配对, 功能相似, 以更好地反映真实性 跨模态 空间通信。 然后我们建造一个 DINO-Centric 特性多尺度金字塔 DINO 表征 保持稳定 跨模态 通信,轻量级 CNN 分支为精确的局部改进提供了辅助结构细节. 三项广泛试验 跨模态 数据集显示 CDPM. 在 VIS-IR, 与密密的配主相比, RoMa, CDPM 改进 AUC@3/5/10/20 通过 7.36, 13.40, 13.75, 和 10.42 百分比和减少数 mACE 来自 5.83 以 2.78 象素类. 也比成绩好 RoMa v2 适用于所有度量衡,同时需要 45.6% 减少 FLOPs. 在线演示和数据集可供使用,代码将在我们的项目网页上公布,网址是: https://warren-wzw.github.io/CDPM/.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.38637",
+      "title": "Template-Search Domain Adaptation via Multi-Stage Feature Alignment for Cross-Modal Object Tracking",
+      "authors": [
+        "Fereshteh Aghaee Meibodi",
+        "Amir Mehdi Soufi Enayati",
+        "Shadi Alijani",
+        "Homayoun Najjaran"
+      ],
+      "published": "2026-09-29",
+      "arxiv_url": "https://arxiv.org/abs/2609.38637",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.38637",
+      "pdf_url": "https://arxiv.org/pdf/2609.38637",
+      "open_access_url": "https://arxiv.org/pdf/2609.38637",
+      "venue": "",
+      "abstract": "Visual object tracking typically assumes that the initial template and subsequent search frames share the same sensing modality. In practice, sensor availability or operation may change over time, creating a substantial representation gap between template and search frames. Unlike conventional multi-modal tracking where paired modalities are simultaneously available, cross-modal tracking requires localization when template and search frames originate from different active modalities. Accordingly, we introduce TSDA-Track, a Template-Search Domain Adaptation framework to reduce modality discrepancy during training. We investigate two feature alignment strategies. Pre-AFA TSDA-Track applies adversarial alignment before transformer's template-search interaction to suppress modality-specific bias. Enc-CFA TSDA-Track applies contrastive alignment to encoder representations after interaction to strengthen target-level cross-modal correspondence. Both variants retain a shared inference pipeline without modality-specific branches. Experiments on LasHeR, and zero-shot evaluations on RGBT234 and GTOT under multiple cross-modal protocols demonstrate improvements over representative state-of-the-art trackers. For instance, under the modality-switch protocol on RGBT234, Pre-AFA TSDA-Track achieves an SR/PR of 43.2/56.0, compared with 36.8/50.0 for ToMP-101 baseline. In addition, a study on Anti-UAV-024 further verifies the applicability of TSDA-Track to aerial tracking. Our study highlights the effectiveness of feature alignment domain adaptation for cross-modal tracking.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Fereshteh Aghaee Meibodi",
+      "first_author_affiliations": [
+        "Department of Electrical and Computer Engineering, University of Victoria"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/html/2609.38637v1",
+        "locator": "first creator block explicitly contains department and University of Victoria",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
+      },
+      "source": "arXiv",
+      "reason": "跨模态目标跟踪；可将模板/搜索双输入改为雷达与AIS（或视觉与AIS）两种模态表征，保留共享编码器；把对抗对齐前置到交互前以抑制模态偏差，把对比对齐放在融合后，训练目标改为同一目标在两种模态下的表征拉",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.38637",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "视觉 目标跟踪 通常假定初始模板和随后的搜索框具有相同的感知性 模态. 在实践中,传感器的可用性或操作可能随时间而变化,从而产生大量 表征 模板和搜索框架之间的间隙 。 不同于常规 多模态 跟踪对齐位置 模态 同时可用, 跨模态 当模板和搜索框来自不同的活动时,跟踪需要本地化 模态. 因此,我们介绍 TSDA-Track, 一个模板搜索域适应框架,以减少 模态 培训期间的差异。 我们调查两个特点 对齐 战略. Pre-AFA TSDA-Track 适用对抗性 对齐 在此之前 Transformer's 模板搜索互动以压制 模态-具体偏差. Enc-CFA TSDA-Track 应用对比 对齐 编码器 表征 在互动之后加强目标层面 跨模态 信函往来。 两种变体均保留一个共用推论管道,没有 模态-具体的分支。 实验 LasHeR, 和 零样本 评价 RGBT234 和 GTOT 在多个下 跨模态 与具有代表性的先进追踪器相比,协议显示出了改进。 例如, 模态-打开协议 RGBT234, Pre-AFA TSDA-Track 实现 SR/PR 的 43.2/56.0, 比较 36.8/50.0 用于 ToMP-101 基线。 此外,还研究: Anti-UAV-024 进一步核实 TSDA-Track 到空中跟踪。 我们的研究突出了特色的有效性 对齐 域适应 跨模态 跟踪.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.25067",
+      "title": "SPARC: SuperPixel-Aware Region Contrastive Learning for Self-Supervised Dense Prediction",
+      "authors": [
+        "David Szczecina",
+        "Yuanpei Xiang",
+        "Jitao Hu",
+        "David Clausi",
+        "Yuhao Chen",
+        "Jason Deglint",
+        "Paul Fieguth"
+      ],
+      "published": "2026-09-16",
+      "arxiv_url": "https://arxiv.org/abs/2609.25067",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.25067",
+      "pdf_url": "https://arxiv.org/pdf/2609.25067",
+      "open_access_url": "https://arxiv.org/pdf/2609.25067",
+      "venue": "",
+      "abstract": "Self-supervised learning (SSL) has become an effective approach for learning visual representations without manual annotations. Among SSL approaches, contrastive learning has been widely used for visual representation learning. However, existing contrastive SSL methods have focused primarily on image-level or pixel-level representation learning, while region-level representation learning remains less explored. We propose SPARC, a region-level contrastive learning framework that leverages superpixels to establish explicit correspondence between augmented image views. SPARC introduces a region contrastive branch that performs superpixel-based feature pooling and optimizes a region-level contrastive objective jointly with a global image-level objective. Under identical settings, SPARC consistently outperforms previous methods such as MoCo-v2 and DenseCL, achieving improvements of up to +9.79 mIoU for semantic segmentation and +4.88 AP for object detection. Ablation studies further demonstrate that region-level objectives produce the strongest performance. Thus, region-level contrastive learning is an effective approach for improving self-supervised visual pretraining for dense prediction tasks. Code repository can be accessed at https://github.com/xRIPEIx/SPARC.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "David Szczecina",
+      "first_author_affiliations": [
+        "Systems Design Engineering, University of Waterloo"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/pdf/2609.25067",
+        "locator": "page 1 shared author address below author list",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
+      },
+      "source": "arXiv",
+      "reason": "自监督区域对比学习预训练；将超像素区域池化与区域对比目标用于船舶图像预训练：输入换为海上/内河船舶图像，超像素替代固定网格生成候选区域；保留图像级与区域级联合损失，用于船舶分割或检测骨干预训练。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.25067",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "自监督 学习 (SSL) 成为学习视觉的一种有效方法 表征 没有手动说明。 其中 SSL 方针, 对比学习 已被广泛用于视觉 表征学习. 然而,现有的对比性 SSL 方法主要侧重于图像级别或 像素级 表征学习, 在区域层面 表征学习 仍然没有多少探索。 我们提议 SPARC, 区域一级 对比学习 利用超像素建立增强图像视图之间明确对应的框架. SPARC 引入一个区域对比性分支,执行基于超像素的特性集合,并结合全球图像级目标优化区域级对比性目标. 在相同的设置下, SPARC 持续超过以往的方法,例如 MoCo-v2 和 DenseCL, 实现最多 +9.79 mIoU 用于语义分割和 +4.88 AP 用于 目标检测. 差距研究进一步表明,区域一级的目标产生最强的业绩。 因此,区域一级 对比学习 是一种有效的改进方法 自监督 用于密集预测任务的视觉预训. 代码寄存器可在 https://github.com/xRIPEIx/SPARC.",
+      "translation_source": "argos",
+      "translation_error": ""
     }
   ],
   "selection_audit": {
-    "candidate_count": 785,
-    "ai_reviewed": 407,
+    "candidate_count": 780,
+    "ai_reviewed": 403,
     "ai_states": {
-      "evaluated": 407,
-      "uncertain": 234,
+      "evaluated": 403,
+      "uncertain": 233,
       "unassessed": 144
     },
     "stage_counts": {
-      "2": 737,
+      "2": 732,
       "0": 5,
       "1": 27,
       "3": 16
     },
     "ai_rejected": 387,
-    "qualified_count": 20,
+    "qualified_count": 16,
     "selected_count": 5,
     "shortfall": 0,
-    "translation_environment_errors": []
+    "translation_environment_errors": [],
+    "translation_errors": []
   },
   "publication_status": "complete"
 }

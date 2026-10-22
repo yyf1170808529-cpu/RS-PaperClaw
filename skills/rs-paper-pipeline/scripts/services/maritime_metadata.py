@@ -6,6 +6,51 @@ from datetime import datetime, timezone
 from clients import scholarly_client as scholarly, arxiv_client as arxiv
 from services import maritime_v2 as v2
 
+def enrich_first_affiliations(root,library,keys,timeout=8,network=True):
+    """Only the selected authors; never infer institutions from an unlinked author list."""
+    results=[]
+    now=datetime.now(timezone.utc)
+    for key in dict.fromkeys(keys):
+        paper=library['papers'][key]
+        first=(paper.get('authors') or [''])[0]
+        owner=paper.get('first_author') or first
+        if paper.get('affiliation_verified') and paper.get('first_author_affiliations') and v2.normalized_identity(owner)==v2.normalized_identity(first):
+            results.append({'paper_id':key,'status':'cached_verified','source':paper.get('affiliation_source')});continue
+        if v2.normalized_identity(owner)!=v2.normalized_identity(first):paper['affiliation_verified']=False
+        previous=paper.get('affiliation_check',{})
+        if previous.get('revision')==1 and previous.get('time','')[:10]==now.isoformat()[:10]:
+            results.append({'paper_id':key,'status':'cached_unverified'});continue
+        attempts=[]
+        candidates=[(r,'local verified metadata') for r in paper.get('metadata_records',[]) if r.get('affiliation_verified')]
+        sources=(['crossref','openalex'] if paper.get('doi') else ['openalex_title'] if paper.get('published') else [])+(['arxiv'] if paper.get('arxiv_id') else [])
+        for source in [None]+(sources if network else []):
+            if source is not None:
+                try:
+                    if source=='openalex_title':
+                        year=paper['published'][:4]
+                        batch,_=scholarly.fetch_openalex(year+'-01-01',year+'-12-31',paper['title'],root,pages=1,rows=3,timeout=timeout,retries=1)
+                        candidates.extend((candidate,source) for candidate in batch)
+                    else:
+                        candidate=arxiv.fetch_maritime_metadata(paper['arxiv_id'],timeout,1) if source=='arxiv' else scholarly.fetch_doi(paper['doi'],source,root,timeout,1)
+                        candidates.append((candidate,source))
+                    attempts.append({'source':source,'status':'received'})
+                except Exception as exc:attempts.append({'source':source,'status':'unavailable','error':str(exc)});continue
+            for candidate,origin in candidates:
+                same_id=(paper.get('doi') and candidate.get('doi')==paper['doi']) or (paper.get('arxiv_id') and candidate.get('arxiv_id')==paper['arxiv_id'])
+                first=(paper.get('authors') or [''])[0]
+                candidate_first=candidate.get('first_author') or (candidate.get('authors') or [''])[0]
+                if not same_id or not first or v2.normalized_identity(first)!=v2.normalized_identity(candidate_first):continue
+                if v2.normalized_identity(paper['title'])!=v2.normalized_identity(candidate.get('title')):continue
+                if candidate.get('affiliation_verified') and candidate.get('first_author_affiliations'):
+                    for field in ('first_author','first_author_affiliations','affiliation_verified','affiliation_source'):
+                        paper[field]=candidate.get(field,first if field=='first_author' else '')
+                    paper['affiliation_source']=paper.get('affiliation_source') or origin
+                    break
+            if paper.get('affiliation_verified') and paper.get('first_author_affiliations'):break
+        paper['affiliation_check']={'revision':1,'time':now.isoformat(),'status':'verified' if paper.get('affiliation_verified') and paper.get('first_author_affiliations') else 'unverified','attempts':attempts}
+        results.append({'paper_id':key,**paper['affiliation_check']})
+    return results
+
 
 def cached_abstracts(root):
     records = []

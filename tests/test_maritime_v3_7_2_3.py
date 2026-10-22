@@ -35,7 +35,7 @@ class PublicationProtectionTests(unittest.TestCase):
             self.assertEqual(empty['publication_status'],'failed')
             self.assertEqual(empty['published_date'],'2026-10-16')
 
-    def test_rule_candidate_review_and_old_pushed_history_are_available_without_lowering_sources(self):
+    def test_rule_candidate_review_does_not_recycle_old_pushed_history(self):
         p=self.make('2610.20000','2025-01-01')
         p.update(resource_type='preprint',application_bucket='general',publication_status='preprint',recommendation={'bucket':'candidate'},assessment={'level':'transfer','score':12})
         p['semantic']['fingerprint']=ai.fingerprint(p,ai.settings())
@@ -43,9 +43,9 @@ class PublicationProtectionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);folder=root/'docs/maritime-data/mobile';folder.mkdir(parents=True)
             (folder/'2026-10-01.json').write_text(json.dumps({'papers':[{'paper_id':p['paper_id']}]}))
-            self.assertEqual(len(candidate_pool(root,lib,date(2026,10,17))),1)
+            self.assertEqual(len(candidate_pool(root,lib,date(2026,10,17))),0)
             selected=build_mobile_digest(root,lib,date(2026,10,17))
-            self.assertEqual(len(selected['papers']),1)
+            self.assertEqual(len(selected['papers']),0)
             p.update(application_bucket='water')
             self.assertEqual(candidate_pool(root,lib,date(2026,10,17)),[])
 
@@ -53,4 +53,4 @@ class PublicationProtectionTests(unittest.TestCase):
         page=render_mobile_page({'date':'2026-10-16','papers':[]})
         self.assertNotIn('收藏已就绪',page)
         self.assertNotIn('版本 3.',page)
-        self.assertIn('maritime_favorites.js?v=3.8.1',page)
+        self.assertIn('maritime_favorites.js?v=3.8.3',page)

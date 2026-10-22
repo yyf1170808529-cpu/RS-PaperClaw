@@ -22,9 +22,12 @@ class DailyStrictTests(unittest.TestCase):
     def make(self, id, published, direct=5):
         p=paper(title='Radar AIS association for ship tracking')
         p.update(paper_id=id, arxiv_id=id, published=published, publication_date=published,
+                 doi='10.1234/'+id,arxiv_url='https://arxiv.org/abs/'+id,pdf_url='https://arxiv.org/pdf/'+id,
                  abstract='We propose radar AIS association for ship tracking with cross-modal matching and target detection.',
                  resource_type='journal_article', recommendation={'bucket':'water'},
                  quality={'high_journal':True}, assessment={'level':'high','score':30})
+        p['translation']={'status':'machine','english_hash':hashlib.sha256(p['abstract'].encode()).hexdigest(),
+                          'zh':'我们通过跨模态匹配进行雷达与AIS船舶目标跟踪和目标检测。'}
         if direct is not None:
             evaluation={'paper_id':id,'task_type':'Radar AIS association','direct_relevance':direct,
                         'transferability':2,'method_evidence':[{'quote_en':'radar AIS association for ship tracking',

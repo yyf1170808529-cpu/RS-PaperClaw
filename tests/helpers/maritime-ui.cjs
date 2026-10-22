@@ -4,12 +4,14 @@ function hub(initial){return {storage:initial||new Map(),listeners:new Set()};}
 async function setupUI(saved,dataset,search='',options={}) {
   class Element {
     constructor(tag){this.tag=tag;this.children=[];this.value='';this.textContent='';this.handlers={};this.style={};this.dataset={};}
-    append(...items){this.children.push(...items);}
+    append(...items){for(const item of items){item.parentNode=this;this.children.push(item);}}
     replaceChildren(...items){this.children=items;}
     addEventListener(name,fn){this.handlers[name]=fn;}
     setAttribute(name,value){this[name]=value;}
     click(){return this.handlers.click?.();}
     focus(){} select(){}
+    closest(tag){let node=this;while(node&&node.tag!==tag)node=node.parentNode;return node;}
+    querySelector(selector){return this.children.find(n=>selector==='[data-paper-panels]'&&n.dataset.paperPanels);}
   }
   const nodes=new Map(['date','topic','level','sort','search','summary','report','message','papers','export','import','window','quality','bucket','language','favorite-tools','favorites-status','favorite-message'].map(id=>[id,new Element(id)]));
   const shared=options.hub||hub();const storage=shared.storage;
@@ -22,7 +24,14 @@ async function setupUI(saved,dataset,search='',options={}) {
   if(options.daily){
     nodes.set('daily-favorites',new Element('div'));
     const data=new Element('script');data.textContent=JSON.stringify(dataset);nodes.set('daily-favorites-data',data);
-    for(const p of dataset.papers){const el=new Element('div');el.dataset.favoritePaper=p.paper_id;holders.push(el);nodes.get('papers').append(el);}
+    for(const p of dataset.papers){
+      const el=new Element('div');el.dataset.favoritePaper=p.paper_id;holders.push(el);
+      if(options.inline){
+        const article=new Element('article'),actions=new Element('div'),panels=new Element('div');
+        el.dataset.favoriteInline='1';panels.dataset.paperPanels=p.paper_id;
+        actions.append(el);article.append(actions,panels);nodes.get('papers').append(article);
+      }else nodes.get('papers').append(el);
+    }
   }
   const context=vm.createContext({console,Date,Set,Map,JSON,Object,Error,Promise,URLSearchParams,
     document:{getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag),querySelectorAll:()=>holders},

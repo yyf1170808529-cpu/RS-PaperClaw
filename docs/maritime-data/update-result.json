@@ -129,5 +129,24 @@
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "partial",
-  "github_run_id": "39706389177"
+  "github_run_id": "39706389177",
+  "maintenance": {
+    "version": "3.8.3",
+    "date": "2026-10-22",
+    "retrieval": "not_run",
+    "ai_new_calls": 0,
+    "ai_valid_cached": 5,
+    "local_translation_valid": 5,
+    "api_translation_calls": 0,
+    "source_affiliations_verified": 4,
+    "source_affiliations_pending": 1,
+    "selected_ids": [
+      "2610.12871",
+      "2610.09411",
+      "2610.03167",
+      "2609.38637",
+      "2609.25067"
+    ],
+    "reserve_available": 11
+  }
 }

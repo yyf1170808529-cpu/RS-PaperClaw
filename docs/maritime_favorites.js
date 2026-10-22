@@ -117,13 +117,13 @@
   function download(name,text,type='text/markdown;charset=utf-8') {
     const url=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
-  function mount(holder,paper,store,message=()=>{}) {
+  function mount(holder,paper,store,message=()=>{},options={}) {
     const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
     const button=el('button'),panel=el('details'),summary=el('summary','收藏笔记'),editor=el('textarea');
     editor.setAttribute('aria-label','收藏笔记：'+(paper.title||paper.paper_id));editor.style.minHeight='100px';editor.placeholder='可留空，支持纯文本和 Markdown';
     const save=el('button','保存笔记'),close=el('button','暂不填写'),cancel=el('button','取消收藏（保留笔记）'),preview=el('pre');
-    panel.append(summary,editor,save,close,cancel,preview);holder.append(button,panel);let dirty=false,base='';
-    function update(){const p=store.get(paper.paper_id||paper.arxiv_id);button.textContent=p&&p.active!==false?'已收藏':'收藏';panel.hidden=!p;
+    panel.append(summary,editor,save,close,cancel,preview);holder.append(button);(options.panelHost||holder).append(panel);let dirty=false,base='';
+    function update(){const p=store.get(paper.paper_id||paper.arxiv_id);button.textContent=p&&p.active!==false?(options.inline?'★已收藏':'已收藏'):(options.inline?'☆收藏':'收藏');panel.hidden=!p;
       if(!dirty){base=p?.note||'';editor.value=base;}preview.textContent=p?.note||'';
       if(p?.note_history?.length)preview.textContent+='\n\n已保留的其他笔记版本：\n'+p.note_history.join('\n\n');}
     function action(fn){try{fn();update();}catch(e){message('收藏保存失败：'+e.message);}}
@@ -154,7 +154,10 @@
       const data=JSON.parse(document.getElementById('daily-favorites-data').textContent),store=create(localStorage);
       store.configure(data.papers,data.aliases);toolbar(document.getElementById('daily-favorites'),store,message);
       const papers=new Map(data.papers.map(p=>[p.paper_id,p]));
-      for(const holder of document.querySelectorAll('[data-favorite-paper]'))mount(holder,papers.get(holder.dataset.favoritePaper),store,message);
+      for(const holder of document.querySelectorAll('[data-favorite-paper]')){
+        const inline=holder.dataset.favoriteInline==='1';
+        mount(holder,papers.get(holder.dataset.favoritePaper),store,message,inline?{inline:true,panelHost:holder.closest('article').querySelector('[data-paper-panels]')}:{ });
+      }
       message(store.warnings().join(' '));
       if(data.date && typeof setInterval==='function'){
         const fresh=document.createElement('a');fresh.hidden=true;document.getElementById('daily-favorites').append(fresh);

@@ -532,7 +532,12 @@ def fetch_maritime_metadata(arxiv_id, timeout=20, retries=1):
     entry = ET.fromstring(xml).find("atom:entry", ATOM_NAMESPACE)
     if entry is None or canonical_arxiv_id(entry.findtext("atom:id", "", ATOM_NAMESPACE)) != arxiv_id:
         raise ValueError("arXiv identity mismatch or missing entry")
+    first=entry.find('atom:author',ATOM_NAMESPACE)
+    affiliations=[a.text.strip() for a in first.findall('arxiv:affiliation',ATOM_NAMESPACE) if a.text and a.text.strip()] if first is not None else []
     return {"paper_id": arxiv_id, "arxiv_id": arxiv_id,
+            "first_author":first.findtext('atom:name','',ATOM_NAMESPACE) if first is not None else '',
+            "first_author_affiliations":affiliations,'affiliation_verified':bool(affiliations),
+            'affiliation_source':'arXiv first-author XML' if affiliations else '',
             "title": " ".join(entry.findtext("atom:title", "", ATOM_NAMESPACE).split()),
             "abstract": " ".join(entry.findtext("atom:summary", "", ATOM_NAMESPACE).split()),
             "authors": [a.findtext("atom:name", "", ATOM_NAMESPACE) for a in entry.findall("atom:author", ATOM_NAMESPACE)],

@@ -1244,9 +1244,11 @@
       "open_access_url": "https://arxiv.org/pdf/2610.12871",
       "publication_date": "2026-10-09",
       "first_author": "Alex Junho Lee",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "School of Mechanical Systems Engineering, Sookmyung Women’s University"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
       "metadata_source": [
         "arXiv"
       ],
@@ -1434,7 +1436,23 @@
             "updated_at": "2026-10-13T11:11:28.536308+00:00"
           }
         }
-      ]
+      ],
+      "affiliation_check": {
+        "time": "2026-10-22T05:24:56.620258+00:00",
+        "status": "verified",
+        "attempts": [
+          {
+            "source": "arxiv",
+            "status": "received"
+          }
+        ]
+      },
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/html/2610.12871v1",
+        "locator": "sole author affiliation footnote in author block",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
+      }
     },
     "2610.12835": {
       "arxiv_id": "2610.12835",
@@ -7395,14 +7413,14 @@
       },
       "discovery_date": "2026-10-12",
       "translation": {
-        "status": "failed",
+        "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "标准信息检索指标,例如: 平均精度均值 (mAP), 一次评估一个查询的性能,其依据是查询与正数之间的相似性如何与其负数相比较。 同样的情况也适用于共同的代表学习损失,例如: InfoNCE 和过油的AP代孕。 没有一个系统考虑在任何具有单一决定门槛的系统所依赖的查询中是否有相似之处。 全球平均精度 (gAP) does,通过将所有查询-扫描对数排在一个列表中并计算一个AP. 我们介绍 gSAP, 不同代孕者 gAP. 它只需要一个相似性矩阵和一个二进制矩阵来标记正对,与现有的损失一样输入,因此它是对正对的倒置替代,并且对编码器,模式,以及监督的来源不可知. 由于它考虑在批量中所有可能的对等比较,它在低温下仍然可以训练,这种制度是每桶代孕用完梯度的。 将其切入既定的食谱中,可改进监督的计量学习、跨模式的配合,以及 自监督 据我们所知,这是第一个取代社区标准的排名损失 InfoNCE 在后两段。 它的相似性在各种查询中更为一致,这推动了在普遍阈值下的收益. gSAP 以同样精度检索到最多为最强AP代位数四倍的正对,当数据库中没有正对的查询被添加时,其降解性最小. 在门槛之外,通过下列方法培训的模型: gSAP 也学习更好的表现,增加调动, $k$NN和零射门分类精确度.",
+        "zh": "标准信息检索指标,例如: 平均精度均值 (mAP), 一次评估一个查询的性能,基于查询与正数之间的相似性如何与查询与正数相比较。 负样本. 常见情况也是如此 表征学习 损失,例如 InfoNCE 和每桶 AP 代办. 没有一个系统考虑在任何具有单一决定门槛的系统所依赖的查询中是否有相似之处。 全球平均精度 (gAP) does,通过将所有查询-扫描对数排在一个列表中并计算一个单数 AP. 我们介绍 gSAP, 不同代孕者 gAP. 它只需要一个相似性矩阵和一个二进制矩阵标记 正样本对, 与现有损失的输入相同,因此是对其的即时替换,对编码器的不可知论。 模态, 和监管的来源。 由于它考虑在批量中所有可能的对等比较,它在低温下仍然可以训练,这种制度是每桶代孕用完梯度的。 将它切入既定的食谱,改善监督的计量学习, 跨模态 对齐, 和 自监督 据我们所知,这是第一个取代社区标准的排名损失 InfoNCE 在后两段。 它的相似性在各种查询中更为一致,这推动了在普遍阈值下的收益. gSAP 取回最多四倍的 正样本对 作为最强者 AP 代用精度相同,当添加数据库中无正数的查询时,其降解程度最小. 在门槛之外,通过下列方法培训的模型: gSAP 也学得更好 表征, 调动额较高, $k$NN 和 零样本 分类准确性.",
         "english_hash": "f2efc36f59e91337f6fb32c9aabe39bc40e6ee290988fc82369f20e074db38d3",
-        "protection_revision": 4,
-        "updated_at": "2026-10-22T01:45:45.393199+00:00",
-        "error": "protected_token_missing: $k$",
-        "error_type": "translation_validation_failed"
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-22T05:23:14.513800+00:00"
       },
       "metadata_records": [
         {
@@ -7603,6 +7621,16 @@
           "english_hash": "f2efc36f59e91337f6fb32c9aabe39bc40e6ee290988fc82369f20e074db38d3",
           "protection_revision": 4,
           "updated_at": "2026-10-13T10:50:59.302104+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "标准信息检索指标,例如: 平均精度均值 (mAP), 一次评估一个查询的性能,其依据是查询与正数之间的相似性如何与其负数相比较。 同样的情况也适用于共同的代表学习损失,例如: InfoNCE 和过油的AP代孕。 没有一个系统考虑在任何具有单一决定门槛的系统所依赖的查询中是否有相似之处。 全球平均精度 (gAP) does,通过将所有查询-扫描对数排在一个列表中并计算一个AP. 我们介绍 gSAP, 不同代孕者 gAP. 它只需要一个相似性矩阵和一个二进制矩阵来标记正对,与现有的损失一样输入,因此它是对正对的倒置替代,并且对编码器,模式,以及监督的来源不可知. 由于它考虑在批量中所有可能的对等比较,它在低温下仍然可以训练,这种制度是每桶代孕用完梯度的。 将其切入既定的食谱中,可改进监督的计量学习、跨模式的配合,以及 自监督 据我们所知,这是第一个取代社区标准的排名损失 InfoNCE 在后两段。 它的相似性在各种查询中更为一致,这推动了在普遍阈值下的收益. gSAP 以同样精度检索到最多为最强AP代位数四倍的正对,当数据库中没有正对的查询被添加时,其降解性最小. 在门槛之外,通过下列方法培训的模型: gSAP 也学习更好的表现,增加调动, $k$NN和零射门分类精确度.",
+          "english_hash": "f2efc36f59e91337f6fb32c9aabe39bc40e6ee290988fc82369f20e074db38d3",
+          "protection_revision": 4,
+          "updated_at": "2026-10-22T01:45:45.393199+00:00",
+          "error": "protected_token_missing: $k$",
+          "error_type": "translation_validation_failed"
         }
       ]
     },
@@ -8886,9 +8914,11 @@
       "open_access_url": "https://arxiv.org/pdf/2610.09411",
       "publication_date": "2026-10-07",
       "first_author": "Dominik Schnaus",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "TU Munich"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
       "metadata_source": [
         "arXiv"
       ],
@@ -9021,6 +9051,22 @@
         "protection_revision": 7,
         "quality_warnings": [],
         "updated_at": "2026-10-20T02:06:00.332503+00:00"
+      },
+      "affiliation_check": {
+        "time": "2026-10-22T05:24:56.620258+00:00",
+        "status": "verified",
+        "attempts": [
+          {
+            "source": "arxiv",
+            "status": "received"
+          }
+        ]
+      },
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/pdf/2610.09411",
+        "locator": "page 1: Dominik Schnaus superscripts 1,2; affiliation 1 TU Munich",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
       }
     },
     "2610.09360": {
@@ -10047,14 +10093,14 @@
       },
       "discovery_date": "2026-10-12",
       "translation": {
-        "status": "failed",
+        "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "通过在车辆和3D路边基础设施之间共享补充观测结果,合作感可改善自主驾驶 目标检测. 然而,实际部署受到带宽有限和不可靠合作的限制,因为包丢失、传输延迟和空间错位共同降低合作特征流。 现有方法往往减少通信费用或补偿一种退化类型,使混合扰动问题得不到充分解决。 为了解决这个问题,我们提议使用Sparse2comm,一个带宽高效和强大的合作3D 目标检测 将不可靠的合作视为逐步恢复已退化的合作特征。 分页 特征编码 首先将通信编码为由协作者传送的随机遮罩样本前缘特征,自负载体从中重建密度语义表达. 这种零星到密集的机制从零星的观测中可以推断出缺失的以物体为中心的内容,从而能够在同一代表范围内进行超低波段的通信并恢复数据包的损失。 在模拟恢复的特征上,Latency-Aware对齐预测运动流量以补偿延迟的信息,而自我校正的Fusion估计残余空间抵消a 自监督 在适应性交叉物剂聚变之前 因此,Sparse2comm恢复了语义完整性、时间一致性和所订购管道的空间对齐。 广泛试验 DAIR-V2X, OpenV2V, 和V2V4 Real显示,Sparse2comm保持了竞争性的清洁精度,在个体和混合的现实世界退化下持续提高稳健性. 与选择性特征通信基准Where2comm相比,Sparse2comm将混合设置的AP@0.5/AP@0.7分别改进为+20.15+11.79,+12.66/+11.07和+15.36/+12.61三个数据集..",
+        "zh": "合作观念通过在车辆和路边基础设施之间分享互补观测结果,改善自主驾驶。 3D 目标检测. 然而,实际部署受到带宽有限和不可靠合作的限制,因为包丢失、传输延迟和空间错位共同降低合作特征流。 现有方法往往减少通信费用或补偿一种退化类型,使混合扰动问题得不到充分解决。 为了解决这个问题,我们建议 Sparse2comm, 高效带宽和强有力的合作社 3D 目标检测 将不可靠的合作视为逐步恢复已退化的合作特征。 分页 特征编码 首先将通信编码为由协作者传送的随机遮罩样本前缘特征,自负载体从中重建密度语义 表征. 这种零星到密集的机制从零星的观察中可以推断出缺失的以物体为中心的内容,从而能够在同一范围内进行超低波段的通信并恢复数据包的损失。 表征. 在精密修复的特征上, Latency-Aware 对齐 预测运动流以补偿延迟消息,以及自解 融合 a 的剩余空间抵销 自监督 在适应性交叉物剂之前 融合. Sparse2comm 因此恢复语义完整性、时间一致性和空间 对齐 在一个命令的管道。 广泛试验 DAIR-V2X, OpenV2V, 和 V2V4 数据 真正的显示 Sparse2comm 保持竞争性的清洁准确性,并在个人和混杂的现实世界退化中不断提高稳健性。 与选择性特征通信基线相比 Where2comm, Sparse2comm 改进混合设置 AP@0.5/AP@0.7 通过 +20.15/+11.79, +12.66/+11.07, 和 +15.36/+12.61 三个数据集的.",
         "english_hash": "ff0cf0f514fe9fb32b18bfff728736045e0999dc444d66d0b3d6ed27b0ac3ad5",
-        "protection_revision": 4,
-        "updated_at": "2026-10-22T01:45:43.995695+00:00",
-        "error": "protected_token_missing: AP",
-        "error_type": "translation_validation_failed"
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-22T05:23:13.050089+00:00"
       },
       "metadata_records": [
         {
@@ -10186,6 +10232,16 @@
           "english_hash": "ff0cf0f514fe9fb32b18bfff728736045e0999dc444d66d0b3d6ed27b0ac3ad5",
           "protection_revision": 4,
           "updated_at": "2026-10-13T10:50:57.679604+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "通过在车辆和3D路边基础设施之间共享补充观测结果,合作感可改善自主驾驶 目标检测. 然而,实际部署受到带宽有限和不可靠合作的限制,因为包丢失、传输延迟和空间错位共同降低合作特征流。 现有方法往往减少通信费用或补偿一种退化类型,使混合扰动问题得不到充分解决。 为了解决这个问题,我们提议使用Sparse2comm,一个带宽高效和强大的合作3D 目标检测 将不可靠的合作视为逐步恢复已退化的合作特征。 分页 特征编码 首先将通信编码为由协作者传送的随机遮罩样本前缘特征,自负载体从中重建密度语义表达. 这种零星到密集的机制从零星的观测中可以推断出缺失的以物体为中心的内容,从而能够在同一代表范围内进行超低波段的通信并恢复数据包的损失。 在模拟恢复的特征上,Latency-Aware对齐预测运动流量以补偿延迟的信息,而自我校正的Fusion估计残余空间抵消a 自监督 在适应性交叉物剂聚变之前 因此,Sparse2comm恢复了语义完整性、时间一致性和所订购管道的空间对齐。 广泛试验 DAIR-V2X, OpenV2V, 和V2V4 Real显示,Sparse2comm保持了竞争性的清洁精度,在个体和混合的现实世界退化下持续提高稳健性. 与选择性特征通信基准Where2comm相比,Sparse2comm将混合设置的AP@0.5/AP@0.7分别改进为+20.15+11.79,+12.66/+11.07和+15.36/+12.61三个数据集..",
+          "english_hash": "ff0cf0f514fe9fb32b18bfff728736045e0999dc444d66d0b3d6ed27b0ac3ad5",
+          "protection_revision": 4,
+          "updated_at": "2026-10-22T01:45:43.995695+00:00",
+          "error": "protected_token_missing: AP",
+          "error_type": "translation_validation_failed"
         }
       ]
     },
@@ -125367,6 +125423,34 @@
         },
         "model": "deepseek-flash",
         "request_id": "83e8b740-273b-4016-8030-86c8ba62f7a7"
+      },
+      "translation_history": [
+        {}
+      ],
+      "translation": {
+        "status": "machine",
+        "engine": "Argos Translate (CPU)",
+        "zh": "跨模态 图像匹配建立稳定准确的几何对应 模态 平面图 配准. 现有语义 表征 提供 跨模态 一致性,但语义相似性并不一定意味着几何对应. 同时,精致的 CNN 特性提供准确的当地细节,但缺乏全球 跨模态 语义指导稳定完善. 为了解决这些问题,我们提议 CDPM, 首先确定几何一致的语义 表征 然后在精细的本地化过程中保留其在函证估计中的主导作用. 具体来说,我们逐渐适应 DINOv3 使用几何一致性 跨模态 补丁配对, 功能相似, 以更好地反映真实性 跨模态 空间通信。 然后我们建造一个 DINO-Centric 特性多尺度金字塔 DINO 表征 保持稳定 跨模态 通信,轻量级 CNN 分支为精确的局部改进提供了辅助结构细节. 三项广泛试验 跨模态 数据集显示 CDPM. 在 VIS-IR, 与密密的配主相比, RoMa, CDPM 改进 AUC@3/5/10/20 通过 7.36, 13.40, 13.75, 和 10.42 百分比和减少数 mACE 来自 5.83 以 2.78 象素类. 也比成绩好 RoMa v2 适用于所有度量衡,同时需要 45.6% 减少 FLOPs. 在线演示和数据集可供使用,代码将在我们的项目网页上公布,网址是: https://warren-wzw.github.io/CDPM/.",
+        "english_hash": "8ecb6f1e66d8abc7c268c9f89393d2a39d435c43bc0899a9b2cff54f989dd99d",
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-22T05:23:16.473439+00:00"
+      },
+      "affiliation_check": {
+        "revision": 1,
+        "time": "2026-10-22T05:34:58.581661+00:00",
+        "status": "unverified",
+        "attempts": [
+          {
+            "source": "openalex_title",
+            "status": "received"
+          },
+          {
+            "source": "arxiv",
+            "status": "received"
+          }
+        ]
       }
     },
     "2610.02971": {
@@ -133438,9 +133522,11 @@
       "open_access_url": "https://arxiv.org/pdf/2609.38637",
       "publication_date": "2026-09-29",
       "first_author": "Fereshteh Aghaee Meibodi",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Department of Electrical and Computer Engineering, University of Victoria"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
       "metadata_source": [
         "arXiv"
       ],
@@ -133587,6 +133673,35 @@
         },
         "model": "deepseek-flash",
         "request_id": "ec0da0b9-3613-475f-971d-97a17889ff81"
+      },
+      "translation_history": [
+        {}
+      ],
+      "translation": {
+        "status": "machine",
+        "engine": "Argos Translate (CPU)",
+        "zh": "视觉 目标跟踪 通常假定初始模板和随后的搜索框具有相同的感知性 模态. 在实践中,传感器的可用性或操作可能随时间而变化,从而产生大量 表征 模板和搜索框架之间的间隙 。 不同于常规 多模态 跟踪对齐位置 模态 同时可用, 跨模态 当模板和搜索框来自不同的活动时,跟踪需要本地化 模态. 因此,我们介绍 TSDA-Track, 一个模板搜索域适应框架,以减少 模态 培训期间的差异。 我们调查两个特点 对齐 战略. Pre-AFA TSDA-Track 适用对抗性 对齐 在此之前 Transformer's 模板搜索互动以压制 模态-具体偏差. Enc-CFA TSDA-Track 应用对比 对齐 编码器 表征 在互动之后加强目标层面 跨模态 信函往来。 两种变体均保留一个共用推论管道,没有 模态-具体的分支。 实验 LasHeR, 和 零样本 评价 RGBT234 和 GTOT 在多个下 跨模态 与具有代表性的先进追踪器相比,协议显示出了改进。 例如, 模态-打开协议 RGBT234, Pre-AFA TSDA-Track 实现 SR/PR 的 43.2/56.0, 比较 36.8/50.0 用于 ToMP-101 基线。 此外,还研究: Anti-UAV-024 进一步核实 TSDA-Track 到空中跟踪。 我们的研究突出了特色的有效性 对齐 域适应 跨模态 跟踪.",
+        "english_hash": "f22e2c8f0aa913ea3e6e1b252bd35568ef4cbdf3d5e3cfe2d313be8d849784b4",
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-22T05:23:17.736964+00:00"
+      },
+      "affiliation_check": {
+        "time": "2026-10-22T05:24:56.620258+00:00",
+        "status": "verified",
+        "attempts": [
+          {
+            "source": "arxiv",
+            "status": "received"
+          }
+        ]
+      },
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/html/2609.38637v1",
+        "locator": "first creator block explicitly contains department and University of Victoria",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
       }
     },
     "2609.38560": {
@@ -241242,14 +241357,14 @@
         }
       ],
       "translation": {
-        "status": "failed",
+        "status": "machine",
         "engine": "Argos Translate (CPU)",
-        "zh": "海上智能运输系统 (MITS) 对确保繁忙水道的航行安全和效率至关重要。 不过,准确的 船舶 由于单一来源数据的局限性,轨迹预测仍然具有挑战性。 自动识别系统 (AIS) 数据往往很少,或小数据缺乏。 船舶, 在闭路电视上 (CCTV) 仅靠数据无法完全捕捉动态 船舶 行为 为了减轻这些挑战,我们提议 跨模态 基于互动 船舶 轨迹预测( 命名 ) CmIVTP) 建立框架,以模拟 船舶 动态和环境制约因素。 具体来说,我们引入了一种目标感知场景编码器来提取场景语义特征,有效捕捉 船舶-环境相互作用和提高轨迹预测准确性。 此外,我们提议 跨模态 互动 Transformer, 用于整合 AIS-衍生运动特性, CCTV-based 环境特征和场景表现。 它能发挥杠杆作用 跨模态 注意同时掌握模式内语义和模式间相互作用的机制,确保动态一致和环境上可行的预测。 此外,我们构建了一个 船舶 分组轨道库 聚类 历史 AIS 轨迹成为具有代表性的运动模式,为候选轨迹生成提供了高效和可扩展的方法. 此外,我们介绍海洋 多模态 数据集加( 名称) Maritime-MmD$^+$), 一个同步的大型数据集 AIS 数据与数据 CCTV 视频数据,提供强有力的支持 多模态 轨迹预测研究. 广泛的实验证明: CmIVTP 提高业绩 多模态-驱动 船舶 轨迹预测基准。 这项工作的代码资源可以在下列地点获得: https://github.com/LouisYxLu/CmIVTP.",
+        "zh": "海上智能运输系统 (MITS) 对确保繁忙水道的航行安全和效率至关重要。 不过,准确的 船舶 由于单一来源数据的局限性,轨迹预测仍然具有挑战性。 自动识别系统 (AIS) 数据往往很少,或小数据缺乏。 船舶, 在闭路电视上 (CCTV) 仅靠数据无法完全捕捉动态 船舶 行为 为了减轻这些挑战,我们提议 跨模态 基于互动 船舶 轨迹预测( 命名 ) CmIVTP) 建立框架,以模拟 船舶 动态和环境制约因素。 具体来说,我们引入了一种目标感知场景编码器来提取场景语义特征,有效捕捉 船舶-环境相互作用和提高轨迹预测准确性。 此外,我们提议 跨模态 互动 Transformer, 用于整合 AIS-衍生运动特性, CCTV-基于环境特征和场景 表征. 它能发挥杠杆作用 跨模态 注意同时捕捉的机制 模态内 语义和模式间相互作用,确保动态一致和环境上可行的预测。 此外,我们构建了一个 船舶 分组轨道库 聚类 历史 AIS 轨迹成为具有代表性的运动模式,为候选轨迹生成提供了高效和可扩展的方法. 此外,我们介绍海洋 多模态 数据集加( 名称) Maritime-MmD$^+$), 一个同步的大型数据集 AIS 数据与数据 CCTV 视频数据,提供强有力的支持 多模态 轨迹预测研究. 广泛的实验证明: CmIVTP 提高业绩 多模态-驱动 船舶 轨迹预测基准。 这项工作的代码资源可以在下列地点获得: https://github.com/LouisYxLu/CmIVTP.",
         "english_hash": "00bc43272e049349d28c7ef65a5b2ed4ec7db0c3fee4ff89a597d61e5520b86d",
-        "protection_revision": 5,
-        "updated_at": "2026-10-22T01:45:42.495452+00:00",
-        "error": "protected_token_missing: AIS-derived",
-        "error_type": "translation_validation_failed"
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-22T05:23:11.661998+00:00"
       },
       "raw_abstract": "Maritime intelligent transportation systems (MITS) are essential for ensuring navigation safety and efficiency in busy waterways. However, accurate vessel trajectory prediction remains challenging due to the limitations of single-source data. Automatic identification system (AIS) data is often sparse or unavailable for small vessels, while closed-circuit television (CCTV) data alone cannot fully capture dynamic vessel behavior. To mitigate these challenges, we propose a cross-modal interaction-based vessel trajectory prediction (named CmIVTP) framework to model the intricate interactions between vessel dynamics and environmental constraints. Specifically, we introduce a target-aware scene encoder to extract scene semantic features, effectively capturing vessel-environment interactions and enhancing trajectory prediction accuracy. In addition, we propose a cross-modal interaction transformer, which integrates AIS-derived motion features, CCTV-based environmental features, and scene representations. It leverages cross-modal attention mechanisms to simultaneously capture intra-modal semantics and inter-modal interactions, ensuring dynamically consistent and environmentally feasible predictions. Furthermore, we construct a vessel group trajectory bank by clustering historical AIS trajectories into representative motion patterns, providing an efficient and scalable approach for candidate trajectory generation. Additionally, we introduce the maritime multimodal dataset plus (named Maritime-MmD$^+$), a large-scale dataset that synchronizes AIS data and CCTV video data, providing robust support for multimodal trajectory prediction research. Extensive experiments demonstrate that CmIVTP achieves better performance on multimodal-driven vessel trajectory prediction benchmarks. The code resources for this work can be available at https://github.com/LouisYxLu/CmIVTP.",
       "clean_abstract": "Maritime intelligent transportation systems (MITS) are essential for ensuring navigation safety and efficiency in busy waterways. However, accurate vessel trajectory prediction remains challenging due to the limitations of single-source data. Automatic identification system (AIS) data is often sparse or unavailable for small vessels, while closed-circuit television (CCTV) data alone cannot fully capture dynamic vessel behavior. To mitigate these challenges, we propose a cross-modal interaction-based vessel trajectory prediction (named CmIVTP) framework to model the intricate interactions between vessel dynamics and environmental constraints. Specifically, we introduce a target-aware scene encoder to extract scene semantic features, effectively capturing vessel-environment interactions and enhancing trajectory prediction accuracy. In addition, we propose a cross-modal interaction transformer, which integrates AIS-derived motion features, CCTV-based environmental features, and scene representations. It leverages cross-modal attention mechanisms to simultaneously capture intra-modal semantics and inter-modal interactions, ensuring dynamically consistent and environmentally feasible predictions. Furthermore, we construct a vessel group trajectory bank by clustering historical AIS trajectories into representative motion patterns, providing an efficient and scalable approach for candidate trajectory generation. Additionally, we introduce the maritime multimodal dataset plus (named Maritime-MmD$^+$), a large-scale dataset that synchronizes AIS data and CCTV video data, providing robust support for multimodal trajectory prediction research. Extensive experiments demonstrate that CmIVTP achieves better performance on multimodal-driven vessel trajectory prediction benchmarks. The code resources for this work can be available at https://github.com/LouisYxLu/CmIVTP.",
@@ -241316,6 +241431,16 @@
           "english_hash": "00bc43272e049349d28c7ef65a5b2ed4ec7db0c3fee4ff89a597d61e5520b86d",
           "protection_revision": 5,
           "updated_at": "2026-10-13T12:14:44.094031+00:00"
+        },
+        {
+          "status": "failed",
+          "engine": "Argos Translate (CPU)",
+          "zh": "海上智能运输系统 (MITS) 对确保繁忙水道的航行安全和效率至关重要。 不过,准确的 船舶 由于单一来源数据的局限性,轨迹预测仍然具有挑战性。 自动识别系统 (AIS) 数据往往很少,或小数据缺乏。 船舶, 在闭路电视上 (CCTV) 仅靠数据无法完全捕捉动态 船舶 行为 为了减轻这些挑战,我们提议 跨模态 基于互动 船舶 轨迹预测( 命名 ) CmIVTP) 建立框架,以模拟 船舶 动态和环境制约因素。 具体来说,我们引入了一种目标感知场景编码器来提取场景语义特征,有效捕捉 船舶-环境相互作用和提高轨迹预测准确性。 此外,我们提议 跨模态 互动 Transformer, 用于整合 AIS-衍生运动特性, CCTV-based 环境特征和场景表现。 它能发挥杠杆作用 跨模态 注意同时掌握模式内语义和模式间相互作用的机制,确保动态一致和环境上可行的预测。 此外,我们构建了一个 船舶 分组轨道库 聚类 历史 AIS 轨迹成为具有代表性的运动模式,为候选轨迹生成提供了高效和可扩展的方法. 此外,我们介绍海洋 多模态 数据集加( 名称) Maritime-MmD$^+$), 一个同步的大型数据集 AIS 数据与数据 CCTV 视频数据,提供强有力的支持 多模态 轨迹预测研究. 广泛的实验证明: CmIVTP 提高业绩 多模态-驱动 船舶 轨迹预测基准。 这项工作的代码资源可以在下列地点获得: https://github.com/LouisYxLu/CmIVTP.",
+          "english_hash": "00bc43272e049349d28c7ef65a5b2ed4ec7db0c3fee4ff89a597d61e5520b86d",
+          "protection_revision": 5,
+          "updated_at": "2026-10-22T01:45:42.495452+00:00",
+          "error": "protected_token_missing: AIS-derived",
+          "error_type": "translation_validation_failed"
         }
       ]
     },
@@ -532017,9 +532142,11 @@
       "original_url": "https://arxiv.org/abs/2609.25067",
       "open_access_url": "https://arxiv.org/pdf/2609.25067",
       "first_author": "David Szczecina",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Systems Design Engineering, University of Waterloo"
+      ],
+      "affiliation_source": "arXiv官方论文首页",
+      "affiliation_verified": true,
       "discovery_date": "2026-10-13",
       "resource_type": "preprint",
       "resource_type_label": "研究预印本",
@@ -532123,6 +532250,52 @@
         },
         "model": "deepseek-flash",
         "request_id": "45080742-2959-48f8-8f70-68bc1f6aee43"
+      },
+      "translation_history": [
+        {},
+        {
+          "status": "failed",
+          "zh": "",
+          "error": "numeric_mismatch: numbers or percentages changed; segment: v2 and",
+          "error_type": "translation_validation_failed",
+          "candidate_zh": "",
+          "segment_retries": [
+            {
+              "segment": "v2 and",
+              "reason": "numeric_mismatch: numbers or percentages changed"
+            }
+          ],
+          "english_hash": "a58056341205fc7a6a0858588591929bb04609922900710bf5178f7dfcd91e0b",
+          "updated_at": "2026-10-22T05:23:19.115374+00:00",
+          "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: v2 and",
+          "retry_attempts": 1
+        }
+      ],
+      "translation": {
+        "status": "machine",
+        "engine": "Argos Translate (CPU)",
+        "zh": "自监督 学习 (SSL) 成为学习视觉的一种有效方法 表征 没有手动说明。 其中 SSL 方针, 对比学习 已被广泛用于视觉 表征学习. 然而,现有的对比性 SSL 方法主要侧重于图像级别或 像素级 表征学习, 在区域层面 表征学习 仍然没有多少探索。 我们提议 SPARC, 区域一级 对比学习 利用超像素建立增强图像视图之间明确对应的框架. SPARC 引入一个区域对比性分支,执行基于超像素的特性集合,并结合全球图像级目标优化区域级对比性目标. 在相同的设置下, SPARC 持续超过以往的方法,例如 MoCo-v2 和 DenseCL, 实现最多 +9.79 mIoU 用于语义分割和 +4.88 AP 用于 目标检测. 差距研究进一步表明,区域一级的目标产生最强的业绩。 因此,区域一级 对比学习 是一种有效的改进方法 自监督 用于密集预测任务的视觉预训. 代码寄存器可在 https://github.com/xRIPEIx/SPARC.",
+        "english_hash": "a58056341205fc7a6a0858588591929bb04609922900710bf5178f7dfcd91e0b",
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-22T05:24:26.598475+00:00"
+      },
+      "affiliation_check": {
+        "time": "2026-10-22T05:24:56.620258+00:00",
+        "status": "verified",
+        "attempts": [
+          {
+            "source": "arxiv",
+            "status": "received"
+          }
+        ]
+      },
+      "affiliation_evidence": {
+        "url": "https://arxiv.org/pdf/2609.25067",
+        "locator": "page 1 shared author address below author list",
+        "verified_date": "2026-10-22",
+        "method": "author/affiliation linkage manually checked against official paper"
       }
     },
     "2609.19230": {

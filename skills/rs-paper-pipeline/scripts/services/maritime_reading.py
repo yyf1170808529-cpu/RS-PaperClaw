@@ -11,6 +11,9 @@ import subprocess
 import urllib.request
 import importlib.util
 
+MATH_PATTERN=r'\$\$[\s\S]+?\$\$|(?<!\\)\$(?:\\.|[^$])+\$|\\\([\s\S]+?\\\)|\\\[[\s\S]+?\\\]'
+TECH_PATTERN=r'\b(?:v\d+(?:\.\d+)*|(?=[A-Za-z0-9-]*(?:[A-Z]{2}|\d|[a-z][A-Z]))[A-Z][A-Za-z0-9]*(?:-(?:[A-Z0-9][A-Za-z0-9]*|v\d+))+|[A-Z][a-z]+\d+[A-Za-z0-9]*|[A-Z]{2,}[a-z]+[A-Za-z0-9_]*|\d+[A-Za-z][A-Za-z0-9_]*|[A-Za-z0-9_]*[a-z][A-Z][A-Za-z0-9_]*|[A-Z][A-Z0-9]{1,})\b'
+
 
 def repeated_text(text):
     return bool(re.search(r"([\u4e00-\u9fff][\u4e00-\u9fff，、, ]{1,18})\1{3,}", text))
@@ -44,12 +47,17 @@ def translation_error(english, chinese):
     for url in re.findall(r'https?://[^\s<>]+', english):
         if url not in chinese:
             return 'protected_url_missing: ' + url
-    source_text = re.sub(r'https?://[^\s<>]+', '', english)
-    tokens = re.findall(r"\$[^$]+\$|\b(?:[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|\d+[A-Za-z][A-Za-z0-9_-]*|[A-Z][A-Z0-9+/-]{1,})\b", source_text)
+    for formula,count in Counter(re.findall(MATH_PATTERN,english)).items():
+        if chinese.count(formula)<count:return 'protected_formula_missing: '+formula
+    source_text=re.sub(MATH_PATTERN,'',re.sub(r'https?://[^\s<>]+','',english))
+    tokens=re.findall(TECH_PATTERN,source_text)
+    terms=json.loads((Path(__file__).resolve().parents[1]/'config/maritime/translation_terms.json').read_text(encoding='utf8'))
+    metric_names={'AP':('平均精度','平均精确率'),'mAP':('平均精度均值','平均精确率均值')}
     for token, count in Counter(tokens).items():
-        if '-' in token and not (re.search(r'\d', token) or re.match(r'[A-Z]{2}', token)):
-            continue
-        if len(re.findall(r"(?<![A-Za-z0-9_/-])"+re.escape(token)+r"(?![A-Za-z0-9_/-])", chinese)) != count:
+        preserved=len(re.findall(r'(?<![A-Za-z0-9_])'+re.escape(token)+r'(?![A-Za-z0-9_])',chinese))
+        alternatives=metric_names.get(token,()) or ((terms[token.lower()],) if token.lower() in terms else ())
+        translated=sum(len(re.findall(re.escape(t)+(r'(?!均值)' if token=='AP' else ''),chinese)) for t in alternatives)
+        if preserved+translated<count:
             return "protected_token_missing: " + token
     if len(chinese) < len(english) * .12 or len(chinese) > len(english) * 2:
         return "length_mismatch: possible omission or repeated text"
@@ -134,8 +142,9 @@ def translate_one(paper, translator=None):
             translator = argos_translator()
         terms = json.loads((Path(__file__).resolve().parents[1] / "config/maritime/translation_terms.json").read_text(encoding="utf-8"))
         phrases = "|".join(re.escape(t) for t in sorted(terms, key=len, reverse=True))
-        pattern = r"(https?://[^\s<>]+|(?i:\b(?:" + phrases + r")\b)|\$[^$]+\$|\b\d+[A-Za-z][A-Za-z0-9_-]*\b|\b\d+(?:\.\d+)*(?:%|[MG])?\b|\b(?:AIS|Radar|LiDAR|DETR|[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[a-z]+[A-Za-z0-9_-]*|[A-Z]{2,}[a-z]*\d+[A-Za-z0-9_-]*|[A-Za-z0-9_-]*[a-z][A-Z][A-Za-z0-9_-]*|[A-Z][A-Z0-9_-]{1,})\b)"
+        pattern = r'(https?://[^\s<>]+|'+MATH_PATTERN+r'|(?i:\b(?:'+phrases+r')\b)|'+TECH_PATTERN+r'|\b\d+(?:\.\d+)*(?:\s*%|[MG])?\b)'
         parts = re.split(pattern, original)
+        retries=[]
         # Both word and number placeholders altered model output in real tests.
         # Keep terms and boundary punctuation outside the model instead.
         def prose(part):
@@ -151,6 +160,13 @@ def translate_one(paper, translator=None):
                 # Stanza can omit an unfinished fragment at a protected term
                 # boundary. Terminal punctuation keeps the same source words.
                 result = translator(body + '.').rstrip('.。')
+            issue=translation_error(body,result) if isinstance(result,str) and result.strip() else 'translation_incomplete'
+            if issue and issue.startswith(('numeric_mismatch','protected_','translation_incomplete')):
+                retries.append({'segment':body[:120],'reason':issue})
+                result=translator(body+'.').rstrip('.。')
+                issue=translation_error(body,result)
+                if issue and issue.startswith(('numeric_mismatch','protected_','translation_incomplete')):
+                    raise ValueError(issue+'; segment: '+body[:120])
             if not isinstance(result, str) or not result.strip() or len(result) < len(body) * .08:
                 raise ValueError("translation_incomplete: model omitted segment: " + body[:80])
             return leading + result + trailing
@@ -164,11 +180,12 @@ def translate_one(paper, translator=None):
         if error:
             raise ValueError(error)
         return {"status": "machine", "engine": "Argos Translate (CPU)", "zh": translated,
-            "english_hash": digest, "protection_revision": 7, "quality_warnings":translation_warnings(original,translated),
+            "english_hash": digest, "protection_revision": 8, "segment_retries":retries,"quality_warnings":translation_warnings(original,translated),
             "updated_at": datetime.now(timezone.utc).isoformat()}
     except Exception as exc:
         category = "dependency_missing" if isinstance(exc, ModuleNotFoundError) else "model_missing" if "optional en" in str(exc) else "translation_validation_failed" if isinstance(exc, ValueError) else "model_runtime_error"
         return {**previous, "status": "failed", "zh": previous.get("zh", ""), "error": str(exc), "error_type": category,
+                "candidate_zh":locals().get('translated',''),"segment_retries":locals().get('retries',[]),
                 "english_hash": digest, "updated_at": datetime.now(timezone.utc).isoformat()}
 
 

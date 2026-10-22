@@ -12,7 +12,8 @@
       const feedback=doc.createElement('span');
       feedback.setAttribute('role','status');
       feedback.setAttribute('aria-live','polite');
-      button.parentNode.append(feedback);
+      const panelHost=button.closest?.('article')?.querySelector('[data-paper-panels]')||button.parentNode;
+      panelHost.append(feedback);
       let fallback;
       button.addEventListener('click',async()=>{
         if(!text) {feedback.textContent='此资源暂不提供论文精读 Prompt';return;}
@@ -26,7 +27,7 @@
             const area=doc.createElement('textarea');
             area.readOnly=true;area.rows=10;area.value=text;
             area.setAttribute('aria-label','论文分析 Prompt：'+paper.title);
-            fallback.append(summary,area);button.parentNode.append(fallback);
+            fallback.append(summary,area);panelHost.append(fallback);
           }
           fallback.open=true;
           feedback.textContent='请在文本框中长按全选复制';
