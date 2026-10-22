@@ -53,9 +53,10 @@ def translation_error(english, chinese):
     tokens=re.findall(TECH_PATTERN,source_text)
     terms=json.loads((Path(__file__).resolve().parents[1]/'config/maritime/translation_terms.json').read_text(encoding='utf8'))
     metric_names={'AP':('平均精度','平均精确率'),'mAP':('平均精度均值','平均精确率均值')}
+    metric_context=bool(re.search(r'\bmAP\b|\bAP@',english) or re.search(r'average\s+precision|\b(?:detection|segmentation|metric|precision)\b',english,re.I))
     for token, count in Counter(tokens).items():
         preserved=len(re.findall(r'(?<![A-Za-z0-9_])'+re.escape(token)+r'(?![A-Za-z0-9_])',chinese))
-        alternatives=metric_names.get(token,()) or ((terms[token.lower()],) if token.lower() in terms else ())
+        alternatives=(metric_names.get(token,()) if metric_context else ()) or ((terms[token.lower()],) if token.lower() in terms else ())
         translated=sum(len(re.findall(re.escape(t)+(r'(?!均值)' if token=='AP' else ''),chinese)) for t in alternatives)
         if preserved+translated<count:
             return "protected_token_missing: " + token

@@ -69,6 +69,7 @@ class PermanentDailyTests(unittest.TestCase):
         for en,zh in pairs:self.assertIsNone(reading.translation_error(en,zh),(en,reading.translation_error(en,zh)))
         self.assertIn('protected_formula_missing',reading.translation_error('We use $k$NN.','我们使用NN。'))
         self.assertIn('numeric_mismatch',reading.translation_error('We improve AP@0.5 by 20%.','我们将AP@0.5提升21%。'))
+        self.assertIn('protected_token_missing',reading.translation_error('We use an AP access point for communication.','我们使用平均精度进行通信。'))
         english=r'We optimize $k$NN and \(x_1+x_2\) with 20% gain at https://example.org/code.'
         result=reading.translate_one({'abstract':english},lambda text:'我们研究'+text)
         self.assertEqual(result['status'],'machine',result)
