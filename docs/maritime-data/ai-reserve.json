@@ -531,7 +531,23 @@
       "qualified": true,
       "pushed_dates": [],
       "available": true
+    },
+    "2609.26617": {
+      "paper_id": "2609.26617",
+      "fingerprint": "c589f90d91bd1dd74d11a06226b038a2a265077ff3f080e055f0880d07c66fd9",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2609.24109": {
+      "paper_id": "2609.24109",
+      "fingerprint": "277e10898ecb54f3f8fe2142a4f233fe8e2c3ffc40e1bc4f7b9ec58b00bd4eb2",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 17
+  "available_count": 19
 }

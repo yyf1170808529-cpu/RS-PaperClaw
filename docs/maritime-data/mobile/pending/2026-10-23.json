@@ -222,19 +222,19 @@
   ],
   "selection_audit": {
     "candidate_count": 775,
-    "ai_reviewed": 462,
+    "ai_reviewed": 513,
     "ai_states": {
-      "evaluated": 462,
-      "uncertain": 249,
-      "unassessed": 64
+      "evaluated": 513,
+      "uncertain": 254,
+      "unassessed": 8
     },
     "stage_counts": {
       "2": 733,
       "1": 25,
       "3": 17
     },
-    "ai_rejected": 445,
-    "qualified_count": 17,
+    "ai_rejected": 494,
+    "qualified_count": 19,
     "selected_count": 5,
     "shortfall": 0,
     "translation_environment_errors": [],
