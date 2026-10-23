@@ -1,27 +1,31 @@
 {
-  "attempt_date": "2026-10-22",
-  "status": "complete",
+  "attempt_date": "2026-10-23",
+  "status": "partial",
   "published_date": "2026-10-22",
   "published_revision": "99b89e542a4d5c2c",
   "selection_audit": {
-    "candidate_count": 780,
-    "ai_reviewed": 443,
+    "candidate_count": 775,
+    "ai_reviewed": 462,
     "ai_states": {
-      "evaluated": 443,
-      "uncertain": 244,
-      "unassessed": 93
+      "evaluated": 462,
+      "uncertain": 249,
+      "unassessed": 64
     },
     "stage_counts": {
-      "2": 732,
-      "0": 5,
-      "1": 27,
-      "3": 16
+      "2": 733,
+      "1": 25,
+      "3": 17
     },
-    "ai_rejected": 422,
-    "qualified_count": 21,
+    "ai_rejected": 445,
+    "qualified_count": 17,
     "selected_count": 5,
     "shortfall": 0,
     "translation_environment_errors": [],
-    "translation_errors": []
+    "translation_errors": [
+      {
+        "paper_id": "2610.00319",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+      }
+    ]
   }
 }

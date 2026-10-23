@@ -1,0 +1,469 @@
+{
+  "date": "2026-10-23",
+  "papers": [
+    {
+      "paper_id": "2610.06837",
+      "title": "Anatomy-aware Fine-grained Multimodal Fusion for Laryngopharyngeal Cancer T-Staging Prediction Using CT and Radiology Report",
+      "authors": [
+        "Xingyue Zhao",
+        "Yanzhou Su",
+        "Fang Zhang",
+        "Zhanghexuan Ji",
+        "Yirui Wang",
+        "Dazhou Guo",
+        "Sibo Ju",
+        "Yuehua Cheng",
+        "Yuzhen Chen",
+        "Ming Feng",
+        "Le Lu",
+        "Tsung-Ying Ho",
+        "Jian Wang",
+        "Dakai Jin",
+        "Na Shen"
+      ],
+      "published": "2026-10-05",
+      "arxiv_url": "https://arxiv.org/abs/2610.06837",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.06837",
+      "pdf_url": "https://arxiv.org/pdf/2610.06837",
+      "open_access_url": "https://arxiv.org/pdf/2610.06837",
+      "venue": "",
+      "abstract": "Accurate T-staging is crucial for guiding personalized treatment strategies for laryngopharyngeal cancer. However, current clinical practice relies on invasive biopsy procedures, whereas CT-based staging remains challenging due to the complex patterns of tumor invasion. Recent computer-aided approaches face two key challenges: 1) Structural relationship modeling: existing methods underrepresent anatomically structured patterns of tumor invasion, as they either process whole CT volumes without tumor-specific anatomical constraints or rely on labor-intensive tumor segmentation. 2) Fine-grained cross-modal alignment: while radiology reports contain organ-specific invasion details, current methods that apply global feature fusion struggle to accurately align individual anatomical structures with their corresponding textual descriptions. To address these issues, we propose an anatomy-aware multimodal framework that integrates organ-level CT context and radiology reports into a unified representation for laryngopharyngeal T-staging. The framework first constructs an Anatomy-Structured Organ Graph (AOG) that captures invasion patterns between primary sites and surrounding organs, then performs Organ-Anchored Cross-Modal Alignment (OCA) so that each organ node aggregates textual evidence from the radiology report, and finally refines this graph representation by injecting organ-specific invasion cues extracted from the report via Report-Enhanced Graph-Refinement (REG), yielding a multimodal organ graph that combines spatial and textual evidence. Extensive experiments demonstrate that the proposed framework achieves superior performance in T-staging of laryngopharyngeal cancer.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Xingyue Zhao",
+      "first_author_affiliations": [
+        "Alibaba Group"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "解剖感知多模态融合与跨模态对齐；将器官节点替换为船舶图像中的候选目标节点（如检测框或分割区域），文本证据改为AIS报文中的船名、类型、位置等结构化描述，通过锚点节点聚合AIS文本特征实现视觉-AIS细",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.06837",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "准确的T-Stage对于指导喉癌的个性化治疗战略至关重要。 然而,目前的临床实践依赖于入侵性活检程序,而 CT-由于肿瘤入侵的复杂模式,基地集结仍然具有挑战性。 近期计算机辅助办法面临两大挑战: 1) 结构关系模型化:现有方法在解剖学上不代表肿瘤入侵的模式,因为它们要么是整个过程 CT 无肿瘤解剖限制或依赖劳动密集型肿瘤分解的体积. 2) 不错 跨模态 对齐: 放射科报告包含器官特定入侵的细节, 而当前应用全球特征的方法 融合 将单个解剖结构与相应的文字描述精确对齐。 为了解决这些问题,我们提出一个解剖意识 多模态 综合机构一级框架 CT 上下文和放射科报告 表征 为喉咙T-stage。 框架首先构建一个解剖学-结构化的器官图 (AOG) 捕捉主要地点和周围器官之间的入侵模式,然后执行器官-安克雷德 跨模态 对齐 (OCA) 所以每个器官节点 汇总放射学报告中的文字证据 最后细化了这个图 表征 从报告中提取的器官入侵提示 (REG), 产生a 多模态 结合空间证据和文字证据的机关图。 广泛的实验表明,拟议框架在肾上腺素癌的T-分泌方面表现优异.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.14598",
+      "title": "Bidirectional Adaptive Transformers for Multimodal Anomaly Detection",
+      "authors": [
+        "Yuxin Jiang",
+        "Yunkang Cao",
+        "Weiming Shen"
+      ],
+      "published": "2026-10-10",
+      "arxiv_url": "https://arxiv.org/abs/2610.14598",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.14598",
+      "pdf_url": "https://arxiv.org/pdf/2610.14598",
+      "open_access_url": "https://arxiv.org/pdf/2610.14598",
+      "venue": "",
+      "abstract": "The effective integration of features derived from RGB images and 3D point clouds presents a substantial challenge in the field of multimodal anomaly detection (MAD). Existing MAD methods typically rely on static fusion paradigms built upon frozen pre-trained encoders. While these frameworks facilitate spatial alignment, they lack the mechanism to establish latent semantic correspondence, thereby inducing cross-modal interference that degrades anomaly discriminability. To mitigate these limitations, this study proposes a Bidirectional Adaptive Transformers (BAT) framework, which constructs comprehensive and semantically aligned multimodal representations by leveraging complementary attributes across modalities. The BAT framework introduces a Bidirectional Feature Alignment (BFA) module, which employs a mutual predictive mechanism to bridge the gap between 2D textural patterns and 3D geometric structures. This bidirectional interaction explicitly enhances the textural granularity of point cloud descriptors while augmenting the spatial contextual awareness of RGB features. To ensure that the latent representations possess sufficient informational density for alignment, BAT incorporates a parameter-efficient adaptation architecture. By utilizing lightweight image and point cloud adapters, the framework facilitates specialized fine-tuning of pre-trained models, mitigating the information loss inherent in frozen encoders. Extensive experiments conducted on MVTec 3D-AD and Eyecandies confirm that BAT achieves state-of-the-art anomaly detection performance, significantly outperforming existing MAD methods.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Yuxin Jiang",
+      "first_author_affiliations": [
+        "School of Mechanical Science and Engineering, Huazhong University of Science and Technology, Wuhan, 430000, Hubei, China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "多模态异常检测/跨模态特征对齐；将RGB-点云的双向互相预测对齐改为视觉-雷达/AIS模态间对齐：输入改为船舶图像特征与雷达/AIS时空特征，需设计对应的互补预测目标与轻量适配器微调，对齐损失改为跨模",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.14598",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "有效整合源自于 RGB 图像和 3D 点云 人权领域面临的重大挑战 多模态 异常检测 (MAD). 现有 MAD 方法通常依赖静态 融合 以冷冻的预培训编码器为基础的范式。 虽然这些框架有助于空间 对齐, 它们缺乏建立潜在语义通信的机制,从而诱导 跨模态 干预可降低异常的歧视性。 为减少这些局限性,本研究报告建议采用双向适应方法。 Transformer (BAT) 框架,它构建了全面和整体一致的框架 多模态 表征 利用各种补充性属性 模态.  BAT 框架引入双向特性 对齐 (BFA) 模块,该模块采用一种相互预测机制,以弥合在以下两个方面之间的差距: 2D 纹理图案和 3D 几何结构. 这种双向相互作用明确增强 点云 说明,同时增强空间背景意识 RGB 特性。 确保潜在的 表征 具有足够的信息密度 对齐, BAT 纳入具有参数效率的适应结构。 通过使用轻量级图像和 点云 适配器,框架有利于对预先训练过的模型进行专门微调,减轻冷冻编码器固有的信息损失. 在下列领域进行了广泛的实验: MVTec 3D-AD 眼科医生证实 BAT 达到最新水平 异常检测 业绩,明显超过现有业绩 MAD 方法.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.03403",
+      "title": "ForestQuery: Boundary-Aware and Spatially Anchored Query Learning for Unified Forest Point Cloud Segmentation",
+      "authors": [
+        "Zhihao Zhan",
+        "Le Tao",
+        "Yifei Tian",
+        "Xin Liu",
+        "Jie Yuan"
+      ],
+      "published": "2026-10-02",
+      "arxiv_url": "https://arxiv.org/abs/2610.03403",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.03403",
+      "pdf_url": "https://arxiv.org/pdf/2610.03403",
+      "open_access_url": "https://arxiv.org/pdf/2610.03403",
+      "venue": "",
+      "abstract": "Forest point cloud segmentation is fundamental for fine-grained 3D forest scene understanding, yet remains challenging due to irregular tree structures, severe occlusions, density variations, and ambiguous instance boundaries. Recent query-based forest segmentation methods have shown promise for unified semantic and instance prediction, but they still insufficiently exploit forest-specific spatial structure and account for boundary uncertainty. In this paper, we propose ForestQuery, a boundary-aware and spatially anchored query learning framework for unified forest point cloud segmentation. ForestQuery enhances instance and semantic query learning through two complementary designs. Specifically, boundary uncertainty is explicitly modeled to guide reliable instance query construction and modulate query optimization through adaptive loss reweighting. Meanwhile, spatially anchored semantic query enhancement (SA-SQE) introduces learnable 3D anchors encoding forest vertical stratification priors to enrich semantic queries with explicit spatial references. We evaluate ForestQuery on multiple public forest point cloud benchmarks and a self-collected annotated real-world dataset. Extensive experiments demonstrate consistent improvements in both individual-tree segmentation and semantic segmentation across diverse forest scenes. Code and data are publicly available at https://zhan994.github.io/ForestQuery",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Zhihao Zhan",
+      "first_author_affiliations": [
+        "School of Electronic Science and Engineering , Nanjing University , Nanjing , 210023 , China",
+        "TopXGun Robotics , Nanjing , 211100 , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "forest point cloud semantic and instance segmentation；可将边界不确定性建模与自适应损失重加权迁移到船舶点云/图像实例分割：将船舶与海面、岸线或相邻",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.03403",
+      "score": 10,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "森林 点云 分化对于精细的磨损是根本的 3D 森林场景理解,但由于树木结构不规则,存在严重隐蔽现象,密度变化,实例界限模糊等原因,仍然具有挑战性。 最近的基于查询的森林分解方法显示出统一语义和实例预测的希望,但它们仍然没有充分利用森林特有的空间结构并造成边界不确定性。 在本文中,我们提议 ForestQuery, 统一森林的边界意识和空间定位查询学习框架 点云 分割. ForestQuery 通过两个互补设计加强实例和语义查询学习。 具体来说,边界不确定性被明确模型化来指导可靠的实例查询构建,并通过适应性损失再加权来调节查询优化. 同时,空间定位语义查询增强 (SA-SQE) 介绍可学习 3D 锚地编码森林垂直分层前缀,以明确空间参考来丰富语义查询. 我们评价 ForestQuery 多个公共森林 点云 基准和自行收集的附加说明的现实世界数据集。 广泛的实验表明,不同森林场景的个体-树木分化和语义分化都不断改进。 守则和数据可在下列地点公开查阅: https://zhan994.github.io/ForestQuery",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.00319",
+      "title": "EgoRefine: Ego-Referenced Predictive Alignment and Trajectory-Conditioned Reliability-Aware Fusion for Asynchronous Collaborative Perception",
+      "authors": [
+        "Lingzhao Kong",
+        "Yongsheng Zang",
+        "Yu Kang",
+        "Kailun Yang",
+        "Jie Fu",
+        "Yukun Zuo",
+        "Zhiyong Li"
+      ],
+      "published": "2026-09-29",
+      "arxiv_url": "https://arxiv.org/abs/2610.00319",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.00319",
+      "pdf_url": "https://arxiv.org/pdf/2610.00319",
+      "open_access_url": "https://arxiv.org/pdf/2610.00319",
+      "venue": "",
+      "abstract": "Collaborative perception enables connected agents to share complementary observations for 3D object detection, extending sensing range and mitigating occlusion. Under asynchronous communication, however, cooperative features arrive with temporal delay. Existing prediction-based methods compensate for these features mainly from the transmitting agent's own history, leaving residual misalignment with the ego agent's current observation; subsequent fusion also often overlooks spatial variations in alignment quality. We propose EgoRefine, an ego-referenced predictive alignment and reliability-aware fusion framework for asynchronous collaborative perception. Its Ego-referenced Predictive Alignment module uses the current ego feature to guide cooperative trajectory-field prediction and refines the sampling offsets along an ego-referenced trajectory direction. Its Trajectory-conditioned Reliability-aware Fusion module treats the trajectory discrepancy between the ego and cooperative streams and the directional refinement magnitude as alignment cues, using them to condition the relation between aligned features and adaptively reweight the two streams before convolutional fusion. Experiments on V2V4Real and DAIR-V2X-Seq show that EgoRefine outperforms TraF-Align by 1.6 and 2.9 points on average in AP@0.5 and AP@0.7, respectively. The source code will be made publicly available at https://github.com/godk0509/EgoRefine.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Lingzhao Kong",
+      "first_author_affiliations": [
+        "School of Computer Science and Electronic Engineering , Hunan University , Changsha 410082 , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "asynchronous_collaborative_perception_3d_detection；可将自车-协同车异步特征对齐思想迁移到船载雷达与视觉/AIS的异步多源检测：以当前视觉帧特征引导雷",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.00319",
+      "score": 17,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+    },
+    {
+      "paper_id": "2609.28159",
+      "title": "Depth-Guided Contrastive Learning for 2D Representations with 3D Spatial Awareness",
+      "authors": [
+        "Liang Zeng",
+        "Maarten Vergauwen"
+      ],
+      "published": "2026-09-23",
+      "arxiv_url": "https://arxiv.org/abs/2609.28159",
+      "doi": "10.48550/arxiv.2609.28159",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.28159",
+      "pdf_url": "https://arxiv.org/pdf/2609.28159",
+      "open_access_url": "https://arxiv.org/pdf/2609.28159",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Standard contrastive learning frameworks are mainly designed from a semantic perspective, yet learning 2D visual representations that preserve 3D spatial structure is also important for scene understanding. In this work, we propose Depth-Guided Contrastive Learning (DGCL), a simple auxiliary objective that injects 3D spatial awareness into 2D contrastive representation learning. Our key idea is to use depth to convert local 3D proximity into contrastive similarity: pixels that are closer in 3D space are encouraged to have more similar representations than pixels that are farther apart. Instead of relying on absolute depth values, DGCL formulates supervision through relative 3D distance comparisons among randomly sampled pixels, making the objective invariant to depth scale, efficient to compute, and easy to integrate into existing contrastive frameworks. Experiments across different datasets and models show that DGCL consistently improves 2D representation learning and benefits semantic downstream tasks by stronger spatial and geometric understanding. The code is available on https://github.com/LeungTsang/DGCL.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Liang Zeng",
+      "first_author_affiliations": [
+        "KU Leuven Belgium"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "深度引导对比表征学习；将船舶图像或雷达/点云投影深度作为输入，把像素间相对3D距离替换为船舶场景中的深度采样距离，训练目标改为在船舶视觉主干上增加DGCL对比辅助损失，结构上在现有对比框架中接入相对距",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.28159",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "标准 对比学习 框架主要从语义角度设计,但学习 2D 视觉 表征 保护 3D 空间结构对于了解场景也很重要。 在这项工作中,我们提出深度指导 对比学习 (DGCL), 一个简单的辅助目标,注入 3D 空间意识 2D 对比 表征学习. 我们的关键想法是用深度转换本地 3D 相近到相近的相似性: 相近的像素 3D 鼓励空间更类似 表征 比相距更远的像素。 而不是依赖绝对深度值, DGCL 通过相对方式制定监督 3D 随机抽样的像素之间的相距比较,使目标变异到深度尺度,计算效率高,容易被整合到现有的对比框架. 跨越不同数据集和模型的实验表明: DGCL 不断改进 2D 表征学习 并且通过更强的空间和几何理解,有利于语义学下游任务. 该代码可在 https://github.com/LeungTsang/DGCL.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 775,
+    "ai_reviewed": 462,
+    "ai_states": {
+      "evaluated": 462,
+      "uncertain": 249,
+      "unassessed": 64
+    },
+    "stage_counts": {
+      "2": 733,
+      "1": 25,
+      "3": 17
+    },
+    "ai_rejected": 445,
+    "qualified_count": 17,
+    "selected_count": 5,
+    "shortfall": 0,
+    "translation_environment_errors": [],
+    "translation_errors": [
+      {
+        "paper_id": "2610.00319",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+      }
+    ]
+  },
+  "publication_status": "partial",
+  "reserve_papers": [
+    {
+      "paper_id": "2610.06837",
+      "title": "Anatomy-aware Fine-grained Multimodal Fusion for Laryngopharyngeal Cancer T-Staging Prediction Using CT and Radiology Report",
+      "authors": [
+        "Xingyue Zhao",
+        "Yanzhou Su",
+        "Fang Zhang",
+        "Zhanghexuan Ji",
+        "Yirui Wang",
+        "Dazhou Guo",
+        "Sibo Ju",
+        "Yuehua Cheng",
+        "Yuzhen Chen",
+        "Ming Feng",
+        "Le Lu",
+        "Tsung-Ying Ho",
+        "Jian Wang",
+        "Dakai Jin",
+        "Na Shen"
+      ],
+      "published": "2026-10-05",
+      "arxiv_url": "https://arxiv.org/abs/2610.06837",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.06837",
+      "pdf_url": "https://arxiv.org/pdf/2610.06837",
+      "open_access_url": "https://arxiv.org/pdf/2610.06837",
+      "venue": "",
+      "abstract": "Accurate T-staging is crucial for guiding personalized treatment strategies for laryngopharyngeal cancer. However, current clinical practice relies on invasive biopsy procedures, whereas CT-based staging remains challenging due to the complex patterns of tumor invasion. Recent computer-aided approaches face two key challenges: 1) Structural relationship modeling: existing methods underrepresent anatomically structured patterns of tumor invasion, as they either process whole CT volumes without tumor-specific anatomical constraints or rely on labor-intensive tumor segmentation. 2) Fine-grained cross-modal alignment: while radiology reports contain organ-specific invasion details, current methods that apply global feature fusion struggle to accurately align individual anatomical structures with their corresponding textual descriptions. To address these issues, we propose an anatomy-aware multimodal framework that integrates organ-level CT context and radiology reports into a unified representation for laryngopharyngeal T-staging. The framework first constructs an Anatomy-Structured Organ Graph (AOG) that captures invasion patterns between primary sites and surrounding organs, then performs Organ-Anchored Cross-Modal Alignment (OCA) so that each organ node aggregates textual evidence from the radiology report, and finally refines this graph representation by injecting organ-specific invasion cues extracted from the report via Report-Enhanced Graph-Refinement (REG), yielding a multimodal organ graph that combines spatial and textual evidence. Extensive experiments demonstrate that the proposed framework achieves superior performance in T-staging of laryngopharyngeal cancer.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Xingyue Zhao",
+      "first_author_affiliations": [
+        "Alibaba Group"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "解剖感知多模态融合与跨模态对齐；将器官节点替换为船舶图像中的候选目标节点（如检测框或分割区域），文本证据改为AIS报文中的船名、类型、位置等结构化描述，通过锚点节点聚合AIS文本特征实现视觉-AIS细",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.06837",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "准确的T-Stage对于指导喉癌的个性化治疗战略至关重要。 然而,目前的临床实践依赖于入侵性活检程序,而 CT-由于肿瘤入侵的复杂模式,基地集结仍然具有挑战性。 近期计算机辅助办法面临两大挑战: 1) 结构关系模型化:现有方法在解剖学上不代表肿瘤入侵的模式,因为它们要么是整个过程 CT 无肿瘤解剖限制或依赖劳动密集型肿瘤分解的体积. 2) 不错 跨模态 对齐: 放射科报告包含器官特定入侵的细节, 而当前应用全球特征的方法 融合 将单个解剖结构与相应的文字描述精确对齐。 为了解决这些问题,我们提出一个解剖意识 多模态 综合机构一级框架 CT 上下文和放射科报告 表征 为喉咙T-stage。 框架首先构建一个解剖学-结构化的器官图 (AOG) 捕捉主要地点和周围器官之间的入侵模式,然后执行器官-安克雷德 跨模态 对齐 (OCA) 所以每个器官节点 汇总放射学报告中的文字证据 最后细化了这个图 表征 从报告中提取的器官入侵提示 (REG), 产生a 多模态 结合空间证据和文字证据的机关图。 广泛的实验表明,拟议框架在肾上腺素癌的T-分泌方面表现优异.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.14598",
+      "title": "Bidirectional Adaptive Transformers for Multimodal Anomaly Detection",
+      "authors": [
+        "Yuxin Jiang",
+        "Yunkang Cao",
+        "Weiming Shen"
+      ],
+      "published": "2026-10-10",
+      "arxiv_url": "https://arxiv.org/abs/2610.14598",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.14598",
+      "pdf_url": "https://arxiv.org/pdf/2610.14598",
+      "open_access_url": "https://arxiv.org/pdf/2610.14598",
+      "venue": "",
+      "abstract": "The effective integration of features derived from RGB images and 3D point clouds presents a substantial challenge in the field of multimodal anomaly detection (MAD). Existing MAD methods typically rely on static fusion paradigms built upon frozen pre-trained encoders. While these frameworks facilitate spatial alignment, they lack the mechanism to establish latent semantic correspondence, thereby inducing cross-modal interference that degrades anomaly discriminability. To mitigate these limitations, this study proposes a Bidirectional Adaptive Transformers (BAT) framework, which constructs comprehensive and semantically aligned multimodal representations by leveraging complementary attributes across modalities. The BAT framework introduces a Bidirectional Feature Alignment (BFA) module, which employs a mutual predictive mechanism to bridge the gap between 2D textural patterns and 3D geometric structures. This bidirectional interaction explicitly enhances the textural granularity of point cloud descriptors while augmenting the spatial contextual awareness of RGB features. To ensure that the latent representations possess sufficient informational density for alignment, BAT incorporates a parameter-efficient adaptation architecture. By utilizing lightweight image and point cloud adapters, the framework facilitates specialized fine-tuning of pre-trained models, mitigating the information loss inherent in frozen encoders. Extensive experiments conducted on MVTec 3D-AD and Eyecandies confirm that BAT achieves state-of-the-art anomaly detection performance, significantly outperforming existing MAD methods.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Yuxin Jiang",
+      "first_author_affiliations": [
+        "School of Mechanical Science and Engineering, Huazhong University of Science and Technology, Wuhan, 430000, Hubei, China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "多模态异常检测/跨模态特征对齐；将RGB-点云的双向互相预测对齐改为视觉-雷达/AIS模态间对齐：输入改为船舶图像特征与雷达/AIS时空特征，需设计对应的互补预测目标与轻量适配器微调，对齐损失改为跨模",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.14598",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "有效整合源自于 RGB 图像和 3D 点云 人权领域面临的重大挑战 多模态 异常检测 (MAD). 现有 MAD 方法通常依赖静态 融合 以冷冻的预培训编码器为基础的范式。 虽然这些框架有助于空间 对齐, 它们缺乏建立潜在语义通信的机制,从而诱导 跨模态 干预可降低异常的歧视性。 为减少这些局限性,本研究报告建议采用双向适应方法。 Transformer (BAT) 框架,它构建了全面和整体一致的框架 多模态 表征 利用各种补充性属性 模态.  BAT 框架引入双向特性 对齐 (BFA) 模块,该模块采用一种相互预测机制,以弥合在以下两个方面之间的差距: 2D 纹理图案和 3D 几何结构. 这种双向相互作用明确增强 点云 说明,同时增强空间背景意识 RGB 特性。 确保潜在的 表征 具有足够的信息密度 对齐, BAT 纳入具有参数效率的适应结构。 通过使用轻量级图像和 点云 适配器,框架有利于对预先训练过的模型进行专门微调,减轻冷冻编码器固有的信息损失. 在下列领域进行了广泛的实验: MVTec 3D-AD 眼科医生证实 BAT 达到最新水平 异常检测 业绩,明显超过现有业绩 MAD 方法.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.03403",
+      "title": "ForestQuery: Boundary-Aware and Spatially Anchored Query Learning for Unified Forest Point Cloud Segmentation",
+      "authors": [
+        "Zhihao Zhan",
+        "Le Tao",
+        "Yifei Tian",
+        "Xin Liu",
+        "Jie Yuan"
+      ],
+      "published": "2026-10-02",
+      "arxiv_url": "https://arxiv.org/abs/2610.03403",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.03403",
+      "pdf_url": "https://arxiv.org/pdf/2610.03403",
+      "open_access_url": "https://arxiv.org/pdf/2610.03403",
+      "venue": "",
+      "abstract": "Forest point cloud segmentation is fundamental for fine-grained 3D forest scene understanding, yet remains challenging due to irregular tree structures, severe occlusions, density variations, and ambiguous instance boundaries. Recent query-based forest segmentation methods have shown promise for unified semantic and instance prediction, but they still insufficiently exploit forest-specific spatial structure and account for boundary uncertainty. In this paper, we propose ForestQuery, a boundary-aware and spatially anchored query learning framework for unified forest point cloud segmentation. ForestQuery enhances instance and semantic query learning through two complementary designs. Specifically, boundary uncertainty is explicitly modeled to guide reliable instance query construction and modulate query optimization through adaptive loss reweighting. Meanwhile, spatially anchored semantic query enhancement (SA-SQE) introduces learnable 3D anchors encoding forest vertical stratification priors to enrich semantic queries with explicit spatial references. We evaluate ForestQuery on multiple public forest point cloud benchmarks and a self-collected annotated real-world dataset. Extensive experiments demonstrate consistent improvements in both individual-tree segmentation and semantic segmentation across diverse forest scenes. Code and data are publicly available at https://zhan994.github.io/ForestQuery",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Zhihao Zhan",
+      "first_author_affiliations": [
+        "School of Electronic Science and Engineering , Nanjing University , Nanjing , 210023 , China",
+        "TopXGun Robotics , Nanjing , 211100 , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "forest point cloud semantic and instance segmentation；可将边界不确定性建模与自适应损失重加权迁移到船舶点云/图像实例分割：将船舶与海面、岸线或相邻",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.03403",
+      "score": 10,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "森林 点云 分化对于精细的磨损是根本的 3D 森林场景理解,但由于树木结构不规则,存在严重隐蔽现象,密度变化,实例界限模糊等原因,仍然具有挑战性。 最近的基于查询的森林分解方法显示出统一语义和实例预测的希望,但它们仍然没有充分利用森林特有的空间结构并造成边界不确定性。 在本文中,我们提议 ForestQuery, 统一森林的边界意识和空间定位查询学习框架 点云 分割. ForestQuery 通过两个互补设计加强实例和语义查询学习。 具体来说,边界不确定性被明确模型化来指导可靠的实例查询构建,并通过适应性损失再加权来调节查询优化. 同时,空间定位语义查询增强 (SA-SQE) 介绍可学习 3D 锚地编码森林垂直分层前缀,以明确空间参考来丰富语义查询. 我们评价 ForestQuery 多个公共森林 点云 基准和自行收集的附加说明的现实世界数据集。 广泛的实验表明,不同森林场景的个体-树木分化和语义分化都不断改进。 守则和数据可在下列地点公开查阅: https://zhan994.github.io/ForestQuery",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.00319",
+      "title": "EgoRefine: Ego-Referenced Predictive Alignment and Trajectory-Conditioned Reliability-Aware Fusion for Asynchronous Collaborative Perception",
+      "authors": [
+        "Lingzhao Kong",
+        "Yongsheng Zang",
+        "Yu Kang",
+        "Kailun Yang",
+        "Jie Fu",
+        "Yukun Zuo",
+        "Zhiyong Li"
+      ],
+      "published": "2026-09-29",
+      "arxiv_url": "https://arxiv.org/abs/2610.00319",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.00319",
+      "pdf_url": "https://arxiv.org/pdf/2610.00319",
+      "open_access_url": "https://arxiv.org/pdf/2610.00319",
+      "venue": "",
+      "abstract": "Collaborative perception enables connected agents to share complementary observations for 3D object detection, extending sensing range and mitigating occlusion. Under asynchronous communication, however, cooperative features arrive with temporal delay. Existing prediction-based methods compensate for these features mainly from the transmitting agent's own history, leaving residual misalignment with the ego agent's current observation; subsequent fusion also often overlooks spatial variations in alignment quality. We propose EgoRefine, an ego-referenced predictive alignment and reliability-aware fusion framework for asynchronous collaborative perception. Its Ego-referenced Predictive Alignment module uses the current ego feature to guide cooperative trajectory-field prediction and refines the sampling offsets along an ego-referenced trajectory direction. Its Trajectory-conditioned Reliability-aware Fusion module treats the trajectory discrepancy between the ego and cooperative streams and the directional refinement magnitude as alignment cues, using them to condition the relation between aligned features and adaptively reweight the two streams before convolutional fusion. Experiments on V2V4Real and DAIR-V2X-Seq show that EgoRefine outperforms TraF-Align by 1.6 and 2.9 points on average in AP@0.5 and AP@0.7, respectively. The source code will be made publicly available at https://github.com/godk0509/EgoRefine.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Lingzhao Kong",
+      "first_author_affiliations": [
+        "School of Computer Science and Electronic Engineering , Hunan University , Changsha 410082 , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "asynchronous_collaborative_perception_3d_detection；可将自车-协同车异步特征对齐思想迁移到船载雷达与视觉/AIS的异步多源检测：以当前视觉帧特征引导雷",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.00319",
+      "score": 17,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+    },
+    {
+      "paper_id": "2609.28159",
+      "title": "Depth-Guided Contrastive Learning for 2D Representations with 3D Spatial Awareness",
+      "authors": [
+        "Liang Zeng",
+        "Maarten Vergauwen"
+      ],
+      "published": "2026-09-23",
+      "arxiv_url": "https://arxiv.org/abs/2609.28159",
+      "doi": "10.48550/arxiv.2609.28159",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.28159",
+      "pdf_url": "https://arxiv.org/pdf/2609.28159",
+      "open_access_url": "https://arxiv.org/pdf/2609.28159",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Standard contrastive learning frameworks are mainly designed from a semantic perspective, yet learning 2D visual representations that preserve 3D spatial structure is also important for scene understanding. In this work, we propose Depth-Guided Contrastive Learning (DGCL), a simple auxiliary objective that injects 3D spatial awareness into 2D contrastive representation learning. Our key idea is to use depth to convert local 3D proximity into contrastive similarity: pixels that are closer in 3D space are encouraged to have more similar representations than pixels that are farther apart. Instead of relying on absolute depth values, DGCL formulates supervision through relative 3D distance comparisons among randomly sampled pixels, making the objective invariant to depth scale, efficient to compute, and easy to integrate into existing contrastive frameworks. Experiments across different datasets and models show that DGCL consistently improves 2D representation learning and benefits semantic downstream tasks by stronger spatial and geometric understanding. The code is available on https://github.com/LeungTsang/DGCL.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Liang Zeng",
+      "first_author_affiliations": [
+        "KU Leuven Belgium"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "深度引导对比表征学习；将船舶图像或雷达/点云投影深度作为输入，把像素间相对3D距离替换为船舶场景中的深度采样距离，训练目标改为在船舶视觉主干上增加DGCL对比辅助损失，结构上在现有对比框架中接入相对距",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.28159",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "标准 对比学习 框架主要从语义角度设计,但学习 2D 视觉 表征 保护 3D 空间结构对于了解场景也很重要。 在这项工作中,我们提出深度指导 对比学习 (DGCL), 一个简单的辅助目标,注入 3D 空间意识 2D 对比 表征学习. 我们的关键想法是用深度转换本地 3D 相近到相近的相似性: 相近的像素 3D 鼓励空间更类似 表征 比相距更远的像素。 而不是依赖绝对深度值, DGCL 通过相对方式制定监督 3D 随机抽样的像素之间的相距比较,使目标变异到深度尺度,计算效率高,容易被整合到现有的对比框架. 跨越不同数据集和模型的实验表明: DGCL 不断改进 2D 表征学习 并且通过更强的空间和几何理解,有利于语义学下游任务. 该代码可在 https://github.com/LeungTsang/DGCL.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ]
+}

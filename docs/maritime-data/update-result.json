@@ -1,21 +1,21 @@
 {
-  "run_id": "2026-10-22T09:29:36.897308+00:00",
-  "completed_at": "2026-10-22T09:32:40.345848+00:00",
-  "local_update": "success",
-  "jobs": 0,
-  "successful": 0,
+  "run_id": "2026-10-23T01:34:58.734921+00:00",
+  "completed_at": "2026-10-23T01:53:20.238779+00:00",
+  "local_update": "partial",
+  "jobs": 42,
+  "successful": 35,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 7,
+  "added": 3,
   "filled": 0,
   "merged": 0,
   "before_count": 3724,
-  "after_count": 3724,
+  "after_count": 3727,
   "translation": {
-    "translated": 0,
-    "cached": 5,
+    "translated": 3,
+    "cached": 1,
     "manual": 0,
-    "failed": 0,
+    "failed": 1,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
@@ -26,33 +26,33 @@
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2610.12871",
+        "paper_id": "2610.06837",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.09411",
+        "paper_id": "2610.14598",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.03167",
+        "paper_id": "2610.03403",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2609.38637",
-        "source": "argos",
-        "error": ""
+        "paper_id": "2610.00319",
+        "source": "english_only",
+        "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
       },
       {
-        "paper_id": "2609.25067",
+        "paper_id": "2609.28159",
         "source": "argos",
         "error": ""
       }
     ]
   },
-  "translation_failed": 0,
+  "translation_failed": 1,
   "suspected_duplicates": [
     [
       "doi:10.5281/zenodo.23267832",
@@ -77,67 +77,105 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 51,
-    "cached": 636,
-    "failed": 1,
-    "cost_upper_cny": 0.23327224000000002,
-    "priced_cost_cny": 0.23327224000000002,
-    "unsettled_upper_cny": 0.0,
-    "tokens": 73752,
+    "processed": 29,
+    "cached": 682,
+    "failed": 3,
+    "cost_upper_cny": 0.15725232,
+    "priced_cost_cny": 0.15725232,
+    "unsettled_upper_cny": 0,
+    "tokens": 49983,
     "missing_abstract": 0,
-    "candidate_count": 780,
-    "already_attempted_today": 5,
-    "pending_total": 139,
-    "limit_deferred": 19,
+    "candidate_count": 775,
+    "already_attempted_today": 0,
+    "pending_total": 93,
+    "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 443,
+    "ai_reviewed": 462,
     "validation_errors": [
       {
-        "paper_id": "2610.04601",
+        "paper_id": "2610.02343",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2609.35203",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2610.13915",
         "reason": "Evidence is not an exact abstract quotation"
       }
     ],
+    "reason": "Invalid AI batch identity",
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 443,
-      "uncertain": 244,
-      "unassessed": 93
+      "evaluated": 462,
+      "uncertain": 249,
+      "unassessed": 64
     },
     "publication_status": "complete",
-    "reserve_available": 16
+    "reserve_available": 17
   },
   "affiliations": [
     {
-      "paper_id": "2610.12871",
-      "status": "cached_verified",
-      "source": "arXiv官方论文首页"
+      "paper_id": "2610.06837",
+      "revision": 1,
+      "time": "2026-10-23T01:52:43.422403+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2610.09411",
-      "status": "cached_verified",
-      "source": "arXiv官方论文首页"
+      "paper_id": "2610.14598",
+      "revision": 1,
+      "time": "2026-10-23T01:52:43.422403+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2610.03167",
-      "status": "cached_unverified"
+      "paper_id": "2610.03403",
+      "revision": 1,
+      "time": "2026-10-23T01:52:43.422403+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2609.38637",
-      "status": "cached_verified",
-      "source": "arXiv官方论文首页"
+      "paper_id": "2610.00319",
+      "revision": 1,
+      "time": "2026-10-23T01:52:43.422403+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2609.25067",
+      "paper_id": "2609.28159",
       "status": "cached_verified",
-      "source": "arXiv官方论文首页"
+      "source": "OpenAlex first authorship"
     }
   ],
   "daily_selected": 5,
-  "daily_publication": "complete",
+  "daily_publication": "partial",
   "published_daily_date": "2026-10-22",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "39755657674"
+  "retrieval_status": "partial",
+  "github_run_id": "39884698270"
 }
