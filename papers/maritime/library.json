@@ -155449,7 +155449,7 @@
           }
         ],
         "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
-        "updated_at": "2026-10-24T01:48:06.053485+00:00",
+        "updated_at": "2026-10-24T08:59:05.827737+00:00",
         "retry_attempts": 1,
         "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
       },
@@ -155485,6 +155485,23 @@
           ],
           "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
           "updated_at": "2026-10-23T09:28:08.184878+00:00",
+          "retry_attempts": 1,
+          "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+        },
+        {
+          "status": "failed",
+          "zh": "",
+          "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at",
+          "error_type": "translation_validation_failed",
+          "candidate_zh": "",
+          "segment_retries": [
+            {
+              "segment": "respectively. The source code will be made publicly available at",
+              "reason": "numeric_mismatch: numbers or percentages changed"
+            }
+          ],
+          "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
+          "updated_at": "2026-10-24T01:48:06.053485+00:00",
           "retry_attempts": 1,
           "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
         }
@@ -653958,7 +653975,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.29618": {
       "metadata_records": [
@@ -654973,7 +654991,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115156": {
       "metadata_records": [
@@ -655143,7 +655162,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115202": {
       "metadata_records": [
@@ -655301,7 +655321,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115211": {
       "metadata_records": [
@@ -655465,7 +655486,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115226": {
       "metadata_records": [
@@ -655629,7 +655651,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115225": {
       "metadata_records": [
@@ -655795,7 +655818,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115081": {
       "metadata_records": [
@@ -655963,7 +655987,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.31209": {
       "metadata_records": [
@@ -656130,7 +656155,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.31180": {
       "metadata_records": [
@@ -656687,7 +656713,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.29866": {
       "metadata_records": [
@@ -674169,6 +674196,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-24T01:47:07.335212+00:00"
+    },
+    {
+      "missing_before": 977,
+      "missing_after": 977,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-24T08:58:38.949263+00:00"
     }
   ],
   "translation_batches": [

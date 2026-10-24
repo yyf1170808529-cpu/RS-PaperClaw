@@ -128705,7 +128705,7 @@
           }
         ],
         "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
-        "updated_at": "2026-10-24T01:48:06.053485+00:00",
+        "updated_at": "2026-10-24T08:59:05.827737+00:00",
         "retry_attempts": 1,
         "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
       },
@@ -535083,6 +535083,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -535928,6 +535929,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536077,6 +536079,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536218,6 +536221,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536362,6 +536366,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536506,6 +536511,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536651,6 +536657,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536797,6 +536804,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -536922,6 +536930,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -537365,6 +537374,7 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -567004,17 +567014,17 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-10-24T01:39:53.225678+00:00",
-    "completed_at": "2026-10-24T01:48:18.662914+00:00",
+    "run_id": "2026-10-24T08:57:39.151090+00:00",
+    "completed_at": "2026-10-24T08:59:25.350097+00:00",
     "local_update": "partial",
-    "jobs": 42,
-    "successful": 39,
+    "jobs": 0,
+    "successful": 0,
     "incomplete": 0,
-    "failed": 3,
-    "added": 18,
+    "failed": 0,
+    "added": 0,
     "filled": 0,
     "merged": 0,
-    "before_count": 3727,
+    "before_count": 3745,
     "after_count": 3745,
     "translation": {
       "translated": 0,
@@ -567081,31 +567091,21 @@
       ]
     ],
     "ai": {
-      "status": "partial",
-      "processed": 15,
-      "cached": 767,
-      "failed": 2,
-      "cost_upper_cny": 0.07110664,
-      "priced_cost_cny": 0.03555332,
+      "status": "deferred",
+      "processed": 0,
+      "cached": 782,
+      "failed": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
       "unsettled_upper_cny": 0.0,
-      "tokens": 24271,
+      "tokens": 0,
       "missing_abstract": 0,
       "candidate_count": 784,
-      "already_attempted_today": 0,
-      "pending_total": 17,
+      "already_attempted_today": 2,
+      "pending_total": 0,
       "limit_deferred": 0,
       "selected_count": 5,
       "ai_reviewed": 524,
-      "validation_errors": [
-        {
-          "paper_id": "2610.30481",
-          "reason": "Evidence is not an exact abstract quotation"
-        },
-        {
-          "paper_id": "2610.13915",
-          "reason": "Evidence is not an exact abstract quotation"
-        }
-      ],
       "shortfall": 0,
       "ai_states": {
         "evaluated": 524,
@@ -567148,8 +567148,8 @@
     "published_daily_count": 5,
     "github_sync": "not_attempted",
     "pages_publish": "not_attempted",
-    "retrieval_status": "partial",
-    "github_run_id": "40050726212"
+    "retrieval_status": "not_run_resume",
+    "github_run_id": "40079962312"
   },
   "recommendation_policy": {
     "schema_version": 2,
