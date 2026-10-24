@@ -1,16 +1,16 @@
 {
-  "run_id": "2026-10-23T09:25:30.350190+00:00",
-  "completed_at": "2026-10-23T09:28:20.791223+00:00",
+  "run_id": "2026-10-24T01:39:53.225678+00:00",
+  "completed_at": "2026-10-24T01:48:18.662914+00:00",
   "local_update": "partial",
-  "jobs": 0,
-  "successful": 0,
+  "jobs": 42,
+  "successful": 39,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 3,
+  "added": 18,
   "filled": 0,
   "merged": 0,
   "before_count": 3727,
-  "after_count": 3727,
+  "after_count": 3745,
   "translation": {
     "translated": 0,
     "cached": 4,
@@ -77,31 +77,35 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 56,
-    "cached": 711,
-    "failed": 1,
-    "cost_upper_cny": 0.2278392,
-    "priced_cost_cny": 0.2278392,
+    "processed": 15,
+    "cached": 767,
+    "failed": 2,
+    "cost_upper_cny": 0.07110664,
+    "priced_cost_cny": 0.03555332,
     "unsettled_upper_cny": 0.0,
-    "tokens": 77280,
+    "tokens": 24271,
     "missing_abstract": 0,
-    "candidate_count": 775,
-    "already_attempted_today": 7,
-    "pending_total": 57,
+    "candidate_count": 784,
+    "already_attempted_today": 0,
+    "pending_total": 17,
     "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 513,
+    "ai_reviewed": 524,
     "validation_errors": [
       {
-        "paper_id": "2610.08627",
+        "paper_id": "2610.30481",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2610.13915",
         "reason": "Evidence is not an exact abstract quotation"
       }
     ],
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 513,
-      "uncertain": 254,
-      "unassessed": 8
+      "evaluated": 524,
+      "uncertain": 258,
+      "unassessed": 2
     },
     "publication_status": "complete",
     "reserve_available": 19
@@ -139,6 +143,6 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "39931613956"
+  "retrieval_status": "partial",
+  "github_run_id": "40050726212"
 }

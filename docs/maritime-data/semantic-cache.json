@@ -29929,6 +29929,568 @@
       },
       "model": "deepseek-flash",
       "request_id": "2895595c-ec45-445c-9c5b-b95b59ef24e9"
+    },
+    "0b24639d352307a656bc5db1423d1c7f718dcbd8f0f87f46099703ff4743eed5": {
+      "paper_id": "2610.31302",
+      "title": "Whole-Body Motion Guided Reference Generation for Uncertainty-Aware Compliant Assistance",
+      "fingerprint": "0b24639d352307a656bc5db1423d1c7f718dcbd8f0f87f46099703ff4743eed5",
+      "evaluation": {
+        "paper_id": "2610.31302",
+        "task_type": "exoskeleton trajectory generation and compliant control",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "To reduce cross-modal representation mismatch, a three-stage training pipeline is introduced to progressively optimize the human motion encoder, the exoskeleton proprioception encoder, and the trajectory generator.",
+            "interpretation_zh": "采用三阶段训练缓解跨模态表征失配，涉及人体运动编码器与外骨骼本体感知编码器。",
+            "inference": false
+          },
+          {
+            "quote_en": "a dual-loop assistance strategy is proposed to couple multimodal exoskeleton trajectory generation with variable admittance control",
+            "interpretation_zh": "双环策略耦合多模态轨迹生成与可变导纳控制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "To reduce cross-modal representation mismatch, a three-stage training pipeline is introduced to progressively optimize the human motion encoder, the exoskeleton proprioception encoder, and the trajectory generator.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴其分阶段对齐两个模态编码器的训练思路，但需将人体运动/外骨骼本体感知输入替换为视觉船舶表征与AIS轨迹表征，并重新设计匹配训练目标；摘要未给出可复用的匹配损失或结构细节，迁移仅为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为外骨骼轨迹生成与柔顺控制，非视觉感知或海事任务",
+          "跨模态对齐仅是训练策略，未给出匹配任务的网络结构、损失或评估",
+          "无船舶、AIS或视觉检测相关内容"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "外骨骼轨迹生成与柔顺控制，跨模态训练仅为辅助策略，缺少可迁移到跨模态匹配的具体结构或损失。",
+        "confidence": 0.75
+      },
+      "model": "deepseek-flash",
+      "request_id": "03cfc306-eed0-420d-8a4e-ff316a78651c"
+    },
+    "1db43e33eb51995bb75b04e53adfd219dadb90bc745621394dafa92de96af9b9": {
+      "paper_id": "2610.31474",
+      "title": "Skeleton-Grounded Latent Action Model for Robot World Models",
+      "fingerprint": "1db43e33eb51995bb75b04e53adfd219dadb90bc745621394dafa92de96af9b9",
+      "evaluation": {
+        "paper_id": "2610.31474",
+        "task_type": "robot world model latent action learning",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Cross-modal swap reconstruction encourages RGB-derived and skeleton-derived kinematic representations to be interchangeable during video reconstruction.",
+            "interpretation_zh": "通过跨模态交换重建，使RGB派生与骨架派生的运动学表征可互换。",
+            "inference": false
+          },
+          {
+            "quote_en": "SkeLAM decomposes latent actions into a kinematic component grounded by robot skeleton supervision and a residual component retaining complementary visual dynamics.",
+            "interpretation_zh": "将潜在动作分解为骨架监督的运动学分量与保留视觉动态的残差分量。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Cross-modal swap reconstruction encourages RGB-derived and skeleton-derived kinematic representations to be interchangeable during video reconstruction.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴其跨模态交换重建以对齐两种模态表征的思路，但需把RGB与骨架输入改为船舶视觉特征与AIS轨迹/雷达特征，重建目标改为跨模态匹配或一致性约束，并重新设计编码器；摘要未提供匹配损失细节，迁移属推断。",
+          "inference": true
+        },
+        "limitations": [
+          "面向机器人世界模型与动作生成，非检测/匹配任务",
+          "骨架监督与视频重建目标难以直接映射到视觉–AIS关联",
+          "无海事场景或传感器数据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人世界模型与潜在动作学习，跨模态交换重建思路可启发对齐，但任务与数据形态差异大，缺乏可直接迁移的匹配设计。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "03cfc306-eed0-420d-8a4e-ff316a78651c"
+    },
+    "d0d00fd3fbc3e27b84c18add3697cc11171153352a7b65df49c15462d60b2217": {
+      "paper_id": "2610.29761",
+      "title": "OMAR: Open-World Multi-Attribute Reasoning for Scene-Conditioned Shelf Organization",
+      "fingerprint": "d0d00fd3fbc3e27b84c18add3697cc11171153352a7b65df49c15462d60b2217",
+      "evaluation": {
+        "paper_id": "2610.29761",
+        "task_type": "open-world object grounding and placement reasoning",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "First, a vision-language model proposes labels together with attributes such as content and packaging type, which are grounded through segmentation, depth, and multi-view association.",
+            "interpretation_zh": "视觉语言模型生成标签与属性，并通过分割、深度和多视图关联进行落地。",
+            "inference": false
+          },
+          {
+            "quote_en": "We propose an open-world multi-attribute reasoning pipeline that grounds unknown objects across views and constructs an instance-level 3D scene graph for placement reasoning.",
+            "interpretation_zh": "提出开放世界多属性推理流程，跨视图落地未知物体并构建实例级3D场景图。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "First, a vision-language model proposes labels together with attributes such as content and packaging type, which are grounded through segmentation, depth, and multi-view association.",
+          "target_task": "ship_detection",
+          "adaptation_zh": "可借鉴视觉语言模型生成属性并经分割与深度落地到物体的流程，用于开放世界船舶检测：需将属性改为船型/状态等海事属性，替换分割与深度分支的输入域，并重新设计多视图关联；迁移为推断，摘要未涉船舶数据。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为货架整理与放置推理，非海事检测",
+          "多视图关联依赖室内货架场景，船舶场景需重设计",
+          "无AIS或多传感器融合内容"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "货架整理场景的开放世界落地与放置推理，虽含分割与深度，但与船舶检测任务联系弱且缺少匹配方法细节。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "03cfc306-eed0-420d-8a4e-ff316a78651c"
+    },
+    "85b5996d526ff3d76dc56623baefe236fa253e95acaaaf1f1e98ad2cd8620e44": {
+      "paper_id": "2610.29647",
+      "title": "Reading the Room: Scale-ambiguous Semantic Registration of Sparse VSLAM Maps to Floor Plans in Partially Built Environments",
+      "fingerprint": "85b5996d526ff3d76dc56623baefe236fa253e95acaaaf1f1e98ad2cd8620e44",
+      "evaluation": {
+        "paper_id": "2610.29647",
+        "task_type": "cross-modal registration of VSLAM maps to floor plans",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "We develop two global initialization schemes, leveraging a single inaccurate user-provided correspondence if provided, or estimating the initialization globally using a cross-modal matching network.",
+            "interpretation_zh": "利用单个不精确对应或跨模态匹配网络进行全局初始化。",
+            "inference": false
+          },
+          {
+            "quote_en": "Our key idea is to define a single robust, differentiable, class-balanced semantic-geometric energy function that governs all stages of the pipeline.",
+            "interpretation_zh": "定义单一鲁棒可微、类别平衡的语义几何能量函数统一各阶段。",
+            "inference": false
+          },
+          {
+            "quote_en": "the sparse point cloud is cross-modal to the symbolic floor plan",
+            "interpretation_zh": "稀疏点云与符号化平面图构成跨模态关系。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "We develop two global initialization schemes, leveraging a single inaccurate user-provided correspondence if provided, or estimating the initialization globally using a cross-modal matching network.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴单对应点初始化加可微语义几何能量优化的框架，用于视觉–AIS/雷达关联：需把VSLAM点云与平面图替换为视觉检测目标与AIS/雷达轨迹点，调整几何尺度不确定性与语义类别，并重新定义能量函数中的相似度项；迁移为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "应用为建筑工地VSLAM与平面图配准，非海事",
+          "能量函数针对点云–平面图几何设计，需大幅改造",
+          "无船舶检测或多传感器融合实验"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供可微跨模态匹配与全局初始化加局部优化的具体框架，对视觉–AIS关联有方法启示，但场景与数据差异大。",
+        "confidence": 0.65
+      },
+      "model": "deepseek-flash",
+      "request_id": "03cfc306-eed0-420d-8a4e-ff316a78651c"
+    },
+    "2178ca3423a15d118f8a7c6dbed1441ff1af9723d5d7499e43ab0d5182f21ea5": {
+      "paper_id": "2610.29618",
+      "title": "FogTTA: Online Test-Time Adaptation for Robust Transformer-based Object Detection in Foggy Weather",
+      "fingerprint": "2178ca3423a15d118f8a7c6dbed1441ff1af9723d5d7499e43ab0d5182f21ea5",
+      "evaluation": {
+        "paper_id": "2610.29618",
+        "task_type": "online test-time adaptation for transformer-based object detection in foggy weather",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "The framework follows a teacher-student design, where the deployed model serves as the teacher and generates pseudo labels from weakly augmented target inputs.",
+            "interpretation_zh": "教师-学生框架，教师模型从弱增强目标域图像生成伪标签。",
+            "inference": false
+          },
+          {
+            "quote_en": "The student model then learns from strongly augmented target sample using the Varifocal loss to mitigate pseudo-label noise.",
+            "interpretation_zh": "学生模型利用强增强样本和Varifocal损失学习以抑制伪标签噪声。",
+            "inference": false
+          },
+          {
+            "quote_en": "The teacher is updated via exponential moving averaging to ensure stable and continuous adaptation.",
+            "interpretation_zh": "教师模型通过指数移动平均更新以保持稳定连续的适应。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The framework follows a teacher-student design, where the deployed model serves as the teacher and generates pseudo labels from weakly augmented target inputs.",
+          "target_task": "ship_detection",
+          "adaptation_zh": "可将雾天在线测试时适应迁移至海上船舶检测：以船舶检测模型为教师，对海雾/低能见度目标域图像弱增强后生成伪标签，学生模型用强增强图像和检测损失学习，教师用EMA更新。需注意海事图像的目标尺度与背景差异。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅涉及自动驾驶雾天检测，无海事或AIS关联。",
+          "迁移至船舶检测需重新验证雾天和海杂波场景下的伪标签质量。"
+        ],
+        "decision": "候选",
+        "reason_zh": "目标检测在线测试时适应方法可迁移至船舶检测，但无直接海事证据，迁移为推断。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "06124fee-6862-4457-a1b9-9cba7b3356cd"
+    },
+    "ac51ad46698f6e36a07699ec4b951d1497fe1b90a857378fd439a68ef8324267": {
+      "paper_id": "2610.29866",
+      "title": "GeoMem-VLA: Internalizing 3D Scene Understanding into Temporal Memory for Vision-Language-Action Models",
+      "fingerprint": "ac51ad46698f6e36a07699ec4b951d1497fe1b90a857378fd439a68ef8324267",
+      "evaluation": {
+        "paper_id": "2610.29866",
+        "task_type": "vision-language-action model with geometric token temporal memory for robotic manipulation",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a frozen geometry foundation model supervises learnable GeoPlan tokens through a geometric flow-matching objective over the current scene point map and future end-effector tracks",
+            "interpretation_zh": "冻结的几何基础模型通过几何流匹配目标监督可学习的GeoPlan令牌，涉及当前场景点图与末端执行器轨迹。",
+            "inference": false
+          },
+          {
+            "quote_en": "These tokens are integrated with the memory of observation representations, where historical information is retrieved, adaptively fused with current observations, and consolidated to retain event frames as the task progresses.",
+            "interpretation_zh": "几何令牌与观测表示记忆集成，检索历史信息并与当前观测自适应融合。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要面向机器人操作动作生成，未涉及船舶或跨模态匹配检测任务。",
+          "方法涉及VLA动作生成，与海事感知任务输入输出差异过大，难以具体说明迁移调整。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人操作VLA方法，与船舶检测/匹配/融合任务无明确连接，迁移路径无法具体化。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "06124fee-6862-4457-a1b9-9cba7b3356cd"
+    },
+    "bc24cfcdce8520bf98557be526ff1f0caa0f0f33db8a56a989db980322eaaeba": {
+      "paper_id": "2610.31180",
+      "title": "Track finding and particle identification performance with particle physics foundation models",
+      "fingerprint": "bc24cfcdce8520bf98557be526ff1f0caa0f0f33db8a56a989db980322eaaeba",
+      "evaluation": {
+        "paper_id": "2610.31180",
+        "task_type": "particle physics foundation model for track finding and particle identification",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "we evaluated the performance of a Foundation Model based reconstruction on several downstream tasks with a dataset composed of spacepoints in a Time Projection Chamber",
+            "interpretation_zh": "在时间投影室空间点数据集上评估基础模型重建在多个下游任务的表现。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "粒子物理轨迹重建，与船舶检测/分割/多传感器融合无明确任务或方法连接。",
+          "方法细节未具体到可迁移的跨模态对齐或匹配结构。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "粒子物理基础模型重建，任务域与海事感知差异大，摘要未给出可具体迁移的匹配/融合方法。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "06124fee-6862-4457-a1b9-9cba7b3356cd"
+    },
+    "28bd6a9debc1cb5286ded2f0d26d0e3b0076a210f729d220af06cd4473bc7923": {
+      "paper_id": "2610.30672",
+      "title": "CVP-BAA: Efficiently Adapting Segment Anything Model for Medical Image Segmentation",
+      "fingerprint": "28bd6a9debc1cb5286ded2f0d26d0e3b0076a210f729d220af06cd4473bc7923",
+      "evaluation": {
+        "paper_id": "2610.30672",
+        "task_type": "efficient adaptation of vision foundation models for medical image segmentation",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "prepending them to the key and value projections within the multi-head self-attention layers of strategically selected ViT blocks",
+            "interpretation_zh": "将卷积特征作为结构先验注入选定ViT块多头注意力的key/value投影，属于SAM微调中的局部结构先验注入。",
+            "inference": false
+          },
+          {
+            "quote_en": "a boundary-aware adapter (BAA) is designed as a parallel branch to the feed-forward network within the same selected blocks",
+            "interpretation_zh": "在与前馈网络并行的分支中加入边界感知适配器，显式处理高频分量以增强边界特征。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦医学分割与SAM参数高效微调，无海事、雷达、AIS或跨模态匹配内容。",
+          "未提供船舶/海上图像实验，迁移到船舶分割或融合需额外验证。",
+          "方法仅为分割适配，不涉及跨模态对齐或轨迹匹配。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学SAM分割微调，与海事视觉、AIS关联或跨模态匹配无直接联系；方法迁移路径不具体。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ecfd80-05e7-4b71-a33a-a98aac162e3e"
+    },
+    "5f75f46330e9db00250c6394e9d7961cb0b4902e5f8c49b8797ae9284b65ea5f": {
+      "paper_id": "2610.02343",
+      "title": "SCOPE-4D: Endoscopic 4D Geometry Foundation Models",
+      "fingerprint": "5f75f46330e9db00250c6394e9d7961cb0b4902e5f8c49b8797ae9284b65ea5f",
+      "evaluation": {
+        "paper_id": "2610.02343",
+        "task_type": "endoscopic 4D geometry estimation and tissue tracking",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Common--Residual Motion (CRM) further constrains local deformation relative to common tissue movement",
+            "interpretation_zh": "将组织运动分解为公共运动与残差运动，以约束局部形变，属于单目视频几何与运动联合建模。",
+            "inference": false
+          },
+          {
+            "quote_en": "jointly predicts camera parameters, dense geometry, and 3D tissue trajectories from monocular RGB video in a single forward pass",
+            "interpretation_zh": "单目RGB视频一次前向联合预测相机参数、稠密几何和三维轨迹，涉及深度与跟踪表征。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为内窥镜医学场景，无海事或AIS相关内容。",
+          "未涉及跨模态匹配、雷达或船舶目标。",
+          "方法依赖医学组织形变先验与内窥镜数据集，迁移到船舶场景需要具体重设计。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "内窥镜4D几何与组织跟踪，虽涉及深度和轨迹，但与海事任务及跨模态匹配无明确联系。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ecfd80-05e7-4b71-a33a-a98aac162e3e"
+    },
+    "872b3c9b1948339da752c411f49e7526e3f7edc9860b03f45d85dc10e9b197e4": {
+      "paper_id": "2609.35203",
+      "title": "From UNI2-h to ConvNeXt-T: Lightweight Nuclei Instance Segmentation via Knowledge Distillation",
+      "fingerprint": "872b3c9b1948339da752c411f49e7526e3f7edc9860b03f45d85dc10e9b197e4",
+      "evaluation": {
+        "paper_id": "2609.35203",
+        "task_type": "lightweight nuclei instance segmentation via knowledge distillation",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "distills the UNI2-h pathology foundation model into a ConvNeXt-Tiny student",
+            "interpretation_zh": "将大型病理基础模型的知识蒸馏到轻量ConvNeXt-Tiny学生网络，属于输出级知识蒸馏。",
+            "inference": false
+          },
+          {
+            "quote_en": "output-level distillation alone suffices for efficient knowledge transfer",
+            "interpretation_zh": "仅输出级蒸馏即可实现高效知识迁移，可用于轻量化分割模型压缩。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为病理细胞核实例分割，无海事、船舶或跨模态匹配内容。",
+          "蒸馏方法面向医学病理基础模型，迁移到船舶检测/分割需重新训练教师与学生。",
+          "未涉及雷达、AIS、多传感器融合。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "病理细胞核分割蒸馏，与海事视觉和AIS关联无直接联系；知识蒸馏迁移路径不够具体。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ecfd80-05e7-4b71-a33a-a98aac162e3e"
+    },
+    "3dfe6fb1c0068d1440fd02c56ca53552a4c8a4b3264902f238e54d46fe43d4a7": {
+      "paper_id": "2610.04777",
+      "title": "ARISE: Adaptive Agentic Reasoning with Image-grounded Self-Evaluation for Interpretable IBD Assessment",
+      "fingerprint": "3dfe6fb1c0068d1440fd02c56ca53552a4c8a4b3264902f238e54d46fe43d4a7",
+      "evaluation": {
+        "paper_id": "2610.04777",
+        "task_type": "跨模态医学图像理解与可解释推理",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "ARISE structures agent execution into a transparent 5-stage workflow",
+            "interpretation_zh": "摘要提出五阶段智能体工作流，涉及假设生成到诊断的推理流程，但未给出可用于跨模态匹配的可实现训练方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "Vision-Language Models (VLMs) demonstrate significant potential in multimodal medical image analysis",
+            "interpretation_zh": "仅为视觉语言模型用于医学图像的背景陈述，没有具体匹配或对齐技术细节。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "医学IBD内镜/超声场景，与海事感知无直接任务联系",
+          "摘要未给出可复现的跨模态对齐、困难负样本或匹配损失细节",
+          "仅有agentic workflow和VLM关键词，缺少输入/训练目标/结构的具体迁移说明"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学视觉语言智能体推理，与船舶或跨模态匹配方法无具体可迁移证据，仅泛化多模态表述。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "c847a0db-e0e1-4a0b-a518-5e2504d862d4"
+    },
+    "21cb2015a07c0edfbf8d86b3cac0f3121eab5fe2e8c5c84b461237d818c5bfac": {
+      "paper_id": "2610.02755",
+      "title": "FiberGeoText: A Vision-Language Model for Population- Level Organization of Superficial White Matter",
+      "fingerprint": "21cb2015a07c0edfbf8d86b3cac0f3121eab5fe2e8c5c84b461237d818c5bfac",
+      "evaluation": {
+        "paper_id": "2610.02755",
+        "task_type": "视觉语言模型用于白质纤维群体聚类",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "FGT jointly represents three complementary properties of each streamline: its three-dimensional trajectory, its cortical anatomical context, and its shape",
+            "interpretation_zh": "将轨迹、解剖上下文和形状联合表征，属于具体多属性嵌入，但面向脑纤维流线而非图像跨模态匹配。",
+            "inference": false
+          },
+          {
+            "quote_en": "Cortical endpoint information from multiple parcellation schemes is expressed as text and encoded using a pretrained large language model (LLM)",
+            "interpretation_zh": "用文本编码解剖信息后与几何嵌入结合，是可参考的异构信息融合方式。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Cortical endpoint information from multiple parcellation schemes is expressed as text and encoded using a pretrained large language model (LLM), enabling heterogeneous anatomical descriptions to contribute to a common continuous representation",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴其将异构描述编码为文本嵌入并与几何/形状嵌入联合对齐的思路；用于视觉-AIS匹配时需把解剖描述替换为AIS航迹属性文本，把纤维流线形状替换为船舶图像或轨迹几何特征，并重新设计跨模态对齐训练目标，但这只是结构性推断，摘要未给出对比学习或匹配损失细节。",
+          "inference": true
+        },
+        "limitations": [
+          "医学脑影像场景，与海事任务无直接联系",
+          "摘要未说明跨模态对齐损失、负样本构造或匹配评价指标",
+          "文本-几何联合表征迁移到视觉-AIS匹配需要大量结构调整，摘要证据不足"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "脑纤维聚类VLM，跨模态对齐细节不足，迁移到视觉-AIS匹配仅为结构性推断。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "c847a0db-e0e1-4a0b-a518-5e2504d862d4"
+    },
+    "c57a971946cfaca00ef3fc4ad8d660b42f05110bd6d3d5cd6ee5351a4d897257": {
+      "paper_id": "2610.03546",
+      "title": "ZeroMAG: Zero-Shot Multimodal Adapter Generation for Plug-and-Play EEG Foundation Models",
+      "fingerprint": "c57a971946cfaca00ef3fc4ad8d660b42f05110bd6d3d5cd6ee5351a4d897257",
+      "evaluation": {
+        "paper_id": "2610.03546",
+        "task_type": "EEG基础模型零样本多模态适配器生成",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "ZeroMAG organizes companion modalities around a configuration-invariant adapter",
+            "interpretation_zh": "提出配置不变适配器组织伴随模态，属于缺失/异构模态适配的具体结构。",
+            "inference": false
+          },
+          {
+            "quote_en": "constructs a modality-subject-task condition from unlabeled recordings and task context, and generates adapter weights in a function-constrained latent space learned from source adapters",
+            "interpretation_zh": "根据无标签记录和任务上下文生成适配器权重，是具体的条件化参数生成方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "extends a frozen EEG encoder and prediction head using unlabeled target recordings, without target labels or target-side optimization",
+            "interpretation_zh": "冻结主干并用无标签目标数据生成适配器，涉及无监督域适应。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "ZeroMAG organizes companion modalities around a configuration-invariant adapter, constructs a modality-subject-task condition from unlabeled recordings and task context, and generates adapter weights in a function-constrained latent space learned from source adapters",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可借鉴其冻结主干并为辅助模态生成适配器权重的思路；用于多传感器船舶检测时，需把EEG主干替换为视觉检测主干，把伴随生理信号替换为AIS/雷达等辅助传感器特征，并以目标域无标签多传感器数据构造条件生成适配器，同时保留检测头输出；摘要未给出检测任务实验，属推断。",
+          "inference": true
+        },
+        "limitations": [
+          "EEG生理信号场景，与船舶多传感器检测任务差异大",
+          "摘要未涉及检测、分割或匹配损失，迁移到检测需重新设计训练目标",
+          "适配器条件构造依赖EEG模态-被试-任务结构，海事传感器需重新定义"
+        ],
+        "decision": "候选",
+        "reason_zh": "冻结主干+条件生成适配器对缺失/异构多传感器检测有方法参考，但任务差异大且需重设计。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "c847a0db-e0e1-4a0b-a518-5e2504d862d4"
+    },
+    "c9a6bc4b70ed87d5484ba0b9b8d7ece624e47efbf77e4475df7fb42213631182": {
+      "paper_id": "2610.06919",
+      "title": "Anchor Divergence for Semantic Geometry in Contrastive Learning",
+      "fingerprint": "c9a6bc4b70ed87d5484ba0b9b8d7ece624e47efbf77e4475df7fb42213631182",
+      "evaluation": {
+        "paper_id": "2610.06919",
+        "task_type": "对比学习中的语义几何与锚点散度",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We use this correspondence to define \"Anchor Divergences\", a method for specifying context-specific semantic geometries on fixed representations",
+            "interpretation_zh": "提出锚点散度，在固定表征上指定上下文相关的语义几何，属于具体的相似度度量方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "two images may be similar because they depict the same object, share a visual style, or are relevant to the same clinical finding",
+            "interpretation_zh": "说明相似性依赖语义上下文，可区分不同相似原因，但未给出负样本构造实验。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "We use this correspondence to define \"Anchor Divergences\", a method for specifying context-specific semantic geometries on fixed representations",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴其用锚点分布定义上下文相关Bregman几何来区分不同相似原因；用于视觉-AIS跨模态匹配时，需把固定图像表征替换为视觉与AIS嵌入，把锚点分布条件化为匹配/非匹配语义，并调整相似度度量与检索训练目标；摘要仅给出检索实验，属推断。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未给出困难负样本构造或跨模态匹配实验",
+          "锚点散度面向检索，迁移到视觉-AIS匹配需重新定义锚点语义",
+          "无海事数据验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "锚点散度可提供上下文相关相似度度量，对跨模态匹配有潜在方法价值，但缺匹配实验证据。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "c847a0db-e0e1-4a0b-a518-5e2504d862d4"
+    },
+    "bcb3e44e2dfcab19262f3b41e2a0986de0c091fd5b263b372937845fb6f9b021": {
+      "paper_id": "2610.08627",
+      "title": "Parallel Predictive World Models for Accurate and Efficient Long-Horizon Planning",
+      "fingerprint": "bcb3e44e2dfcab19262f3b41e2a0986de0c091fd5b263b372937845fb6f9b021",
+      "evaluation": {
+        "paper_id": "2610.08627",
+        "task_type": "long-horizon world-model planning / trajectory prediction",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "predict a finite-horizon trajectory in parallel while retaining causal interaction among future representations",
+            "interpretation_zh": "提出并行预测有限时域轨迹并保留未来表征间因果交互的预测接口，属于世界模型规划方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "Each horizon is conditioned on its causal action prefix, and future representations interact before decoding",
+            "interpretation_zh": "每个时域条件于动作前缀，解码前进行未来表征交互；这是一种序列预测结构。",
+            "inference": false
+          },
+          {
+            "quote_en": "parallel causal trajectory prediction",
+            "interpretation_zh": "摘要主张用并行因果轨迹预测替代逐步自回归，但未涉及跨模态匹配或船舶感知。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦视觉控制与规划，未涉及海事感知、AIS/Radar关联或船舶视觉任务",
+          "未给出可直接用于跨模态匹配或船舶检测/分割的输入、训练目标或结构细节",
+          "仅凭并行轨迹预测无法具体说明迁移到目标感知任务所需的调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属于陆上世界模型规划与轨迹预测，与船舶视觉、AIS关联或多模态匹配无明确任务联系，且无可具体迁移的感知方法细节。",
+        "confidence": 0.86
+      },
+      "model": "deepseek-flash",
+      "request_id": "fd6802a8-0faf-489d-a708-ee1e1cfa29da"
     }
   }
 }
