@@ -199,9 +199,11 @@
       "paper_id": "2610.14598",
       "fingerprint": "d5e30be3e2ac2cf07dd22094cfd26b35b87106a7f2452c3320fd6f6899dc8c93",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-24"
+      ],
+      "available": false
     },
     "2610.21779": {
       "paper_id": "2610.21779",
@@ -353,9 +355,11 @@
       "paper_id": "2610.00319",
       "fingerprint": "786194f76bf84e39217fc782fe5ce1008202d11ea7c74a17003a006acd3f9434",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-24"
+      ],
+      "available": false
     },
     "2609.25860": {
       "paper_id": "2609.25860",
@@ -419,9 +423,11 @@
       "paper_id": "2609.28159",
       "fingerprint": "e01c68e46ade08919a10ea370980d9d084b3efdbe22700ed74202f2e9e951d8b",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-24"
+      ],
+      "available": false
     },
     "2610.12421": {
       "paper_id": "2610.12421",
@@ -435,9 +441,11 @@
       "paper_id": "2610.03403",
       "fingerprint": "929bfa4a19900354fadf4b83359413adfcc4267f3dfc9ba19942bd3d5245dd10",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-24"
+      ],
+      "available": false
     },
     "2609.16284": {
       "paper_id": "2609.16284",
@@ -488,9 +496,11 @@
       "paper_id": "2610.06837",
       "fingerprint": "fcf62c85d55f9887f7fe85c9209fb36fe3cc07dc5b0e536165823a972a5c6b46",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-10-24"
+      ],
+      "available": false
     },
     "2609.37024": {
       "paper_id": "2609.37024",
@@ -549,5 +559,5 @@
       "available": true
     }
   },
-  "available_count": 19
+  "available_count": 14
 }

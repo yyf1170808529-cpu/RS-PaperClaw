@@ -123,12 +123,24 @@ def select_daily(root,library,day,new_keys=(),config=None):
     candidates=candidate_pool(root,library,day,new_keys)
     eligible=[(p,stage,ranking_info(p,config)) for p,stage in candidates]
     eligible=[row for row in eligible if row[2]['state']=='evaluated' and row[2]['eligible']]
+    ai_qualified_count=len(eligible)
+    # A failed translation is recoverable, but must not block this day's next
+    # candidate. Repaired translations and changed abstracts become eligible again.
+    from services.selected_translation import chosen_zh
+    repairs=library.get('selected_translation_repairs',{})
+    eligible=[row for row in eligible if not (
+        repairs.get(row[0]['paper_id'],{}).get('attempt_date')==str(day)
+        and repairs[row[0]['paper_id']].get('english_hash')==hashlib.sha256(row[0]['abstract'].encode()).hexdigest()
+        and not chosen_zh(row[0])[0])]
     _,policy=assets();quotas=policy['quotas'];total=sum(quotas.values())
     today=root/'docs/maritime-data/mobile'/(str(day)+'.json')
     saved=json.loads(today.read_text(encoding='utf8')) if today.exists() else {}
     from services.mobile_history import PublishedHistory
     history=PublishedHistory(root,library)
     retained={history.canonical(p) for p in saved.get('papers',[])}
+    plan=library.get('selected_translation_plan',{})
+    if plan.get('date')==str(day):
+        retained.update(history.canonical(library['papers'][key]) for key in plan.get('paper_ids',[]) if key in library['papers'])
     chosen=[row for row in eligible if history.canonical(row[0]) in retained][:5]
     counts={k:sum(review_bucket(row[0])==k for row in chosen) for k in quotas}
     chosen_ids={row[0]['paper_id'] for row in chosen}
@@ -144,7 +156,7 @@ def select_daily(root,library,day,new_keys=(),config=None):
     states=Counter(ranking_info(p,config)['state'] for p,_ in candidates)
     return chosen,{'candidate_count':len(candidates),'ai_reviewed':states['evaluated'],
                    'ai_states':dict(states),'stage_counts':dict(Counter(str(s) for _,s in candidates)),
-                   'ai_rejected':states['evaluated']-len(eligible),
+                   'ai_rejected':states['evaluated']-ai_qualified_count,'translation_deferred':ai_qualified_count-len(eligible),
                    'qualified_count':len(eligible),'selected_count':len(chosen),'shortfall':max(0,5-len(chosen))}
 
 def build_mobile_digest(root, library, date):
@@ -174,6 +186,7 @@ def build_mobile_digest(root, library, date):
     environment_errors=[p['paper_id'] for p,_,_ in choices
                         if not chosen_zh(p,daily=True)[0] and p.get('translation',{}).get('error_type') in
                         ('dependency_missing','model_missing','model_runtime_error')]
+    audit['translation_replacements']=[v for v in library.get('selected_translation_repairs',{}).values() if v.get('attempt_date')==str(date)]
     audit['translation_environment_errors']=environment_errors
     audit['translation_errors']=[{'paper_id':p['paper_id'],'reason':p['translation_error'] or '尚无有效中文译文'} for p in items if not p['abstract_zh']]
     status='complete' if len(items)==5 and not audit['translation_errors'] else 'partial' if items else 'failed'
@@ -238,4 +251,9 @@ def render_mobile_page(payload, aliases=None, papers=None):
     data=json.dumps(snapshots,ensure_ascii=False).replace('<',r'\u003c')
     template=(Path(__file__).resolve().parents[1]/'prompts/maritime_analysis.md').read_text(encoding='utf8')
     prompts=json.dumps({'prompt_template':template,'papers':[prompt_metadata(p,papers,aliases) for p in items]},ensure_ascii=False).replace('<',r'\u003c')
-    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}.paper-actions{{display:flex;align-items:center;flex-wrap:nowrap;gap:5px;font-size:14px;white-space:nowrap;min-width:0}}.paper-actions button{{border:0;padding:0;margin:0;background:none;color:#a54f2b;white-space:nowrap}}.paper-actions [data-favorite-paper]{{display:inline-flex}}.paper-panels textarea{{box-sizing:border-box;max-width:100%}}input[type=file]{{display:block;max-width:100%;width:100%;box-sizing:border-box;margin:3px 0}}@media(max-width:360px){{.paper-actions{{font-size:12px;gap:3px}}}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1>每日精选 {date}</h1><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p>{entries or "<p>今天没有完成AI审核的合格精选。</p>"}<p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p><script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.3"></script><script id="daily-prompt-data" type="application/json">{prompts}</script><script src="maritime_prompt.js?v=3.8.2"></script><script src="maritime_daily_prompt.js?v=3.8.3"></script></html>'''
+    public_items=[{**prompt_metadata(p,papers,aliases),**{k:p.get(k,'') for k in ('source','reason','reading_url','score','level','ai_score','selection_source','abstract_zh','translation_source','translation_error')}} for p in items]
+    batch=json.dumps({'payload':{'date':date,'publication_status':payload.get('publication_status','complete'),'revision':digest_revision(payload),'papers':public_items},'aliases':aliases or {},'prompt_template':template},ensure_ascii=False).replace('<',r'\u003c')
+    reading_enabled=len(items)==5 and payload.get('publication_status','complete')=='complete' and all(p.get('abstract_zh') and isinstance(p.get('ai_score'),(int,float)) for p in items)
+    reading_data='<script id="daily-reading-data" type="application/json">'+batch+'</script>' if reading_enabled else ''
+    controls_hidden='' if reading_enabled else ' hidden'
+    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}.paper-actions{{display:flex;align-items:center;flex-wrap:nowrap;gap:5px;font-size:14px;white-space:nowrap;min-width:0}}.paper-actions button{{border:0;padding:0;margin:0;background:none;color:#a54f2b;white-space:nowrap}}.paper-actions [data-favorite-paper]{{display:inline-flex}}.paper-panels textarea{{box-sizing:border-box;max-width:100%}}input[type=file]{{display:block;max-width:100%;width:100%;box-sizing:border-box;margin:3px 0}}@media(max-width:360px){{.paper-actions{{font-size:12px;gap:3px}}}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1 id="reading-date">每日阅读 {date}</h1><p id="reading-batch-date">当前批次：{date} 精选</p><small id="reading-status">本批尚未标记阅读完成</small><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p><main id="reading-papers">{entries or "<p>今天没有完成AI审核的合格精选。</p>"}</main><p{controls_hidden}><button id="reading-complete">✓ 本批五篇已阅读完成</button><button id="reading-undo" hidden>撤销完成</button></p><p id="reading-error" role="status"></p><small>阅读进度仅保存在当前浏览器，不同浏览器和设备独立。</small><p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p>{reading_data}<script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.4"></script><script id="daily-prompt-data" type="application/json">{prompts}</script><script src="maritime_prompt.js?v=3.8.2"></script><script src="maritime_daily_prompt.js?v=3.8.4"></script><script src="maritime_daily_reading.js?v=3.8.4"></script></html>'''

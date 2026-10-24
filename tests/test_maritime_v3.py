@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'skills/rs-paper-pipeline/scripts'))
 from services import maritime_v2 as v, maritime as m, maritime_update as u
 import preview_maritime
-from tests.test_maritime_v2 import paper, record
+from test_maritime_v2 import paper, record
 
 
 class V3Tests(unittest.TestCase):

@@ -12,13 +12,21 @@
   "before_count": 3745,
   "after_count": 3745,
   "translation": {
-    "translated": 0,
+    "translated": 1,
     "cached": 4,
     "manual": 0,
-    "failed": 1,
+    "failed": 0,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
+    "attempted_ids": [
+      "2609.28159",
+      "2610.00319",
+      "2610.03403",
+      "2610.06837",
+      "2610.14598"
+    ],
+    "replacement_failures": [],
     "selected": 5,
     "engine": "Argos Translate (CPU)",
     "api_calls": 0,
@@ -42,8 +50,8 @@
       },
       {
         "paper_id": "2610.00319",
-        "source": "english_only",
-        "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+        "source": "argos",
+        "error": ""
       },
       {
         "paper_id": "2609.28159",
@@ -52,7 +60,7 @@
       }
     ]
   },
-  "translation_failed": 1,
+  "translation_failed": 0,
   "suspected_duplicates": [
     [
       "doi:10.5281/zenodo.23267832",
@@ -128,11 +136,59 @@
     }
   ],
   "daily_selected": 5,
-  "daily_publication": "partial",
-  "published_daily_date": "2026-10-22",
+  "daily_publication": "complete",
+  "published_daily_date": "2026-10-24",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "not_run_resume",
-  "github_run_id": "40079962312"
+  "github_run_id": "40079962312",
+  "translation_before_repair": {
+    "translated": 0,
+    "cached": 4,
+    "manual": 0,
+    "failed": 1,
+    "missing_english": 0,
+    "pending": 0,
+    "skipped_failed": 0,
+    "selected": 5,
+    "engine": "Argos Translate (CPU)",
+    "api_calls": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
+    "papers": [
+      {
+        "paper_id": "2610.06837",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.14598",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.03403",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.00319",
+        "source": "english_only",
+        "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+      },
+      {
+        "paper_id": "2609.28159",
+        "source": "argos",
+        "error": ""
+      }
+    ]
+  },
+  "maintenance_recovery": {
+    "version": "3.8.4",
+    "date": "2026-10-24",
+    "new_retrieval": false,
+    "new_ai_calls": 0,
+    "note": "Existing reviewed candidates; real Argos repaired numeric validation; source run statistics retained."
+  }
 }

@@ -36,5 +36,5 @@
     }
   }
   if(typeof module!=='undefined') module.exports={mount};
-  else mount(root.document,root.navigator,root.MaritimePrompt.makePrompt);
+  else {root.MaritimeDailyPrompt={mount};if(!root.document.getElementById('daily-reading-data'))mount(root.document,root.navigator,root.MaritimePrompt.makePrompt);}
 })(globalThis);

@@ -41,13 +41,40 @@ def translation_issue(paper):
 
 
 def translate_selected(root, library, day, config=None, seconds=180):
+    import time
+    import hashlib
     from services.mobile_digest import select_daily
     from services.maritime import library_path, write_json
     from services.maritime_update import translate_budget
+    save=lambda: write_json(library_path(root), library)
+    deadline=time.monotonic()+seconds
+    attempted=set(); failures=[]; result={}
+    while True:
+        chosen, _ = select_daily(root, library, day, config=config)
+        keys = [p['paper_id'] for p, _, _ in chosen]
+        library['selected_translation_plan']={'date':str(day),'paper_ids':keys}
+        save()
+        todo=[key for key in keys if key not in attempted]
+        if not todo or time.monotonic()>=deadline:break
+        counts=translate_budget(library,todo,len(todo),max(.01,deadline-time.monotonic()),save,selected=True)
+        for name,count in counts.items():result[name]=result.get(name,0)+count
+        attempted.update(todo)
+        for key in todo:
+            p=library['papers'][key]
+            if chosen_zh(p)[0]:
+                library.setdefault('selected_translation_repairs',{}).pop(key,None)
+                continue
+            failure={'paper_id':key,'attempt_date':str(day),'reason':translation_issue(p),
+                     'english_hash':hashlib.sha256(p.get('abstract','').encode()).hexdigest()}
+            failures.append(failure)
+            library.setdefault('selected_translation_repairs',{})[key]=failure
+        save()
+        if all(chosen_zh(library['papers'][key])[0] for key in keys):break
     chosen, _ = select_daily(root, library, day, config=config)
-    keys = [p['paper_id'] for p, _, _ in chosen]
-    result = translate_budget(library, keys, len(keys), seconds,
-                              lambda: write_json(library_path(root), library),selected=True)
+    keys=[p['paper_id'] for p,_,_ in chosen]
+    for name in ('translated','cached','manual','failed','pending','missing_english','skipped_failed'):result.setdefault(name,0)
+    result['attempted_ids']=sorted(attempted)
+    result['replacement_failures']=failures
     result.update(selected=len(keys), engine='Argos Translate (CPU)', api_calls=0,
                   cost_upper_cny=0.0, priced_cost_cny=0.0)
     result['papers'] = [{'paper_id': key, 'source': chosen_zh(library['papers'][key])[1],

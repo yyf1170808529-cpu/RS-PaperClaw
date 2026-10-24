@@ -2,58 +2,6 @@
   "date": "2026-10-24",
   "papers": [
     {
-      "paper_id": "2610.06837",
-      "title": "Anatomy-aware Fine-grained Multimodal Fusion for Laryngopharyngeal Cancer T-Staging Prediction Using CT and Radiology Report",
-      "authors": [
-        "Xingyue Zhao",
-        "Yanzhou Su",
-        "Fang Zhang",
-        "Zhanghexuan Ji",
-        "Yirui Wang",
-        "Dazhou Guo",
-        "Sibo Ju",
-        "Yuehua Cheng",
-        "Yuzhen Chen",
-        "Ming Feng",
-        "Le Lu",
-        "Tsung-Ying Ho",
-        "Jian Wang",
-        "Dakai Jin",
-        "Na Shen"
-      ],
-      "published": "2026-10-05",
-      "arxiv_url": "https://arxiv.org/abs/2610.06837",
-      "doi": "",
-      "original_url": "https://arxiv.org/abs/2610.06837",
-      "pdf_url": "https://arxiv.org/pdf/2610.06837",
-      "open_access_url": "https://arxiv.org/pdf/2610.06837",
-      "venue": "",
-      "abstract": "Accurate T-staging is crucial for guiding personalized treatment strategies for laryngopharyngeal cancer. However, current clinical practice relies on invasive biopsy procedures, whereas CT-based staging remains challenging due to the complex patterns of tumor invasion. Recent computer-aided approaches face two key challenges: 1) Structural relationship modeling: existing methods underrepresent anatomically structured patterns of tumor invasion, as they either process whole CT volumes without tumor-specific anatomical constraints or rely on labor-intensive tumor segmentation. 2) Fine-grained cross-modal alignment: while radiology reports contain organ-specific invasion details, current methods that apply global feature fusion struggle to accurately align individual anatomical structures with their corresponding textual descriptions. To address these issues, we propose an anatomy-aware multimodal framework that integrates organ-level CT context and radiology reports into a unified representation for laryngopharyngeal T-staging. The framework first constructs an Anatomy-Structured Organ Graph (AOG) that captures invasion patterns between primary sites and surrounding organs, then performs Organ-Anchored Cross-Modal Alignment (OCA) so that each organ node aggregates textual evidence from the radiology report, and finally refines this graph representation by injecting organ-specific invasion cues extracted from the report via Report-Enhanced Graph-Refinement (REG), yielding a multimodal organ graph that combines spatial and textual evidence. Extensive experiments demonstrate that the proposed framework achieves superior performance in T-staging of laryngopharyngeal cancer.",
-      "resource_type": "preprint",
-      "oa_evidence": false,
-      "validity": {
-        "status": "unverified"
-      },
-      "first_author": "Xingyue Zhao",
-      "first_author_affiliations": [
-        "Alibaba Group"
-      ],
-      "affiliation_source": "OpenAlex first authorship",
-      "affiliation_verified": true,
-      "affiliation_evidence": null,
-      "source": "arXiv",
-      "reason": "解剖感知多模态融合与跨模态对齐；将器官节点替换为船舶图像中的候选目标节点（如检测框或分割区域），文本证据改为AIS报文中的船名、类型、位置等结构化描述，通过锚点节点聚合AIS文本特征实现视觉-AIS细",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.06837",
-      "score": 19,
-      "rule_level": "方法可借鉴",
-      "level": "方法值得关注",
-      "ai_score": 53,
-      "selection_source": "近期候选",
-      "abstract_zh": "准确的T-Stage对于指导喉癌的个性化治疗战略至关重要。 然而,目前的临床实践依赖于入侵性活检程序,而 CT-由于肿瘤入侵的复杂模式,基地集结仍然具有挑战性。 近期计算机辅助办法面临两大挑战: 1) 结构关系模型化:现有方法在解剖学上不代表肿瘤入侵的模式,因为它们要么是整个过程 CT 无肿瘤解剖限制或依赖劳动密集型肿瘤分解的体积. 2) 不错 跨模态 对齐: 放射科报告包含器官特定入侵的细节, 而当前应用全球特征的方法 融合 将单个解剖结构与相应的文字描述精确对齐。 为了解决这些问题,我们提出一个解剖意识 多模态 综合机构一级框架 CT 上下文和放射科报告 表征 为喉咙T-stage。 框架首先构建一个解剖学-结构化的器官图 (AOG) 捕捉主要地点和周围器官之间的入侵模式,然后执行器官-安克雷德 跨模态 对齐 (OCA) 所以每个器官节点 汇总放射学报告中的文字证据 最后细化了这个图 表征 从报告中提取的器官入侵提示 (REG), 产生a 多模态 结合空间证据和文字证据的机关图。 广泛的实验表明,拟议框架在肾上腺素癌的T-分泌方面表现优异.",
-      "translation_source": "argos",
-      "translation_error": ""
-    },
-    {
       "paper_id": "2610.14598",
       "title": "Bidirectional Adaptive Transformers for Multimodal Anomaly Detection",
       "authors": [
@@ -176,9 +124,9 @@
       "level": "方法值得关注",
       "ai_score": 47,
       "selection_source": "近期候选",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+      "abstract_zh": "协作感知使相关人员能够分享关于 3D 目标检测, 扩大感知范围,减少隔离。 然而,在同步通信下,合作性特征的出现有时间上的延迟。 现有基于预测的方法主要从传输代理自身的历史中弥补这些特征,留下残余的与自负代理当前观察的错配;随后. 融合 也常常忽略空间变化 对齐 质量。 我们提议 EgoRefine, 自我参照的预测 对齐 和可靠性认识 融合 用于同步协作感知的框架。 它的Ego参考预测 对齐 模块使用当前自我特性来指导合作的轨迹场预测,并沿自我参照的轨迹方向完善取样抵消。 它的轨迹条件 可靠性意识 融合 模块将自我与合作流之间的轨迹差异与方向精细度比值视为 对齐 提示,用它们来调节对齐特性之间的关系,并适应性地对两条溪流进行再加重,然后进行演化 融合. V2V4 Real和 DAIR-V2X-Seq 显示 EgoRefine 绩效 TraF-Align 通过 1.6 和 2.9 平均点数 AP@0.5 和 AP@0.7, 分别. 源代码将在 https://github.com/godk0509/EgoRefine.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2609.28159",
@@ -218,6 +166,58 @@
       "abstract_zh": "标准 对比学习 框架主要从语义角度设计,但学习 2D 视觉 表征 保护 3D 空间结构对于了解场景也很重要。 在这项工作中,我们提出深度指导 对比学习 (DGCL), 一个简单的辅助目标,注入 3D 空间意识 2D 对比 表征学习. 我们的关键想法是用深度转换本地 3D 相近到相近的相似性: 相近的像素 3D 鼓励空间更类似 表征 比相距更远的像素。 而不是依赖绝对深度值, DGCL 通过相对方式制定监督 3D 随机抽样的像素之间的相距比较,使目标变异到深度尺度,计算效率高,容易被整合到现有的对比框架. 跨越不同数据集和模型的实验表明: DGCL 不断改进 2D 表征学习 并且通过更强的空间和几何理解,有利于语义学下游任务. 该代码可在 https://github.com/LeungTsang/DGCL.",
       "translation_source": "argos",
       "translation_error": ""
+    },
+    {
+      "paper_id": "2610.06837",
+      "title": "Anatomy-aware Fine-grained Multimodal Fusion for Laryngopharyngeal Cancer T-Staging Prediction Using CT and Radiology Report",
+      "authors": [
+        "Xingyue Zhao",
+        "Yanzhou Su",
+        "Fang Zhang",
+        "Zhanghexuan Ji",
+        "Yirui Wang",
+        "Dazhou Guo",
+        "Sibo Ju",
+        "Yuehua Cheng",
+        "Yuzhen Chen",
+        "Ming Feng",
+        "Le Lu",
+        "Tsung-Ying Ho",
+        "Jian Wang",
+        "Dakai Jin",
+        "Na Shen"
+      ],
+      "published": "2026-10-05",
+      "arxiv_url": "https://arxiv.org/abs/2610.06837",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.06837",
+      "pdf_url": "https://arxiv.org/pdf/2610.06837",
+      "open_access_url": "https://arxiv.org/pdf/2610.06837",
+      "venue": "",
+      "abstract": "Accurate T-staging is crucial for guiding personalized treatment strategies for laryngopharyngeal cancer. However, current clinical practice relies on invasive biopsy procedures, whereas CT-based staging remains challenging due to the complex patterns of tumor invasion. Recent computer-aided approaches face two key challenges: 1) Structural relationship modeling: existing methods underrepresent anatomically structured patterns of tumor invasion, as they either process whole CT volumes without tumor-specific anatomical constraints or rely on labor-intensive tumor segmentation. 2) Fine-grained cross-modal alignment: while radiology reports contain organ-specific invasion details, current methods that apply global feature fusion struggle to accurately align individual anatomical structures with their corresponding textual descriptions. To address these issues, we propose an anatomy-aware multimodal framework that integrates organ-level CT context and radiology reports into a unified representation for laryngopharyngeal T-staging. The framework first constructs an Anatomy-Structured Organ Graph (AOG) that captures invasion patterns between primary sites and surrounding organs, then performs Organ-Anchored Cross-Modal Alignment (OCA) so that each organ node aggregates textual evidence from the radiology report, and finally refines this graph representation by injecting organ-specific invasion cues extracted from the report via Report-Enhanced Graph-Refinement (REG), yielding a multimodal organ graph that combines spatial and textual evidence. Extensive experiments demonstrate that the proposed framework achieves superior performance in T-staging of laryngopharyngeal cancer.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Xingyue Zhao",
+      "first_author_affiliations": [
+        "Alibaba Group"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "解剖感知多模态融合与跨模态对齐；将器官节点替换为船舶图像中的候选目标节点（如检测框或分割区域），文本证据改为AIS报文中的船名、类型、位置等结构化描述，通过锚点节点聚合AIS文本特征实现视觉-AIS细",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.06837",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "准确的T-Stage对于指导喉癌的个性化治疗战略至关重要。 然而,目前的临床实践依赖于入侵性活检程序,而 CT-由于肿瘤入侵的复杂模式,基地集结仍然具有挑战性。 近期计算机辅助办法面临两大挑战: 1) 结构关系模型化:现有方法在解剖学上不代表肿瘤入侵的模式,因为它们要么是整个过程 CT 无肿瘤解剖限制或依赖劳动密集型肿瘤分解的体积. 2) 不错 跨模态 对齐: 放射科报告包含器官特定入侵的细节, 而当前应用全球特征的方法 融合 将单个解剖结构与相应的文字描述精确对齐。 为了解决这些问题,我们提出一个解剖意识 多模态 综合机构一级框架 CT 上下文和放射科报告 表征 为喉咙T-stage。 框架首先构建一个解剖学-结构化的器官图 (AOG) 捕捉主要地点和周围器官之间的入侵模式,然后执行器官-安克雷德 跨模态 对齐 (OCA) 所以每个器官节点 汇总放射学报告中的文字证据 最后细化了这个图 表征 从报告中提取的器官入侵提示 (REG), 产生a 多模态 结合空间证据和文字证据的机关图。 广泛的实验表明,拟议框架在肾上腺素癌的T-分泌方面表现优异.",
+      "translation_source": "argos",
+      "translation_error": ""
     }
   ],
   "selection_audit": {
@@ -235,18 +235,15 @@
       "3": 18
     },
     "ai_rejected": 505,
+    "translation_deferred": 0,
     "qualified_count": 19,
     "selected_count": 5,
     "shortfall": 0,
+    "translation_replacements": [],
     "translation_environment_errors": [],
-    "translation_errors": [
-      {
-        "paper_id": "2610.00319",
-        "reason": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
-      }
-    ]
+    "translation_errors": []
   },
-  "publication_status": "partial",
+  "publication_status": "complete",
   "reserve_papers": [
     {
       "paper_id": "2610.06837",
@@ -423,9 +420,9 @@
       "level": "方法值得关注",
       "ai_score": 47,
       "selection_source": "近期候选",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+      "abstract_zh": "协作感知使相关人员能够分享关于 3D 目标检测, 扩大感知范围,减少隔离。 然而,在同步通信下,合作性特征的出现有时间上的延迟。 现有基于预测的方法主要从传输代理自身的历史中弥补这些特征,留下残余的与自负代理当前观察的错配;随后. 融合 也常常忽略空间变化 对齐 质量。 我们提议 EgoRefine, 自我参照的预测 对齐 和可靠性认识 融合 用于同步协作感知的框架。 它的Ego参考预测 对齐 模块使用当前自我特性来指导合作的轨迹场预测,并沿自我参照的轨迹方向完善取样抵消。 它的轨迹条件 可靠性意识 融合 模块将自我与合作流之间的轨迹差异与方向精细度比值视为 对齐 提示,用它们来调节对齐特性之间的关系,并适应性地对两条溪流进行再加重,然后进行演化 融合. V2V4 Real和 DAIR-V2X-Seq 显示 EgoRefine 绩效 TraF-Align 通过 1.6 和 2.9 平均点数 AP@0.5 和 AP@0.7, 分别. 源代码将在 https://github.com/godk0509/EgoRefine.",
+      "translation_source": "argos",
+      "translation_error": ""
     },
     {
       "paper_id": "2609.28159",

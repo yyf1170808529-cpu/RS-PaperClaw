@@ -148,7 +148,7 @@
   }
   const api={VERSION,KEY,LEGACY,normalize,create,mount,toolbar,download};
   if(typeof module!=='undefined')module.exports=api;else root.MaritimeFavorites=api;
-  if(typeof document!=='undefined'&&document.getElementById('daily-favorites')){
+  if(typeof document!=='undefined'&&document.getElementById('daily-favorites')&&!document.getElementById('daily-reading-data')){
     const status=document.getElementById('favorite-message'),message=text=>{status.textContent=text;};
     try{
       const data=JSON.parse(document.getElementById('daily-favorites-data').textContent),store=create(localStorage);

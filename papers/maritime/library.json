@@ -155437,21 +155437,14 @@
         ]
       },
       "translation": {
-        "status": "failed",
-        "zh": "",
-        "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at",
-        "error_type": "translation_validation_failed",
-        "candidate_zh": "",
-        "segment_retries": [
-          {
-            "segment": "respectively. The source code will be made publicly available at",
-            "reason": "numeric_mismatch: numbers or percentages changed"
-          }
-        ],
+        "status": "machine",
+        "engine": "Argos Translate (CPU)",
+        "zh": "协作感知使相关人员能够分享关于 3D 目标检测, 扩大感知范围,减少隔离。 然而,在同步通信下,合作性特征的出现有时间上的延迟。 现有基于预测的方法主要从传输代理自身的历史中弥补这些特征,留下残余的与自负代理当前观察的错配;随后. 融合 也常常忽略空间变化 对齐 质量。 我们提议 EgoRefine, 自我参照的预测 对齐 和可靠性认识 融合 用于同步协作感知的框架。 它的Ego参考预测 对齐 模块使用当前自我特性来指导合作的轨迹场预测,并沿自我参照的轨迹方向完善取样抵消。 它的轨迹条件 可靠性意识 融合 模块将自我与合作流之间的轨迹差异与方向精细度比值视为 对齐 提示,用它们来调节对齐特性之间的关系,并适应性地对两条溪流进行再加重,然后进行演化 融合. V2V4 Real和 DAIR-V2X-Seq 显示 EgoRefine 绩效 TraF-Align 通过 1.6 和 2.9 平均点数 AP@0.5 和 AP@0.7, 分别. 源代码将在 https://github.com/godk0509/EgoRefine.",
         "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
-        "updated_at": "2026-10-24T08:59:05.827737+00:00",
-        "retry_attempts": 1,
-        "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+        "protection_revision": 8,
+        "segment_retries": [],
+        "quality_warnings": [],
+        "updated_at": "2026-10-24T11:17:39.807707+00:00"
       },
       "translation_history": [
         {
@@ -155502,6 +155495,23 @@
           ],
           "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
           "updated_at": "2026-10-24T01:48:06.053485+00:00",
+          "retry_attempts": 1,
+          "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+        },
+        {
+          "status": "failed",
+          "zh": "",
+          "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at",
+          "error_type": "translation_validation_failed",
+          "candidate_zh": "",
+          "segment_retries": [
+            {
+              "segment": "respectively. The source code will be made publicly available at",
+              "reason": "numeric_mismatch: numbers or percentages changed"
+            }
+          ],
+          "english_hash": "826a723990d37f620fc31644384314282c3abae5414c8175251dc0c74bdb545e",
+          "updated_at": "2026-10-24T08:59:05.827737+00:00",
           "retry_attempts": 1,
           "previous_attempt_error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
         }
@@ -674241,5 +674251,200 @@
       "completed_at": "2026-10-14T03:42:37.867814+00:00"
     }
   ],
-  "semantic_enabled": true
+  "semantic_enabled": true,
+  "selected_translation_repairs": {},
+  "update_summary": {
+    "run_id": "2026-10-24T08:57:39.151090+00:00",
+    "completed_at": "2026-10-24T08:59:25.350097+00:00",
+    "local_update": "partial",
+    "jobs": 0,
+    "successful": 0,
+    "incomplete": 0,
+    "failed": 0,
+    "added": 0,
+    "filled": 0,
+    "merged": 0,
+    "before_count": 3745,
+    "after_count": 3745,
+    "translation": {
+      "translated": 1,
+      "cached": 4,
+      "manual": 0,
+      "failed": 0,
+      "missing_english": 0,
+      "pending": 0,
+      "skipped_failed": 0,
+      "attempted_ids": [
+        "2609.28159",
+        "2610.00319",
+        "2610.03403",
+        "2610.06837",
+        "2610.14598"
+      ],
+      "replacement_failures": [],
+      "selected": 5,
+      "engine": "Argos Translate (CPU)",
+      "api_calls": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
+      "papers": [
+        {
+          "paper_id": "2610.06837",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.14598",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.03403",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.00319",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2609.28159",
+          "source": "argos",
+          "error": ""
+        }
+      ]
+    },
+    "translation_failed": 0,
+    "suspected_duplicates": [
+      [
+        "doi:10.5281/zenodo.23267832",
+        "doi:10.5281/zenodo.23268955"
+      ],
+      [
+        "doi:10.1080/21622671.2026.2684486",
+        "doi:10.6084/m9.figshare.32835575"
+      ],
+      [
+        "doi:10.21203/rs.3.rs-10724957/v1",
+        "doi:10.1186/s42779-026-00333-6"
+      ],
+      [
+        "openalex:W7213692908",
+        "doi:10.14712/9788024662206"
+      ],
+      [
+        "doi:10.46299/isg.2026.2.6",
+        "doi:10.46299/isg.p.2026.2.6"
+      ]
+    ],
+    "ai": {
+      "status": "deferred",
+      "processed": 0,
+      "cached": 782,
+      "failed": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
+      "unsettled_upper_cny": 0.0,
+      "tokens": 0,
+      "missing_abstract": 0,
+      "candidate_count": 784,
+      "already_attempted_today": 2,
+      "pending_total": 0,
+      "limit_deferred": 0,
+      "selected_count": 5,
+      "ai_reviewed": 524,
+      "shortfall": 0,
+      "ai_states": {
+        "evaluated": 524,
+        "uncertain": 258,
+        "unassessed": 2
+      },
+      "publication_status": "complete",
+      "reserve_available": 19
+    },
+    "affiliations": [
+      {
+        "paper_id": "2610.06837",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2610.14598",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2610.03403",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2610.00319",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2609.28159",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      }
+    ],
+    "daily_selected": 5,
+    "daily_publication": "complete",
+    "published_daily_date": "2026-10-24",
+    "published_daily_count": 5,
+    "github_sync": "not_attempted",
+    "pages_publish": "not_attempted",
+    "retrieval_status": "not_run_resume",
+    "github_run_id": "40079962312",
+    "translation_before_repair": {
+      "translated": 0,
+      "cached": 4,
+      "manual": 0,
+      "failed": 1,
+      "missing_english": 0,
+      "pending": 0,
+      "skipped_failed": 0,
+      "selected": 5,
+      "engine": "Argos Translate (CPU)",
+      "api_calls": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
+      "papers": [
+        {
+          "paper_id": "2610.06837",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.14598",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.03403",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.00319",
+          "source": "english_only",
+          "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
+        },
+        {
+          "paper_id": "2609.28159",
+          "source": "argos",
+          "error": ""
+        }
+      ]
+    },
+    "maintenance_recovery": {
+      "version": "3.8.4",
+      "date": "2026-10-24",
+      "new_retrieval": false,
+      "new_ai_calls": 0,
+      "note": "Existing reviewed candidates; real Argos repaired numeric validation; source run statistics retained."
+    }
+  }
 }
