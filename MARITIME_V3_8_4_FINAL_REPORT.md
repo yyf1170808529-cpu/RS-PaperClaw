@@ -68,4 +68,3 @@ selected_translation_plan 只稳定当前云端尝试的身份，不涉及个人
 实际限制：线上文件HTTPS核验成功；本次内置浏览器导航github.io超时，因此不能声称实体手机网络已经实测成功。浏览器交互实测发生在独立localhost来源，跨日行为用可控时钟验证。未额外启动一次长时间多来源检索或付费云端恢复任务；下一次定时任务是否端到端成功仍须由实际运行确认，本报告不将Pages成功冒充新一轮检索成功。
 
 真实证据保留在忽略备份目录中的 real-repair-evidence.json、real-replacement-replay.json、actions-audit.json、online-verification.json、Python/Node日志及手机尺寸截图，不上传这些本地诊断文件。
-
