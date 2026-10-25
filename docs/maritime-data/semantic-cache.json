@@ -30491,6 +30491,64 @@
       },
       "model": "deepseek-flash",
       "request_id": "fd6802a8-0faf-489d-a708-ee1e1cfa29da"
+    },
+    "bb8091a34897ee8a73f2e7304f5188585da14c317ab10421de9a97fcac817700": {
+      "paper_id": "2610.30481",
+      "title": "AVAtt: A Free-Viewing Eye-Tracking Dataset and Benchmark for Visual Attention on Paintings",
+      "fingerprint": "bb8091a34897ee8a73f2e7304f5188585da14c317ab10421de9a97fcac817700",
+      "evaluation": {
+        "paper_id": "2610.30481",
+        "task_type": "视觉显著性/扫描路径预测数据集与基准",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a new language-free family of image-encoder metrics built on ten CNN, ViT and self-supervised encoders",
+            "interpretation_zh": "提出基于多种图像编码器（包括自监督编码器）的无语言扫描路径相似度度量族",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未涉及跨模态匹配、困难负样本或船舶相关感知任务的具体方法",
+          "仅提供显著性/扫描路径数据集与评估度量，迁移至目标检测或跨模态关联缺乏可说明的输入、训练目标或结构调整",
+          "未给出可复用的表征学习或匹配训练机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向绘画显著性预测数据集，与船舶检测、跨模态匹配等任务无具体方法联系，迁移路径不可说明。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "c6028407-5743-4634-8bc1-8b32d420f774"
+    },
+    "e6aa669244fd0829c31b95b963a9ac5662bfba05995b594d3feca28e35a3ca72": {
+      "paper_id": "2610.13915",
+      "title": "Where to Look Matters: Rethinking Sub-Volume Sampling in 3D Medical Self-supervised Learning",
+      "fingerprint": "e6aa669244fd0829c31b95b963a9ac5662bfba05995b594d3feca28e35a3ca72",
+      "evaluation": {
+        "paper_id": "2610.13915",
+        "task_type": "3D医学自监督学习子体积采样",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "replaces random cropping with an offline coarse-to-fine probe bank guided by \\textit{anatomy-awareness}, \\textit{informativeness}, and \\textit{diversity}",
+            "interpretation_zh": "用离线由解剖感知、信息量、多样性引导的粗细探测库替代随机裁剪采样",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为3D医学影像自监督预训练，采样策略依赖解剖先验，难以直接映射到船舶视觉或多模态匹配",
+          "未给出可迁移至检测/匹配任务的训练目标或结构调整细节",
+          "属于医学方向且无海事或陆上目标感知的明确任务连接"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "3D医学自监督子体积采样方法，依赖解剖先验，与船舶视觉及跨模态匹配无可具体说明的迁移路径。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "c6028407-5743-4634-8bc1-8b32d420f774"
     }
   }
 }

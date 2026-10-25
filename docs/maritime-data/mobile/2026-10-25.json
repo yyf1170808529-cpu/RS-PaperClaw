@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-25",
+  "papers": [
+    {
+      "paper_id": "2610.03454",
+      "title": "Measure Less, Know More: Self-Supervised Test-Time Feature Acquisition",
+      "authors": [
+        "Eeshaan Jain",
+        "Linus Bleistein",
+        "Bart Deplancke",
+        "Charlotte Bunne"
+      ],
+      "published": "2026-10-02",
+      "arxiv_url": "https://arxiv.org/abs/2610.03454",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.03454",
+      "pdf_url": "https://arxiv.org/pdf/2610.03454",
+      "open_access_url": "https://arxiv.org/pdf/2610.03454",
+      "venue": "",
+      "abstract": "Recent progress in multimodal, high-dimensional learning has enabled foundation models to process heterogeneous, large-scale data. However, at test time, acquiring all features or modalities can be prohibitively costly and often redundant. Sequentially selecting informative modalities is therefore critical, yet challenging when the downstream task or prediction target is unknown. To this end, we introduce ECHO-$k$, a task-agnostic and self-supervised learning principle for modality acquisition: we use a deep model's internal pretrained representations (e.g., from a foundation model) as proxy targets that summarize cross-modal information. We provide theoretical guarantees in a stylized linear setting that motivate a reinforcement learning (RL) policy for sequential modality selection. Across task-agnostic and label-free acquisition baselines, ECHO-$k$ consistently improves budgeted downstream performance across diverse foundation-model backends. Our method provides a principled route to cost-aware test-time deployment, with implications for any multimodal system where measurements are expensive or time-constrained, and downstream tasks unknown a priori.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Eeshaan Jain",
+      "first_author_affiliations": [
+        "School of Computer and Communication Sciences , EPFL"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "多模态测试时模态选择；可将模态顺序选择策略用于多传感器船舶检测：把雷达、AIS、可见光/红外等作为候选模态，以预训练表征为代理目标设计强化学习策略，在有限传感器预算下选择输入模态；需重新定义状态、动作",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.03454",
+      "score": 14,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "最近的进展 多模态, 高维度学习使基础模型能够处理多种多样的大规模数据。 然而,在试验时,获得所有特性或 模态 费用高昂而且常常是多余的。 顺序选择信息 模态 因此,当下游任务或预测目标不明时,这一点至关重要,但具有挑战性。 为此,我们介绍 ECHO-$k$, 任务不可知 自监督 学习原则 模态 获取:我们使用深层模型的内部预训 表征 (例如,从一个基础模型中)作为可概括 跨模态 资料。 我们提供理论保障 在一个层次化的线性环境 激励强化学习 (RL) 按顺序排列的政策 模态 选择。 跨任务不可知性和无标签获取基线, ECHO-$k$ 不断改进不同基础模式后端的预算下游业绩。 我们的方法为具有成本效益的试验时间的部署提供了一条原则性路线,对任何 多模态 测量成本高或时间有限制的系统,下游任务未知.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.07689",
+      "title": "Unlocking Fine-Grained Perception in CLIP via Structurally-Aware Latent Masked Modeling",
+      "authors": [
+        "Juntong Li",
+        "Lingwei Dang",
+        "Haomin Wu",
+        "Ziyan Qiu",
+        "Qingxin Xiao",
+        "Qingyao Wu"
+      ],
+      "published": "2026-10-06",
+      "arxiv_url": "https://arxiv.org/abs/2610.07689",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.07689",
+      "pdf_url": "https://arxiv.org/pdf/2610.07689",
+      "open_access_url": "https://arxiv.org/pdf/2610.07689",
+      "venue": "",
+      "abstract": "Vision-Language Models (VLMs) such as CLIP excel in global semantic alignment but often lack fine-grained perceptual capabilities. This hinders dense prediction tasks and bottlenecks the visual potential of Multimodal Large Language Models (MLLMs). Existing research has attempted to enhance CLIP's visual representations by incorporating geometric priors from vision-centric models. However, these strategies often struggle to achieve deep alignment for both local spatial structures and global semantics, potentially even distorting the original image-text space. To address these limitations, we propose SALM, an unsupervised embedding alignment framework based on structurally-aware latent mask modeling. SALM effectively synergizes local and global alignment via a dual-path design combining explicit and implicit mechanisms, without requiring any image-text pairs. First, we introduce a dual-matrix alignment strategy that explicitly calibrates intra-sample spatial correlations and activation intensities, thereby effectively injecting local geometric priors. Based on this, we further design a latent mask modeling mechanism to guide CLIP to restore the missing semantic details of the target model, thereby implicitly aggregating fine-grained structures into the global semantic space. Furthermore, driven by the empirical observations that CLIP's shallow features inherently possess strong spatial observational capabilities, we naturally extend SALM to a highly efficient self-distillation paradigm, SALM-Self. This unlocks CLIP's intrinsic fine-grained potential without relying on any external models. Extensive experiments demonstrate that SALM not only significantly improves performance in dense prediction tasks but also boosts CLIP's zero-shot accuracy, effectively enhancing the fine-grained understanding capabilities of MLLMs. Project page at https://qzfm.github.io/salm_project_page/.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Juntong Li",
+      "first_author_affiliations": [
+        "School of Software Engineering , South China University of Technology"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "vision-language representation alignment / dense prediction；可借鉴其对CLIP特征注入局部空间结构先验的双矩阵对齐思路，用于船舶分割中冻结或",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.07689",
+      "score": 19,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "视觉-语言模型 (VLMs) 例如, CLIP 精通全球语义 对齐 但往往缺乏精细的认知能力。 这妨碍了密集的预测任务,也阻碍了视觉潜力。 多模态 大语言模型 (MLLMs). 现有研究试图加强 CLIP'图像 表征 输入来自 视觉-中枢模型. 然而,这些战略往往难以实现深刻的变革。 对齐 对于局部空间结构和全球语义,甚至可能扭曲原始图像文本空间。 为了消除这些局限性,我们提议 SALM, 无监督嵌入 对齐 基于结构意识潜在面具模型的框架. SALM 有效地协同地方和全球 对齐 采用双向设计,结合明示和隐含的机制,而不需要任何图像文本对. 首先,我们引入一个双重组合 对齐 明确校正样本内空间相通性和活化强度的策略,从而有效注入了局部几何前兆。 在此基础上,我们进一步设计了潜在的面具模型机制,以指导 CLIP 以恢复目标模型中缺失的语义细节,从而将精细的纹理结构隐含地聚合到全球语义空间. 此外,根据经验观察, CLIP'浅层地貌具有强大的空间观测能力,我们自然会扩展 SALM 高度高效的自我消化模式, SALM-Self. 这个解锁 CLIP's 内在的精细刻画潜力 不依赖任何外部模型。 广泛的实验证明: SALM 不仅显著改进了密集预测任务的性能,而且提高了 CLIP'编号 零样本 准确性,有效增强精细理解能力 MLLMs. 项目页面 https://qzfm.github.io/salm_project_page/.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.23393",
+      "title": "Structured Spatio-Temporal Evidence Graphs for Open-Vocabulary Object Retrieval in Videos",
+      "authors": [
+        "Jingdan Wang",
+        "Chuanwen Li"
+      ],
+      "published": "2026-09-20",
+      "arxiv_url": "https://arxiv.org/abs/2609.23393",
+      "doi": "10.48550/arxiv.2609.23393",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.23393",
+      "pdf_url": "https://arxiv.org/pdf/2609.23393",
+      "open_access_url": "https://arxiv.org/pdf/2609.23393",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Open-vocabulary object retrieval in videos requires answering free-form object queries under bounded query-time cost. Existing index-based systems typically store independent frame-level regions and retrieve them with vision-language similarity, which is effective for appearance queries but mismatched with predicates whose evidence is temporal or relational, such as stopped state, scene-region occupancy, persistence, and object interactions. We identify this gap as an evidence-unit mismatch: the query is expressed over tracklets or object tuples, while the index stores isolated boxes. To address it, we propose STEG-OVR, a structured spatio-temporal evidence graph for open-vocabulary object retrieval. STEG-OVR represents persistent objects as tracklet nodes and temporally compatible object pairs as relation edges, storing appearance, motion, scene occupancy, relative geometry, velocity compatibility, and symbolic relation evidence. A query is decomposed into entity, state, scene, temporal, and relation slots, which activate only the corresponding retrieval channels before soft score fusion and fixed-budget consistency verification. Diagnostic experiments on three object-centric settings show AP improvements from 0.0882 to 0.2073 on Beach, from 0.0834 to 0.1505 on Shibuya, and from 0.701 to 0.743 in a LOVO-style comparison. The gains are strongest for stopped-state and scene-region-occupancy queries, while sustained relations remain sensitive to tracking continuity and predicate calibration.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Jingdan Wang",
+      "first_author_affiliations": [
+        "School of Computer Science and Engineering , Northeastern University , Shenyang , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "视频开放词汇目标检索/时空证据图；将轨迹节点替换为AIS航迹与雷达/视觉检测航迹，关系边存储时间相容性、位置残差、速度与航向相容性等证据；输入由视频框改为多传感器航迹片段，训练目标调整为航迹关联/匹配",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.23393",
+      "score": 14,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "视频中的开放-vocabulary对象检索需要在受限的查询时间成本下回答自由格式对象查询. 现有的基于指数的系统通常存储独立的帧级别区域,并用 视觉-语言相似性,对外观查询有效,但与具有时间或关系证据的上游人不相匹配,例如停止状态、场景-区域占用、持久性和物体相互作用。 我们发现这个缺口是一种证据单位不匹配:查询是用轨道或对象拖拉来表达的,而索引则存储了孤立的框. 为了解决这个问题,我们提议 STEG-OVR, 用于开源对象检索的结构化时空证据图表. STEG-OVR 代表作为轨迹节点的持久对象和作为关系边缘的时空相容对象对,存储外观,运动,场景占用,相对几何,速度相容,以及象征关系证据. 查询被分解为实体、状态、场景、时间和关系槽,这些槽在软分前只激活相应的检索通道 融合 和固定预算一致性核查。 三个以物体为中心的设置的诊断实验 AP 改进 0.0882 以 0.2073 在海滩,从 0.0834 以 0.1505 在涩谷,和从 0.701 以 0.743 在一个 LOVO-样式比较。 在停止状态和现场区域使用查询方面,进展最大,而持续的关系对跟踪连续性和上游性仍然很敏感 校准.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.04601",
+      "title": "WASP: Weakly Aligned Spatiotemporal Pairs for Fetal Brain MRI-Ultrasound Learning",
+      "authors": [
+        "Francesco Correnti",
+        "Gabriele Magrini",
+        "Marco Mistretta",
+        "Niccolò Biondi",
+        "Pietro Pala",
+        "Alessandro Ramalli",
+        "Simona Fiori",
+        "Andrew D. Bagdanov",
+        "Matteo Lenge"
+      ],
+      "published": "2026-10-03",
+      "arxiv_url": "https://arxiv.org/abs/2610.04601",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.04601",
+      "pdf_url": "https://arxiv.org/pdf/2610.04601",
+      "open_access_url": "https://arxiv.org/pdf/2610.04601",
+      "venue": "",
+      "abstract": "Magnetic Resonance Imaging (MRI) is widely regarded as the optimal sensor for fetal brain analysis due to its superior soft-tissue contrast and anatomical detail. However, its high cost and operational burden make it invasive and difficult to obtain at scale. Ultrasound (US), in contrast, is cheap, safe, and routinely acquired, and as a result it has produced substantially larger datasets and a growing ecosystem of pretrained models. This asymmetry raises a natural question: Can we teach a US-only model to understand fetal MRI from only a limited set of examples? The standard recipe, training a foundation model on subject-to-subject paired MRI-US scans, is not viable since no such paired fetal dataset is publicly available. In this paper we address this gap with Weakly Aligned Spatiotemporal Pairs (WASP), a framework that formulates cross-modal correspondence as an entropic Optimal Transport problem driven by clinical metadata, in particular Gestational Age (GA) and diagnostic planes, enabling the fitting of a lightweight alignment module that lifts MRI representations into the US latent space, without fine-tuning the backbone. Empirically, WASP yields its largest gains when MRI is unseen by the model during pretraining (on USFM, GA estimation error drops from 21.9 to 17.4 days and standard plane classification accuracy climbs from 61.9% to 69.0%), while providing smaller, backbone-dependent refinements for backbones pretrained on both modalities (e.g., BioMedParse GA estimation error from 6.5 to 6.0 days and SAM-Med2d plane accuracy from 83.3% to 88.1%). Code is available at https://github.com/miccunifi/WASP.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Francesco Correnti",
+      "first_author_affiliations": [
+        "University of Florence , Italy"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "跨模态表示对齐（MRI–超声）；将熵正则最优传输对应建模用于视觉–AIS跨模态匹配：把临床元数据（孕周、切面）替换为船舶时空元数据（AIS位置、航速、时间戳）作为对应先验，训练轻量对齐模块将视觉特征映",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.04601",
+      "score": 14,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "磁共振成像 (MRI) 由于其优异的软质对比和解剖细节,被普遍认为是胎儿脑分析的最佳传感器. 然而,其高昂的成本和业务负担使其具有侵略性,难以大规模获得。 超声波 (US), 相比之下,它是廉价的、安全的和经常获得的,因此,它产生了大得多的数据集并形成了预先训练的模型的生态系统。 这种不对称性引起了一个自然的问题:我们能否教一个 US-只有模型来理解胎儿 MRI 仅从有限的一组例子? 标准食谱,培训一个按主题对主题对主题组合的基础模型 MRI-US 扫描,是不可行的,因为没有这种对子胎儿数据集可供公开查阅. 在本文中,我们用弱相通的Spatioteporal Pairs来解决这一差距。 (WASP), 制定框架 跨模态 由临床元数据,特别是Gestational Age驱动的 最佳运输问题 (GA) 和诊断飞机,使轻型飞机能够安装 对齐 启动的模块 MRI 表征 输入 US 潜在的空间, 不微调主干。 经验, WASP 最大收益当 MRI 模型在预训期间(关于 USFM, GA 估计出错从 21.9 以 17.4 日数和标准平面分类精确度从 61.9% 以 69.0%), 为两地的骨干提供较小的、依赖骨干能力的改进。 模态 ((例如,., BioMedParse GA 估计出错 6.5 以 6.0 天数和 SAM-Med2d 平面精度从 83.3% 以 88.1%). 代码为: https://github.com/miccunifi/WASP.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.33516",
+      "title": "PPG-LM: A Photoplethysmography-Language Model with Multi-Level Clinical Alignment",
+      "authors": [
+        "Xiaoda Wang",
+        "Minxiao Wang",
+        "Maxwell A Xu",
+        "Patrick Langer",
+        "Kaiqiao Han",
+        "Defu Cao",
+        "Xiao Luo",
+        "Yuzhe Yang",
+        "Yan Liu",
+        "Xiao Hu",
+        "Yizhou Sun",
+        "Wei Wang",
+        "Carl Yang"
+      ],
+      "published": "2026-09-27",
+      "arxiv_url": "https://arxiv.org/abs/2609.33516",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.33516",
+      "pdf_url": "https://arxiv.org/pdf/2609.33516",
+      "open_access_url": "https://arxiv.org/pdf/2609.33516",
+      "venue": "",
+      "abstract": "Photoplethysmography (PPG) is widely recorded by clinical monitors and consumer wearables, providing a scalable source of continuous physiological information. These recordings offer an opportunity for physiological assessment at scale, but realizing this potential requires models to learn from both signal-derived physiological supervision and broader clinical context captured in electronic health records (EHRs). This involves aligning information spanning local observations, care events, and entire visits with PPG representations at corresponding temporal scales. However, existing PPG foundation models primarily rely on task-specific prediction heads, while the medical knowledge of large language models does not necessarily translate into waveform understanding. To bridge this gap, we introduce PPG-LM, the first PPG-language model family to learn physiological representations from both signal-derived supervision and broader clinical context captured in EHRs. To construct clinically grounded captions, we develop an automatic captioning pipeline that generates segment-, event-, and visit-level descriptions from signal measurements and structured EHR records. We then learn from these pairs through a two-stage framework that first establishes segment-language correspondence through contrastive learning and waveform-conditioned captioning, then extends alignment to events and visits through time-aware aggregation and temporal statement matching. Pretrained on approximately 73k hours of PPG, PPG-LM supports language-based recognition, cross-modal retrieval, and segment captioning. Experiments on MC-MED, MIMIC-III, and VitalDB show improved retrieval and caption factuality over language-model baselines and gains over PPG and time-series foundation models on multiple clinical prediction tasks.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Xiaoda Wang",
+      "first_author_affiliations": [
+        "Emory University",
+        "University of California , Los Angeles"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "生理信号-语言模型对齐；将分段-语言对比学习用于视觉-雷达/AIS跨模态匹配：把船舶视觉片段与AIS文本描述或雷达时序片段构造为正对，通过对比学习对齐；需调整输入为视觉片段与AIS/雷达时序描述，训练",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.33516",
+      "score": 17,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "摄影 (PPG) 由临床监测器和消费者可穿戴物广泛记录,提供了可伸缩的连续生理信息来源. 这些录音为规模的生理评估提供了一个机会,但认识到这一潜力需要模型从信号衍生的生理监督以及电子健康记录所记录的更广泛的临床背景中学习。 (EHRs). 这涉及将涉及地方观察、护理活动以及整个访问的信息与下列信息统一起来: PPG 表征 在相应的时间尺度。 不过,现有 PPG 基础模型主要依靠特定任务预测头,而大型语言模型的医学知识并不一定会转化为波形理解. 为了弥补这一差距,我们提出 PPG-LM, 首个 PPG-学习生理能力的语言模范家庭 表征 从信号衍生的监管和从更广泛的临床背景中捕捉到 EHRs. 为了构建基于临床的字幕,我们开发了一个自动字幕管道,从信号测量和结构化中生成分段、事件和访问层次的描述。 EHR 记录。 然后我们通过两个阶段的框架从这些对子中吸取教训,首先通过两个阶段框架建立部分语言的对应关系。 对比学习 和波形条件字幕,然后扩展 对齐 通过时间认识汇总和时间声明匹配,实现事件和访问。 预训大约 73k 小时 PPG, PPG-LM 支持基于语言的识别, 跨模态 检索和分区标题。 实验 MC-MED, MIMIC-III, 和 VitalDB 显示比语言模型基线更好的检索和标题真实性,以及比 PPG 关于多种临床预测任务的时间序列基础模型.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 779,
+    "ai_reviewed": 521,
+    "ai_states": {
+      "evaluated": 521,
+      "uncertain": 258
+    },
+    "stage_counts": {
+      "2": 737,
+      "1": 24,
+      "3": 18
+    },
+    "ai_rejected": 507,
+    "translation_deferred": 0,
+    "qualified_count": 14,
+    "selected_count": 5,
+    "shortfall": 0,
+    "translation_replacements": [],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "complete"
+}

@@ -1,30 +1,30 @@
 {
-  "run_id": "2026-10-24T08:57:39.151090+00:00",
-  "completed_at": "2026-10-24T08:59:25.350097+00:00",
+  "run_id": "2026-10-25T01:15:46.641231+00:00",
+  "completed_at": "2026-10-25T01:28:02.681929+00:00",
   "local_update": "partial",
-  "jobs": 0,
-  "successful": 0,
+  "jobs": 42,
+  "successful": 39,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 3,
+  "added": 10,
   "filled": 0,
   "merged": 0,
   "before_count": 3745,
-  "after_count": 3745,
+  "after_count": 3755,
   "translation": {
-    "translated": 1,
-    "cached": 4,
+    "translated": 5,
+    "cached": 0,
     "manual": 0,
     "failed": 0,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
     "attempted_ids": [
-      "2609.28159",
-      "2610.00319",
-      "2610.03403",
-      "2610.06837",
-      "2610.14598"
+      "2609.23393",
+      "2609.33516",
+      "2610.03454",
+      "2610.04601",
+      "2610.07689"
     ],
     "replacement_failures": [],
     "selected": 5,
@@ -34,27 +34,27 @@
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2610.06837",
+        "paper_id": "2610.03454",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.14598",
+        "paper_id": "2610.07689",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.03403",
+        "paper_id": "2609.23393",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.00319",
+        "paper_id": "2610.04601",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2609.28159",
+        "paper_id": "2609.33516",
         "source": "argos",
         "error": ""
       }
@@ -84,111 +84,90 @@
     ]
   ],
   "ai": {
-    "status": "deferred",
-    "processed": 0,
-    "cached": 782,
+    "status": "success",
+    "processed": 2,
+    "cached": 777,
     "failed": 0,
-    "cost_upper_cny": 0.0,
-    "priced_cost_cny": 0.0,
+    "cost_upper_cny": 0.0076644799999999996,
+    "priced_cost_cny": 0.0038322399999999998,
     "unsettled_upper_cny": 0.0,
-    "tokens": 0,
+    "tokens": 3020,
     "missing_abstract": 0,
-    "candidate_count": 784,
-    "already_attempted_today": 2,
-    "pending_total": 0,
+    "candidate_count": 779,
+    "already_attempted_today": 0,
+    "pending_total": 2,
     "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 524,
+    "ai_reviewed": 521,
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 524,
-      "uncertain": 258,
-      "unassessed": 2
+      "evaluated": 521,
+      "uncertain": 258
     },
     "publication_status": "complete",
-    "reserve_available": 19
+    "reserve_available": 14
   },
   "affiliations": [
     {
-      "paper_id": "2610.06837",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2610.04601",
+      "revision": 1,
+      "time": "2026-10-25T01:27:24.695357+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2610.14598",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2609.33516",
+      "revision": 1,
+      "time": "2026-10-25T01:27:24.695357+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2610.03403",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2610.03454",
+      "revision": 1,
+      "time": "2026-10-25T01:27:24.695357+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2610.00319",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2610.07689",
+      "revision": 1,
+      "time": "2026-10-25T01:27:24.695357+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2609.28159",
+      "paper_id": "2609.23393",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
     }
   ],
   "daily_selected": 5,
   "daily_publication": "complete",
-  "published_daily_date": "2026-10-24",
+  "published_daily_date": "2026-10-25",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "40079962312",
-  "translation_before_repair": {
-    "translated": 0,
-    "cached": 4,
-    "manual": 0,
-    "failed": 1,
-    "missing_english": 0,
-    "pending": 0,
-    "skipped_failed": 0,
-    "selected": 5,
-    "engine": "Argos Translate (CPU)",
-    "api_calls": 0,
-    "cost_upper_cny": 0.0,
-    "priced_cost_cny": 0.0,
-    "papers": [
-      {
-        "paper_id": "2610.06837",
-        "source": "argos",
-        "error": ""
-      },
-      {
-        "paper_id": "2610.14598",
-        "source": "argos",
-        "error": ""
-      },
-      {
-        "paper_id": "2610.03403",
-        "source": "argos",
-        "error": ""
-      },
-      {
-        "paper_id": "2610.00319",
-        "source": "english_only",
-        "error": "numeric_mismatch: numbers or percentages changed; segment: respectively. The source code will be made publicly available at"
-      },
-      {
-        "paper_id": "2609.28159",
-        "source": "argos",
-        "error": ""
-      }
-    ]
-  },
-  "maintenance_recovery": {
-    "version": "3.8.4",
-    "date": "2026-10-24",
-    "new_retrieval": false,
-    "new_ai_calls": 0,
-    "note": "Existing reviewed candidates; real Argos repaired numeric validation; source run statistics retained."
-  }
+  "retrieval_status": "partial",
+  "github_run_id": "40149835693"
 }
