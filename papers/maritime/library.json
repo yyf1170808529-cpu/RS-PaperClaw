@@ -42394,6 +42394,29 @@
           "venue": "",
           "first_author_affiliations": [],
           "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2610.07689",
+          "title": "Unlocking Fine-Grained Perception in CLIP via Structurally-Aware Latent Masked Modeling",
+          "authors": [
+            "Juntong Li",
+            "Lingwei Dang",
+            "Haomin Wu",
+            "Ziyan Qiu",
+            "Qingxin Xiao",
+            "Qingyao Wu"
+          ],
+          "abstract": "Vision-Language Models (VLMs) such as CLIP excel in global semantic alignment but often lack fine-grained perceptual capabilities. This hinders dense prediction tasks and bottlenecks the visual potential of Multimodal Large Language Models (MLLMs). Existing research has attempted to enhance CLIP's visual representations by incorporating geometric priors from vision-centric models. However, these strategies often struggle to achieve deep alignment for both local spatial structures and global semantics, potentially even distorting the original image-text space. To address these limitations, we propose SALM, an unsupervised embedding alignment framework based on structurally-aware latent mask modeling. SALM effectively synergizes local and global alignment via a dual-path design combining explicit and implicit mechanisms, without requiring any image-text pairs. First, we introduce a dual-matrix alignment strategy that explicitly calibrates intra-sample spatial correlations and activation intensities, thereby effectively injecting local geometric priors. Based on this, we further design a latent mask modeling mechanism to guide CLIP to restore the missing semantic details of the target model, thereby implicitly aggregating fine-grained structures into the global semantic space. Furthermore, driven by the empirical observations that CLIP's shallow features inherently possess strong spatial observational capabilities, we naturally extend SALM to a highly efficient self-distillation paradigm, SALM-Self. This unlocks CLIP's intrinsic fine-grained potential without relying on any external models. Extensive experiments demonstrate that SALM not only significantly improves performance in dense prediction tasks but also boosts CLIP's zero-shot accuracy, effectively enhancing the fine-grained understanding capabilities of MLLMs. Project page at https://qzfm.github.io/salm_project_page/.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-10-06",
+          "venue": "",
+          "first_author_affiliations": [
+            "School of Software Engineering , South China University of Technology"
+          ],
+          "publication_evidence": null
         }
       ],
       "raw_abstract": "Vision-Language Models (VLMs) such as CLIP excel in global semantic alignment but often lack fine-grained perceptual capabilities. This hinders dense prediction tasks and bottlenecks the visual potential of Multimodal Large Language Models (MLLMs). Existing research has attempted to enhance CLIP's visual representations by incorporating geometric priors from vision-centric models. However, these strategies often struggle to achieve deep alignment for both local spatial structures and global semantics, potentially even distorting the original image-text space. To address these limitations, we propose SALM, an unsupervised embedding alignment framework based on structurally-aware latent mask modeling. SALM effectively synergizes local and global alignment via a dual-path design combining explicit and implicit mechanisms, without requiring any image-text pairs. First, we introduce a dual-matrix alignment strategy that explicitly calibrates intra-sample spatial correlations and activation intensities, thereby effectively injecting local geometric priors. Based on this, we further design a latent mask modeling mechanism to guide CLIP to restore the missing semantic details of the target model, thereby implicitly aggregating fine-grained structures into the global semantic space. Furthermore, driven by the empirical observations that CLIP's shallow features inherently possess strong spatial observational capabilities, we naturally extend SALM to a highly efficient self-distillation paradigm, SALM-Self. This unlocks CLIP's intrinsic fine-grained potential without relying on any external models. Extensive experiments demonstrate that SALM not only significantly improves performance in dense prediction tasks but also boosts CLIP's zero-shot accuracy, effectively enhancing the fine-grained understanding capabilities of MLLMs. Project page at https://qzfm.github.io/salm_project_page/.",
@@ -124156,6 +124179,32 @@
           "venue": "",
           "first_author_affiliations": [],
           "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2610.04601",
+          "title": "WASP: Weakly Aligned Spatiotemporal Pairs for Fetal Brain MRI-Ultrasound Learning",
+          "authors": [
+            "Francesco Correnti",
+            "Gabriele Magrini",
+            "Marco Mistretta",
+            "Niccolò Biondi",
+            "Pietro Pala",
+            "Alessandro Ramalli",
+            "Simona Fiori",
+            "Andrew D. Bagdanov",
+            "Matteo Lenge"
+          ],
+          "abstract": "Magnetic Resonance Imaging (MRI) is widely regarded as the optimal sensor for fetal brain analysis due to its superior soft-tissue contrast and anatomical detail. However, its high cost and operational burden make it invasive and difficult to obtain at scale. Ultrasound (US), in contrast, is cheap, safe, and routinely acquired, and as a result it has produced substantially larger datasets and a growing ecosystem of pretrained models. This asymmetry raises a natural question: Can we teach a US-only model to understand fetal MRI from only a limited set of examples? The standard recipe, training a foundation model on subject-to-subject paired MRI-US scans, is not viable since no such paired fetal dataset is publicly available. In this paper we address this gap with Weakly Aligned Spatiotemporal Pairs (WASP), a framework that formulates cross-modal correspondence as an entropic Optimal Transport problem driven by clinical metadata, in particular Gestational Age (GA) and diagnostic planes, enabling the fitting of a lightweight alignment module that lifts MRI representations into the US latent space, without fine-tuning the backbone. Empirically, WASP yields its largest gains when MRI is unseen by the model during pretraining (on USFM, GA estimation error drops from 21.9 to 17.4 days and standard plane classification accuracy climbs from 61.9% to 69.0%), while providing smaller, backbone-dependent refinements for backbones pretrained on both modalities (e.g., BioMedParse GA estimation error from 6.5 to 6.0 days and SAM-Med2d plane accuracy from 83.3% to 88.1%). Code is available at https://github.com/miccunifi/WASP.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-10-03",
+          "venue": "",
+          "first_author_affiliations": [
+            "University of Florence , Italy"
+          ],
+          "publication_evidence": null
         }
       ],
       "raw_abstract": "Magnetic Resonance Imaging (MRI) is widely regarded as the optimal sensor for fetal brain analysis due to its superior soft-tissue contrast and anatomical detail. However, its high cost and operational burden make it invasive and difficult to obtain at scale. Ultrasound (US), in contrast, is cheap, safe, and routinely acquired, and as a result it has produced substantially larger datasets and a growing ecosystem of pretrained models. This asymmetry raises a natural question: Can we teach a US-only model to understand fetal MRI from only a limited set of examples? The standard recipe, training a foundation model on subject-to-subject paired MRI-US scans, is not viable since no such paired fetal dataset is publicly available. In this paper we address this gap with Weakly Aligned Spatiotemporal Pairs (WASP), a framework that formulates cross-modal correspondence as an entropic Optimal Transport problem driven by clinical metadata, in particular Gestational Age (GA) and diagnostic planes, enabling the fitting of a lightweight alignment module that lifts MRI representations into the US latent space, without fine-tuning the backbone. Empirically, WASP yields its largest gains when MRI is unseen by the model during pretraining (on USFM, GA estimation error drops from 21.9 to 17.4 days and standard plane classification accuracy climbs from 61.9% to 69.0%), while providing smaller, backbone-dependent refinements for backbones pretrained on both modalities (e.g., BioMedParse GA estimation error from 6.5 to 6.0 days and SAM-Med2d plane accuracy from 83.3% to 88.1%). Code is available at https://github.com/miccunifi/WASP.",
@@ -169637,6 +169686,27 @@
           "publication_date": "2026-10-02",
           "venue": "",
           "first_author_affiliations": [],
+          "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2610.03454",
+          "title": "Measure Less, Know More: Self-Supervised Test-Time Feature Acquisition",
+          "authors": [
+            "Eeshaan Jain",
+            "Linus Bleistein",
+            "Bart Deplancke",
+            "Charlotte Bunne"
+          ],
+          "abstract": "Recent progress in multimodal, high-dimensional learning has enabled foundation models to process heterogeneous, large-scale data. However, at test time, acquiring all features or modalities can be prohibitively costly and often redundant. Sequentially selecting informative modalities is therefore critical, yet challenging when the downstream task or prediction target is unknown. To this end, we introduce ECHO-$k$, a task-agnostic and self-supervised learning principle for modality acquisition: we use a deep model's internal pretrained representations (e.g., from a foundation model) as proxy targets that summarize cross-modal information. We provide theoretical guarantees in a stylized linear setting that motivate a reinforcement learning (RL) policy for sequential modality selection. Across task-agnostic and label-free acquisition baselines, ECHO-$k$ consistently improves budgeted downstream performance across diverse foundation-model backends. Our method provides a principled route to cost-aware test-time deployment, with implications for any multimodal system where measurements are expensive or time-constrained, and downstream tasks unknown a priori.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-10-02",
+          "venue": "",
+          "first_author_affiliations": [
+            "School of Computer and Communication Sciences , EPFL"
+          ],
           "publication_evidence": null
         }
       ],
@@ -526525,6 +526595,37 @@
           "venue": "",
           "first_author_affiliations": [],
           "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2609.33516",
+          "title": "PPG-LM: A Photoplethysmography-Language Model with Multi-Level Clinical Alignment",
+          "authors": [
+            "Xiaoda Wang",
+            "Minxiao Wang",
+            "Maxwell A Xu",
+            "Patrick Langer",
+            "Kaiqiao Han",
+            "Defu Cao",
+            "Xiao Luo",
+            "Yuzhe Yang",
+            "Yan Liu",
+            "Xiao Hu",
+            "Yizhou Sun",
+            "Wei Wang",
+            "Carl Yang"
+          ],
+          "abstract": "Photoplethysmography (PPG) is widely recorded by clinical monitors and consumer wearables, providing a scalable source of continuous physiological information. These recordings offer an opportunity for physiological assessment at scale, but realizing this potential requires models to learn from both signal-derived physiological supervision and broader clinical context captured in electronic health records (EHRs). This involves aligning information spanning local observations, care events, and entire visits with PPG representations at corresponding temporal scales. However, existing PPG foundation models primarily rely on task-specific prediction heads, while the medical knowledge of large language models does not necessarily translate into waveform understanding. To bridge this gap, we introduce PPG-LM, the first PPG-language model family to learn physiological representations from both signal-derived supervision and broader clinical context captured in EHRs. To construct clinically grounded captions, we develop an automatic captioning pipeline that generates segment-, event-, and visit-level descriptions from signal measurements and structured EHR records. We then learn from these pairs through a two-stage framework that first establishes segment-language correspondence through contrastive learning and waveform-conditioned captioning, then extends alignment to events and visits through time-aware aggregation and temporal statement matching. Pretrained on approximately 73k hours of PPG, PPG-LM supports language-based recognition, cross-modal retrieval, and segment captioning. Experiments on MC-MED, MIMIC-III, and VitalDB show improved retrieval and caption factuality over language-model baselines and gains over PPG and time-series foundation models on multiple clinical prediction tasks.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-09-27",
+          "venue": "",
+          "first_author_affiliations": [
+            "Emory University",
+            "University of California , Los Angeles"
+          ],
+          "publication_evidence": null
         }
       ],
       "metadata_source": [
@@ -629472,7 +629573,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-18T04:58:34.482636+00:00",
+        "checked_at": "2026-10-25T09:14:44.375893+00:00",
         "url": "https://doi.org/10.48550/arxiv.2610.17902",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -676616,6 +676717,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-25T01:26:56.818970+00:00"
+    },
+    {
+      "missing_before": 987,
+      "missing_after": 987,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-25T09:14:44.370303+00:00"
     }
   ],
   "translation_batches": [
@@ -676852,11 +676961,11 @@
   "selected_translation_plan": {
     "date": "2026-10-25",
     "paper_ids": [
-      "2610.04601",
-      "2609.33516",
       "2610.03454",
       "2610.07689",
-      "2609.23393"
+      "2609.23393",
+      "2610.04601",
+      "2609.33516"
     ]
   }
 }
