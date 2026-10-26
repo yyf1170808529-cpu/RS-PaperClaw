@@ -138310,9 +138310,11 @@
       "open_access_url": "https://arxiv.org/pdf/2609.37024",
       "publication_date": "2026-09-29",
       "first_author": "Junbo Shen",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Department of Computer Science and Engineering , The Chinese University of Hong Kong"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
       "metadata_source": [
         "arXiv"
       ],
@@ -138443,6 +138445,17 @@
         "segment_retries": [],
         "quality_warnings": [],
         "updated_at": "2026-10-26T01:25:46.373611+00:00"
+      },
+      "affiliation_check": {
+        "revision": 1,
+        "time": "2026-10-26T10:16:47.782475+00:00",
+        "status": "verified",
+        "attempts": [
+          {
+            "source": "openalex_title",
+            "status": "received"
+          }
+        ]
       }
     },
     "2609.37003": {
@@ -180650,6 +180663,25 @@
           "publication_date": "2026-09-30",
           "venue": "",
           "first_author_affiliations": [],
+          "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2609.39266",
+          "title": "PLRS-IC: A Dual-Calibration Framework for Chest X-Ray Vision-Language Alignment",
+          "authors": [
+            "Qixing Zhao",
+            "Jinpeng Li"
+          ],
+          "abstract": "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations. However, this alignment is fundamentally hindered by two intertwined sources of ambiguity: projection-induced visual mismatch and patient-agnostic semantic overlap. First, at the local feature level, frontal and lateral radiographs exhibit distinct appearances for the same clinical finding, rendering a shared patch-text similarity geometry inherently suboptimal. Compounding this visual ambiguity is a semantic mismatch during global contrastive optimization, where instance-level objectives penalize cross-patient pairs as strict negatives even when they share identical positive clinical concepts. To address this dual ambiguity, we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning. At the local alignment stage, Projection-Conditioned Low-Rank Residual Similarity (PLRS) dynamically adapts patch-text matching to projection-specific manifolds using a bounded, parameter-efficient low-rank residual. At the global optimization stage, Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS) leverages a corpus-derived information-theoretic prior to soften the penalty of semantically overlapping negatives without altering original contrastive assignments. Extensive experiments across nine public zero-shot benchmark settings demonstrate that our framework yields consistent improvements in classification, grounding, and segmentation, validating the necessity of dual-calibration in medical vision-language pre-training.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-09-30",
+          "venue": "",
+          "first_author_affiliations": [
+            "South China University of Technology"
+          ],
           "publication_evidence": null
         }
       ],
@@ -636491,7 +636523,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-19T06:14:43.752067+00:00",
+        "checked_at": "2026-10-26T10:16:35.062594+00:00",
         "url": "https://doi.org/10.1007/978-3-032-37679-4_4",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -678710,6 +678742,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-26T01:24:58.326471+00:00"
+    },
+    {
+      "missing_before": 989,
+      "missing_after": 989,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-26T10:16:35.057745+00:00"
     }
   ],
   "translation_batches": [

@@ -113806,9 +113806,11 @@
       "open_access_url": "https://arxiv.org/pdf/2609.37024",
       "publication_date": "2026-09-29",
       "first_author": "Junbo Shen",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Department of Computer Science and Engineering , The Chinese University of Hong Kong"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
       "metadata_source": [
         "arXiv"
       ],
@@ -113918,6 +113920,17 @@
         "segment_retries": [],
         "quality_warnings": [],
         "updated_at": "2026-10-26T01:25:46.373611+00:00"
+      },
+      "affiliation_check": {
+        "revision": 1,
+        "time": "2026-10-26T10:16:47.782475+00:00",
+        "status": "verified",
+        "attempts": [
+          {
+            "source": "openalex_title",
+            "status": "received"
+          }
+        ]
       },
       "ai_score": 33,
       "ai_demoted": false,
@@ -520284,7 +520297,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-19T06:14:43.752067+00:00",
+        "checked_at": "2026-10-26T10:16:35.062594+00:00",
         "url": "https://doi.org/10.1007/978-3-032-37679-4_4",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -571000,21 +571013,21 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-10-26T01:15:56.444650+00:00",
-    "completed_at": "2026-10-26T01:26:03.485469+00:00",
-    "local_update": "partial",
-    "jobs": 42,
-    "successful": 39,
+    "run_id": "2026-10-26T10:15:59.481747+00:00",
+    "completed_at": "2026-10-26T10:17:03.863605+00:00",
+    "local_update": "success",
+    "jobs": 0,
+    "successful": 0,
     "incomplete": 0,
-    "failed": 3,
-    "added": 7,
+    "failed": 0,
+    "added": 0,
     "filled": 0,
     "merged": 0,
-    "before_count": 3755,
+    "before_count": 3762,
     "after_count": 3762,
     "translation": {
-      "translated": 5,
-      "cached": 0,
+      "translated": 0,
+      "cached": 5,
       "manual": 0,
       "failed": 0,
       "missing_english": 0,
@@ -571022,20 +571035,12 @@
       "skipped_failed": 0,
       "attempted_ids": [
         "2609.16284",
-        "2609.29721",
         "2609.35264",
         "2609.37024",
         "2609.39266",
         "2610.12421"
       ],
-      "replacement_failures": [
-        {
-          "paper_id": "2609.29721",
-          "attempt_date": "2026-10-26",
-          "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
-          "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
-        }
-      ],
+      "replacement_failures": [],
       "selected": 5,
       "engine": "Argos Translate (CPU)",
       "api_calls": 0,
@@ -571093,18 +571098,18 @@
       ]
     ],
     "ai": {
-      "status": "success",
-      "processed": 3,
-      "cached": 774,
+      "status": "cached",
+      "processed": 0,
+      "cached": 777,
       "failed": 0,
-      "cost_upper_cny": 0.01324248,
-      "priced_cost_cny": 0.01324248,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
       "unsettled_upper_cny": 0.0,
-      "tokens": 4459,
+      "tokens": 0,
       "missing_abstract": 0,
       "candidate_count": 777,
       "already_attempted_today": 0,
-      "pending_total": 3,
+      "pending_total": 0,
       "limit_deferred": 0,
       "selected_count": 5,
       "ai_reviewed": 518,
@@ -571114,7 +571119,7 @@
         "uncertain": 259
       },
       "publication_status": "complete",
-      "reserve_available": 9
+      "reserve_available": 4
     },
     "affiliations": [
       {
@@ -571124,19 +571129,7 @@
       },
       {
         "paper_id": "2610.12421",
-        "revision": 1,
-        "time": "2026-10-26T01:25:24.270654+00:00",
-        "status": "unverified",
-        "attempts": [
-          {
-            "source": "openalex_title",
-            "status": "received"
-          },
-          {
-            "source": "arxiv",
-            "status": "received"
-          }
-        ]
+        "status": "cached_unverified"
       },
       {
         "paper_id": "2609.35264",
@@ -571144,14 +571137,14 @@
         "source": "OpenAlex first authorship"
       },
       {
-        "paper_id": "2609.29721",
+        "paper_id": "2609.39266",
         "status": "cached_verified",
         "source": "OpenAlex first authorship"
       },
       {
-        "paper_id": "2609.39266",
+        "paper_id": "2609.37024",
         "revision": 1,
-        "time": "2026-10-26T01:25:24.270654+00:00",
+        "time": "2026-10-26T10:16:47.782475+00:00",
         "status": "verified",
         "attempts": [
           {
@@ -571167,8 +571160,8 @@
     "published_daily_count": 5,
     "github_sync": "not_attempted",
     "pages_publish": "not_attempted",
-    "retrieval_status": "partial",
-    "github_run_id": "40253278394"
+    "retrieval_status": "not_run_resume",
+    "github_run_id": "40305912710"
   },
   "recommendation_policy": {
     "schema_version": 2,

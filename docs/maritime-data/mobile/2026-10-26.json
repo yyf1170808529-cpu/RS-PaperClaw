@@ -183,9 +183,11 @@
         "status": "unverified"
       },
       "first_author": "Junbo Shen",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Department of Computer Science and Engineering , The Chinese University of Hong Kong"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
       "affiliation_evidence": null,
       "source": "arXiv",
       "reason": "跨模态对比学习（基因-电生理）；将上下文适配器和投影模块用于视觉-雷达/AIS跨模态匹配：为视觉与AIS或雷达分别设计模态适配器，通过配对对比学习对齐特征空间，输入需替换为船舶图像与AIS/雷达点迹特",
