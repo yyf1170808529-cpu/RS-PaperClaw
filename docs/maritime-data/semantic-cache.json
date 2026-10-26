@@ -30549,6 +30549,113 @@
       },
       "model": "deepseek-flash",
       "request_id": "c6028407-5743-4634-8bc1-8b32d420f774"
+    },
+    "995767a43b037e98c814a9198478224c7baca6af9ac01477657cf70d63c1eb4d": {
+      "paper_id": "2610.32293",
+      "title": "Complementing DINO Features with Image Structure for Part Discovery",
+      "fingerprint": "995767a43b037e98c814a9198478224c7baca6af9ac01477657cf70d63c1eb4d",
+      "evaluation": {
+        "paper_id": "2610.32293",
+        "task_type": "part_discovery_segmentation",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a training-free framework that combines boundaries from low-level image segmentation with DINO's semantic features",
+            "interpretation_zh": "Part-DINO将低级图像分割产生的边界与DINO语义特征结合，用于区域划分和特征池化，属于无需训练的通用分割表征方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "We use the boundaries to partition the image into regions, pool DINO features within each region, and group them to discover parts",
+            "interpretation_zh": "摘要明确给出了边界分区、区域内特征池化、再聚类分组的具体流程。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a training-free framework that combines boundaries from low-level image segmentation with DINO's semantic features",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "可将低级边界先验与语义特征结合的分区池化思路迁移到船舶分割：用海天线/船体轮廓等边界线索划分候选区域，区域内聚合DINO类语义特征后再聚类或分类，但需针对海面杂波、远小目标和运动模糊调整边界检测与池化尺度。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为通用部件发现，未涉及海事或船舶场景。",
+          "迁移到船舶分割需重新设计边界线索和区域尺度，摘要未验证该场景。",
+          "训练自由框架对边界检测质量依赖较强，摘要未讨论复杂海况下的鲁棒性。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供边界先验与语义特征结合的无训练分割表征，可启发船舶分割区域表征，但直接海事关联弱且迁移需较多调整。",
+        "confidence": 0.62
+      },
+      "model": "deepseek-flash",
+      "request_id": "68594514-0b39-4d61-bb7d-e6c599551d5b"
+    },
+    "8dd2d2b7b9a5f30ba12b42da9972a98c5e025125c41b710f8c350d05f95d9908": {
+      "paper_id": "2610.31762",
+      "title": "See What I Need, Dream What I Want: A Navigation Foundation Model on a Self-Constructed Representation Space",
+      "fingerprint": "8dd2d2b7b9a5f30ba12b42da9972a98c5e025125c41b710f8c350d05f95d9908",
+      "evaluation": {
+        "paper_id": "2610.31762",
+        "task_type": "navigation_representation_learning",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a joint-embedding predictive architecture (JEPA), with a next-representation prediction loss and a regularizer on its targets",
+            "interpretation_zh": "摘要说明用JEPA联合嵌入预测架构，以预测下一时刻表征为训练目标，并加目标正则。",
+            "inference": false
+          },
+          {
+            "quote_en": "a compact three-layer transformer that attends over features spanning the full depth of multiple complementary vision foundation models",
+            "interpretation_zh": "给出三层transformer跨多个视觉基础模型全深度特征进行注意力的结构描述。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向机器人视觉语言导航与点目标导航，非海事任务。",
+          "摘要未给出与船舶检测、分割、跨模态匹配的直接可调整方案。",
+          "仅凭注意力/JEPA等泛化模块不足以证明可迁移到海上感知。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属于导航策略与世界模型表征学习，缺少与海事感知任务的具体联系和可操作迁移方案。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "68594514-0b39-4d61-bb7d-e6c599551d5b"
+    },
+    "5d1e5a8812dbbc825d554b942ce453fd661a88ed48615be5d73bb83df29e89de": {
+      "paper_id": "2610.32263",
+      "title": "LapaFM: A Laparoscopic Foundation Model via Multi-Stage Continual Learning",
+      "fingerprint": "5d1e5a8812dbbc825d554b942ce453fd661a88ed48615be5d73bb83df29e89de",
+      "evaluation": {
+        "paper_id": "2610.32263",
+        "task_type": "laparoscopic_foundation_model",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a multi-stage continual learning strategy that mitigates catastrophic forgetting and inter-task interference",
+            "interpretation_zh": "摘要提出多阶段持续学习以缓解灾难性遗忘和任务间干扰。",
+            "inference": false
+          },
+          {
+            "quote_en": "LapaFM learns multimodal visual representations and supports multiple tasks, including smoke removal, surgical phase recognition, instrument and polyp segmentation, and lesion identification",
+            "interpretation_zh": "模型学习多模态视觉表征，支持去烟、阶段识别、器械与息肉分割等任务。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "医学腹腔镜场景，属明确低优先级方向。",
+          "去烟与分割虽在概念上与海上图像增强/分割有相似性，但摘要未提供可具体迁移到船舶任务的输入或训练调整方案。",
+          "缺少海事数据与跨域适配证据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学腹腔镜基础模型，虽含去烟和分割任务，但无海事联系且迁移路径不具体，属低优先级。",
+        "confidence": 0.78
+      },
+      "model": "deepseek-flash",
+      "request_id": "68594514-0b39-4d61-bb7d-e6c599551d5b"
     }
   }
 }

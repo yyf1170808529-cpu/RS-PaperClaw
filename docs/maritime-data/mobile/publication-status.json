@@ -1,26 +1,34 @@
 {
-  "attempt_date": "2026-10-25",
+  "attempt_date": "2026-10-26",
   "status": "complete",
-  "published_date": "2026-10-25",
-  "published_revision": "eb7fc84b4ff509d1",
+  "published_date": "2026-10-26",
+  "published_revision": "fd9192380b5d1b66",
   "selection_audit": {
-    "candidate_count": 779,
-    "ai_reviewed": 521,
+    "candidate_count": 777,
+    "ai_reviewed": 518,
     "ai_states": {
-      "evaluated": 521,
-      "uncertain": 258
+      "evaluated": 518,
+      "uncertain": 259
     },
     "stage_counts": {
-      "2": 737,
+      "2": 732,
+      "0": 3,
       "1": 24,
       "3": 18
     },
-    "ai_rejected": 507,
-    "translation_deferred": 0,
-    "qualified_count": 14,
+    "ai_rejected": 509,
+    "translation_deferred": 1,
+    "qualified_count": 8,
     "selected_count": 5,
     "shortfall": 0,
-    "translation_replacements": [],
+    "translation_replacements": [
+      {
+        "paper_id": "2609.29721",
+        "attempt_date": "2026-10-26",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
+        "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
+      }
+    ],
     "translation_environment_errors": [],
     "translation_errors": []
   }

@@ -1,32 +1,40 @@
 {
-  "run_id": "2026-10-25T09:13:44.369162+00:00",
-  "completed_at": "2026-10-25T09:15:27.758564+00:00",
-  "local_update": "success",
-  "jobs": 0,
-  "successful": 0,
+  "run_id": "2026-10-26T01:15:56.444650+00:00",
+  "completed_at": "2026-10-26T01:26:03.485469+00:00",
+  "local_update": "partial",
+  "jobs": 42,
+  "successful": 39,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 3,
+  "added": 7,
   "filled": 0,
   "merged": 0,
   "before_count": 3755,
-  "after_count": 3755,
+  "after_count": 3762,
   "translation": {
-    "translated": 0,
-    "cached": 5,
+    "translated": 5,
+    "cached": 0,
     "manual": 0,
     "failed": 0,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
     "attempted_ids": [
-      "2609.23393",
-      "2609.33516",
-      "2610.03454",
-      "2610.04601",
-      "2610.07689"
+      "2609.16284",
+      "2609.29721",
+      "2609.35264",
+      "2609.37024",
+      "2609.39266",
+      "2610.12421"
     ],
-    "replacement_failures": [],
+    "replacement_failures": [
+      {
+        "paper_id": "2609.29721",
+        "attempt_date": "2026-10-26",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
+        "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
+      }
+    ],
     "selected": 5,
     "engine": "Argos Translate (CPU)",
     "api_calls": 0,
@@ -34,27 +42,27 @@
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2610.03454",
+        "paper_id": "2609.16284",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.07689",
+        "paper_id": "2610.12421",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2609.23393",
+        "paper_id": "2609.35264",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.04601",
+        "paper_id": "2609.39266",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2609.33516",
+        "paper_id": "2609.37024",
         "source": "argos",
         "error": ""
       }
@@ -84,62 +92,80 @@
     ]
   ],
   "ai": {
-    "status": "cached",
-    "processed": 0,
-    "cached": 779,
+    "status": "success",
+    "processed": 3,
+    "cached": 774,
     "failed": 0,
-    "cost_upper_cny": 0.0,
-    "priced_cost_cny": 0.0,
+    "cost_upper_cny": 0.01324248,
+    "priced_cost_cny": 0.01324248,
     "unsettled_upper_cny": 0.0,
-    "tokens": 0,
+    "tokens": 4459,
     "missing_abstract": 0,
-    "candidate_count": 779,
+    "candidate_count": 777,
     "already_attempted_today": 0,
-    "pending_total": 0,
+    "pending_total": 3,
     "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 521,
+    "ai_reviewed": 518,
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 521,
-      "uncertain": 258
+      "evaluated": 518,
+      "uncertain": 259
     },
     "publication_status": "complete",
     "reserve_available": 9
   },
   "affiliations": [
     {
-      "paper_id": "2610.03454",
+      "paper_id": "2609.16284",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
     },
     {
-      "paper_id": "2610.07689",
+      "paper_id": "2610.12421",
+      "revision": 1,
+      "time": "2026-10-26T01:25:24.270654+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.35264",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
     },
     {
-      "paper_id": "2609.23393",
+      "paper_id": "2609.29721",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
     },
     {
-      "paper_id": "2610.04601",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
-    },
-    {
-      "paper_id": "2609.33516",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2609.39266",
+      "revision": 1,
+      "time": "2026-10-26T01:25:24.270654+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     }
   ],
   "daily_selected": 5,
   "daily_publication": "complete",
-  "published_daily_date": "2026-10-25",
+  "published_daily_date": "2026-10-26",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "40179696017"
+  "retrieval_status": "partial",
+  "github_run_id": "40253278394"
 }

@@ -1,0 +1,433 @@
+{
+  "date": "2026-10-26",
+  "papers": [
+    {
+      "paper_id": "2609.16284",
+      "title": "ProtoLIP: From Sentence-Level to Object-Level Evidence Disentanglement",
+      "authors": [
+        "Yan Zhu",
+        "Yongbo Chen",
+        "Zhengming Ding",
+        "Rebecca Faust"
+      ],
+      "published": "2026-09-14",
+      "arxiv_url": "https://arxiv.org/abs/2609.16284",
+      "doi": "10.48550/arxiv.2609.16284",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.16284",
+      "pdf_url": "https://arxiv.org/pdf/2609.16284",
+      "open_access_url": "https://arxiv.org/pdf/2609.16284",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Query-conditioned vision-language models enable fine-grained interpretation by revealing which visual content supports a given textual query and how this evidence changes across queries. However, semantically, sentence-level evidence does not necessarily decompose into object-specific contributions, while spatially, object-level evidence can remain entangled with co-occurring objects and surrounding scene context. Across multiple VLM architectures and independent benchmarks, we observe persistent object-level evidence entanglement. Moreover, exposed evidence maps do not necessarily correspond to the evidence that directly constitutes the model's prediction. To disentangle visual evidence at both semantic and spatial levels, we introduce ProtoLIP, a lightweight prototype-mediated evidence layer that organizes reusable visual prototypes into text-derived semantic families and uses coarse-to-fine evidence routing, where semantic families constrain prototype eligibility and the complete query determines fine-grained prototype contributions. Our studies show that ProtoLIP improves evidence localization and separation across query granularities, achieving average relative gains of 29% in Pointing and 43% in Energy across four object- and phrase-level OOD benchmarks. Its localization gains also transfer to independently pretrained VLMs, with larger improvements observed in several transfer settings. On the primary backbone, ProtoLIP also improves image-text matching discrimination while remaining competitive with a spatially supervised grounding model in object-level localization. Crucially, ProtoLIP constructs its image-text matching score directly from localized prototype evidence, enabling exact decomposition across prototypes, semantic families, and spatial evidence without spatial annotations or backbone retraining.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Yan Zhu",
+      "first_author_affiliations": [
+        "Department of Computer Science Tulane University New Orleans , LA , USA"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "vision_language_evidence_disentanglement；可尝试把图像-文本原型证据层用于视觉船舶图像与AIS文本/轨迹描述的跨模态匹配：输入改为船舶图像与AIS报文文本，训练",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.16284",
+      "score": 16,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "查询条件 视觉-语言模型通过揭示哪些视觉内容支持给定的文字查询,以及这些证据如何在查询中变化,从而可以进行精细的判读. 然而,句子级证据在结构上并不一定会分解为特定对象的贡献,而在空间上,对象级证据仍然可以和共同发生的物体和周围的场景背景纠缠在一起. 跨越多个 VLM 结构与独立基准,我们观察到持续的物体级证据缠绕。 此外,暴露的证据地图不一定与直接构成模型预测的证据相符. 为了在语义和空间两个层面将视觉证据分开,我们引入 ProtoLIP, 一个轻量级原型介质证据层,将可重复使用的视觉原型组织成文字衍生语义家族,并采用粗细对细证据路由法,语义家族限制原型资格,完整的查询决定了精细的原型贡献. 我们的研究表明, ProtoLIP 改进各种查询颗粒的证据定位和分离,实现平均相对收益 29% 在指针和 43% 跨越四个对象和词组的能量 OOD 基准。 其本地化收益也转移到独立培训前 VLMs, 在几个传输设置中观察到更大的改进。 在主干线上, ProtoLIP 还改进了图像文本与歧视的匹配,同时在物体一级本地化方面与空间监督的地面模型保持竞争力。 关键是, ProtoLIP 从本地化的原型证据直接构建其图像文本匹配分数,使原型、语义家族和空间证据之间能够精确分解,没有空间说明或骨干再培训.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.12421",
+      "title": "Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching",
+      "authors": [
+        "Luping Liu",
+        "Bingyi Kang",
+        "Yifan Wang",
+        "Dong Xu"
+      ],
+      "published": "2026-10-08",
+      "arxiv_url": "https://arxiv.org/abs/2610.12421",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.12421",
+      "pdf_url": "https://arxiv.org/pdf/2610.12421",
+      "open_access_url": "https://arxiv.org/pdf/2610.12421",
+      "venue": "",
+      "abstract": "Dense correspondence matching has historically been bounded by simplifying spatio-temporal priors, such as smooth motion and rigid geometry. While effective for classical tasks, these assumptions break down in image editing and reference-guided generation (IEG), where transformations can preserve visual identity while breaking physical continuity. To establish identity-preserving correspondence across such transformations, we introduce FreeMatching, a generalizable framework combining generative and semantic foundation representations with heterogeneous supervision from classical datasets, tracked videos, and synthetic scenes. Teacher-guided iterative refinement further improves correspondence in IEG without dense correspondence annotations. Experimentally, a single FreeMatching model substantially improves correspondence quality on challenging IEG image pairs while retaining competitive performance on classical benchmarks. Furthermore, we demonstrate its utility as a quantitative metric for evaluating identity preservation, with scores that correlate with human judgment. The code is available at https://github.com/luping-liu/FreeMatching.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Luping Liu",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "dense_correspondence_matching；可将密集对应匹配框架改为视觉–AIS或视觉–雷达跨模态匹配：以视觉图像分支与AIS/雷达渲染的伪图像或点云分支作为两路输入，训练目标从图像对",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.12421",
+      "score": 20,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "稠密对应 匹配在历史上一直以简化spitio-时序前缀为界限,如平滑运动和刚性几何. 这些假设虽然对古典任务有效,但在图像编辑和参考制导生成中被打破 (IEG), 在其中,变换可以在打破物理连续性的同时保留视觉特性. 为了在这种转变中建立身份保护通信,我们引入 FreeMatching, 将基因基础和语义基础结合起来的一般框架 表征 由古典的数据集 跟踪视频 和合成场景的不同监督 教师指导的迭代改进进一步改善了 IEG 无 稠密对应 说明。 在实验中,一个 FreeMatching 模式大大改进了具有挑战性的函证质量 IEG 图像对,同时保留古典基准上的竞争性表现。 此外,我们证明它作为评价身份保存的量化衡量标准的作用,其得分与人类的判断相关。 该代码可用于 https://github.com/luping-liu/FreeMatching.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.35264",
+      "title": "Repair Before You Fuse: Frozen-Host Adaptation for Corrupted-but-Present Sensors",
+      "authors": [
+        "Gia-Huy Thai",
+        "Quang-Thinh Ly",
+        "Anh-Minh Phan",
+        "Tuan Dang"
+      ],
+      "published": "2026-09-28",
+      "arxiv_url": "https://arxiv.org/abs/2609.35264",
+      "doi": "10.48550/arxiv.2609.35264",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.35264",
+      "pdf_url": "https://arxiv.org/pdf/2609.35264",
+      "open_access_url": "https://arxiv.org/pdf/2609.35264",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Camera-LiDAR detectors can continue to consume unreliable features even when both sensors remain present, synchronized, and calibrated. We introduce \\emph{Boundary Feature Repair} (BFR), a frozen-host adaptation framework that learns task-supervised residual corrections at modality interfaces the detector already consumes. BFR-C repairs each camera feature level read by fusion, whereas BFR-L aligns host-conditioned LiDAR candidates to a selected boundary and routes site-wise innovations relative to the frozen anchor. Their jointly trained composition is BFR-CL. Zero-initialized per-channel scales make every variant an exact detector-level identity before optimization; only the repair modules train, while the encoders, fusion consumer, router, detection head, and host normalization statistics remain fixed. At inference, BFR requires neither clean references, corruption metadata, temporal history, nor online updates. Across the complete 20-corruption, five-severity KITTI-C grid, BFR-C reduces RCE from $14.07$ to $11.92$ on MVX-Net and from $14.29$ to $11.00$ on Focals Conv-F relative to their reproduced frozen baselines. On the latter host, BFR-L raises AP$_{\\mathrm{cor}}$ from $73.65$ to $74.48$, while BFR-CL reaches $77.01$ AP$_{\\mathrm{cor}}$ and $10.46$ RCE with $86.02$ clean AP. On nuScenes-R, BFR-CL raises the reproduced MoME baseline's mAP robustness ratio from $80.1$ to $81.4$. These results establish boundary repair as a targeted retrofit for corrupted-but-present sensing without retraining the deployed detector.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Gia-Huy Thai",
+      "first_author_affiliations": [
+        "University of Science , VNU-HCM , Ho Chi Minh City 700000 , Vietnam"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "相机–LiDAR检测器的冻结宿主边界特征修复（鲁棒融合）；可将冻结宿主加边界残差修正思路用于AIS/雷达–视觉多传感器船舶检测：冻结现有融合检测器，在AIS/雷达特征进入融合的接口处增加零初始化逐通道",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.35264",
+      "score": 7,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "Camera-LiDAR 即使两个传感器仍然存在、同步和校准,探测器仍可继续消耗不可靠的特性。 我们介绍\\emph{ 边界特性修复} (BFR), 冻结的东道方适应框架,在 模态 已消耗的探测器接口. BFR-C 修复每个相机特性级别 融合, 不过 BFR-L 以主机条件对齐 LiDAR 选定边界和路线的候选者 相对于被冻结的锚进行现场创新 他们共同训练的构成 BFR-CL. 零初始化的每通道天平使每个变体在优化前都具有精确的探测器级别身份;只有修复模块列车,而编码器, 融合 消费者、路由器、检测头和主机正常化统计数据保持不变。 推论, BFR 既不需要干净的参考资料、腐败元数据、时间历史,也不需要在线更新。 整个过程 20-腐败,五重性 KITTI-C 网格, BFR-C 减少 RCE 来自 $14.07$ 以 $11.92$ 在 MVX-Net 从 $14.29$ 以 $11.00$ Conv-F与所复制的冻结基线相对应。 在后一个主机上, BFR-L 提高 AP$_{\\mathrm{cor}}$ 来自 $73.65$ 以 $74.48$, 时 BFR-CL 达到 $77.01$ AP$_{\\mathrm{cor}}$ 和 $10.46$ RCE 结合 $86.02$ 干净 AP. 在 nuScenes-R级, BFR-CL 提高复制量 MoME 基线 mAP 坚固率 $80.1$ 以 $81.4$. 这些结果将修复边界确定为有针对性地改装已损坏但现成的传感器,而不对部署的探测器进行再培训。.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.39266",
+      "title": "PLRS-IC: A Dual-Calibration Framework for Chest X-Ray Vision-Language Alignment",
+      "authors": [
+        "Qixing Zhao",
+        "Jinpeng Li"
+      ],
+      "published": "2026-09-30",
+      "arxiv_url": "https://arxiv.org/abs/2609.39266",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.39266",
+      "pdf_url": "https://arxiv.org/pdf/2609.39266",
+      "open_access_url": "https://arxiv.org/pdf/2609.39266",
+      "venue": "",
+      "abstract": "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations. However, this alignment is fundamentally hindered by two intertwined sources of ambiguity: projection-induced visual mismatch and patient-agnostic semantic overlap. First, at the local feature level, frontal and lateral radiographs exhibit distinct appearances for the same clinical finding, rendering a shared patch-text similarity geometry inherently suboptimal. Compounding this visual ambiguity is a semantic mismatch during global contrastive optimization, where instance-level objectives penalize cross-patient pairs as strict negatives even when they share identical positive clinical concepts. To address this dual ambiguity, we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning. At the local alignment stage, Projection-Conditioned Low-Rank Residual Similarity (PLRS) dynamically adapts patch-text matching to projection-specific manifolds using a bounded, parameter-efficient low-rank residual. At the global optimization stage, Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS) leverages a corpus-derived information-theoretic prior to soften the penalty of semantically overlapping negatives without altering original contrastive assignments. Extensive experiments across nine public zero-shot benchmark settings demonstrate that our framework yields consistent improvements in classification, grounding, and segmentation, validating the necessity of dual-calibration in medical vision-language pre-training.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Qixing Zhao",
+      "first_author_affiliations": [
+        "South China University of Technology"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "视觉-语言对齐（医学影像）；将软假阴性抑制用于视觉-雷达/AIS跨模态匹配：在构建船舶视觉与AIS或雷达的特征对比时，识别语义相似但非同一目标的样本对，软化其负样本惩罚，而非直接改变正负样本分配。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.39266",
+      "score": 27,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "不错 视觉-语言 对齐 胸腔射线照相 零样本 分类、定位和分割,没有具体任务说明。 不过,这个 对齐 受到两个相互交织的模糊因素的根本阻碍:投影引起的视觉错配和病人不可知语义重叠。 首先,在地方特征一级,前部和横向射线图显示出不同的外观,用于同样的临床发现,使共享的补丁文字具有相似的几何内在的次优化性。 使这种视觉模糊性更为复杂的是,在全球对比性优化过程中,语义上的不匹配,其中实例级目标惩罚交叉病人对等,如严格 负样本 即便他们都一样 正样本 临床概念。 为了解决这一双重含糊之处,我们建议 PLRS-IC, 一个统一的双重-校准 胸部X光框架 表征学习. 在当地 对齐 相位, 投影条件低离子残基相似性 (PLRS) 动态调整补丁文本匹配到投影特异性的多面体,使用边框,参数高效的低排名残基. 在全球优化阶段,信息-关联-分析软假-负样本 取缔 (IC-SFNS) 利用从实体获得的信息 -- -- 理论,从而减轻对严重重叠的惩罚 负样本 而不改变原始对比性任务。 对9个公众进行广泛试验 零样本 基准设置表明,我们的框架在分类、定位和划分方面不断改进,证实了双重分类的必要性。-校准 医疗 视觉-语言预训.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.37024",
+      "title": "Language as the Interface: Foundation-Model Contrastive Learning Links Transcriptomes and Electrophysiology",
+      "authors": [
+        "Junbo Shen",
+        "Jinying Gao",
+        "Bo Lei"
+      ],
+      "published": "2026-09-29",
+      "arxiv_url": "https://arxiv.org/abs/2609.37024",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.37024",
+      "pdf_url": "https://arxiv.org/pdf/2609.37024",
+      "open_access_url": "https://arxiv.org/pdf/2609.37024",
+      "venue": "",
+      "abstract": "Integrating transcriptomic and electrophysiological data is essential for building multimodal foundation models for neuroscience. Patch-seq provides paired measurements of gene expression and intrinsic electrophysiology from the same neuron, establishing a basis for training cross-modal models. Here we introduce LangPatch, a foundation-model-based contrastive learning framework that uses paired Patch-seq data to align pretrained GenePT representations with electrophysiological phenotypes through a language-based interface. Gene descriptions and verbalized electrophysiological profiles are embedded by the same frozen text encoder. A context adapter and projection modules connect the modalities through paired contrastive learning. Across mouse visual, mouse motor, and human cortical cohorts, LangPatch achieves the highest mean transcriptome-to-electrophysiology prediction correlation among the evaluated foundation-model and representation-learning methods. It also improves held-out cross-modal alignment in the two mouse cohorts (FOSCTTM 0.107/0.135 vs. 0.208/0.222 for JAMIE, an existing cross-modal Patch-seq imputation method). It predicts transcriptomic family, type, cortical layer, and marker-gene expression from electrophysiology, exceeding other baselines on most endpoints. More importantly, the method transfers across brain areas and species: a model trained on mouse visual cortex predicts electrophysiology in motor cortex with approximately 70% correlation retention and in human cortex with 47% (58% on acute-slice recordings). Together, these results demonstrate alignment between molecular and functional representations of neurons, providing a building block for multimodal foundation models in neuroscience.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Junbo Shen",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "跨模态对比学习（基因-电生理）；将上下文适配器和投影模块用于视觉-雷达/AIS跨模态匹配：为视觉与AIS或雷达分别设计模态适配器，通过配对对比学习对齐特征空间，输入需替换为船舶图像与AIS/雷达点迹特",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.37024",
+      "score": 21,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "综合记录仪和电生理学数据对建设至关重要 多模态 神经科学的基础模型。 补丁-seq提供同一神经元的基因表达和内在电生理学的配对测量,为训练打下基础. 跨模态 模特儿们 介绍一下 LangPatch, 基于基础模型 对比学习 框架,使用配对的补丁-seq数据来对齐预训 GenePT 表征 通过基于语言的界面,与电生化的phanotypes. 基因描述和语言化的电生学剖面由相同的冷冻文本编码器嵌入. 一个上下文适配器和投影模块连接 模态 通过对齐 对比学习. 整个鼠标视觉 鼠标运动 和人类皮质组, LangPatch 实现所评价的基础模型和基础模型之间最高平均记录仪对电生理学预测的相关性。 表征-学习方法。 也改善了阻力 跨模态 对齐 在两个鼠标组中 (FOSCTTM 0.107/0.135 数字. 0.208/0.222 用于 JAMIE, 现有 跨模态 补丁-seq估算法). 它预测了透射菌家族,类型,皮质层,以及电生理学上的标记基因表达,超过了大多数端点上的其他基线. 更重要的是,该方法在大脑区域和物种之间转移:一个接受过老鼠视觉皮层培训的模型预测了运动皮层中的电生理学,大约有: 70% 与人类皮质保持的相关性 47% (58% 在急切片的录音。 这些结果共同表明, 对齐 分子和功能之间 表征 神经元,为 多模态 神经科学基础模型.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 777,
+    "ai_reviewed": 518,
+    "ai_states": {
+      "evaluated": 518,
+      "uncertain": 259
+    },
+    "stage_counts": {
+      "2": 732,
+      "0": 3,
+      "1": 24,
+      "3": 18
+    },
+    "ai_rejected": 509,
+    "translation_deferred": 1,
+    "qualified_count": 8,
+    "selected_count": 5,
+    "shortfall": 0,
+    "translation_replacements": [
+      {
+        "paper_id": "2609.29721",
+        "attempt_date": "2026-10-26",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
+        "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "complete",
+  "reserve_papers": [
+    {
+      "paper_id": "2609.16284",
+      "title": "ProtoLIP: From Sentence-Level to Object-Level Evidence Disentanglement",
+      "authors": [
+        "Yan Zhu",
+        "Yongbo Chen",
+        "Zhengming Ding",
+        "Rebecca Faust"
+      ],
+      "published": "2026-09-14",
+      "arxiv_url": "https://arxiv.org/abs/2609.16284",
+      "doi": "10.48550/arxiv.2609.16284",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.16284",
+      "pdf_url": "https://arxiv.org/pdf/2609.16284",
+      "open_access_url": "https://arxiv.org/pdf/2609.16284",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Query-conditioned vision-language models enable fine-grained interpretation by revealing which visual content supports a given textual query and how this evidence changes across queries. However, semantically, sentence-level evidence does not necessarily decompose into object-specific contributions, while spatially, object-level evidence can remain entangled with co-occurring objects and surrounding scene context. Across multiple VLM architectures and independent benchmarks, we observe persistent object-level evidence entanglement. Moreover, exposed evidence maps do not necessarily correspond to the evidence that directly constitutes the model's prediction. To disentangle visual evidence at both semantic and spatial levels, we introduce ProtoLIP, a lightweight prototype-mediated evidence layer that organizes reusable visual prototypes into text-derived semantic families and uses coarse-to-fine evidence routing, where semantic families constrain prototype eligibility and the complete query determines fine-grained prototype contributions. Our studies show that ProtoLIP improves evidence localization and separation across query granularities, achieving average relative gains of 29% in Pointing and 43% in Energy across four object- and phrase-level OOD benchmarks. Its localization gains also transfer to independently pretrained VLMs, with larger improvements observed in several transfer settings. On the primary backbone, ProtoLIP also improves image-text matching discrimination while remaining competitive with a spatially supervised grounding model in object-level localization. Crucially, ProtoLIP constructs its image-text matching score directly from localized prototype evidence, enabling exact decomposition across prototypes, semantic families, and spatial evidence without spatial annotations or backbone retraining.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Yan Zhu",
+      "first_author_affiliations": [
+        "Department of Computer Science Tulane University New Orleans , LA , USA"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "vision_language_evidence_disentanglement；可尝试把图像-文本原型证据层用于视觉船舶图像与AIS文本/轨迹描述的跨模态匹配：输入改为船舶图像与AIS报文文本，训练",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.16284",
+      "score": 16,
+      "rule_level": "方法可借鉴",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "查询条件 视觉-语言模型通过揭示哪些视觉内容支持给定的文字查询,以及这些证据如何在查询中变化,从而可以进行精细的判读. 然而,句子级证据在结构上并不一定会分解为特定对象的贡献,而在空间上,对象级证据仍然可以和共同发生的物体和周围的场景背景纠缠在一起. 跨越多个 VLM 结构与独立基准,我们观察到持续的物体级证据缠绕。 此外,暴露的证据地图不一定与直接构成模型预测的证据相符. 为了在语义和空间两个层面将视觉证据分开,我们引入 ProtoLIP, 一个轻量级原型介质证据层,将可重复使用的视觉原型组织成文字衍生语义家族,并采用粗细对细证据路由法,语义家族限制原型资格,完整的查询决定了精细的原型贡献. 我们的研究表明, ProtoLIP 改进各种查询颗粒的证据定位和分离,实现平均相对收益 29% 在指针和 43% 跨越四个对象和词组的能量 OOD 基准。 其本地化收益也转移到独立培训前 VLMs, 在几个传输设置中观察到更大的改进。 在主干线上, ProtoLIP 还改进了图像文本与歧视的匹配,同时在物体一级本地化方面与空间监督的地面模型保持竞争力。 关键是, ProtoLIP 从本地化的原型证据直接构建其图像文本匹配分数,使原型、语义家族和空间证据之间能够精确分解,没有空间说明或骨干再培训.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.12421",
+      "title": "Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching",
+      "authors": [
+        "Luping Liu",
+        "Bingyi Kang",
+        "Yifan Wang",
+        "Dong Xu"
+      ],
+      "published": "2026-10-08",
+      "arxiv_url": "https://arxiv.org/abs/2610.12421",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.12421",
+      "pdf_url": "https://arxiv.org/pdf/2610.12421",
+      "open_access_url": "https://arxiv.org/pdf/2610.12421",
+      "venue": "",
+      "abstract": "Dense correspondence matching has historically been bounded by simplifying spatio-temporal priors, such as smooth motion and rigid geometry. While effective for classical tasks, these assumptions break down in image editing and reference-guided generation (IEG), where transformations can preserve visual identity while breaking physical continuity. To establish identity-preserving correspondence across such transformations, we introduce FreeMatching, a generalizable framework combining generative and semantic foundation representations with heterogeneous supervision from classical datasets, tracked videos, and synthetic scenes. Teacher-guided iterative refinement further improves correspondence in IEG without dense correspondence annotations. Experimentally, a single FreeMatching model substantially improves correspondence quality on challenging IEG image pairs while retaining competitive performance on classical benchmarks. Furthermore, we demonstrate its utility as a quantitative metric for evaluating identity preservation, with scores that correlate with human judgment. The code is available at https://github.com/luping-liu/FreeMatching.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Luping Liu",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "dense_correspondence_matching；可将密集对应匹配框架改为视觉–AIS或视觉–雷达跨模态匹配：以视觉图像分支与AIS/雷达渲染的伪图像或点云分支作为两路输入，训练目标从图像对",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.12421",
+      "score": 20,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "稠密对应 匹配在历史上一直以简化spitio-时序前缀为界限,如平滑运动和刚性几何. 这些假设虽然对古典任务有效,但在图像编辑和参考制导生成中被打破 (IEG), 在其中,变换可以在打破物理连续性的同时保留视觉特性. 为了在这种转变中建立身份保护通信,我们引入 FreeMatching, 将基因基础和语义基础结合起来的一般框架 表征 由古典的数据集 跟踪视频 和合成场景的不同监督 教师指导的迭代改进进一步改善了 IEG 无 稠密对应 说明。 在实验中,一个 FreeMatching 模式大大改进了具有挑战性的函证质量 IEG 图像对,同时保留古典基准上的竞争性表现。 此外,我们证明它作为评价身份保存的量化衡量标准的作用,其得分与人类的判断相关。 该代码可用于 https://github.com/luping-liu/FreeMatching.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.35264",
+      "title": "Repair Before You Fuse: Frozen-Host Adaptation for Corrupted-but-Present Sensors",
+      "authors": [
+        "Gia-Huy Thai",
+        "Quang-Thinh Ly",
+        "Anh-Minh Phan",
+        "Tuan Dang"
+      ],
+      "published": "2026-09-28",
+      "arxiv_url": "https://arxiv.org/abs/2609.35264",
+      "doi": "10.48550/arxiv.2609.35264",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.35264",
+      "pdf_url": "https://arxiv.org/pdf/2609.35264",
+      "open_access_url": "https://arxiv.org/pdf/2609.35264",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Camera-LiDAR detectors can continue to consume unreliable features even when both sensors remain present, synchronized, and calibrated. We introduce \\emph{Boundary Feature Repair} (BFR), a frozen-host adaptation framework that learns task-supervised residual corrections at modality interfaces the detector already consumes. BFR-C repairs each camera feature level read by fusion, whereas BFR-L aligns host-conditioned LiDAR candidates to a selected boundary and routes site-wise innovations relative to the frozen anchor. Their jointly trained composition is BFR-CL. Zero-initialized per-channel scales make every variant an exact detector-level identity before optimization; only the repair modules train, while the encoders, fusion consumer, router, detection head, and host normalization statistics remain fixed. At inference, BFR requires neither clean references, corruption metadata, temporal history, nor online updates. Across the complete 20-corruption, five-severity KITTI-C grid, BFR-C reduces RCE from $14.07$ to $11.92$ on MVX-Net and from $14.29$ to $11.00$ on Focals Conv-F relative to their reproduced frozen baselines. On the latter host, BFR-L raises AP$_{\\mathrm{cor}}$ from $73.65$ to $74.48$, while BFR-CL reaches $77.01$ AP$_{\\mathrm{cor}}$ and $10.46$ RCE with $86.02$ clean AP. On nuScenes-R, BFR-CL raises the reproduced MoME baseline's mAP robustness ratio from $80.1$ to $81.4$. These results establish boundary repair as a targeted retrofit for corrupted-but-present sensing without retraining the deployed detector.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Gia-Huy Thai",
+      "first_author_affiliations": [
+        "University of Science , VNU-HCM , Ho Chi Minh City 700000 , Vietnam"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "相机–LiDAR检测器的冻结宿主边界特征修复（鲁棒融合）；可将冻结宿主加边界残差修正思路用于AIS/雷达–视觉多传感器船舶检测：冻结现有融合检测器，在AIS/雷达特征进入融合的接口处增加零初始化逐通道",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.35264",
+      "score": 7,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "Camera-LiDAR 即使两个传感器仍然存在、同步和校准,探测器仍可继续消耗不可靠的特性。 我们介绍\\emph{ 边界特性修复} (BFR), 冻结的东道方适应框架,在 模态 已消耗的探测器接口. BFR-C 修复每个相机特性级别 融合, 不过 BFR-L 以主机条件对齐 LiDAR 选定边界和路线的候选者 相对于被冻结的锚进行现场创新 他们共同训练的构成 BFR-CL. 零初始化的每通道天平使每个变体在优化前都具有精确的探测器级别身份;只有修复模块列车,而编码器, 融合 消费者、路由器、检测头和主机正常化统计数据保持不变。 推论, BFR 既不需要干净的参考资料、腐败元数据、时间历史,也不需要在线更新。 整个过程 20-腐败,五重性 KITTI-C 网格, BFR-C 减少 RCE 来自 $14.07$ 以 $11.92$ 在 MVX-Net 从 $14.29$ 以 $11.00$ Conv-F与所复制的冻结基线相对应。 在后一个主机上, BFR-L 提高 AP$_{\\mathrm{cor}}$ 来自 $73.65$ 以 $74.48$, 时 BFR-CL 达到 $77.01$ AP$_{\\mathrm{cor}}$ 和 $10.46$ RCE 结合 $86.02$ 干净 AP. 在 nuScenes-R级, BFR-CL 提高复制量 MoME 基线 mAP 坚固率 $80.1$ 以 $81.4$. 这些结果将修复边界确定为有针对性地改装已损坏但现成的传感器,而不对部署的探测器进行再培训。.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.39266",
+      "title": "PLRS-IC: A Dual-Calibration Framework for Chest X-Ray Vision-Language Alignment",
+      "authors": [
+        "Qixing Zhao",
+        "Jinpeng Li"
+      ],
+      "published": "2026-09-30",
+      "arxiv_url": "https://arxiv.org/abs/2609.39266",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.39266",
+      "pdf_url": "https://arxiv.org/pdf/2609.39266",
+      "open_access_url": "https://arxiv.org/pdf/2609.39266",
+      "venue": "",
+      "abstract": "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations. However, this alignment is fundamentally hindered by two intertwined sources of ambiguity: projection-induced visual mismatch and patient-agnostic semantic overlap. First, at the local feature level, frontal and lateral radiographs exhibit distinct appearances for the same clinical finding, rendering a shared patch-text similarity geometry inherently suboptimal. Compounding this visual ambiguity is a semantic mismatch during global contrastive optimization, where instance-level objectives penalize cross-patient pairs as strict negatives even when they share identical positive clinical concepts. To address this dual ambiguity, we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning. At the local alignment stage, Projection-Conditioned Low-Rank Residual Similarity (PLRS) dynamically adapts patch-text matching to projection-specific manifolds using a bounded, parameter-efficient low-rank residual. At the global optimization stage, Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS) leverages a corpus-derived information-theoretic prior to soften the penalty of semantically overlapping negatives without altering original contrastive assignments. Extensive experiments across nine public zero-shot benchmark settings demonstrate that our framework yields consistent improvements in classification, grounding, and segmentation, validating the necessity of dual-calibration in medical vision-language pre-training.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Qixing Zhao",
+      "first_author_affiliations": [
+        "South China University of Technology"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "视觉-语言对齐（医学影像）；将软假阴性抑制用于视觉-雷达/AIS跨模态匹配：在构建船舶视觉与AIS或雷达的特征对比时，识别语义相似但非同一目标的样本对，软化其负样本惩罚，而非直接改变正负样本分配。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.39266",
+      "score": 27,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "不错 视觉-语言 对齐 胸腔射线照相 零样本 分类、定位和分割,没有具体任务说明。 不过,这个 对齐 受到两个相互交织的模糊因素的根本阻碍:投影引起的视觉错配和病人不可知语义重叠。 首先,在地方特征一级,前部和横向射线图显示出不同的外观,用于同样的临床发现,使共享的补丁文字具有相似的几何内在的次优化性。 使这种视觉模糊性更为复杂的是,在全球对比性优化过程中,语义上的不匹配,其中实例级目标惩罚交叉病人对等,如严格 负样本 即便他们都一样 正样本 临床概念。 为了解决这一双重含糊之处,我们建议 PLRS-IC, 一个统一的双重-校准 胸部X光框架 表征学习. 在当地 对齐 相位, 投影条件低离子残基相似性 (PLRS) 动态调整补丁文本匹配到投影特异性的多面体,使用边框,参数高效的低排名残基. 在全球优化阶段,信息-关联-分析软假-负样本 取缔 (IC-SFNS) 利用从实体获得的信息 -- -- 理论,从而减轻对严重重叠的惩罚 负样本 而不改变原始对比性任务。 对9个公众进行广泛试验 零样本 基准设置表明,我们的框架在分类、定位和划分方面不断改进,证实了双重分类的必要性。-校准 医疗 视觉-语言预训.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.37024",
+      "title": "Language as the Interface: Foundation-Model Contrastive Learning Links Transcriptomes and Electrophysiology",
+      "authors": [
+        "Junbo Shen",
+        "Jinying Gao",
+        "Bo Lei"
+      ],
+      "published": "2026-09-29",
+      "arxiv_url": "https://arxiv.org/abs/2609.37024",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.37024",
+      "pdf_url": "https://arxiv.org/pdf/2609.37024",
+      "open_access_url": "https://arxiv.org/pdf/2609.37024",
+      "venue": "",
+      "abstract": "Integrating transcriptomic and electrophysiological data is essential for building multimodal foundation models for neuroscience. Patch-seq provides paired measurements of gene expression and intrinsic electrophysiology from the same neuron, establishing a basis for training cross-modal models. Here we introduce LangPatch, a foundation-model-based contrastive learning framework that uses paired Patch-seq data to align pretrained GenePT representations with electrophysiological phenotypes through a language-based interface. Gene descriptions and verbalized electrophysiological profiles are embedded by the same frozen text encoder. A context adapter and projection modules connect the modalities through paired contrastive learning. Across mouse visual, mouse motor, and human cortical cohorts, LangPatch achieves the highest mean transcriptome-to-electrophysiology prediction correlation among the evaluated foundation-model and representation-learning methods. It also improves held-out cross-modal alignment in the two mouse cohorts (FOSCTTM 0.107/0.135 vs. 0.208/0.222 for JAMIE, an existing cross-modal Patch-seq imputation method). It predicts transcriptomic family, type, cortical layer, and marker-gene expression from electrophysiology, exceeding other baselines on most endpoints. More importantly, the method transfers across brain areas and species: a model trained on mouse visual cortex predicts electrophysiology in motor cortex with approximately 70% correlation retention and in human cortex with 47% (58% on acute-slice recordings). Together, these results demonstrate alignment between molecular and functional representations of neurons, providing a building block for multimodal foundation models in neuroscience.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Junbo Shen",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "跨模态对比学习（基因-电生理）；将上下文适配器和投影模块用于视觉-雷达/AIS跨模态匹配：为视觉与AIS或雷达分别设计模态适配器，通过配对对比学习对齐特征空间，输入需替换为船舶图像与AIS/雷达点迹特",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.37024",
+      "score": 21,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "综合记录仪和电生理学数据对建设至关重要 多模态 神经科学的基础模型。 补丁-seq提供同一神经元的基因表达和内在电生理学的配对测量,为训练打下基础. 跨模态 模特儿们 介绍一下 LangPatch, 基于基础模型 对比学习 框架,使用配对的补丁-seq数据来对齐预训 GenePT 表征 通过基于语言的界面,与电生化的phanotypes. 基因描述和语言化的电生学剖面由相同的冷冻文本编码器嵌入. 一个上下文适配器和投影模块连接 模态 通过对齐 对比学习. 整个鼠标视觉 鼠标运动 和人类皮质组, LangPatch 实现所评价的基础模型和基础模型之间最高平均记录仪对电生理学预测的相关性。 表征-学习方法。 也改善了阻力 跨模态 对齐 在两个鼠标组中 (FOSCTTM 0.107/0.135 数字. 0.208/0.222 用于 JAMIE, 现有 跨模态 补丁-seq估算法). 它预测了透射菌家族,类型,皮质层,以及电生理学上的标记基因表达,超过了大多数端点上的其他基线. 更重要的是,该方法在大脑区域和物种之间转移:一个接受过老鼠视觉皮层培训的模型预测了运动皮层中的电生理学,大约有: 70% 与人类皮质保持的相关性 47% (58% 在急切片的录音。 这些结果共同表明, 对齐 分子和功能之间 表征 神经元,为 多模态 神经科学基础模型.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ]
+}
