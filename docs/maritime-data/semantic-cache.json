@@ -30656,6 +30656,427 @@
       },
       "model": "deepseek-flash",
       "request_id": "68594514-0b39-4d61-bb7d-e6c599551d5b"
+    },
+    "5cbce76fccf61382561d0a93835741f4f5c44a3d56b18c62eadc262ca98c12a4": {
+      "paper_id": "2610.33551",
+      "title": "Cross-Scale Sparse Attention for Referring Segmentation in Remote Sensing",
+      "fingerprint": "5cbce76fccf61382561d0a93835741f4f5c44a3d56b18c62eadc262ca98c12a4",
+      "evaluation": {
+        "paper_id": "2610.33551",
+        "task_type": "遥感指代分割与跨模态融合",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Cross-scale Modality-aligned Fusion Module (CMFM) performs unified cross-scale cross-modal fusion",
+            "interpretation_zh": "跨尺度模态对齐融合模块实现视觉-文本跨尺度跨模态融合。",
+            "inference": false
+          },
+          {
+            "quote_en": "Dynamic Multimodal Sparse Hybrid Attention (DMSHA) selectively attends to informative visual--textual tokens",
+            "interpretation_zh": "动态稀疏混合注意力选择性关注有信息量的视觉-文本token。",
+            "inference": false
+          },
+          {
+            "quote_en": "aligns multiscale visual features with complex referring expressions",
+            "interpretation_zh": "将多尺度视觉特征与复杂指代表达对齐。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Dynamic Multimodal Sparse Hybrid Attention (DMSHA) selectively attends to informative visual--textual tokens",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可把视觉-文本稀疏对齐思想改为视觉-雷达/AIS特征对齐：输入由遥感图像与指代文本换为船舶图像与AIS/雷达特征，训练目标由指代分割变为跨模态关联或检测中的特征融合，结构需保留稀疏注意力并替换文本编码器为传感器编码器；该改造为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "数据与任务是遥感图像-文本指代分割，非船舶/AIS",
+          "稀疏注意力针对遥感目标稀疏性设计，海上跨传感器有效性未验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨尺度跨模态对齐与稀疏注意力可为视觉-AIS或雷达关联提供具体结构借鉴，但需改造输入和训练目标。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "323f467f-c22f-4214-bc3c-cf7423424d16"
+    },
+    "38719118d3ebf8753d1d436bb63e0b1409b0fa0102274a164fd9f23e55ca1cee": {
+      "paper_id": "2610.33866",
+      "title": "Late Breaking Results: Audio-Language-Action Models with Direct Speech Conditioning for Robotic Manipulation",
+      "fingerprint": "38719118d3ebf8753d1d436bb63e0b1409b0fa0102274a164fd9f23e55ca1cee",
+      "evaluation": {
+        "paper_id": "2610.33866",
+        "task_type": "语音-动作多模态机器人模型",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "use a cross-modal projection to convert voice frames directly into audio tokens",
+            "interpretation_zh": "用跨模态投影将语音帧转为音频token。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为机器人操作与语音-动作，缺乏船舶感知检测/分割/融合的具体联系",
+          "跨模态投影较为通用，未提供可迁移到海事匹配的具体训练目标或结构细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "语音-动作模型与船舶感知任务无明确联系，跨模态投影证据不足以支撑具体迁移。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "323f467f-c22f-4214-bc3c-cf7423424d16"
+    },
+    "46a1d59d6256b321db35a0dd3c7fe12d889bd74c785ab0dc09c5377743f28d79": {
+      "paper_id": "2610.34976",
+      "title": "Sparse Recovery Bird's-Eye View Model Soup for Robust Camera-Based 3D Object Detection",
+      "fingerprint": "46a1d59d6256b321db35a0dd3c7fe12d889bd74c785ab0dc09c5377743f28d79",
+      "evaluation": {
+        "paper_id": "2610.34976",
+        "task_type": "BEV三维目标检测鲁棒性模型融合",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "applies random pruning to create diverse sparse models, and retrains each model with a randomly sampled learning rate",
+            "interpretation_zh": "随机剪枝生成多样稀疏模型并以随机学习率重训练。",
+            "inference": false
+          },
+          {
+            "quote_en": "averaging these diverse recovered models into a single dense model",
+            "interpretation_zh": "将多样恢复模型平均为单一稠密模型。",
+            "inference": false
+          },
+          {
+            "quote_en": "improvement in corruption robustness and a 1.8% gain in clean accuracy",
+            "interpretation_zh": "在损坏鲁棒性和干净精度上均有提升。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "averaging these diverse recovered models into a single dense model",
+          "target_task": "ship_detection",
+          "adaptation_zh": "可将剪枝多样化+权重平均的模型汤用于船舶检测器，在海上退化图像（雨雾、噪声、光照）上提升鲁棒性；需将Fast-BEV检测器替换为船舶检测网络，训练数据改用海上图像，保持剪枝与重训练流程；摘要未验证海事域，迁移为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "实验限于nuScenes驾驶BEV检测，非船舶数据",
+          "方法针对权重空间融合，未涉及AIS或多模态关联"
+        ],
+        "decision": "候选",
+        "reason_zh": "模型汤剪枝重训方法可直接用于提升船舶检测器对海上退化的鲁棒性，属于方法迁移候选。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "323f467f-c22f-4214-bc3c-cf7423424d16"
+    },
+    "8d666f9ece3061e4e3f861838fe8199ae6a97f779451c080bd6d014eb9bf097b": {
+      "paper_id": "2610.33430",
+      "title": "Dynamic Query as Budgeting for Tiny Object Detection",
+      "fingerprint": "8d666f9ece3061e4e3f861838fe8199ae6a97f779451c080bd6d014eb9bf097b",
+      "evaluation": {
+        "paper_id": "2610.33430",
+        "task_type": "tiny_object_detection",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a lightweight, non-learned budgeter to estimate an input-dependent query budget $K(x)$ from encoder confidences",
+            "interpretation_zh": "摘要提出用轻量非学习预算器依据编码器置信度估计随输入变化的查询预算K(x)，属于DETR查询预算机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "BUTR retains standard Top-$K(x)$ query initialization without additional learned modules or heuristic filtering",
+            "interpretation_zh": "摘要说明保留标准Top-K(x)查询初始化且不增加学习模块或启发式过滤。",
+            "inference": false
+          },
+          {
+            "quote_en": "dynamic query primarily acts as \\emph{budgeting}---allocating decoder query capacity according to object density",
+            "interpretation_zh": "摘要将动态查询解释为按目标密度分配解码器查询容量，即预算分配。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a lightweight, non-learned budgeter to estimate an input-dependent query budget $K(x)$ from encoder confidences",
+          "target_task": "ship_detection",
+          "adaptation_zh": "可将摘要中的编码器置信度驱动查询预算K(x)与Top-K初始化思路用于船舶检测DETR：输入改为船舶图像或海事传感器特征，按场景目标密度调整解码器查询数量并保持无额外学习预算器。该调整仅为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅验证通用/航拍小目标检测，未涉及海事场景或AIS",
+          "未给出船舶检测或跨模态关联实验",
+          "方法迁移的具体适配效果无摘要证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "小目标检测与查询预算机制可能用于船舶检测，但无海事或AIS直接证据，迁移需自行验证。",
+        "confidence": 0.62
+      },
+      "model": "deepseek-flash",
+      "request_id": "7738f391-0649-46fe-9741-6abb1c5b0456"
+    },
+    "2f120d47ad04a9557ffbe5c72a379a1dbd6be5aae6ed74892cfcaf8fb03231a7": {
+      "paper_id": "2610.34952",
+      "title": "DimFlow: Bidirectional Grid-Expert Learning for Dynamic Gaussian Reconstruction",
+      "fingerprint": "2f120d47ad04a9557ffbe5c72a379a1dbd6be5aae6ed74892cfcaf8fb03231a7",
+      "evaluation": {
+        "paper_id": "2610.34952",
+        "task_type": "dynamic_gaussian_reconstruction",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Feature-level adversarial alignment connects their distributions",
+            "interpretation_zh": "摘要提出在特征层面用对抗对齐连接多分辨率网格与专家分支的分布，属于特征对齐技术。",
+            "inference": false
+          },
+          {
+            "quote_en": "adaptive fusion transfers complementary information",
+            "interpretation_zh": "摘要采用自适应融合传递互补信息。",
+            "inference": false
+          },
+          {
+            "quote_en": "activation-masked residual feedback refines the grid during training",
+            "interpretation_zh": "摘要用激活掩码残差反馈在训练中精炼网格。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Feature-level adversarial alignment connects their distributions",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "若将特征级对抗对齐用于跨模态匹配，需把两分支改为视觉与AIS/雷达特征编码，并针对匹配目标设计对齐与负样本；摘要未提匹配任务，此迁移仅为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要面向动态高斯重建与渲染，不涉及检测、匹配或海事感知",
+          "特征对齐服务于重建属性兼容性而非跨模态匹配",
+          "无摘要证据支持匹配任务适配"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "动态高斯重建与海事或跨模态匹配任务距离较远，摘要对齐方法不足以支撑具体迁移。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "7738f391-0649-46fe-9741-6abb1c5b0456"
+    },
+    "40295d6214904c8494e15b5649a73f65ddbcf3927733315ecd7aebd7ce114f04": {
+      "paper_id": "2610.35032",
+      "title": "AutoPRL: Automated Path Representation Learning via a Learnable View Generator",
+      "fingerprint": "40295d6214904c8494e15b5649a73f65ddbcf3927733315ecd7aebd7ce114f04",
+      "evaluation": {
+        "paper_id": "2610.35032",
+        "task_type": "path_representation_learning",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Cross-View Decoupled Contrastive (CVDC) learning mechanism improves training efficiency by disentangling the optimization of positive and negative pairs across node- and path-level views",
+            "interpretation_zh": "摘要提出跨视图解耦对比学习，在节点级与路径级解耦正负对优化。",
+            "inference": false
+          },
+          {
+            "quote_en": "modeling each topology-aware node embedding with a Gaussian latent distribution",
+            "interpretation_zh": "摘要用高斯潜分布建模拓扑感知节点嵌入以生成特征级路径视图。",
+            "inference": false
+          },
+          {
+            "quote_en": "an Adaptive Co-Training (ACT) module dynamically adjusts uncertainty-based loss weights to balance multiple objectives",
+            "interpretation_zh": "摘要用自适应协同训练按不确定性调整损失权重。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Cross-View Decoupled Contrastive (CVDC) learning mechanism improves training efficiency by disentangling the optimization of positive and negative pairs across node- and path-level views",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可将跨视图解耦对比的正负对优化用于视觉–AIS跨模态匹配：把节点/路径视图替换为视觉检测与AIS轨迹视图，构造正负轨迹样本并解耦优化；摘要未涉及跨模态，属推断。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要面向道路网络路径表征与旅行时间估计，不涉及船舶或AIS",
+          "对比学习视图构造依赖路网拓扑，跨模态适配无摘要证据",
+          "无检测或匹配实验"
+        ],
+        "decision": "候选",
+        "reason_zh": "路径级对比学习与轨迹表征可借鉴至AIS轨迹匹配，但无跨模态证据，迁移需较大调整。",
+        "confidence": 0.58
+      },
+      "model": "deepseek-flash",
+      "request_id": "7738f391-0649-46fe-9741-6abb1c5b0456"
+    },
+    "e234f6c7e3f1a99a85d6658e30c6971cb6e1ac3cd6553ad7f9971df2331b5e6f": {
+      "paper_id": "2610.34356",
+      "title": "RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions",
+      "fingerprint": "e234f6c7e3f1a99a85d6658e30c6971cb6e1ac3cd6553ad7f9971df2331b5e6f",
+      "evaluation": {
+        "paper_id": "2610.34356",
+        "task_type": "vision_language_action_pretraining",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "learns continuous, 3D-grounded latent actions from visual transitions without requiring native robot controls",
+            "interpretation_zh": "摘要从视觉转换学习连续三维接地潜动作，无需机器人原生控制。",
+            "inference": false
+          },
+          {
+            "quote_en": "residual future-feature prediction, camera-compensated 3D-flow supervision, and camera-motion decoupling",
+            "interpretation_zh": "摘要采用残差未来特征预测、相机补偿三维流监督与相机运动解耦。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要面向机器人操作策略预训练，不涉及船舶检测、匹配或AIS",
+          "方法依赖动作预测与具身策略，难以具体映射到海事感知任务",
+          "无摘要证据支持跨任务迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人操作基础模型与海事感知目标关联弱，摘要未给出可具体迁移的匹配或检测机制。",
+        "confidence": 0.72
+      },
+      "model": "deepseek-flash",
+      "request_id": "7738f391-0649-46fe-9741-6abb1c5b0456"
+    },
+    "7b9fb54b14f81ab6be2569338a0e05816ce3fd4d29566611fd7a1464ad86105b": {
+      "paper_id": "2610.34082",
+      "title": "Self-Supervised Passive WiFi CSI-Based Motion Tracking with Physics-Informed Deep SSM",
+      "fingerprint": "7b9fb54b14f81ab6be2569338a0e05816ce3fd4d29566611fd7a1464ad86105b",
+      "evaluation": {
+        "paper_id": "2610.34082",
+        "task_type": "其他（WiFi CSI被动运动跟踪/状态空间跟踪）",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce a context-conditioned deep state space model (DSSM) that captures temporal motion and environmental dynamics, while adaptively modeling time-varying observation uncertainties.",
+            "interpretation_zh": "提出上下文条件化的深度状态空间模型，对时间运动与观测不确定性建模。",
+            "inference": false
+          },
+          {
+            "quote_en": "By incorporating geometric constraints, this framework enables heterogeneous CSI measurement modalities to jointly regularize the consistency and confidence of the tracking process.",
+            "interpretation_zh": "利用几何约束联合正则化异构测量的跟踪一致性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a context-conditioned deep state space model (DSSM) that captures temporal motion and environmental dynamics",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将深度状态空间模型迁移到多目标跟踪：以视觉/雷达检测框与身份特征作为观测，建模目标时序运动与观测不确定性，并需调整观测形式、状态空间训练目标与关联输出结构。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为WiFi CSI跟踪，非海事或船舶领域",
+          "未给出具体网络结构、训练目标和实验细节，迁移路径需推断",
+          "采用异构CSI测量，改用于视觉/雷达观测需重构输入与不确定性建模"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供深度状态空间跟踪与不确定性建模的具体方法，可迁移至多目标跟踪，但非直接海事相关，证据有限。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "0c404297-6b03-4a2e-aea9-9f75b582b1f4"
+    },
+    "2a849759e151b5976f858dbc5b6aacefe006a2d1f7cb52c5dd93ffbd7c13ea01": {
+      "paper_id": "2610.33492",
+      "title": "Explicit Frictional Contact Modeling in Neural Garment Simulation",
+      "fingerprint": "2a849759e151b5976f858dbc5b6aacefe006a2d1f7cb52c5dd93ffbd7c13ea01",
+      "evaluation": {
+        "paper_id": "2610.33492",
+        "task_type": "其他（神经服装仿真/接触摩擦建模）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "a Modular Contact Operator, attached to a frozen predictor without retraining or an iterative solve, estimates the normal load",
+            "interpretation_zh": "提出模块化接触算子，附加于冻结预测器而无需重训练或迭代求解。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要主题为服装-身体摩擦接触仿真，与船舶感知无关",
+          "所述接触算子与Coulomb摩擦修正无法具体映射到跨模态匹配或船舶检测任务",
+          "未提供可迁移到海事感知的输入/训练/结构方案"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "服装摩擦仿真方法无法具体迁移到船舶感知或跨模态匹配，仅关键词层面相关，证据不足。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "0c404297-6b03-4a2e-aea9-9f75b582b1f4"
+    },
+    "e24d411acf36a2f2069b96102f7ad59f5d9c59d64baa2c1c1252cff361f8c05b": {
+      "paper_id": "2610.33758",
+      "title": "Road Infrastructure Perception for Autonomous Driving: Taxonomy, Representations, Tasks, and Challenges",
+      "fingerprint": "e24d411acf36a2f2069b96102f7ad59f5d9c59d64baa2c1c1252cff361f8c05b",
+      "evaluation": {
+        "paper_id": "2610.33758",
+        "task_type": "综述（自动驾驶道路基础设施感知）",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "emphasizing the field's evolution from image-space recognition toward metric, vectorized, topology-aware, occupancy-based, and rule-grounded scene modeling",
+            "interpretation_zh": "综述道路基础设施感知从图像识别到度量、矢量化、拓扑感知与规则建模的演进。",
+            "inference": false
+          },
+          {
+            "quote_en": "revealing limitations of current benchmarks in relation reasoning, temporal consistency, robustness, and planning-oriented assessment",
+            "interpretation_zh": "指出现有基准在关系推理、时序一致性和鲁棒性评估上的局限。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "为综述文章，未提出具体可迁移方法",
+          "聚焦道路基础设施，与船舶/AIS任务联系不明确",
+          "所提方向为领域展望，缺乏可实现的模块细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "综述性质，关注道路基础设施，缺乏可具体迁移到船舶感知或跨模态匹配的方法证据。",
+        "confidence": 0.7
+      },
+      "model": "deepseek-flash",
+      "request_id": "0c404297-6b03-4a2e-aea9-9f75b582b1f4"
+    },
+    "54cf36f1b0a2076b9a86c2cd174eb17b2f8a781eb51cbe3adfb8311e59945af8": {
+      "paper_id": "2610.33340",
+      "title": "Compression of Vision Foundation Models for Retinal OCT via Growing-Neural-Gas Codebooks and Graph-Guided Masked Image Modeling",
+      "fingerprint": "54cf36f1b0a2076b9a86c2cd174eb17b2f8a781eb51cbe3adfb8311e59945af8",
+      "evaluation": {
+        "paper_id": "2610.33340",
+        "task_type": "其他（视网膜OCT视觉基础模型压缩/掩码图像建模）",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "It combines gradient-free codebook learning via Growing Neural Gas, which yields an adjacency graph over the codes, with a graph-distance soft cross-entropy loss that replaces one-hot MIM targets with topologically graded supervision.",
+            "interpretation_zh": "通过Growing Neural Gas学习离散码本构建邻接图，并用图距离软交叉熵替代one-hot掩码图像建模目标。",
+            "inference": false
+          },
+          {
+            "quote_en": "distills a continuous foundation model into a discrete codebook, then uses it as the reconstruction target for masked image modeling (MIM)",
+            "interpretation_zh": "将连续基础模型蒸馏为离散码本，并作为掩码图像建模的重建目标。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a graph-distance soft cross-entropy loss that replaces one-hot MIM targets with topologically graded supervision",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "可将拓扑分级软监督用于船舶分割相关表征预训练：以船舶图像预训练视觉教师模型蒸馏码本，在用图距离软交叉熵替代one-hot重建目标；需调整教师模型、码本目标与分割微调结构。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为视网膜OCT医学影像，属低优先级临床方向",
+          "未在船舶或海事数据上评估",
+          "码本与蒸馏流程迁移到船舶分割需重新训练与结构调整"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供码本蒸馏与图距离软监督等具体表征学习技巧，可迁移至船舶分割预训练，但非直接相关且证据有限。",
+        "confidence": 0.5
+      },
+      "model": "deepseek-flash",
+      "request_id": "0c404297-6b03-4a2e-aea9-9f75b582b1f4"
     }
   }
 }

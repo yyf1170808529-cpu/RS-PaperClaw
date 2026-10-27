@@ -3479,6 +3479,66 @@
       "paper_id": "2610.32263",
       "date": "2026-10-26",
       "status": "validated"
+    },
+    "a62952e4a99768bf3bac44283463063ad9522478c79f9c64ed391b480c51f5fd": {
+      "paper_id": "2610.35044",
+      "date": "2026-10-27",
+      "status": "attempted"
+    },
+    "5cbce76fccf61382561d0a93835741f4f5c44a3d56b18c62eadc262ca98c12a4": {
+      "paper_id": "2610.33551",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "38719118d3ebf8753d1d436bb63e0b1409b0fa0102274a164fd9f23e55ca1cee": {
+      "paper_id": "2610.33866",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "46a1d59d6256b321db35a0dd3c7fe12d889bd74c785ab0dc09c5377743f28d79": {
+      "paper_id": "2610.34976",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "8d666f9ece3061e4e3f861838fe8199ae6a97f779451c080bd6d014eb9bf097b": {
+      "paper_id": "2610.33430",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "2f120d47ad04a9557ffbe5c72a379a1dbd6be5aae6ed74892cfcaf8fb03231a7": {
+      "paper_id": "2610.34952",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "40295d6214904c8494e15b5649a73f65ddbcf3927733315ecd7aebd7ce114f04": {
+      "paper_id": "2610.35032",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "e234f6c7e3f1a99a85d6658e30c6971cb6e1ac3cd6553ad7f9971df2331b5e6f": {
+      "paper_id": "2610.34356",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "7b9fb54b14f81ab6be2569338a0e05816ce3fd4d29566611fd7a1464ad86105b": {
+      "paper_id": "2610.34082",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "2a849759e151b5976f858dbc5b6aacefe006a2d1f7cb52c5dd93ffbd7c13ea01": {
+      "paper_id": "2610.33492",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "e24d411acf36a2f2069b96102f7ad59f5d9c59d64baa2c1c1252cff361f8c05b": {
+      "paper_id": "2610.33758",
+      "date": "2026-10-27",
+      "status": "validated"
+    },
+    "54cf36f1b0a2076b9a86c2cd174eb17b2f8a781eb51cbe3adfb8311e59945af8": {
+      "paper_id": "2610.33340",
+      "date": "2026-10-27",
+      "status": "validated"
     }
   }
 }
