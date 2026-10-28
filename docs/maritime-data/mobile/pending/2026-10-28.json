@@ -1,0 +1,381 @@
+{
+  "date": "2026-10-28",
+  "papers": [
+    {
+      "paper_id": "2610.35044",
+      "title": "DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models",
+      "authors": [
+        "Jingbo Xu",
+        "Hanchao Leng",
+        "JiaHui Huang",
+        "Hanbing Li",
+        "Jingwei Zhao",
+        "Kuiyuan Yang",
+        "Chen Gao",
+        "Guang Chen",
+        "Hangjun Ye",
+        "Yong Li"
+      ],
+      "published": "2026-10-26",
+      "arxiv_url": "https://arxiv.org/abs/2610.35044",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.35044",
+      "pdf_url": "https://arxiv.org/pdf/2610.35044",
+      "open_access_url": "https://arxiv.org/pdf/2610.35044",
+      "venue": "",
+      "abstract": "World models are emerging as a fundamental component of policy learning for real-world agents, enabling agents to predict future world states and plan actions within a learned representation of the dynamic environment. Existing approaches, however, often model appearance, metric geometry represented by projected LiDAR depth, and ego motion either partially or independently, overlooking the fact that these modalities are different projections of a shared underlying world state. This separation can lead to information loss and cross-modal inconsistency, ultimately limiting downstream performance. Motivated by this unified view of the world, we propose DriveUniTok, a unified multimodal tokenizer for driving world-action models (WAMs) that encodes these modalities in a single decodable continuous latent. We freeze DriveUniTok and adapt a pretrained diffusion model, DriveUniWAM, to predict future unified latents; the tokenizer then decodes them into future appearance, projected LiDAR depth, and ego trajectories. Experiments on NAVSIM demonstrate that our unified design achieves better future prediction and planning performance at lower downstream computational cost than separate-stream alternatives. With reinforcement learning post-training, DriveUniWAM achieves a PDMS of 91.54, reaching state-of-the-art performance among the evaluated WAM-based planners.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Jingbo Xu",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "驾驶世界-动作模型统一多模态tokenizer；将外观、投影LiDAR深度与自车运动统一编码的思路，可改为把船舶视觉图像、AIS结构化状态（位置/航向/航速）与雷达回波分别经模态编码器映射到同一连续潜",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.35044",
+      "score": 9,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "世界模式正在成为现实世界行动者学习政策的一个基本组成部分,使行动者能够预测未来的世界国家,并在有知识的国家内规划行动。 表征 环境变化。 然而,现有方法往往以模型外观、预测值为代表的计量几何方法。 LiDAR 以及部分或独立的自我运动 忽略了这些 模态 是对共同基础世界状况的不同预测。 这种分离可能导致信息丢失和 跨模态 不一致,最终限制了下游的业绩。 基于这个世界统一的观点,我们提议 DriveUniTok, 一个统一的 多模态 推动世界行动模式的标志剂 (WAMs) 编码这些 模态 在单一可解码的连续潜伏中。 我们冻结 DriveUniTok 并调整预训 扩散 模型, DriveUniWAM, 以预测未来统一的潜伏物; 标注器然后将它们解码为未来的外观, 预测 LiDAR 深度和自我轨迹 实验 NAVSIM 证明我们的统一设计能以较低的下游计算成本实现更好的未来预测和规划性能,而不是单独的流替代. 通过强化培训后学习, DriveUniWAM 实现 a PDMS 的 91.54, 达到最先进的业绩 WAM-基于规划者.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.34294",
+      "title": "Semantic Modality Compensation for Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings",
+      "authors": [
+        "Duanning Chen",
+        "Ke He",
+        "Bin Yang",
+        "Yongxiang Yao"
+      ],
+      "published": "2026-09-28",
+      "arxiv_url": "https://arxiv.org/abs/2609.34294",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.34294",
+      "pdf_url": "https://arxiv.org/pdf/2609.34294",
+      "open_access_url": "https://arxiv.org/pdf/2609.34294",
+      "venue": "",
+      "abstract": "Unsupervised visible-infrared person re-identification (USL-VI-ReID) learns person representations that can be compared across modalities without identity annotations. In the unpaired setting, however, identity correspondences between modalities are often incomplete, leaving many identities without an observed counterpart in the other modality. Existing unpaired methods bridge this gap by generating or mapping features for the other modality, mainly by exploiting the statistics of visual features without explicitly separating content that is discriminative for identity from style that is specific to modality. Consequently, the generated features may distort identity cues or inherit bias from the source modality, undermining the reliability of supervision across modalities. We formulate unpaired learning across modalities as a semantic compensation problem and propose Semantic Modality Compensation (SMC), a framework based on prompt composition that decouples identity semantics from modality style within a shared visual semantic space. SMC first constructs a discriminative ReID space through augmented dual contrastive learning, yielding pseudo labels, cluster prototypes, and memory banks for each modality. It then learns visible and infrared modality prompts in the CLIP semantic space and maps clusters obtained from pseudo labels to identity semantic tokens. For each cluster lacking a reliable match in the other modality, SMC combines its identity token with the prompt for the target modality to synthesize a semantic counterpart in the missing modality. The synthesized counterpart is then projected back into the ReID space and injected into a compensation memory through confidence gating. Extensive experiments under both paired and unpaired settings demonstrate that SMC consistently outperforms state-of-the-art methods, with particularly large gains when identity mismatch is severe.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Duanning Chen",
+      "first_author_affiliations": [
+        "Wuhan University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "unsupervised_visible_infrared_person_reid；可将可见光-红外双模态对比学习与聚类原型/记忆库机制，调整为视觉船舶目标与AIS轨迹点的跨模态嵌入对齐：视觉分支输出",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.34294",
+      "score": 10,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 27,
+      "selection_source": "近期候选",
+      "abstract_zh": "无监督的可见红外线人重新识别 (USL-VI-ReID) 学人 表征 可以相互比较 模态 没有身份说明。 然而,在未经证实的环境下, 模态 往往不完全,使许多身份没有观察到对方的对应者。 模态. 现有的未授权方法通过生成或绘制对方的特征来弥补这一差距 模态, 主要是利用视觉特征的统计数据,而没有明确区分对身份具有歧视性的内容和针对特定特征的风格。 模态. 因此,生成的特性可能扭曲身份提示或继承来源的偏差 模态, 损害监督的可靠性 模态. 我们设计了无耻的学习 模态 作为语义赔偿问题,建议 模态 补偿 (SMC), 以快速构成为基础的框架,将身份语义与 模态 共享视觉语义空间内的样式. SMC 首先构建一种歧视性 ReID 通过增强双向空间 对比学习, 生成伪标签、集群原型和每个存储库 模态. 然后它会学习可见和红外 模态 提示在 CLIP 从伪标签获得的语义空间和地图集群到身份语义符号. 对彼此缺乏可靠匹配的每组 模态, SMC 将其身份符号与目标提示合并 模态 以合成缺失中的语义对应 模态. 合成的对应物随后被投射回 ReID 空间并注入补偿内存 置信度 g. 在配对和未配对的环境下进行的广泛实验证明: SMC 持续超过最先进的方法,在身份错配严重时收益特别大.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.26617",
+      "title": "MMAP: Multimodal Missing-Aware Pretraining for Longitudinal Alzheimer's Prediction",
+      "authors": [
+        "Fiona Kekwick",
+        "Matthew Baugh",
+        "Bernhard Kainz",
+        "Paul M. Matthews",
+        "Wenjia Bai"
+      ],
+      "published": "2026-09-22",
+      "arxiv_url": "https://arxiv.org/abs/2609.26617",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.26617",
+      "pdf_url": "https://arxiv.org/pdf/2609.26617",
+      "open_access_url": "https://arxiv.org/pdf/2609.26617",
+      "venue": "",
+      "abstract": "Clinical decision making heavily relies on predicting the disease progression trajectory by seeking to understand patient's health status which is characterised by multimodal medical data. AI holds great potential for learning useful representations from multimodal medical data to predict disease progression and aid clinical decision making. However, development of predictive AI models is constrained by missing modalities and incomplete tabular data frequently occurring in medical datasets. In addition, disease labels alone may only provide limited supervisory signals for learning representations from high-dimensional multimodal data. Here, we present MMAP, a novel Multimodal Missing-aware Alignment Pretraining method for learning image-tabular representations from incomplete data. An image encoder is pretrained with efficient sigmoid contrastive learning combined with generative reconstruction. A tabular encoder is built upon a tabular foundation model. A missing token generator enables the two encoders to take incomplete data as input, enabling the model to be robust against missing modalities, either with missing images or missing tabular data. We evaluate the clinical usefulness of the learnt multimodal representations on two challenging longitudinal clinical tasks for Alzheimer's disease: predicting disease stage conversion and predicting amyloid status. The proposed method outperforms strong multimodal and unimodal baselines.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Fiona Kekwick",
+      "first_author_affiliations": [
+        "Department of Computing , Imperial College London , London , UK"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "缺失模态多模态预训练（医学图像-表格）；将图像-表格双编码器对比学习替换为视觉–AIS或雷达–视觉双编码器：分别编码船舶图像和AIS/雷达航迹，使用sigmoid对比损失并引入缺失令牌生成器处理AIS",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.26617",
+      "score": 26,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "临床决策主要依靠预测疾病发展轨迹,设法了解患者的健康状况,其特点是: 多模态 医疗数据. AI 学习很有潜力 表征 来自 多模态 提供医疗数据,预测疾病进展,协助临床决策。 然而,预测性发展 AI 模型因缺失而受到限制 模态 以及医疗数据集中经常出现的不完整的表格数据。 此外,单凭疾病标签可能只能为学习提供有限的监督信号 表征 从高维度 多模态 数据。 在这里,我们介绍 MMAP, 小说 多模态 失踪意识 对齐 图像示意图的学习预训方法 表征 从不完整的数据。 图像编码器已使用高效的 Sigmoid 预装 对比学习 与基因重建相结合。 表格编码器以表格基础模型为基础。 缺少一个令牌生成器使两个编码器能够将不完整的数据作为输入,使模型能够强力对抗缺失 模态, 缺少图像或表格数据。 我们评价所学的临床实用性 多模态 表征 关于阿尔茨海默氏病的两个具有挑战性的纵向临床任务:预测疾病阶段的转化和预测酰胺状态。 拟议方法的业绩强于 多模态 和单式基线.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.24109",
+      "title": "Adaptive Cortically Constrained EEG-Vision Alignment for Zero-Shot Brain-to-Image Retrieval",
+      "authors": [
+        "Ye Wang",
+        "Haokun Ren",
+        "Wei Wu",
+        "Guoyin Wang",
+        "Zhuliang Yu",
+        "Hong Yu",
+        "Ke Liu"
+      ],
+      "published": "2026-09-21",
+      "arxiv_url": "https://arxiv.org/abs/2609.24109",
+      "doi": "10.48550/arxiv.2609.24109",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.24109",
+      "pdf_url": "https://arxiv.org/pdf/2609.24109",
+      "open_access_url": "https://arxiv.org/pdf/2609.24109",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Zero-shot brain-to-image retrieval requires robust alignment between noisy EEG responses and visual representations. Existing EEG-vision alignment methods often operate in sensor space and apply fixed visual supervision to all responses, ignoring both spatial mixing in scalp EEG and response-wise variability in alignment reliability. We propose an adaptive cortically constrained EEG-vision alignment method for zero-shot brain-to-image retrieval. The method reconstructs EEG responses into predefined ROI-level source-pattern representations and encodes them with a Neuro-ROI Attention Encoder. To handle response-wise variability, we introduce an evidence-based adaptive visual supervision strategy that weights detail-controlled visual targets using model-based alignment evidence. On THINGS-EEG, the proposed method achieves strong 200-way zero-shot retrieval performance, with ROI-level attribution providing post hoc interpretability of the learned source-pattern representations. These results show that cortically constrained representation learning and adaptive supervision can jointly support EEG-vision alignment for zero-shot brain-to-image retrieval.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Ye Wang",
+      "first_author_affiliations": [
+        "School of Artificial Intelligence , Chongqing University of Posts and Telecommunications , Chongqing , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "EEG-视觉跨模态对齐与零样本检索；将EEG替换为AIS/雷达航迹编码器，视觉编码器保留；将基于对齐证据的自适应视觉监督用于加权视觉–AIS匹配样本，按航迹质量或图像质量调整监督强度，训练目标改为跨模",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.24109",
+      "score": 22,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "零样本 大脑到图像的检索需要强大的 对齐 在吵闹之间 EEG 反应和视觉 表征. 现有 EEG-视觉 对齐 方法往往在传感器空间运行,对所有反应实行固定的视觉监督,而忽略头皮的空间混合 EEG 和反应变化 对齐 可靠性。 我们提出一个适应性皮质限制 EEG-视觉 对齐 方法 零样本 脑对图像检索. 方法重建 EEG 回复为预定义 ROI-级别 : 表征 并用 Neuro-ROI 注意编码器。 为了处理反应的变异性,我们采用了基于证据的适应性视觉监督战略,利用模型对细节控制的视觉目标进行加权。 对齐 证据。 打开 THINGS-EEG, B. 拟议方法的实现 200-办法 零样本 检索性能,使用 ROI-职等归属为所学来源模式提供临时解释 表征. 这些结果显示,皮质受限 表征学习 适应性监督可联合支持 EEG-视觉 对齐 用于 零样本 脑到图像检索.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 791,
+    "ai_reviewed": 522,
+    "ai_states": {
+      "evaluated": 522,
+      "uncertain": 269
+    },
+    "stage_counts": {
+      "1": 27,
+      "2": 737,
+      "0": 7,
+      "3": 20
+    },
+    "ai_rejected": 517,
+    "translation_deferred": 1,
+    "qualified_count": 4,
+    "selected_count": 4,
+    "shortfall": 1,
+    "translation_replacements": [
+      {
+        "paper_id": "2609.29721",
+        "attempt_date": "2026-10-28",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
+        "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "partial",
+  "reserve_papers": [
+    {
+      "paper_id": "2610.35044",
+      "title": "DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models",
+      "authors": [
+        "Jingbo Xu",
+        "Hanchao Leng",
+        "JiaHui Huang",
+        "Hanbing Li",
+        "Jingwei Zhao",
+        "Kuiyuan Yang",
+        "Chen Gao",
+        "Guang Chen",
+        "Hangjun Ye",
+        "Yong Li"
+      ],
+      "published": "2026-10-26",
+      "arxiv_url": "https://arxiv.org/abs/2610.35044",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.35044",
+      "pdf_url": "https://arxiv.org/pdf/2610.35044",
+      "open_access_url": "https://arxiv.org/pdf/2610.35044",
+      "venue": "",
+      "abstract": "World models are emerging as a fundamental component of policy learning for real-world agents, enabling agents to predict future world states and plan actions within a learned representation of the dynamic environment. Existing approaches, however, often model appearance, metric geometry represented by projected LiDAR depth, and ego motion either partially or independently, overlooking the fact that these modalities are different projections of a shared underlying world state. This separation can lead to information loss and cross-modal inconsistency, ultimately limiting downstream performance. Motivated by this unified view of the world, we propose DriveUniTok, a unified multimodal tokenizer for driving world-action models (WAMs) that encodes these modalities in a single decodable continuous latent. We freeze DriveUniTok and adapt a pretrained diffusion model, DriveUniWAM, to predict future unified latents; the tokenizer then decodes them into future appearance, projected LiDAR depth, and ego trajectories. Experiments on NAVSIM demonstrate that our unified design achieves better future prediction and planning performance at lower downstream computational cost than separate-stream alternatives. With reinforcement learning post-training, DriveUniWAM achieves a PDMS of 91.54, reaching state-of-the-art performance among the evaluated WAM-based planners.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Jingbo Xu",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "驾驶世界-动作模型统一多模态tokenizer；将外观、投影LiDAR深度与自车运动统一编码的思路，可改为把船舶视觉图像、AIS结构化状态（位置/航向/航速）与雷达回波分别经模态编码器映射到同一连续潜",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.35044",
+      "score": 9,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "世界模式正在成为现实世界行动者学习政策的一个基本组成部分,使行动者能够预测未来的世界国家,并在有知识的国家内规划行动。 表征 环境变化。 然而,现有方法往往以模型外观、预测值为代表的计量几何方法。 LiDAR 以及部分或独立的自我运动 忽略了这些 模态 是对共同基础世界状况的不同预测。 这种分离可能导致信息丢失和 跨模态 不一致,最终限制了下游的业绩。 基于这个世界统一的观点,我们提议 DriveUniTok, 一个统一的 多模态 推动世界行动模式的标志剂 (WAMs) 编码这些 模态 在单一可解码的连续潜伏中。 我们冻结 DriveUniTok 并调整预训 扩散 模型, DriveUniWAM, 以预测未来统一的潜伏物; 标注器然后将它们解码为未来的外观, 预测 LiDAR 深度和自我轨迹 实验 NAVSIM 证明我们的统一设计能以较低的下游计算成本实现更好的未来预测和规划性能,而不是单独的流替代. 通过强化培训后学习, DriveUniWAM 实现 a PDMS 的 91.54, 达到最先进的业绩 WAM-基于规划者.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.34294",
+      "title": "Semantic Modality Compensation for Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings",
+      "authors": [
+        "Duanning Chen",
+        "Ke He",
+        "Bin Yang",
+        "Yongxiang Yao"
+      ],
+      "published": "2026-09-28",
+      "arxiv_url": "https://arxiv.org/abs/2609.34294",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.34294",
+      "pdf_url": "https://arxiv.org/pdf/2609.34294",
+      "open_access_url": "https://arxiv.org/pdf/2609.34294",
+      "venue": "",
+      "abstract": "Unsupervised visible-infrared person re-identification (USL-VI-ReID) learns person representations that can be compared across modalities without identity annotations. In the unpaired setting, however, identity correspondences between modalities are often incomplete, leaving many identities without an observed counterpart in the other modality. Existing unpaired methods bridge this gap by generating or mapping features for the other modality, mainly by exploiting the statistics of visual features without explicitly separating content that is discriminative for identity from style that is specific to modality. Consequently, the generated features may distort identity cues or inherit bias from the source modality, undermining the reliability of supervision across modalities. We formulate unpaired learning across modalities as a semantic compensation problem and propose Semantic Modality Compensation (SMC), a framework based on prompt composition that decouples identity semantics from modality style within a shared visual semantic space. SMC first constructs a discriminative ReID space through augmented dual contrastive learning, yielding pseudo labels, cluster prototypes, and memory banks for each modality. It then learns visible and infrared modality prompts in the CLIP semantic space and maps clusters obtained from pseudo labels to identity semantic tokens. For each cluster lacking a reliable match in the other modality, SMC combines its identity token with the prompt for the target modality to synthesize a semantic counterpart in the missing modality. The synthesized counterpart is then projected back into the ReID space and injected into a compensation memory through confidence gating. Extensive experiments under both paired and unpaired settings demonstrate that SMC consistently outperforms state-of-the-art methods, with particularly large gains when identity mismatch is severe.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Duanning Chen",
+      "first_author_affiliations": [
+        "Wuhan University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "unsupervised_visible_infrared_person_reid；可将可见光-红外双模态对比学习与聚类原型/记忆库机制，调整为视觉船舶目标与AIS轨迹点的跨模态嵌入对齐：视觉分支输出",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.34294",
+      "score": 10,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 27,
+      "selection_source": "近期候选",
+      "abstract_zh": "无监督的可见红外线人重新识别 (USL-VI-ReID) 学人 表征 可以相互比较 模态 没有身份说明。 然而,在未经证实的环境下, 模态 往往不完全,使许多身份没有观察到对方的对应者。 模态. 现有的未授权方法通过生成或绘制对方的特征来弥补这一差距 模态, 主要是利用视觉特征的统计数据,而没有明确区分对身份具有歧视性的内容和针对特定特征的风格。 模态. 因此,生成的特性可能扭曲身份提示或继承来源的偏差 模态, 损害监督的可靠性 模态. 我们设计了无耻的学习 模态 作为语义赔偿问题,建议 模态 补偿 (SMC), 以快速构成为基础的框架,将身份语义与 模态 共享视觉语义空间内的样式. SMC 首先构建一种歧视性 ReID 通过增强双向空间 对比学习, 生成伪标签、集群原型和每个存储库 模态. 然后它会学习可见和红外 模态 提示在 CLIP 从伪标签获得的语义空间和地图集群到身份语义符号. 对彼此缺乏可靠匹配的每组 模态, SMC 将其身份符号与目标提示合并 模态 以合成缺失中的语义对应 模态. 合成的对应物随后被投射回 ReID 空间并注入补偿内存 置信度 g. 在配对和未配对的环境下进行的广泛实验证明: SMC 持续超过最先进的方法,在身份错配严重时收益特别大.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.26617",
+      "title": "MMAP: Multimodal Missing-Aware Pretraining for Longitudinal Alzheimer's Prediction",
+      "authors": [
+        "Fiona Kekwick",
+        "Matthew Baugh",
+        "Bernhard Kainz",
+        "Paul M. Matthews",
+        "Wenjia Bai"
+      ],
+      "published": "2026-09-22",
+      "arxiv_url": "https://arxiv.org/abs/2609.26617",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.26617",
+      "pdf_url": "https://arxiv.org/pdf/2609.26617",
+      "open_access_url": "https://arxiv.org/pdf/2609.26617",
+      "venue": "",
+      "abstract": "Clinical decision making heavily relies on predicting the disease progression trajectory by seeking to understand patient's health status which is characterised by multimodal medical data. AI holds great potential for learning useful representations from multimodal medical data to predict disease progression and aid clinical decision making. However, development of predictive AI models is constrained by missing modalities and incomplete tabular data frequently occurring in medical datasets. In addition, disease labels alone may only provide limited supervisory signals for learning representations from high-dimensional multimodal data. Here, we present MMAP, a novel Multimodal Missing-aware Alignment Pretraining method for learning image-tabular representations from incomplete data. An image encoder is pretrained with efficient sigmoid contrastive learning combined with generative reconstruction. A tabular encoder is built upon a tabular foundation model. A missing token generator enables the two encoders to take incomplete data as input, enabling the model to be robust against missing modalities, either with missing images or missing tabular data. We evaluate the clinical usefulness of the learnt multimodal representations on two challenging longitudinal clinical tasks for Alzheimer's disease: predicting disease stage conversion and predicting amyloid status. The proposed method outperforms strong multimodal and unimodal baselines.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Fiona Kekwick",
+      "first_author_affiliations": [
+        "Department of Computing , Imperial College London , London , UK"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "缺失模态多模态预训练（医学图像-表格）；将图像-表格双编码器对比学习替换为视觉–AIS或雷达–视觉双编码器：分别编码船舶图像和AIS/雷达航迹，使用sigmoid对比损失并引入缺失令牌生成器处理AIS",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.26617",
+      "score": 26,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "临床决策主要依靠预测疾病发展轨迹,设法了解患者的健康状况,其特点是: 多模态 医疗数据. AI 学习很有潜力 表征 来自 多模态 提供医疗数据,预测疾病进展,协助临床决策。 然而,预测性发展 AI 模型因缺失而受到限制 模态 以及医疗数据集中经常出现的不完整的表格数据。 此外,单凭疾病标签可能只能为学习提供有限的监督信号 表征 从高维度 多模态 数据。 在这里,我们介绍 MMAP, 小说 多模态 失踪意识 对齐 图像示意图的学习预训方法 表征 从不完整的数据。 图像编码器已使用高效的 Sigmoid 预装 对比学习 与基因重建相结合。 表格编码器以表格基础模型为基础。 缺少一个令牌生成器使两个编码器能够将不完整的数据作为输入,使模型能够强力对抗缺失 模态, 缺少图像或表格数据。 我们评价所学的临床实用性 多模态 表征 关于阿尔茨海默氏病的两个具有挑战性的纵向临床任务:预测疾病阶段的转化和预测酰胺状态。 拟议方法的业绩强于 多模态 和单式基线.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.24109",
+      "title": "Adaptive Cortically Constrained EEG-Vision Alignment for Zero-Shot Brain-to-Image Retrieval",
+      "authors": [
+        "Ye Wang",
+        "Haokun Ren",
+        "Wei Wu",
+        "Guoyin Wang",
+        "Zhuliang Yu",
+        "Hong Yu",
+        "Ke Liu"
+      ],
+      "published": "2026-09-21",
+      "arxiv_url": "https://arxiv.org/abs/2609.24109",
+      "doi": "10.48550/arxiv.2609.24109",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.24109",
+      "pdf_url": "https://arxiv.org/pdf/2609.24109",
+      "open_access_url": "https://arxiv.org/pdf/2609.24109",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Zero-shot brain-to-image retrieval requires robust alignment between noisy EEG responses and visual representations. Existing EEG-vision alignment methods often operate in sensor space and apply fixed visual supervision to all responses, ignoring both spatial mixing in scalp EEG and response-wise variability in alignment reliability. We propose an adaptive cortically constrained EEG-vision alignment method for zero-shot brain-to-image retrieval. The method reconstructs EEG responses into predefined ROI-level source-pattern representations and encodes them with a Neuro-ROI Attention Encoder. To handle response-wise variability, we introduce an evidence-based adaptive visual supervision strategy that weights detail-controlled visual targets using model-based alignment evidence. On THINGS-EEG, the proposed method achieves strong 200-way zero-shot retrieval performance, with ROI-level attribution providing post hoc interpretability of the learned source-pattern representations. These results show that cortically constrained representation learning and adaptive supervision can jointly support EEG-vision alignment for zero-shot brain-to-image retrieval.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Ye Wang",
+      "first_author_affiliations": [
+        "School of Artificial Intelligence , Chongqing University of Posts and Telecommunications , Chongqing , China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "EEG-视觉跨模态对齐与零样本检索；将EEG替换为AIS/雷达航迹编码器，视觉编码器保留；将基于对齐证据的自适应视觉监督用于加权视觉–AIS匹配样本，按航迹质量或图像质量调整监督强度，训练目标改为跨模",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.24109",
+      "score": 22,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "零样本 大脑到图像的检索需要强大的 对齐 在吵闹之间 EEG 反应和视觉 表征. 现有 EEG-视觉 对齐 方法往往在传感器空间运行,对所有反应实行固定的视觉监督,而忽略头皮的空间混合 EEG 和反应变化 对齐 可靠性。 我们提出一个适应性皮质限制 EEG-视觉 对齐 方法 零样本 脑对图像检索. 方法重建 EEG 回复为预定义 ROI-级别 : 表征 并用 Neuro-ROI 注意编码器。 为了处理反应的变异性,我们采用了基于证据的适应性视觉监督战略,利用模型对细节控制的视觉目标进行加权。 对齐 证据。 打开 THINGS-EEG, B. 拟议方法的实现 200-办法 零样本 检索性能,使用 ROI-职等归属为所学来源模式提供临时解释 表征. 这些结果显示,皮质受限 表征学习 适应性监督可联合支持 EEG-视觉 对齐 用于 零样本 脑到图像检索.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ]
+}

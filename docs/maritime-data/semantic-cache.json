@@ -31077,6 +31077,266 @@
       },
       "model": "deepseek-flash",
       "request_id": "0c404297-6b03-4a2e-aea9-9f75b582b1f4"
+    },
+    "fa97def7b620b87a3c9a69f979235bdae48289db84d33c125f4ab63f139a5fd9": {
+      "paper_id": "2610.37153",
+      "title": "FastBEVFusion: Simple Multi-Modal Fusion for 3D Object Detection at 50 FPS",
+      "fingerprint": "fa97def7b620b87a3c9a69f979235bdae48289db84d33c125f4ab63f139a5fd9",
+      "evaluation": {
+        "paper_id": "2610.37153",
+        "task_type": "多传感器3D目标检测",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "FastBEVFusion projects these features into semi-aligned modality-specific BEV spaces, without relying on a computationally intensive and potentially error-prone depth estimation.",
+            "interpretation_zh": "将各模态特征投影到半对齐的模态特定BEV空间，避免显式深度估计。",
+            "inference": false
+          },
+          {
+            "quote_en": "we propose a light-weight, soft, and dynamic fusion module based on cross-attention, which adapts dynamically to the scene context and enables feature fusion across the entire BEV spaces.",
+            "interpretation_zh": "提出基于交叉注意力的轻量动态融合模块，根据场景上下文自适应融合整个BEV空间特征。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "semi-aligned modality-specific BEV spaces, without relying on a computationally intensive and potentially error-prone depth estimation",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将LiDAR与相机特征投影到各自BEV空间再交叉注意力融合的思路，可调整为雷达与AIS（或视觉-雷达）数据：雷达点云/图像特征各自投影到统一空间，AIS位置作为稀疏语义引导，训练目标改为融合后的船舶检测框回归；需调整各模态BEV网格与配准方式。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未提供雷达、AIS或海事数据实验",
+          "融合细节仅提及交叉注意力，未给出网络结构完整信息",
+          "半对齐BEV设计面向LiDAR-相机，迁移到AIS需额外适配"
+        ],
+        "decision": "候选",
+        "reason_zh": "多模态BEV融合与3D检测方法可迁移至雷达/视觉/AIS船舶感知，但无海事验证，迁移为推断。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "90573f62-3c8f-49f3-8667-16a58dd08dd1"
+    },
+    "9d698aafd1f7b2ea315353486137e7abbae444862ce13462b949b6ceba8613ba": {
+      "paper_id": "2610.36719",
+      "title": "SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition",
+      "fingerprint": "9d698aafd1f7b2ea315353486137e7abbae444862ce13462b949b6ceba8613ba",
+      "evaluation": {
+        "paper_id": "2610.36719",
+        "task_type": "通用视觉密集预测骨干",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a saliency-guided architecture that extracts DINO-style class-token (CLS) saliency to guide feature gating and high-frequency enhancement, together with dynamic multi-layer aggregation and a local-detail branch",
+            "interpretation_zh": "利用DINO式类别 token 显著性引导特征门控与高频增强，并配合动态多层聚合与局部细节分支。",
+            "inference": false
+          },
+          {
+            "quote_en": "a two-stage, quality-aware training mechanism that smoothly transitions from focal loss to Varifocal Loss (VFL) within a single training run",
+            "interpretation_zh": "两阶段质量感知训练机制，在单次训练中从focal loss平滑过渡到Varifocal Loss。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未涉及跨模态匹配或海事场景",
+          "方法为通用视觉骨干改进，缺乏与船舶检测/分割的明确适配说明",
+          "无法具体说明迁移到雷达-AIS或视觉-AIS匹配的输入/训练调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "通用视觉骨干增强，无跨模态匹配或海事任务证据，迁移路径不具体。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "90573f62-3c8f-49f3-8667-16a58dd08dd1"
+    },
+    "44598f5328e5283a06822322734da972f007f7b40187a407e7c4d0c50f63043e": {
+      "paper_id": "2610.36853",
+      "title": "LingGS: Decoupling Feed-Forward Geometry Prediction from Camera Tracking for High-Fidelity Gaussian SLAM",
+      "fingerprint": "44598f5328e5283a06822322734da972f007f7b40187a407e7c4d0c50f63043e",
+      "evaluation": {
+        "paper_id": "2610.36853",
+        "task_type": "单目RGB高斯SLAM",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "A frozen streaming 3D foundation model serves as a virtual RGB-D sensor, providing depth estimation from monocular video.",
+            "interpretation_zh": "冻结的流式3D基础模型作为虚拟RGB-D传感器，从单目视频提供深度估计。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向SLAM与重建，非船舶检测或跨模态关联",
+          "深度估计仅作为虚拟传感器，未针对船舶深度任务验证",
+          "无跨模态匹配方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "SLAM重建系统，深度估计为辅助模块，与船舶感知或跨模态匹配无具体可迁移方法。",
+        "confidence": 0.65
+      },
+      "model": "deepseek-flash",
+      "request_id": "90573f62-3c8f-49f3-8667-16a58dd08dd1"
+    },
+    "7e916952262d81743e761d97a8fc67eac0babc173885421c73097b8f8d2afdc7": {
+      "paper_id": "2610.35374",
+      "title": "GIFT: Representation Geometry Matters for Single-Domain Generalized Object Detection",
+      "fingerprint": "7e916952262d81743e761d97a8fc67eac0babc173885421c73097b8f8d2afdc7",
+      "evaluation": {
+        "paper_id": "2610.35374",
+        "task_type": "单源域泛化目标检测",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "we introduce a series of learnable Householder reflections to the pre-trained weights to encourage geometry-consistent adaptation under domain shift",
+            "interpretation_zh": "在预训练权重上引入可学习Householder反射，促使域偏移下几何一致的适配。",
+            "inference": false
+          },
+          {
+            "quote_en": "we propose a lightweight channel-wise scaling to facilitate effective task-specific adaptation",
+            "interpretation_zh": "提出轻量通道缩放以促进有效的任务特定适配。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未涉及跨模态匹配或多传感器融合",
+          "域泛化方法面向图像检测，未验证船舶场景",
+          "无法具体说明迁移到雷达-AIS或视觉-AIS关联的调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "域泛化检测方法，与跨模态匹配或船舶任务无直接联系，迁移路径不具体。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "90573f62-3c8f-49f3-8667-16a58dd08dd1"
+    },
+    "97cf314bfcc5035b71f1a919e7eaf0e4f2e02d67d881b2cfcb8bdf105940d6c5": {
+      "paper_id": "2610.37465",
+      "title": "What Carries Forward? Pretraining Disclosure Across Language Model Releases",
+      "fingerprint": "97cf314bfcc5035b71f1a919e7eaf0e4f2e02d67d881b2cfcb8bdf105940d6c5",
+      "evaluation": {
+        "paper_id": "2610.37465",
+        "task_type": "语言模型预训练披露审计（非感知任务）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究主题为大语言模型预训练透明度的文档审计，与视觉、雷达、AIS及任何船舶感知任务无关",
+          "摘要中无跨模态匹配、检测、分割或跟踪方法可迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯语言模型透明度审计，无任何视觉、多模态匹配或海事感知联系，方法不可迁移。",
+        "confidence": 0.97
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ef1256-3926-4d04-b95b-c7785bc49d47"
+    },
+    "e5a87f34135a0e1f55a7a0fe10f0fe04d14db75928142e888657591bdf8714c4": {
+      "paper_id": "2610.36507",
+      "title": "GRAFT: Geometry-Aware Residual Adaptation for Foundation Trackers",
+      "fingerprint": "e5a87f34135a0e1f55a7a0fe10f0fe04d14db75928142e888657591bdf8714c4",
+      "evaluation": {
+        "paper_id": "2610.36507",
+        "task_type": "人形机器人地形自适应跟踪（残差适配）",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a lightweight adapter adds terrain-conditioned corrections only to lower-body execution targets",
+            "interpretation_zh": "冻结基础跟踪器，仅在执行目标上加入轻量残差适配器做地形条件修正，属运动控制与行为跟踪。",
+            "inference": true
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要所述任务是人形机器人全身运动跟踪与地形适配，非视觉船舶检测/分割/深度/增强任务",
+          "残差适配器作用于关节执行目标，缺乏可直接映射到船舶感知输入与训练目标的表述",
+          "摘要中depth为机器人机载深度用于地形适应，非船舶深度估计任务"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人行为跟踪与地形残差适配，与船舶视觉、AIS关联或多模态匹配无具体可迁移路径。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ef1256-3926-4d04-b95b-c7785bc49d47"
+    },
+    "b5ce26e194239c307198c8162259b968024549f4d9dbac9e163b5e2d9f2d226e": {
+      "paper_id": "2610.37213",
+      "title": "Retrospective macromolecular pool fraction mapping from conventional clinical MRI: a physics-guided self-supervised deep learning framework",
+      "fingerprint": "b5ce26e194239c307198c8162259b968024549f4d9dbac9e163b5e2d9f2d226e",
+      "evaluation": {
+        "paper_id": "2610.37213",
+        "task_type": "临床脑MRI定量成像（自监督MPF映射）",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a physics-guided, self-supervised deep learning framework for retrospectively estimating MPF",
+            "interpretation_zh": "提出物理引导的自监督深度学习框架，从常规MRI估计大分子池分数。",
+            "inference": false
+          },
+          {
+            "quote_en": "the network conditions intermediate features on acquisition parameters via adaptive instance normalization",
+            "interpretation_zh": "用自适应实例归一化按采集参数条件化中间特征，以处理多中心多协议异质性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "属医学脑部MRI定量成像，用户原则明确将不相关医学研究列为低优先级",
+          "条件归一化处理扫描参数的思想理论上可类比传感器差异，但摘要未涉及跨模态匹配或船舶任务，无法具体说明输入/训练目标的调整",
+          "无检测、分割或跟踪表征的直接方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学脑MRI自监督定量映射，属低优先级医学方向，与船舶感知及跨模态匹配无具体迁移路径。",
+        "confidence": 0.93
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ef1256-3926-4d04-b95b-c7785bc49d47"
+    },
+    "a62952e4a99768bf3bac44283463063ad9522478c79f9c64ed391b480c51f5fd": {
+      "paper_id": "2610.35044",
+      "title": "DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models",
+      "fingerprint": "a62952e4a99768bf3bac44283463063ad9522478c79f9c64ed391b480c51f5fd",
+      "evaluation": {
+        "paper_id": "2610.35044",
+        "task_type": "驾驶世界-动作模型统一多模态tokenizer",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a unified multimodal tokenizer for driving world-action models (WAMs) that encodes these modalities in a single decodable continuous latent",
+            "interpretation_zh": "将外观、投影 LiDAR 深度与自车运动编码进单一可解码连续潜变量，处理多模态投影的不一致性。",
+            "inference": false
+          },
+          {
+            "quote_en": "This separation can lead to information loss and cross-modal inconsistency, ultimately limiting downstream performance",
+            "interpretation_zh": "指出现有方法分模态独立建模导致跨模态不一致与信息损失，这是多模态对齐的通用问题表述。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a unified multimodal tokenizer for driving world-action models (WAMs) that encodes these modalities in a single decodable continuous latent",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将外观、投影LiDAR深度与自车运动统一编码的思路，可改为把船舶视觉图像、AIS结构化状态（位置/航向/航速）与雷达回波分别经模态编码器映射到同一连续潜空间，训练目标改为同一船舶身份跨模态潜表示一致（对齐损失）并保留各自可解码重建，结构上去掉驾驶自车轨迹分支、加入AIS与雷达输入编码。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要面向自动驾驶世界模型与规划，非海事或AIS关联任务",
+          "统一潜变量主要用于未来预测与规划解码，未给出跨模态身份匹配或关联的具体机制与评价",
+          "迁移到AIS-视觉/雷达匹配需新增模态编码器与对齐训练目标，属推断"
+        ],
+        "decision": "候选",
+        "reason_zh": "统一多模态tokenizer与跨模态一致性思路可迁移到视觉-AIS-雷达对齐，但需改造输入与训练目标，属推断。",
+        "confidence": 0.72
+      },
+      "model": "deepseek-flash",
+      "request_id": "13ef1256-3926-4d04-b95b-c7785bc49d47"
     }
   }
 }

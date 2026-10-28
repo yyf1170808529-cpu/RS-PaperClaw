@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-27",
+  "as_of": "2026-10-28",
   "target": 15,
   "records": {
     "2610.12871": {
@@ -577,7 +577,15 @@
       "qualified": true,
       "pushed_dates": [],
       "available": true
+    },
+    "2610.35044": {
+      "paper_id": "2610.35044",
+      "fingerprint": "a62952e4a99768bf3bac44283463063ad9522478c79f9c64ed391b480c51f5fd",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 4
+  "available_count": 5
 }
