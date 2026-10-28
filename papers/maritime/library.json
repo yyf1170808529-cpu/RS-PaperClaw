@@ -132239,7 +132239,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-21T09:27:08.417462+00:00",
+        "checked_at": "2026-10-28T10:41:33.518322+00:00",
         "url": "https://arxiv.org/abs/2609.39514",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -146563,7 +146563,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-21T09:27:08.283275+00:00",
+        "checked_at": "2026-10-28T10:41:33.429536+00:00",
         "url": "https://arxiv.org/abs/2610.03717",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -664757,7 +664757,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.37153": {
       "metadata_records": [
@@ -665110,7 +665111,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115170": {
       "metadata_records": [
@@ -665282,7 +665284,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.37465": {
       "metadata_records": [
@@ -666222,7 +666225,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.36517": {
       "metadata_records": [
@@ -666368,7 +666372,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.36507": {
       "metadata_records": [
@@ -666732,7 +666737,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.35766": {
       "metadata_records": [
@@ -666878,7 +666884,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.35374": {
       "metadata_records": [
@@ -667250,7 +667257,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     }
   },
   "days": {
@@ -686623,6 +686631,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-28T02:32:18.483119+00:00"
+    },
+    {
+      "missing_before": 996,
+      "missing_after": 996,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-28T10:41:33.424461+00:00"
     }
   ],
   "translation_batches": [
