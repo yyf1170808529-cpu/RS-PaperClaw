@@ -667439,7 +667439,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104908": {
       "metadata_records": [
@@ -667613,7 +667614,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104909": {
       "metadata_records": [
@@ -667793,7 +667795,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115206": {
       "metadata_records": [
@@ -667959,7 +667962,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     }
   },
   "days": {
@@ -687894,6 +687898,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-29T02:41:54.224867+00:00"
+    },
+    {
+      "missing_before": 1000,
+      "missing_after": 1000,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-29T10:58:05.107916+00:00"
     }
   ],
   "translation_batches": [
