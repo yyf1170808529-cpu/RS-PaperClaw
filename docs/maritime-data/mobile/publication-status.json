@@ -1,5 +1,5 @@
 {
-  "attempt_date": "2026-10-28",
+  "attempt_date": "2026-10-29",
   "status": "partial",
   "published_date": "2026-10-26",
   "published_revision": "00d34f02eed26a1f",
@@ -11,9 +11,8 @@
       "uncertain": 269
     },
     "stage_counts": {
-      "1": 27,
-      "2": 737,
-      "0": 7,
+      "1": 26,
+      "2": 745,
       "3": 20
     },
     "ai_rejected": 517,
@@ -24,7 +23,7 @@
     "translation_replacements": [
       {
         "paper_id": "2609.29721",
-        "attempt_date": "2026-10-28",
+        "attempt_date": "2026-10-29",
         "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
         "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
       }
