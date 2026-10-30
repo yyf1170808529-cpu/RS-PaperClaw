@@ -31337,6 +31337,50 @@
       },
       "model": "deepseek-flash",
       "request_id": "13ef1256-3926-4d04-b95b-c7785bc49d47"
+    },
+    "9c0601c67a14479048cf342c453ff3cbdec191778bbb9d6b09bc62770e17c523": {
+      "paper_id": "2610.38587",
+      "title": "RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model",
+      "fingerprint": "9c0601c67a14479048cf342c453ff3cbdec191778bbb9d6b09bc62770e17c523",
+      "evaluation": {
+        "paper_id": "2610.38587",
+        "task_type": "self-supervised depth estimation",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a segment-guided representation contrasting method that injects object-level awareness into the feature representation space",
+            "interpretation_zh": "利用分割引导的表示对比，将对象级先验注入特征空间，属于可迁移的对比表征方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "an adaptive regional outlier masking strategy combined with a regional Gaussian likelihood loss that enforces regional depth smoothness",
+            "interpretation_zh": "自适应区域离群值掩码与区域高斯似然损失，用于增强区域深度平滑，属于可迁移的鲁棒训练策略。",
+            "inference": false
+          },
+          {
+            "quote_en": "an object-level reliability estimation strategy that mitigates the influence of unreliable supervision",
+            "interpretation_zh": "对象级可靠性估计以抑制不可靠监督影响，属于可迁移的鲁棒学习组件。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a segment-guided representation contrasting method that injects object-level awareness into the feature representation space",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将SAM对象级先验与分割引导的表示对比方法用于船舶分割：以船舶区域掩码作为对象级引导，构造区域级正负样本进行特征对比，并将区域高斯似然/离群值掩码用于分割监督的鲁棒化，需调整输入为海事图像与船舶掩码。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦通用深度估计，未涉及海事场景、AIS或雷达数据",
+          "对象级可靠性估计与区域损失的具体实现细节未在摘要给出",
+          "迁移到船舶分割仅是推断，缺乏实验证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "属于自监督深度估计，船舶深度方向直接相关但非海事；对象级先验与鲁棒损失有具体迁移潜力，证据有限。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "9d2930d6-bd08-42db-bf0a-4e3ee6e3db95"
     }
   }
 }
