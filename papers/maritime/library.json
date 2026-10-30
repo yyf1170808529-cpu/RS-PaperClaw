@@ -614320,7 +614320,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-23T09:26:05.249148+00:00",
+        "checked_at": "2026-10-30T10:57:20.634222+00:00",
         "url": "https://arxiv.org/abs/2610.21779",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -668156,7 +668156,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104911": {
       "metadata_records": [
@@ -668332,7 +668333,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117270": {
       "metadata_records": [
@@ -668492,7 +668494,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117269": {
       "metadata_records": [
@@ -668660,7 +668663,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115240": {
       "metadata_records": [
@@ -668828,7 +668832,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115238": {
       "metadata_records": [
@@ -668998,7 +669003,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.38776": {
       "metadata_records": [
@@ -669153,7 +669159,8 @@
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
-      }
+      },
+      "semantic": null
     },
     "2610.38587": {
       "metadata_records": [
@@ -689876,6 +689883,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-10-30T02:52:17.799920+00:00"
+    },
+    {
+      "missing_before": 1006,
+      "missing_after": 1006,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-10-30T10:57:20.627370+00:00"
     }
   ],
   "translation_batches": [
