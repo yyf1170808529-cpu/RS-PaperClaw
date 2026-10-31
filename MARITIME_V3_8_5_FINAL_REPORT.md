@@ -35,4 +35,4 @@ GitHub API核实27日至31日共九次定时任务failure。原始pending逐日�
 
 Python 148项、Node 44项通过，含医学正例/非医学反例、24日未读局部修正和延迟补回、原收藏笔记/Prompt/导出回归。真实数据校验与模拟时钟测试分别记录，不冒充实体手机实测。
 
-待填写真实部署证据。未额外启动长时间完整检索；原定时云端使用相同修改后的代码，下一次实际自动更新结果仍需观察。
+代码/数据提交3ad87299ea680b4c732576e8afa483c057333389，已推送用户Fork。Pages运行41182308407 completed/success，部署SHA与本次一致。用手机User-Agent真实HTTPS读取每日HTML、latest JSON、reading-index、content-corrections、新阅读脚本，五项均HTTP200且与本地逐字一致。线上最新正式归档2026-10-31，五篇非医学/五份中文；24日修正已公开。入口：https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html?v=3.8.5 。未声称实体手机存储已经实测，也未将Pages发布成功冒充新一轮定时检索成功。未额外启动长时间完整检索；原定时云端使用相同修改后的代码，下一次实际自动更新结果仍需观察。
