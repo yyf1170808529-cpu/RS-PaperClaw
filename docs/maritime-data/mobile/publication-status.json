@@ -5,11 +5,11 @@
   "published_revision": "430caca65eecc02a",
   "selection_audit": {
     "candidate_count": 1245,
-    "ai_reviewed": 591,
+    "ai_reviewed": 696,
     "ai_states": {
-      "evaluated": 591,
-      "uncertain": 297,
-      "unassessed": 357
+      "evaluated": 696,
+      "uncertain": 309,
+      "unassessed": 240
     },
     "stage_counts": {
       "1": 25,
@@ -17,9 +17,9 @@
       "0": 7,
       "3": 41
     },
-    "ai_rejected": 585,
+    "ai_rejected": 689,
     "translation_deferred": 0,
-    "qualified_count": 6,
+    "qualified_count": 7,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [

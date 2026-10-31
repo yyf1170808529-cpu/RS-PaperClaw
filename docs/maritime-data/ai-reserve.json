@@ -629,7 +629,15 @@
       "qualified": true,
       "pushed_dates": [],
       "available": true
+    },
+    "2610.04552": {
+      "paper_id": "2610.04552",
+      "fingerprint": "45effd393015b437aa29b4ec94c5b3f19755fbbceef65291550f764ca68f0f66",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 1
+  "available_count": 2
 }
