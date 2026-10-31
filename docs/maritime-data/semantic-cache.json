@@ -31381,6 +31381,323 @@
       },
       "model": "deepseek-flash",
       "request_id": "9d2930d6-bd08-42db-bf0a-4e3ee6e3db95"
+    },
+    "324646c93faba0187180ce5faed3cfb18d7efd2c9ceb09d2c0c487381661fdeb": {
+      "paper_id": "2610.39232",
+      "title": "Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling",
+      "fingerprint": "324646c93faba0187180ce5faed3cfb18d7efd2c9ceb09d2c0c487381661fdeb",
+      "evaluation": {
+        "paper_id": "2610.39232",
+        "task_type": "embodied_world_model_unified_video_generation_and_4d_perception",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "GenSight uses a unified spatiotemporal representation for video, depth, embodiment segmentation, and first-frame-relative 2D flow.",
+            "interpretation_zh": "该文用统一时空表示同时建模视频、深度、分割和光流，属于跨模态稠密感知表征，但不是海事或AIS任务。",
+            "inference": false
+          },
+          {
+            "quote_en": "Built on a shared DiT backbone, GenSight uses lightweight task modulation to predict all modalities within the same architecture.",
+            "interpretation_zh": "共享骨干加轻量任务调制实现多模态预测，可作为一种多任务表征思路。",
+            "inference": false
+          },
+          {
+            "quote_en": "All tasks are jointly optimized within a unified velocity prediction space.",
+            "interpretation_zh": "统一预测空间联合优化多任务，但摘要未给出面向船舶视觉任务的具体迁移方案。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "GenSight uses a unified spatiotemporal representation for video, depth, embodiment segmentation, and first-frame-relative 2D flow.",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "可尝试将统一时空表示的多任务框架用于船舶视频/图像的分割与深度联合估计，但需把机器人操作数据替换为海事视频，并调整任务调制头与统一预测空间以适配船舶分割与深度标签；摘要未验证此迁移。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要是具身操作场景，非海事、非AIS",
+          "未涉及AIS关联、跨模态匹配或船舶数据",
+          "迁移到船舶分割/深度仅属推断，摘要无实验支持"
+        ],
+        "decision": "候选",
+        "reason_zh": "共享时空表示统一视频生成与稠密感知，对船舶分割深度有间接方法启发，但无海事证据且迁移仅为推断。",
+        "confidence": 0.45
+      },
+      "model": "deepseek-flash",
+      "request_id": "5c86487f-8817-4f60-8583-0231389840a0"
+    },
+    "9f961a04894414a084b5fbfffe93f9f2583f65cdc6a40a387ec24c71e54611a7": {
+      "paper_id": "2610.39258",
+      "title": "Agentic LinkDreamer: Adaptive Neuro-Fuzzy World-Model Decision Making for Intermittent V2X Cooperative Perception",
+      "fingerprint": "9f961a04894414a084b5fbfffe93f9f2583f65cdc6a40a387ec24c71e54611a7",
+      "evaluation": {
+        "paper_id": "2610.39258",
+        "task_type": "v2x_cooperative_perception_with_missing_features",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "uses a relative-motion-conditioned recurrent world model to predict unavailable bird's-eye-view (BEV) features",
+            "interpretation_zh": "用相对运动条件循环世界模型预测缺失BEV特征，属于缺失模态/特征补全方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "A differentiable Takagi-Sugeno controller selects among five modes",
+            "interpretation_zh": "可微模糊控制器在多种感知/通信模式间选择，体现鲁棒感知决策。",
+            "inference": false
+          },
+          {
+            "quote_en": "After link recovery, reflection compares predicted and received features to update uncertainty calibration and causal memory.",
+            "interpretation_zh": "链路恢复后比较预测与接收特征以校准不确定性，属缺失信息恢复机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "uses a relative-motion-conditioned recurrent world model to predict unavailable bird's-eye-view (BEV) features",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可将缺失特征预测与不确定性校准思路用于多传感器船舶检测：当一个传感器（如AIS或雷达）暂时缺失时，用运动条件循环模型预测补偿特征，并调整输入为海事多源特征、训练目标为缺失帧检测；摘要未验证海事迁移。",
+          "inference": true
+        },
+        "limitations": [
+          "任务是V2X车路协同感知，非船舶或AIS",
+          "摘要未涉及海事数据或船舶目标检测验证",
+          "预测的BEV特征与船舶观测差异需额外验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "缺失特征预测与不确定性校准对多传感器船舶检测有明确可迁移点，但场景为V2X，海事适用性需验证。",
+        "confidence": 0.5
+      },
+      "model": "deepseek-flash",
+      "request_id": "5c86487f-8817-4f60-8583-0231389840a0"
+    },
+    "26b69d43e55d79d60fde857cad2016be5f52c92de808a39df18c7d252e460d91": {
+      "paper_id": "2610.39926",
+      "title": "Spectral Invariant Fusion and Refinement for Domain Generalized Semantic Segmentation",
+      "fingerprint": "26b69d43e55d79d60fde857cad2016be5f52c92de808a39df18c7d252e460d91",
+      "evaluation": {
+        "paper_id": "2610.39926",
+        "task_type": "domain_generalized_semantic_segmentation",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "SIFR performs spectral-guided invariant fusion to filter out domain-sensitive responses while preserving complementary semantic and structural information",
+            "interpretation_zh": "用频谱引导的不变融合过滤域敏感响应并保留语义结构信息。",
+            "inference": false
+          },
+          {
+            "quote_en": "SIFR incorporates a spectral decoder refinement module that stabilizes multi-scale decoder features",
+            "interpretation_zh": "频谱解码精化模块稳定多尺度解码器特征，属分割表征增强。",
+            "inference": false
+          },
+          {
+            "quote_en": "low-frequency statistics-based normalization and adaptive frequency selection",
+            "interpretation_zh": "用低频统计归一化和自适应频率选择抑制残余域偏置。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "SIFR performs spectral-guided invariant fusion to filter out domain-sensitive responses",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "可将频谱引导不变融合用于船舶分割的跨域泛化（如不同天气/水域），需把CLIP/DINOv2融合输入替换为海事图像特征，并将训练目标调整为船舶分割的域泛化；摘要未验证海事迁移。",
+          "inference": true
+        },
+        "limitations": [
+          "任务是通用域泛化语义分割，无海事或船舶数据",
+          "未涉及AIS或多模态关联",
+          "水域跨域效果未验证，迁移为推断"
+        ],
+        "decision": "候选",
+        "reason_zh": "频谱不变融合与解码精化对船舶分割域泛化有参考价值，但无海事证据，迁移仅属推断。",
+        "confidence": 0.45
+      },
+      "model": "deepseek-flash",
+      "request_id": "5c86487f-8817-4f60-8583-0231389840a0"
+    },
+    "922cbb2b0c2049c3c2e660524ed273e279d5ffa72b473a7af35182f9f9365b5b": {
+      "paper_id": "2610.40495",
+      "title": "LucidLyra: Feed-Forward Generative 3D Scene Reconstruction and Joint Understanding via Multi-Task Distillation",
+      "fingerprint": "922cbb2b0c2049c3c2e660524ed273e279d5ffa72b473a7af35182f9f9365b5b",
+      "evaluation": {
+        "paper_id": "2610.40495",
+        "task_type": "3D scene reconstruction and open-vocabulary 3D segmentation",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "distills complementary knowledge from a camera-controlled video diffusion model and frozen 2D vision foundation models into a unified model",
+            "interpretation_zh": "将冻结的2D视觉基础模型知识蒸馏到统一3D表示中，属于多任务蒸馏与2D-to-3D表征迁移。",
+            "inference": false
+          },
+          {
+            "quote_en": "jointly infer 3D Gaussians encoding geometry, appearance, open-vocabulary semantics, and class-agnostic instance cues",
+            "interpretation_zh": "联合推断几何、外观、开放词汇语义和类别无关实例线索的3D高斯表示。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦3D场景重建与开放词汇分割，未涉及船舶、AIS或跨模态匹配任务",
+          "未给出可具体套用到船舶检测/分割的结构或训练目标细节",
+          "robotic simulation仅为下游应用示例，不是明确感知任务迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "与海事感知无直接关联，且蒸馏3D重建方法缺少可落地到船舶检测/分割的具体迁移步骤，证据不足。",
+        "confidence": 0.78
+      },
+      "model": "deepseek-flash",
+      "request_id": "a4a1461e-8070-4588-ab3d-3980a2805433"
+    },
+    "acdb2d7b230093273be07c98843eda78a4c71912bfe23fdc707bde26681a270c": {
+      "paper_id": "2610.39848",
+      "title": "LiDAR-SHIELD: A Fully Dockerized Adversarial Robustness Assessment Framework for LiDAR-Based 3D Perception Models",
+      "fingerprint": "acdb2d7b230093273be07c98843eda78a4c71912bfe23fdc707bde26681a270c",
+      "evaluation": {
+        "paper_id": "2610.39848",
+        "task_type": "LiDAR 3D adversarial robustness evaluation framework",
+        "direct_relevance": 2,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "exposes any model through three lightweight HTTP endpoints, namely /info, /forward, and /gradient",
+            "interpretation_zh": "通过HTTP端点解耦目标模型与评估工具，属于工程化评测框架设计。",
+            "inference": false
+          },
+          {
+            "quote_en": "point perturbation, point removal, point injection, and LiDAttack for detection",
+            "interpretation_zh": "针对3D检测的点扰动、删除、注入和对抗攻击套件。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "框架针对LiDAR 3D检测/分割对抗鲁棒性，与AIS关联或跨模态匹配无直接联系",
+          "迁移至船舶视觉检测需要构建新的攻击/评测套件，摘要未提供方法细节",
+          "Docker化HTTP服务接口属工程实现，非感知表征方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属对抗鲁棒性评测工程框架，与船舶视觉和AIS关联方向缺乏可具体说明的方法迁移路径。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "a4a1461e-8070-4588-ab3d-3980a2805433"
+    },
+    "980c7b067d53ede9c2371e35ab870cec13d49e8fda0df981d8834164a55a0ddb": {
+      "paper_id": "2610.40636",
+      "title": "Probing Spatial State Representations in Visual Foundation Models",
+      "fingerprint": "980c7b067d53ede9c2371e35ab870cec13d49e8fda0df981d8834164a55a0ddb",
+      "evaluation": {
+        "paper_id": "2610.40636",
+        "task_type": "visual foundation model spatial representation probing",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "using frozen-feature probes on ten representations under streaming egocentric observations of static indoor environments",
+            "interpretation_zh": "用冻结特征探针在流式自我中心观测下评估十种表征的空间能力。",
+            "inference": false
+          },
+          {
+            "quote_en": "object persistence and actionability build on camera-pose readout, whereas feature prediction builds on visible-scene readout",
+            "interpretation_zh": "分析不同空间能力分别依赖相机位姿读出或可见场景读出。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为室内静态环境的自我中心视觉表征，不含船舶或遥感场景",
+          "属于表征探针分析而非可直接迁移的检测/匹配方法",
+          "未提供跨模态对齐或缺失模态处理的具体机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "为室内空间表征探针研究，与海事多传感器感知和跨模态匹配缺少可具体迁移的方法路径。",
+        "confidence": 0.77
+      },
+      "model": "deepseek-flash",
+      "request_id": "a4a1461e-8070-4588-ab3d-3980a2805433"
+    },
+    "074c2f100f297d3e2720780deb3851fcae5a4bc908a8435e96864c3613856bcc": {
+      "paper_id": "2610.40284",
+      "title": "LoRe-MIM: Lost-or-Replaced Masked Image Modeling for Self-Supervised Representation Learning in Whole-Body PET/CT",
+      "fingerprint": "074c2f100f297d3e2720780deb3851fcae5a4bc908a8435e96864c3613856bcc",
+      "evaluation": {
+        "paper_id": "2610.40284",
+        "task_type": "cross-modal self-supervised representation learning (PET/CT)",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a masking strategy in which image regions are either replaced with zeros (Lost) or substituted with corresponding complementary imaging modality (Replaced)",
+            "interpretation_zh": "掩码策略将区域置零或替换为互补模态对应区域，迫使模型学习模态特有与跨模态关系。",
+            "inference": false
+          },
+          {
+            "quote_en": "encouraging the model to capture both modality-specific characteristics and cross-modal relationships",
+            "interpretation_zh": "通过互补模态替换掩码学习模态特定特征与跨模态关联。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "image regions are either replaced with zeros (Lost) or substituted with corresponding complementary imaging modality (Replaced)",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将该互补模态替换掩码预训练用于视觉-红外或视觉-AIS等多传感器数据：把PET与CT的对齐体素替换改为对齐的视觉图像块与另一传感器（如红外或AIS标注投影）对应区域替换，训练目标改为多传感器掩码重建与跨模态对齐损失，需处理传感器分辨率与配准差异。",
+          "inference": true
+        },
+        "limitations": [
+          "医学PET/CT场景，与海事无直接联系",
+          "多传感器迁移需解决配准和分辨率不一致，摘要未涉及",
+          "跨模态替换掩码在视觉-AIS等异构数据上的对齐假设未经验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "互补模态替换掩码的跨模态自监督思路可具体迁移到多传感器感知预训练，但需配准调整且属推断。",
+        "confidence": 0.62
+      },
+      "model": "deepseek-flash",
+      "request_id": "a4a1461e-8070-4588-ab3d-3980a2805433"
+    },
+    "72f55a8501c1b3e3453d51749072ae73bf793ce7a9ac67a43d404f62d78aaaa8": {
+      "paper_id": "2610.13056",
+      "title": "A4-MR: Abnormality Aware Anatomical Alignment for MR",
+      "fingerprint": "72f55a8501c1b3e3453d51749072ae73bf793ce7a9ac67a43d404f62d78aaaa8",
+      "evaluation": {
+        "paper_id": "2610.13056",
+        "task_type": "医学影像视觉-语言基础模型与解剖分割",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "align image and text representations at the anatomical level",
+            "interpretation_zh": "在解剖层面进行图像与文本表征对齐，属于细粒度跨模态对齐方法",
+            "inference": false
+          },
+          {
+            "quote_en": "learn distinct representations of healthy and abnormal anatomy",
+            "interpretation_zh": "学习健康与异常解剖的区分性表征，可作为区分性表征学习思路",
+            "inference": false
+          },
+          {
+            "quote_en": "learn anatomy localization through large-scale pretraining with noisy labels",
+            "interpretation_zh": "利用含噪声标签的大规模预训练学习定位，属噪声标签训练策略",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "align image and text representations at the anatomical level",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "借鉴其细粒度跨模态对齐思路，将解剖层级对齐替换为船舶区域与AIS文本描述的局部对齐；输入改为船舶图像区域及AIS结构化文本，训练目标改为区域-文本匹配损失，结构上需增加区域级对齐头，但具体实现需另行设计。",
+          "inference": true
+        },
+        "limitations": [
+          "研究面向MRI医学影像，与海事感知任务无直接联系",
+          "摘要未给出可迁移的对齐损失形式或网络细节，方法迁移仅停留在概念层面",
+          "AIS结构化文本与放射报告文本差异大，适配成本高且摘要未支持"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学MRI基础模型，与雷达/AIS关联、船舶视觉及多传感器感知均无直接联系；跨模态对齐仅为概念性迁移，证据不足。",
+        "confidence": 0.72
+      },
+      "model": "deepseek-flash",
+      "request_id": "55d01960-dd4e-41a3-9f79-e12aafceba3a"
     }
   }
 }
