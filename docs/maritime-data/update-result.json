@@ -1,40 +1,33 @@
 {
-  "run_id": "2026-10-31T02:28:25.808011+00:00",
-  "completed_at": "2026-10-31T02:41:03.489588+00:00",
+  "run_id": "2026-10-31T07:57:39.351067+00:00",
+  "completed_at": "2026-10-31T08:15:04.450694+00:00",
   "local_update": "partial",
   "jobs": 42,
   "successful": 39,
   "incomplete": 0,
   "failed": 3,
-  "added": 11,
-  "filled": 1,
+  "added": 0,
+  "filled": 0,
   "merged": 0,
-  "before_count": 3809,
+  "before_count": 3820,
   "after_count": 3820,
   "translation": {
     "translated": 0,
-    "cached": 4,
+    "cached": 5,
     "manual": 0,
     "failed": 0,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
     "attempted_ids": [
-      "2609.24109",
-      "2609.26617",
-      "2609.29721",
       "2609.34294",
+      "2610.07499",
+      "2610.11230",
+      "2610.29061",
       "2610.35044"
     ],
-    "replacement_failures": [
-      {
-        "paper_id": "2609.29721",
-        "attempt_date": "2026-10-31",
-        "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
-        "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
-      }
-    ],
-    "selected": 4,
+    "replacement_failures": [],
+    "selected": 5,
     "engine": "Argos Translate (CPU)",
     "api_calls": 0,
     "cost_upper_cny": 0.0,
@@ -46,17 +39,22 @@
         "error": ""
       },
       {
+        "paper_id": "2610.29061",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.11230",
+        "source": "argos",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.07499",
+        "source": "argos",
+        "error": ""
+      },
+      {
         "paper_id": "2609.34294",
-        "source": "argos",
-        "error": ""
-      },
-      {
-        "paper_id": "2609.26617",
-        "source": "argos",
-        "error": ""
-      },
-      {
-        "paper_id": "2609.24109",
         "source": "argos",
         "error": ""
       }
@@ -87,40 +85,60 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 8,
-    "cached": 791,
-    "failed": 1,
-    "cost_upper_cny": 0.04332144,
-    "priced_cost_cny": 0.02166072,
+    "processed": 115,
+    "cached": 773,
+    "failed": 5,
+    "cost_upper_cny": 0.4787203999999999,
+    "priced_cost_cny": 0.23936019999999994,
     "unsettled_upper_cny": 0.0,
-    "tokens": 13800,
+    "tokens": 157060,
     "missing_abstract": 0,
-    "candidate_count": 800,
-    "already_attempted_today": 0,
-    "pending_total": 9,
-    "limit_deferred": 0,
+    "candidate_count": 1245,
+    "already_attempted_today": 2,
+    "pending_total": 470,
+    "limit_deferred": 350,
     "selected_count": 5,
-    "ai_reviewed": 525,
+    "ai_reviewed": 591,
     "validation_errors": [
       {
-        "paper_id": "2610.40525",
+        "paper_id": "2609.30891",
+        "reason": "Invalid transfer path"
+      },
+      {
+        "paper_id": "2609.29835",
+        "reason": "Invalid transfer path"
+      },
+      {
+        "paper_id": "2609.28956",
+        "reason": "Invalid transfer path"
+      },
+      {
+        "paper_id": "2610.20226",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2610.13316",
         "reason": "Evidence is not an exact abstract quotation"
       }
     ],
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 525,
-      "uncertain": 274,
-      "unassessed": 1
+      "evaluated": 591,
+      "uncertain": 297,
+      "unassessed": 357
     },
     "publication_status": "complete",
-    "reserve_available": 5
+    "reserve_available": 1
   },
   "affiliations": [
     {
       "paper_id": "2610.35044",
+      "status": "cached_unverified"
+    },
+    {
+      "paper_id": "2610.29061",
       "revision": 1,
-      "time": "2026-10-31T02:40:28.736610+00:00",
+      "time": "2026-10-31T08:14:34.072492+00:00",
       "status": "unverified",
       "attempts": [
         {
@@ -134,19 +152,32 @@
       ]
     },
     {
-      "paper_id": "2609.29721",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2610.11230",
+      "revision": 1,
+      "time": "2026-10-31T08:14:34.072492+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2609.26617",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
-    },
-    {
-      "paper_id": "2609.24109",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2610.07499",
+      "revision": 1,
+      "time": "2026-10-31T08:14:34.072492+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     },
     {
       "paper_id": "2609.34294",
@@ -154,95 +185,12 @@
       "source": "OpenAlex first authorship"
     }
   ],
-  "daily_selected": 4,
+  "daily_selected": 5,
   "daily_publication": "complete",
   "published_daily_date": "2026-10-31",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "partial",
-  "github_run_id": "41160049308",
-  "v3_8_5_recovery": {
-    "ai": {
-      "status": "partial",
-      "processed": 19,
-      "cached": 756,
-      "failed": 1,
-      "cost_upper_cny": 0.08868039999999999,
-      "priced_cost_cny": 0.044340199999999996,
-      "unsettled_upper_cny": 0.0,
-      "tokens": 27625,
-      "missing_abstract": 0,
-      "candidate_count": 1247,
-      "already_attempted_today": 1,
-      "pending_total": 490,
-      "limit_deferred": 470,
-      "selected_count": 5,
-      "ai_reviewed": 506,
-      "validation_errors": [
-        {
-          "paper_id": "2610.20114",
-          "reason": "Evidence is not an exact abstract quotation"
-        }
-      ],
-      "shortfall": 0,
-      "ai_states": {
-        "evaluated": 506,
-        "uncertain": 269,
-        "unassessed": 472
-      },
-      "publication_status": "complete",
-      "reserve_available": 6
-    },
-    "translation": {
-      "translated": 3,
-      "cached": 2,
-      "manual": 0,
-      "failed": 0,
-      "missing_english": 0,
-      "pending": 0,
-      "skipped_failed": 0,
-      "attempted_ids": [
-        "2609.34294",
-        "2610.07499",
-        "2610.11230",
-        "2610.29061",
-        "2610.35044"
-      ],
-      "replacement_failures": [],
-      "selected": 5,
-      "engine": "Argos Translate (CPU)",
-      "api_calls": 0,
-      "cost_upper_cny": 0.0,
-      "priced_cost_cny": 0.0,
-      "papers": [
-        {
-          "paper_id": "2610.35044",
-          "source": "argos",
-          "error": ""
-        },
-        {
-          "paper_id": "2610.29061",
-          "source": "argos",
-          "error": ""
-        },
-        {
-          "paper_id": "2610.11230",
-          "source": "argos",
-          "error": ""
-        },
-        {
-          "paper_id": "2610.07499",
-          "source": "argos",
-          "error": ""
-        },
-        {
-          "paper_id": "2609.34294",
-          "source": "argos",
-          "error": ""
-        }
-      ]
-    },
-    "status": "complete"
-  }
+  "github_run_id": "41182535789"
 }

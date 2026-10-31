@@ -147,9 +147,11 @@
         "status": "unverified"
       },
       "first_author": "Payal Mohapatra",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Arm Inc. , USA"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
       "affiliation_evidence": null,
       "source": "arXiv",
       "reason": "multimodal_test_time_adaptation_missing_modality；可将缺失模态课程与依赖代理迁移到多传感器船舶检测：输入改为可见光、红外或雷达特征流，训练目标改为在传感",
@@ -206,22 +208,22 @@
     }
   ],
   "selection_audit": {
-    "candidate_count": 1247,
-    "ai_reviewed": 506,
+    "candidate_count": 1245,
+    "ai_reviewed": 591,
     "ai_states": {
-      "evaluated": 506,
-      "uncertain": 269,
-      "unassessed": 472
+      "evaluated": 591,
+      "uncertain": 297,
+      "unassessed": 357
     },
     "stage_counts": {
       "1": 25,
-      "2": 1174,
+      "2": 1172,
       "0": 7,
       "3": 41
     },
-    "ai_rejected": 500,
-    "translation_deferred": 1,
-    "qualified_count": 5,
+    "ai_rejected": 585,
+    "translation_deferred": 0,
+    "qualified_count": 6,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [
@@ -510,9 +512,11 @@
         "status": "unverified"
       },
       "first_author": "Payal Mohapatra",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author_affiliations": [
+        "Arm Inc. , USA"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
       "affiliation_evidence": null,
       "source": "arXiv",
       "reason": "multimodal_test_time_adaptation_missing_modality；可将缺失模态课程与依赖代理迁移到多传感器船舶检测：输入改为可见光、红外或雷达特征流，训练目标改为在传感",

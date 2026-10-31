@@ -621,7 +621,15 @@
         "2026-10-31"
       ],
       "available": false
+    },
+    "2609.33996": {
+      "paper_id": "2609.33996",
+      "fingerprint": "4f9ac2290dd2fcc5d13c500d66b5cabf8262799ec00c941ca5279bbc9f5d33a6",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 0
+  "available_count": 1
 }
