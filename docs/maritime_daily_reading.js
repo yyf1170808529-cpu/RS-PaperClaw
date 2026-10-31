@@ -14,8 +14,8 @@
   const batchId=batch=>batch.payload.date+':'+batch.payload.papers.map(p=>normalize(p.paper_id)).sort().join('|');
   function valid(batch) {
     const p=batch?.payload;
-    return Boolean(p&&/^\d{4}-\d{2}-\d{2}$/.test(p.date)&&p.publication_status==='complete'&&p.papers?.length===5&&
-      new Set(p.papers.map(p=>normalize(p.paper_id))).size===5&&
+    return Boolean(p&&/^\d{4}-\d{2}-\d{2}$/.test(p.date)&&p.publication_status==='complete'&&(p.papers?.length===5||(p.correction_pending&&p.papers?.length>0&&p.papers.length<5))&&
+      new Set(p.papers.map(p=>normalize(p.paper_id))).size===p.papers.length&&
       p.papers.every(p=>p.paper_id&&p.title&&p.abstract&&p.abstract_zh&&Number.isFinite(p.ai_score))&&typeof batch.prompt_template==='string');
   }
   function create(storage, initial, today=()=>beijingDate()) {
@@ -29,14 +29,30 @@
     function complete(value=true){const state=read();state.completed=value;state.completed_date=value?today():null;return write(state);}
     function advance(next) {
       const state=read();
-      if(!state.completed||!state.completed_date||today()<=state.completed_date||!valid(next)||
+      if(!state.completed||!state.completed_date||today()<=state.completed_date||!valid(next)||next.payload.papers.length!==5||
         next.payload.date<=state.batch.payload.date||next.payload.date>today()||state.shown.includes(batchId(next)))return state;
       const combined={...state.batch.aliases,...next.aliases};
       const current=identities({...state.batch,aliases:combined});
       if([...identities({...next,aliases:combined})].some(id=>current.has(id)))return state;
       return write({...state,batch:next,completed:false,completed_date:null,shown:[...state.shown,batchId(next)]});
     }
-    return {read,complete,advance};
+    function correct(records) {
+      const state=read(),papers=[];let changed=false;
+      for(const paper of [...state.batch.payload.papers,...(state.pending_corrections||[])]){
+        const correction=records[paper.paper_id];
+        if(!correction){papers.push(paper);continue;}
+        if(correction.replacement&&state.batch.payload.papers.some(p=>normalize(p.paper_id)===normalize(correction.replacement.paper_id)))continue;
+        state.pending_corrections=(state.pending_corrections||[]).filter(p=>p.paper_id!==paper.paper_id);
+        if(!correction.replacement){state.pending_corrections.push(paper);if(state.content_corrections?.some(p=>p.original.paper_id===paper.paper_id))continue;}
+        state.content_corrections=state.content_corrections||[];
+        state.content_corrections.push({original:paper,reason:correction.reason,date:today()});
+        if(correction.replacement)papers.push(correction.replacement);
+        changed=true;
+      }
+      if(changed){state.batch.payload.papers=papers;state.batch.payload.correction_pending=papers.length<5;write(state);}
+      return state;
+    }
+    return {read,complete,advance,correct};
   }
   function mount(win) {
     const doc=win.document,node=doc.getElementById('daily-reading-data');if(!node)return;
@@ -52,7 +68,7 @@
         doc.getElementById('reading-date').textContent='每日阅读 '+beijingDate();
         doc.getElementById('reading-batch-date').textContent='当前批次：'+state.batch.payload.date+' 精选';
         doc.getElementById('reading-status').textContent=state.completed?'':'本批尚未标记阅读完成';
-        const button=doc.getElementById('reading-complete');button.textContent=state.completed?'已阅读完成 · 明日更新':'✓ 本批五篇已阅读完成';button.disabled=state.completed;
+        const button=doc.getElementById('reading-complete');button.hidden=state.batch.payload.papers.length!==5;button.textContent=state.completed?'已阅读完成 · 明日更新':'✓ 本批五篇已阅读完成';button.disabled=state.completed;
         doc.getElementById('reading-undo').hidden=!state.completed;
       }
       function render(state) {
@@ -82,12 +98,22 @@
       const prefix=win.location.pathname.includes('/maritime-data/mobile/')?'../../':'';
       async function check() {
         try {
+          render(progress.read());
+          if(doc.activeElement?.tagName==='TEXTAREA'||doc.querySelector('.paper-panels details[open]'))return;
+          const corrections=await win.fetch(prefix+'maritime-data/mobile/content-corrections.json',{cache:'no-store'});
+          if(corrections.ok)render(progress.correct((await corrections.json()).records||{}));
           const state=progress.read();render(state);
           if(!state.completed||beijingDate()<=state.completed_date)return;
           // Do not replace an editor while the user is writing a favorite note.
           if(doc.activeElement?.tagName==='TEXTAREA'||doc.querySelector('.paper-panels details[open]'))return;
-          const response=await win.fetch(prefix+'maritime-data/mobile/latest.json',{cache:'no-store'});if(!response.ok)return;
-          render(progress.advance({payload:await response.json(),aliases:initial.aliases,prompt_template:initial.prompt_template}));
+          const index=await win.fetch(prefix+'maritime-data/mobile/reading-index.json',{cache:'no-store'});
+          if(!index.ok)return;
+          for(const item of (await index.json()).batches||[]){
+            if(item.date<=state.batch.payload.date||state.shown.some(id=>id.startsWith(item.date+':')))continue;
+            const response=await win.fetch(prefix+'maritime-data/mobile/'+item.date+'.json',{cache:'no-store'});if(!response.ok)break;
+            const next=progress.advance({payload:await response.json(),aliases:initial.aliases,prompt_template:initial.prompt_template});
+            if(batchId(next.batch)!==batchId(state.batch)){render(next);break;}
+          }
         }catch(e){error('阅读进度暂未更新：'+e.message+'；当前批次已保留。');}
       }
       doc.getElementById('reading-complete').addEventListener('click',()=>{try{render(progress.complete());}catch(e){error('无法保存阅读进度：'+e.message);}});

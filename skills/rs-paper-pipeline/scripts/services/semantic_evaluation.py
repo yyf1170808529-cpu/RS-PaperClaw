@@ -88,6 +88,9 @@ def current_evaluation(paper,config=None):
     except (ValueError,KeyError,TypeError):return None
 
 def ranking_info(paper,config=None):
+    from services.domain_exclusion import exclusion
+    blocked=exclusion(paper)
+    if blocked:return {'score':None,'eligible':False,'demoted':True,'path':None,'reason':blocked['reason'],'state':'domain_excluded'}
     value=current_evaluation(paper,config)
     if not value or value['confidence']<.7:
         return {'score':None,'eligible':False,'demoted':True,'path':None,'reason':None,
@@ -120,6 +123,9 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
     shared=read_json(cache_path,{'schema_version':1,'records':{}})
     directory=root/'papers/maritime/private/deepseek'
     directory.mkdir(parents=True,exist_ok=True)
+    from services.domain_exclusion import exclusion
+    for paper in library['papers'].values():
+        paper['daily_domain_exclusion']=exclusion(paper)
     rows=candidate_pool(root,library,end,new_keys)
     ids=[p['paper_id'] for p,_ in rows]
     summary['candidate_count']=len(ids)

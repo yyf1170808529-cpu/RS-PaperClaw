@@ -1,0 +1,68 @@
+{
+  "records": {
+    "2610.06837": {
+      "domain": "biomedical",
+      "reason": "医学研究对象/实验任务：Cancer, Radiology",
+      "replacement": {
+        "paper_id": "2609.29721",
+        "title": "SALI: Shot-Aware Late Interaction for Cross-Shot Relation Matching in Text-to-Video Retrieval using Film-Grammar Knowledge",
+        "authors": [
+          "Toya Oyama",
+          "Rainer Lienhart",
+          "Shin'ichi Satoh"
+        ],
+        "published": "2026-09-24",
+        "arxiv_url": "https://arxiv.org/abs/2609.29721",
+        "doi": "10.48550/arxiv.2609.29721",
+        "original_url": "https://doi.org/10.48550/arxiv.2609.29721",
+        "pdf_url": "https://arxiv.org/pdf/2609.29721",
+        "open_access_url": "https://arxiv.org/pdf/2609.29721",
+        "venue": "arXiv (Cornell University)",
+        "abstract": "Text-to-video retrieval usually represents a video clip by a single embedding. This embedding often loses important relations between people. E.g., an interaction \"Anna confronts Mark\" is regularly filmed as alternating shot and reverse shot of both (Fig. 1a). No single shot or averaged embedding over clip shots captures this relation. Thus, we propose SALI (Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, its subject and object text embeddings against each visual shot embedding of a video clip. The matching operator is greedy max or optimal transport. A film-grammar penalty in fine-tuning adds a small, consistent shift. Built on CLIP4Clip-meanP, SALI keeps overall recall on par on Condensed Movies and ActivityNet while raising R@1 on multi-shot relation queries by 3 and 12 points, the most among all compared methods, and improves such queries on MSR-VTT at a cost of 1.4 R@1 overall.",
+        "resource_type": "preprint",
+        "oa_evidence": true,
+        "validity": {
+          "status": "unverified"
+        },
+        "first_author": "Toya Oyama",
+        "first_author_affiliations": [
+          "⋆ The University of Tokyo"
+        ],
+        "affiliation_source": "OpenAlex first authorship",
+        "affiliation_verified": true,
+        "affiliation_evidence": null,
+        "source": "arXiv",
+        "reason": "cross_modal_retrieval_matching；可将查询文本替换为AIS航迹/船舶属性文本，将视频镜头嵌入替换为摄像头船舶图像或雷达点云嵌入，保留主语-宾语与视觉片段的细粒度匹配及最优传",
+        "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.29721",
+        "score": 19,
+        "rule_level": "方法可借鉴",
+        "level": "方法值得关注",
+        "ai_score": 33,
+        "selection_source": "近期候选",
+        "abstract_zh": "文本到视频检索通常通过单一嵌入表示视频剪辑. 这种嵌入往往会失去人与人之间的重要关系. 例如,一个互动的\"Anna faces Mark\"经常被拍摄为两者交替拍摄和反拍(Fig.. 1a). 任何单一镜头或平均嵌入在剪辑镜头上都无法捕捉到这个关系. 因此,我们提议 SALI (Shoot-Aware Late Interactive)),是美国海军陆战队的战车. 它从单一判决查询中提取主体和对象,并与查询,其主体和对象文本相匹配,以每个视觉镜头嵌入视频片段. 匹配的运算符是贪婪的最大或最佳运输. 微调中的电影语法处罚增加了一个小的,一贯的转变. 建于 CLIP4Clip-meanP, SALI 保持总的召回 平在凝聚的电影和 ActivityNet 提高 R 时@1 多镜头关系查询 3 和 12 在比较方法中,最能比较的点数,并改进这些查询。 MSR-VTT 费用 1.4 R级@1 总计.",
+        "translation_source": "argos",
+        "translation_error": ""
+      }
+    },
+    "2610.04601": {
+      "domain": "biomedical",
+      "reason": "医学研究对象/实验任务：Fetal, Brain MRI",
+      "replacement": null
+    },
+    "2609.33516": {
+      "domain": "biomedical",
+      "reason": "医学研究对象/实验任务：Photoplethysmography, Clinical",
+      "replacement": null
+    },
+    "2609.39266": {
+      "domain": "biomedical",
+      "reason": "医学研究对象/实验任务：Chest X-Ray",
+      "replacement": null
+    },
+    "2609.37024": {
+      "domain": "biomedical",
+      "reason": "医学研究对象/实验任务：Electrophysiology",
+      "replacement": null
+    }
+  }
+}

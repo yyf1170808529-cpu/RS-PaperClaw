@@ -26,6 +26,18 @@ def prompt_metadata(paper, papers=None, aliases=None):
 def archive_mobile_page(page):
     return page.replace('href="maritime.html?', 'href="../../maritime.html?').replace('href="maritime-daily.html?', 'href="../../maritime-daily.html?').replace('src="maritime_', 'src="../../maritime_')
 
+def reading_index(root):
+    from services.domain_exclusion import exclusion
+    from services.maritime import write_json
+    directory=root/'docs/maritime-data/mobile'
+    batches=[]
+    for path in sorted(directory.glob('????-??-??.json')):
+        saved=json.loads(path.read_text(encoding='utf8'))
+        rows=saved.get('papers',[])
+        if saved.get('publication_status','complete')=='complete' and len(rows)==5 and all(p.get('abstract_zh') and not exclusion(p) for p in rows):batches.append({'date':saved['date']})
+    write_json(directory/'reading-index.json',{'batches':batches})
+
+
 def refresh_mobile_pages(root, library):
     """Upgrade saved HTML only: do not reselect, translate or change archived JSON."""
     directory=root/'docs/maritime-data/mobile'
@@ -39,6 +51,7 @@ def refresh_mobile_pages(root, library):
     if latest.exists():
         payload=json.loads(latest.read_text(encoding='utf8'))
         (root/'docs/maritime-daily.html').write_text(render_mobile_page(payload,library.get('aliases',{}),library['papers']),encoding='utf8')
+    reading_index(root)
     return count
 
 def digest_revision(payload):
@@ -74,6 +87,8 @@ def review_bucket(p):
     return bucket if bucket in ('water','land','general') else 'land' if application=='land' else 'general'
 
 def hard_eligible(p):
+    from services.domain_exclusion import exclusion
+    if exclusion(p):return False
     r=p.get('recommendation',{});q=p.get('quality',{});bucket=review_bucket(p)
     if p.get('validity',{}).get('status') in ('deleted','withdrawn','invalid'):
         return False
@@ -100,7 +115,6 @@ def candidate_pool(root,library,day,new_keys=()):
     for p in library['papers'].values():
         key=p['paper_id']
         if history.prior(p,day) or not hard_eligible(p):continue
-        if p.get('assessment',{}).get('level')=='excluded' and not direct_task(p) and not ranking_info(p)['eligible']:continue
         raw=p.get('publication_date') or p.get('published') or ''
         try:published=calendar_date.fromisoformat(raw[:10] if len(raw)>=10 else raw[:7]+'-01')
         except ValueError:published=None
@@ -226,6 +240,7 @@ def build_mobile_digest(root, library, date):
     (directory/(str(date)+'.html')).write_text(archive_mobile_page(page),encoding='utf8')
     markdown=f'# 每日精选 {date}\n\n'+ '\n\n'.join(f'## {p["title"]}\n\n{p["source"]}\n\n{p["reason"]}\n\n[原文]({p["original_url"]}) · [阅读页]({p["reading_url"]})' for p in items)
     (directory/(str(date)+'.md')).write_text(markdown,encoding='utf8')
+    reading_index(root)
     return payload
 
 
@@ -256,4 +271,4 @@ def render_mobile_page(payload, aliases=None, papers=None):
     reading_enabled=len(items)==5 and payload.get('publication_status','complete')=='complete' and all(p.get('abstract_zh') and isinstance(p.get('ai_score'),(int,float)) for p in items)
     reading_data='<script id="daily-reading-data" type="application/json">'+batch+'</script>' if reading_enabled else ''
     controls_hidden='' if reading_enabled else ' hidden'
-    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}.paper-actions{{display:flex;align-items:center;flex-wrap:nowrap;gap:5px;font-size:14px;white-space:nowrap;min-width:0}}.paper-actions button{{border:0;padding:0;margin:0;background:none;color:#a54f2b;white-space:nowrap}}.paper-actions [data-favorite-paper]{{display:inline-flex}}.paper-panels textarea{{box-sizing:border-box;max-width:100%}}input[type=file]{{display:block;max-width:100%;width:100%;box-sizing:border-box;margin:3px 0}}@media(max-width:360px){{.paper-actions{{font-size:12px;gap:3px}}}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1 id="reading-date">每日阅读 {date}</h1><p id="reading-batch-date">当前批次：{date} 精选</p><small id="reading-status">本批尚未标记阅读完成</small><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p><main id="reading-papers">{entries or "<p>今天没有完成AI审核的合格精选。</p>"}</main><p{controls_hidden}><button id="reading-complete">✓ 本批五篇已阅读完成</button><button id="reading-undo" hidden>撤销完成</button></p><p id="reading-error" role="status"></p><small>阅读进度仅保存在当前浏览器，不同浏览器和设备独立。</small><p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p>{reading_data}<script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.4"></script><script id="daily-prompt-data" type="application/json">{prompts}</script><script src="maritime_prompt.js?v=3.8.2"></script><script src="maritime_daily_prompt.js?v=3.8.4"></script><script src="maritime_daily_reading.js?v=3.8.4"></script></html>'''
+    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日精选 {date}</title><style>body{{max-width:720px;margin:auto;padding:18px;font:16px/1.6 system-ui;background:#fffbf5;color:#2d2419}}h2{{font-size:18px}}article{{border-top:1px solid #ddd;padding:12px 0}}a{{color:#a54f2b}}p{{overflow-wrap:anywhere}}button,input,textarea{{font:inherit;background:#fffbf5;border:1px solid #aaa;border-radius:4px;padding:6px;margin:3px}}textarea{{width:95%}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}.paper-actions{{display:flex;align-items:center;flex-wrap:nowrap;gap:5px;font-size:14px;white-space:nowrap;min-width:0}}.paper-actions button{{border:0;padding:0;margin:0;background:none;color:#a54f2b;white-space:nowrap}}.paper-actions [data-favorite-paper]{{display:inline-flex}}.paper-panels textarea{{box-sizing:border-box;max-width:100%}}input[type=file]{{display:block;max-width:100%;width:100%;box-sizing:border-box;margin:3px 0}}@media(max-width:360px){{.paper-actions{{font-size:12px;gap:3px}}}}</style><nav><a href="maritime-daily.html?v=3.8.1">每日精选</a> | <a href="maritime.html?v=3.8.1">完整论文库</a> | <a href="maritime.html?view=favorites&amp;v=3.8.1">我的收藏</a></nav><h1 id="reading-date">每日阅读 {date}</h1><p id="reading-batch-date">当前批次：{date} 精选</p><small id="reading-status">本批尚未标记阅读完成</small><div id="daily-favorites" aria-label="收藏导出与恢复"></div><p id="favorite-message" role="status"></p><main id="reading-papers">{entries or "<p>今天没有完成AI审核的合格精选。</p>"}</main><p{controls_hidden}><button id="reading-complete">✓ 本批五篇已阅读完成</button><button id="reading-undo" hidden>撤销完成</button></p><p id="reading-error" role="status"></p><small>阅读进度仅保存在当前浏览器，不同浏览器和设备独立。</small><p>收藏和笔记仅保存在当前浏览器。Safari、Chrome、应用内浏览器及不同设备默认不共享；请用同一浏览器打开，或导出/导入 JSON。</p>{reading_data}<script id="daily-favorites-data" type="application/json">{data}</script><script src="maritime_favorites.js?v=3.8.5"></script><script id="daily-prompt-data" type="application/json">{prompts}</script><script src="maritime_prompt.js?v=3.8.2"></script><script src="maritime_daily_prompt.js?v=3.8.5"></script><script src="maritime_daily_reading.js?v=3.8.5"></script></html>'''

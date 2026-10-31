@@ -48,7 +48,7 @@ test('daily DOM pins content and prompt, keeps favorites/notes, marks and undoes
   const doc={getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag),addEventListener(){},querySelector:()=>null,querySelectorAll:s=>walk(nodes.get('reading-papers')).filter(n=>s==='[data-prompt-paper]'&&n.dataset.promptPaper)};
   const context=vm.createContext({document:doc,Date:class extends Date{constructor(...args){super(...(args.length?args:[now]));}},
     localStorage:{get length(){return storage.size;},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{pathname:'/RS-PaperClaw/maritime-daily.html'},addEventListener(){},setInterval:fn=>{tick=fn;},fetch:async()=>({ok:true,json:async()=>latest.payload})});
+    navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{pathname:'/RS-PaperClaw/maritime-daily.html'},addEventListener(){},setInterval:fn=>{tick=fn;},fetch:async url=>({ok:true,json:async()=>url.includes('content-corrections')?{records:{}}:url.includes('reading-index')?{batches:[{date:latest.payload.date}]}:latest.payload})});
   for(const file of ['maritime_favorites.js','maritime_prompt.js','maritime_daily_prompt.js','maritime_daily_reading.js'])vm.runInContext(fs.readFileSync(require('node:path').join(__dirname,'../docs',file),'utf8'),context);
   await new Promise(setImmediate);
   const articles=nodes.get('reading-papers').children;assert.equal(articles.length,5);
@@ -63,4 +63,11 @@ test('daily DOM pins content and prompt, keeps favorites/notes, marks and undoes
   nodes.get('reading-complete').click();now='2026-10-26T00:00:00Z';await tick();
   assert.equal(nodes.get('reading-error').textContent,'');assert.equal(JSON.parse(storage.get(KEY)).batch.payload.date,'2026-10-25');assert.equal(nodes.get('reading-papers').children.length,5);
   assert.ok([...storage.values()].some(v=>v.includes('中文 **笔记**')));
+});
+
+test('unread medical correction preserves completion and other snapshots; delayed replacement restores five',()=>{
+ const s=setup();const first=s.progress.read();s.progress.correct({'2610.10000':{reason:'medical',replacement:null}});
+ let state=s.progress.read();assert.equal(state.completed,false);assert.equal(state.batch.payload.papers.length,4);assert.equal(state.pending_corrections.length,1);
+ s.progress.correct({'2610.10000':{reason:'medical',replacement:{...batch('2026-10-24',20).payload.papers[0]}}});
+ state=s.progress.read();assert.equal(state.batch.payload.papers.length,5);assert.equal(state.completed,false);assert.equal(state.batch.payload.papers[0].paper_id,first.batch.payload.papers[1].paper_id);assert.equal(s.map.get('favorites'),'private note');
 });

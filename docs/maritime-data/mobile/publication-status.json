@@ -1,27 +1,27 @@
 {
   "attempt_date": "2026-10-31",
-  "status": "partial",
-  "published_date": "2026-10-26",
-  "published_revision": "00d34f02eed26a1f",
+  "status": "complete",
+  "published_date": "2026-10-31",
+  "published_revision": "240d3160d25c5478",
   "selection_audit": {
-    "candidate_count": 800,
-    "ai_reviewed": 525,
+    "candidate_count": 1247,
+    "ai_reviewed": 506,
     "ai_states": {
-      "evaluated": 525,
-      "uncertain": 274,
-      "unassessed": 1
+      "evaluated": 506,
+      "uncertain": 269,
+      "unassessed": 472
     },
     "stage_counts": {
-      "1": 19,
-      "2": 752,
-      "0": 8,
-      "3": 21
+      "1": 25,
+      "2": 1174,
+      "0": 7,
+      "3": 41
     },
-    "ai_rejected": 520,
+    "ai_rejected": 500,
     "translation_deferred": 1,
-    "qualified_count": 4,
-    "selected_count": 4,
-    "shortfall": 1,
+    "qualified_count": 5,
+    "selected_count": 5,
+    "shortfall": 0,
     "translation_replacements": [
       {
         "paper_id": "2609.29721",

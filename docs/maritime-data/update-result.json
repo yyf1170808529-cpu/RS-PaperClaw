@@ -155,11 +155,94 @@
     }
   ],
   "daily_selected": 4,
-  "daily_publication": "partial",
-  "published_daily_date": "2026-10-26",
+  "daily_publication": "complete",
+  "published_daily_date": "2026-10-31",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "partial",
-  "github_run_id": "41160049308"
+  "github_run_id": "41160049308",
+  "v3_8_5_recovery": {
+    "ai": {
+      "status": "partial",
+      "processed": 19,
+      "cached": 756,
+      "failed": 1,
+      "cost_upper_cny": 0.08868039999999999,
+      "priced_cost_cny": 0.044340199999999996,
+      "unsettled_upper_cny": 0.0,
+      "tokens": 27625,
+      "missing_abstract": 0,
+      "candidate_count": 1247,
+      "already_attempted_today": 1,
+      "pending_total": 490,
+      "limit_deferred": 470,
+      "selected_count": 5,
+      "ai_reviewed": 506,
+      "validation_errors": [
+        {
+          "paper_id": "2610.20114",
+          "reason": "Evidence is not an exact abstract quotation"
+        }
+      ],
+      "shortfall": 0,
+      "ai_states": {
+        "evaluated": 506,
+        "uncertain": 269,
+        "unassessed": 472
+      },
+      "publication_status": "complete",
+      "reserve_available": 6
+    },
+    "translation": {
+      "translated": 3,
+      "cached": 2,
+      "manual": 0,
+      "failed": 0,
+      "missing_english": 0,
+      "pending": 0,
+      "skipped_failed": 0,
+      "attempted_ids": [
+        "2609.34294",
+        "2610.07499",
+        "2610.11230",
+        "2610.29061",
+        "2610.35044"
+      ],
+      "replacement_failures": [],
+      "selected": 5,
+      "engine": "Argos Translate (CPU)",
+      "api_calls": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
+      "papers": [
+        {
+          "paper_id": "2610.35044",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.29061",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.11230",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.07499",
+          "source": "argos",
+          "error": ""
+        },
+        {
+          "paper_id": "2609.34294",
+          "source": "argos",
+          "error": ""
+        }
+      ]
+    },
+    "status": "complete"
+  }
 }

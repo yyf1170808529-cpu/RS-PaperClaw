@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-31",
+  "papers": [
+    {
+      "paper_id": "2610.35044",
+      "title": "DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models",
+      "authors": [
+        "Jingbo Xu",
+        "Hanchao Leng",
+        "JiaHui Huang",
+        "Hanbing Li",
+        "Jingwei Zhao",
+        "Kuiyuan Yang",
+        "Chen Gao",
+        "Guang Chen",
+        "Hangjun Ye",
+        "Yong Li"
+      ],
+      "published": "2026-10-26",
+      "arxiv_url": "https://arxiv.org/abs/2610.35044",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.35044",
+      "pdf_url": "https://arxiv.org/pdf/2610.35044",
+      "open_access_url": "https://arxiv.org/pdf/2610.35044",
+      "venue": "",
+      "abstract": "World models are emerging as a fundamental component of policy learning for real-world agents, enabling agents to predict future world states and plan actions within a learned representation of the dynamic environment. Existing approaches, however, often model appearance, metric geometry represented by projected LiDAR depth, and ego motion either partially or independently, overlooking the fact that these modalities are different projections of a shared underlying world state. This separation can lead to information loss and cross-modal inconsistency, ultimately limiting downstream performance. Motivated by this unified view of the world, we propose DriveUniTok, a unified multimodal tokenizer for driving world-action models (WAMs) that encodes these modalities in a single decodable continuous latent. We freeze DriveUniTok and adapt a pretrained diffusion model, DriveUniWAM, to predict future unified latents; the tokenizer then decodes them into future appearance, projected LiDAR depth, and ego trajectories. Experiments on NAVSIM demonstrate that our unified design achieves better future prediction and planning performance at lower downstream computational cost than separate-stream alternatives. With reinforcement learning post-training, DriveUniWAM achieves a PDMS of 91.54, reaching state-of-the-art performance among the evaluated WAM-based planners.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Jingbo Xu",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "驾驶世界-动作模型统一多模态tokenizer；将外观、投影LiDAR深度与自车运动统一编码的思路，可改为把船舶视觉图像、AIS结构化状态（位置/航向/航速）与雷达回波分别经模态编码器映射到同一连续潜",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.35044",
+      "score": 9,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "世界模式正在成为现实世界行动者学习政策的一个基本组成部分,使行动者能够预测未来的世界国家,并在有知识的国家内规划行动。 表征 环境变化。 然而,现有方法往往以模型外观、预测值为代表的计量几何方法。 LiDAR 以及部分或独立的自我运动 忽略了这些 模态 是对共同基础世界状况的不同预测。 这种分离可能导致信息丢失和 跨模态 不一致,最终限制了下游的业绩。 基于这个世界统一的观点,我们提议 DriveUniTok, 一个统一的 多模态 推动世界行动模式的标志剂 (WAMs) 编码这些 模态 在单一可解码的连续潜伏中。 我们冻结 DriveUniTok 并调整预训 扩散 模型, DriveUniWAM, 以预测未来统一的潜伏物; 标注器然后将它们解码为未来的外观, 预测 LiDAR 深度和自我轨迹 实验 NAVSIM 证明我们的统一设计能以较低的下游计算成本实现更好的未来预测和规划性能,而不是单独的流替代. 通过强化培训后学习, DriveUniWAM 实现 a PDMS 的 91.54, 达到最先进的业绩 WAM-基于规划者.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.29061",
+      "title": "OccJEPA: Occlusion as Masking for Amodal Video Segmentation",
+      "authors": [
+        "Genpei Zhang"
+      ],
+      "published": "2026-10-21",
+      "arxiv_url": "https://arxiv.org/abs/2610.29061",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.29061",
+      "pdf_url": "https://arxiv.org/pdf/2610.29061",
+      "open_access_url": "https://arxiv.org/pdf/2610.29061",
+      "venue": "",
+      "abstract": "Amodal video segmentation asks for the complete mask of an object in every frame, including the parts hidden behind other objects. The best current methods generate these masks with fine-tuned video diffusion models, which need many denoising steps and an extra depth network, and give a different answer for every sample. Self-supervised video world models of the JEPA family are trained on a closely related task: predicting the representation of masked space-time regions from the visible ones. We therefore treat occlusion as masking. The tokens that the object's visible mask does not cover are dropped, the pre-trained V-JEPA 2.1 predictor fills them in, and a light head decodes the observed and predicted features into amodal masks. The resulting model, OccJEPA (Occlusion-as-masking JEPA), is deterministic and 33.5x faster than the diffusion-based state of the art, and more accurate on SAIL-VOS, on TAO-Amodal, including a held-out test split (+4.00 AP50) and visible masks tracked by SAM2, and on Kubric. Controlled experiments trace the gain to the predictor's pre-trained weights rather than to its capacity, for world models from 87M to 1.85B parameters. Code is available at https://github.com/zgp110/occjepa.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Genpei Zhang",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "amodal video segmentation；将船舶可见掩码外的遮挡区域token丢弃，用视频/图像预测器填充被遮挡船舶区域表征，轻量头解码为完整船舶掩码；输入由通用视频改为海上监控视频或图像序",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.29061",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "模式视频分割要求每个帧中一个物体的完整面具,包括隐藏在其他物体后面的部分. 目前最好的方法 产生这些面具 与精细的视频 扩散 模型,需要许多调试步骤和额外的深度网络,并为每个样本给出不同的答案. 自监督 视频世界模型 JEPA 家庭在一项密切相关的任务方面接受培训: 表征 隐藏的时空区域 因此,我们将隔离视为蒙面。 对象的可见面罩没有覆盖的符号被丢弃,预训 V-JEPA 2.1 预测器将它们填充,一个光头将观测到和预测的特性解码为模式罩. 由此产生的模式, OccJEPA (装模作样 JEPA), 是决定性的, 33.5x 速度超过 扩散-更准确地说, SAIL-VOS, 在 TAO-Amodal, 包括暂停试验 (+4.00 AP50) 和可见的口罩 SAM2, 还有库布里克 受控制的实验将收益追溯到预测器的预应重量,而不是其能力,因为世界模型来自 87M 以 1.85B 参数。 代码为: https://github.com/zgp110/occjepa.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.11230",
+      "title": "CORAL: Cross-modal Vector Retrieval via Incremental Graph Construction at Scale",
+      "authors": [
+        "Shixin Wan",
+        "Guoyu Hu",
+        "Yifan Wu",
+        "Ke Chen",
+        "Lidan Shou"
+      ],
+      "published": "2026-10-08",
+      "arxiv_url": "https://arxiv.org/abs/2610.11230",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.11230",
+      "pdf_url": "https://arxiv.org/pdf/2610.11230",
+      "open_access_url": "https://arxiv.org/pdf/2610.11230",
+      "venue": "",
+      "abstract": "Cross-modal vector retrieval is widely used in multimodal systems, such as search engines and vector databases. It typically operates in out-of-distribution (OOD) settings, where query vectors follow a distribution that differs from that of the vectors stored in the database. In such cases, conventional indexes suffer significant performance degradation, and even methods specially designed for OOD remain limited by inefficient use of query modal characteristics, restricted GPU parallelism, and inadequate support for dynamic updates. We present CORAL, a novel GPU-accelerated graph-based vector index for scalable cross-modal retrieval, featuring hierarchical memory management that spans GPU, CPU, and disk. Specifically, CORAL incrementally incorporates the characteristics of query modality and terminates index construction timely. Crucially, it introduces coverage-aware adaptive pruning to address the imbalanced coverage of the query vector's neighbors. Moreover, CORAL presents a fully neighborhood-aware projection approach to efficiently utilize GPUs for highly parallel index construction, and a targeted connectivity enhancement method to refine the index structure. Besides, CORAL also supports modal-semantics-based vector insertion and topology-repairing deletion that restore node connectivity. Experimental results demonstrate that CORAL outperforms existing methods with up to 1.6 times the throughput at matched recall while reducing construction time by up to 56%. Furthermore, it exhibits remarkable resilience under dynamic updates and remains effective at the billion scale.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Shixin Wan",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "cross_modal_vector_retrieval_index；可将CORAL的跨模态图索引与覆盖感知剪枝用于视觉–AIS关联检索：输入调整为视觉候选嵌入与AIS轨迹嵌入的联合向量库，训练目标保",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.11230",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "跨模态 矢量检索被广泛用于 多模态 系统,例如搜索引擎和矢量数据库。 它通常在分配之外运作 (OOD) 设置,其中查询向量跟随与存储在数据库中的向量不同的分布。 在这种情况下,常规指数的性能严重退化,甚至有专门设计的方法。 OOD 由于查询方式特性的使用效率低下,仍受到限制。 GPU 并行性,对动态更新的支持不足. 我们在此 CORAL, 小说 GPU-可缩放的加速图向量索引 跨模态 检索,显示跨度的层次内存管理 GPU, CPU, 和磁盘。 具体, CORAL 逐步纳入查询的特性 模态 并及时终止索引构建。 关键是,它引入了覆盖意识的适应性穿插,以解决查询向量邻居的不平衡覆盖. 还有, CORAL 提出一个完全了解周边环境的预测方法,以有效利用 GPUs 用于高度平行的指数构建,以及有针对性的互联互通增强方法,以完善指数结构. 再说, CORAL 还支持基于模式语义的矢量插入和恢复节点连接的地形修复删除. 实验结果表明, CORAL 超过现有方法最多 1.6 在将施工时间缩短至 56%. 此外,在动态更新下,它表现出显著的复原力,在十亿范围内依然有效.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.07499",
+      "title": "Source-Learned Reliance for Selective Test-Time Adaptation of Multimodal Time Series",
+      "authors": [
+        "Payal Mohapatra",
+        "Yueyuan Sui",
+        "Haodong Yang",
+        "Benjamin Lundell",
+        "Stephen Xia",
+        "Qi Zhu"
+      ],
+      "published": "2026-10-05",
+      "arxiv_url": "https://arxiv.org/abs/2610.07499",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2610.07499",
+      "pdf_url": "https://arxiv.org/pdf/2610.07499",
+      "open_access_url": "https://arxiv.org/pdf/2610.07499",
+      "venue": "",
+      "abstract": "Multimodal wearable systems must remain reliable when sensor streams become noisy or unavailable. Existing multimodal test-time adaptation (TTA) methods often assess reliability online, but cross-modal agreement can be misleading when sensors measure different physical processes, and evaluating alternative modality configurations adds inference cost. We propose CARAT, which decouples model reliance from runtime corruption detection to guide omission or attenuation, amortizing reliance estimation through source training. An asymmetric modality-dropout curriculum prepares a missingness-resilient backbone for omission and derives a frozen, backbone-specific reliance proxy from windowed input-projection gradient norms. At deployment, a lightweight one-class detector flags suspect streams, and the proxy guides a joint choice between replacing the suspect set with the backbone's trained missingness symbol and attenuating its representations before fusion, without candidate-subset evaluation. Across four wearable datasets, five corruption types, three backbones, and eight TTA baselines, CARAT achieves the highest overall macro-F1 and best mean rank (2.42), exceeding EATA, the strongest baseline, by 1.58 F1 points across 12 equally weighted dataset-backbone settings. Across five profiled configurations, CARAT uses 9.49% fewer GFLOPs and updates 47.82% fewer parameters than EATA. A pattern also emerges across sensing regimes: multimodal TTA methods such as PTA are competitive on IMU-dominated homogeneous datasets, whereas unimodal TTA methods like TENT and EATA match or exceed it on heterogeneous datasets. These results position CARAT as a practical default to wearable TTA, offering competitive robustness with modest computational requirements and benefits that vary across backbones and dataset regimes.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Payal Mohapatra",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "multimodal_test_time_adaptation_missing_modality；可将缺失模态课程与依赖代理迁移到多传感器船舶检测：输入改为可见光、红外或雷达特征流，训练目标改为在传感",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.07499",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 53,
+      "selection_source": "近期候选",
+      "abstract_zh": "多模态 在传感器流变得吵闹或无法使用时,可穿戴的系统必须保持可靠。 现有 多模态 测试时间适应 (TTA) 方法往往在网上评估可靠性,但 跨模态 当传感器测量不同的物理过程,并评估替代方法时,协议可能具有误导性。 模态 配置增加了推论成本. 我们提议 CARAT, 以指导疏漏或减弱,通过源头培训摊销对依赖的估计。 不对称 模态-辍学课程为漏课准备了一个能抵御缺失的骨干,并从窗口输入-预测梯度规范中得出了冻结的、针对骨干依赖的代名词。 在部署时,一个轻量级的一等侦测器旗子 可疑流, 和代理指导 共同选择 表征 在此之前 融合, 没有候选人的子集评价。 4个可穿戴数据集、5个腐败类型、3个骨干和8个 TTA 基线, CARAT 实现最高的总体宏-F1 和最差的军衔 (2.42), 超过 EATA, 最强基线 1.58 F1 交叉点数 12 同等加权的数据集背骨设置。 5个配置图, CARAT 用途 9.49% 减少 GFLOPs 和最新情况 47.82% 参数比 EATA. 各种遥感系统也出现了一种模式。: 多模态 TTA 方法,例如: PTA 竞争对手 IMU-以单一数据集为主,而单式 TTA 方法类 TENT 和 EATA 匹配或超过各种数据集。 这些结果状况 CARAT 作为可穿戴的实际默认 TTA, * 提供竞争力强,计算要求和效益不高,各支柱和数据集制度各不相同.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.34294",
+      "title": "Semantic Modality Compensation for Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings",
+      "authors": [
+        "Duanning Chen",
+        "Ke He",
+        "Bin Yang",
+        "Yongxiang Yao"
+      ],
+      "published": "2026-09-28",
+      "arxiv_url": "https://arxiv.org/abs/2609.34294",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.34294",
+      "pdf_url": "https://arxiv.org/pdf/2609.34294",
+      "open_access_url": "https://arxiv.org/pdf/2609.34294",
+      "venue": "",
+      "abstract": "Unsupervised visible-infrared person re-identification (USL-VI-ReID) learns person representations that can be compared across modalities without identity annotations. In the unpaired setting, however, identity correspondences between modalities are often incomplete, leaving many identities without an observed counterpart in the other modality. Existing unpaired methods bridge this gap by generating or mapping features for the other modality, mainly by exploiting the statistics of visual features without explicitly separating content that is discriminative for identity from style that is specific to modality. Consequently, the generated features may distort identity cues or inherit bias from the source modality, undermining the reliability of supervision across modalities. We formulate unpaired learning across modalities as a semantic compensation problem and propose Semantic Modality Compensation (SMC), a framework based on prompt composition that decouples identity semantics from modality style within a shared visual semantic space. SMC first constructs a discriminative ReID space through augmented dual contrastive learning, yielding pseudo labels, cluster prototypes, and memory banks for each modality. It then learns visible and infrared modality prompts in the CLIP semantic space and maps clusters obtained from pseudo labels to identity semantic tokens. For each cluster lacking a reliable match in the other modality, SMC combines its identity token with the prompt for the target modality to synthesize a semantic counterpart in the missing modality. The synthesized counterpart is then projected back into the ReID space and injected into a compensation memory through confidence gating. Extensive experiments under both paired and unpaired settings demonstrate that SMC consistently outperforms state-of-the-art methods, with particularly large gains when identity mismatch is severe.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Duanning Chen",
+      "first_author_affiliations": [
+        "Wuhan University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "unsupervised_visible_infrared_person_reid；可将可见光-红外双模态对比学习与聚类原型/记忆库机制，调整为视觉船舶目标与AIS轨迹点的跨模态嵌入对齐：视觉分支输出",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.34294",
+      "score": 10,
+      "rule_level": "一般相关",
+      "level": "方法值得关注",
+      "ai_score": 27,
+      "selection_source": "近期候选",
+      "abstract_zh": "无监督的可见红外线人重新识别 (USL-VI-ReID) 学人 表征 可以相互比较 模态 没有身份说明。 然而,在未经证实的环境下, 模态 往往不完全,使许多身份没有观察到对方的对应者。 模态. 现有的未授权方法通过生成或绘制对方的特征来弥补这一差距 模态, 主要是利用视觉特征的统计数据,而没有明确区分对身份具有歧视性的内容和针对特定特征的风格。 模态. 因此,生成的特性可能扭曲身份提示或继承来源的偏差 模态, 损害监督的可靠性 模态. 我们设计了无耻的学习 模态 作为语义赔偿问题,建议 模态 补偿 (SMC), 以快速构成为基础的框架,将身份语义与 模态 共享视觉语义空间内的样式. SMC 首先构建一种歧视性 ReID 通过增强双向空间 对比学习, 生成伪标签、集群原型和每个存储库 模态. 然后它会学习可见和红外 模态 提示在 CLIP 从伪标签获得的语义空间和地图集群到身份语义符号. 对彼此缺乏可靠匹配的每组 模态, SMC 将其身份符号与目标提示合并 模态 以合成缺失中的语义对应 模态. 合成的对应物随后被投射回 ReID 空间并注入补偿内存 置信度 g. 在配对和未配对的环境下进行的广泛实验证明: SMC 持续超过最先进的方法,在身份错配严重时收益特别大.",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 1247,
+    "ai_reviewed": 506,
+    "ai_states": {
+      "evaluated": 506,
+      "uncertain": 269,
+      "unassessed": 472
+    },
+    "stage_counts": {
+      "1": 25,
+      "2": 1174,
+      "0": 7,
+      "3": 41
+    },
+    "ai_rejected": 500,
+    "translation_deferred": 1,
+    "qualified_count": 5,
+    "selected_count": 5,
+    "shortfall": 0,
+    "translation_replacements": [
+      {
+        "paper_id": "2609.29721",
+        "attempt_date": "2026-10-31",
+        "reason": "numeric_mismatch: numbers or percentages changed; segment: Shot-Aware Late Interaction). It extracts the subject and object from a single-sentence query, and matches the query, it",
+        "english_hash": "f589e3b277e4a870a4a2bb9ef5179d375d42134fd71096b4d17efee068fd9e34"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "complete"
+}

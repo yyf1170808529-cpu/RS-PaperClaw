@@ -53,4 +53,4 @@ class PublicationProtectionTests(unittest.TestCase):
         page=render_mobile_page({'date':'2026-10-16','papers':[]})
         self.assertNotIn('收藏已就绪',page)
         self.assertNotIn('版本 3.',page)
-        self.assertIn('maritime_favorites.js?v=3.8.4',page)
+        self.assertIn('maritime_favorites.js?v=3.8.5',page)
