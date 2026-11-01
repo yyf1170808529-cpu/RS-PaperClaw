@@ -213,20 +213,20 @@
   ],
   "selection_audit": {
     "candidate_count": 1248,
-    "ai_reviewed": 798,
+    "ai_reviewed": 894,
     "ai_states": {
-      "evaluated": 798,
-      "uncertain": 320,
-      "unassessed": 130
+      "evaluated": 894,
+      "uncertain": 332,
+      "unassessed": 22
     },
     "stage_counts": {
       "1": 26,
       "2": 1181,
       "3": 41
     },
-    "ai_rejected": 791,
+    "ai_rejected": 883,
     "translation_deferred": 0,
-    "qualified_count": 7,
+    "qualified_count": 11,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [],
