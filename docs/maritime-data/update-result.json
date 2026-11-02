@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-02T12:36:09.593648+00:00",
-  "completed_at": "2026-11-02T12:38:10.360935+00:00",
+  "run_id": "2026-11-02T14:20:21.096916+00:00",
+  "completed_at": "2026-11-02T14:22:01.944545+00:00",
   "local_update": "success",
   "jobs": 0,
   "successful": 0,
@@ -13,11 +13,11 @@
   "after_count": 4115,
   "translation": {
     "translated": 0,
+    "failed": 0,
     "cached": 5,
     "manual": 0,
-    "failed": 0,
-    "missing_english": 0,
     "pending": 0,
+    "missing_english": 0,
     "skipped_failed": 0,
     "attempted_ids": [
       "2507.12297",
@@ -28,34 +28,34 @@
     ],
     "replacement_failures": [],
     "selected": 5,
-    "engine": "Argos Translate (CPU)",
+    "engine": "DeepSeek",
     "api_calls": 0,
-    "cost_upper_cny": 0.0,
+    "cost_upper_cny": 0,
     "priced_cost_cny": 0.0,
     "papers": [
       {
         "paper_id": "2609.33996",
-        "source": "argos",
+        "source": "deepseek",
         "error": ""
       },
       {
         "paper_id": "2609.28956",
-        "source": "argos",
+        "source": "deepseek",
         "error": ""
       },
       {
         "paper_id": "2609.25584",
-        "source": "argos",
+        "source": "deepseek",
         "error": ""
       },
       {
         "paper_id": "2609.20160",
-        "source": "argos",
+        "source": "deepseek",
         "error": ""
       },
       {
         "paper_id": "2507.12297",
-        "source": "argos",
+        "source": "deepseek",
         "error": ""
       }
     ]
@@ -139,5 +139,5 @@
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "not_run_resume",
-  "github_run_id": "41445871189"
+  "github_run_id": "41460755778"
 }
