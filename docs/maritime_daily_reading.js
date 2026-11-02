@@ -54,6 +54,12 @@
     }
     return {read,complete,advance,correct};
   }
+  function applyUpgrade(p,upgrade,digest){
+    if(normalize(upgrade.paper_id)!==normalize(p.paper_id)||upgrade.english_hash!==digest||upgrade.status!=='success')return false;
+    Object.assign(p,{summary_zh:upgrade.content.summary_zh,migration_zh:upgrade.content.migration_zh,enrichment_version:upgrade.prompt_version});
+    if(p.translation_source!=='manual')Object.assign(p,{abstract_zh:upgrade.content.abstract_zh,translation_source:'deepseek'});
+    return true;
+  }
   function mount(win) {
     const doc=win.document,node=doc.getElementById('daily-reading-data');if(!node)return;
     const error=text=>{doc.getElementById('reading-error').textContent=text;};
@@ -110,8 +116,7 @@
                 const digest=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',new TextEncoder().encode(p.abstract)))).map(n=>n.toString(16).padStart(2,'0')).join('');
                 const upgrade=upgrades.find(u=>normalize(u.paper_id)===normalize(p.paper_id)&&u.english_hash===digest&&u.status==='success');
                 if(upgrade&&p.enrichment_version!==upgrade.prompt_version){
-                  Object.assign(p,{summary_zh:upgrade.content.summary_zh,migration_zh:upgrade.content.migration_zh,enrichment_version:upgrade.prompt_version});
-                  if(p.translation_source!=='manual')Object.assign(p,{abstract_zh:upgrade.content.abstract_zh,translation_source:'deepseek'});
+                  applyUpgrade(p,upgrade,digest);
                   changed=true;
                 }
               }
@@ -139,6 +144,6 @@
       doc.addEventListener('visibilitychange',()=>{if(!doc.hidden)check();});
     }catch(e){error('阅读进度暂不可用：'+e.message+'；原收藏和笔记未修改。');}
   }
-  if(typeof module!=='undefined')module.exports={KEY,beijingDate,valid,batchId,identities,create,mount};
+  if(typeof module!=='undefined')module.exports={KEY,beijingDate,valid,batchId,identities,create,mount,applyUpgrade};
   else {root.MaritimeDailyReading={mount};mount(root);}
 })(globalThis);

@@ -71,3 +71,12 @@ test('unread medical correction preserves completion and other snapshots; delaye
  s.progress.correct({'2610.10000':{reason:'medical',replacement:{...batch('2026-10-24',20).payload.papers[0]}}});
  state=s.progress.read();assert.equal(state.batch.payload.papers.length,5);assert.equal(state.completed,false);assert.equal(state.batch.payload.papers[0].paper_id,first.batch.payload.papers[1].paper_id);assert.equal(s.map.get('favorites'),'private note');
 });
+
+test('translation upgrade only changes Chinese fields and respects manual text and identity hash',()=>{
+ const {applyUpgrade}=require('../docs/maritime_daily_reading.js');
+ const paper={paper_id:'2610.01750',title:'Original',abstract:'English',abstract_zh:'旧译',note:'私人笔记'};
+ const upgrade={paper_id:paper.paper_id,english_hash:'hash',status:'success',prompt_version:'3.8.6-1',content:{summary_zh:'内容。',migration_zh:'研究推断。',abstract_zh:'新译'}};
+ assert.equal(applyUpgrade(paper,upgrade,'wrong'),false);assert.equal(paper.abstract_zh,'旧译');
+ assert.equal(applyUpgrade(paper,upgrade,'hash'),true);assert.equal(paper.abstract_zh,'新译');assert.equal(paper.title,'Original');assert.equal(paper.note,'私人笔记');assert.equal(paper.abstract,'English');
+ paper.translation_source='manual';paper.abstract_zh='人工译文';applyUpgrade(paper,upgrade,'hash');assert.equal(paper.abstract_zh,'人工译文');
+});

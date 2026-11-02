@@ -1,4 +1,4 @@
-"""Local Argos translation for the AI-reviewed daily selection; no translation API."""
+"""Selected-paper enrichment with preserved manual and legacy Argos translations."""
 
 
 def valid_translation(english, chinese):
