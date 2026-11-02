@@ -1,32 +1,40 @@
 {
-  "run_id": "2026-11-01T11:22:25.032371+00:00",
-  "completed_at": "2026-11-01T11:29:06.351420+00:00",
-  "local_update": "success",
-  "jobs": 0,
-  "successful": 0,
+  "run_id": "2026-11-02T02:34:55.902310+00:00",
+  "completed_at": "2026-11-02T02:51:43.399690+00:00",
+  "local_update": "partial",
+  "jobs": 42,
+  "successful": 39,
   "incomplete": 0,
-  "failed": 0,
-  "added": 0,
+  "failed": 3,
+  "added": 4,
   "filled": 0,
   "merged": 0,
   "before_count": 4111,
-  "after_count": 4111,
+  "after_count": 4115,
   "translation": {
-    "translated": 0,
-    "cached": 5,
+    "translated": 5,
+    "cached": 0,
     "manual": 0,
     "failed": 0,
     "missing_english": 0,
     "pending": 0,
     "skipped_failed": 0,
     "attempted_ids": [
-      "2610.04552",
-      "2610.40525",
-      "doi:10.21203/rs.3.rs-10037779/v1",
-      "doi:10.21203/rs.3.rs-10718006/v1",
-      "doi:10.21203/rs.3.rs-11121422/v1"
+      "2507.12297",
+      "2609.20160",
+      "2609.25584",
+      "2609.28956",
+      "2609.32844",
+      "2609.33996"
     ],
-    "replacement_failures": [],
+    "replacement_failures": [
+      {
+        "paper_id": "2609.32844",
+        "attempt_date": "2026-11-02",
+        "reason": "translation_incomplete: model omitted segment: masking, block-wise masking addresses this multi-pixel speckle correlation by re",
+        "english_hash": "ddeeedaf21afc3216750fca6145a688cb8fcb41e8b543791da4a573247c31b11"
+      }
+    ],
     "selected": 5,
     "engine": "Argos Translate (CPU)",
     "api_calls": 0,
@@ -34,27 +42,27 @@
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2610.40525",
+        "paper_id": "2609.33996",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "doi:10.21203/rs.3.rs-11121422/v1",
+        "paper_id": "2609.28956",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "doi:10.21203/rs.3.rs-10718006/v1",
+        "paper_id": "2609.25584",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "doi:10.21203/rs.3.rs-10037779/v1",
+        "paper_id": "2609.20160",
         "source": "argos",
         "error": ""
       },
       {
-        "paper_id": "2610.04552",
+        "paper_id": "2507.12297",
         "source": "argos",
         "error": ""
       }
@@ -85,62 +93,113 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 108,
-    "cached": 1118,
-    "failed": 0,
-    "cost_upper_cny": 0.45503143999999995,
-    "priced_cost_cny": 0.22751571999999998,
-    "unsettled_upper_cny": 0,
-    "tokens": 147608,
+    "processed": 22,
+    "cached": 1221,
+    "failed": 1,
+    "cost_upper_cny": 0.08211887999999999,
+    "priced_cost_cny": 0.08211887999999999,
+    "unsettled_upper_cny": 0.0,
+    "tokens": 29334,
     "missing_abstract": 0,
-    "candidate_count": 1248,
-    "already_attempted_today": 2,
-    "pending_total": 128,
-    "limit_deferred": 8,
+    "candidate_count": 1244,
+    "already_attempted_today": 0,
+    "pending_total": 23,
+    "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 894,
-    "reason": "Incomplete AI response",
+    "ai_reviewed": 907,
+    "validation_errors": [
+      {
+        "paper_id": "2605.10739",
+        "reason": "Evidence is not an exact abstract quotation"
+      }
+    ],
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 894,
-      "uncertain": 332,
-      "unassessed": 22
+      "evaluated": 907,
+      "uncertain": 336,
+      "unassessed": 1
     },
     "publication_status": "complete",
     "reserve_available": 6
   },
   "affiliations": [
     {
-      "paper_id": "2610.40525",
-      "status": "cached_unverified"
-    },
-    {
-      "paper_id": "doi:10.21203/rs.3.rs-11121422/v1",
+      "paper_id": "2609.25584",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
     },
     {
-      "paper_id": "doi:10.21203/rs.3.rs-10718006/v1",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2609.28956",
+      "revision": 1,
+      "time": "2026-11-02T02:50:37.123504+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "crossref",
+          "status": "unavailable",
+          "error": "api.crossref.org HTTP 404: Resource not found."
+        },
+        {
+          "source": "openalex",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "doi:10.21203/rs.3.rs-10037779/v1",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2609.33996",
+      "revision": 1,
+      "time": "2026-11-02T02:50:37.123504+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
     },
     {
-      "paper_id": "2610.04552",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2609.20160",
+      "revision": 1,
+      "time": "2026-11-02T02:50:37.123504+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.32844",
+      "revision": 1,
+      "time": "2026-11-02T02:50:37.123504+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        }
+      ]
     }
   ],
   "daily_selected": 5,
   "daily_publication": "complete",
-  "published_daily_date": "2026-11-01",
+  "published_daily_date": "2026-11-02",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "not_run_resume",
-  "github_run_id": "41301508745"
+  "retrieval_status": "partial",
+  "github_run_id": "41378387358"
 }

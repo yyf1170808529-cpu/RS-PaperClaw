@@ -1,27 +1,35 @@
 {
-  "attempt_date": "2026-11-01",
+  "attempt_date": "2026-11-02",
   "status": "complete",
-  "published_date": "2026-11-01",
-  "published_revision": "636ef6ca2f05f604",
+  "published_date": "2026-11-02",
+  "published_revision": "1afd0385ea6db9f1",
   "selection_audit": {
-    "candidate_count": 1248,
-    "ai_reviewed": 894,
+    "candidate_count": 1244,
+    "ai_reviewed": 907,
     "ai_states": {
-      "evaluated": 894,
-      "uncertain": 332,
-      "unassessed": 22
+      "evaluated": 907,
+      "uncertain": 336,
+      "unassessed": 1
     },
     "stage_counts": {
-      "1": 26,
-      "2": 1181,
-      "3": 41
+      "2": 1179,
+      "0": 1,
+      "1": 22,
+      "3": 42
     },
-    "ai_rejected": 883,
-    "translation_deferred": 0,
-    "qualified_count": 11,
+    "ai_rejected": 901,
+    "translation_deferred": 1,
+    "qualified_count": 5,
     "selected_count": 5,
     "shortfall": 0,
-    "translation_replacements": [],
+    "translation_replacements": [
+      {
+        "paper_id": "2609.32844",
+        "attempt_date": "2026-11-02",
+        "reason": "translation_incomplete: model omitted segment: masking, block-wise masking addresses this multi-pixel speckle correlation by re",
+        "english_hash": "ddeeedaf21afc3216750fca6145a688cb8fcb41e8b543791da4a573247c31b11"
+      }
+    ],
     "translation_environment_errors": [],
     "translation_errors": []
   }

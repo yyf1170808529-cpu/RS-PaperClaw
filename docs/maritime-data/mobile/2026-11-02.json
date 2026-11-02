@@ -1,0 +1,240 @@
+{
+  "date": "2026-11-02",
+  "papers": [
+    {
+      "paper_id": "2609.33996",
+      "title": "UnfoldCRF: Structured Mask Refinement with Image-Conditioned Latent Regions",
+      "authors": [
+        "Chunming He",
+        "Rihan Zhang",
+        "Lei Xu",
+        "Guanyi Qin",
+        "Chengyu Fang",
+        "Longxiang Tang",
+        "Fengyang Xiao",
+        "Sina Farsiu"
+      ],
+      "published": "2026-09-27",
+      "arxiv_url": "https://arxiv.org/abs/2609.33996",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.33996",
+      "pdf_url": "https://arxiv.org/pdf/2609.33996",
+      "open_access_url": "https://arxiv.org/pdf/2609.33996",
+      "venue": "",
+      "abstract": "Learned mask refiners improve segmentation accuracy, but it is hard to tell how much of the improvement comes from explicit structure rather than from extra capacity, and whether it holds up when the mask generator or its error distribution changes. UnfoldCRF treats refinement as inference in a conditional random field over pixel labels and latent region variables. Its energy has a corrected unary term, learned local pairwise interactions, and image-conditioned latent-region consistency, with a null state that lets a region with weak label agreement withdraw from the consistency term; inference unrolls damped mean-field updates on this one energy. To isolate the effect of structure, we compare against recurrent black-box refiners that read the same inputs and receive the same parameter budget, stage count, and supervision. On COD10K, UnfoldCRF beats the strongest matched control by 1.0 $F^ω_β$ point, improves all four COD metrics, and lowers the fraction of images made worse from 11.7\\% to 8.5\\%. Under a train-once protocol over five datasets and several mask sources, the 2.6M-parameter variant gains 4.2 mean $Δ$IoU against 2.0 for its control, and a variant built on frozen DINOv2 features matches the strongest foundation-model refiner with about a seventh of its resident parameters while staying ahead of its own control. On mask generators never seen in training, the gain is 2.0 $F^ω_β$ points against 0.6 for the control. Zeroing individual messages shows where the corrections come from: the pairwise messages mostly fix boundaries, the region messages mostly fix non-boundary errors. Code and supporting materials will be publicly released.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Chunming He",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "mask_refinement_segmentation；可将该CRF式掩码精化作为船舶分割后处理模块；输入为船舶分割网络输出掩码及图像特征，训练目标为精化后的像素标签，结构上替换/接入分割头后的精化",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.33996",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 47,
+      "selection_source": "近期候选",
+      "abstract_zh": "所学的口罩精细器提高了分解精度,但很难分辨出有多少改进来自明显的结构而不是额外的容量,以及它是否在口罩生成器或其出错分解改变时保持.. UnfoldCRF 在有条件的随机字段比像素标签和潜在区域变量进行精细化作为推论. 它的能量具有一个修正的无线词, 学习了本地双向交互, 和图像条件 潜伏的区域一致性, 无效状态让一个标签协议弱的区域退出了一致性词; 推论 unrolls damped eal-field required on this one energy. 为了隔离结构的作用,我们比较了经常出现的黑盒精炼厂,这些精炼厂读取相同的投入,并获得相同的参数预算,阶段计数和监督. 打开 COD10K, UnfoldCRF 击败最强匹配的控制器 1.0 $F^ω_β$ 点,改善所有四个 COD 度量衡,并降低图像的分量。 11.7\\% 以 8.5\\%. 根据一个列车操作协议 超过五个数据集和几个掩码源, 2.6M-参数变量收益 4.2 说 $Δ$IoU 反对 2.0 以及一个以冰冻为基础的变体 DINOv2 其特性与最强的地基模型精炼器相匹配,与大约七分之一的常住参数相匹配,同时保持自身的控制. 在训练中从未见过的口罩发电机上,收益是 2.0 $F^ω_β$ 点对点 0.6 为了控制。 零取出单个消息显示更正的出处:对接消息大多固定了边界,区域消息大多固定了非边界错误. 守则和辅助材料将公开发布.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.28956",
+      "title": "MoVISA: Multi-Token Reasoning for Video Object Segmentation",
+      "authors": [
+        "Ruining Zhao",
+        "Ho Kei Cheng",
+        "Alexander G Schwing"
+      ],
+      "published": "2026-09-24",
+      "arxiv_url": "https://arxiv.org/abs/2609.28956",
+      "doi": "10.48550/arxiv.2609.28956",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.28956",
+      "pdf_url": "https://arxiv.org/pdf/2609.28956",
+      "open_access_url": "https://arxiv.org/pdf/2609.28956",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Recent advances in video object segmentation with Multimodal Large Language Model (MLLM) reasoning have demonstrated the effectiveness of using a single textual token, such as SEG, to predict segmentation masks across images and videos. However, we observe that this single-token strategy lacks the granularity required to precisely localize multiple objects across time in video segmentation tasks. To address this limitation, we develop Multi-Token Reasoning for Video Object Segmentation, or MoVISA. MoVISA uses multiple segmentation tokens, such as SEG0 and SEG1, to represent an object across different frames. This design enables more fine-grained alignment between language prompts and spatio-temporal mask predictions, improving both performance and interpretability. On the challenging MeViS, DAVIS17, ReVOS, and Ref-Youtube-VOS benchmarks, our model achieves a 13.2 percent J and F improvement on MeViS and an 8.4 percent J and F improvement on ReVOS. Code and models will be released.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Ruining Zhao",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "video_object_segmentation_with_mllm；需将多分割token从通用视频对象改为船舶实例token，输入改为海事视频或图像序列，训练目标改为船舶掩码的时空一致性监督，并处",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.28956",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 60,
+      "selection_source": "近期候选",
+      "abstract_zh": "视频对象分区最近的进展 多模态 大语言模型 (MLLM) 推理证明使用单一文本符号的有效性,例如: SEG, 预测图像和视频的分解口罩。 然而,我们发现,这种单键策略缺乏在视频分解任务中精确定位多个物体所需的颗粒性. 为了应对这一限制,我们开发了视频对象分解的多声道理性,或者 MoVISA. MoVISA 使用多个分割符,例如 SEG0 和 SEG1, 以表示跨越不同框架的对象。 这种设计可以更精细 对齐 语言提示和斯皮提奥-时空口罩预测之间,既能提高性能又能解释. 关于挑战 MeViS, DAVIS17, ReVOS, 和 Ref-Youtube-VOS 基准,我们的模型实现 13.2 J和F的改进百分比 MeViS 还有一个 8.4 J和F的改进百分比 ReVOS. 将发布代码和模型.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.25584",
+      "title": "Hi-OPD: Hierarchy-Aware Open-Prompt Detection for Remote Sensing Images",
+      "authors": [
+        "Jinlong Hu",
+        "Yi Zhang",
+        "Zhiqi Xia",
+        "Yikang Zhou",
+        "Shunping Ji"
+      ],
+      "published": "2026-09-22",
+      "arxiv_url": "https://arxiv.org/abs/2609.25584",
+      "doi": "10.48550/arxiv.2609.25584",
+      "original_url": "https://doi.org/10.48550/arxiv.2609.25584",
+      "pdf_url": "https://arxiv.org/pdf/2609.25584",
+      "open_access_url": "https://arxiv.org/pdf/2609.25584",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Hi-OPD addresses a failure mode left uncontrolled by flat open-prompt training: descendant retrieval need not persist under ancestor queries when multi-source remote sensing annotations exhibit inconsistent granularity and missing labels. A detector may localize \\textit{car} and \\textit{van} under atomic prompts yet miss the same instances under \\textit{vehicle}; flat AP does not expose this cross-level inconsistency. We propose Hi-OPD, a hierarchy-aware open-prompt detector, and construct RS153-HierOPD from 175,644 retained training image/tile records and 3.48M boxes mapped to 153 atomic categories with sparse hierarchy and alias relations. Hi-OPD learns ancestor retrieval through hierarchy-safe negative sampling, path multi-positive supervision, and one-way upward consistency, while per-source risk exclusion handles potentially missing labels. ConvVPE converts K-shot support boxes into text-compatible embeddings using detector-native features and the shared contrastive head. On Track A, Hi-OPD obtains 79.7/72.3 AP50 on DIOR/DOTA-v2.0, above the literature-reported OpenRSD results of 76.7/71.8. Under controlled training on the original converted annotations, the full hierarchy recipe raises DOTA-v2.0 parent AP50 from 7.2 to 71.5 and FAIR1M grandparent AP50 from 31.6 to 71.4, while DOTA-v2.0 atomic AP50 changes from 71.4 to 72.3. The text path reaches 99.7% CAR50 (0.3% violation) across the three common sources and 99.9%/0.1% on FAIR1M grandparent relations. On held-out VEDAI, text AP50 is 75.9, 6.2 points above OpenRSD. Joint AP and CAR show that explicit hierarchy training repairs this failure mode while retaining atomic detection and prompt transfer.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Jinlong Hu",
+      "first_author_affiliations": [
+        "Wuhan University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "船舶检测（可迁移开放提示目标检测）；构建船舶类别层级（如船-货船-集装箱船），用层级安全负采样与多正监督提升跨粒度船舶检测，需调整类别层级与缺失标签处理，属推断",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.25584",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "Hi-OPD 处理因平开即时训练而未控制的故障模式:当多源遥感说明显示出不一致的颗粒性和缺失的标签时,后代检索在祖先查询中不需要持续. 探测器可能在原子提示下将\\ textit{car} 和\\ textit{van} 本地化, 但错过了\\ textit{ 车辆} 下的相同实例; 平面 AP 不暴露这种跨层次的不一致。 我们提议 Hi-OPD, 具有分级意识的开快探测器,并构造 RS153-HierOPD 来自 175,644 保留培训图像/瓷砖记录 3.48M 框图 153 分级关系和别名关系的原子类别. Hi-OPD 通过等级安全学习祖先检索 负样本 采样, 多路径-正样本 监管和单向向上一致性,而排除来源风险处理可能缺失的标签. ConvVPE 将 K- shoot 支持框转换为文本相容的嵌入,使用探测器-内置特性和共享对比头. 在A轨, Hi-OPD 获取 79.7/72.3 AP50 在 DIOR/DOTA-v2.0, 以上文献 OpenRSD 成果 76.7/71.8. 在最初转换说明的受控训练下,完整的分级配方提高 DOTA-v2.0 父目录 AP50 来自 7.2 以 71.5 和 FAIR1M 爷爷 AP50 来自 31.6 以 71.4, 时 DOTA-v2.0 原子 AP50 从 71.4 以 72.3. 到达的文本路径 99.7% CAR50 (0.3% 在三个共同来源之间, 99.9%/0.1% 在 FAIR1M 祖父母关系 被搁置 VEDAI, 文本 AP50 实值 75.9, 6.2 以上点 OpenRSD. 联合 AP 和 CAR 显示清晰的分级训练在保留原子探测和迅速转移的同时修复这种故障模式.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2609.20160",
+      "title": "Needles in a Raystack: Ultra-Sparse LiDAR Occupancy Detection for Bat Tracks",
+      "authors": [
+        "Nico Klar",
+        "Pankaj Rana",
+        "Nizam Gifary",
+        "Jakob Traub",
+        "Aamir Ahmad"
+      ],
+      "published": "2026-09-17",
+      "arxiv_url": "https://arxiv.org/abs/2609.20160",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.20160",
+      "pdf_url": "https://arxiv.org/pdf/2609.20160",
+      "open_access_url": "https://arxiv.org/pdf/2609.20160",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Monitoring flying animals is important for understanding and protecting biodiversity, but nocturnal species such as bats are difficult to observe in the field. Using LiDAR, bat movements at night result in ultra-sparse 3D spatio-temporal data in which standard reconstruction losses tend to predict only background and miss real flight paths. We study this problem as voxel-wise occupancy detection in sensor-centric LiDAR raystacks. A lightweight 3D U-Net is proposed that preserves temporal resolution, uses skip connections for spatial detail, and combines weighted binary cross-entropy with Dice loss to handle the strong class imbalance. In real LiDAR recordings of bats over open fields, cross-checked with acoustic monitoring, a reconstruction-based 3D convolutional autoencoder baseline fails to recover foreground trajectories. In contrast, the proposed U-Net recovers sparse foreground occupancy in diagnostic experiments and produces coherent occupancy patterns along bat flight trajectories, providing a practical basis for validation-scale experiments, later clustering of flight tracks, and future integration of bat activity information into biodiversity-aware turbine curtailment strategies.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Nico Klar",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "超稀疏LiDAR体素占据检测；可借鉴保留时间分辨率的3D U-Net与加权BCE+Dice应对稀疏前景；用于船舶分割时需将输入改为船载/岸基LiDAR或点云栅格，输出改为船舶前背景体素/像素掩码，并重",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.20160",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "监测飞行动物对理解和保护生物多样性很重要,但野外难以观测到蝙蝠等夜行物种. 使用 LiDAR, 夜间蝙蝠运动会导致超平地 3D spatio-时空数据,其中标准重建损失往往只预测背景并错过了真正的飞行路径. 我们研究这个问题,作为以感应器为中心 的阴道入住探测器 LiDAR 射线枪 轻量级 3D U-Net被提出来保存时间分辨率,使用跳过连接来进行空间细节,并结合加权二进制交叉和Dice损失来处理强烈的类不平衡. 真实的 LiDAR 在空地上拍摄蝙蝠的录音,与声学监测进行交叉核对,以重建为基础 3D 演化自编码器基线无法恢复前地轨道. 相比之下,拟议的U-Net在诊断实验中恢复了稀少的前地占用,并沿蝙蝠飞行轨迹形成连贯的占用模式,为验证-规模实验提供了实际依据,稍后 聚类 将蝙蝠活性信息纳入认识到生物多样性的涡轮机削减战略.",
+      "translation_source": "argos",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2507.12297",
+      "title": "RegCL: Compact Continual SAM Adaptation for Visual Grounding in Multi-Sensorial Media",
+      "authors": [
+        "Yuan-Chen Shu",
+        "Zi Lin",
+        "Xiaoyu Zhou",
+        "Yongtao Wang"
+      ],
+      "published": "2026-10-17",
+      "arxiv_url": "https://arxiv.org/abs/2507.12297",
+      "doi": "10.1145/3841456.3841509",
+      "original_url": "https://doi.org/10.1145/3841456.3841509",
+      "pdf_url": "https://arxiv.org/pdf/2507.12297",
+      "open_access_url": "https://arxiv.org/pdf/2507.12297",
+      "venue": "",
+      "abstract": "Multi-sensorial media systems, including AR/VR, remote operation, and embodied AI, require visual grounding modules that remain reliable as sensing environments and application domains evolve. The Segment Anything Model (SAM) provides a strong foundation for dense visual segmentation, but its performance degrades on specialized and dynamically arriving domains such as medical imagery, camouflaged scenes, and shadow-dominant environments. Existing continual learning methods often rely on replay data or growing domain-specific modules, limiting compact deployment in evolving media pipelines. To address this issue, we propose RegCL, a non-replay continual adaptation framework that consolidates multi-domain segmentation knowledge into a single SAM adapter through incremental model merging. RegCL merges lightweight adaptation modules, e.g., LoRA-style AugModules, by optimizing prediction consistency between the merged model and domain-specific adapters while carrying forward compact historical feature statistics. Experiments across five heterogeneous segmentation datasets show that RegCL achieves strong retention and adaptation under domain-incremental learning, outperforming competitive non-replay continual learning and merging baselines. These results suggest that RegCL can serve as a compact visual adaptation component for evolving multi-sensorial media pipelines. The code is available at https://github.com/Anderw-S/RegCL",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Yuan-Chen Shu",
+      "first_author_affiliations": [
+        "Wangxuan Institute of Computer Technology, Peking University, Beijing, Beijing, China"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "视觉定位与多域分割持续适应；可将多域分割的SAM适配器持续合并方法迁移到船舶分割：输入为不同海域/天气/传感器下的船舶图像，训练目标保留预测一致性约束与历史特征统计以减轻域遗忘，结构上将域特定适配器替",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2507.12297",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "abstract_zh": "多传感器媒体系统,包括 AR/VR, 远程操作,并包含 AI, 需要随着感知环境和应用领域的演变而保持可靠的视觉地基模块。 任意部件模式 (SAM) 其性能在医学图像、伪装场景和影子主导环境等专门和动态到达的领域退化。 现有的持续学习方法往往依赖于重放数据或不断增长的针对特定领域的模块,限制了在不断发展的媒体管道中的紧凑部署. 为了解决这一问题,我们建议 RegCL, 将多领域分化知识整合成单一的不重现持续适应框架 SAM 通过增量模型合并的适配器. RegCL 合并轻量级适应模块,例如., LoRA-样式 AugModules, 通过优化合并模型和特定域适配器之间的预测一致性,同时进行紧凑的历史地貌统计. 5个不同的分块数据集的实验表明: RegCL 在域内递增学习、业绩优于竞争的非重现性持续学习和合并基线下实现强有力的保留和适应。 这些结果表明: RegCL 可作为不断发展的多传感器媒体管道的紧凑的视觉适应部分。 该代码可用于 https://github.com/Anderw-S/RegCL",
+      "translation_source": "argos",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 1244,
+    "ai_reviewed": 907,
+    "ai_states": {
+      "evaluated": 907,
+      "uncertain": 336,
+      "unassessed": 1
+    },
+    "stage_counts": {
+      "2": 1179,
+      "0": 1,
+      "1": 22,
+      "3": 42
+    },
+    "ai_rejected": 901,
+    "translation_deferred": 1,
+    "qualified_count": 5,
+    "selected_count": 5,
+    "shortfall": 0,
+    "translation_replacements": [
+      {
+        "paper_id": "2609.32844",
+        "attempt_date": "2026-11-02",
+        "reason": "translation_incomplete: model omitted segment: masking, block-wise masking addresses this multi-pixel speckle correlation by re",
+        "english_hash": "ddeeedaf21afc3216750fca6145a688cb8fcb41e8b543791da4a573247c31b11"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "complete"
+}

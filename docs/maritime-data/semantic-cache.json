@@ -47270,6 +47270,657 @@
       },
       "model": "deepseek-flash",
       "request_id": "ed514d5f-b2df-4e17-b600-758740bc80e5"
+    },
+    "f9feadd970cc6e6a08457643d62c0cde2c44b4df0c2e39b200d1125f6bb4ee59": {
+      "paper_id": "2610.41127",
+      "title": "MotorSense: A Video-EMG Dataset of Motoric Representations for Action Understanding",
+      "fingerprint": "f9feadd970cc6e6a08457643d62c0cde2c44b4df0c2e39b200d1125f6bb4ee59",
+      "evaluation": {
+        "paper_id": "2610.41127",
+        "task_type": "跨模态对齐与表征学习（肌电–视频）",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "We use MotorSense to learn sensorimotor alignment, producing an organization of action that is shared across the visual and motoric spaces, through cross-modal pre-training between video and EMG.",
+            "interpretation_zh": "通过视频与肌电的跨模态预训练学习共享动作表征空间，属于通用的跨模态对齐预训练方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "The resultant vision models are then transferred to downstream tasks that benefit from sensorimotor alignment",
+            "interpretation_zh": "对齐后视觉模型迁移到下游任务，说明表征可跨任务复用。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "through cross-modal pre-training between video and EMG",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可将视频–肌电的跨模态预训练对齐思路调整为视觉–AIS跨模态表征学习：输入由视频和肌电改为船舶视觉图像/视频与AIS航迹特征，训练目标改为视觉–AIS样本对的对齐与匹配（对比学习/共享嵌入空间），结构上保留双模态编码器并在共享潜空间对齐。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要面向手部动作与肌电模态，不含海事场景",
+          "跨模态对齐的具体损失函数与负样本策略未在摘要中说明",
+          "迁移至视觉–AIS仅为推断，需验证模态差异与配准"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "非海事任务，虽含跨模态预训练对齐，但摘要未给出可用于视觉–AIS匹配的具体机制细节，迁移证据较泛。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "80e70b31-91e4-4b98-983b-af8014ff6994"
+    },
+    "7e8eaad40d8c1db5c4d558cb22db705e329aa1dab2a4b382d275c9205c351649": {
+      "paper_id": "2609.38087",
+      "title": "CrossBFM: Distilling a Shared Latent Behavior Space Across Humanoid Embodiments",
+      "fingerprint": "7e8eaad40d8c1db5c4d558cb22db705e329aa1dab2a4b382d275c9205c351649",
+      "evaluation": {
+        "paper_id": "2609.38087",
+        "task_type": "跨具身潜空间蒸馏与行为控制",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "we propose a unified encoder architecture with no robot-specific parameters for distilling the behavior space",
+            "interpretation_zh": "提出无机器人特定参数的统一编码器蒸馏共享行为潜空间，属于跨具身表征蒸馏。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "聚焦人形机器人行为策略与运动控制，非感知检测/匹配任务",
+          "摘要未提供可直接用于视觉–AIS关联或船舶检测的方法细节",
+          "与船舶/多传感器目标关联无明确任务联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人行为潜空间蒸馏与本关注方向无清晰感知任务联系，难以具体迁移至船舶或多模态匹配任务。",
+        "confidence": 0.75
+      },
+      "model": "deepseek-flash",
+      "request_id": "80e70b31-91e4-4b98-983b-af8014ff6994"
+    },
+    "47058a09fccbd597d228df7071fe749fc49941043dee9ddb09c5ee02765450af": {
+      "paper_id": "2609.37959",
+      "title": "TabFM: A Zero-Shot Foundation Model for Tabular Data",
+      "fingerprint": "47058a09fccbd597d228df7071fe749fc49941043dee9ddb09c5ee02765450af",
+      "evaluation": {
+        "paper_id": "2609.37959",
+        "task_type": "表格数据零样本基础模型",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "TabFM produces calibrated zero-shot predictions in a single forward pass without task-specific tuning",
+            "interpretation_zh": "单次前向零样本表格预测，为表格基础模型方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯表格数据预测，与视觉/雷达/AIS感知任务无关",
+          "摘要无跨模态对齐或船舶相关方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "表格基础模型与船舶视觉、RAdar–AIS关联及跨模态匹配无任务或方法联系。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "80e70b31-91e4-4b98-983b-af8014ff6994"
+    },
+    "ed59ace90ba42cda861b28c15c9d8e97d7bdff5aa29956a1730a44e314a424e3": {
+      "paper_id": "2607.23238",
+      "title": "SARATR-X-v2: Scale-Aware Structural Pre-Training for SAR Foundation Models",
+      "fingerprint": "ed59ace90ba42cda861b28c15c9d8e97d7bdff5aa29956a1730a44e314a424e3",
+      "evaluation": {
+        "paper_id": "2607.23238",
+        "task_type": "SAR自监督预训练（掩码图像建模目标设计）",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "The target is constructed through fixed structural extractors spanning six receptive fields",
+            "interpretation_zh": "用覆盖六个感受野的固定结构提取器构建重建目标，属掩码重建监督信号设计。",
+            "inference": false
+          },
+          {
+            "quote_en": "fused via learnable weights into one unified supervision signal for masked reconstruction",
+            "interpretation_zh": "通过可学习权重融合为统一掩码重建监督，属预训练目标设计方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "fused via learnable weights into one unified supervision signal for masked reconstruction",
+          "target_task": "ship_enhancement",
+          "adaptation_zh": "可将多感受野结构提取器融合的掩码重建监督思路迁移到船舶视觉自监督预训练/图像增强：输入改为光学或SAR船舶图像，训练目标改为融合多尺度结构监督的掩码重建，结构上调整结构提取器的感受野以适配船舶目标尺度。",
+          "inference": true
+        },
+        "limitations": [
+          "面向SAR相干成像，摘要未涉及AIS或视觉–AIS关联",
+          "摘要未给出迁移至光学船舶图像的证据",
+          "仅提供预训练目标设计，缺乏跨模态匹配机制"
+        ],
+        "decision": "候选",
+        "reason_zh": "SAR自监督预训练目标设计可能对船舶图像增强/表征有借鉴，但摘要无海事关联与跨模态证据，迁移需较大调整。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "80e70b31-91e4-4b98-983b-af8014ff6994"
+    },
+    "a3e3dc28f5e1d6cb5b323b5d7ef42d327c97589148f83498f151a717e768b82a": {
+      "paper_id": "2606.00991",
+      "title": "Large Language Models in Transportation Systems Management and Operations: From Text Reasoning to Multi-modal Decision Support",
+      "fingerprint": "a3e3dc28f5e1d6cb5b323b5d7ef42d327c97589148f83498f151a717e768b82a",
+      "evaluation": {
+        "paper_id": "2606.00991",
+        "task_type": "survey_LLM_transportation_decision_support",
+        "direct_relevance": 2,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "multi-modal fusion, and governance",
+            "interpretation_zh": "摘要将多模态融合列为交通系统管理中的反复出现的挑战之一，但未给出具体融合方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "仅为综述，未给出具体跨模态对齐或匹配算法",
+          "未提供可复现的输入、训练目标或结构细节",
+          "多模态融合仅为挑战性提及，无法支撑具体方法迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "综述性文章，仅泛泛提及多模态融合与决策支持，无具体可迁移的跨模态匹配或船舶感知方法。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "07cb5717-70df-439b-8200-bd629d2971fc"
+    },
+    "f6def7a10d1083dc1ddc18acf7f08c396b91ba5f5e4dbfaeb9cc4dd90ce4abc1": {
+      "paper_id": "2609.16189",
+      "title": "Position: AI Is Not Ready for Strategic Conflicts",
+      "fingerprint": "f6def7a10d1083dc1ddc18acf7f08c396b91ba5f5e4dbfaeb9cc4dd90ce4abc1",
+      "evaluation": {
+        "paper_id": "2609.16189",
+        "task_type": "position_paper_LM_wargame_safety",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "立场论文，不涉及感知、检测、匹配或传感融合方法",
+          "无实验与具体技术模块"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "讨论大语言模型在战略推演中的安全风险，与海事感知、跨模态匹配及船舶视觉任务无关。",
+        "confidence": 0.97
+      },
+      "model": "deepseek-flash",
+      "request_id": "07cb5717-70df-439b-8200-bd629d2971fc"
+    },
+    "92e526d8e72737e7bf6d25ef691cb270ad1b6af6a4832d57cc52003394f0157a": {
+      "paper_id": "doi:10.5281/zenodo.21476647",
+      "title": "Digital Transformation Strategies and Performance of Freight Forwarding Companies in Kenya",
+      "fingerprint": "92e526d8e72737e7bf6d25ef691cb270ad1b6af6a4832d57cc52003394f0157a",
+      "evaluation": {
+        "paper_id": "doi:10.5281/zenodo.21476647",
+        "task_type": "empirical_survey_digital_transformation_freight_forwarding",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "问卷统计研究，无感知或匹配算法",
+          "虽涉及货运代理但属管理学，与船舶视觉/AIS关联无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "肯尼亚货代企业数字化转型的问卷回归研究，不涉及任何感知、检测或跨模态匹配方法。",
+        "confidence": 0.98
+      },
+      "model": "deepseek-flash",
+      "request_id": "07cb5717-70df-439b-8200-bd629d2971fc"
+    },
+    "f80cdeee8786c3c5319e26788807bb0745c8ca23627412cca10963711b70ad24": {
+      "paper_id": "2607.19209",
+      "title": "Assessment in Team Problem-Solving Exercises in Computing Education",
+      "fingerprint": "f80cdeee8786c3c5319e26788807bb0745c8ca23627412cca10963711b70ad24",
+      "evaluation": {
+        "paper_id": "2607.19209",
+        "task_type": "team_assessment_education_LLM_clustering",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "教育评估场景，聚类与LLM评分不构成感知匹配方法",
+          "无跨模态表征或检测/分割技术证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究桌面推演教学中的团队评估方法，与海事感知及跨模态匹配无方法或任务联系。",
+        "confidence": 0.97
+      },
+      "model": "deepseek-flash",
+      "request_id": "07cb5717-70df-439b-8200-bd629d2971fc"
+    },
+    "febdf8abd5f607eab673b6f60b2003b17359fa7e282ce6c3c90422d68006ed79": {
+      "paper_id": "2607.17317",
+      "title": "TAPAS: Throughput-adaptive Perception for Autonomous Systems",
+      "fingerprint": "febdf8abd5f607eab673b6f60b2003b17359fa7e282ce6c3c90422d68006ed79",
+      "evaluation": {
+        "paper_id": "2607.17317",
+        "task_type": "throughput-adaptive perception resource allocation",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "We use Reinforcement Learning (RL) with RRM (Reward Reasoning Model) and a GRU (Gated Recurrent Unit) agent to orchestrate perception tasks across heterogeneous mobile/edge platforms.",
+            "interpretation_zh": "摘要用强化学习与GRU智能体在异构平台上编排感知任务，属于运行时资源调度而非船舶感知或跨模态匹配。",
+            "inference": false
+          },
+          {
+            "quote_en": "TAPAS achieves 93-100% throughput met rate while saving energy by 76%",
+            "interpretation_zh": "在KITTI上报告吞吐达成率与节能效果，未涉及海事数据或船舶任务。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦吞吐与能耗调度，未提及船舶检测、AIS关联或跨模态匹配",
+          "未说明可迁移到目标感知任务的训练目标或结构细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向移动/边缘平台感知吞吐调度，与船舶视觉、AIS关联或跨模态匹配无明确任务联系，方法迁移依据不足。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "b623f91c-b1ce-4d0b-b906-bd2a233d4509"
+    },
+    "2496117443d4684521b56a9ebbd4cf5b427f8929774f35d2c0e2ba3e1a520eeb": {
+      "paper_id": "2606.18532",
+      "title": "AI Sandboxes: A Threat Model, Taxonomy, and Measurement Framework",
+      "fingerprint": "2496117443d4684521b56a9ebbd4cf5b427f8929774f35d2c0e2ba3e1a520eeb",
+      "evaluation": {
+        "paper_id": "2606.18532",
+        "task_type": "AI sandbox assurance taxonomy",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We formalize the sandbox boundary and a weakest-link rule for composing per-dimension evidence into a bounded deployment claim",
+            "interpretation_zh": "提出沙箱边界与薄弱环节规则以组合多维证据，属评测保障框架，非感知算法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯评测与威胁模型框架，无船舶检测、跨模态匹配或可具体迁移的感知方法",
+          "摘要未涉及任何视觉或传感器处理流程"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "AI沙箱威胁模型与测量框架，与海事感知及跨模态匹配无任务或方法联系。",
+        "confidence": 0.95
+      },
+      "model": "deepseek-flash",
+      "request_id": "b623f91c-b1ce-4d0b-b906-bd2a233d4509"
+    },
+    "84a97f0877d5da50581b983e5438cae5395dc1b9d1d9719f1ba4aa8a8c7bee13": {
+      "paper_id": "2606.14741",
+      "title": "HorusEye: Language as Dynamic Attention for Emergency Visual Analysis",
+      "fingerprint": "84a97f0877d5da50581b983e5438cae5395dc1b9d1d9719f1ba4aa8a8c7bee13",
+      "evaluation": {
+        "paper_id": "2606.14741",
+        "task_type": "vision-language degradation benchmark and visual grounding",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "The first one is benchmarking RefCOCO-Degraded, a dataset of 15,244 images (3,811 base images x 4 conditions: Clean, Fog, Smoke and Thermal) with systematic visual degradation.",
+            "interpretation_zh": "构建含雾、烟、热成像等退化条件的视觉定位基准，涉及退化条件下的视觉分析。",
+            "inference": false
+          },
+          {
+            "quote_en": "Gemini achieves +47.3% improvement in thermal conditions through iterative language feedback",
+            "interpretation_zh": "报告迭代语言反馈在热成像条件下的提升，属多模态提示策略。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "through four research questions, we evaluate multiple VLMs (Gemini, Qwen2-VL, BLIP-2, LLaVA, Kosmos-2) across visual grounding",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "若迁移到视觉–AIS或跨模态匹配，需将语言提示替换为AIS/雷达结构化描述或文本属性，将视觉定位目标改为图像区域与AIS轨迹的匹配，并在雾、热成像等退化条件下重新评测；摘要未给出匹配训练目标或结构改动。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为应急场景视觉问答与定位，未涉及船舶或AIS",
+          "语言反馈效果依赖具体模型，迁移到结构化传感器模态需重新设计输入与目标",
+          "摘要未提供可迁移的对齐损失或匹配结构"
+        ],
+        "decision": "候选",
+        "reason_zh": "含退化条件视觉定位与多模态评测，可弱迁移至退化条件下跨模态匹配，但无海事任务与具体匹配方法，相关性有限。",
+        "confidence": 0.65
+      },
+      "model": "deepseek-flash",
+      "request_id": "b623f91c-b1ce-4d0b-b906-bd2a233d4509"
+    },
+    "3996c2cd86a8d6f4620ebfa8c0ec2afe330bc91bdc14553eb79d1b4e66251734": {
+      "paper_id": "2606.05216",
+      "title": "Semantic Communication for Non-Terrestrial Networks: A Survey from Platform Constraints to System Design",
+      "fingerprint": "3996c2cd86a8d6f4620ebfa8c0ec2afe330bc91bdc14553eb79d1b4e66251734",
+      "evaluation": {
+        "paper_id": "2606.05216",
+        "task_type": "semantic communication survey for non-terrestrial networks",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Semantic communication (SemCom), which transmits task-relevant meaning rather than exact bits, provides a promising way to address these constraints.",
+            "interpretation_zh": "讨论传输任务相关语义而非精确比特的通信范式，属通信系统设计而非感知匹配。",
+            "inference": false
+          },
+          {
+            "quote_en": "We then propose a five-plane taxonomy covering semantic representation and on-board encoding, channel-adaptive transmission, semantic networking, resource management, and distributed learning with knowledge-base maintenance",
+            "interpretation_zh": "提出语义通信五平面分类体系，未涉及船舶检测或跨模态关联任务。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "综述性质，面向非地面网络通信约束，未涉及船舶视觉或AIS关联",
+          "语义通信表述过于泛化，无法具体化为匹配任务的输入、训练目标或结构调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "非地面网络语义通信综述，与船舶感知、AIS关联及跨模态匹配无具体任务或方法联系。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "b623f91c-b1ce-4d0b-b906-bd2a233d4509"
+    },
+    "24072a99b238e06f33c52d891a06da33ecd803086c2d9c405206f11ff14d18f6": {
+      "paper_id": "2605.24578",
+      "title": "World Models as Group Actions",
+      "fingerprint": "24072a99b238e06f33c52d891a06da33ecd803086c2d9c405206f11ff14d18f6",
+      "evaluation": {
+        "paper_id": "2605.24578",
+        "task_type": "world_model_action_faithfulness",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "enforces identity, inverse, and composition consistency via latent-space regularization with synthesized supervision",
+            "interpretation_zh": "通过潜空间正则化与合成监督强制动作满足恒等、逆和复合一致性",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未涉及船舶、AIS、雷达或任何海事感知任务",
+          "未给出跨模态匹配或目标检测的具体输入/训练目标调整方案",
+          "群体动作一致性约束与视觉–AIS关联的结构适配不明确"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向视频世界模型的动作忠实性，无海事场景，也无具体跨模态匹配或船舶检测可迁移方法。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "b17d0397-e663-4d72-88ec-1689eed1f47c"
+    },
+    "5f6c2ac0d160accc2e4937b7d9c60b463b3e7803932a39f34e93fb5ce296be15": {
+      "paper_id": "2605.20729",
+      "title": "MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks",
+      "fingerprint": "5f6c2ac0d160accc2e4937b7d9c60b463b3e7803932a39f34e93fb5ce296be15",
+      "evaluation": {
+        "paper_id": "2605.20729",
+        "task_type": "conversational_retrieval_benchmark",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "a multi-agent system using greedy traversal clustering to generate high-fidelity dialogues",
+            "interpretation_zh": "用贪心遍历聚类的多智能体系统生成高保真对话",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯对话检索评测，与船舶视觉、AIS关联无关",
+          "生成式对话合成方法无法直接对应跨模态匹配或传感器融合"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "对话式检索基准构建，属纯NLP评测，与海事感知及跨模态对齐方法均无具体联系。",
+        "confidence": 0.92
+      },
+      "model": "deepseek-flash",
+      "request_id": "b17d0397-e663-4d72-88ec-1689eed1f47c"
+    },
+    "774aed9e66ebef443b476095bb29ee6afcea8ef4b98f049af0678b42c92db7b4": {
+      "paper_id": "2605.17225",
+      "title": "Can Large Audio Language Models Ignore Multilingual Distractors? An Evaluation of Their Selective Auditory Attention Capabilities",
+      "fingerprint": "774aed9e66ebef443b476095bb29ee6afcea8ef4b98f049af0678b42c92db7b4",
+      "evaluation": {
+        "paper_id": "2605.17225",
+        "task_type": "auditory_selective_attention_eval",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "evaluates models under (1) single-stream, (2) separation-based, and (3) end-to-end cocktail party settings across controlled SNRs",
+            "interpretation_zh": "在单流、基于分离和端到端鸡尾酒会设置下按信噪比评估模型",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "语音听觉注意评测，与视觉船舶任务无关",
+          "干扰源混淆概念未映射到跨模态负样本或传感器关联的具体方案"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "多语种听觉选择性注意评测，属语音领域，无海事感知联系，也不构成明确可迁移的视觉方法。",
+        "confidence": 0.92
+      },
+      "model": "deepseek-flash",
+      "request_id": "b17d0397-e663-4d72-88ec-1689eed1f47c"
+    },
+    "c7768d894e31030a9fa1dd26491676672e9bc7e8a3bd8a9f11b95bd6e284f952": {
+      "paper_id": "2605.13309",
+      "title": "SimART: A Unified and Open Real-world Multimodal Simulation Platform for 6G Integrated Sensing and Communication",
+      "fingerprint": "c7768d894e31030a9fa1dd26491676672e9bc7e8a3bd8a9f11b95bd6e284f952",
+      "evaluation": {
+        "paper_id": "2605.13309",
+        "task_type": "multimodal_simulation_platform_isac",
+        "direct_relevance": 2,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "A shared clock, a common coordinate frame, and timestamped messages keep the streams aligned in time and space",
+            "interpretation_zh": "共享时钟、统一坐标系与时间戳消息使多模态流在时空上对齐",
+            "inference": false
+          },
+          {
+            "quote_en": "converts both OpenStreetMap extracts and user-defined layouts into spatially aligned visual and electromagnetic assets",
+            "interpretation_zh": "将OSM提取与自定义布局转为空间对齐的视觉与电磁资产",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "为仿真平台，非真实船舶检测/分割或Radar–AIS关联算法",
+          "摘要未给出跨模态匹配或船舶任务的具体适配方案",
+          "仅提及maritime ISAC设置，无AIS或船舶视觉实验细节"
+        ],
+        "decision": "候选",
+        "reason_zh": "多模态时空对齐仿真平台，含海事设置，与多传感器时间空间同步相关，但不涉及AIS关联或船舶视觉具体方法。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "b17d0397-e663-4d72-88ec-1689eed1f47c"
+    },
+    "9184940a6aa4bdfa7afdf7634456dc0108666f8527817e3e528c2a6b20dccad8": {
+      "paper_id": "2605.12542",
+      "title": "Earth Science Foundation Models: From Perception to Reasoning and Discovery",
+      "fingerprint": "9184940a6aa4bdfa7afdf7634456dc0108666f8527817e3e528c2a6b20dccad8",
+      "evaluation": {
+        "paper_id": "2605.12542",
+        "task_type": "review",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "integrating heterogeneous multimodal data, such as multi-platform imagery, gridded reanalysis data, diverse geophysical and geochemical observations, and domain-specific text",
+            "interpretation_zh": "综述性文章讨论地球科学基础模型整合多平台影像、格点再分析数据、地球物理地球化学观测与文本，未提供具体可迁移的匹配或感知方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "综述文章，无具体方法实现或训练目标细节",
+          "不涉及船舶、AIS、跨模态匹配或缺失模态具体技术"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "地球科学基础模型综述，缺少可用于船舶感知或跨模态匹配的具体方法证据。",
+        "confidence": 0.92
+      },
+      "model": "deepseek-flash",
+      "request_id": "0db34485-00f1-4cb9-bea3-60e4063322db"
+    },
+    "e27a52ee4ab1b6fcebdb9b47f663910b6a13e01ccd3794cdc2dd3e45a4554333": {
+      "paper_id": "2606.00042",
+      "title": "TransResAI: A Compound AI System for Coastal Transportation Resilience",
+      "fingerprint": "e27a52ee4ab1b6fcebdb9b47f663910b6a13e01ccd3794cdc2dd3e45a4554333",
+      "evaluation": {
+        "paper_id": "2606.00042",
+        "task_type": "compound_ai_system_for_transportation_resilience",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "The system integrates a locally deployable Large Language Model (LLM) with modules for task decomposition, secure code generation, geospatial analysis, retrieval-augmented generation, and interactive map rendering.",
+            "interpretation_zh": "摘要描述用于沿海交通韧性分析的复合AI系统，集成LLM、任务分解、代码生成、地理空间分析与检索增强生成，属于决策支持与GIS工作流，不是船舶感知或跨模态匹配方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "系统面向洪水交通韧性分析与自然语言 GIS 交互，非视觉/雷达/AIS感知",
+          "未提供可迁移到船舶检测或跨模态匹配的训练或结构细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "沿海交通韧性LLM复合系统，无船舶感知、AIS关联或跨模态匹配的具体方法。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "0db34485-00f1-4cb9-bea3-60e4063322db"
+    },
+    "1240d628ec5247c030e8957935931157d67855765101b4ea90e94787c2c31504": {
+      "paper_id": "2604.17023",
+      "title": "The Instrumental Dissolution of Typing: Why AI Challenges the Keyboard Era in Knowledge Work",
+      "fingerprint": "1240d628ec5247c030e8957935931157d67855765101b4ea90e94787c2c31504",
+      "evaluation": {
+        "paper_id": "2604.17023",
+        "task_type": "hci_position_paper",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We propose seven interface primitives operationalizing verification-centered HCI.",
+            "interpretation_zh": "摘要提出以验证为中心的HCI界面原语，并讨论键盘工作被AI取代的社会技术议题，完全不含感知、检测、匹配或船舶相关内容。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "人机交互与知识工作理论文章，无任何感知算法或实验",
+          "与海事、跨模态匹配任务无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "讨论键盘时代与验证瓶颈的HCI理论文章，与船舶感知及跨模态匹配无方法联系。",
+        "confidence": 0.95
+      },
+      "model": "deepseek-flash",
+      "request_id": "0db34485-00f1-4cb9-bea3-60e4063322db"
+    },
+    "12ad171c797b76da149f9fb2ed884828a6e24bbae84cef9bd2eab7d4dd66490d": {
+      "paper_id": "2607.16196",
+      "title": "Design and Embedded Validation of Compact ML Models for Affective Touch Classification in a Soft Interactive Companion",
+      "fingerprint": "12ad171c797b76da149f9fb2ed884828a6e24bbae84cef9bd2eab7d4dd66490d",
+      "evaluation": {
+        "paper_id": "2607.16196",
+        "task_type": "触觉情感交互分类（软体机器人伴侣）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "a linear support-vector machine using 66 predefined time-domain features achieved the best overall result",
+            "interpretation_zh": "摘要报告用时域特征加线性SVM取得最佳总体结果；这是触觉手势分类的方法证据，与海事跨模态匹配无可说明的联系。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为触觉多通道时序分类，无视觉、雷达、AIS或船舶感知内容",
+          "未给出可迁移至跨模态匹配或船舶检测的具体输入、训练目标或结构适配方案"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "触觉情感交互分类，与海事视觉、AIS关联及跨模态匹配无明确任务或可具体说明的方法迁移路径。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "a49ea757-265b-4e4c-a5fb-e7437aaf2965"
+    },
+    "eaa03afe0a0062e7c5f4aee201f259a0c4e68eb6bda33784661be13749715faf": {
+      "paper_id": "2607.28629",
+      "title": "OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems",
+      "fingerprint": "eaa03afe0a0062e7c5f4aee201f259a0c4e68eb6bda33784661be13749715faf",
+      "evaluation": {
+        "paper_id": "2607.28629",
+        "task_type": "Agentic AI系统架构（LLM智能体推理/编排/执行）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "Ollama serves as the LLM inference layer and OpenClaw enables agent runtime orchestration",
+            "interpretation_zh": "摘要描述LLM推理层与智能体运行时编排的分层架构，不涉及感知表征或跨模态匹配。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯LLM智能体系统架构，无视觉/雷达/AIS感知方法",
+          "未提供可用于船舶感知任务的具体输入、训练目标或结构迁移证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属于智能体系统架构与LLM编排，与船舶感知、跨模态匹配无任务联系，也无具体可迁移的感知方法。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "a49ea757-265b-4e4c-a5fb-e7437aaf2965"
+    },
+    "6d01d8077ce01e6431bb4bd31964dbb903609dc01152bd20da4241749fe21173": {
+      "paper_id": "2604.15395",
+      "title": "Foundation Models in Robotics: A Comprehensive Review of Methods, Models, Datasets, Challenges and Future Research Directions",
+      "fingerprint": "6d01d8077ce01e6431bb4bd31964dbb903609dc01152bd20da4241749fe21173",
+      "evaluation": {
+        "paper_id": "2604.15395",
+        "task_type": "机器人基础模型综述",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "the current study provides a holistic, systematic, and in-depth review of the research landscape of FMs in robotics",
+            "interpretation_zh": "该文为机器人基础模型综述，仅泛泛提及多模态理解与多传感器泛化，未给出可具体迁移的方法细节。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "综述性质，摘要未提供可复现的具体方法、模块或训练目标",
+          "机器人任务与船舶视觉、AIS关联无明确感知任务连接",
+          "摘要未说明可迁移至跨模态匹配或船舶检测的输入/训练/结构调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人基础模型综述，仅泛泛提及多模态，无具体可迁移方法细节，也无海事感知任务联系。",
+        "confidence": 0.88
+      },
+      "model": "deepseek-flash",
+      "request_id": "a49ea757-265b-4e4c-a5fb-e7437aaf2965"
     }
   }
 }
