@@ -52,4 +52,4 @@ python skills/rs-paper-pipeline/scripts/update_maritime.py --resume --no-open
 
 该命令触发现有云端工作流并显示任务链接；本地模型清理应在真实成功后继续执行。
 
-测试：Python149项、Node45项通过，含SHA/身份失配拒绝、中文字段定向升级、人工译文优先、原英文/标题/笔记保护；git diff --check及密钥模式扫描通过。核心提交c4a9d60对应Pages运行41458372134已completed/success。真实HTTPS读取每日HTML、latest五篇JSON、旧快照升级清单均HTTP200，与本地一致；补充升级函数提交5cb5ba2的第二次Pages部署尚在核验。完整云端更新和实体手机实测仍未完成。
+测试：Python149项、Node45项通过，含SHA/身份失配拒绝、中文字段定向升级、人工译文优先、原英文/标题/笔记保护；git diff --check及密钥模式扫描通过。核心提交c4a9d60对应Pages运行41458372134已completed/success。真实HTTPS读取每日HTML、latest五篇JSON、旧快照升级清单均HTTP200，与本地一致；补充升级函数提交5cb5ba2对应Pages运行41458559184也completed/success，新脚本经HTTPS读取与本地一致。完整云端更新和实体手机实测仍未完成。
