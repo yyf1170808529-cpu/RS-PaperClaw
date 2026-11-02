@@ -539588,7 +539588,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-26T10:16:35.062594+00:00",
+        "checked_at": "2026-11-02T12:37:13.428001+00:00",
         "url": "https://doi.org/10.1007/978-3-032-37679-4_4",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -647284,21 +647284,21 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-11-02T02:34:55.902310+00:00",
-    "completed_at": "2026-11-02T02:51:43.399690+00:00",
-    "local_update": "partial",
-    "jobs": 42,
-    "successful": 39,
+    "run_id": "2026-11-02T12:36:09.593648+00:00",
+    "completed_at": "2026-11-02T12:38:10.360935+00:00",
+    "local_update": "success",
+    "jobs": 0,
+    "successful": 0,
     "incomplete": 0,
-    "failed": 3,
-    "added": 4,
+    "failed": 0,
+    "added": 0,
     "filled": 0,
     "merged": 0,
-    "before_count": 4111,
+    "before_count": 4115,
     "after_count": 4115,
     "translation": {
-      "translated": 5,
-      "cached": 0,
+      "translated": 0,
+      "cached": 5,
       "manual": 0,
       "failed": 0,
       "missing_english": 0,
@@ -647309,17 +647309,9 @@
         "2609.20160",
         "2609.25584",
         "2609.28956",
-        "2609.32844",
         "2609.33996"
       ],
-      "replacement_failures": [
-        {
-          "paper_id": "2609.32844",
-          "attempt_date": "2026-11-02",
-          "reason": "translation_incomplete: model omitted segment: masking, block-wise masking addresses this multi-pixel speckle correlation by re",
-          "english_hash": "ddeeedaf21afc3216750fca6145a688cb8fcb41e8b543791da4a573247c31b11"
-        }
-      ],
+      "replacement_failures": [],
       "selected": 5,
       "engine": "Argos Translate (CPU)",
       "api_calls": 0,
@@ -647377,27 +647369,21 @@
       ]
     ],
     "ai": {
-      "status": "partial",
-      "processed": 22,
-      "cached": 1221,
-      "failed": 1,
-      "cost_upper_cny": 0.08211887999999999,
-      "priced_cost_cny": 0.08211887999999999,
+      "status": "deferred",
+      "processed": 0,
+      "cached": 1243,
+      "failed": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
       "unsettled_upper_cny": 0.0,
-      "tokens": 29334,
+      "tokens": 0,
       "missing_abstract": 0,
       "candidate_count": 1244,
-      "already_attempted_today": 0,
-      "pending_total": 23,
+      "already_attempted_today": 1,
+      "pending_total": 0,
       "limit_deferred": 0,
       "selected_count": 5,
       "ai_reviewed": 907,
-      "validation_errors": [
-        {
-          "paper_id": "2605.10739",
-          "reason": "Evidence is not an exact abstract quotation"
-        }
-      ],
       "shortfall": 0,
       "ai_states": {
         "evaluated": 907,
@@ -647405,78 +647391,30 @@
         "unassessed": 1
       },
       "publication_status": "complete",
-      "reserve_available": 6
+      "reserve_available": 1
     },
     "affiliations": [
+      {
+        "paper_id": "2609.33996",
+        "status": "cached_unverified"
+      },
+      {
+        "paper_id": "2609.28956",
+        "status": "cached_unverified"
+      },
       {
         "paper_id": "2609.25584",
         "status": "cached_verified",
         "source": "OpenAlex first authorship"
       },
       {
-        "paper_id": "2609.28956",
-        "revision": 1,
-        "time": "2026-11-02T02:50:37.123504+00:00",
-        "status": "unverified",
-        "attempts": [
-          {
-            "source": "crossref",
-            "status": "unavailable",
-            "error": "api.crossref.org HTTP 404: Resource not found."
-          },
-          {
-            "source": "openalex",
-            "status": "received"
-          },
-          {
-            "source": "arxiv",
-            "status": "received"
-          }
-        ]
-      },
-      {
-        "paper_id": "2609.33996",
-        "revision": 1,
-        "time": "2026-11-02T02:50:37.123504+00:00",
-        "status": "unverified",
-        "attempts": [
-          {
-            "source": "openalex_title",
-            "status": "received"
-          },
-          {
-            "source": "arxiv",
-            "status": "received"
-          }
-        ]
-      },
-      {
         "paper_id": "2609.20160",
-        "revision": 1,
-        "time": "2026-11-02T02:50:37.123504+00:00",
-        "status": "unverified",
-        "attempts": [
-          {
-            "source": "openalex_title",
-            "status": "received"
-          },
-          {
-            "source": "arxiv",
-            "status": "received"
-          }
-        ]
+        "status": "cached_unverified"
       },
       {
-        "paper_id": "2609.32844",
-        "revision": 1,
-        "time": "2026-11-02T02:50:37.123504+00:00",
-        "status": "verified",
-        "attempts": [
-          {
-            "source": "openalex_title",
-            "status": "received"
-          }
-        ]
+        "paper_id": "2507.12297",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
       }
     ],
     "daily_selected": 5,
@@ -647485,8 +647423,8 @@
     "published_daily_count": 5,
     "github_sync": "not_attempted",
     "pages_publish": "not_attempted",
-    "retrieval_status": "partial",
-    "github_run_id": "41378387358"
+    "retrieval_status": "not_run_resume",
+    "github_run_id": "41445871189"
   },
   "recommendation_policy": {
     "schema_version": 2,

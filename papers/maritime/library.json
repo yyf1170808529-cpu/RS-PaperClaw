@@ -543282,6 +543282,29 @@
           "venue": "",
           "first_author_affiliations": [],
           "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2609.32844",
+          "title": "Mask2Restore: Self-Supervised Ultrasound Despeckling via Inpainting",
+          "authors": [
+            "Xuesong Li",
+            "Yingtai Xu",
+            "Zhongliang Jiang",
+            "Nassir Navab",
+            "Yuan Bi"
+          ],
+          "abstract": "Medical ultrasound (US) is inherently degraded by speckle, a granular interference pattern that is often treated as a complex form of noise in image restoration. However, unlike random noise, US speckle originates from coherent scattering within tissue and is therefore highly spatially dependent and deterministic under fixed acquisition conditions, making US speckle suppression fundamentally different from natural image denoising. Because speckle-free US targets are unavailable in practice, self-supervised denoising is necessary. Blind-spot networks (BSN) are the dominant self-supervised paradigm for natural images, but their pixel-wise masking strategy assumes spatially independent noise, an assumption poorly matched to US speckle, which is spatially correlated over multiple pixels rather than pixel-wise independent. To address this mismatch, we propose Mask2Restore, a self-supervised US despeckling framework that reformulates despeckling as contextual inpainting with block-wise masking on single noisy images. Unlike pixel-wise BSN masking, block-wise masking addresses this multi-pixel speckle correlation by removing locally correlated speckle neighborhoods and shifting the reconstruction cues used by the network from adjacent speckle correlations to broader anatomical context. We further introduce cross-resolution context regularization (CRCR), which suppresses residual speckle bias by enforcing consistency across multi-resolution predictions. Experiments on simulated and in vivo carotid US, unseen fine-structure cases, and downstream cardiac segmentation demonstrate improved speckle-detail trade-offs, better preservation of fine anatomical structures, and practical value for subsequent image analysis.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-09-26",
+          "venue": "",
+          "first_author_affiliations": [
+            "Computer Aided Medical Procedures (CAMP) , Technical University of Munich , Munich , Germany;",
+            "Munich Center for Machine Learning (MCML) , Munich , Germany;"
+          ],
+          "publication_evidence": null
         }
       ],
       "metadata_source": [
@@ -656763,7 +656786,7 @@
       "resource_type_label": "研究预印本",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-26T10:16:35.062594+00:00",
+        "checked_at": "2026-11-02T12:37:13.428001+00:00",
         "url": "https://doi.org/10.1007/978-3-032-37679-4_4",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -763439,6 +763462,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-11-02T02:49:16.259795+00:00"
+    },
+    {
+      "missing_before": 1288,
+      "missing_after": 1288,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-02T12:37:13.422175+00:00"
     }
   ],
   "translation_batches": [
