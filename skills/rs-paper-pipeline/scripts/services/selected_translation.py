@@ -11,6 +11,9 @@ def chosen_zh(paper, daily=False):
     value = paper.get('translation') or {}
     if value.get('status') == 'manual' and isinstance(value.get('zh'), str) and value['zh'].strip():
         return value['zh'], 'manual'
+    from services.reading_translation import cached
+    enriched=cached(paper)
+    if enriched:return enriched['content']['abstract_zh'],'deepseek'
     if cached_translation(paper):
         return value['zh'], 'argos'
     # Historical DeepSeek results stay in selected_translation but do not override
@@ -40,12 +43,18 @@ def translation_issue(paper):
     return translation_error(paper['abstract'], value.get('zh')) or '本地译文尚未生成'
 
 
-def translate_selected(root, library, day, config=None, seconds=180):
+def translate_selected(root, library, day, config=None, seconds=180, enrichment=False):
     import time
     import hashlib
     from services.mobile_digest import select_daily
     from services.maritime import library_path, write_json
     from services.maritime_update import translate_budget
+    def billing():
+        from services.maritime import read_json
+        values=read_json(root/'papers/maritime/private/deepseek/usage.json',{'days':{}})
+        records=[r for d in values['days'].values() for r in d.get('requests',[]) if r.get('purpose')=='daily_translation']
+        return len(records),sum(r.get('cost_upper_cny',0) for r in records)
+    before_billing=billing() if enrichment else (0,0)
     save=lambda: write_json(library_path(root), library)
     deadline=time.monotonic()+seconds
     attempted=set(); failures=[]; result={}
@@ -56,20 +65,33 @@ def translate_selected(root, library, day, config=None, seconds=180):
         save()
         todo=[key for key in keys if key not in attempted]
         if not todo or time.monotonic()>=deadline:break
-        counts=translate_budget(library,todo,len(todo),max(.01,deadline-time.monotonic()),save,selected=True)
+        if enrichment:
+            from services.reading_translation import enrich
+            counts={'translated':0,'failed':0,'cached':0}
+            for key in todo:
+                try:
+                    from services.reading_translation import cached
+                    was_cached=bool(cached(library['papers'][key]))
+                    enrich(root,library['papers'][key]);counts['cached' if was_cached else 'translated']+=1
+                except Exception as exc:
+                    library['papers'][key]['reading_enrichment_error']=str(exc);counts['failed']+=1
+                save()
+        else:counts=translate_budget(library,todo,len(todo),max(.01,deadline-time.monotonic()),save,selected=True)
         for name,count in counts.items():result[name]=result.get(name,0)+count
         attempted.update(todo)
         for key in todo:
             p=library['papers'][key]
-            if chosen_zh(p)[0]:
+            from services.reading_translation import cached
+            if (cached(p) if enrichment else chosen_zh(p)[0]):
                 library.setdefault('selected_translation_repairs',{}).pop(key,None)
                 continue
             failure={'paper_id':key,'attempt_date':str(day),'reason':translation_issue(p),
-                     'english_hash':hashlib.sha256(p.get('abstract','').encode()).hexdigest()}
+                     'requires_enrichment':enrichment,'english_hash':hashlib.sha256(p.get('abstract','').encode()).hexdigest()}
             failures.append(failure)
             library.setdefault('selected_translation_repairs',{})[key]=failure
         save()
-        if all(chosen_zh(library['papers'][key])[0] for key in keys):break
+        from services.reading_translation import cached
+        if all(cached(library['papers'][key]) if enrichment else chosen_zh(library['papers'][key])[0] for key in keys):break
     chosen, _ = select_daily(root, library, day, config=config)
     keys=[p['paper_id'] for p,_,_ in chosen]
     for name in ('translated','cached','manual','failed','pending','missing_english','skipped_failed'):result.setdefault(name,0)
@@ -78,6 +100,8 @@ def translate_selected(root, library, day, config=None, seconds=180):
     result.update(selected=len(keys), engine='Argos Translate (CPU)', api_calls=0,
                   cost_upper_cny=0.0, priced_cost_cny=0.0)
     result['papers'] = [{'paper_id': key, 'source': chosen_zh(library['papers'][key])[1],
-                        'error': translation_issue(library['papers'][key])} for key in keys]
+                        'error': (library['papers'][key].get('reading_enrichment_error','DeepSeek enrichment unavailable') if enrichment and not cached(library['papers'][key]) else translation_issue(library['papers'][key]))} for key in keys]
     result['failed'] = sum(bool(p['error']) for p in result['papers'])
+    if enrichment:
+        after=billing();result.update(engine='DeepSeek',api_calls=after[0]-before_billing[0],cost_upper_cny=after[1]-before_billing[1])
     return result

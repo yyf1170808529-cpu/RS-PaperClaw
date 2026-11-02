@@ -82,7 +82,7 @@
           if(authors.length>5){const d=el('details');d.append(el('summary','查看全部作者'),el('p',authors.join('、')));article.append(d);}
           const verified=p.affiliation_verified&&p.affiliation_source&&authors[0]&&p.first_author?.trim().toLowerCase()===authors[0].trim().toLowerCase();
           const affiliation=verified&&p.first_author_affiliations?.[0];
-          article.append(el('p','第一作者单位：'+(affiliation||'待核实')+(affiliation?'（'+p.affiliation_source+'）':'')),el('p',p.source||''),el('p',(p.level||'')+' · AI相关分 '+p.ai_score+'/100 '+(p.selection_source||'')),el('p',p.reason||''));
+          article.append(el('p','第一作者单位：'+(affiliation||'待核实')+(affiliation?'（'+p.affiliation_source+'）':'')),el('p',p.source||''),el('p',(p.level||'')+' · AI相关分 '+p.ai_score+'/100 '+(p.selection_source||'')),el('p','论文内容：'+(p.summary_zh||'')),el('p','迁移思路：'+(p.migration_zh||'')));
           const abstracts=el('details'),english=el('p',p.abstract);english.lang='en';abstracts.append(el('summary','查看摘要（中文 / English）'),el('p',p.abstract_zh),english);article.append(abstracts);
           const actions=el('div');actions.className='paper-actions';
           const prompt=el('button','Prompt');prompt.type='button';prompt.dataset.promptPaper=p.paper_id;
@@ -102,6 +102,22 @@
           if(doc.activeElement?.tagName==='TEXTAREA'||doc.querySelector('.paper-panels details[open]'))return;
           const corrections=await win.fetch(prefix+'maritime-data/mobile/content-corrections.json',{cache:'no-store'});
           if(corrections.ok)render(progress.correct((await corrections.json()).records||{}));
+          if(win.crypto?.subtle){
+            const response=await win.fetch(prefix+'maritime-data/mobile/translation-upgrades.json',{cache:'no-store'});
+            if(response.ok){
+              const upgrades=(await response.json()).records||[];const state=progress.read();let changed=false;
+              for(const p of state.batch.payload.papers){
+                const digest=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',new TextEncoder().encode(p.abstract)))).map(n=>n.toString(16).padStart(2,'0')).join('');
+                const upgrade=upgrades.find(u=>normalize(u.paper_id)===normalize(p.paper_id)&&u.english_hash===digest&&u.status==='success');
+                if(upgrade&&p.enrichment_version!==upgrade.prompt_version){
+                  Object.assign(p,{summary_zh:upgrade.content.summary_zh,migration_zh:upgrade.content.migration_zh,enrichment_version:upgrade.prompt_version});
+                  if(p.translation_source!=='manual')Object.assign(p,{abstract_zh:upgrade.content.abstract_zh,translation_source:'deepseek'});
+                  changed=true;
+                }
+              }
+              if(changed){win.localStorage.setItem(KEY,JSON.stringify(state));rendered='';render(state);}
+            }
+          }
           const state=progress.read();render(state);
           if(!state.completed||beijingDate()<=state.completed_date)return;
           // Do not replace an editor while the user is writing a favorite note.

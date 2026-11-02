@@ -233,7 +233,9 @@ def run_update(args, library, rules):
     save()
     print('[译] 精选摘要翻译：开始；普通历史库翻译可单独运行',flush=True)
     from services.selected_translation import translate_selected
-    try:translations=translate_selected(args.root,library,end,semantic_config,args.translation_timeout)
+    try:
+        library['reading_enrichment_enabled']=True
+        translations=translate_selected(args.root,library,end,semantic_config,args.translation_timeout,enrichment=True)
     except Exception as exc:translations={'selected':0,'translated':0,'cached':0,'manual':0,'failed':1,'cost_upper_cny':0,'priced_cost_cny':0,'reason':str(exc)}
     save()
     print('[译] '+json.dumps(translations,ensure_ascii=False),flush=True)

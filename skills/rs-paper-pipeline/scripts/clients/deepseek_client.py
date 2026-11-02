@@ -45,10 +45,12 @@ def complete(root, payload, config):
     with update_lock(lock):
         ledger=read_json(path,{'days':{}})
         account=ledger['days'].setdefault(day,{'charged_upper_cny':0,'reserved_cny':0,'requests':[]})
-        if account['charged_upper_cny']+account['reserved_cny']+ceiling>config['daily_budget_cny']:
+        purpose=config.get('purpose','screening')
+        category=sum(r.get('cost_upper_cny',0) if r['status']=='completed' else r.get('reservation_cny',0) for r in account['requests'] if r.get('purpose','screening')==purpose)
+        if category+ceiling>config.get('category_budget_cny',config['daily_budget_cny']) or account['charged_upper_cny']+account['reserved_cny']+ceiling>config.get('total_budget_cny',3.5):
             raise RuntimeError('Daily DeepSeek budget reached; ordinary archive unchanged')
         account['reserved_cny']+=ceiling
-        account['requests'].append({'status':'pending','reservation_cny':ceiling})
+        account['requests'].append({'status':'pending','reservation_cny':ceiling,'purpose':purpose})
         index=len(account['requests'])-1
         write_json(path,ledger)
     try:
@@ -66,7 +68,7 @@ def complete(root, payload, config):
             account=ledger['days'][day]
             account['reserved_cny']=max(0,account['reserved_cny']-ceiling)
             account['charged_upper_cny']+=charged
-            account['requests'][index]={'status':'completed','id':result.get('id'),'model':result.get('model'),
+            account['requests'][index]={'status':'completed','purpose':purpose,'id':result.get('id'),'model':result.get('model'),
                 'created':result.get('created'),'usage':usage,'cost_upper_cny':charged,'reservation_cny':ceiling}
             write_json(path,ledger)
         return result,charged
