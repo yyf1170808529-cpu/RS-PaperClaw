@@ -396,10 +396,9 @@ def main(argv=None):
                     for term in terms:
                         has("", term)
             print(f"OK: Python {sys.version.split()[0]}, A/B/C/D 配置、Prompt、标准库可用。无须 LLM/GitHub Token。归档: {root}")
-            import importlib.util
             import shutil
             venues, policy = v2.assets()
-            print(f"V2 来源候选={len(venues['journals'])}；CAS年份={policy['cas_year']}；Argos已安装={importlib.util.find_spec('argostranslate') is not None}；pdftotext可用={shutil.which('pdftotext') is not None}")
+            print(f"V2 来源候选={len(venues['journals'])}；CAS年份={policy['cas_year']}；精选精译=DeepSeek（另需DEEPSEEK_API_KEY），无需本地翻译模型；pdftotext可用={shutil.which('pdftotext') is not None}")
             return 0
         if args.action == "fetch":
             if not (1 <= args.days <= 366 and 1 <= args.page_size <= 2000 and args.max_pages > 0 and args.retries > 0 and args.timeout > 0):

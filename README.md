@@ -275,3 +275,12 @@ V3.4试验限制详见 `MARITIME_V3_4_API_EVALUATION_REPORT.md`。V3.5手机使�
 云端每天北京时间07:20完整更新（UTC `20 23 * * *`，UTC日期为前一天），12:20仅恢复AI审核、翻译及发布（UTC `20 4 * * *`，跳过来源检索）。手动一键更新、单一云端写入、15篇储备目标及每日2元预算保持不变。收藏和笔记仍仅存浏览器，云端不读写私人笔记。
 
 按[DeepSeek官方价格说明](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)，北京时间工作日（不含中国法定节假日）09:00–12:00、14:00–18:00为高峰，其余时段半价。这两个定时均落在半价时段；现有任务运行上限45分钟，正常启动时最晚约08:05、13:05结束，分别距高峰55分钟。[GitHub定时任务可能延迟或被丢弃](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)，45分钟上限不包含排队时间；延迟超过55分钟时，后续AI请求仍可能跨入高峰，不能保证全部半价。手动更新不受这两个定时时刻限制，现有预算仍生效。
+
+
+### V3.8.6 精译与运行环境
+
+每日正式精选五篇使用 DeepSeek 生成论文内容、迁移思路和完整中文摘要，复用摘要哈希缓存；人工译文优先。10月24日、10月31日、11月1日和11月2日的有效阅读批次已定向升级，浏览器旧快照仅更新中文字段。
+
+Argos、Stanza、CTranslate2、PyTorch 和项目翻译模型已退役，不再安装或下载。历史 Argos 译文保留。日常仍由原 GitHub Actions 自动执行；无 Key 时不会重复付费或用不完整新日报覆盖上一完整批次。本地基础检索仍可无 LLM API 运行。
+
+验收与清理证据见 [V3.8.6 completion report](MARITIME_V3_8_6_COMPLETION_REPORT.md)。
