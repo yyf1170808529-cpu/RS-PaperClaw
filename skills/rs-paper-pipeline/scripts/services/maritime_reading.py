@@ -75,57 +75,8 @@ def cached_translation(paper):
             and translation_error(paper.get("abstract", ""), value.get("zh")) is None)
 
 
-def configure_argos():
-    private = Path(__file__).resolve().parents[4] / "papers/maritime/private/translation"
-    for variable, folder in (("XDG_DATA_HOME", "data"), ("XDG_CONFIG_HOME", "config"), ("XDG_CACHE_HOME", "cache"), ("STANZA_RESOURCES_DIR", "stanza")):
-        os.environ.setdefault(variable, str(private / folder))
-    os.environ["ARGOS_DEVICE_TYPE"] = "cpu"
-    os.environ.setdefault("ARGOS_INTRA_THREADS", "2")
-    os.environ.setdefault("OMP_NUM_THREADS", "2")
-
-
 def argos_translator(resources_path=None):
-    """Use installed Argos decoder; avoid incompatible legacy Stanza sentence splitting."""
-    configure_argos()
-    from argostranslate import translate
-    import stanza
-    languages=translate.get_installed_languages()
-    en=next((x for x in languages if x.code=='en'),None)
-    zh=next((x for x in languages if x.code=='zh'),None)
-    if not en or not zh:raise RuntimeError('Install the optional en→zh Argos model first')
-    pair=en.get_translation(zh)
-    packaged=getattr(pair,'underlying',pair)
-    sentencizer=getattr(packaged,'sentencizer',None)
-    if sentencizer is not None and hasattr(sentencizer,'stanza_pipeline') and sentencizer.stanza_pipeline is None:
-        directory=packaged.pkg.package_path/'stanza'
-        resource=Path(resources_path) if resources_path else directory/'resources.json'
-        content=json.loads(resource.read_text(encoding='utf8'))
-        lang=sentencizer.stanza_lang_code
-        class OfflineEnglishSentencizer:
-            def split_sentences(self,text):
-                return [x for x in re.split(r'(?<=[.!?])\s+(?=[A-Z])',text) if x.strip()]
-        if 'packages' not in content.get(lang,{}):
-            # Legacy Argos tokenizer weights also lack newer Stanza feat_dropout.
-            # Keep the installed Argos decoder; English boundary splitting needs no model.
-            packaged.sentencizer=OfflineEnglishSentencizer()
-        else:
-            try:
-                sentencizer.stanza_pipeline=stanza.Pipeline(lang=lang,dir=str(directory),resources_filepath=str(resource),
-                    processors='tokenize',use_gpu=False,download_method=None,logging_level='WARNING')
-            except (KeyError,FileNotFoundError):
-                # A cache may contain refreshed JSON but old or incomplete SBD weights.
-                # This fallback never replaces or hides a missing translation decoder.
-                packaged.sentencizer=OfflineEnglishSentencizer()
-    def inference(text):
-        values=pair.hypotheses(text,num_hypotheses=4)
-        return next((v.value for v in values if v.value.strip() and len(v.value)>=len(text)*.08 and not repeated_text(v.value)),'')
-    return inference
-
-
-def translation_smoke():
-    result=translate_one({'abstract':'We propose a robust object tracking method.'})
-    if result.get('status')!='machine':raise RuntimeError('Argos smoke failed: '+result.get('error','unknown'))
-    return {'status':'success','english':'We propose a robust object tracking method.','chinese':result['zh']}
+    raise RuntimeError('Argos retired; use selected-paper DeepSeek enrichment')
 
 
 def translate_one(paper, translator=None):
@@ -191,17 +142,7 @@ def translate_one(paper, translator=None):
 
 
 def install_model(path=None):
-    configure_argos()
-    from argostranslate import package
-    if path:
-        package.install_from_path(path)
-    else:
-        if any(p.from_code == "en" and p.to_code == "zh" for p in package.get_installed_packages()):
-            print("English-to-Chinese model already installed; no download needed.")
-            return
-        package.update_package_index()
-        model = next(p for p in package.get_available_packages() if p.from_code == "en" and p.to_code == "zh")
-        package.install_from_path(model.download())
+    raise RuntimeError('Argos installation retired; no model download is required')
 
 
 def translate_available(library, keys):

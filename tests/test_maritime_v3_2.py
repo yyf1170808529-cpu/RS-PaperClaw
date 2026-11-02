@@ -85,7 +85,7 @@ class CoverageTests(unittest.TestCase):
         b={**paper(),'paper_id':'b','assessment':{'level':'general'},'quality':{}}
         self.assertEqual(reading.translation_order({'papers':{'a':a,'b':b}})[0],'a')
         lib={'papers':{'a':{**a,'abstract':''},'b':{**b,'translation':{'status':'manual','zh':'保留'}}}}
-        with patch.object(update,'_translation_worker',side_effect=AssertionError('Model should not run')):
+        with patch.object(reading,'argos_translator',side_effect=AssertionError('Model should not run')):
             counts=update.translate_budget(lib,['a','b'],25,10,lambda:None,retry_failed=False)
         self.assertEqual(counts['missing_english'],1)
         self.assertEqual(counts['manual'],1)

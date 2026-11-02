@@ -77,86 +77,16 @@ def bounded_fetch(job, args, start, end):
         queue.close()
 
 
-def _translation_worker(queue, papers):
-    translator=None
-    for paper in papers:
-        if translator is None:
-            try:translator=reading.argos_translator()
-            except Exception:
-                queue.put((paper['paper_id'],reading.translate_one(paper)));continue
-        result=reading.translate_one(paper,translator)
-        if result.get('error_type')=='translation_validation_failed':
-            previous=result
-            result=reading.translate_one(paper,translator)
-            result['retry_attempts']=1;result['previous_attempt_error']=previous.get('error')
-        queue.put((paper["paper_id"], result))
-    queue.put((None, None))
-
-
 def translate_budget(library, keys, limit, seconds, save, retry_failed=True, selected=False):
-    import multiprocessing
-    from queue import Empty
-    from services.maritime_validity import eligible_paper
-    counts = {"translated": 0, "cached": 0, "manual": 0, "failed": 0, "missing_english": 0, "pending": 0, "skipped_failed": 0}
-    work = []
+    # Compatibility for historical local data: never infer or pay on the full library.
+    counts={k:0 for k in ('translated','cached','manual','failed','missing_english','pending','skipped_failed')}
     for key in dict.fromkeys(keys):
-        p = library["papers"][key]
-        if not eligible_paper(p) or (not selected and p.get("assessment", {}).get("level") == "excluded"):
-            continue
-        t = p.get("translation", {})
-        if t.get("status") == "manual":
-            counts["manual"] += 1
-        elif not p.get("abstract", "").strip():
-            counts["missing_english"] += 1
-        elif reading.cached_translation(p):
-            counts["cached"] += 1
-        elif t.get("status") == "failed" and not retry_failed:
-            counts["skipped_failed"] += 1
-        else:
-            work.append(p)
-    counts["pending"] = max(0, len(work) - limit)
-    work = work[:limit]
-    if not work:
-        return counts
-    context = multiprocessing.get_context("spawn")
-    queue = context.Queue()
-    process = context.Process(target=_translation_worker, args=(queue, work))
-    process.start()
-    done = set()
-    deadline = time.monotonic() + seconds
-    try:
-        while time.monotonic() < deadline:
-            try:
-                key, result = queue.get(timeout=min(15, max(.01, deadline-time.monotonic())))
-                if key is None:
-                    break
-                paper = library["papers"][key]
-                previous = paper.get("translation")
-                if previous and previous != result:
-                    paper.setdefault("translation_history", []).append(previous)
-                paper["translation"] = result
-                if result["status"] == "machine":
-                    library["papers"][key].pop("translation_pending", None)
-                counts["translated" if result["status"] == "machine" else "failed"] += 1
-                done.add(key)
-                save()
-                print(f"中文翻译 {len(done)}/{len(work)}：{key} {result['status']} {result.get('error_type', '')}", flush=True)
-            except Empty:
-                print(f"中文翻译仍在运行：已完成 {len(done)}/{len(work)}，阶段上限 {seconds}s", flush=True)
-                if not process.is_alive():
-                    break
-    finally:
-        if process.is_alive():
-            process.terminate()
-        process.join()
-        queue.close()
-    for p in work:
-        if p["paper_id"] not in done:
-            if not reading.cached_translation(p) and p.get('translation',{}).get('status')!='manual':
-                p["translation"] = {**p.get("translation", {}), "status": "failed", "error_type": "model_runtime_error",
-                                    "error": "Translation worker exceeded time budget or exited; English preserved"}
-            counts["failed"] += 1
-    save()
+        p=library['papers'][key];value=p.get('translation',{})
+        if value.get('status')=='manual':counts['manual']+=1
+        elif not p.get('abstract'):counts['missing_english']+=1
+        elif reading.cached_translation(p):counts['cached']+=1
+        elif value.get('status')=='failed' and not retry_failed:counts['skipped_failed']+=1
+        else:counts['pending']+=1
     return counts
 
 

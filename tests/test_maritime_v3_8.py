@@ -64,21 +64,10 @@ class CloudReserveTests(unittest.TestCase):
         with patch('subprocess.run',side_effect=fake):
             self.assertIn('保留本地开发修改',cloud_update.pull_public(Path('.')))
 
-    def test_legacy_argos_resources_do_not_initialize_incompatible_stanza(self):
-        from types import SimpleNamespace
-        from services.maritime_reading import argos_translator
-        with tempfile.TemporaryDirectory() as d:
-            directory=Path(d);(directory/'stanza').mkdir()
-            (directory/'stanza/resources.json').write_text(json.dumps({'en':{'tokenize':{'ewt':{}}}}))
-            pair=SimpleNamespace(pkg=SimpleNamespace(package_path=directory),sentencizer=SimpleNamespace(stanza_pipeline=None,stanza_lang_code='en'))
-            pair.hypotheses=lambda text,num_hypotheses:[SimpleNamespace(value='中文译文')]
-            langs=[SimpleNamespace(code='en',get_translation=lambda zh:pair),SimpleNamespace(code='zh')]
-            stanza=SimpleNamespace(Pipeline=__import__('unittest.mock',fromlist=['Mock']).Mock())
-            fake=SimpleNamespace(translate=SimpleNamespace(get_installed_languages=lambda:langs))
-            with patch.dict(sys.modules,{'argostranslate':fake,'stanza':stanza}):
-                translator=argos_translator();self.assertEqual(translator('English'),'中文译文')
-                self.assertEqual(pair.sentencizer.split_sentences('First sentence. Second sentence.'),['First sentence.','Second sentence.'])
-                stanza.Pipeline.assert_not_called()
+    def test_retired_argos_cannot_download_or_initialize_models(self):
+        from services.maritime_reading import argos_translator,install_model
+        with self.assertRaisesRegex(RuntimeError,'retired'):argos_translator()
+        with self.assertRaisesRegex(RuntimeError,'retired'):install_model()
 
     def test_unsynced_artifact_recovery_is_idempotent_and_preserves_manual_translation(self):
         from services.cloud_recovery import restore

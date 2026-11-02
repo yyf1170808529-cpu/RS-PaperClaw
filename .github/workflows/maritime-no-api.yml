@@ -54,30 +54,12 @@ jobs:
         env:
           RS_RESUME_ONLY: '0'
         run: python -m unittest discover -s tests -p 'test_maritime*.py'
-      - name: Install optional CPU translation
-        continue-on-error: true
-        run: |
-          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install -r skills/rs-paper-pipeline/requirements-translation.txt
-      - uses: actions/cache@v4
-        with:
-          path: papers/maritime/private/translation
-          key: argos-en-zh-v4-${{ hashFiles('skills/rs-paper-pipeline/requirements-translation.txt') }}
-          restore-keys: |
-            argos-en-zh-v4-
-            argos-en-zh-v3-
-      - name: Prepare translation model (reuse cache)
-        id: translation_model
-        continue-on-error: true
-        run: |
-          set -o pipefail
-          python skills/rs-paper-pipeline/scripts/cli.py maritime --action install-model 2>&1 | tee argos-setup.log
-          python -c "import sys;sys.path.insert(0,'skills/rs-paper-pipeline/scripts');from services.maritime_reading import translation_smoke;print(translation_smoke())" 2>&1 | tee -a argos-setup.log
-      - name: Report unavailable local translation model
-        if: steps.translation_model.outcome == 'failure'
-        run: echo '::warning::Argos model preparation failed. See argos-setup.log; selected-paper translation will retain English and record per-paper errors.'
       - name: Environment check
         run: python skills/rs-paper-pipeline/scripts/cli.py maritime --action doctor
+      - name: Verify DeepSeek runtime without Argos
+        run: |
+          python -c "import importlib.util;assert all(importlib.util.find_spec(x) is None for x in ('argostranslate','stanza','ctranslate2','torch')), 'Unexpected legacy runtime'"
+          node --test tests/*.test.cjs
       - uses: actions/cache/restore@v4
         id: ai_usage
         with:
@@ -163,7 +145,6 @@ jobs:
           name: maritime-run-logs
           path: |
             maritime-run.log
-            argos-setup.log
             papers/maritime/logs/
           retention-days: 14
       - uses: actions/cache/save@v4

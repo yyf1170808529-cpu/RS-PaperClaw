@@ -32,3 +32,5 @@ logs/
 papers/maritime/private/
 papers/maritime/backups/
 .venv-maritime/
+
+.venv-no-argos/
