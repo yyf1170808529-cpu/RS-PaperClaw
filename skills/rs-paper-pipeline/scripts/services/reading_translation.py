@@ -25,6 +25,7 @@ def validate(value,p):
     if numbers(en)-numbers(zh.replace('三维','3D').replace('二维','2D')):raise ValueError('Missing source numbers')
     if len(zh)<len(en)*.15 or len(zh)>len(en)*2:raise ValueError('Incomplete or excessive translation')
     for formula in re.findall(r'\$[^$]+\$',en):
+        if re.fullmatch(r'\$\\text(?:bf|it)\{[^{}]*\}\$',formula):continue
         if formula not in zh:raise ValueError('Missing formula')
     if re.search('保险丝|硬底片|变压器',zh):raise ValueError('Obvious technical mistranslation')
     return value
