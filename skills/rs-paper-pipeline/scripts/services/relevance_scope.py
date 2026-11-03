@@ -11,7 +11,7 @@ def infrastructure(p):
 
 def traffic_task(p):
     text=p.get('title','')+' '+p.get('abstract','')
-    scene=r'autonomous driving|self.driving|traffic (?:scene|surveillance|monitoring|participant)|road user|vehicle|pedestrian|vehicle.infrastructure|roadside cooperative'
+    scene=r'autonomous driving|self.driving|traffic (?:scene|surveillance|monitoring|participant)|road (?:user|scene)|vehicle|pedestrian|vehicle.infrastructure|roadside cooperative'
     task=r'detect\w*|track\w*|perception|segment\w*|sensor fusion|multimodal fusion|multi.modal fusion'
     return not infrastructure(p) and bool(re.search(scene,text,re.I) and re.search(task,text,re.I))
 

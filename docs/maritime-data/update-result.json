@@ -31,7 +31,7 @@
     "engine": "DeepSeek",
     "api_calls": 5,
     "cost_upper_cny": 0.01858,
-    "priced_cost_cny": 0.0,
+    "priced_cost_cny": 0.00929,
     "papers": [
       {
         "paper_id": "2610.39848",

@@ -53,8 +53,16 @@ def translate_selected(root, library, day, config=None, seconds=180, enrichment=
         from services.maritime import read_json
         values=read_json(root/'papers/maritime/private/deepseek/usage.json',{'days':{}})
         records=[r for d in values['days'].values() for r in d.get('requests',[]) if r.get('purpose')=='daily_translation']
-        return len(records),sum(r.get('cost_upper_cny',0) for r in records)
-    before_billing=billing() if enrichment else (0,0)
+        from datetime import datetime
+        from clients.deepseek_client import TZ
+        priced=0.0
+        for r in records:
+            if r.get('created') is None:continue
+            t=datetime.fromtimestamp(r['created'],TZ)
+            peak=t.weekday()<5 and (9<=t.hour<12 or 14<=t.hour<18)
+            priced+=r.get('cost_upper_cny',0)*(1 if peak else .5)
+        return len(records),sum(r.get('cost_upper_cny',0) for r in records),priced
+    before_billing=billing() if enrichment else (0,0,0)
     save=lambda: write_json(library_path(root), library)
     deadline=time.monotonic()+seconds
     attempted=set(); failures=[]; result={}
@@ -103,5 +111,5 @@ def translate_selected(root, library, day, config=None, seconds=180, enrichment=
                         'error': (library['papers'][key].get('reading_enrichment_error','DeepSeek enrichment unavailable') if enrichment and not cached(library['papers'][key]) else translation_issue(library['papers'][key]))} for key in keys]
     result['failed'] = sum(bool(p['error']) for p in result['papers'])
     if enrichment:
-        after=billing();result.update(engine='DeepSeek',api_calls=after[0]-before_billing[0],cost_upper_cny=after[1]-before_billing[1])
+        after=billing();result.update(engine='DeepSeek',api_calls=after[0]-before_billing[0],cost_upper_cny=after[1]-before_billing[1],priced_cost_cny=after[2]-before_billing[2])
     return result

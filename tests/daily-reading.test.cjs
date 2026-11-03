@@ -80,3 +80,10 @@ test('translation upgrade only changes Chinese fields and respects manual text a
  assert.equal(applyUpgrade(paper,upgrade,'hash'),true);assert.equal(paper.abstract_zh,'新译');assert.equal(paper.title,'Original');assert.equal(paper.note,'私人笔记');assert.equal(paper.abstract,'English');
  paper.translation_source='manual';paper.abstract_zh='人工译文';applyUpgrade(paper,upgrade,'hash');assert.equal(paper.abstract_zh,'人工译文');
 });
+
+test('CFUNet unread correction retains batch date, shown identities, English and favorite notes',()=>{
+ const s=setup(),old=s.progress.read();const id='doi:10.21203/rs.3.rs-11121422/v1';
+ old.batch.payload.papers[0].paper_id=id;old.batch.payload.papers[0].title='CFUNet';s.map.set(KEY,JSON.stringify(old));
+ s.progress.correct({[id]:{reason:'infrastructure_inspection',replacement:null}});const now=s.progress.read();
+ assert.equal(now.completed,false);assert.equal(now.batch.payload.date,old.batch.payload.date);assert.deepEqual(now.shown,old.shown);assert.equal(now.batch.payload.papers.length,4);assert.equal(now.pending_corrections[0].abstract,'English');assert.equal(s.map.get('favorites'),'private note');
+});

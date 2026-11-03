@@ -47,7 +47,7 @@ def validate(value,paper):
     return value
 
 def ai_rank(result):
-    return ({'重点推荐':2,'候选':1,'不推荐':0}[result['decision']],2*result['direct_relevance']+result['transferability'],result['confidence'])
+    return ({'重点推荐':2,'候选':1,'不推荐':0}[result['decision']],4*result['direct_relevance']+result['transferability'],result['confidence'])
 
 def effective_evaluation(record):
     return record.get('stage_two') or record['evaluation']

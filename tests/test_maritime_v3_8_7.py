@@ -9,7 +9,7 @@ class ScopeTests(unittest.TestCase):
   for t in ['CFUNet RGB-D Pavement Crack Segmentation','Pavement crack segmentation','Bridge crack detection','Road surface defect detection','Road infrastructure inspection','Concrete defect detection','Asphalt maintenance']:
    p={'title':t,'abstract':''};self.assertTrue(infrastructure(p),t);self.assertFalse(traffic_task(p));self.assertFalse(hard_eligible(p));self.assertFalse(ranking_info(p)['eligible'])
  def test_traffic_not_road_word(self):
-  for t in ['Autonomous driving vehicle detection','Traffic scene multi-object tracking','Multimodal fusion for traffic monitoring','Road user segmentation']:
+  for t in ['Autonomous driving vehicle detection','Traffic scene multi-object tracking','Multimodal fusion for traffic monitoring','Road user segmentation','Road scene segmentation']:
    self.assertTrue(traffic_task({'title':t}),t)
   self.assertFalse(traffic_task({'title':'Road inspection'}))
  def test_arxiv_evidence_not_preprint_label(self):
