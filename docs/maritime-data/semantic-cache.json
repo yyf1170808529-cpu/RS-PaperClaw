@@ -47921,6 +47921,542 @@
       },
       "model": "deepseek-flash",
       "request_id": "a49ea757-265b-4e4c-a5fb-e7437aaf2965"
+    },
+    "9ee4d2e03518a4d6d964453a2714ec5a4e95b9612351387250f48f966fcd85d2": {
+      "paper_id": "2611.01607",
+      "title": "NatureFusion: Rethinking Infrared and Visible Image Fusion as Natural Complementary Enhancement",
+      "fingerprint": "9ee4d2e03518a4d6d964453a2714ec5a4e95b9612351387250f48f966fcd85d2",
+      "evaluation": {
+        "paper_id": "2611.01607",
+        "task_type": "红外-可见光图像融合与下游检测/分割",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "we fine-tune a pretrained generative model with conditional flow matching through a light-weight fusion adapter",
+            "interpretation_zh": "用轻量融合适配器结合条件流匹配微调预训练生成模型，属跨模态生成式融合结构，可考虑迁移到船舶图像增强/多传感器融合",
+            "inference": true
+          },
+          {
+            "quote_en": "introduce a detector-supervised task adapter that strengthens the complementary contribution of infrared",
+            "interpretation_zh": "引入检测器监督的任务适配器，增强红外互补贡献；若迁移到海事，可改为利用AIS标签或雷达标签监督融合适配器",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we fine-tune a pretrained generative model with conditional flow matching through a light-weight fusion adapter",
+          "target_task": "ship_enhancement",
+          "adaptation_zh": "将红外-可见光融合适配器用于船舶可见光/红外或低照度图像增强：输入改为船舶场景可见光与红外/近红外图像对，训练目标由自然外观生成改为保留船体轮廓与目标显著性，并可在增强后接检测器辅助监督；需要重新训练适配器并验证夜间/雾天船舶图像",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及海事、AIS或雷达数据",
+          "未给出船舶场景实验",
+          "融合目标为自然外观，非海事任务精度"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态生成式融合与检测监督任务适配器可作为船舶图像增强与多传感器融合的方法参考，但需具体适配且无海事验证。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "590c4ae1-97ec-4c47-8133-b79cb681ff0b"
+    },
+    "c41a5037877214fe79ac6f5bb7d7dff6c7238f2d24781f6f75029796837bd77c": {
+      "paper_id": "2610.41352",
+      "title": "CalibSwitch: Observation-Driven Camera-LiDAR Extrinsic Recovery and Selective Maintenance for Multimodal Perception",
+      "fingerprint": "c41a5037877214fe79ac6f5bb7d7dff6c7238f2d24781f6f75029796837bd77c",
+      "evaluation": {
+        "paper_id": "2610.41352",
+        "task_type": "相机-激光雷达外参恢复与选择性维护",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "A cross-modal absolute extrinsic generator (CAEG) combines projection-free bidirectional feature interaction with geometry-regularized learning to recover complete SE(3) candidates from image--point observations",
+            "interpretation_zh": "跨模态绝对外参生成器用无投影双向特征交互与几何正则学习恢复SE(3)，可类比视觉-雷达/AIS关联中的跨模态配准思路",
+            "inference": true
+          },
+          {
+            "quote_en": "A selective recurrent calibration policy (SRCP) combines observation quality and temporal history to determine when a candidate should replace the working geometry",
+            "interpretation_zh": "选择性循环校准策略结合观测质量与时序历史决定何时更新几何状态，可迁移到多传感器检测中动态更新关联参数",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "A selective recurrent calibration policy (SRCP) combines observation quality and temporal history to determine when a candidate should replace the working geometry",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将观测质量驱动的时序选择性更新策略用于视觉-雷达/AIS关联参数或检测器融合权重的维护：输入改为视觉检测置信度、雷达/AIS观测质量，输出改为关联门限或融合状态的更新决策；训练需以关联准确率或检测mAP为监督",
+          "inference": true
+        },
+        "limitations": [
+          "面向相机-激光雷达外参，非船舶或AIS/雷达关联",
+          "摘要未给出跨模态目标关联实验",
+          "需重新设计输入与监督"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态配准与观测质量驱动的选择性状态维护对多传感器关联有方法借鉴，但目标域差异大且仅推断。",
+        "confidence": 0.5
+      },
+      "model": "deepseek-flash",
+      "request_id": "590c4ae1-97ec-4c47-8133-b79cb681ff0b"
+    },
+    "dc2eb7c3e35a7e6fbb57445d84a341f8f2aa405b6292f542f750382df825bcf4": {
+      "paper_id": "2611.00264",
+      "title": "KINDER: Kernel-based Independence for Fair Representation Learning via Prototype-space Erasure",
+      "fingerprint": "dc2eb7c3e35a7e6fbb57445d84a341f8f2aa405b6292f542f750382df825bcf4",
+      "evaluation": {
+        "paper_id": "2611.00264",
+        "task_type": "公平表征学习/概念擦除",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "KINDER operates in a random Fourier feature space, where it estimates a sensitive subspace from protected group prototypes and projects representations onto its orthogonal complement",
+            "interpretation_zh": "在随机傅里叶特征空间估计敏感子空间并投影到正交补，属公平性去偏方法，与船舶感知任务无直接联系",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向公平性去偏，非感知匹配或检测",
+          "摘要无跨模态关联或海事任务",
+          "迁移路径不具体"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究公平性表征擦除，与船舶视觉、雷达/AIS关联及跨模态匹配无具体方法联系。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "590c4ae1-97ec-4c47-8133-b79cb681ff0b"
+    },
+    "b5e8e26d1006412b6b306a805b2e1e6baf578972861d983739bd0db7f6f51a6c": {
+      "paper_id": "2610.41834",
+      "title": "ObjectGuidedMap: An Object-Aware Model for Robust Bird's Eye View Map Prediction in High-Occlusion Scenarios",
+      "fingerprint": "b5e8e26d1006412b6b306a805b2e1e6baf578972861d983739bd0db7f6f51a6c",
+      "evaluation": {
+        "paper_id": "2610.41834",
+        "task_type": "BEV地图预测与3D目标检测多任务",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "incorporate cross-task feature fusion at both the BEV feature level and the instance-query level via deformable attention and cross-attention mechanisms",
+            "interpretation_zh": "在BEV特征与实例查询两级做跨任务特征融合，可类比船舶检测中地图/场景先验与目标检测表征融合",
+            "inference": true
+          },
+          {
+            "quote_en": "we propose a multitask architecture that jointly predicts BEV maps and 3D objects, explicitly enabling information exchange between the two tasks",
+            "interpretation_zh": "多任务联合预测并显式交换信息，可迁移为船舶检测与其他感知任务共享表征",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "incorporate cross-task feature fusion at both the BEV feature level and the instance-query level via deformable attention and cross-attention mechanisms",
+          "target_task": "ship_detection",
+          "adaptation_zh": "将BEV特征与实例查询级跨任务融合改为船舶检测与场景先验（航道/岸线或雷达/AIS轨迹）双任务融合：输入替换为船舶图像与场景先验，结构保留可变形注意力与交叉注意力，训练目标改为联合检测损失加先验分支损失；需重新设计查询和标注",
+          "inference": true
+        },
+        "limitations": [
+          "面向自动驾驶BEV地图，非海事场景",
+          "摘要未涉及雷达/AIS或船舶数据",
+          "跨任务融合需重新设计目标与标注"
+        ],
+        "decision": "候选",
+        "reason_zh": "多任务跨层特征融合思路可用于船舶检测与场景先验结合，但需较大结构适配且无海事验证。",
+        "confidence": 0.5
+      },
+      "model": "deepseek-flash",
+      "request_id": "590c4ae1-97ec-4c47-8133-b79cb681ff0b"
+    },
+    "fd485b4de5add5aeefdd978f40272e9611272a6ac795dd757f55a746ab6ba8ef": {
+      "paper_id": "2610.41877",
+      "title": "Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos",
+      "fingerprint": "fd485b4de5add5aeefdd978f40272e9611272a6ac795dd757f55a746ab6ba8ef",
+      "evaluation": {
+        "paper_id": "2610.41877",
+        "task_type": "humanoid_motion_generation",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Task-mixed flow-matching training jointly optimizes a single action expert across seven generation tasks",
+            "interpretation_zh": "混合任务流匹配训练，属于动作生成训练策略，与船舶感知任务无直接结构对应。",
+            "inference": false
+          },
+          {
+            "quote_en": "Multimodal Real-Time Chunking connects overlapping chunks under continuously updated instructions and robot states",
+            "interpretation_zh": "多模态实时分块连接机制面向机器人闭环执行，不是跨模态船舶匹配方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未提供可迁移到船舶检测、分割或跨模态匹配的具体输入/目标/结构改造方案",
+          "核心任务是人体动作生成与执行，缺乏感知任务联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向人形动作生成与闭环执行，与海事视觉或跨模态关联无具体可迁移方法。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "b1948891-9dbd-45dd-a501-dfbd0589d9fa"
+    },
+    "e266c43a3d22e146b61a2857e6f626f46be07e00f95d5930f46b1bbc01113b53": {
+      "paper_id": "2611.01682",
+      "title": "Leveraging 2D Foundation Priors for Generalized Category Discovery under Test-Time Adaptation in 3D LiDAR Segmentation",
+      "fingerprint": "e266c43a3d22e146b61a2857e6f626f46be07e00f95d5930f46b1bbc01113b53",
+      "evaluation": {
+        "paper_id": "2611.01682",
+        "task_type": "3d_lidar_semantic_segmentation",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "semantic features from 2D vision foundation models are fused with 3D point cloud features to enrich 3D semantic information",
+            "interpretation_zh": "将2D视觉基础模型语义特征与3D点云特征融合，属于多传感器跨模态特征融合。",
+            "inference": false
+          },
+          {
+            "quote_en": "we cast category discovery as an optimal transport assignment process for globally consistent grouping of novel categories",
+            "interpretation_zh": "用最优传输分配实现新类别分组，是分割中的类别发现方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "obtain reliable pseudo labels under a global class-wise prototype consistency constraint",
+            "interpretation_zh": "基于全局类原型一致性约束获取伪标签，属于域适应分割训练策略。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "semantic features from 2D vision foundation models are fused with 3D point cloud features to enrich 3D semantic information",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可借鉴其2D视觉基础模型特征与3D点云特征融合思路，将输入改为船舶场景的相机图像与雷达/激光点云，调整融合模块与训练目标以服务多传感器船舶检测；仅属推断，摘要未给出海事适配细节。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为自动驾驶LiDAR语义分割，域适应与类别发现目标与海事场景不同",
+          "迁移到船舶多传感器检测需重新设计输入与训练目标，摘要未验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "2D-3D特征融合与域适应分割有方法参考价值，但需较大改造且无海事验证。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "b1948891-9dbd-45dd-a501-dfbd0589d9fa"
+    },
+    "f258477bdfe02ed5098a80df156e3659f889e9392facc059c68fdbfcb91afe90": {
+      "paper_id": "2611.01396",
+      "title": "SpecUltra: A Unified Foundation Model for Heterogeneous Spectral Images",
+      "fingerprint": "f258477bdfe02ed5098a80df156e3659f889e9392facc059c68fdbfcb91afe90",
+      "evaluation": {
+        "paper_id": "2611.01396",
+        "task_type": "multispectral_image_foundation_model",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "SpecUltra employs 3D convolutional tokenization and wavelength-aware 3D RoPE to encode relative wavelength and spatial relationships",
+            "interpretation_zh": "面向高光谱/多光谱数据的波长感知3D位置编码与分词结构。",
+            "inference": false
+          },
+          {
+            "quote_en": "auxiliary-token-assisted mask image modeling (MIM)",
+            "interpretation_zh": "带辅助令牌的掩码图像建模预训练策略。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为高光谱/多光谱影像，与船舶RGB/雷达感知差异较大",
+          "摘要未提供可直接迁移到船舶检测或跨模态匹配的具体方案"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "光谱影像基础模型，与海事视觉检测、跨模态关联等任务联系弱且无可操作迁移路径。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "b1948891-9dbd-45dd-a501-dfbd0589d9fa"
+    },
+    "f02c421341a4886404b79a5b15206cfe983a853f512166bb7e8cc92e01630a3e": {
+      "paper_id": "2611.00406",
+      "title": "TAP-Out: Tracking Any Point in 360° via Outpainting",
+      "fingerprint": "f02c421341a4886404b79a5b15206cfe983a853f512166bb7e8cc92e01630a3e",
+      "evaluation": {
+        "paper_id": "2611.00406",
+        "task_type": "point_tracking",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "leveraging generative video outpainting as a world-model prior",
+            "interpretation_zh": "将生成式视频外扩作为世界模型先验，用于视野外点跟踪。",
+            "inference": false
+          },
+          {
+            "quote_en": "synthesises object-centred perspective crops on which standard in-frame trackers operate",
+            "interpretation_zh": "合成以物体为中心的透视裁剪供标准跟踪器使用。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为任意点跟踪与视频外扩，非船舶检测/分割/跨模态关联",
+          "摘要未给出可迁移到船舶多目标跟踪的具体改造方案"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "360度视野外点跟踪方法，与船舶感知和跨模态匹配无具体方法联系。",
+        "confidence": 0.9
+      },
+      "model": "deepseek-flash",
+      "request_id": "b1948891-9dbd-45dd-a501-dfbd0589d9fa"
+    },
+    "0e4ad549fb2c31fab5fc99bedab6b25e2cddcc4c668c4e00f0269c337db8b1ab": {
+      "paper_id": "2611.00105",
+      "title": "Detector-Integrated Multi-Cue Association for Occlusion-Aware UAV Multi-Object Tracking",
+      "fingerprint": "0e4ad549fb2c31fab5fc99bedab6b25e2cddcc4c668c4e00f0269c337db8b1ab",
+      "evaluation": {
+        "paper_id": "2611.00105",
+        "task_type": "UAV多目标跟踪（通用/陆上）",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Lightweight projection heads are attached to the neck of the YOLOv8n detector to extract target embeddings through ROIAlign, producing detections and embeddings in a single forward pass.",
+            "interpretation_zh": "在检测器颈部挂轻量投影头并用ROIAlign提取目标嵌入，单次前向同时输出检测与嵌入。",
+            "inference": false
+          },
+          {
+            "quote_en": "A multi-cue association cost then combines motion, IoU, and appearance distances with weights determined through ablation, complemented by low-score rescue and appearance-memory protection.",
+            "interpretation_zh": "关联代价融合运动、IoU与外观距离，并加入低分挽救和外观记忆保护。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Lightweight projection heads are attached to the neck of the YOLOv8n detector to extract target embeddings through ROIAlign, producing detections and embeddings in a single forward pass.",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "将检测器集成嵌入头与多线索关联用于船舶多目标跟踪：保留检测器颈部投影头+ROIAlign取嵌入，把关联代价中的运动/IoU/外观项适配到海上视频序列（如AIS或雷达提供运动先验时替换运动项），并调整低分挽救和外观记忆策略以应对海面遮挡与小目标。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为无人机车辆跟踪，未涉及海事场景或AIS/雷达数据",
+          "多线索权重为消融确定，迁移至海面需重新标定",
+          "未提供缺失模态或跨模态关联机制"
+        ],
+        "decision": "候选",
+        "reason_zh": "船舶多目标跟踪关联思路可借鉴，但需明确场景适配，非直接海事任务。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "373db36a-157d-4017-aaf1-d3fbc82a9d5a"
+    },
+    "0c159ab646e70a7c41ca66119134611c18248a1d715868c6ae40fa61695e2365": {
+      "paper_id": "2611.00071",
+      "title": "How Reliable Are Object Detection Models Beyond Clear Weather? A Deployment-Oriented Robustness Study for Autonomous Driving",
+      "fingerprint": "0c159ab646e70a7c41ca66119134611c18248a1d715868c6ae40fa61695e2365",
+      "evaluation": {
+        "paper_id": "2611.00071",
+        "task_type": "自动驾驶目标检测鲁棒性评测",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Robustness is assessed using performance Drop (%), a Weather Robustness Index (WRI), and class-level sensitivity analysis for critical road participants",
+            "interpretation_zh": "用性能下降百分比、天气鲁棒性指数和类别敏感度评估跨天气鲁棒性。",
+            "inference": false
+          },
+          {
+            "quote_en": "Prediction confidence reliability under environmental domain shift is measured using Expected Calibration Error (ECE).",
+            "interpretation_zh": "用期望校准误差衡量环境域偏移下的置信度可靠性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Prediction confidence reliability under environmental domain shift is measured using Expected Calibration Error (ECE).",
+          "target_task": "ship_detection",
+          "adaptation_zh": "将跨天气域偏移下的性能下降、鲁棒性指数与ECE校准评测协议迁移到船舶检测：替换数据集为海雾/雨/夜航海面图像，类别改为船舶，并统计置信度校准误差以评估船检测器部署可靠性。",
+          "inference": true
+        },
+        "limitations": [
+          "仅为评测研究，未提出可训练检测方法",
+          "场景为道路车辆，海事证据不足",
+          "未涉及AIS或多传感器融合"
+        ],
+        "decision": "候选",
+        "reason_zh": "鲁棒性与校准评测协议可迁移至船舶检测评估，但方法贡献有限。",
+        "confidence": 0.45
+      },
+      "model": "deepseek-flash",
+      "request_id": "373db36a-157d-4017-aaf1-d3fbc82a9d5a"
+    },
+    "c9939f68a77a5201e66753db57461e316f9aa7a2eb96101dd0bbad187cb4a485": {
+      "paper_id": "2611.00054",
+      "title": "Auditing GeoFM Evaluation for Field-Extent Segmentation: Label Proxies, Baselines, and When Frozen Features Match Fine-tuning",
+      "fingerprint": "c9939f68a77a5201e66753db57461e316f9aa7a2eb96101dd0bbad187cb4a485",
+      "evaluation": {
+        "paper_id": "2611.00054",
+        "task_type": "遥感地块分割评测审计",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We then compare a frozen backbone and full fine-tuning using the same decoder for Prithvi and TerraMind, with ten matched seeds.",
+            "interpretation_zh": "用同一解码器比较冻结骨干与全微调，并有十个配对随机种子。",
+            "inference": false
+          },
+          {
+            "quote_en": "These results argue for auditing labels and baselines before interpreting GeoFM rankings, and for testing a frozen decoder before assuming that full fine-tuning will help.",
+            "interpretation_zh": "主张在解释基础模型排名前审计标签与基线，并先测试冻结解码器。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "We then compare a frozen backbone and full fine-tuning using the same decoder for Prithvi and TerraMind, with ten matched seeds.",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将冻结骨干与全微调的受控对比协议迁移到船舶分割：采用同一分割解码器，对遥感或视觉基础模型分别做冻结特征线性探测与全微调，替换数据为船舶分割标注并审计标签代理与基线。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为农田地块分割，非船舶",
+          "仅限单日期逐像素分割，作者自述不涉及实例或边界",
+          "未涉及AIS、跨模态匹配"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "船舶分割直接相关弱，方法聚焦评测审计，迁移价值有限。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "373db36a-157d-4017-aaf1-d3fbc82a9d5a"
+    },
+    "1fe09eef788593e82dc654ee31ef84b68c90d2a839b18ad07ca822d3a4306f75": {
+      "paper_id": "2611.01937",
+      "title": "Spade-SLAM: Sparse Correspondence Anchors for Dense Self-Supervised Visual SLAM",
+      "fingerprint": "1fe09eef788593e82dc654ee31ef84b68c90d2a839b18ad07ca822d3a4306f75",
+      "evaluation": {
+        "paper_id": "2611.01937",
+        "task_type": "自监督稠密视觉SLAM",
+        "direct_relevance": 0,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "While a warping-based photometric loss provides a dense training signal, we stabilize the optimization and suppress drift in ambiguous regions using a sparse correspondence loss derived from image feature matches.",
+            "interpretation_zh": "光度损失提供稠密训练信号，稀疏对应损失由图像特征匹配导出以稳定优化、抑制歧义区漂移。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "While a warping-based photometric loss provides a dense training signal, we stabilize the optimization and suppress drift in ambiguous regions using a sparse correspondence loss derived from image feature matches.",
+          "target_task": "ship_depth",
+          "adaptation_zh": "将稠密光度损失与稀疏特征匹配对应损失结合的自监督训练用于船舶单目深度估计：替换场景为海面序列，特征匹配对应约束用于抑制低纹理海面区域的深度漂移，训练目标改为船舶场景的深度图。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为视觉SLAM定位建图，非船舶检测/深层海事感知",
+          "海面低纹理与动态水面可能削弱光度假设",
+          "未涉及AIS或跨模态对齐"
+        ],
+        "decision": "候选",
+        "reason_zh": "自监督深度与稀疏对应约束可迁移到船舶深度估计，但需海面适配。",
+        "confidence": 0.45
+      },
+      "model": "deepseek-flash",
+      "request_id": "373db36a-157d-4017-aaf1-d3fbc82a9d5a"
+    },
+    "e9619901b5b310925115187ae68c27b15a76f6f33f5c824650900b88cbbbff84": {
+      "paper_id": "2611.00945",
+      "title": "HieraNTP: Structured Risk Representations for Time-Series Anomaly Detection via Hierarchical Next-Token Prediction",
+      "fingerprint": "e9619901b5b310925115187ae68c27b15a76f6f33f5c824650900b88cbbbff84",
+      "evaluation": {
+        "paper_id": "2611.00945",
+        "task_type": "time-series anomaly detection",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "HieraNTP pretrains a hierarchical tokenizer and a causal next-token predictor to capture temporal regularities at multiple scales.",
+            "interpretation_zh": "摘要描述了分层tokenizer与因果下一token预测器，用于多尺度时序规律建模。",
+            "inference": false
+          },
+          {
+            "quote_en": "A task-adaptive detector uses anomaly labels to select and combine this evidence for the target task.",
+            "interpretation_zh": "摘要提出利用异常标签选择并组合证据的任务自适应检测器。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "方法针对单模态时序异常检测，未涉及跨模态匹配或船舶视觉任务",
+          "摘要未给出可迁移到船舶检测/分割/融合的具体输入或训练目标调整",
+          "分层token预测面向通用时序偏差建模，与Radar–AIS时空轨迹关联的匹配结构差异大"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "时序异常检测，与Radar–AIS关联和船舶视觉任务无直接联系；摘要未提供可具体迁移的匹配或对齐方法。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "1459cc58-4c1f-475d-abcd-9d618929eaa0"
+    },
+    "0b989a609ebe69f058ce882c3fbf24c98d54b897124cf666470c4ed641c4edc3": {
+      "paper_id": "2610.41792",
+      "title": "Implicit Assumptions About Tasks in Continual Learning",
+      "fingerprint": "0b989a609ebe69f058ce882c3fbf24c98d54b897124cf666470c4ed641c4edc3",
+      "evaluation": {
+        "paper_id": "2610.41792",
+        "task_type": "continual learning analysis",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "In controlled teacher--student experiments, we demonstrate that partitioning the same underlying trajectory at different levels of granularity, changing the order of presentation, and varying the similarity structure of the underlying data all result in different measured outcomes.",
+            "interpretation_zh": "摘要描述受控师生实验，考察轨迹划分粒度、呈现顺序和数据相似结构对结果的影响。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "属于持续学习评测方法学分析，非感知方法",
+          "摘要中的trajectory指学习任务划分，并非时空船舶轨迹",
+          "未提供可迁移的跨模态对齐或匹配表征方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "持续学习任务划分分析，与船舶感知、Radar–AIS关联及跨模态匹配无直接或具体可迁移联系。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "1459cc58-4c1f-475d-abcd-9d618929eaa0"
+    },
+    "90818597c3a3cf801de85b2e25af5cabf3e88439b34e5a9fb7f777c8a23bda3e": {
+      "paper_id": "2611.00062",
+      "title": "CarDiff: Anatomically Aware Dental Caries Synthesis using Diffusion",
+      "fingerprint": "90818597c3a3cf801de85b2e25af5cabf3e88439b34e5a9fb7f777c8a23bda3e",
+      "evaluation": {
+        "paper_id": "2611.00062",
+        "task_type": "medical image synthesis/segmentation augmentation",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "The method combines paired mask-image learning with self-supervised generation from augmented masks, while incorporating anatomy-aware conditioning between lesion regions and surrounding structures.",
+            "interpretation_zh": "摘要描述配对掩码-图像学习、自监督生成和解剖结构条件化。",
+            "inference": false
+          },
+          {
+            "quote_en": "Semantic consistency is enforced through segmentation-guided supervision and adversarial anatomical alignment.",
+            "interpretation_zh": "摘要提出分割引导监督和对抗解剖对齐以保持语义一致性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "牙科影像合成，医学应用，与海事感知无关",
+          "解剖条件化和病灶类别均不具备船舶场景对应关系",
+          "摘要未提供可用于船舶分割增强的具体迁移方案与调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "牙科影像扩散合成，属低优先级医学应用；与船舶分割任务无直接联系，迁移缺乏具体调整说明。",
+        "confidence": 0.85
+      },
+      "model": "deepseek-flash",
+      "request_id": "1459cc58-4c1f-475d-abcd-9d618929eaa0"
     }
   }
 }

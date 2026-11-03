@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-03",
+  "papers": [
+    {
+      "paper_id": "2609.32844",
+      "title": "Mask2Restore: Self-Supervised Ultrasound Despeckling via Inpainting",
+      "authors": [
+        "Xuesong Li",
+        "Yingtai Xu",
+        "Zhongliang Jiang",
+        "Nassir Navab",
+        "Yuan Bi"
+      ],
+      "published": "2026-09-26",
+      "arxiv_url": "https://arxiv.org/abs/2609.32844",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.32844",
+      "pdf_url": "https://arxiv.org/pdf/2609.32844",
+      "open_access_url": "https://arxiv.org/pdf/2609.32844",
+      "venue": "",
+      "abstract": "Medical ultrasound (US) is inherently degraded by speckle, a granular interference pattern that is often treated as a complex form of noise in image restoration. However, unlike random noise, US speckle originates from coherent scattering within tissue and is therefore highly spatially dependent and deterministic under fixed acquisition conditions, making US speckle suppression fundamentally different from natural image denoising. Because speckle-free US targets are unavailable in practice, self-supervised denoising is necessary. Blind-spot networks (BSN) are the dominant self-supervised paradigm for natural images, but their pixel-wise masking strategy assumes spatially independent noise, an assumption poorly matched to US speckle, which is spatially correlated over multiple pixels rather than pixel-wise independent. To address this mismatch, we propose Mask2Restore, a self-supervised US despeckling framework that reformulates despeckling as contextual inpainting with block-wise masking on single noisy images. Unlike pixel-wise BSN masking, block-wise masking addresses this multi-pixel speckle correlation by removing locally correlated speckle neighborhoods and shifting the reconstruction cues used by the network from adjacent speckle correlations to broader anatomical context. We further introduce cross-resolution context regularization (CRCR), which suppresses residual speckle bias by enforcing consistency across multi-resolution predictions. Experiments on simulated and in vivo carotid US, unseen fine-structure cases, and downstream cardiac segmentation demonstrate improved speckle-detail trade-offs, better preservation of fine anatomical structures, and practical value for subsequent image analysis.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Xuesong Li",
+      "first_author_affiliations": [
+        "Computer Aided Medical Procedures (CAMP) , Technical University of Munich , Munich , Germany;",
+        "Munich Center for Machine Learning (MCML) , Munich , Germany;"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "自监督图像复原(超声去斑) / 船舶图像增强方法迁移；可将单幅图像上块级掩码+上下文修复的自监督去斑框架用于船舶图像增强：输入改为海面/船舶单张退化图像，掩码块需按海杂波与运动模糊的空间相关尺度调整，",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.32844",
+      "score": 2,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "summary_zh": "针对超声斑点噪声空间相关、盲点网络像素级掩码不匹配的问题，提出块级掩码自监督去斑框架Mask2Restore，并引入跨分辨率上下文正则化，提升细节保留与下游分割效果。",
+      "migration_zh": "研究推断：可将块级掩码自监督重建用于船舶检测中的雷达回波去噪或视觉图像去斑模块，以块级掩码替代像素级掩码生成训练输入，并加入多分辨率一致性监督约束特征重建。",
+      "abstract_zh": "医学超声（US）本质上受到斑点的影响而退化，斑点是一种颗粒状干涉图案，在图像恢复中常被视为一种复杂的噪声形式。然而，与随机噪声不同，US斑点源于组织内的相干散射，因此在固定采集条件下具有高度空间依赖性和确定性，使得US斑点抑制从根本上不同于自然图像去噪。由于实践中无法获得无斑点的US目标，自监督去噪是必要的。盲点网络（BSN）是自然图像主流的自监督范式，但其逐像素掩码策略假设噪声在空间上独立，这一假设与US斑点匹配不佳，因为US斑点是在多个像素上空间相关，而非逐像素独立。为解决这一不匹配问题，我们提出Mask2Restore，一种自监督US去斑框架，将去斑重新表述为在单幅噪声图像上使用块级掩码的上下文修复。与逐像素BSN掩码不同，块级掩码通过移除局部相关的斑点邻域，并将网络使用的重建线索从相邻斑点相关性转向更广泛的解剖上下文，来应对这种多像素斑点相关性。我们进一步引入跨分辨率上下文正则化（CRCR），通过强制多分辨率预测之间的一致性来抑制残余斑点偏差。在模拟和体内颈动脉US、未见过的精细结构案例以及下游心脏分割上的实验表明，该方法改善了斑点-细节权衡，更好地保留了精细解剖结构，并对后续图像分析具有实用价值。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 1254,
+    "ai_reviewed": 909,
+    "ai_states": {
+      "evaluated": 909,
+      "uncertain": 344,
+      "unassessed": 1
+    },
+    "stage_counts": {
+      "2": 1180,
+      "0": 15,
+      "1": 17,
+      "3": 42
+    },
+    "ai_rejected": 908,
+    "translation_deferred": 0,
+    "qualified_count": 1,
+    "selected_count": 1,
+    "shortfall": 4,
+    "translation_replacements": [],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "partial",
+  "reserve_papers": [
+    {
+      "paper_id": "2609.32844",
+      "title": "Mask2Restore: Self-Supervised Ultrasound Despeckling via Inpainting",
+      "authors": [
+        "Xuesong Li",
+        "Yingtai Xu",
+        "Zhongliang Jiang",
+        "Nassir Navab",
+        "Yuan Bi"
+      ],
+      "published": "2026-09-26",
+      "arxiv_url": "https://arxiv.org/abs/2609.32844",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.32844",
+      "pdf_url": "https://arxiv.org/pdf/2609.32844",
+      "open_access_url": "https://arxiv.org/pdf/2609.32844",
+      "venue": "",
+      "abstract": "Medical ultrasound (US) is inherently degraded by speckle, a granular interference pattern that is often treated as a complex form of noise in image restoration. However, unlike random noise, US speckle originates from coherent scattering within tissue and is therefore highly spatially dependent and deterministic under fixed acquisition conditions, making US speckle suppression fundamentally different from natural image denoising. Because speckle-free US targets are unavailable in practice, self-supervised denoising is necessary. Blind-spot networks (BSN) are the dominant self-supervised paradigm for natural images, but their pixel-wise masking strategy assumes spatially independent noise, an assumption poorly matched to US speckle, which is spatially correlated over multiple pixels rather than pixel-wise independent. To address this mismatch, we propose Mask2Restore, a self-supervised US despeckling framework that reformulates despeckling as contextual inpainting with block-wise masking on single noisy images. Unlike pixel-wise BSN masking, block-wise masking addresses this multi-pixel speckle correlation by removing locally correlated speckle neighborhoods and shifting the reconstruction cues used by the network from adjacent speckle correlations to broader anatomical context. We further introduce cross-resolution context regularization (CRCR), which suppresses residual speckle bias by enforcing consistency across multi-resolution predictions. Experiments on simulated and in vivo carotid US, unseen fine-structure cases, and downstream cardiac segmentation demonstrate improved speckle-detail trade-offs, better preservation of fine anatomical structures, and practical value for subsequent image analysis.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Xuesong Li",
+      "first_author_affiliations": [
+        "Computer Aided Medical Procedures (CAMP) , Technical University of Munich , Munich , Germany;",
+        "Munich Center for Machine Learning (MCML) , Munich , Germany;"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "source": "arXiv",
+      "reason": "自监督图像复原(超声去斑) / 船舶图像增强方法迁移；可将单幅图像上块级掩码+上下文修复的自监督去斑框架用于船舶图像增强：输入改为海面/船舶单张退化图像，掩码块需按海杂波与运动模糊的空间相关尺度调整，",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.32844",
+      "score": 2,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 33,
+      "selection_source": "近期候选",
+      "summary_zh": "针对超声斑点噪声空间相关、盲点网络像素级掩码不匹配的问题，提出块级掩码自监督去斑框架Mask2Restore，并引入跨分辨率上下文正则化，提升细节保留与下游分割效果。",
+      "migration_zh": "研究推断：可将块级掩码自监督重建用于船舶检测中的雷达回波去噪或视觉图像去斑模块，以块级掩码替代像素级掩码生成训练输入，并加入多分辨率一致性监督约束特征重建。",
+      "abstract_zh": "医学超声（US）本质上受到斑点的影响而退化，斑点是一种颗粒状干涉图案，在图像恢复中常被视为一种复杂的噪声形式。然而，与随机噪声不同，US斑点源于组织内的相干散射，因此在固定采集条件下具有高度空间依赖性和确定性，使得US斑点抑制从根本上不同于自然图像去噪。由于实践中无法获得无斑点的US目标，自监督去噪是必要的。盲点网络（BSN）是自然图像主流的自监督范式，但其逐像素掩码策略假设噪声在空间上独立，这一假设与US斑点匹配不佳，因为US斑点是在多个像素上空间相关，而非逐像素独立。为解决这一不匹配问题，我们提出Mask2Restore，一种自监督US去斑框架，将去斑重新表述为在单幅噪声图像上使用块级掩码的上下文修复。与逐像素BSN掩码不同，块级掩码通过移除局部相关的斑点邻域，并将网络使用的重建线索从相邻斑点相关性转向更广泛的解剖上下文，来应对这种多像素斑点相关性。我们进一步引入跨分辨率上下文正则化（CRCR），通过强制多分辨率预测之间的一致性来抑制残余斑点偏差。在模拟和体内颈动脉US、未见过的精细结构案例以及下游心脏分割上的实验表明，该方法改善了斑点-细节权衡，更好地保留了精细解剖结构，并对后续图像分析具有实用价值。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ]
+}
