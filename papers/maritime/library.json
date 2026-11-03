@@ -743811,7 +743811,8 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104919": {
       "metadata_records": [
@@ -743978,7 +743979,8 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2610.41834": {
       "metadata_records": [
@@ -745227,7 +745229,8 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117249": {
       "metadata_records": [
@@ -745392,7 +745395,8 @@
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2611.01937": {
       "metadata_records": [
@@ -746784,7 +746788,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：clinical, patients"
-      }
+      },
+      "semantic": null
     },
     "2611.00264": {
       "metadata_records": [
@@ -747336,7 +747341,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
-      }
+      },
+      "semantic": null
     },
     "2611.00084": {
       "metadata_records": [
@@ -747495,7 +747501,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Alzheimer"
-      }
+      },
+      "semantic": null
     },
     "2611.00064": {
       "metadata_records": [
@@ -747696,7 +747703,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Cancer, Genome"
-      }
+      },
+      "semantic": null
     },
     "2611.00062": {
       "metadata_records": [
@@ -771449,6 +771457,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-11-03T04:08:39.016485+00:00"
+    },
+    {
+      "missing_before": 1292,
+      "missing_after": 1292,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-03T12:03:18.046252+00:00"
     }
   ],
   "translation_batches": [
