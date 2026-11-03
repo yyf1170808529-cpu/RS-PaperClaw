@@ -50,7 +50,9 @@ reading-index现在同时核对当前来源及AI范围资格，排除不再合�
 
 发现精译摘要计价字段原显示0，但API usage缓存实际为非零；已从真实响应计价修正公开汇总，并修复selected_translation.py后续统计，不把付费请求宣称为免费。模型、预算、Argos退役状态及Git白名单不变。最终后备可用11篇；不承诺以后候选不足时硬凑五篇。
 
-Pages与最终在线文件核验待补记。
+最终Pages运行[41635304695](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/41635304695) completed/success，对应提交4f39bc09e3575dcbe6d7df16ae6512fa1505f020。用手机User-Agent真实HTTPS读取每日HTML、latest、11月3日归档JSON、reading-index、content-corrections、桌面maritime.js，共6项均HTTP200并与本地逐字一致。CFUNet移除清单及“不符合范围”的前台脚本已公开上线。证据在忽略目录papers/maritime/backups/v3_8_7的cloud-proof.json、cloud-logs、online-proof.json、cfunet-audit.json及测试日志。
+
+入口：https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html?v=3.8.7 。没有让用户运行任何命令或完成非必要授权。
 
 ## 改动范围与限制
 
