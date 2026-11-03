@@ -123,6 +123,7 @@ def annotate(paper, key, venues, policy):
     perception = bool(signals["perception"])
     from services.abstract_quality import application
     paper['application_bucket'] = application(paper, policy)
+    if paper['application_bucket']!='land':signals['traffic']=[]
     maritime = paper['application_bucket'] == 'water'
     low = bool(signals["low"] or (signals["trajectory"] and not perception))
     method = bool(signals["method"])
@@ -216,11 +217,18 @@ def normalize_library(library, rules):
     from services.maritime import score_paper
     venues, policy = assets()
     for key, paper in library["papers"].items():
+        from services.semantic_evaluation import current_evaluation,fingerprint,settings
+        valid_cache=current_evaluation(paper)
+        before_core=copy.deepcopy({k:paper.get(k) for k in ('title','abstract','publication_status','venue','quality')})
         from services.abstract_quality import apply_quality
         changed = apply_quality(paper)
         if changed or 'assessment' not in paper:
             paper['assessment'] = score_paper(paper, rules)
         annotate(paper, key, venues, policy)
+        if valid_cache and before_core=={k:paper.get(k) for k in before_core}:
+            aliases=paper['semantic'].setdefault('compatible_fingerprints',[])
+            digest=fingerprint(paper,settings())
+            if digest!=paper['semantic']['fingerprint'] and digest not in aliases:aliases.append(digest)
     library["schema_version"] = 2
     return library
 

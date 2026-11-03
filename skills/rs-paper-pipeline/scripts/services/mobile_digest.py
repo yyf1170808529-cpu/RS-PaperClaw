@@ -26,15 +26,16 @@ def prompt_metadata(paper, papers=None, aliases=None):
 def archive_mobile_page(page):
     return page.replace('href="maritime.html?', 'href="../../maritime.html?').replace('href="maritime-daily.html?', 'href="../../maritime-daily.html?').replace('src="maritime_', 'src="../../maritime_')
 
-def reading_index(root):
+def reading_index(root,library=None):
     from services.domain_exclusion import exclusion
+    from services.semantic_evaluation import ranking_info
     from services.maritime import write_json
     directory=root/'docs/maritime-data/mobile'
     batches=[]
     for path in sorted(directory.glob('????-??-??.json')):
         saved=json.loads(path.read_text(encoding='utf8'))
         rows=saved.get('papers',[])
-        if saved.get('publication_status','complete')=='complete' and len(rows)==5 and all(p.get('abstract_zh') and not exclusion(p) for p in rows):batches.append({'date':saved['date']})
+        if saved.get('publication_status','complete')=='complete' and len(rows)==5 and all(p.get('abstract_zh') and not exclusion(p) and (not library or (hard_eligible(library['papers'].get(p['paper_id'],p)) and ranking_info(library['papers'].get(p['paper_id'],p))['eligible'])) for p in rows):batches.append({'date':saved['date']})
     write_json(directory/'reading-index.json',{'batches':batches})
 
 
@@ -51,7 +52,7 @@ def refresh_mobile_pages(root, library):
     if latest.exists():
         payload=json.loads(latest.read_text(encoding='utf8'))
         (root/'docs/maritime-daily.html').write_text(render_mobile_page(payload,library.get('aliases',{}),library['papers']),encoding='utf8')
-    reading_index(root)
+    reading_index(root,library)
     return count
 
 def digest_revision(payload):
@@ -100,10 +101,11 @@ def hard_eligible(p):
     if p.get('application_bucket')=='water' or r.get('application')=='maritime':
         return kind=='journal_article' and bool(q.get('high_journal'))
     if bucket=='water':return kind=='journal_article' and bool(q.get('high_journal'))
-    # Keyword scores determine review priority, not the final AI publication gate.
+    from services.relevance_scope import arxiv_preprint
+    # Verified publication evidence is independent of preprint hosting.
     return bool((kind=='journal_article' and q.get('high_journal')) or
                 (kind=='conference_paper' and q.get('ccf_a')) or
-                (kind=='preprint' and p.get('publication_status')!='published'))
+                (kind=='preprint' and p.get('publication_status')!='published' and arxiv_preprint(p)))
 
 def candidate_pool(root,library,day,new_keys=()):
     """Ordered stages for both the desktop and cloud update paths."""
@@ -246,7 +248,7 @@ def build_mobile_digest(root, library, date):
     (directory/(str(date)+'.html')).write_text(archive_mobile_page(page),encoding='utf8')
     markdown=f'# 每日精选 {date}\n\n'+ '\n\n'.join(f'## {p["title"]}\n\n{p["source"]}\n\n{p["reason"]}\n\n[原文]({p["original_url"]}) · [阅读页]({p["reading_url"]})' for p in items)
     (directory/(str(date)+'.md')).write_text(markdown,encoding='utf8')
-    reading_index(root)
+    reading_index(root,library)
     return payload
 
 

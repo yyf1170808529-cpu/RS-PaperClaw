@@ -66,5 +66,6 @@ def application(paper, policy):
                 re.search(r'\b(detect\w*|track\w*|dataset\w*|experiment\w*|perception|fusion|monitor\w*|we|propos\w*|study|paper|method)\b',s,re.I)]
     water = any(has(title,t) for t in terms) or bool(contexts)
     text=title+'\n'+abstract
-    land = any(has(text,t) for t in policy['signals']['traffic'])
+    from services.relevance_scope import traffic_task
+    land = traffic_task(paper)
     return 'water' if water else 'land' if land else 'general' if paper.get('assessment',{}).get('primary_topic') or any(has(text,t) for t in policy['signals']['perception']+policy['signals']['method']) else 'other'

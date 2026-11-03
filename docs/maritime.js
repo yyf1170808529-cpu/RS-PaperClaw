@@ -184,7 +184,7 @@ if (typeof document !== 'undefined') {
       const id=paperId(paper),quality=paper.quality||{};
       article.id='paper-'+encodeURIComponent(id);
       article.append(node('h2', paper.title), node('p', `${paper.authors.join(', ')} · ${paper.published}`, 'muted'),
-        node('p', `规则分 ${assessment.score}（${LEVELS[assessment.level]}） · ${paper.recommendation_status==='direct'||paper.recommendation_status==='direct_rule'?'直接相关':paper.recommendation_status==='transfer'?'方法值得关注':'普通候选'}${typeof paper.ai_score==='number'?` · AI相关分 ${paper.ai_score}/100`:' · AI待评估'} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
+        node('p', `规则分 ${assessment.score}（${LEVELS[assessment.level]}） · ${paper.recommendation_status==='direct'||paper.recommendation_status==='direct_rule'?'直接相关':paper.recommendation_status==='transfer'?'方法值得关注':'普通候选'}${typeof paper.ai_score==='number'?` · AI相关分 ${paper.ai_score}/100`:paper.ai_state==='domain_excluded'?' · 不符合每日精选范围':' · AI待评估'} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
       const source=sourceLabel(paper);
       article.append(node('p', source),
         node('p', `第一作者：${paper.first_author||paper.authors[0]||'暂未获取'} ｜单位：${paper.affiliation_verified ? paper.first_author_affiliations.join('; ') : '暂未获取'}`, 'muted'));

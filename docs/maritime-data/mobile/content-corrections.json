@@ -63,6 +63,21 @@
       "domain": "biomedical",
       "reason": "医学研究对象/实验任务：Electrophysiology",
       "replacement": null
+    },
+    "doi:10.21203/rs.3.rs-11121422/v1": {
+      "domain": "infrastructure_inspection",
+      "reason": "专用基础设施研究或缺少可信arXiv预印本身份，不符合精选资格",
+      "replacement": null
+    },
+    "doi:10.21203/rs.3.rs-10718006/v1": {
+      "domain": "non_arxiv_preprint",
+      "reason": "专用基础设施研究或缺少可信arXiv预印本身份，不符合精选资格",
+      "replacement": null
+    },
+    "doi:10.21203/rs.3.rs-10037779/v1": {
+      "domain": "non_arxiv_preprint",
+      "reason": "专用基础设施研究或缺少可信arXiv预印本身份，不符合精选资格",
+      "replacement": null
     }
   }
 }
