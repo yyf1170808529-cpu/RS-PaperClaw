@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-03T12:02:11.290244+00:00",
-  "completed_at": "2026-11-03T12:04:16.442262+00:00",
+  "run_id": "2026-11-03T12:12:59.964752+00:00",
+  "completed_at": "2026-11-03T12:15:17.043726+00:00",
   "local_update": "success",
   "jobs": 0,
   "successful": 0,
@@ -12,25 +12,49 @@
   "before_count": 4138,
   "after_count": 4138,
   "translation": {
-    "translated": 0,
+    "translated": 5,
     "failed": 0,
-    "cached": 1,
+    "cached": 0,
     "manual": 0,
     "pending": 0,
     "missing_english": 0,
     "skipped_failed": 0,
     "attempted_ids": [
-      "2609.32844"
+      "2609.32856",
+      "2609.33230",
+      "2609.38511",
+      "2610.06232",
+      "2610.39848"
     ],
     "replacement_failures": [],
-    "selected": 1,
+    "selected": 5,
     "engine": "DeepSeek",
-    "api_calls": 0,
-    "cost_upper_cny": 0.0,
+    "api_calls": 5,
+    "cost_upper_cny": 0.01858,
     "priced_cost_cny": 0.0,
     "papers": [
       {
-        "paper_id": "2609.32844",
+        "paper_id": "2610.39848",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "2610.06232",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "2609.38511",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "2609.33230",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "2609.32856",
         "source": "deepseek",
         "error": ""
       }
@@ -62,41 +86,117 @@
   "ai": {
     "status": "deferred",
     "processed": 0,
-    "cached": 1253,
+    "cached": 1233,
     "failed": 0,
     "cost_upper_cny": 0.0,
     "priced_cost_cny": 0.0,
     "unsettled_upper_cny": 0.0,
     "tokens": 0,
     "missing_abstract": 0,
-    "candidate_count": 1254,
+    "candidate_count": 1234,
     "already_attempted_today": 1,
     "pending_total": 0,
     "limit_deferred": 0,
-    "selected_count": 1,
-    "ai_reviewed": 909,
-    "shortfall": 4,
+    "selected_count": 5,
+    "ai_reviewed": 892,
+    "shortfall": 0,
     "ai_states": {
-      "evaluated": 909,
-      "uncertain": 344,
+      "evaluated": 892,
+      "uncertain": 341,
       "unassessed": 1
     },
-    "publication_status": "partial",
-    "reserve_available": 1
+    "publication_status": "complete",
+    "reserve_available": 16
   },
   "affiliations": [
     {
-      "paper_id": "2609.32844",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2610.39848",
+      "revision": 1,
+      "time": "2026-11-03T12:14:20.912547+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.38511",
+      "revision": 1,
+      "time": "2026-11-03T12:14:20.912547+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2610.06232",
+      "revision": 1,
+      "time": "2026-11-03T12:14:20.912547+00:00",
+      "status": "verified",
+      "attempts": [
+        {
+          "source": "crossref",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.33230",
+      "revision": 1,
+      "time": "2026-11-03T12:14:20.912547+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "crossref",
+          "status": "unavailable",
+          "error": "api.crossref.org HTTP 404: Resource not found."
+        },
+        {
+          "source": "openalex",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.32856",
+      "revision": 1,
+      "time": "2026-11-03T12:14:20.912547+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "openalex_title",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
     }
   ],
-  "daily_selected": 1,
-  "daily_publication": "partial",
-  "published_daily_date": "2026-11-02",
+  "daily_selected": 5,
+  "daily_publication": "complete",
+  "published_daily_date": "2026-11-03",
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "not_run_resume",
-  "github_run_id": "41632247814"
+  "github_run_id": "41633788608"
 }

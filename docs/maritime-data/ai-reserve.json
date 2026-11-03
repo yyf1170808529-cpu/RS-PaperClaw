@@ -742,17 +742,21 @@
       "paper_id": "2610.06232",
       "fingerprint": "98c1f033dab2237005fc74b57eccbf601c32cffd77423b3353974034112ab9d3",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-03"
+      ],
+      "available": false
     },
     "2609.38511": {
       "paper_id": "2609.38511",
       "fingerprint": "874193bb68570d943628837aaf4c854b00edc886225bc1a74867abf9259853d1",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-03"
+      ],
+      "available": false
     },
     "2609.10156": {
       "paper_id": "2609.10156",
@@ -790,9 +794,11 @@
       "paper_id": "2609.33230",
       "fingerprint": "cb4c5ca7e015078416add7056043b66c6960b5bfe5c73aaed2b839bd85dc7e23",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-03"
+      ],
+      "available": false
     },
     "2609.24964": {
       "paper_id": "2609.24964",
@@ -814,9 +820,11 @@
       "paper_id": "2609.32856",
       "fingerprint": "4367b43743969f22ab6122300a62c571e87a27de078d8928a92023cfe82ef215",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-03"
+      ],
+      "available": false
     },
     "2610.10090": {
       "paper_id": "2610.10090",
@@ -854,10 +862,12 @@
       "paper_id": "2610.39848",
       "fingerprint": "acdb2d7b230093273be07c98843eda78a4c71912bfe23fdc707bde26681a270c",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-03"
+      ],
+      "available": false
     }
   },
-  "available_count": 16
+  "available_count": 11
 }

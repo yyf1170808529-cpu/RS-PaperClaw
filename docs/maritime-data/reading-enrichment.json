@@ -810,6 +810,191 @@
       "translation_source": "deepseek",
       "priced_cost_cny": 0.002254,
       "translated_at": "2026-11-03T12:09:53+08:00"
+    },
+    "bcf715a3a19a4d5d69951a7d301d5bd81346252db813dc96158855f3e057b983": {
+      "status": "success",
+      "paper_id": "2610.39848",
+      "english_hash": "7f161bd274fc80822644595b129556c6faec11128282f20b7d05dd575c79bca5",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 523,
+        "completion_tokens": 371,
+        "total_tokens": 894,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 523
+      },
+      "cost_upper_cny": 0.004014,
+      "created": 1793708071,
+      "candidate": {
+        "paper_id": "2610.39848",
+        "summary_zh": "该论文提出LiDAR-SHIELD，一个完全Docker化的对抗鲁棒性评估框架，通过HTTP端点解耦模型与攻击工具包，统一支持3D语义分割和3D目标检测的对抗攻击测试。",
+        "migration_zh": "研究推断：可将该HTTP端点解耦思路用于船舶检测/分割的对抗评测模块，以模型适配器接入点云输入并施加扰动或点注入作监督压力测试，无需内部改造骨干网络。",
+        "abstract_zh": "基于LiDAR的3D感知是自动驾驶和机器人技术的基础，但要在真实世界中安全部署这些模型，需要在投入使用前用对抗输入对其进行压力测试。尽管已有最先进的对抗攻击方法，但其实现往往分散在各自的代码库中，每个实现都绑定于特定架构或任务，并且需要手动重建环境和编写模型特定的集成代码。我们提出LIDARSHIELD，一个统一且完全Docker化的框架，它反转了这一工作流程：LIDARSHIELD不把目标模型安装到工具包内部，而是通过三个轻量级HTTP端点（即/info、/forward和/gradient）暴露任意模型。因此，连接一个新模型或数据集只需一个加载函数或适配器。该框架通过同一引擎-服务协议同时支持3D语义分割和3D目标检测，集成了任务感知的最先进攻击套件，包括用于分割的PGD和Square Attack，以及用于检测的点扰动、点移除、点注入和LiDAttack。这能够系统性地暴露异构LiDAR骨干网络中的边缘案例和漏洞。LiDAR-Shield代码库公开于https://github.com/alexandrosgk/LiDAR-shield。"
+      },
+      "content": {
+        "paper_id": "2610.39848",
+        "summary_zh": "该论文提出LiDAR-SHIELD，一个完全Docker化的对抗鲁棒性评估框架，通过HTTP端点解耦模型与攻击工具包，统一支持3D语义分割和3D目标检测的对抗攻击测试。",
+        "migration_zh": "研究推断：可将该HTTP端点解耦思路用于船舶检测/分割的对抗评测模块，以模型适配器接入点云输入并施加扰动或点注入作监督压力测试，无需内部改造骨干网络。",
+        "abstract_zh": "基于LiDAR的3D感知是自动驾驶和机器人技术的基础，但要在真实世界中安全部署这些模型，需要在投入使用前用对抗输入对其进行压力测试。尽管已有最先进的对抗攻击方法，但其实现往往分散在各自的代码库中，每个实现都绑定于特定架构或任务，并且需要手动重建环境和编写模型特定的集成代码。我们提出LIDARSHIELD，一个统一且完全Docker化的框架，它反转了这一工作流程：LIDARSHIELD不把目标模型安装到工具包内部，而是通过三个轻量级HTTP端点（即/info、/forward和/gradient）暴露任意模型。因此，连接一个新模型或数据集只需一个加载函数或适配器。该框架通过同一引擎-服务协议同时支持3D语义分割和3D目标检测，集成了任务感知的最先进攻击套件，包括用于分割的PGD和Square Attack，以及用于检测的点扰动、点移除、点注入和LiDAttack。这能够系统性地暴露异构LiDAR骨干网络中的边缘案例和漏洞。LiDAR-Shield代码库公开于https://github.com/alexandrosgk/LiDAR-shield。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.002007,
+      "translated_at": "2026-11-03T20:14:31+08:00"
+    },
+    "75af9ae08bf5cf9636e06cdd6af007b8bff59a8201be20042741e76a7294d080": {
+      "status": "success",
+      "paper_id": "2609.38511",
+      "english_hash": "3dc6c9a7a003f07c036ed5d17f0026bad4f81c3f200a20675d5edccab491aa83",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 470,
+        "completion_tokens": 305,
+        "total_tokens": 775,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 470
+      },
+      "cost_upper_cny": 0.00338,
+      "created": 1793708075,
+      "candidate": {
+        "paper_id": "2609.38511",
+        "summary_zh": "该论文构建开源BlueROV2平台，结合机载视觉与非线性模型预测控制，用于水下机器人自主导航与对接，并提供仿真与多机器人实验工具。",
+        "migration_zh": "研究推断：可将其水下标定立体深度与实时目标检测的相对位姿模块，迁移至船舶视觉检测或视觉–AIS关联的输入前端，监督沿用检测与位姿标签，结构保持轻量Jetson部署。",
+        "abstract_zh": "自主水下机器人需要稳健的感知、估计与控制才能在受限环境中运行。本文提出一个开源BlueROV2平台，将机载视觉与非线性模型预测控制（NMPC）相结合，用于自主导航与对接。该平台在模块化耐压舱内集成NVIDIA Jetson Orin NX和Intel RealSense D435i立体相机。经水下标定的立体深度和实时目标检测提供附近BlueROV2在相机坐标系与机体坐标系中的相对位置测量。基于四元数的估计器融合外部位姿与惯性测量，而基于非线性六自由度模型的NMPC控制器跟踪规划的导航与对接轨迹。为支持可复现开发，我们还提供开源基于物理的PX4 SITL和Gazebo环境、多机器人仿真工具以及低成本物理对接站。实验评估水下感知、机载计算性能、状态估计、轨迹跟踪和自主对接。"
+      },
+      "content": {
+        "paper_id": "2609.38511",
+        "summary_zh": "该论文构建开源BlueROV2平台，结合机载视觉与非线性模型预测控制，用于水下机器人自主导航与对接，并提供仿真与多机器人实验工具。",
+        "migration_zh": "研究推断：可将其水下标定立体深度与实时目标检测的相对位姿模块，迁移至船舶视觉检测或视觉–AIS关联的输入前端，监督沿用检测与位姿标签，结构保持轻量Jetson部署。",
+        "abstract_zh": "自主水下机器人需要稳健的感知、估计与控制才能在受限环境中运行。本文提出一个开源BlueROV2平台，将机载视觉与非线性模型预测控制（NMPC）相结合，用于自主导航与对接。该平台在模块化耐压舱内集成NVIDIA Jetson Orin NX和Intel RealSense D435i立体相机。经水下标定的立体深度和实时目标检测提供附近BlueROV2在相机坐标系与机体坐标系中的相对位置测量。基于四元数的估计器融合外部位姿与惯性测量，而基于非线性六自由度模型的NMPC控制器跟踪规划的导航与对接轨迹。为支持可复现开发，我们还提供开源基于物理的PX4 SITL和Gazebo环境、多机器人仿真工具以及低成本物理对接站。实验评估水下感知、机载计算性能、状态估计、轨迹跟踪和自主对接。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.00169,
+      "translated_at": "2026-11-03T20:14:35+08:00"
+    },
+    "ae25370dad9c5020c905ae40cd51f37aa184a4fab1e1b365cbdbcc571b2d6b90": {
+      "status": "success",
+      "paper_id": "2610.06232",
+      "english_hash": "ee710badc678fde5198e5c230383a2125305f630cbe2167e524dab66f2bd8d58",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 476,
+        "completion_tokens": 292,
+        "total_tokens": 768,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 476
+      },
+      "cost_upper_cny": 0.003288,
+      "created": 1793708078,
+      "candidate": {
+        "paper_id": "2610.06232",
+        "summary_zh": "该论文面向自动驾驶，将YOLOv7目标检测与MiDaS深度估计结合，并配合透视变换与决策模块，实现障碍物感知、定位与路径规划的仿真与实验验证。",
+        "migration_zh": "研究推断：可将YOLOv7+MiDaS的单目检测与相对深度组合迁移至船舶视觉检测与避障前端，以检测框提供目标类别、以深度图作弱监督深度分支，并加透视变换生成BEV用于路径/航迹规划。",
+        "abstract_zh": "自动驾驶汽车已成为一种可靠技术，具备改变交通与出行的能力。自动驾驶汽车的开发需要在多个领域取得显著进展，包括感知、定位、决策和控制。本文基于项目实现，将YOLO（You Only Look Once）目标检测、用于障碍物定位与感知的MiDaS深度传感、透视变换以及自动驾驶汽车路径规划决策相结合。针对目标检测、深度传感、定位和路径规划的当代技术现状，通过仿真和实验评估了该组合系统的性能。结果表明，YOLO与MiDaS的组合为目及深度传感提供了一种新的鲁棒系统。本文有助于推动自动驾驶汽车技术的进步，并为环境中障碍物的感知与定位提供了新颖且创新的方法。关键词：YOLO，MiDaS，感知，定位，决策"
+      },
+      "content": {
+        "paper_id": "2610.06232",
+        "summary_zh": "该论文面向自动驾驶，将YOLOv7目标检测与MiDaS深度估计结合，并配合透视变换与决策模块，实现障碍物感知、定位与路径规划的仿真与实验验证。",
+        "migration_zh": "研究推断：可将YOLOv7+MiDaS的单目检测与相对深度组合迁移至船舶视觉检测与避障前端，以检测框提供目标类别、以深度图作弱监督深度分支，并加透视变换生成BEV用于路径/航迹规划。",
+        "abstract_zh": "自动驾驶汽车已成为一种可靠技术，具备改变交通与出行的能力。自动驾驶汽车的开发需要在多个领域取得显著进展，包括感知、定位、决策和控制。本文基于项目实现，将YOLO（You Only Look Once）目标检测、用于障碍物定位与感知的MiDaS深度传感、透视变换以及自动驾驶汽车路径规划决策相结合。针对目标检测、深度传感、定位和路径规划的当代技术现状，通过仿真和实验评估了该组合系统的性能。结果表明，YOLO与MiDaS的组合为目及深度传感提供了一种新的鲁棒系统。本文有助于推动自动驾驶汽车技术的进步，并为环境中障碍物的感知与定位提供了新颖且创新的方法。关键词：YOLO，MiDaS，感知，定位，决策"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.001644,
+      "translated_at": "2026-11-03T20:14:38+08:00"
+    },
+    "788efff20277d56ae4ed972adb8dea934fea252228ac2e75437977f5ba430442": {
+      "status": "success",
+      "paper_id": "2609.33230",
+      "english_hash": "bb47fc8527383bf7e487f2e863050465bd427b5b4752b40636f7713a42422626",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 509,
+        "completion_tokens": 383,
+        "total_tokens": 892,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 509
+      },
+      "cost_upper_cny": 0.004082,
+      "created": 1793708082,
+      "candidate": {
+        "paper_id": "2609.33230",
+        "summary_zh": "该论文构建AevaScenes，一个包含575个序列、8M以上3D框和逐点语义标签的FMCW LiDAR数据集，定义3D检测、场景流估计与语义分割基准，并验证Doppler速度对远距离车辆行人检测和场景流精度的显著提升。",
+        "migration_zh": "研究推断：可将逐点Doppler速度作为额外输入通道，并入船舶LiDAR检测或分割网络的BEV体素特征，并在多传感器融合中作为运动监督约束，雷达与AIS关联时也可用径向速度辅助航迹匹配。",
+        "abstract_zh": "FMCW LiDAR在测量距离的同时测量逐点径向Doppler速度，提供了一种传统飞行时间传感器所不具备的运动线索。在远距离利用这一信号仍研究不足。我们提出了一个FMCW LiDAR数据集，包含575个序列（57.5K帧），在16个检测类别上具有超过8百万个标注3D框，并在24个语义类别上具有逐点标签，由六台商用FMCW LiDAR传感器和六台配对4K相机在八个湾区城市采集，包括237个夜间序列，标注延伸至400m。我们定义了一个包含三项任务的基准：3D目标检测、场景流估计和语义分割。检测和场景流在至400m的三个距离区间上进行评估，并配有公开评估服务器。我们探索了Doppler测量对旗舰识别任务的影响，发现远处车辆和行人的检测AP显著提升最高达2倍，尤其是在低延迟单帧设置下。我们同样发现，在所有距离上，场景流精度因Doppler测量而显著提高。我们的数据集和基准已在https://scenes.aeva.com 公开释放。"
+      },
+      "content": {
+        "paper_id": "2609.33230",
+        "summary_zh": "该论文构建AevaScenes，一个包含575个序列、8M以上3D框和逐点语义标签的FMCW LiDAR数据集，定义3D检测、场景流估计与语义分割基准，并验证Doppler速度对远距离车辆行人检测和场景流精度的显著提升。",
+        "migration_zh": "研究推断：可将逐点Doppler速度作为额外输入通道，并入船舶LiDAR检测或分割网络的BEV体素特征，并在多传感器融合中作为运动监督约束，雷达与AIS关联时也可用径向速度辅助航迹匹配。",
+        "abstract_zh": "FMCW LiDAR在测量距离的同时测量逐点径向Doppler速度，提供了一种传统飞行时间传感器所不具备的运动线索。在远距离利用这一信号仍研究不足。我们提出了一个FMCW LiDAR数据集，包含575个序列（57.5K帧），在16个检测类别上具有超过8百万个标注3D框，并在24个语义类别上具有逐点标签，由六台商用FMCW LiDAR传感器和六台配对4K相机在八个湾区城市采集，包括237个夜间序列，标注延伸至400m。我们定义了一个包含三项任务的基准：3D目标检测、场景流估计和语义分割。检测和场景流在至400m的三个距离区间上进行评估，并配有公开评估服务器。我们探索了Doppler测量对旗舰识别任务的影响，发现远处车辆和行人的检测AP显著提升最高达2倍，尤其是在低延迟单帧设置下。我们同样发现，在所有距离上，场景流精度因Doppler测量而显著提高。我们的数据集和基准已在https://scenes.aeva.com 公开释放。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.002041,
+      "translated_at": "2026-11-03T20:14:42+08:00"
+    },
+    "090033727a1acf29c585abc2417cf67c7ed75da0d316a68772ec8635efe4c760": {
+      "status": "success",
+      "paper_id": "2609.32856",
+      "english_hash": "820c5e0e8b0ed0257d42c4ce07e4a8ada56f912c556780e7fb048ba7424852bf",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 508,
+        "completion_tokens": 350,
+        "total_tokens": 858,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 508
+      },
+      "cost_upper_cny": 0.003816,
+      "created": 1793708086,
+      "candidate": {
+        "paper_id": "2609.32856",
+        "summary_zh": "该论文提出统一评测框架PolyTopoBench，针对遥感图像复杂矢量多边形生成，系统评测11类方法对外环与内环的建模能力。",
+        "migration_zh": "研究推断：可将外环与内环分开的拓扑评价指标及复杂矢量输出头迁移至船舶检测的多边形实例分割模块，输入用遥感图像，监督增加内环标签并调整后处理以保留孔洞拓扑。",
+        "abstract_zh": "矢量多边形生成将视觉输入（例如遥感（RS）图像）转换为矢量化多边形几何，支撑自动驾驶、矢量地图构建和遥感等应用。早期流程预测栅格掩膜并将其后处理为多边形，这阻碍了端到端优化，可能遗漏小目标或引入不准确顶点。近期方法直接生成矢量多边形，但大多关注简单外轮廓，它们要么无法表示带孔洞的复杂多边形，要么无法保持其拓扑。本文提出PolyTopoBench，一个面向RS图像矢量多边形生成、明确强调复杂多边形的统一评测框架。PolyTopoBench同时评测外环与内环，并在覆盖建筑、道路、植被和无植被区域的两个RS图像数据集上，对11种代表性方法进行基准评测，包括基于分割的多边形化流程、视觉基础模型基线和专用矢量多边形生成器。实验表明，现有方法通常能恢复简单外边界，但在带孔洞或多环多边形上性能显著下降。这些结果揭示复杂多边形生成仍是一个未解决的挑战，并推动拓扑感知的基准与模型设计。代码和数据见https://github.com/seai-lab/PolyTopoBench。"
+      },
+      "content": {
+        "paper_id": "2609.32856",
+        "summary_zh": "该论文提出统一评测框架PolyTopoBench，针对遥感图像复杂矢量多边形生成，系统评测11类方法对外环与内环的建模能力。",
+        "migration_zh": "研究推断：可将外环与内环分开的拓扑评价指标及复杂矢量输出头迁移至船舶检测的多边形实例分割模块，输入用遥感图像，监督增加内环标签并调整后处理以保留孔洞拓扑。",
+        "abstract_zh": "矢量多边形生成将视觉输入（例如遥感（RS）图像）转换为矢量化多边形几何，支撑自动驾驶、矢量地图构建和遥感等应用。早期流程预测栅格掩膜并将其后处理为多边形，这阻碍了端到端优化，可能遗漏小目标或引入不准确顶点。近期方法直接生成矢量多边形，但大多关注简单外轮廓，它们要么无法表示带孔洞的复杂多边形，要么无法保持其拓扑。本文提出PolyTopoBench，一个面向RS图像矢量多边形生成、明确强调复杂多边形的统一评测框架。PolyTopoBench同时评测外环与内环，并在覆盖建筑、道路、植被和无植被区域的两个RS图像数据集上，对11种代表性方法进行基准评测，包括基于分割的多边形化流程、视觉基础模型基线和专用矢量多边形生成器。实验表明，现有方法通常能恢复简单外边界，但在带孔洞或多环多边形上性能显著下降。这些结果揭示复杂多边形生成仍是一个未解决的挑战，并推动拓扑感知的基准与模型设计。代码和数据见https://github.com/seai-lab/PolyTopoBench。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.001908,
+      "translated_at": "2026-11-03T20:14:46+08:00"
     }
   }
 }
