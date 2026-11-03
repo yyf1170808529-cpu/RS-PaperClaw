@@ -612804,6 +612804,7 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "daily_domain_exclusion": null,
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -612950,6 +612951,7 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "daily_domain_exclusion": null,
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -613958,6 +613960,7 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "daily_domain_exclusion": null,
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -614103,6 +614106,7 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "daily_domain_exclusion": null,
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -615217,6 +615221,7 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：clinical, patients"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -615659,6 +615664,7 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -615784,6 +615790,7 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Alzheimer"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -615923,6 +615930,7 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Cancer, Genome"
       },
+      "semantic": null,
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -652772,22 +652780,22 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-11-03T03:56:53.845406+00:00",
-    "completed_at": "2026-11-03T04:10:23.496549+00:00",
-    "local_update": "partial",
-    "jobs": 42,
-    "successful": 39,
+    "run_id": "2026-11-03T12:02:11.290244+00:00",
+    "completed_at": "2026-11-03T12:04:16.442262+00:00",
+    "local_update": "success",
+    "jobs": 0,
+    "successful": 0,
     "incomplete": 0,
-    "failed": 3,
-    "added": 23,
+    "failed": 0,
+    "added": 0,
     "filled": 0,
     "merged": 0,
-    "before_count": 4115,
+    "before_count": 4138,
     "after_count": 4138,
     "translation": {
-      "translated": 1,
+      "translated": 0,
       "failed": 0,
-      "cached": 0,
+      "cached": 1,
       "manual": 0,
       "pending": 0,
       "missing_english": 0,
@@ -652798,8 +652806,8 @@
       "replacement_failures": [],
       "selected": 1,
       "engine": "DeepSeek",
-      "api_calls": 1,
-      "cost_upper_cny": 0.004508,
+      "api_calls": 0,
+      "cost_upper_cny": 0.0,
       "priced_cost_cny": 0.0,
       "papers": [
         {
@@ -652833,27 +652841,21 @@
       ]
     ],
     "ai": {
-      "status": "partial",
-      "processed": 15,
-      "cached": 1238,
-      "failed": 1,
-      "cost_upper_cny": 0.06758192,
-      "priced_cost_cny": 0.03379096,
+      "status": "deferred",
+      "processed": 0,
+      "cached": 1253,
+      "failed": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
       "unsettled_upper_cny": 0.0,
-      "tokens": 21734,
+      "tokens": 0,
       "missing_abstract": 0,
       "candidate_count": 1254,
-      "already_attempted_today": 0,
-      "pending_total": 16,
+      "already_attempted_today": 1,
+      "pending_total": 0,
       "limit_deferred": 0,
       "selected_count": 1,
       "ai_reviewed": 909,
-      "validation_errors": [
-        {
-          "paper_id": "2605.10739",
-          "reason": "Evidence is not an exact abstract quotation"
-        }
-      ],
       "shortfall": 4,
       "ai_states": {
         "evaluated": 909,
@@ -652876,8 +652878,8 @@
     "published_daily_count": 5,
     "github_sync": "not_attempted",
     "pages_publish": "not_attempted",
-    "retrieval_status": "partial",
-    "github_run_id": "41575165039"
+    "retrieval_status": "not_run_resume",
+    "github_run_id": "41632247814"
   },
   "recommendation_policy": {
     "schema_version": 2,
