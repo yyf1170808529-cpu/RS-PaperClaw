@@ -1,28 +1,36 @@
 {
-  "attempt_date": "2026-11-03",
+  "attempt_date": "2026-11-04",
   "status": "complete",
-  "published_date": "2026-11-03",
-  "published_revision": "9d189ff61ab13940",
+  "published_date": "2026-11-04",
+  "published_revision": "13ec6f4824e816e9",
   "selection_audit": {
-    "candidate_count": 1234,
-    "ai_reviewed": 892,
+    "candidate_count": 1250,
+    "ai_reviewed": 897,
     "ai_states": {
-      "evaluated": 892,
-      "uncertain": 341,
+      "evaluated": 897,
+      "uncertain": 352,
       "unassessed": 1
     },
     "stage_counts": {
-      "1": 17,
-      "2": 1162,
-      "0": 15,
+      "0": 21,
+      "2": 1171,
+      "1": 18,
       "3": 40
     },
-    "ai_rejected": 876,
-    "translation_deferred": 0,
-    "qualified_count": 16,
+    "ai_rejected": 884,
+    "translation_deferred": 1,
+    "qualified_count": 12,
     "selected_count": 5,
     "shortfall": 0,
-    "translation_replacements": [],
+    "translation_replacements": [
+      {
+        "paper_id": "2611.04034",
+        "attempt_date": "2026-11-04",
+        "reason": "本地译文尚未生成，或英文摘要已变化",
+        "requires_enrichment": true,
+        "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7"
+      }
+    ],
     "translation_environment_errors": [],
     "translation_errors": []
   }

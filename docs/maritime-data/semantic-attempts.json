@@ -6087,7 +6087,7 @@
     },
     "019077b5e8e59b87c86f583ea7838b8a85023b6cb65f26b422bf0ab4ac3af70a": {
       "paper_id": "2605.10739",
-      "date": "2026-11-03",
+      "date": "2026-11-04",
       "status": "attempted"
     },
     "9184940a6aa4bdfa7afdf7634456dc0108666f8527817e3e528c2a6b20dccad8": {
@@ -6193,6 +6193,111 @@
     "90818597c3a3cf801de85b2e25af5cabf3e88439b34e5a9fb7f777c8a23bda3e": {
       "paper_id": "2611.00062",
       "date": "2026-11-03",
+      "status": "validated"
+    },
+    "4ac96b2122df450f66bec046c35aac5049a86a301b818b90101e3c5a7267c8b3": {
+      "paper_id": "2611.04300",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "a852e78cc294fa5f5462d4773c1fc8dab2ef7861e81fb4d7e6c516177b199048": {
+      "paper_id": "2611.02992",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "a5901ddd0ffba2744ba2e3a721e35844efdaef4d1774433a2da6eaa58549ea9a": {
+      "paper_id": "2611.04485",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "0d541bbb7f375f58e06c7e11118d9b590956088cf3cd8f745b835d8e9893f7e6": {
+      "paper_id": "2611.04710",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "76773378185c9811c838febedf9a77f09c5ef45de84e16fabb822a67f3ebd2c0": {
+      "paper_id": "2611.04422",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "8195a5a0522443a98d33ed44f1bf6091c76ef01f46068d2e45d758df0860ca04": {
+      "paper_id": "2611.04711",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "9ce4c4fe57ed803ef488b6880e274ce6494ba2235891d5a532d92255c3a19ad4": {
+      "paper_id": "2611.02794",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "52bfc8299283b48b57ccf684d4c1adcfa03c65a001885716ac50e3edb00af7ca": {
+      "paper_id": "2611.02709",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "66f88261f8a0ca20b5b0a5e97a420b65eedf49bdd59f881ac83f7d2a96a28462": {
+      "paper_id": "2611.02952",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "d375d06aefac29b6426b6eaec0286f2fa0a0c31f615da064000e296ed70943ed": {
+      "paper_id": "2611.04654",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "2d3ae123f5c2d49be9e2a19c25611cd7dfc2da4f228f8b6d58f2a4c08ad3be18": {
+      "paper_id": "2611.04034",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "17aa88781c724af8b5fd3e3ea9210a147da6ce631d942a19dc102c6456161883": {
+      "paper_id": "2611.03382",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "1b73d31dde2de30509ecec662bfa4a51c3aca7c905bd2705d741f52791e97a3d": {
+      "paper_id": "2611.03229",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "5f5005f26c28604e7d33f1b9a50a69fe4d57fc217182cdaf2ae56212762169fa": {
+      "paper_id": "2611.03438",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "b686c16e279be91b92c7346075e6d8de39a18a55343dc157125a015d8dba441a": {
+      "paper_id": "2611.03370",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "14a51562d51a8f2bcac0cb6d0b0c33d9d8c9a8b11a3abf14ffedc92db9fae471": {
+      "paper_id": "2611.02512",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "cd1d16d6ef0f958979fcc02efd8dba2a9fd21fecf6e592f59b5b73659822d305": {
+      "paper_id": "2611.02921",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "5cfa8c12d07ffad16853f7d79856d4c65c3751d4bd5ad55a03d02cab46207e7a": {
+      "paper_id": "2611.02476",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "392ea0c2cd6156fb7b2ea1cb45f9e6253aac3903f5241f47400f8506d84942b6": {
+      "paper_id": "2611.04709",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "35c3c0f1093def16ea0f60b0cbe130092156d409dcc6fc2bf29cd3a90b5644bd": {
+      "paper_id": "2611.04414",
+      "date": "2026-11-04",
+      "status": "validated"
+    },
+    "9ba71b8836b1b00c2ba17ce5beb8def15924b731d5b478588f3eddd688cc5c5c": {
+      "paper_id": "2611.04755",
+      "date": "2026-11-04",
       "status": "validated"
     }
   }
