@@ -2,6 +2,54 @@
   "date": "2026-11-05",
   "papers": [
     {
+      "paper_id": "doi:10.1109/tits.2026.3727609",
+      "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
+      "authors": [
+        "Wen Chen",
+        "Xiaojun Wu",
+        "Qixun Yang",
+        "Haiyan Wei",
+        "Peng Li",
+        "Yunhui Liu"
+      ],
+      "published": "2026-11",
+      "arxiv_url": "",
+      "doi": "10.1109/tits.2026.3727609",
+      "original_url": "https://doi.org/10.1109/tits.2026.3727609",
+      "pdf_url": "",
+      "open_access_url": "",
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
+      "resource_type": "journal_article",
+      "oa_evidence": false,
+      "validity": {
+        "status": "accessible"
+      },
+      "first_author": "Wen Chen",
+      "first_author_affiliations": [
+        "Harbin Institute of Technology, Shenzhen"
+      ],
+      "affiliation_source": "Crossref first author",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "直接面向船舶检测，提出数据集和轻量检测网络，相关性强；但方法无跨任务通用性，迁移性低。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftits.2026.3727609",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "直接相关",
+      "ai_score": 48,
+      "selection_source": "近期候选",
+      "summary_zh": "该论文提出大规模船舶检测数据集MARS和轻量无锚框网络ETMS，通过重构骨干、自适应加权特征融合与坐标对齐补偿模块，提升中小型船舶检测精度。",
+      "migration_zh": "研究推断：可迁移至船舶检测的轻量骨干与多尺度特征融合模块，在Radar–AIS或视觉–AIS关联中引入坐标对齐补偿监督，调整检测头与细化损失以提升中小目标关联精度。",
+      "abstract_zh": "实时且准确的船舶检测是提升海上车辆避碰能力与自主船舶航行安全性的基本要求。本文提出一个实用的大规模船舶检测数据集MARS，通过考虑背景多样性、船舶类别、船舶尺寸、视角变化和海浪等因素，来满足船舶检测任务的数据需求。此外，提出一种名为ETMS（面向海上船舶的增强型训练友好网络）的轻量级无锚框网络，对中小型船舶取得优异检测性能。具体而言，我们首先重构骨干结构，然后在颈部结构中对特征进行自适应加权融合，以轻量级网络提供更丰富的特征表示。其次，提出坐标对齐补偿（CAC）模块，解决头部结构中不同分支最优位置的对齐问题，并设置相应的细化损失以实现一致性优化。我们详尽的实验发现一致证明，ETMS优于其他船舶检测方法，在SeaShips(7000)上达到令人印象深刻的82.7 AP.5:.95，在MARS上达到69.2 AP.5:.95。这些结果凸显了ETMS在船舶检测任务中的有效性。深度学习在海上监视中的应用对于增强海上运输安全和提高港口交通管理效率具有重要意义。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
       "paper_id": "2609.16919",
       "title": "NeuroSymbEAD: A Large Scale Neuro-Symbolic Caption Dataset for Omni-Directional Embodied Autonomous Driving",
       "authors": [
@@ -186,71 +234,23 @@
       "abstract_zh": "可靠估计车辆朝向、质心和足迹对于表示车辆在交叉口转弯及其他常见道路机动过程中的道路使用者占据状态十分重要。在转弯过程中，车辆朝向与运动方向可能不同，而将朝向与轴向尺度耦合会降低朝向和范围估计的质量。本文提出一种带有解耦朝向与轴向尺度估计（DOAM）模型的轨迹基数化概率假设密度滤波器，用于多车辆跟踪。该模型在每个轨迹分量内分别表示运动学、朝向和半轴长度平方状态，在不引入额外交互多模型结构的情况下减少朝向变化与尺度估计之间的相互干扰。一种结构化的坐标上升变分推断递推联合更新这些状态序列与量测源变量。推导了与解耦表示相关的轨迹分量似然和权重更新，同时保留标准基数递推。固定滞后轨迹实现进一步利用当前量测校正平滑窗口内的历史状态。使用信号化交叉口仿真和真实车载LiDAR量测的评估表明，车辆朝向、质心和范围估计得到改善，尤其是在转弯期间。所得的车辆状态和足迹估计为道路使用者占据感知以及后续碰撞风险评估和运动规划提供信息。",
       "translation_source": "deepseek",
       "translation_error": ""
-    },
-    {
-      "paper_id": "doi:10.1109/tits.2026.3727609",
-      "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
-      "authors": [
-        "Wen Chen",
-        "Xiaojun Wu",
-        "Qixun Yang",
-        "Haiyan Wei",
-        "Peng Li",
-        "Yunhui Liu"
-      ],
-      "published": "2026-11",
-      "arxiv_url": "",
-      "doi": "10.1109/tits.2026.3727609",
-      "original_url": "https://doi.org/10.1109/tits.2026.3727609",
-      "pdf_url": "",
-      "open_access_url": "",
-      "venue": "IEEE Transactions on Intelligent Transportation Systems",
-      "abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
-      "resource_type": "journal_article",
-      "oa_evidence": false,
-      "validity": {
-        "status": "accessible"
-      },
-      "first_author": "Wen Chen",
-      "first_author_affiliations": [
-        "Harbin Institute of Technology, Shenzhen"
-      ],
-      "affiliation_source": "Crossref first author",
-      "affiliation_verified": true,
-      "affiliation_evidence": null,
-      "corresponding_authors": null,
-      "corresponding_author_source": null,
-      "corresponding_author_verified": false,
-      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
-      "reason": "直接面向船舶检测，提出数据集和轻量检测网络，相关性强；但方法无跨任务通用性，迁移性低。",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftits.2026.3727609",
-      "score": 15,
-      "rule_level": "方法可借鉴",
-      "level": "直接相关",
-      "ai_score": 48,
-      "selection_source": "近期候选",
-      "summary_zh": "",
-      "migration_zh": "",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "本地译文尚未生成，或英文摘要已变化"
     }
   ],
   "selection_audit": {
-    "candidate_count": 1247,
-    "ai_reviewed": 887,
+    "candidate_count": 1253,
+    "ai_reviewed": 893,
     "ai_states": {
-      "evaluated": 887,
+      "evaluated": 893,
       "uncertain": 357,
       "unassessed": 3
     },
     "stage_counts": {
       "1": 38,
-      "2": 1159,
+      "2": 1165,
       "0": 11,
       "3": 39
     },
-    "ai_rejected": 879,
+    "ai_rejected": 885,
     "translation_deferred": 1,
     "qualified_count": 7,
     "selected_count": 5,
@@ -265,18 +265,9 @@
       }
     ],
     "translation_environment_errors": [],
-    "translation_errors": [
-      {
-        "paper_id": "doi:10.1109/tits.2026.3727609",
-        "reason": "本地译文尚未生成，或英文摘要已变化"
-      },
-      {
-        "paper_id": "doi:10.1109/tits.2026.3727609",
-        "reason": "DeepSeek enrichment incomplete"
-      }
-    ]
+    "translation_errors": []
   },
-  "publication_status": "partial",
+  "publication_status": "complete",
   "reserve_papers": [
     {
       "paper_id": "2609.16919",
@@ -551,11 +542,11 @@
       "level": "直接相关",
       "ai_score": 48,
       "selection_source": "近期候选",
-      "summary_zh": "",
-      "migration_zh": "",
-      "abstract_zh": "",
-      "translation_source": "english_only",
-      "translation_error": "本地译文尚未生成，或英文摘要已变化"
+      "summary_zh": "该论文提出大规模船舶检测数据集MARS和轻量无锚框网络ETMS，通过重构骨干、自适应加权特征融合与坐标对齐补偿模块，提升中小型船舶检测精度。",
+      "migration_zh": "研究推断：可迁移至船舶检测的轻量骨干与多尺度特征融合模块，在Radar–AIS或视觉–AIS关联中引入坐标对齐补偿监督，调整检测头与细化损失以提升中小目标关联精度。",
+      "abstract_zh": "实时且准确的船舶检测是提升海上车辆避碰能力与自主船舶航行安全性的基本要求。本文提出一个实用的大规模船舶检测数据集MARS，通过考虑背景多样性、船舶类别、船舶尺寸、视角变化和海浪等因素，来满足船舶检测任务的数据需求。此外，提出一种名为ETMS（面向海上船舶的增强型训练友好网络）的轻量级无锚框网络，对中小型船舶取得优异检测性能。具体而言，我们首先重构骨干结构，然后在颈部结构中对特征进行自适应加权融合，以轻量级网络提供更丰富的特征表示。其次，提出坐标对齐补偿（CAC）模块，解决头部结构中不同分支最优位置的对齐问题，并设置相应的细化损失以实现一致性优化。我们详尽的实验发现一致证明，ETMS优于其他船舶检测方法，在SeaShips(7000)上达到令人印象深刻的82.7 AP.5:.95，在MARS上达到69.2 AP.5:.95。这些结果凸显了ETMS在船舶检测任务中的有效性。深度学习在海上监视中的应用对于增强海上运输安全和提高港口交通管理效率具有重要意义。",
+      "translation_source": "deepseek",
+      "translation_error": ""
     }
   ]
 }

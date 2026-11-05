@@ -25646,16 +25646,12 @@
           "9ad533574221ad5016c651aea320ea7d9d1bcffc8ec48e3424672456344dcc4a"
         ]
       },
-      "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
-        "evidence": "SpatialHarness: Test-Time Spatial Scaffolding for Fine Robotic Manipulation"
-      },
+      "daily_domain_exclusion": null,
       "research_directions": [],
-      "ai_score": null,
+      "ai_score": 4,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "domain_excluded",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -115648,8 +115644,8 @@
         ]
       },
       "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：LLM Tactical Planning",
+        "domain": "security_centric",
+        "reason": "安全攻击或漏洞分析：LiDAR Attacks",
         "evidence": "TACTIC: Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks"
       },
       "reading_enrichment": {
@@ -116298,10 +116294,10 @@
       "partition_evidence": [],
       "jcr_partitions": [],
       "recommendation": {
-        "section": "candidate",
+        "section": "preprints",
         "direct_relevance": 2,
         "maritime": false,
-        "bucket": "candidate",
+        "bucket": "general",
         "application": "general",
         "publication_quality": "unverified",
         "method_transfer_signal": true,
@@ -116341,7 +116337,7 @@
         "reason": "",
         "raw_hash": "70fdb7b12f7f54dad67f0a5573933368defcc5a591e65c8f7bfc7391b3f04c1e"
       },
-      "application_bucket": "other",
+      "application_bucket": "general",
       "semantic": {
         "paper_id": "2609.39514",
         "title": "Spike-driven Vision-Language-Action Model",
@@ -116390,16 +116386,12 @@
           "5bb94511badfa16dc299963b9df92edc20b06917a9f7e668cd8d4d84437ab090"
         ]
       },
-      "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：robotic manipulation",
-        "evidence": "Here, we propose the first Spike-driven VLA framework enabling end-to-end direct training for robotic manipulation, which mainly comprises three core components."
-      },
+      "daily_domain_exclusion": null,
       "research_directions": [],
-      "ai_score": null,
+      "ai_score": 4,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "domain_excluded",
+      "ai_state": "evaluated",
       "display_abstract_zh": "远景行动 (VLA) 模型将多式联运理解和机器人控制联系起来,推进了体现智能的主导范式。 然而,大多数现有模型都依赖于大型变换器,其耐久性和能源成本阻碍了在受资源限制的平台上的部署。 通过稀少的事件驱动计算,尖锐的神经网络为高性能和节能计算提供了一个有希望的范例。 在这里,我们提出第一个Spike驱动 VLA 框架允许对机器人操纵进行端到端直接培训,主要由三个核心部分组成。 首先,我们开发用于多式联运感知的尖锐视觉和指示编码器,将视觉观察和语言指示编码为稀疏、可靠的尖锐表示,用于随后的跨模式聚变。 然后,我们引入多Winner Spike Fusion 用于引导场景理解,使用双向顶端-$k$ 赢家所有钉子的路由 压制背景干扰 并产生引信内存。 最后,我们提出一个Spike Action Chunking Transformer, 它包含了在引信内存和当前机器人状态上的闪烁的交叉注意, 使得高效的端到端生成用于机器人控制的连续动作块。 广泛试验 LIBERO 和Meta-World显示,斯派克驱动 VLA 与常规相比,参数较少,估计推论能量较少,从而实现竞争性业绩 VLA 模特儿们 这项工作为神经形态学建立了一个基础框架。 VLA * 建立模型,为今后在资源节约型情报方面取得进步铺平道路.",
       "display_translation_source": "argos",
       "display_translation_error": ""
@@ -163996,7 +163988,7 @@
         "reason": "",
         "raw_hash": "ff8dc8c433103ecb897e7740cc056a708e6881d52efa0e168670647abfdfda6e"
       },
-      "application_bucket": "other",
+      "application_bucket": "general",
       "semantic": {
         "paper_id": "2609.38927",
         "title": "World-as-Graph: Relational World Modeling Through Latent Space Graphs",
@@ -164031,16 +164023,12 @@
         "request_id": "8333ecd4-ca8d-42e0-988e-3ad548ee5e6f",
         "compatible_fingerprints": []
       },
-      "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：robotic manipulation",
-        "evidence": "Extensive experiments on both visual reasoning and robotic manipulation tasks could demonstrate the superior performance of our proposed WAG."
-      },
+      "daily_domain_exclusion": null,
       "research_directions": [],
-      "ai_score": null,
+      "ai_score": 20,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "domain_excluded",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -412732,7 +412720,7 @@
         "reason": "",
         "raw_hash": "17dd0d2876b3b85134cc6c840faedc8397c427573f0576d8a0b17833e783ccea"
       },
-      "application_bucket": "other",
+      "application_bucket": "general",
       "semantic": {
         "paper_id": "2609.23578",
         "title": "AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation",
@@ -412765,16 +412753,12 @@
           "9208299a13b359247ed524dfd1dd5f9c1ed4c62f9c8005053bfbaf65145f286b"
         ]
       },
-      "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
-        "evidence": "AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation"
-      },
+      "daily_domain_exclusion": null,
       "research_directions": [],
-      "ai_score": null,
+      "ai_score": 4,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "domain_excluded",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -580058,7 +580042,7 @@
       "partition_year": null,
       "partition_evidence": [],
       "jcr_partitions": [],
-      "application_bucket": "other",
+      "application_bucket": "general",
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 2,
@@ -580107,16 +580091,12 @@
         "request_id": "323f467f-c22f-4214-bc3c-cf7423424d16",
         "compatible_fingerprints": []
       },
-      "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
-        "evidence": "Late Breaking Results: Audio-Language-Action Models with Direct Speech Conditioning for Robotic Manipulation"
-      },
+      "daily_domain_exclusion": null,
       "research_directions": [],
-      "ai_score": null,
+      "ai_score": 20,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "domain_excluded",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -580558,12 +580538,12 @@
       "partition_year": null,
       "partition_evidence": [],
       "jcr_partitions": [],
-      "application_bucket": "other",
+      "application_bucket": "general",
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 1,
         "maritime": false,
-        "bucket": "candidate",
+        "bucket": "general",
         "application": "general",
         "publication_quality": "unverified",
         "method_transfer_signal": true,
@@ -580616,16 +580596,12 @@
           "c5517c6f9e87440f22ad09ace650bf6ad8d39c03105704f8c95a595be7fba050"
         ]
       },
-      "daily_domain_exclusion": {
-        "domain": "non_perception_planning",
-        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
-        "evidence": "RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions"
-      },
+      "daily_domain_exclusion": null,
       "research_directions": [],
-      "ai_score": null,
+      "ai_score": 4,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "domain_excluded",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -642579,13 +642555,50 @@
         "request_id": "9c89f42b-a163-46e8-a908-8f3e7408b856",
         "compatible_fingerprints": []
       },
+      "reading_enrichment": {
+        "status": "success",
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "english_hash": "7236779ad1d3778e9a54d9e2f5dbb53e5302c9b3c9d4532583d84be4bb7c4c72",
+        "prompt_version": "3.8.6-1",
+        "purpose": "daily_translation",
+        "attempts": 1,
+        "previous_attempt": null,
+        "model": "deepseek-flash",
+        "usage": {
+          "prompt_tokens": 557,
+          "completion_tokens": 372,
+          "total_tokens": 929,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 557
+        },
+        "cost_upper_cny": 0.00409,
+        "created": 1793878609,
+        "candidate": {
+          "paper_id": "doi:10.1109/tits.2026.3727609",
+          "summary_zh": "该论文提出大规模船舶检测数据集MARS和轻量无锚框网络ETMS，通过重构骨干、自适应加权特征融合与坐标对齐补偿模块，提升中小型船舶检测精度。",
+          "migration_zh": "研究推断：可迁移至船舶检测的轻量骨干与多尺度特征融合模块，在Radar–AIS或视觉–AIS关联中引入坐标对齐补偿监督，调整检测头与细化损失以提升中小目标关联精度。",
+          "abstract_zh": "实时且准确的船舶检测是提升海上车辆避碰能力与自主船舶航行安全性的基本要求。本文提出一个实用的大规模船舶检测数据集MARS，通过考虑背景多样性、船舶类别、船舶尺寸、视角变化和海浪等因素，来满足船舶检测任务的数据需求。此外，提出一种名为ETMS（面向海上船舶的增强型训练友好网络）的轻量级无锚框网络，对中小型船舶取得优异检测性能。具体而言，我们首先重构骨干结构，然后在颈部结构中对特征进行自适应加权融合，以轻量级网络提供更丰富的特征表示。其次，提出坐标对齐补偿（CAC）模块，解决头部结构中不同分支最优位置的对齐问题，并设置相应的细化损失以实现一致性优化。我们详尽的实验发现一致证明，ETMS优于其他船舶检测方法，在SeaShips(7000)上达到令人印象深刻的82.7 AP.5:.95，在MARS上达到69.2 AP.5:.95。这些结果凸显了ETMS在船舶检测任务中的有效性。深度学习在海上监视中的应用对于增强海上运输安全和提高港口交通管理效率具有重要意义。"
+        },
+        "content": {
+          "paper_id": "doi:10.1109/tits.2026.3727609",
+          "summary_zh": "该论文提出大规模船舶检测数据集MARS和轻量无锚框网络ETMS，通过重构骨干、自适应加权特征融合与坐标对齐补偿模块，提升中小型船舶检测精度。",
+          "migration_zh": "研究推断：可迁移至船舶检测的轻量骨干与多尺度特征融合模块，在Radar–AIS或视觉–AIS关联中引入坐标对齐补偿监督，调整检测头与细化损失以提升中小目标关联精度。",
+          "abstract_zh": "实时且准确的船舶检测是提升海上车辆避碰能力与自主船舶航行安全性的基本要求。本文提出一个实用的大规模船舶检测数据集MARS，通过考虑背景多样性、船舶类别、船舶尺寸、视角变化和海浪等因素，来满足船舶检测任务的数据需求。此外，提出一种名为ETMS（面向海上船舶的增强型训练友好网络）的轻量级无锚框网络，对中小型船舶取得优异检测性能。具体而言，我们首先重构骨干结构，然后在颈部结构中对特征进行自适应加权融合，以轻量级网络提供更丰富的特征表示。其次，提出坐标对齐补偿（CAC）模块，解决头部结构中不同分支最优位置的对齐问题，并设置相应的细化损失以实现一致性优化。我们详尽的实验发现一致证明，ETMS优于其他船舶检测方法，在SeaShips(7000)上达到令人印象深刻的82.7 AP.5:.95，在MARS上达到69.2 AP.5:.95。这些结果凸显了ETMS在船舶检测任务中的有效性。深度学习在海上监视中的应用对于增强海上运输安全和提高港口交通管理效率具有重要意义。"
+        },
+        "translation_source": "deepseek",
+        "priced_cost_cny": 0.002045,
+        "translated_at": "2026-11-05T19:36:49+08:00"
+      },
       "ai_score": 48,
       "ai_demoted": false,
       "recommendation_status": "direct",
       "ai_state": "evaluated",
-      "display_abstract_zh": "",
-      "display_translation_source": "english_only",
-      "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
+      "display_abstract_zh": "实时且准确的船舶检测是提升海上车辆避碰能力与自主船舶航行安全性的基本要求。本文提出一个实用的大规模船舶检测数据集MARS，通过考虑背景多样性、船舶类别、船舶尺寸、视角变化和海浪等因素，来满足船舶检测任务的数据需求。此外，提出一种名为ETMS（面向海上船舶的增强型训练友好网络）的轻量级无锚框网络，对中小型船舶取得优异检测性能。具体而言，我们首先重构骨干结构，然后在颈部结构中对特征进行自适应加权融合，以轻量级网络提供更丰富的特征表示。其次，提出坐标对齐补偿（CAC）模块，解决头部结构中不同分支最优位置的对齐问题，并设置相应的细化损失以实现一致性优化。我们详尽的实验发现一致证明，ETMS优于其他船舶检测方法，在SeaShips(7000)上达到令人印象深刻的82.7 AP.5:.95，在MARS上达到69.2 AP.5:.95。这些结果凸显了ETMS在船舶检测任务中的有效性。深度学习在海上监视中的应用对于增强海上运输安全和提高港口交通管理效率具有重要意义。",
+      "display_translation_source": "deepseek",
+      "display_translation_error": ""
     },
     {
       "metadata_source": [
@@ -656649,16 +656662,17 @@
         "2609.23541",
         "2609.39017",
         "2609.38968",
-        "2609.37837",
-        "2609.37162"
+        "2609.39514",
+        "2609.37837"
       ],
-      "omitted_count": 80,
+      "omitted_count": 79,
       "sections": {
         "maritime": [],
         "methods": [],
         "preprints": [
           "2609.39017",
-          "2609.38968"
+          "2609.38968",
+          "2609.39514"
         ],
         "candidate": [
           "doi:10.3837/tiis.2026.09.009",
@@ -656668,7 +656682,6 @@
           "2609.40347",
           "doi:10.1088/2631-8695/aeaeac",
           "2609.38925",
-          "2609.39514",
           "2609.39920",
           "2610.00809",
           "2609.39836",
@@ -656748,8 +656761,8 @@
           "2609.23541",
           "2609.39017",
           "2609.38968",
-          "2609.37837",
-          "2609.37162"
+          "2609.39514",
+          "2609.37837"
         ],
         "groups": {
           "water": [],
@@ -656759,8 +656772,8 @@
           "general": [
             "2609.39017",
             "2609.38968",
-            "2609.37837",
-            "2609.37162"
+            "2609.39514",
+            "2609.37837"
           ]
         },
         "counts": {
@@ -656788,8 +656801,8 @@
         "general": [
           "2609.39017",
           "2609.38968",
-          "2609.37837",
-          "2609.37162"
+          "2609.39514",
+          "2609.37837"
         ]
       },
       "recommendation_shortfalls": {
@@ -688820,8 +688833,8 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-11-05T11:21:05.259170+00:00",
-    "completed_at": "2026-11-05T11:24:49.098296+00:00",
+    "run_id": "2026-11-05T11:35:02.059196+00:00",
+    "completed_at": "2026-11-05T11:37:29.324994+00:00",
     "local_update": "success",
     "jobs": 0,
     "successful": 0,
@@ -688833,9 +688846,9 @@
     "before_count": 4214,
     "after_count": 4214,
     "translation": {
-      "translated": 0,
+      "translated": 1,
       "failed": 0,
-      "cached": 5,
+      "cached": 4,
       "manual": 0,
       "pending": 0,
       "missing_english": 0,
@@ -688844,16 +688857,21 @@
         "2609.16919",
         "2609.17242",
         "2609.25945",
-        "2609.39969",
-        "2610.10090"
+        "2610.10090",
+        "doi:10.1109/tits.2026.3727609"
       ],
       "replacement_failures": [],
       "selected": 5,
       "engine": "DeepSeek",
-      "api_calls": 0,
-      "cost_upper_cny": 0.0,
-      "priced_cost_cny": 0.0,
+      "api_calls": 1,
+      "cost_upper_cny": 0.004089999999999996,
+      "priced_cost_cny": 0.002045000000000005,
       "papers": [
+        {
+          "paper_id": "doi:10.1109/tits.2026.3727609",
+          "source": "deepseek",
+          "error": ""
+        },
         {
           "paper_id": "2609.16919",
           "source": "deepseek",
@@ -688866,11 +688884,6 @@
         },
         {
           "paper_id": "2610.10090",
-          "source": "deepseek",
-          "error": ""
-        },
-        {
-          "paper_id": "2609.39969",
           "source": "deepseek",
           "error": ""
         },
@@ -688907,22 +688920,22 @@
     "ai": {
       "status": "deferred",
       "processed": 0,
-      "cached": 1251,
+      "cached": 1250,
       "failed": 0,
       "cost_upper_cny": 0.0,
       "priced_cost_cny": 0.0,
       "unsettled_upper_cny": 0.0,
       "tokens": 0,
       "missing_abstract": 0,
-      "candidate_count": 1254,
+      "candidate_count": 1253,
       "already_attempted_today": 3,
       "pending_total": 0,
       "limit_deferred": 0,
       "selected_count": 5,
-      "ai_reviewed": 894,
+      "ai_reviewed": 893,
       "shortfall": 0,
       "ai_states": {
-        "evaluated": 894,
+        "evaluated": 893,
         "uncertain": 357,
         "unassessed": 3
       },
@@ -688945,14 +688958,14 @@
         "source": "OpenAlex first authorship"
       },
       {
-        "paper_id": "2609.39969",
+        "paper_id": "2609.17242",
         "status": "cached_verified",
         "source": "OpenAlex first authorship"
       },
       {
-        "paper_id": "2609.17242",
+        "paper_id": "doi:10.1109/tits.2026.3727609",
         "status": "cached_verified",
-        "source": "OpenAlex first authorship"
+        "source": "Crossref first author"
       }
     ],
     "daily_selected": 5,
@@ -688962,7 +688975,7 @@
     "github_sync": "not_attempted",
     "pages_publish": "not_attempted",
     "retrieval_status": "not_run_resume",
-    "github_run_id": "42018165968"
+    "github_run_id": "42020045554"
   },
   "recommendation_policy": {
     "schema_version": 2,

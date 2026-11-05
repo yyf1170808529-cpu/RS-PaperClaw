@@ -908,10 +908,12 @@
       "paper_id": "doi:10.1109/tits.2026.3727609",
       "fingerprint": "1a7785047095675cf1cd543966bf63ab474ca728945fbda478bace2c2ea06859",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-05"
+      ],
+      "available": false
     }
   },
-  "available_count": 4
+  "available_count": 3
 }

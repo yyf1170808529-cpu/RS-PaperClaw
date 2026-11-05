@@ -50304,7 +50304,8 @@
       "model": "deepseek-flash",
       "request_id": "9ea0e7b4-24f1-4058-9229-56bb46e943b9",
       "compatible_fingerprints": [
-        "9b97ce02a4f8688d131e0c731ae4a4fc0cc0b26f627653c8dba72039470a79a2"
+        "9b97ce02a4f8688d131e0c731ae4a4fc0cc0b26f627653c8dba72039470a79a2",
+        "5bb94511badfa16dc299963b9df92edc20b06917a9f7e668cd8d4d84437ab090"
       ]
     },
     "3f67c1ae8760f17053e98e3392f16cb75875f69af26ab1abba26885c95812b1f": {
@@ -51204,7 +51205,8 @@
       "model": "deepseek-flash",
       "request_id": "7738f391-0649-46fe-9741-6abb1c5b0456",
       "compatible_fingerprints": [
-        "c11cf580ee9116538c7e0602528516875de6987aea884a0e3b5b15556713d44e"
+        "c11cf580ee9116538c7e0602528516875de6987aea884a0e3b5b15556713d44e",
+        "c5517c6f9e87440f22ad09ace650bf6ad8d39c03105704f8c95a595be7fba050"
       ]
     },
     "9766b5aa6db5af127972647419b51286e18c74f1447efe0a101360c2350e97d5": {
