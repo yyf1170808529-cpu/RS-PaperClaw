@@ -6,7 +6,7 @@
   "model": "deepseek-flash",
   "daily_budget_cny": 2.0,
   "batch_size": 4,
-  "max_tokens": 3000,
+  "max_tokens": 5000,
   "timeout_seconds": 60,
   "stage_two": {
     "enabled": false,

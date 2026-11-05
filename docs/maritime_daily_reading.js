@@ -84,8 +84,7 @@
         for(const p of papers) {
           const article=el('article');article.append(el('h2',p.title));
           const authors=Array.isArray(p.authors)?p.authors:[];
-          article.append(el('p','作者：'+(authors.slice(0,5).join('、')||'待核实')));
-          if(authors.length>5){const d=el('details');d.append(el('summary','查看全部作者'),el('p',authors.join('、')));article.append(d);}
+          article.append(el('p','作者：'+win.MaritimeAuthors.label(p)));
           const verified=p.affiliation_verified&&p.affiliation_source&&authors[0]&&p.first_author?.trim().toLowerCase()===authors[0].trim().toLowerCase();
           const affiliation=verified&&p.first_author_affiliations?.[0];
           article.append(el('p','第一作者单位：'+(affiliation||'待核实')+(affiliation?'（'+p.affiliation_source+'）':'')),el('p',p.source||''),el('p',(p.level||'')+' · AI相关分 '+p.ai_score+'/100 '+(p.selection_source||'')),el('p','论文内容：'+(p.summary_zh||'')),el('p','迁移思路：'+(p.migration_zh||'')));

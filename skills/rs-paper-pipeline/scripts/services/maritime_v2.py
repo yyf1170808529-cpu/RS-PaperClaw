@@ -152,6 +152,12 @@ def annotate(paper, key, venues, policy):
             f"陆上场景={signals['traffic']}；已核验CCF A正式会议={q['ccf_a']}",
             f"发表质量={q['status']}；CAS一区={q['cas_one']}，JIF Q1={q['jcr_q1']}"],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"}
+    from services.relevance_scope import research_directions
+    from services.domain_exclusion import exclusion
+    paper['research_directions']=research_directions(paper)
+    paper['daily_domain_exclusion']=exclusion(paper)
+    if paper['daily_domain_exclusion']:
+        paper['recommendation'].update(section='candidate',bucket='candidate')
     return paper
 
 
@@ -328,7 +334,7 @@ def merge_records(library, records, rules, touch=True):
                         current[field] = value
                 elif field == "issn":
                     current[field] = sorted(set(current.get(field, [])) | set(value)) if formal else current.get(field) or value
-                elif field in ("doi", "title", "authors", "venue", "venue_type", "publication_status", "source_type", "publication_date", "published", "publication_evidence", "original_url", "first_author", "first_author_affiliations", "affiliation_source", "affiliation_verified"):
+                elif field in ("doi", "title", "authors", "venue", "venue_type", "publication_status", "source_type", "publication_date", "published", "publication_evidence", "original_url", "first_author", "first_author_affiliations", "affiliation_source", "affiliation_verified", "corresponding_authors", "corresponding_author_verified", "corresponding_author_source"):
                     if prefer_formal or (newer_arxiv and field != "doi") or not current.get(field) or current.get(field) == "unknown":
                         # Do not turn month/year-only formal dates into a guessed first day.
                         if field in ("publication_date", "published") and len(current.get(field, "")) in (4, 7) and str(value).startswith(current[field]) and str(value).endswith("-01") and "Crossref" in current.get("metadata_source", []):

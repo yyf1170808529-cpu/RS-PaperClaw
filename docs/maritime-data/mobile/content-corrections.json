@@ -78,6 +78,14 @@
       "domain": "non_arxiv_preprint",
       "reason": "专用基础设施研究或缺少可信arXiv预印本身份，不符合精选资格",
       "replacement": null
+    },
+    "2609.30891": {
+      "reason": "通信系统/波形/导频优化：Adaptive Pilot Selection",
+      "replacement": null
+    },
+    "2609.16336": {
+      "reason": "安全攻击或漏洞分析：Stereo Vision Vulnerabilities",
+      "replacement": null
     }
   }
 }

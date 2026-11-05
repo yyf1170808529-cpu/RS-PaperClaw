@@ -2,8 +2,8 @@
 import re
 
 def exclusion(paper):
-    from services.relevance_scope import infrastructure
-    blocked=infrastructure(paper)
+    from services.relevance_scope import infrastructure,primary_scope_exclusion
+    blocked=primary_scope_exclusion(paper) or infrastructure(paper)
     if blocked:return blocked
     title=paper.get('title','');abstract=paper.get('abstract','')
     disease=r"\b(?:cancer|alzheimer\w*|dementia|tumou?r|carcinoma|clinical|patient\w*|fetal|foetal|genom\w*|transcriptom\w*|gene expression|electrophysiolog\w*|electroencephalogra\w*|photoplethysmogra\w*|chest x-ray|chest radiograph\w*|brain MRI|medical imag\w*|biomedical|radiology|radiological)\b"

@@ -58,6 +58,8 @@ def apply_quality(paper):
 def application(paper, policy):
     """Scene evidence from the title or sentences describing the study, never citations."""
     from services.maritime import has
+    from services.relevance_scope import primary_scope_exclusion
+    if primary_scope_exclusion(paper):return 'other'
     title = paper.get('title') or ''
     abstract = paper.get('abstract') or ''
     terms = policy['signals']['maritime']

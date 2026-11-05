@@ -44,6 +44,7 @@ async function setupUI(saved,dataset,search='',options={}) {
   });
   if(!options.oldSource)vm.runInContext(fs.readFileSync(path.join(ROOT,'docs/maritime_favorites.js'),'utf8'),context);
   if(!options.daily){
+    vm.runInContext(fs.readFileSync(path.join(ROOT,'docs/maritime_authors.js'),'utf8'),context);
     vm.runInContext(fs.readFileSync(path.join(ROOT,'docs/maritime_prompt.js'),'utf8'),context);
     vm.runInContext(options.oldSource||fs.readFileSync(path.join(ROOT,'docs/maritime.js'),'utf8'),context);
   }

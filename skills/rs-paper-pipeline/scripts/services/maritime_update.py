@@ -137,6 +137,16 @@ def run_update(args, library, rules):
     dedup = v2.deduplicate_library(library, rules)
     merged += dedup["merged"]
     metadata = enrich_missing(library, rules, args.root, network=False)
+    # Missing abstracts must not permanently hide newly discovered core maritime
+    # journal papers. Reuse the existing bounded enrichment chain, with cooldown.
+    priority=[k for k,p in library['papers'].items() if p.get('application_bucket')=='water'
+              and p.get('quality',{}).get('high_journal') and not p.get('abstract')
+              and p.get('abstract_check',{}).get('time','')[:10]!=str(end)]
+    priority.sort(key=lambda k:('A' in library['papers'][k].get('research_directions',[]),library['papers'][k].get('last_seen','')),reverse=True)
+    if priority:
+        filled=enrich_missing(library,rules,args.root,keys=priority,limit=3,timeout=min(args.timeout,10),retries=1)
+        metadata['filled']+=filled['filled']
+        metadata['priority_enrichment']=filled
     focus = v2.recommendation_view(list(library["papers"].values()), policy, end)["paper_ids"]
     # Cached checks are bounded; no full-history availability sweep.
     new_keys = [library.get("aliases", {}).get(k, k) for k in new_keys]

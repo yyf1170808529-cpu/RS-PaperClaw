@@ -3,6 +3,7 @@ const STATES = ['待读', '已浏览', '值得精读', '已精读', '值得复�
 const LEVELS = {high: '高度相关', transfer: '方法可借鉴', general: '一般相关', excluded: '不相关'};
 const STORAGE = 'rs-paperclaw-maritime-readings-v1';
 const FAVORITES_API = typeof module !== 'undefined' ? require('./maritime_favorites.js') : globalThis.MaritimeFavorites;
+const AUTHORS_API = typeof module !== 'undefined' ? require('./maritime_authors.js') : globalThis.MaritimeAuthors;
 const paperId = paper => paper.paper_id || paper.arxiv_id;
 const INVALID = new Set(['deleted','withdrawn','invalid']);
 const RESOURCE_TYPES = new Set(['dataset','software','other']);
@@ -183,7 +184,7 @@ if (typeof document !== 'undefined') {
       const reading = readingFor(paper, readings);
       const id=paperId(paper),quality=paper.quality||{};
       article.id='paper-'+encodeURIComponent(id);
-      article.append(node('h2', paper.title), node('p', `${paper.authors.join(', ')} · ${paper.published}`, 'muted'),
+      article.append(node('h2', paper.title), node('p', `${AUTHORS_API.label(paper)} · ${paper.published}`, 'muted'),
         node('p', `规则分 ${assessment.score}（${LEVELS[assessment.level]}） · ${paper.recommendation_status==='direct'||paper.recommendation_status==='direct_rule'?'直接相关':paper.recommendation_status==='transfer'?'方法值得关注':'普通候选'}${typeof paper.ai_score==='number'?` · AI相关分 ${paper.ai_score}/100`:paper.ai_state==='domain_excluded'?' · 不符合每日精选范围':' · AI待评估'} · 主专题 ${assessment.primary_topic || '无'} · ${assessment.topics.join('/')} · ${assessment.applications.join('、')}`, 'muted'));
       const source=sourceLabel(paper);
       article.append(node('p', source),

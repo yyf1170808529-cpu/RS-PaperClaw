@@ -49,7 +49,7 @@ test('daily DOM pins content and prompt, keeps favorites/notes, marks and undoes
   const context=vm.createContext({document:doc,Date:class extends Date{constructor(...args){super(...(args.length?args:[now]));}},
     localStorage:{get length(){return storage.size;},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
     navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{pathname:'/RS-PaperClaw/maritime-daily.html'},addEventListener(){},setInterval:fn=>{tick=fn;},fetch:async url=>({ok:true,json:async()=>url.includes('content-corrections')?{records:{}}:url.includes('reading-index')?{batches:[{date:latest.payload.date}]}:latest.payload})});
-  for(const file of ['maritime_favorites.js','maritime_prompt.js','maritime_daily_prompt.js','maritime_daily_reading.js'])vm.runInContext(fs.readFileSync(require('node:path').join(__dirname,'../docs',file),'utf8'),context);
+  for(const file of ['maritime_authors.js','maritime_favorites.js','maritime_prompt.js','maritime_daily_prompt.js','maritime_daily_reading.js'])vm.runInContext(fs.readFileSync(require('node:path').join(__dirname,'../docs',file),'utf8'),context);
   await new Promise(setImmediate);
   const articles=nodes.get('reading-papers').children;assert.equal(articles.length,5);
   const find=text=>walk(nodes.get('reading-papers')).find(n=>n.textContent===text);

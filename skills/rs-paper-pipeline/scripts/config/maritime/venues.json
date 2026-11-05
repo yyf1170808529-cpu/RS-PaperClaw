@@ -170,14 +170,56 @@
       "id": "information-fusion",
       "name": "Information Fusion",
       "issn": [
-        "1566-2535"
+        "1566-2535",
+        "1872-6305"
       ],
       "identifier_status": "seed_requires_crossref_identity_check",
       "enabled": true,
       "cas_records": [],
-      "jcr_records": [],
-      "verification_status": "unverified",
-      "notes": "候选来源，不根据名称/ISSN推断分区；可导入核验记录。",
+      "jcr_records": [
+        {
+          "scheme": "JCR",
+          "metric": "JIF Quartile",
+          "year": 2024,
+          "category": "COMPUTER SCIENCE, THEORY & METHODS",
+          "quartile": "Q1",
+          "verified": true,
+          "evidence": {
+            "kind": "institution",
+            "url": "https://kniznica.umb.sk/app/cmsSiteBoxAttachment.php?ID=6181&cmsDataID=0",
+            "checked_at": "2026-11-05"
+          }
+        },
+        {
+          "scheme": "JCR",
+          "metric": "JIF Quartile",
+          "year": 2024,
+          "category": "COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE",
+          "quartile": "Q1",
+          "verified": true,
+          "evidence": {
+            "kind": "institution",
+            "url": "https://cdn.umfcluj.ro/uploads/2024/08/JCR_2024_iunie2025.pdf",
+            "checked_at": "2026-11-05"
+          }
+        },
+        {
+          "scheme": "JCR",
+          "metric": "JIF Quartile",
+          "year": 2026,
+          "scope": "journal_overall",
+          "quartile": "Q1",
+          "verified": true,
+          "evidence": {
+            "kind": "institution",
+            "url": "https://www.niic.nsc.ru/phocadownload/publications/2025/JCR_JournalImpactFactor_2026.pdf",
+            "checked_at": "2026-11-05"
+          },
+          "note": "Institution table labels release JIF 2026; category not supplied. Preserve release year exactly; not CAS or JCI/SJR."
+        }
+      ],
+      "verification_status": "verified_jcr",
+      "notes": "JIF Q1 verified from institutional JCR tables; CAS 2025 remains unverified.",
       "jif_records": [
         {
           "metric": "Journal Impact Factor",
