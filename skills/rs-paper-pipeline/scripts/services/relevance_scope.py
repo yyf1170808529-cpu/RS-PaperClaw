@@ -7,7 +7,7 @@ def primary_scope_exclusion(p):
     abstract=p.get('abstract','')
     rules=[('communication_engineering',r'semantic communication|(?:adaptive )?pilot (?:selection|allocation|configuration)|channel estimation|communication resource allocation|waveform optimi[sz]ation|wireless communication protocols?',
             '通信系统/波形/导频优化'),
-           ('security_centric',r'cybersecurity|(?:security|stereo vision|camera) vulnerabilit\w*|physical adversarial attacks?|network intrusion|attack exploitation|security threat assessment',
+           ('security_centric',r'cybersecurity|(?:security|stereo vision|camera) vulnerabilit\w*|physical adversarial attacks?|(?:camera|LiDAR|stereo) attacks?|adversarial robustness assessment (?:framework|toolkit)|network intrusion|attack exploitation|security threat assessment',
             '安全攻击或漏洞分析'),
            ('specialized_industrial_inspection',r'(?:industrial|manufacturing|steel|weld|fabric|wafer) (?:surface )?(?:defect|flaw|inspection)\w*',
             '无关专用工业巡检')]
@@ -22,6 +22,8 @@ def primary_scope_exclusion(p):
         for sentence in re.split(r'(?<=[.!?])\s+',abstract):
             if re.search(r'\b(?:we|our|this (?:paper|work|study))\b',sentence,re.I) and re.search(r'propos|optimi[sz]|reveal|exploit|investigat|develop|introduc',sentence,re.I):
                 match=re.search(pattern,sentence,re.I)
+                if domain=='security_centric' and re.search(r'(?:representation learning|feature learning|multimodal fusion|cross.modal alignment).*(?:under|against|evaluated)',sentence,re.I):
+                    continue
                 if match:return {'domain':domain,'reason':reason+'：'+match[0],'evidence':sentence}
     return None
 

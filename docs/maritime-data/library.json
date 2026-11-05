@@ -25646,12 +25646,16 @@
           "9ad533574221ad5016c651aea320ea7d9d1bcffc8ec48e3424672456344dcc4a"
         ]
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
+        "evidence": "SpatialHarness: Test-Time Spatial Scaffolding for Fine Robotic Manipulation"
+      },
       "research_directions": [],
-      "ai_score": 4,
+      "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "evaluated",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -115568,7 +115572,7 @@
         "direct_relevance": 0,
         "maritime": false,
         "bucket": "candidate",
-        "application": "traffic",
+        "application": "general",
         "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
@@ -115577,7 +115581,7 @@
           "海事场景=[]",
           "方法证据=[]",
           "低优先级=[]",
-          "陆上场景=['traffic', 'vehicle']；已核验CCF A正式会议=False",
+          "陆上场景=[]；已核验CCF A正式会议=False",
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
@@ -115610,7 +115614,7 @@
         "reason": "",
         "raw_hash": "340d76aa459d64ea136e344c9148d7a7c588602f60da4f7ea393039e2cd0e9ce"
       },
-      "application_bucket": "land",
+      "application_bucket": "other",
       "semantic": {
         "paper_id": "2609.39969",
         "title": "TACTIC: Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks",
@@ -115639,9 +115643,15 @@
         },
         "model": "deepseek-flash",
         "request_id": "3fdcd667-9ef6-48ff-896b-28d441b44ea1",
-        "compatible_fingerprints": []
+        "compatible_fingerprints": [
+          "cc0ebd85efd0608600d004432074948f1d69d78521e5ff4ed136fffe89305d92"
+        ]
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：LLM Tactical Planning",
+        "evidence": "TACTIC: Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks"
+      },
       "reading_enrichment": {
         "status": "success",
         "paper_id": "2609.39969",
@@ -115679,13 +115689,11 @@
         "priced_cost_cny": 0.004862,
         "translated_at": "2026-11-05T11:46:05+08:00"
       },
-      "research_directions": [
-        "C"
-      ],
-      "ai_score": 40,
-      "ai_demoted": false,
-      "recommendation_status": "direct",
-      "ai_state": "evaluated",
+      "research_directions": [],
+      "ai_score": null,
+      "ai_demoted": true,
+      "recommendation_status": "candidate",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "物理LiDAR攻击通常使用固定原语和人工选择的参数进行评估，尽管其效果强烈依赖于周围交通。我们提出TACTIC，一个场景感知框架，使用多模态大语言模型（MLLM）来协调状态自适应的路侧LiDAR攻击。在灰盒威胁模型下，TACTIC仅依赖攻击者操作的路侧感知栈，不访问受害LiDAR的原生点云或内部处理。局部感知提供度量车辆状态，而MLLM将这些测量与路侧图像结合，以推断关系性交通上下文并构建语义场景图。基于该表示，TACTIC选择并配置两种互补原语：\\emph{push-away}，即偏移前车的感知距离；以及\\emph{phantom-obstacle braking}，即通过注入障碍物触发紧急制动。测量的交通状态与经经验校准的约束将生成的战术限定在物理可行的操作区域内。为适应MLLM延迟，TACTIC异步重叠推理与执行，同时高速率局部感知检测场景变化并触发重新规划。在280次随机化CARLA试验中，完整策略达到100%碰撞率，而固定规则为35%，随机选择为60%，使用模式选择与默认参数的限制版LLM为75%。物理与图像联合输入达到100%成功率，仅物理测量为65%，仅图像为75%，而异步$Δ$刷新将场景突变响应从7.4 s降低至2.0 s。这些结果表明，依赖场景的战术规划能够暴露固定攻击策略可能遗漏的上下文敏感LiDAR失效模式。",
       "display_translation_source": "deepseek",
       "display_translation_error": ""
@@ -116290,10 +116298,10 @@
       "partition_evidence": [],
       "jcr_partitions": [],
       "recommendation": {
-        "section": "preprints",
+        "section": "candidate",
         "direct_relevance": 2,
         "maritime": false,
-        "bucket": "general",
+        "bucket": "candidate",
         "application": "general",
         "publication_quality": "unverified",
         "method_transfer_signal": true,
@@ -116333,7 +116341,7 @@
         "reason": "",
         "raw_hash": "70fdb7b12f7f54dad67f0a5573933368defcc5a591e65c8f7bfc7391b3f04c1e"
       },
-      "application_bucket": "general",
+      "application_bucket": "other",
       "semantic": {
         "paper_id": "2609.39514",
         "title": "Spike-driven Vision-Language-Action Model",
@@ -116378,15 +116386,20 @@
         "model": "deepseek-flash",
         "request_id": "9ea0e7b4-24f1-4058-9229-56bb46e943b9",
         "compatible_fingerprints": [
-          "9b97ce02a4f8688d131e0c731ae4a4fc0cc0b26f627653c8dba72039470a79a2"
+          "9b97ce02a4f8688d131e0c731ae4a4fc0cc0b26f627653c8dba72039470a79a2",
+          "5bb94511badfa16dc299963b9df92edc20b06917a9f7e668cd8d4d84437ab090"
         ]
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：robotic manipulation",
+        "evidence": "Here, we propose the first Spike-driven VLA framework enabling end-to-end direct training for robotic manipulation, which mainly comprises three core components."
+      },
       "research_directions": [],
-      "ai_score": 4,
+      "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "evaluated",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "远景行动 (VLA) 模型将多式联运理解和机器人控制联系起来,推进了体现智能的主导范式。 然而,大多数现有模型都依赖于大型变换器,其耐久性和能源成本阻碍了在受资源限制的平台上的部署。 通过稀少的事件驱动计算,尖锐的神经网络为高性能和节能计算提供了一个有希望的范例。 在这里,我们提出第一个Spike驱动 VLA 框架允许对机器人操纵进行端到端直接培训,主要由三个核心部分组成。 首先,我们开发用于多式联运感知的尖锐视觉和指示编码器,将视觉观察和语言指示编码为稀疏、可靠的尖锐表示,用于随后的跨模式聚变。 然后,我们引入多Winner Spike Fusion 用于引导场景理解,使用双向顶端-$k$ 赢家所有钉子的路由 压制背景干扰 并产生引信内存。 最后,我们提出一个Spike Action Chunking Transformer, 它包含了在引信内存和当前机器人状态上的闪烁的交叉注意, 使得高效的端到端生成用于机器人控制的连续动作块。 广泛试验 LIBERO 和Meta-World显示,斯派克驱动 VLA 与常规相比,参数较少,估计推论能量较少,从而实现竞争性业绩 VLA 模特儿们 这项工作为神经形态学建立了一个基础框架。 VLA * 建立模型,为今后在资源节约型情报方面取得进步铺平道路.",
       "display_translation_source": "argos",
       "display_translation_error": ""
@@ -163983,7 +163996,7 @@
         "reason": "",
         "raw_hash": "ff8dc8c433103ecb897e7740cc056a708e6881d52efa0e168670647abfdfda6e"
       },
-      "application_bucket": "general",
+      "application_bucket": "other",
       "semantic": {
         "paper_id": "2609.38927",
         "title": "World-as-Graph: Relational World Modeling Through Latent Space Graphs",
@@ -164018,12 +164031,16 @@
         "request_id": "8333ecd4-ca8d-42e0-988e-3ad548ee5e6f",
         "compatible_fingerprints": []
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：robotic manipulation",
+        "evidence": "Extensive experiments on both visual reasoning and robotic manipulation tasks could demonstrate the superior performance of our proposed WAG."
+      },
       "research_directions": [],
-      "ai_score": 20,
+      "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "evaluated",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -412715,7 +412732,7 @@
         "reason": "",
         "raw_hash": "17dd0d2876b3b85134cc6c840faedc8397c427573f0576d8a0b17833e783ccea"
       },
-      "application_bucket": "general",
+      "application_bucket": "other",
       "semantic": {
         "paper_id": "2609.23578",
         "title": "AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation",
@@ -412748,12 +412765,16 @@
           "9208299a13b359247ed524dfd1dd5f9c1ed4c62f9c8005053bfbaf65145f286b"
         ]
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
+        "evidence": "AR-WAM: A Visual-Conditioned Agent-Ready World Action Model for Robotic Manipulation"
+      },
       "research_directions": [],
-      "ai_score": 4,
+      "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "evaluated",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -580037,7 +580058,7 @@
       "partition_year": null,
       "partition_evidence": [],
       "jcr_partitions": [],
-      "application_bucket": "general",
+      "application_bucket": "other",
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 2,
@@ -580086,12 +580107,16 @@
         "request_id": "323f467f-c22f-4214-bc3c-cf7423424d16",
         "compatible_fingerprints": []
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
+        "evidence": "Late Breaking Results: Audio-Language-Action Models with Direct Speech Conditioning for Robotic Manipulation"
+      },
       "research_directions": [],
-      "ai_score": 20,
+      "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "evaluated",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -580533,12 +580558,12 @@
       "partition_year": null,
       "partition_evidence": [],
       "jcr_partitions": [],
-      "application_bucket": "general",
+      "application_bucket": "other",
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 1,
         "maritime": false,
-        "bucket": "general",
+        "bucket": "candidate",
         "application": "general",
         "publication_quality": "unverified",
         "method_transfer_signal": true,
@@ -580587,15 +580612,20 @@
         "model": "deepseek-flash",
         "request_id": "7738f391-0649-46fe-9741-6abb1c5b0456",
         "compatible_fingerprints": [
-          "c11cf580ee9116538c7e0602528516875de6987aea884a0e3b5b15556713d44e"
+          "c11cf580ee9116538c7e0602528516875de6987aea884a0e3b5b15556713d44e",
+          "c5517c6f9e87440f22ad09ace650bf6ad8d39c03105704f8c95a595be7fba050"
         ]
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "non_perception_planning",
+        "reason": "核心任务为规划/操作而非视觉感知或匹配：Robotic Manipulation",
+        "evidence": "RynnVLA-Latent: Scaling Robotic Manipulation Foundation Models with 3D-Grounded Latent Actions"
+      },
       "research_directions": [],
-      "ai_score": 4,
+      "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "evaluated",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -586771,13 +586801,13 @@
       "partition_year": null,
       "partition_evidence": [],
       "jcr_partitions": [],
-      "application_bucket": "land",
+      "application_bucket": "other",
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 2,
         "maritime": false,
         "bucket": "candidate",
-        "application": "traffic",
+        "application": "general",
         "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
@@ -586786,7 +586816,7 @@
           "海事场景=[]",
           "方法证据=[]",
           "低优先级=[]",
-          "陆上场景=['autonomous driving', 'robotics']；已核验CCF A正式会议=False",
+          "陆上场景=[]；已核验CCF A正式会议=False",
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
@@ -586824,9 +586854,15 @@
         },
         "model": "deepseek-flash",
         "request_id": "a4a1461e-8070-4588-ab3d-3980a2805433",
-        "compatible_fingerprints": []
+        "compatible_fingerprints": [
+          "845b695b7633fcbe6d405063c0e1a1922ea7016b6913976c0f57d611000e39db"
+        ]
       },
-      "daily_domain_exclusion": null,
+      "daily_domain_exclusion": {
+        "domain": "security_centric",
+        "reason": "安全攻击或漏洞分析：Adversarial Robustness Assessment Framework",
+        "evidence": "LiDAR-SHIELD: A Fully Dockerized Adversarial Robustness Assessment Framework for LiDAR-Based 3D Perception Models"
+      },
       "affiliation_check": {
         "revision": 1,
         "time": "2026-11-03T12:14:20.912547+00:00",
@@ -586879,13 +586915,11 @@
         "priced_cost_cny": 0.002007,
         "translated_at": "2026-11-03T20:14:31+08:00"
       },
-      "research_directions": [
-        "C"
-      ],
-      "ai_score": 36,
-      "ai_demoted": false,
-      "recommendation_status": "direct",
-      "ai_state": "evaluated",
+      "research_directions": [],
+      "ai_score": null,
+      "ai_demoted": true,
+      "recommendation_status": "candidate",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "基于LiDAR的3D感知是自动驾驶和机器人技术的基础，但要在真实世界中安全部署这些模型，需要在投入使用前用对抗输入对其进行压力测试。尽管已有最先进的对抗攻击方法，但其实现往往分散在各自的代码库中，每个实现都绑定于特定架构或任务，并且需要手动重建环境和编写模型特定的集成代码。我们提出LIDARSHIELD，一个统一且完全Docker化的框架，它反转了这一工作流程：LIDARSHIELD不把目标模型安装到工具包内部，而是通过三个轻量级HTTP端点（即/info、/forward和/gradient）暴露任意模型。因此，连接一个新模型或数据集只需一个加载函数或适配器。该框架通过同一引擎-服务协议同时支持3D语义分割和3D目标检测，集成了任务感知的最先进攻击套件，包括用于分割的PGD和Square Attack，以及用于检测的点扰动、点移除、点注入和LiDAttack。这能够系统性地暴露异构LiDAR骨干网络中的边缘案例和漏洞。LiDAR-Shield代码库公开于https://github.com/alexandrosgk/LiDAR-shield。",
       "display_translation_source": "deepseek",
       "display_translation_error": ""
@@ -656615,17 +656649,16 @@
         "2609.23541",
         "2609.39017",
         "2609.38968",
-        "2609.39514",
-        "2609.37837"
+        "2609.37837",
+        "2609.37162"
       ],
-      "omitted_count": 79,
+      "omitted_count": 80,
       "sections": {
         "maritime": [],
         "methods": [],
         "preprints": [
           "2609.39017",
-          "2609.38968",
-          "2609.39514"
+          "2609.38968"
         ],
         "candidate": [
           "doi:10.3837/tiis.2026.09.009",
@@ -656635,6 +656668,7 @@
           "2609.40347",
           "doi:10.1088/2631-8695/aeaeac",
           "2609.38925",
+          "2609.39514",
           "2609.39920",
           "2610.00809",
           "2609.39836",
@@ -656714,8 +656748,8 @@
           "2609.23541",
           "2609.39017",
           "2609.38968",
-          "2609.39514",
-          "2609.37837"
+          "2609.37837",
+          "2609.37162"
         ],
         "groups": {
           "water": [],
@@ -656725,8 +656759,8 @@
           "general": [
             "2609.39017",
             "2609.38968",
-            "2609.39514",
-            "2609.37837"
+            "2609.37837",
+            "2609.37162"
           ]
         },
         "counts": {
@@ -656754,8 +656788,8 @@
         "general": [
           "2609.39017",
           "2609.38968",
-          "2609.39514",
-          "2609.37837"
+          "2609.37837",
+          "2609.37162"
         ]
       },
       "recommendation_shortfalls": {

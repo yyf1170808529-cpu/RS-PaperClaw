@@ -1,25 +1,25 @@
 {
   "attempt_date": "2026-11-05",
-  "status": "complete",
+  "status": "partial",
   "published_date": "2026-11-05",
   "published_revision": "d32ea1a390fe98ee",
   "selection_audit": {
-    "candidate_count": 1254,
-    "ai_reviewed": 894,
+    "candidate_count": 1247,
+    "ai_reviewed": 887,
     "ai_states": {
-      "evaluated": 894,
+      "evaluated": 887,
       "uncertain": 357,
       "unassessed": 3
     },
     "stage_counts": {
       "1": 38,
-      "2": 1166,
+      "2": 1159,
       "0": 11,
       "3": 39
     },
-    "ai_rejected": 885,
+    "ai_rejected": 879,
     "translation_deferred": 1,
-    "qualified_count": 8,
+    "qualified_count": 7,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [
@@ -32,6 +32,15 @@
       }
     ],
     "translation_environment_errors": [],
-    "translation_errors": []
+    "translation_errors": [
+      {
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "reason": "本地译文尚未生成，或英文摘要已变化"
+      },
+      {
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "reason": "DeepSeek enrichment incomplete"
+      }
+    ]
   }
 }

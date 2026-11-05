@@ -86,6 +86,14 @@
     "2609.16336": {
       "reason": "安全攻击或漏洞分析：Stereo Vision Vulnerabilities",
       "replacement": null
+    },
+    "2610.39848": {
+      "reason": "安全攻击或漏洞分析：Adversarial Robustness Assessment Framework",
+      "replacement": null
+    },
+    "2609.39969": {
+      "reason": "核心任务为规划/操作而非视觉感知或匹配：LLM Tactical Planning",
+      "replacement": null
     }
   }
 }

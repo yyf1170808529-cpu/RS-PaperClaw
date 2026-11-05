@@ -14,12 +14,13 @@ class Scope388Tests(unittest.TestCase):
   for key in ['2609.30891','2609.16336']:
    p=self.lib['papers'][key];self.assertIsNotNone(current_evaluation(p));self.assertTrue(primary_scope_exclusion(p));self.assertFalse(hard_eligible(p));self.assertEqual(ranking_info(p)['state'],'domain_excluded');self.assertEqual(p['application_bucket'],'other');self.assertEqual(p['recommendation']['bucket'],'candidate')
  def test_primary_object_not_validation_scene(self):
-  for title in ['OFDM Pilot Allocation for Vehicle Segmentation','Wireless Communication Protocols for Object Detection','Physical Adversarial Attacks on Stereo Depth Estimation','Industrial Surface Defect Inspection']:
+  for title in ['OFDM Pilot Allocation for Vehicle Segmentation','Wireless Communication Protocols for Object Detection','Physical Adversarial Attacks on Stereo Depth Estimation','Industrial Surface Defect Inspection','Adversarial Robustness Assessment Framework for LiDAR Perception','TACTIC: Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks']:
    p={'title':title,'abstract':''};self.assertTrue(primary_scope_exclusion(p));self.assertFalse(traffic_task(p))
   for title in ['ISAC Radar Target Recognition and Localization','Robust Cross-modal Representation Learning under Physical Adversarial Attacks','Robust Multimodal Fusion for Autonomous Driving Perception','Vessel Instance Segmentation','Radar-AIS Association','Vision-AIS Cross-modal Matching','Maritime Depth Estimation','Traffic Multi-object Tracking']:
    self.assertFalse(primary_scope_exclusion({'title':title}),title)
   self.assertTrue(direct_task({'title':'Vessel Instance Segmentation','abstract':'Visual perception for ships.'}))
   self.assertFalse(direct_task({'title':'Blood vessel segmentation','abstract':'Clinical imaging.'}))
+  self.assertFalse(primary_scope_exclusion({'title':'Robust Cross-modal Representation Learning','abstract':'We propose cross-modal alignment against physical adversarial attacks as a reusable perception learning mechanism.'}))
  def test_actual_positive_metadata_and_evidence_fixture(self):
   p=copy.deepcopy(self.lib['papers']['doi:10.1016/j.inffus.2026.104909']);self.assertEqual(p['application_bucket'],'water');self.assertTrue(p['quality']['high_journal']);self.assertEqual(p['publication_date'],'2026-10-28')
   from services.maritime_v2 import merge_records

@@ -57,3 +57,13 @@ Crossref返回仅2026-10月份，OpenAlex返回2026-10-01；Elsevier官方coreda
 真实云端补全同时暴露：Crossref的2026-10又覆盖了已核实的2026-10-28。已在统一merge_records中保护同月的精确日期与来源，保留月份原始版本；恢复官方日期，增加合并回归。明确通讯作者信息也不会被后续“未提供通讯标记”的元数据静默清除。补充修改将再次运行云端恢复验收。
 
 安全修正旧未读批次若少于五篇，保留原完成状态；只在用户主动点击后才完成剩余内容，次日按原队列推进，避免旧批次因删去两篇误推荐而被困住。未自动标记已读，收藏/笔记独立存储不变。全部Markdown日报也已改为同一作者简显规则，完整作者仍在数据和Prompt中。
+
+## 最终边界回归与补选
+
+第二次[42018165968](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/42018165968) completed/success，head 3b73bde348c9615977a31527f06377d727d7801d，数据3ee0a98已安全拉回。AI缓存1251，新增审核0、tokens0、费用0；精译缓存5、新增调用0。AIS-Vision日期仍为2026-10-28，证明精确日期保护在真实云端持续生效。
+
+最终反例审查补充安全攻击工具箱和LiDAR攻击规划这两类明确安全目标，避免只匹配physical adversarial attack一种表述；可复用跨模态/特征学习以攻击为评估的标题及贡献句均有例外反例测试。实际历史LiDAR-SHIELD及当前TACTIC（完整标题为Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks，摘要明确安排物理攻击和诱发碰撞）因此被阻断，不把它们当交通感知算法。没有为标题建立单篇ID黑名单。11月3日原归档不重写；11月5日修正前JSON及永久历史账本先复制到忽略目录pre-final-scope，并保留Git原版本。
+
+同日五篇保护继续生效：离线重建时，四篇有效内容保留，TACTIC由已有有效AI审核的正式期刊船舶检测论文MARS and ETMS（10.1109/tits.2026.3727609）替补候选；因该篇尚无DeepSeek精译，尝试状态为partial，没有把它冒充完全发布，也没有清空旧日报。接下来只对这篇必要正式精选生成精译，再验收；无需全库重审。
+
+本地已执行全部Python（含原report_site）160项及Node49项，均通过；云端此前执行maritime子集158项及Node49项。尚未核验来源/实体手机私人localStorage不会被写成真实手机操作成功。手机UA HTTPS已核对公开页面与JSON200，后续最终发布证据另补。

@@ -141,51 +141,6 @@
       "translation_error": ""
     },
     {
-      "paper_id": "2609.39969",
-      "title": "TACTIC: Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks",
-      "authors": [
-        "Yiming Gao",
-        "Shaocheng Luo"
-      ],
-      "published": "2026-09-30",
-      "arxiv_url": "https://arxiv.org/abs/2609.39969",
-      "doi": "10.48550/arxiv.2609.39969",
-      "original_url": "https://arxiv.org/abs/2609.39969",
-      "pdf_url": "https://arxiv.org/pdf/2609.39969",
-      "open_access_url": "https://arxiv.org/pdf/2609.39969",
-      "venue": "arXiv (Cornell University)",
-      "abstract": "Physical LiDAR attacks are often evaluated using fixed primitives and manually selected parameters, despite their strong dependence on surrounding traffic. We present TACTIC, a scene-aware framework that uses a multimodal large language model (MLLM) to coordinate state-adaptive roadside LiDAR attacks. Under a gray-box threat model, TACTIC relies only on an attacker-operated roadside perception stack, without accessing the victim LiDAR's native point clouds or internal processing. Local perception provides metric vehicle states, while the MLLM combines these measurements with roadside imagery to infer relational traffic context and construct a semantic scene graph. Based on this representation, TACTIC selects and configures two complementary primitives: \\emph{push-away}, which shifts the perceived range of a lead vehicle, and \\emph{phantom-obstacle braking}, which triggers emergency braking through obstacle injection. Measured traffic states and empirically calibrated constraints ground the generated tactics in physically feasible operating regions. To accommodate MLLM latency, TACTIC overlaps reasoning and execution asynchronously while high-rate local perception detects scene changes and triggers replanning. Across 280 randomized CARLA trials, the full policy achieves a 100% collision rate, compared with 35% for a fixed rule, 60% for random selection, and 75% for a restricted LLM using mode selection with default parameters. Joint physical-and-image input achieves 100% success, versus 65% with physical measurements alone and 75% with imagery alone, while asynchronous $Δ$ refresh reduces scene-mutation response from 7.4 s to 2.0 s. These results show that scene-dependent tactical planning can expose context-sensitive LiDAR failure modes that fixed attack policies may miss.",
-      "resource_type": "preprint",
-      "oa_evidence": true,
-      "validity": {
-        "status": "unverified"
-      },
-      "first_author": "Yiming Gao",
-      "first_author_affiliations": [
-        "Department of Electrical Engineering and Computer Science , University of Michigan , Ann Arbor , MI , USA",
-        "Department of Electrical and Computer Engineering , Duke University , Durham , NC , USA"
-      ],
-      "affiliation_source": "OpenAlex first authorship",
-      "affiliation_verified": true,
-      "affiliation_evidence": null,
-      "corresponding_authors": null,
-      "corresponding_author_source": null,
-      "corresponding_author_verified": null,
-      "source": "arXiv",
-      "reason": "面向交通LiDAR攻击的战术规划，属陆上感知但任务目标非检测或关联，迁移路径不具体。",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.39969",
-      "score": 9,
-      "rule_level": "一般相关",
-      "level": "直接相关",
-      "ai_score": 40,
-      "selection_source": "近期候选",
-      "summary_zh": "论文提出场景感知框架TACTIC，利用多模态大语言模型结合路侧图像与车辆状态推断交通关系，自适应协调路侧LiDAR攻击，在CARLA实验中显著提升碰撞成功率并加快响应。",
-      "migration_zh": "研究推断：可将场景图与异步MLLM规划模块迁移至船舶检测/分割中的多传感器融合场景，以Radar/AIS或视觉观测作为输入监督，并调整BEV场景图与重规划触发结构以应对动态目标。",
-      "abstract_zh": "物理LiDAR攻击通常使用固定原语和人工选择的参数进行评估，尽管其效果强烈依赖于周围交通。我们提出TACTIC，一个场景感知框架，使用多模态大语言模型（MLLM）来协调状态自适应的路侧LiDAR攻击。在灰盒威胁模型下，TACTIC仅依赖攻击者操作的路侧感知栈，不访问受害LiDAR的原生点云或内部处理。局部感知提供度量车辆状态，而MLLM将这些测量与路侧图像结合，以推断关系性交通上下文并构建语义场景图。基于该表示，TACTIC选择并配置两种互补原语：\\emph{push-away}，即偏移前车的感知距离；以及\\emph{phantom-obstacle braking}，即通过注入障碍物触发紧急制动。测量的交通状态与经经验校准的约束将生成的战术限定在物理可行的操作区域内。为适应MLLM延迟，TACTIC异步重叠推理与执行，同时高速率局部感知检测场景变化并触发重新规划。在280次随机化CARLA试验中，完整策略达到100%碰撞率，而固定规则为35%，随机选择为60%，使用模式选择与默认参数的限制版LLM为75%。物理与图像联合输入达到100%成功率，仅物理测量为65%，仅图像为75%，而异步$Δ$刷新将场景突变响应从7.4 s降低至2.0 s。这些结果表明，依赖场景的战术规划能够暴露固定攻击策略可能遗漏的上下文敏感LiDAR失效模式。",
-      "translation_source": "deepseek",
-      "translation_error": ""
-    },
-    {
       "paper_id": "2609.17242",
       "title": "Trajectory CPHD Filtering for Multiple Turning Vehicles With Decoupled Orientation and Axial-Scale Estimation",
       "authors": [
@@ -231,25 +186,73 @@
       "abstract_zh": "可靠估计车辆朝向、质心和足迹对于表示车辆在交叉口转弯及其他常见道路机动过程中的道路使用者占据状态十分重要。在转弯过程中，车辆朝向与运动方向可能不同，而将朝向与轴向尺度耦合会降低朝向和范围估计的质量。本文提出一种带有解耦朝向与轴向尺度估计（DOAM）模型的轨迹基数化概率假设密度滤波器，用于多车辆跟踪。该模型在每个轨迹分量内分别表示运动学、朝向和半轴长度平方状态，在不引入额外交互多模型结构的情况下减少朝向变化与尺度估计之间的相互干扰。一种结构化的坐标上升变分推断递推联合更新这些状态序列与量测源变量。推导了与解耦表示相关的轨迹分量似然和权重更新，同时保留标准基数递推。固定滞后轨迹实现进一步利用当前量测校正平滑窗口内的历史状态。使用信号化交叉口仿真和真实车载LiDAR量测的评估表明，车辆朝向、质心和范围估计得到改善，尤其是在转弯期间。所得的车辆状态和足迹估计为道路使用者占据感知以及后续碰撞风险评估和运动规划提供信息。",
       "translation_source": "deepseek",
       "translation_error": ""
+    },
+    {
+      "paper_id": "doi:10.1109/tits.2026.3727609",
+      "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
+      "authors": [
+        "Wen Chen",
+        "Xiaojun Wu",
+        "Qixun Yang",
+        "Haiyan Wei",
+        "Peng Li",
+        "Yunhui Liu"
+      ],
+      "published": "2026-11",
+      "arxiv_url": "",
+      "doi": "10.1109/tits.2026.3727609",
+      "original_url": "https://doi.org/10.1109/tits.2026.3727609",
+      "pdf_url": "",
+      "open_access_url": "",
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
+      "resource_type": "journal_article",
+      "oa_evidence": false,
+      "validity": {
+        "status": "accessible"
+      },
+      "first_author": "Wen Chen",
+      "first_author_affiliations": [
+        "Harbin Institute of Technology, Shenzhen"
+      ],
+      "affiliation_source": "Crossref first author",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "直接面向船舶检测，提出数据集和轻量检测网络，相关性强；但方法无跨任务通用性，迁移性低。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftits.2026.3727609",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "直接相关",
+      "ai_score": 48,
+      "selection_source": "近期候选",
+      "summary_zh": "",
+      "migration_zh": "",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "本地译文尚未生成，或英文摘要已变化"
     }
   ],
   "selection_audit": {
-    "candidate_count": 1254,
-    "ai_reviewed": 894,
+    "candidate_count": 1247,
+    "ai_reviewed": 887,
     "ai_states": {
-      "evaluated": 894,
+      "evaluated": 887,
       "uncertain": 357,
       "unassessed": 3
     },
     "stage_counts": {
       "1": 38,
-      "2": 1166,
+      "2": 1159,
       "0": 11,
       "3": 39
     },
-    "ai_rejected": 885,
+    "ai_rejected": 879,
     "translation_deferred": 1,
-    "qualified_count": 8,
+    "qualified_count": 7,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [
@@ -262,9 +265,18 @@
       }
     ],
     "translation_environment_errors": [],
-    "translation_errors": []
+    "translation_errors": [
+      {
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "reason": "本地译文尚未生成，或英文摘要已变化"
+      },
+      {
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "reason": "DeepSeek enrichment incomplete"
+      }
+    ]
   },
-  "publication_status": "complete",
+  "publication_status": "partial",
   "reserve_papers": [
     {
       "paper_id": "2609.16919",
@@ -496,6 +508,54 @@
       "abstract_zh": "可靠估计车辆朝向、质心和足迹对于表示车辆在交叉口转弯及其他常见道路机动过程中的道路使用者占据状态十分重要。在转弯过程中，车辆朝向与运动方向可能不同，而将朝向与轴向尺度耦合会降低朝向和范围估计的质量。本文提出一种带有解耦朝向与轴向尺度估计（DOAM）模型的轨迹基数化概率假设密度滤波器，用于多车辆跟踪。该模型在每个轨迹分量内分别表示运动学、朝向和半轴长度平方状态，在不引入额外交互多模型结构的情况下减少朝向变化与尺度估计之间的相互干扰。一种结构化的坐标上升变分推断递推联合更新这些状态序列与量测源变量。推导了与解耦表示相关的轨迹分量似然和权重更新，同时保留标准基数递推。固定滞后轨迹实现进一步利用当前量测校正平滑窗口内的历史状态。使用信号化交叉口仿真和真实车载LiDAR量测的评估表明，车辆朝向、质心和范围估计得到改善，尤其是在转弯期间。所得的车辆状态和足迹估计为道路使用者占据感知以及后续碰撞风险评估和运动规划提供信息。",
       "translation_source": "deepseek",
       "translation_error": ""
+    },
+    {
+      "paper_id": "doi:10.1109/tits.2026.3727609",
+      "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
+      "authors": [
+        "Wen Chen",
+        "Xiaojun Wu",
+        "Qixun Yang",
+        "Haiyan Wei",
+        "Peng Li",
+        "Yunhui Liu"
+      ],
+      "published": "2026-11",
+      "arxiv_url": "",
+      "doi": "10.1109/tits.2026.3727609",
+      "original_url": "https://doi.org/10.1109/tits.2026.3727609",
+      "pdf_url": "",
+      "open_access_url": "",
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
+      "resource_type": "journal_article",
+      "oa_evidence": false,
+      "validity": {
+        "status": "accessible"
+      },
+      "first_author": "Wen Chen",
+      "first_author_affiliations": [
+        "Harbin Institute of Technology, Shenzhen"
+      ],
+      "affiliation_source": "Crossref first author",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "直接面向船舶检测，提出数据集和轻量检测网络，相关性强；但方法无跨任务通用性，迁移性低。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftits.2026.3727609",
+      "score": 15,
+      "rule_level": "方法可借鉴",
+      "level": "直接相关",
+      "ai_score": 48,
+      "selection_source": "近期候选",
+      "summary_zh": "",
+      "migration_zh": "",
+      "abstract_zh": "",
+      "translation_source": "english_only",
+      "translation_error": "本地译文尚未生成，或英文摘要已变化"
     }
   ]
 }
