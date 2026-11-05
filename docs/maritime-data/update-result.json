@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-05T11:35:02.059196+00:00",
-  "completed_at": "2026-11-05T11:37:29.324994+00:00",
+  "run_id": "2026-11-05T12:29:51.655067+00:00",
+  "completed_at": "2026-11-05T12:31:50.704783+00:00",
   "local_update": "success",
   "jobs": 0,
   "successful": 0,
@@ -12,9 +12,9 @@
   "before_count": 4214,
   "after_count": 4214,
   "translation": {
-    "translated": 1,
+    "translated": 0,
     "failed": 0,
-    "cached": 4,
+    "cached": 5,
     "manual": 0,
     "pending": 0,
     "missing_english": 0,
@@ -29,9 +29,9 @@
     "replacement_failures": [],
     "selected": 5,
     "engine": "DeepSeek",
-    "api_calls": 1,
-    "cost_upper_cny": 0.004089999999999996,
-    "priced_cost_cny": 0.002045000000000005,
+    "api_calls": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "papers": [
       {
         "paper_id": "doi:10.1109/tits.2026.3727609",
@@ -106,9 +106,14 @@
       "unassessed": 3
     },
     "publication_status": "complete",
-    "reserve_available": 4
+    "reserve_available": 3
   },
   "affiliations": [
+    {
+      "paper_id": "doi:10.1109/tits.2026.3727609",
+      "status": "cached_verified",
+      "source": "Crossref first author"
+    },
     {
       "paper_id": "2609.16919",
       "status": "cached_unverified"
@@ -127,11 +132,6 @@
       "paper_id": "2609.17242",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
-    },
-    {
-      "paper_id": "doi:10.1109/tits.2026.3727609",
-      "status": "cached_verified",
-      "source": "Crossref first author"
     }
   ],
   "daily_selected": 5,
@@ -141,5 +141,5 @@
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
   "retrieval_status": "not_run_resume",
-  "github_run_id": "42020045554"
+  "github_run_id": "42027541157"
 }

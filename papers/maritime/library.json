@@ -808244,6 +808244,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-11-05T11:35:57.357388+00:00"
+    },
+    {
+      "missing_before": 1328,
+      "missing_after": 1328,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-05T12:30:36.868738+00:00"
     }
   ],
   "translation_batches": [
@@ -808494,11 +808502,11 @@
   "selected_translation_plan": {
     "date": "2026-11-05",
     "paper_ids": [
+      "doi:10.1109/tits.2026.3727609",
       "2609.16919",
       "2609.25945",
       "2610.10090",
-      "2609.17242",
-      "doi:10.1109/tits.2026.3727609"
+      "2609.17242"
     ]
   },
   "reading_enrichment_enabled": true
