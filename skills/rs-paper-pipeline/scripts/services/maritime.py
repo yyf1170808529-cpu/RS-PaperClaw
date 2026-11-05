@@ -151,6 +151,7 @@ def daily_data(library, date, rules):
 
 
 def render_daily(data, library):
+    from services.author_display import author_label
     lines = [f'# 论文日报 {data["date"]}', "", "规则相关性仅用于启发式排序，不代表创新性或学术价值判断。", "",
         f'候选 {data["candidate_count"]}；入选 {data["selected_count"]}；高度相关 {data["high_count"]}；主专题统计 {data["topic_counts"]}。',
         f'当日发表检索范围：{", ".join(data["searched_topics"])}；近期精选展示 {len(data["paper_ids"])} 篇，完整库仍保留。', ""]
@@ -169,7 +170,7 @@ def render_daily(data, library):
                 lines.extend(["## " + {"water": "水路高水平期刊", "land": "陆上交通高水平期刊 / CCF A / arXiv", "general": "通用视觉多模态高水平期刊 / CCF A / arXiv"}[section], ""])
                 last_section = section
         lines.extend([f'### {html.escape(p["title"])}', "", f'[原文]({p.get("original_url") or p.get("arxiv_url", "")}) · [PDF]({p.get("pdf_url", "")})',
-            f'作者：{html.escape(", ".join(p["authors"]))}  ', f'发布日期：{p["published"]}  ',
+            f'作者：{html.escape(author_label(p))}  ', f'发布日期：{p["published"]}  ',
             f'主专题：{a["primary_topic"]}；专题：{", ".join(a["topics"])}；场景：{", ".join(a["applications"])}  ',
             f'相关性：{LEVELS[a["level"]]} ({a["score"]})  ', html.escape("；".join(a["reasons"])), "",
             html.escape(p["abstract"]), "", "<details><summary>中文阅读提示</summary>", "",
