@@ -6087,7 +6087,7 @@
     },
     "019077b5e8e59b87c86f583ea7838b8a85023b6cb65f26b422bf0ab4ac3af70a": {
       "paper_id": "2605.10739",
-      "date": "2026-11-04",
+      "date": "2026-11-05",
       "status": "attempted"
     },
     "9184940a6aa4bdfa7afdf7634456dc0108666f8527817e3e528c2a6b20dccad8": {
@@ -6298,6 +6298,61 @@
     "9ba71b8836b1b00c2ba17ce5beb8def15924b731d5b478588f3eddd688cc5c5c": {
       "paper_id": "2611.04755",
       "date": "2026-11-04",
+      "status": "validated"
+    },
+    "8ff6131f96d78b04dd81a634915087e3106f6aa98ae540b4a9389973194b2ded": {
+      "paper_id": "2611.04912",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "da6f8a346305110909430d39c562f2147cb1c28234d7c4231b27810d03147e83": {
+      "paper_id": "2611.06195",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "40d68c10aae0a30fa03015b64fdc948e6f4911bd82e2f1a151093b13325014fd": {
+      "paper_id": "2611.06113",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "420eab6a6cc7adcd50d64b6329145fcdb05c0c607682e7f17c6da0c8a5e47356": {
+      "paper_id": "2611.05989",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "01174607b2b913e14bb980b014e9c3bc31e9f80169a332e62be321523d8ce437": {
+      "paper_id": "2611.05811",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "1a22d66c0dcd23bcaf83be2dff40ee5e553afb1692d49229c19abc9b721c6ccc": {
+      "paper_id": "2611.05874",
+      "date": "2026-11-05",
+      "status": "attempted"
+    },
+    "9c9f593799a6fdfc2084485c1800bda4453ca2b7948e71187779d38cf2f84f60": {
+      "paper_id": "2611.05131",
+      "date": "2026-11-05",
+      "status": "attempted"
+    },
+    "8b67c367c677597e9e94694a3ff08897bb92f928ece7684ca17f113a778582a7": {
+      "paper_id": "2611.05223",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "c3ba0c2ddd2160481ffe6a614e3e03ab82fb4b66a08d67fb7eb268f068e29b7b": {
+      "paper_id": "2611.06171",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "0d3657bca7ec506ef422e3ba7a2a01e3ea5f2c5627ba7e08ba60184e2a5d42aa": {
+      "paper_id": "2611.05969",
+      "date": "2026-11-05",
+      "status": "validated"
+    },
+    "d16f106cb36c61ee879dc2cb754bcdfe3af762fe61322401edc233f5e6deba77": {
+      "paper_id": "2611.04874",
+      "date": "2026-11-05",
       "status": "validated"
     }
   }

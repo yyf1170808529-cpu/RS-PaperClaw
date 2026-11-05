@@ -57267,6 +57267,339 @@
       "model": "deepseek-flash",
       "request_id": "deb1557b-76c6-4c98-9f82-31ecf1aee944",
       "compatible_fingerprints": []
+    },
+    "8ff6131f96d78b04dd81a634915087e3106f6aa98ae540b4a9389973194b2ded": {
+      "paper_id": "2611.04912",
+      "title": "MiCaDe: Online LiDAR-Camera Miscalibration Change Detection for Autonomous Driving",
+      "fingerprint": "8ff6131f96d78b04dd81a634915087e3106f6aa98ae540b4a9389973194b2ded",
+      "evaluation": {
+        "paper_id": "2611.04912",
+        "task_type": "多传感器标定漂移检测",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "By matching cross-modal detections, we derive geometric consistency metrics that serve as sensitive indicators of extrinsic drift.",
+            "interpretation_zh": "通过匹配跨模态检测结果，计算几何一致性指标作为外参漂移的敏感指示量。",
+            "inference": false
+          },
+          {
+            "quote_en": "These metrics are aggregated into fixed-size batches and scored against a reference distribution, producing a likelihood stream that is monitored by a Change Point Model (CPM).",
+            "interpretation_zh": "将指标按固定批量聚合，与参考分布比对打分，形成由变点模型监控的似然流。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "These metrics are aggregated into fixed-size batches and scored against a reference distribution, producing a likelihood stream that is monitored by a Change Point Model (CPM).",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "把相机-激光雷达3D/2D检测框跨模态匹配产生的几何一致性指标，替换为雷达与视觉/AIS关联后目标位置或航迹的残差一致性统计量；将参考分布与变点模型用于在线检测雷达-视觉或雷达-AIS关联质量的漂移，输入需从3D/2D框改为雷达点迹/航迹与视觉框或AIS位置。",
+          "inference": true
+        },
+        "limitations": [
+          "自动驾驶相机-激光雷达场景非海事，直接相关性有限",
+          "未讨论雷达点迹或AIS关联的适配细节，迁移为推断",
+          "摘要未提供具体噪声鲁棒性或海上环境干扰实验"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态检测匹配与几何一致性变点检测方法清晰，可迁移到雷达-视觉/AIS关联质量监测，但场景非海事且迁移需调整输入。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+    },
+    "da6f8a346305110909430d39c562f2147cb1c28234d7c4231b27810d03147e83": {
+      "paper_id": "2611.06195",
+      "title": "Annotator-Free Object Detection via Foundation Model Collaboration",
+      "fingerprint": "da6f8a346305110909430d39c562f2147cb1c28234d7c4231b27810d03147e83",
+      "evaluation": {
+        "paper_id": "2611.06195",
+        "task_type": "无标注目标检测",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "we introduce a landmark-based clustering mechanism that amortizes labeling across image clusters, improving label consistency while lowering computational cost",
+            "interpretation_zh": "提出基于关键点的聚类机制，在图像簇间分摊标注，提高标签一致性并降低计算成本。",
+            "inference": false
+          },
+          {
+            "quote_en": "Our method autonomously generates segmentation proposals, assigns semantic labels through multimodal reasoning, and iteratively improves both localization and classification using a lightweight open-set detector",
+            "interpretation_zh": "方法自动生成分割提案，通过多模态推理赋予语义标签，并用轻量开放集检测器迭代改进定位与分类。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Our method autonomously generates segmentation proposals, assigns semantic labels through multimodal reasoning, and iteratively improves both localization and classification using a lightweight open-set detector",
+          "target_task": "ship_detection",
+          "adaptation_zh": "将基础模型协作生成的分割提案与视觉-语言语义标注流程迁移到海事图像，用船舶类别提示替代通用类别，并以海上图像簇聚类分摊伪标签；开放集检测器需在船舶视觉数据集上自训练迭代，输入由通用图像改为海上监控或遥感图像。",
+          "inference": true
+        },
+        "limitations": [
+          "通用目标检测场景，直接海事相关性低",
+          "摘要未涉及雷达/AIS多模态传感器数据",
+          "迁移到船舶检测需要领域数据与类别提示，摘要未验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "无标注检测与基础模型伪标签、聚类分摊标注方法具体，可迁移至船舶视觉检测，但无海事证据且为通用场景。",
+        "confidence": 0.5
+      },
+      "model": "deepseek-flash",
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+    },
+    "40d68c10aae0a30fa03015b64fdc948e6f4911bd82e2f1a151093b13325014fd": {
+      "paper_id": "2611.06113",
+      "title": "Semantic Prior-Guided Incomplete Cross-Modal Retrieval with Noisy Labels",
+      "fingerprint": "40d68c10aae0a30fa03015b64fdc948e6f4911bd82e2f1a151093b13325014fd",
+      "evaluation": {
+        "paper_id": "2611.06113",
+        "task_type": "不完整跨模态检索",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "SPIRN uses fixed semantic priors as a consistent reference for robust representation learning, noisy-label handling, and missing-modality completion",
+            "interpretation_zh": "SPIRN用固定语义先验作为一致参考，用于鲁棒表征学习、噪声标签处理和缺失模态补全。",
+            "inference": false
+          },
+          {
+            "quote_en": "Confidence-driven Selective Imputation (CSI) recovers missing modalities from a cross-modal memory bank while filtering unreliable imputations with an increasing threshold",
+            "interpretation_zh": "置信度驱动的选择性插补从跨模态记忆库恢复缺失模态，并用递增阈值过滤不可靠插补。",
+            "inference": false
+          },
+          {
+            "quote_en": "Quality-aware Robust Learning (QRL) dynamically evaluates sample quality to distinguish clean samples from noisy ones and handles noise via reverse learning",
+            "interpretation_zh": "质量感知鲁棒学习动态评估样本质量以区分干净与噪声样本，并通过反向学习处理噪声。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Confidence-driven Selective Imputation (CSI) recovers missing modalities from a cross-modal memory bank while filtering unreliable imputations with an increasing threshold",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "在雷达-视觉或视觉-AIS跨模态匹配中，将跨模态记忆库与置信度选择性插补用于某一传感器短时缺失时的特征补全；输入由文本-图像模态对改为雷达点迹/航迹与视觉目标或AIS报文表征，训练目标由检索对齐改为跨模态匹配相似度学习，并保留噪声标签处理以应对AIS关联噪声。",
+          "inference": true
+        },
+        "limitations": [
+          "任务是跨模态检索而非目标关联匹配，任务差异明显",
+          "未涉及雷达、AIS或船舶场景",
+          "插补与反向学习在关联任务上的有效性未验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "缺失模态选择性插补与鲁棒表征方法具体，可迁移到跨模态匹配中的模态缺失问题，但原任务为检索且无海事证据。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+    },
+    "420eab6a6cc7adcd50d64b6329145fcdb05c0c607682e7f17c6da0c8a5e47356": {
+      "paper_id": "2611.05989",
+      "title": "Look Before You Move: Multimodal Sensing-Aided Trajectory and Beamforming Design for 6DMA",
+      "fingerprint": "420eab6a6cc7adcd50d64b6329145fcdb05c0c607682e7f17c6da0c8a5e47356",
+      "evaluation": {
+        "paper_id": "2611.05989",
+        "task_type": "多模态感知辅助轨迹与波束设计",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "user-centric cross-modal attention and temporal self-attention modules relate each user to the scene and its sensing history",
+            "interpretation_zh": "以用户为中心的跨模态注意力与时间自注意力模块将每个用户与场景及其感知历史关联。",
+            "inference": false
+          },
+          {
+            "quote_en": "surface-to-user attention relates each surface to the users",
+            "interpretation_zh": "表面到用户的注意力将每个可移动表面与用户关联。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "核心任务是6DMA轨迹与波束赋形设计，非目标检测或关联",
+          "跨模态注意力仅泛泛描述，缺乏可直接复用的匹配/检测机制证据",
+          "摘要未提及船舶、AIS或海事感知"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "6DMA通信轨迹与波束设计任务与海事感知关联弱，仅有泛化注意力，无法具体说明可迁移的检测/匹配机制。",
+        "confidence": 0.6
+      },
+      "model": "deepseek-flash",
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+    },
+    "01174607b2b913e14bb980b014e9c3bc31e9f80169a332e62be321523d8ce437": {
+      "paper_id": "2611.05811",
+      "title": "ReTailor: A Residual Feature Tailoring Framework for Real-Time Cross-Sensor Pansharpening Adaptation",
+      "fingerprint": "01174607b2b913e14bb980b014e9c3bc31e9f80169a332e62be321523d8ce437",
+      "evaluation": {
+        "paper_id": "2611.05811",
+        "task_type": "cross-sensor remote sensing adaptation (pansharpening/segmentation)",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "Only a lightweight residual Feature Tailor is rapidly optimized under self-supervised, physics-aware constraints to correct cross-sensor shifts without modifying the well-learned fusion prior.",
+            "interpretation_zh": "通过自监督约束只优化轻量残差特征调整器，修正跨传感器偏移而不改动已学主干。",
+            "inference": false
+          },
+          {
+            "quote_en": "content-aware patch selection, which identifies a few informative patches per image for optimization",
+            "interpretation_zh": "按内容选择信息量大的图像块进行快速自适应优化。",
+            "inference": false
+          },
+          {
+            "quote_en": "rolling residual bootstrap, which inherits sensor-related knowledge across the image stream",
+            "interpretation_zh": "跨图像流滚动继承传感器相关知识以稳定自适应。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Only a lightweight residual Feature Tailor is rapidly optimized under self-supervised, physics-aware constraints to correct cross-sensor shifts without modifying the well-learned fusion prior.",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将轻量残差特征调整器接到船舶分割骨干特征上，在无标注船舶图像上用自监督/一致性约束在线优化该调整器，冻结主干，以适配不同传感器或海况造成的域偏移；结构上替换pansharpening融合先验为分割解码器特征。",
+          "inference": true
+        },
+        "limitations": [
+          "直接任务是遥感全色锐化与分割，非海事船舶场景",
+          "自监督约束的物理含义与海上目标域差异需重新定义",
+          "摘要为通用说明，未给出海事图像上的验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨传感器轻量残差自适应与自监督在线优化可迁移到船舶分割/检测的域适应，但非直接海事任务。",
+        "confidence": 0.62
+      },
+      "model": "deepseek-flash",
+      "request_id": "dd102172-def5-4b82-a646-aec1494b5061"
+    },
+    "8b67c367c677597e9e94694a3ff08897bb92f928ece7684ca17f113a778582a7": {
+      "paper_id": "2611.05223",
+      "title": "PLANTEUR: A Crop-Type Segmentation Benchmark for Tropical Regions",
+      "fingerprint": "8b67c367c677597e9e94694a3ff08897bb92f928ece7684ca17f113a778582a7",
+      "evaluation": {
+        "paper_id": "2611.05223",
+        "task_type": "crop-type segmentation benchmark",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "为农业作物类型分割基准，无具体可迁移方法描述",
+          "无海事场景或多传感器匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "作物类型分割基准，摘要无可复用具体方法，与船舶及跨模态匹配无关。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "dd102172-def5-4b82-a646-aec1494b5061"
+    },
+    "c3ba0c2ddd2160481ffe6a614e3e03ab82fb4b66a08d67fb7eb268f068e29b7b": {
+      "paper_id": "2611.06171",
+      "title": "GraphSeal: Graph-Augmented Speech Deepfake Detection via Temporal-Spectral Artifact Propagation",
+      "fingerprint": "c3ba0c2ddd2160481ffe6a614e3e03ab82fb4b66a08d67fb7eb268f068e29b7b",
+      "evaluation": {
+        "paper_id": "2611.06171",
+        "task_type": "speech_deepfake_detection",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "edges encode temporal adjacency and spectral similarity",
+            "interpretation_zh": "图中边同时编码时间相邻与频谱相似关系，属于图结构中的相似度/邻接建模。",
+            "inference": false
+          },
+          {
+            "quote_en": "A multi-head graph attention mechanism weights neighboring nodes according to both learned features and edge attributes",
+            "interpretation_zh": "多头图注意力按学习特征与边属性加权邻居节点，是通用图注意力聚合机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "hierarchical readout aggregates node representations into a single utterance-level embedding",
+            "interpretation_zh": "分层读出将节点表征聚合为语句级嵌入，可视为图结构表征汇聚。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "edges encode temporal adjacency and spectral similarity",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可考虑将节点相似度图机制改为跨模态（如视觉–AIS）实体间相似度邻接图，但需将节点由语音短片段换成跨模态实体/特征，将纯相似度边换成跨模态特征相似边，并重新定义读出用于匹配打分；摘要未给训练目标与匹配损失，迁移只是推断。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为语音深伪检测，与海事和跨模态船舶匹配无直接关系",
+          "摘要未涉及跨模态匹配、检索损失或正负样本构造",
+          "图注意力属通用机制，缺乏可核实的匹配任务适配证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "语音深伪检测与船舶/跨模态匹配无关，仅含通用图注意力，迁移路径缺乏匹配目标与训练证据，仅可作为图表征方法参考。",
+        "confidence": 0.72
+      },
+      "model": "deepseek-flash",
+      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85"
+    },
+    "0d3657bca7ec506ef422e3ba7a2a01e3ea5f2c5627ba7e08ba60184e2a5d42aa": {
+      "paper_id": "2611.05969",
+      "title": "CLEAR: Color-Texture Latent Alignment for Single Image Reflection Removal",
+      "fingerprint": "0d3657bca7ec506ef422e3ba7a2a01e3ea5f2c5627ba7e08ba60184e2a5d42aa",
+      "evaluation": {
+        "paper_id": "2611.05969",
+        "task_type": "single_image_reflection_removal",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "The Hybrid Feature Alignment Module (HFAM) then treats input-derived skips as contaminated layer-mixture features",
+            "interpretation_zh": "混合特征对齐模块把来自输入的跳跃连接视为受污染的混合层特征，进行特征校正。",
+            "inference": false
+          },
+          {
+            "quote_en": "It rectifies their high-frequency content with a clean-transmission-aligned color query, learned from the input features themselves under ground-truth feature supervision",
+            "interpretation_zh": "用干净传输对齐的颜色查询在真值特征监督下重校正高频内容，属特征对齐与监督校正。",
+            "inference": false
+          },
+          {
+            "quote_en": "a deterministic, single-timestep, non-iterative latent framework that uses a pretrained latent diffusion backbone as a natural-image prior",
+            "interpretation_zh": "使用预训练潜扩散骨干作为自然图像先验的单步非迭代潜空间框架。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The Hybrid Feature Alignment Module (HFAM) then treats input-derived skips as contaminated layer-mixture features",
+          "target_task": "ship_enhancement",
+          "adaptation_zh": "可考虑将受污染跳跃特征校正思想用于船舶图像增强，但需将反射污染替换为海雾/浪花/光照污染，重定义干净传输查询与真值监督目标，并验证是否用于检测前增强；摘要未给船舶场景适配，迁移仅为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为单图反射去除，非船舶图像增强，缺少海事证据",
+          "摘要未涉及检测/分割下游任务或跨模态匹配",
+          "干净传输与反射形成模型在海上污染类型上未必适用"
+        ],
+        "decision": "候选",
+        "reason_zh": "反射去除中的特征对齐与污染特征校正对船舶图像增强有潜在借鉴，但场景与监督目标需大幅调整，证据有限。",
+        "confidence": 0.55
+      },
+      "model": "deepseek-flash",
+      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85"
+    },
+    "d16f106cb36c61ee879dc2cb754bcdfe3af762fe61322401edc233f5e6deba77": {
+      "paper_id": "2611.04874",
+      "title": "OCR in the Foundation Model Era: From Specialist Models to Unified Models",
+      "fingerprint": "d16f106cb36c61ee879dc2cb754bcdfe3af762fe61322401edc233f5e6deba77",
+      "evaluation": {
+        "paper_id": "2611.04874",
+        "task_type": "ocr_survey",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "为OCR综述，非具体可迁移方法",
+          "研究对象与船舶感知、跨模态匹配无关",
+          "摘要为领域梳理，无可核实的训练/对齐/匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "OCR综述与船舶视觉、AIS关联及跨模态匹配无可具体说明的方法迁移，不纳入。",
+        "confidence": 0.8
+      },
+      "model": "deepseek-flash",
+      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85"
     }
   }
 }

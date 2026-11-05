@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "target": 15,
   "records": {
     "2610.12871": {
@@ -734,9 +734,11 @@
       "paper_id": "2609.39969",
       "fingerprint": "ab74246e8b97d0e738756738737d6edc3d13c6ca17a9284c12bab25323a45fbd",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-05"
+      ],
+      "available": false
     },
     "2610.06232": {
       "paper_id": "2610.06232",
@@ -818,9 +820,11 @@
       "paper_id": "2609.16919",
       "fingerprint": "4af07914f050a5590e6648fe4e191a577b8a50fe7dfbb2e97bab29362fc74b51",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-05"
+      ],
+      "available": false
     },
     "2609.32856": {
       "paper_id": "2609.32856",
@@ -836,17 +840,21 @@
       "paper_id": "2610.10090",
       "fingerprint": "06535859cb9464b23584eefbdf0fb750edf0ce44df6950d950c84ba7763ce740",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-05"
+      ],
+      "available": false
     },
     "2609.25945": {
       "paper_id": "2609.25945",
       "fingerprint": "338f48fb48e5de39f8c6f978623cc244a332f1f720a2cf3794259d96a4a0de61",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-05"
+      ],
+      "available": false
     },
     "2609.30891": {
       "paper_id": "2609.30891",
@@ -862,9 +870,11 @@
       "paper_id": "2609.17242",
       "fingerprint": "89f3654270b91e0b2f42eaecd5434395b151b64718ebd39c96edcf08467c177b",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-05"
+      ],
+      "available": false
     },
     "2610.39848": {
       "paper_id": "2610.39848",
@@ -895,5 +905,5 @@
       "available": true
     }
   },
-  "available_count": 8
+  "available_count": 3
 }
