@@ -234,22 +234,22 @@
     }
   ],
   "selection_audit": {
-    "candidate_count": 1253,
-    "ai_reviewed": 893,
+    "candidate_count": 1254,
+    "ai_reviewed": 894,
     "ai_states": {
-      "evaluated": 893,
+      "evaluated": 894,
       "uncertain": 357,
       "unassessed": 3
     },
     "stage_counts": {
-      "1": 37,
+      "1": 38,
       "2": 1166,
       "0": 11,
       "3": 39
     },
     "ai_rejected": 885,
     "translation_deferred": 1,
-    "qualified_count": 7,
+    "qualified_count": 8,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [

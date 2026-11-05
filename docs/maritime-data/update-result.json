@@ -1,20 +1,20 @@
 {
-  "run_id": "2026-11-05T03:31:09.318071+00:00",
-  "completed_at": "2026-11-05T03:47:04.758246+00:00",
-  "local_update": "partial",
-  "jobs": 42,
-  "successful": 39,
+  "run_id": "2026-11-05T11:07:08.519415+00:00",
+  "completed_at": "2026-11-05T11:10:33.310779+00:00",
+  "local_update": "success",
+  "jobs": 0,
+  "successful": 0,
   "incomplete": 0,
-  "failed": 3,
-  "added": 24,
-  "filled": 0,
+  "failed": 0,
+  "added": 0,
+  "filled": 1,
   "merged": 0,
-  "before_count": 4190,
+  "before_count": 4214,
   "after_count": 4214,
   "translation": {
-    "translated": 5,
+    "translated": 0,
     "failed": 0,
-    "cached": 0,
+    "cached": 5,
     "manual": 0,
     "pending": 0,
     "missing_english": 0,
@@ -24,23 +24,14 @@
       "2609.17242",
       "2609.25945",
       "2609.39969",
-      "2610.10090",
-      "2611.04034"
+      "2610.10090"
     ],
-    "replacement_failures": [
-      {
-        "paper_id": "2611.04034",
-        "attempt_date": "2026-11-05",
-        "reason": "本地译文尚未生成，或英文摘要已变化",
-        "requires_enrichment": true,
-        "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7"
-      }
-    ],
+    "replacement_failures": [],
     "selected": 5,
     "engine": "DeepSeek",
-    "api_calls": 6,
-    "cost_upper_cny": 0.02548136,
-    "priced_cost_cny": 0.02548136,
+    "api_calls": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "papers": [
       {
         "paper_id": "2609.16919",
@@ -93,60 +84,39 @@
     ]
   ],
   "ai": {
-    "status": "partial",
-    "processed": 9,
-    "cached": 1244,
-    "failed": 3,
-    "cost_upper_cny": 0.055936799999999995,
-    "priced_cost_cny": 0.055936799999999995,
+    "status": "success",
+    "processed": 1,
+    "cached": 1250,
+    "failed": 0,
+    "cost_upper_cny": 0.0071762399999999995,
+    "priced_cost_cny": 0.0035881199999999998,
     "unsettled_upper_cny": 0.0,
-    "tokens": 17574,
+    "tokens": 2480,
     "missing_abstract": 0,
-    "candidate_count": 1256,
-    "already_attempted_today": 0,
-    "pending_total": 12,
+    "candidate_count": 1254,
+    "already_attempted_today": 3,
+    "pending_total": 1,
     "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 895,
-    "validation_errors": [
-      {
-        "paper_id": "2611.05874",
-        "reason": "Invalid transfer path"
-      },
-      {
-        "paper_id": "2611.05131",
-        "reason": "Invalid transfer path"
-      },
-      {
-        "paper_id": "2605.10739",
-        "reason": "Evidence is not an exact abstract quotation"
-      }
-    ],
+    "ai_reviewed": 894,
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 895,
-      "uncertain": 358,
+      "evaluated": 894,
+      "uncertain": 357,
       "unassessed": 3
     },
     "publication_status": "complete",
-    "reserve_available": 8
+    "reserve_available": 4
   },
   "affiliations": [
     {
-      "paper_id": "2611.04034",
-      "revision": 1,
-      "time": "2026-11-05T03:45:47.976139+00:00",
-      "status": "unverified",
-      "attempts": [
-        {
-          "source": "openalex_title",
-          "status": "received"
-        },
-        {
-          "source": "arxiv",
-          "status": "received"
-        }
-      ]
+      "paper_id": "2609.16919",
+      "status": "cached_unverified"
+    },
+    {
+      "paper_id": "2609.25945",
+      "status": "cached_verified",
+      "source": "OpenAlex first authorship"
     },
     {
       "paper_id": "2610.10090",
@@ -162,22 +132,6 @@
       "paper_id": "2609.17242",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
-    },
-    {
-      "paper_id": "2609.16919",
-      "revision": 1,
-      "time": "2026-11-05T03:45:47.976139+00:00",
-      "status": "unverified",
-      "attempts": [
-        {
-          "source": "openalex_title",
-          "status": "received"
-        },
-        {
-          "source": "arxiv",
-          "status": "received"
-        }
-      ]
     }
   ],
   "daily_selected": 5,
@@ -186,6 +140,6 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "retrieval_status": "partial",
-  "github_run_id": "41962053379"
+  "retrieval_status": "not_run_resume",
+  "github_run_id": "42016246930"
 }

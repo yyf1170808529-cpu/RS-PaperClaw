@@ -57305,7 +57305,8 @@
         "confidence": 0.55
       },
       "model": "deepseek-flash",
-      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876",
+      "compatible_fingerprints": []
     },
     "da6f8a346305110909430d39c562f2147cb1c28234d7c4231b27810d03147e83": {
       "paper_id": "2611.06195",
@@ -57344,7 +57345,8 @@
         "confidence": 0.5
       },
       "model": "deepseek-flash",
-      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876",
+      "compatible_fingerprints": []
     },
     "40d68c10aae0a30fa03015b64fdc948e6f4911bd82e2f1a151093b13325014fd": {
       "paper_id": "2611.06113",
@@ -57388,7 +57390,8 @@
         "confidence": 0.55
       },
       "model": "deepseek-flash",
-      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876",
+      "compatible_fingerprints": []
     },
     "420eab6a6cc7adcd50d64b6329145fcdb05c0c607682e7f17c6da0c8a5e47356": {
       "paper_id": "2611.05989",
@@ -57422,7 +57425,8 @@
         "confidence": 0.6
       },
       "model": "deepseek-flash",
-      "request_id": "71945357-04d8-4caf-bc1a-29848c410876"
+      "request_id": "71945357-04d8-4caf-bc1a-29848c410876",
+      "compatible_fingerprints": []
     },
     "01174607b2b913e14bb980b014e9c3bc31e9f80169a332e62be321523d8ce437": {
       "paper_id": "2611.05811",
@@ -57466,7 +57470,8 @@
         "confidence": 0.62
       },
       "model": "deepseek-flash",
-      "request_id": "dd102172-def5-4b82-a646-aec1494b5061"
+      "request_id": "dd102172-def5-4b82-a646-aec1494b5061",
+      "compatible_fingerprints": []
     },
     "8b67c367c677597e9e94694a3ff08897bb92f928ece7684ca17f113a778582a7": {
       "paper_id": "2611.05223",
@@ -57488,7 +57493,8 @@
         "confidence": 0.8
       },
       "model": "deepseek-flash",
-      "request_id": "dd102172-def5-4b82-a646-aec1494b5061"
+      "request_id": "dd102172-def5-4b82-a646-aec1494b5061",
+      "compatible_fingerprints": []
     },
     "c3ba0c2ddd2160481ffe6a614e3e03ab82fb4b66a08d67fb7eb268f068e29b7b": {
       "paper_id": "2611.06171",
@@ -57532,7 +57538,8 @@
         "confidence": 0.72
       },
       "model": "deepseek-flash",
-      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85"
+      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85",
+      "compatible_fingerprints": []
     },
     "0d3657bca7ec506ef422e3ba7a2a01e3ea5f2c5627ba7e08ba60184e2a5d42aa": {
       "paper_id": "2611.05969",
@@ -57576,7 +57583,8 @@
         "confidence": 0.55
       },
       "model": "deepseek-flash",
-      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85"
+      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85",
+      "compatible_fingerprints": []
     },
     "d16f106cb36c61ee879dc2cb754bcdfe3af762fe61322401edc233f5e6deba77": {
       "paper_id": "2611.04874",
@@ -57599,7 +57607,48 @@
         "confidence": 0.8
       },
       "model": "deepseek-flash",
-      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85"
+      "request_id": "066e5ce5-6a5b-4a35-8e8a-61cbf4955d85",
+      "compatible_fingerprints": []
+    },
+    "1a7785047095675cf1cd543966bf63ab474ca728945fbda478bace2c2ea06859": {
+      "paper_id": "doi:10.1109/tits.2026.3727609",
+      "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
+      "fingerprint": "1a7785047095675cf1cd543966bf63ab474ca728945fbda478bace2c2ea06859",
+      "evaluation": {
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "task_type": "船舶检测",
+        "direct_relevance": 3,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network.",
+            "interpretation_zh": "重构骨干网络并在颈部进行自适应加权特征融合，以轻量网络提供更丰富的特征表示。",
+            "inference": false
+          },
+          {
+            "quote_en": "a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization.",
+            "interpretation_zh": "提出坐标对齐补偿模块解决头部结构不同分支最优位置的不对齐问题，并设置细化损失实现一致性优化。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要仅涉及船舶检测任务，未涉及跨模态匹配或通用匹配学习机制。",
+          "未提供可迁移到其他任务的具体方法证据（如困难负样本、跨模态对齐等）。"
+        ],
+        "decision": "候选",
+        "reason_zh": "直接面向船舶检测，提出数据集和轻量检测网络，相关性强；但方法无跨任务通用性，迁移性低。",
+        "confidence": 0.9,
+        "primary_domain": "海事智能感知与智能航运",
+        "primary_problem": "船舶检测中背景多样、船舶尺寸变化大等挑战",
+        "target_task": "ship_detection",
+        "core_contribution": "构建大规模海事船舶检测数据集MARS并提出轻量级无锚框检测网络ETMS",
+        "application_context": "自主船舶导航和海上监视",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "model": "deepseek-flash",
+      "request_id": "9c89f42b-a163-46e8-a908-8f3e7408b856"
     }
   }
 }

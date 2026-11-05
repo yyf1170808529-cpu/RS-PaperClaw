@@ -584853,7 +584853,8 @@
     },
     {
       "metadata_source": [
-        "Crossref"
+        "Crossref",
+        "OpenAlex"
       ],
       "doi": "10.1016/j.inffus.2026.104909",
       "title": "AIS-Vision Fusion for Robust Maritime Vessel Instance Segmentation under Visual Corruptions",
@@ -584867,19 +584868,20 @@
         "Davy Pissoort",
         "Mathias Verbeke"
       ],
-      "published": "2026-10-28",
-      "publication_date": "2026-10-28",
-      "publication_date_source": "Elsevier verified DOI/title coredata",
+      "published": "2026-10",
+      "publication_date": "2026-10",
+      "publication_date_source": "published",
       "source_type": "journal",
       "publication_status": "published",
       "venue": "Information Fusion",
       "venue_type": "journal",
       "issn": [
-        "1566-2535"
+        "1566-2535",
+        "1872-6305"
       ],
       "original_url": "https://doi.org/10.1016/j.inffus.2026.104909",
       "first_author": "Yunjia Wang",
-      "affiliation_verified": false,
+      "affiliation_verified": true,
       "publication_evidence": {
         "source": "Crossref",
         "url": "https://api.crossref.org/works/10.1016%2Fj.inffus.2026.104909",
@@ -584902,7 +584904,7 @@
       "abstract": "",
       "paper_id": "doi:10.1016/j.inffus.2026.104909",
       "first_seen": "2026-10-29T02:32:42.885844+00:00",
-      "last_seen": "2026-11-05T03:33:57.449995+00:00",
+      "last_seen": "2026-11-05T11:08:09.761758+00:00",
       "clean_abstract": "",
       "abstract_quality": {
         "status": "missing",
@@ -584930,14 +584932,17 @@
         "scoring_version": "75ae15d722f2"
       },
       "open_access_url": "",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
+      "first_author_affiliations": [
+        "Department of Computer Science, KU Leuven, Bruges, 8200, Belgium",
+        "Flanders Make@KU Leuven, Leuven, 3001, Belgium"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
       "discovery_date": "2026-10-29",
       "resource_type": "journal_article",
       "resource_type_label": "正式期刊论文",
       "validity": {
         "status": "accessible",
-        "checked_at": "2026-10-29T02:41:55.265641+00:00",
+        "checked_at": "2026-11-05T11:09:01.670053+00:00",
         "url": "https://doi.org/10.1016/j.inffus.2026.104909",
         "reason": "来源响应正常；可访问不代表全文开放或学术质量",
         "http_status": 200,
@@ -585104,6 +585109,32 @@
         "A",
         "B"
       ],
+      "corresponding_author_verified": true,
+      "corresponding_authors": [
+        "Yunjia Wang"
+      ],
+      "corresponding_author_source": "OpenAlex explicit is_corresponding flag",
+      "openalex_source_id": "https://openalex.org/S7560371",
+      "is_retracted": false,
+      "abstract_check": {
+        "time": "2026-11-05T11:08:22.758761+00:00",
+        "status": "missing",
+        "sources": [
+          {
+            "source": "crossref",
+            "status": "no_abstract"
+          },
+          {
+            "source": "openalex",
+            "status": "no_abstract"
+          },
+          {
+            "source": "publisher",
+            "status": "failed",
+            "error": "No explicit abstract with matching DOI and complete title"
+          }
+        ]
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
@@ -642264,7 +642295,8 @@
     },
     {
       "metadata_source": [
-        "Crossref"
+        "Crossref",
+        "OpenAlex"
       ],
       "doi": "10.1109/tits.2026.3727609",
       "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
@@ -642307,27 +642339,36 @@
           "intended-application": "similarity-checking"
         }
       ],
-      "abstract": "",
+      "abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
       "paper_id": "doi:10.1109/tits.2026.3727609",
       "first_seen": "2026-11-04T03:08:18.627246+00:00",
-      "last_seen": "2026-11-05T03:35:47.051140+00:00",
-      "clean_abstract": "",
+      "last_seen": "2026-11-05T11:08:35.950528+00:00",
+      "clean_abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
       "abstract_quality": {
-        "status": "missing",
+        "status": "validated",
         "reason": "",
-        "raw_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        "raw_hash": "7236779ad1d3778e9a54d9e2f5dbb53e5302c9b3c9d4532583d84be4bb7c4c72"
       },
       "assessment": {
-        "score": 0,
-        "topic_scores": {},
-        "primary_topic": null,
-        "topics": [],
-        "applications": [
-          "海事智能感知与智能航运"
+        "score": 15,
+        "topic_scores": {
+          "B": 12,
+          "C": 9
+        },
+        "primary_topic": "B",
+        "topics": [
+          "B",
+          "C"
         ],
-        "level": "excluded",
+        "applications": [
+          "海事智能感知与智能航运",
+          "智能交通与交通监测"
+        ],
+        "level": "transfer",
         "reasons": [
-          "缺少明确研究问题或方法联系"
+          "专题 B: 摘要:ship detection, 摘要:real-time, 摘要:lightweight, 摘要:feature, 摘要:learning；独立概念组=2，分数=12",
+          "专题 C: 摘要:traffic, 摘要:fusion, 摘要:learning；独立概念组=2，分数=9",
+          "应用优先级加分 +3"
         ],
         "scoring_version": "75ae15d722f2"
       },
@@ -642336,8 +642377,12 @@
       "resource_type": "journal_article",
       "resource_type_label": "正式期刊论文",
       "validity": {
-        "status": "unverified",
-        "reason": "尚未核验"
+        "status": "accessible",
+        "checked_at": "2026-11-05T11:09:01.455076+00:00",
+        "url": "https://doi.org/10.1109/tits.2026.3727609",
+        "reason": "来源响应正常；可访问不代表全文开放或学术质量",
+        "http_status": 200,
+        "resolved_url": "https://api.crossref.org/v1/works/10.1109%2Ftits.2026.3727609/transform"
       },
       "quality": {
         "cas_one": false,
@@ -642410,17 +642455,17 @@
       ],
       "application_bucket": "water",
       "recommendation": {
-        "section": "candidate",
-        "direct_relevance": 0,
+        "section": "maritime",
+        "direct_relevance": 3,
         "maritime": true,
-        "bucket": "candidate",
+        "bucket": "water",
         "application": "maritime",
         "publication_quality": "high_journal",
         "method_transfer_signal": false,
         "low_priority": false,
         "reasons": [
-          "感知联系=[]",
-          "海事场景=['maritime', 'ship']",
+          "感知联系=['ship detection']",
+          "海事场景=['maritime', 'ship', 'ships', 'vessels', 'marine']",
           "方法证据=[]",
           "低优先级=[]",
           "陆上场景=[]；已核验CCF A正式会议=False",
@@ -642430,15 +642475,82 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [
-        "B"
+        "B",
+        "C"
       ],
-      "ai_score": null,
-      "ai_demoted": true,
-      "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "corresponding_author_verified": false,
+      "abstract_source": {
+        "sources": [
+          "OpenAlex"
+        ],
+        "url": "https://openalex.org/W7214180620"
+      },
+      "openalex_source_id": "https://openalex.org/S144771191",
+      "is_retracted": false,
+      "abstract_check": {
+        "time": "2026-11-05T11:08:48.692810+00:00",
+        "status": "filled",
+        "sources": [
+          {
+            "source": "crossref",
+            "status": "no_abstract"
+          },
+          {
+            "source": "openalex",
+            "status": "filled",
+            "chars": 1556
+          }
+        ]
+      },
+      "translation_pending": true,
+      "semantic": {
+        "paper_id": "doi:10.1109/tits.2026.3727609",
+        "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
+        "fingerprint": "1a7785047095675cf1cd543966bf63ab474ca728945fbda478bace2c2ea06859",
+        "evaluation": {
+          "paper_id": "doi:10.1109/tits.2026.3727609",
+          "task_type": "船舶检测",
+          "direct_relevance": 3,
+          "transferability": 0,
+          "method_evidence": [
+            {
+              "quote_en": "we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network.",
+              "interpretation_zh": "重构骨干网络并在颈部进行自适应加权特征融合，以轻量网络提供更丰富的特征表示。",
+              "inference": false
+            },
+            {
+              "quote_en": "a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization.",
+              "interpretation_zh": "提出坐标对齐补偿模块解决头部结构不同分支最优位置的不对齐问题，并设置细化损失实现一致性优化。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "摘要仅涉及船舶检测任务，未涉及跨模态匹配或通用匹配学习机制。",
+            "未提供可迁移到其他任务的具体方法证据（如困难负样本、跨模态对齐等）。"
+          ],
+          "decision": "候选",
+          "reason_zh": "直接面向船舶检测，提出数据集和轻量检测网络，相关性强；但方法无跨任务通用性，迁移性低。",
+          "confidence": 0.9,
+          "primary_domain": "海事智能感知与智能航运",
+          "primary_problem": "船舶检测中背景多样、船舶尺寸变化大等挑战",
+          "target_task": "ship_detection",
+          "core_contribution": "构建大规模海事船舶检测数据集MARS并提出轻量级无锚框检测网络ETMS",
+          "application_context": "自主船舶导航和海上监视",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "model": "deepseek-flash",
+        "request_id": "9c89f42b-a163-46e8-a908-8f3e7408b856",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 48,
+      "ai_demoted": false,
+      "recommendation_status": "direct",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
-      "display_translation_error": "缺少英文摘要"
+      "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
     },
     {
       "metadata_source": [
@@ -650879,6 +650991,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2610.08573",
@@ -650908,6 +651021,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909",
           "2610.41352",
           "2610.08573",
@@ -650921,6 +651035,7 @@
         "groups": {
           "water": [
             "2605.26524",
+            "doi:10.1109/tits.2026.3727609",
             "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
@@ -650937,7 +651052,7 @@
           ]
         },
         "counts": {
-          "water": 2,
+          "water": 3,
           "land": 4,
           "general": 4
         },
@@ -650956,6 +651071,7 @@
       "recommendations": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -650972,7 +651088,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 8,
+        "water": 7,
         "land": 2,
         "general": 0
       }
@@ -651011,6 +651127,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2610.08573",
@@ -651042,6 +651159,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909",
           "2610.41352",
           "2610.08573",
@@ -651055,6 +651173,7 @@
         "groups": {
           "water": [
             "2605.26524",
+            "doi:10.1109/tits.2026.3727609",
             "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
@@ -651071,7 +651190,7 @@
           ]
         },
         "counts": {
-          "water": 2,
+          "water": 3,
           "land": 4,
           "general": 4
         },
@@ -651090,6 +651209,7 @@
       "recommendations": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -651106,7 +651226,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 8,
+        "water": 7,
         "land": 2,
         "general": 0
       }
@@ -651140,6 +651260,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2610.08573",
@@ -651173,6 +651294,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909",
           "2610.41352",
           "2610.08573",
@@ -651186,6 +651308,7 @@
         "groups": {
           "water": [
             "2605.26524",
+            "doi:10.1109/tits.2026.3727609",
             "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
@@ -651202,7 +651325,7 @@
           ]
         },
         "counts": {
-          "water": 2,
+          "water": 3,
           "land": 4,
           "general": 4
         },
@@ -651221,6 +651344,7 @@
       "recommendations": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -651237,7 +651361,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 8,
+        "water": 7,
         "land": 2,
         "general": 0
       }
@@ -651264,6 +651388,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2610.08573",
@@ -651288,6 +651413,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909",
           "2610.41352",
           "2610.08573",
@@ -651301,6 +651427,7 @@
         "groups": {
           "water": [
             "2605.26524",
+            "doi:10.1109/tits.2026.3727609",
             "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
@@ -651317,7 +651444,7 @@
           ]
         },
         "counts": {
-          "water": 2,
+          "water": 3,
           "land": 4,
           "general": 4
         },
@@ -651336,6 +651463,7 @@
       "recommendations": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -651352,7 +651480,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 8,
+        "water": 7,
         "land": 2,
         "general": 0
       }
@@ -651723,11 +651851,11 @@
     },
     "2026-10-28": {
       "date": "2026-10-28",
-      "candidate_count": 2,
-      "selected_count": 1,
+      "candidate_count": 3,
+      "selected_count": 2,
       "topic_counts": {
         "A": 0,
-        "B": 1,
+        "B": 2,
         "C": 0,
         "D": 0
       },
@@ -651736,7 +651864,8 @@
       "last_success": null,
       "candidate_ids": [
         "2610.38587",
-        "2610.38776"
+        "2610.38776",
+        "doi:10.1016/j.inffus.2026.104909"
       ],
       "paper_ids": [
         "2605.26524",
@@ -651752,7 +651881,9 @@
       ],
       "omitted_count": 1,
       "sections": {
-        "maritime": [],
+        "maritime": [
+          "doi:10.1016/j.inffus.2026.104909"
+        ],
         "methods": [],
         "preprints": [],
         "candidate": [
@@ -651859,6 +651990,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2611.00105",
@@ -651887,6 +652019,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2611.00105",
@@ -651898,7 +652031,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -651914,7 +652048,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -651932,7 +652066,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -651948,7 +652083,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -651977,6 +652112,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652002,6 +652138,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652012,7 +652149,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652027,7 +652165,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652045,7 +652183,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652060,7 +652199,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652086,6 +652225,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652107,6 +652247,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652117,7 +652258,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652132,7 +652274,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652150,7 +652292,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652165,7 +652308,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652192,6 +652335,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652216,6 +652360,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652226,7 +652371,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652241,7 +652387,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652259,7 +652405,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652274,7 +652421,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652300,6 +652447,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652322,6 +652470,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652332,7 +652481,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652347,7 +652497,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652365,7 +652515,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652380,7 +652531,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652409,6 +652560,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652433,6 +652585,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652443,7 +652596,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652458,7 +652612,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652476,7 +652630,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652491,7 +652646,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652523,6 +652678,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652550,6 +652706,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652560,7 +652717,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652575,7 +652733,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652593,7 +652751,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652608,7 +652767,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652639,6 +652798,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2610.04185",
@@ -652664,6 +652824,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2610.04185",
@@ -652674,7 +652835,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652689,7 +652851,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -652707,7 +652869,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652722,7 +652885,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -652756,6 +652919,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -652784,6 +652948,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -652795,7 +652960,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652811,7 +652977,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -652829,7 +652995,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652845,7 +653012,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -652876,6 +653043,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -652903,6 +653071,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -652914,7 +653083,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -652930,7 +653100,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -652948,7 +653118,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -652964,7 +653135,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653013,6 +653184,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -653053,6 +653225,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -653064,7 +653237,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -653080,7 +653254,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -653098,7 +653272,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -653114,7 +653289,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653177,6 +653352,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -653219,6 +653395,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -653230,7 +653407,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -653246,7 +653424,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -653264,7 +653442,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -653280,7 +653459,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653344,6 +653523,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -653386,6 +653566,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -653397,7 +653578,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -653413,7 +653595,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -653431,7 +653613,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -653447,7 +653630,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653517,6 +653700,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -653565,6 +653749,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -653576,7 +653761,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -653592,7 +653778,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -653610,7 +653796,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -653626,7 +653813,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653691,6 +653878,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -653728,6 +653916,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -653739,7 +653928,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -653755,7 +653945,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -653773,7 +653963,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -653789,7 +653980,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653833,6 +654024,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -653867,6 +654059,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -653878,7 +654071,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -653894,7 +654088,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -653912,7 +654106,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -653928,7 +654123,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -653979,6 +654174,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -654013,6 +654209,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -654024,7 +654221,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -654040,7 +654238,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -654058,7 +654256,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -654074,7 +654273,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -654183,6 +654382,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -654249,6 +654449,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -654260,7 +654461,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -654276,7 +654478,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -654294,7 +654496,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -654310,7 +654513,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -654471,6 +654674,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -654559,6 +654763,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -654570,7 +654775,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -654586,7 +654792,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -654604,7 +654810,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -654620,7 +654827,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -654757,6 +654964,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -654843,6 +655051,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -654854,7 +655063,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -654870,7 +655080,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -654888,7 +655098,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -654904,7 +655115,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -655001,6 +655212,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2610.08573",
         "2609.23541",
@@ -655060,6 +655272,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2610.08573",
           "2609.23541",
@@ -655071,7 +655284,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -655087,7 +655301,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 4,
           "general": 4
         },
@@ -655105,7 +655319,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -655121,7 +655336,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 2,
         "general": 0
       }
@@ -655242,6 +655457,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2609.23541",
         "2610.04185",
@@ -655309,6 +655525,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2609.23541",
           "2610.04185",
@@ -655319,7 +655536,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -655334,7 +655552,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -655352,7 +655570,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -655367,7 +655586,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -655443,6 +655662,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2609.23541",
         "2610.04185",
@@ -655492,6 +655712,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2609.23541",
           "2610.04185",
@@ -655502,7 +655723,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -655517,7 +655739,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -655535,7 +655757,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -655550,7 +655773,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -655622,6 +655845,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2609.23541",
         "2610.04185",
@@ -655675,6 +655899,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2609.23541",
           "2610.04185",
@@ -655685,7 +655910,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -655700,7 +655926,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 3,
           "general": 4
         },
@@ -655718,7 +655944,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -655733,7 +655960,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 3,
         "general": 0
       }
@@ -655860,6 +656087,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2609.23541",
         "2610.02784",
@@ -655932,6 +656160,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2609.23541",
           "2610.02784",
@@ -655941,7 +656170,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -655955,7 +656185,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 2,
           "general": 4
         },
@@ -655973,7 +656203,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -655987,7 +656218,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 4,
         "general": 0
       }
@@ -656161,6 +656392,7 @@
       ],
       "paper_ids": [
         "2605.26524",
+        "doi:10.1016/j.inffus.2026.104909",
         "doi:10.1109/tits.2026.3710532",
         "2609.23541",
         "2610.01750",
@@ -656244,6 +656476,7 @@
       "recommendation_view": {
         "paper_ids": [
           "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909",
           "doi:10.1109/tits.2026.3710532",
           "2609.23541",
           "2610.01750",
@@ -656253,7 +656486,8 @@
         ],
         "groups": {
           "water": [
-            "2605.26524"
+            "2605.26524",
+            "doi:10.1016/j.inffus.2026.104909"
           ],
           "land": [
             "doi:10.1109/tits.2026.3710532",
@@ -656267,7 +656501,7 @@
           ]
         },
         "counts": {
-          "water": 1,
+          "water": 2,
           "land": 2,
           "general": 4
         },
@@ -656285,7 +656519,8 @@
       },
       "recommendations": {
         "water": [
-          "2605.26524"
+          "2605.26524",
+          "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
           "doi:10.1109/tits.2026.3710532",
@@ -656299,7 +656534,7 @@
         ]
       },
       "recommendation_shortfalls": {
-        "water": 9,
+        "water": 8,
         "land": 4,
         "general": 0
       }
@@ -688654,32 +688889,66 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-10-19T06:01:17.403939+00:00",
-    "completed_at": "2026-10-19T06:15:17.758825+00:00",
-    "local_update": "partial",
-    "jobs": 42,
-    "successful": 40,
-    "incomplete": 1,
-    "failed": 1,
-    "added": 74,
-    "filled": 0,
+    "run_id": "2026-11-05T11:07:08.519415+00:00",
+    "completed_at": "2026-11-05T11:10:33.310779+00:00",
+    "local_update": "success",
+    "jobs": 0,
+    "successful": 0,
+    "incomplete": 0,
+    "failed": 0,
+    "added": 0,
+    "filled": 1,
     "merged": 0,
-    "before_count": 3607,
-    "after_count": 3681,
+    "before_count": 4214,
+    "after_count": 4214,
     "translation": {
       "translated": 0,
-      "cached": 0,
-      "manual": 0,
       "failed": 0,
-      "missing_english": 0,
+      "cached": 5,
+      "manual": 0,
       "pending": 0,
+      "missing_english": 0,
       "skipped_failed": 0,
-      "selected": 0,
-      "engine": "Argos Translate (CPU)",
+      "attempted_ids": [
+        "2609.16919",
+        "2609.17242",
+        "2609.25945",
+        "2609.39969",
+        "2610.10090"
+      ],
+      "replacement_failures": [],
+      "selected": 5,
+      "engine": "DeepSeek",
       "api_calls": 0,
       "cost_upper_cny": 0.0,
       "priced_cost_cny": 0.0,
-      "papers": []
+      "papers": [
+        {
+          "paper_id": "2609.16919",
+          "source": "deepseek",
+          "error": ""
+        },
+        {
+          "paper_id": "2609.25945",
+          "source": "deepseek",
+          "error": ""
+        },
+        {
+          "paper_id": "2610.10090",
+          "source": "deepseek",
+          "error": ""
+        },
+        {
+          "paper_id": "2609.39969",
+          "source": "deepseek",
+          "error": ""
+        },
+        {
+          "paper_id": "2609.17242",
+          "source": "deepseek",
+          "error": ""
+        }
+      ]
     },
     "translation_failed": 0,
     "suspected_duplicates": [
@@ -688705,35 +688974,64 @@
       ]
     ],
     "ai": {
-      "status": "fallback",
-      "processed": 0,
-      "cached": 81,
+      "status": "success",
+      "processed": 1,
+      "cached": 1250,
       "failed": 0,
-      "cost_upper_cny": 0.0,
-      "priced_cost_cny": 0.0,
+      "cost_upper_cny": 0.0071762399999999995,
+      "priced_cost_cny": 0.0035881199999999998,
       "unsettled_upper_cny": 0.0,
-      "tokens": 0,
+      "tokens": 2480,
       "missing_abstract": 0,
-      "candidate_count": 773,
-      "pending_total": 692,
-      "limit_deferred": 632,
-      "selected_count": 0,
-      "ai_reviewed": 42,
-      "reason": "Remote/local commits differ; skip new paid requests",
-      "shortfall": 5,
+      "candidate_count": 1254,
+      "already_attempted_today": 3,
+      "pending_total": 1,
+      "limit_deferred": 0,
+      "selected_count": 5,
+      "ai_reviewed": 894,
+      "shortfall": 0,
       "ai_states": {
-        "unassessed": 692,
-        "uncertain": 39,
-        "evaluated": 42
+        "evaluated": 894,
+        "uncertain": 357,
+        "unassessed": 3
       },
-      "publication_status": "failed"
+      "publication_status": "complete",
+      "reserve_available": 4
     },
-    "daily_selected": 0,
-    "daily_publication": "failed",
-    "published_daily_date": "2026-10-18",
+    "affiliations": [
+      {
+        "paper_id": "2609.16919",
+        "status": "cached_unverified"
+      },
+      {
+        "paper_id": "2609.25945",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2610.10090",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2609.39969",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2609.17242",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      }
+    ],
+    "daily_selected": 5,
+    "daily_publication": "complete",
+    "published_daily_date": "2026-11-05",
     "published_daily_count": 5,
     "github_sync": "not_attempted",
-    "pages_publish": "not_attempted"
+    "pages_publish": "not_attempted",
+    "retrieval_status": "not_run_resume",
+    "github_run_id": "42016246930"
   },
   "recommendation_policy": {
     "schema_version": 2,
@@ -688968,6 +689266,7 @@
     "recent": {
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2611.04034",
@@ -688980,6 +689279,7 @@
       "groups": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -688995,7 +689295,7 @@
         ]
       },
       "counts": {
-        "water": 2,
+        "water": 3,
         "land": 3,
         "general": 4
       },
@@ -689014,6 +689314,7 @@
     "7": {
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2611.04034",
@@ -689025,6 +689326,7 @@
       "groups": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -689039,7 +689341,7 @@
         ]
       },
       "counts": {
-        "water": 2,
+        "water": 3,
         "land": 2,
         "general": 4
       },
@@ -689058,6 +689360,7 @@
     "14": {
       "paper_ids": [
         "2605.26524",
+        "doi:10.1109/tits.2026.3727609",
         "doi:10.1016/j.inffus.2026.104909",
         "2610.41352",
         "2611.04034",
@@ -689070,6 +689373,7 @@
       "groups": {
         "water": [
           "2605.26524",
+          "doi:10.1109/tits.2026.3727609",
           "doi:10.1016/j.inffus.2026.104909"
         ],
         "land": [
@@ -689085,7 +689389,7 @@
         ]
       },
       "counts": {
-        "water": 2,
+        "water": 3,
         "land": 3,
         "general": 4
       },
