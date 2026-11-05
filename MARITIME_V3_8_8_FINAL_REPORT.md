@@ -44,7 +44,7 @@ Crossref返回仅2026-10月份，OpenAlex返回2026-10-01；Elsevier官方coreda
 
 ## 测试与部署
 
-本地Python158项、Node49项通过，含核心通信/攻击负例、ISAC感知正例、船舶无AIS正例、真实SNAP/ROSETTA旧缓存、arXiv/正式来源、候选/精选/储备/reading-index、作者不同/同一/多个/未知通讯作者、桌面真实渲染及私人快照保留。线上工作流证据将在实际运行结束后补入，不以单元测试代替上线。
+本地Python158项、Node49项通过，含核心通信/攻击负例、ISAC感知正例、船舶无AIS正例、真实SNAP/ROSETTA旧缓存、arXiv/正式来源、候选/精选/储备/reading-index、作者不同/同一/多个/未知通讯作者、桌面真实渲染及私人快照保留。云端与HTTPS真实发布证据见末节，不以单元测试代替上线。
 
 ## 云端首轮实际证据与验收发现
 
@@ -54,7 +54,7 @@ Crossref返回仅2026-10月份，OpenAlex返回2026-10-01；Elsevier官方coreda
 
 本轮不是只加标题黑名单：新响应primary_domain采用显式研究领域枚举并直接参与资格门槛；A/B/C领域才能走任务路径，D必须额外满足可复用机制及具体迁移证据，通信/安全/医学/巡检/其他不能通过实验场景或迁移高分绕过。旧缓存及初始自由文字领域响应保留兼容解析，优先确定性审查，不批量清空或重新收费；新付费响应强制校验枚举及全部结构。增补vessel/vessels视觉对象，同时继续防止blood vessel误判船舶。
 
-真实云端补全同时暴露：Crossref的2026-10又覆盖了已核实的2026-10-28。已在统一merge_records中保护同月的精确日期与来源，保留月份原始版本；恢复官方日期，增加合并回归。明确通讯作者信息也不会被后续“未提供通讯标记”的元数据静默清除。补充修改将再次运行云端恢复验收。
+真实云端补全同时暴露：Crossref的2026-10又覆盖了已核实的2026-10-28。已在统一merge_records中保护同月的精确日期与来源，保留月份原始版本；恢复官方日期，增加合并回归。明确通讯作者信息也不会被后续“未提供通讯标记”的元数据静默清除。补充修改已由后续云端恢复验收覆盖。
 
 安全修正旧未读批次若少于五篇，保留原完成状态；只在用户主动点击后才完成剩余内容，次日按原队列推进，避免旧批次因删去两篇误推荐而被困住。未自动标记已读，收藏/笔记独立存储不变。全部Markdown日报也已改为同一作者简显规则，完整作者仍在数据和Prompt中。
 
@@ -64,6 +64,56 @@ Crossref返回仅2026-10月份，OpenAlex返回2026-10-01；Elsevier官方coreda
 
 最终反例审查补充安全攻击工具箱和LiDAR攻击规划这两类明确安全目标，避免只匹配physical adversarial attack一种表述；可复用跨模态/特征学习以攻击为评估的标题及贡献句均有例外反例测试。实际历史LiDAR-SHIELD及当前TACTIC（完整标题为Temporal and Context-Aware LLM Tactical Planning for Roadside LiDAR Attacks，摘要明确安排物理攻击和诱发碰撞）因此被阻断，不把它们当交通感知算法。没有为标题建立单篇ID黑名单。11月3日原归档不重写；11月5日修正前JSON及永久历史账本先复制到忽略目录pre-final-scope，并保留Git原版本。
 
-同日五篇保护继续生效：离线重建时，四篇有效内容保留，TACTIC由已有有效AI审核的正式期刊船舶检测论文MARS and ETMS（10.1109/tits.2026.3727609）替补候选；因该篇尚无DeepSeek精译，尝试状态为partial，没有把它冒充完全发布，也没有清空旧日报。接下来只对这篇必要正式精选生成精译，再验收；无需全库重审。
+同日五篇保护继续生效：离线重建时，四篇有效内容保留，TACTIC由已有有效AI审核的正式期刊船舶检测论文MARS and ETMS（10.1109/tits.2026.3727609）替补候选；因该篇尚无DeepSeek精译，尝试状态为partial，没有把它冒充完全发布，也没有清空旧日报。最终仅对这篇必要正式精选生成精译并验收成功，无需全库重审。
 
 本地已执行全部Python（含原report_site）160项及Node49项，均通过；云端此前执行maritime子集158项及Node49项。尚未核验来源/实体手机私人localStorage不会被写成真实手机操作成功。手机UA HTTPS已核对公开页面与JSON200，后续最终发布证据另补。
+
+## 修改文件范围
+
+- services/relevance_scope.py、domain_exclusion.py、abstract_quality.py：研究对象/贡献证据审查、A-D方向与场景。
+- services/semantic_evaluation.py、config/maritime/semantic.json：主要领域、问题、任务、贡献和验证场景分离、兼容缓存、新输出校验。
+- services/maritime_v2.py、maritime_update.py：范围标签、派生缓存兼容、精确日期/已核验通讯作者保护、核心缺摘要论文有限补全。
+- config/maritime/venues.json、discovery.json：Information Fusion证据与ISSN、海事召回组合。
+- clients/scholarly_client.py：只读取显式通讯作者标记。
+- services/author_display.py、maritime.py、mobile_digest.py，docs/maritime_authors.js、maritime.js、maritime.html、maritime_daily_reading.js：统一作者简显和安全历史修正阅读入口。
+- tests/test_maritime_v3_8_8.py、authors.test.cjs及必要的旧版本加载/交互测试：正反例、真实候选池、作者和阅读状态回归。
+- 主库、公开派生JSON、历史日报HTML/Markdown与修正清单：按既有构建器重建，不发布private备份、API密钥或浏览器私人数据。
+
+## 明确保留的限制
+
+1. AIS-Vision仍缺可合法使用且身份核对通过的英文摘要，因此“真实通过AI并进入下一轮候选”未完全达成；不能把测试摘要或出版社受限页面当作验收成功。它没有被删除，来源/日期/期刊资格已核实，并会被有限摘要补全优先处理。
+2. 研究范围规则是保守启发式与模型结构化判断的组合，不能保证未知表述永不误判；不能准确测量真实创新性。旧边界缓存保留供审查，没有为了更新字段付费重评千篇论文。
+3. 只有可信机构公开JIF证据，CAS2025不补猜；机构2026发布表未列学科，其journal_overall记录与2024分学科记录分别保留。
+4. 实体手机私人localStorage无法远程读取；采用现有真实JS交互回归及公开HTTPS/手机UA检查，未声称在用户实体手机操作收藏。
+
+两篇负例的原始身份时间补充：2609.30891，DOI 10.48550/arxiv.2609.30891，发布日期2026-09-25，首次入库2026-10-14T03:23:01Z，最近见于2026-10-19T06:08:44Z；2609.16336无DOI，发布日期2026-09-14，首次入库2026-10-13T11:10:33Z，最近见于2026-10-13T12:44:59Z。二者均是preprint、publication_status=unknown，未假称顶会录用。它们拥有有效原AI缓存且原始方法引文/decision均保留；范围排除不需要再次付费。
+
+## 最终交付证据
+
+最终代码提交 **dc47cbbbe2d84436bfd38feeff4cd094303b570b**。
+
+[最终云端42020045554](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/42020045554) completed/success，实际head dc47cbb，云端Python158项与Node49项通过，运行环境无Argos/PyTorch/Stanza。实际执行的是恢复/补选链路，未重新检索全部来源。新增AI审核0、缓存1250；必要精译1篇（MARS and ETMS）、缓存4篇，929 tokens，计价0.002045元，上界0.00409元；五篇均有有效AI、完整中文及两句导读。数据提交 **82dabf984fc23fbecaff1b0a988ff6ae1ebb245b** 已安全快进拉回，无冲突、无force push。
+
+本轮合计仅2次必要付费请求：首次审核1篇2480 tokens+正式替补精译1篇929 tokens，共 **3409 tokens，按响应时段计价0.00563312元**（峰值口径上界0.01126624元）。中间完整重复运行审核/翻译新增调用均为0，未重复付费翻译旧精选或重审千篇库。审核与精译预算仍分别控制，不把本机预算说成账户全局预算。
+
+最终2026-11-05正式五篇：
+
+|ID|论文|
+|---|---|
+|doi:10.1109/tits.2026.3727609|MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications|
+|2609.16919|NeuroSymbEAD: A Large Scale Neuro-Symbolic Caption Dataset for Omni-Directional Embodied Autonomous Driving|
+|2609.25945|Towards Systematic Qualification of Vision-Language Models for Automotive Perception Systems|
+|2610.10090|Temporal Residual Bottleneck for Robust Asynchronous Collaborative Perception|
+|2609.17242|Trajectory CPHD Filtering for Multiple Turning Vehicles With Decoupled Orientation and Axial-Scale Estimation|
+
+当前TACTIC被新合格船舶检测论文替补，另外四个身份保留；原TACTIC元数据、旧精译、旧归档Git版本及本地私有JSON备份均保留，原历史推送身份不会回收进后备。对用户原快照只按修正清单移除不适合条目，未更改完成日期或收藏笔记；新正式批次仍由既有用户阅读完成逻辑决定何时切换。
+
+[Pages42020534060](https://github.com/yyf1170808529-cpu/RS-PaperClaw/actions/runs/42020534060) completed/success，对应数据提交82dabf9。手机UA HTTPS读取每日HTML、完整库HTML、桌面JS、共享作者JS、阅读快照JS、latest.json、11月5日归档、content-corrections、reading-index、完整库JSON共10项，全部HTTP200，按换行规范化后的文本与本地正式产物全部一致（Windows工作树CRLF与Pages LF不当作内容差异）。线上五篇中文全部存在，5个Prompt按钮、5个作者行，作者模块加载成功；四条明确负例2609.30891、2609.16336、LiDAR-SHIELD、TACTIC在公开库均为domain_excluded。AIS-Vision线上quality.high_journal=True、日期2026-10-28，但摘要仍缺失，未冒充AI审核成功。
+
+证据：忽略目录final-online-proof.json、pages-proof.json、三轮cloud-state及各轮cloud-logs、final-audit.json、python-all.log、node.log。线上读取不是实体手机私人存储实测，不混淆二者。
+
+最终全部本地Python **160项**、Node **49项**通过；最后一次完整测试针对云端最终产物执行。所有4214个论文身份保留。最终有效AI缓存1400（原1399+本轮必要新审核1），没有批量失效旧缓存。
+
+入口：[手机/电脑每日精选](https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime-daily.html?v=3.8.8.1)；[完整论文库](https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?v=3.8.8)。原每日自动任务继续运行，无需用户执行命令。
+
+最终真实候选池审计：{"candidate_count": 1253, "ai_reviewed": 893, "ai_states": {"evaluated": 893, "uncertain": 357, "unassessed": 3}, "stage_counts": {"1": 38, "2": 1165, "0": 11, "3": 39}, "ai_rejected": 885, "translation_deferred": 1, "qualified_count": 7, "selected_count": 5, "shortfall": 0}；可用未推送后备3篇；相比基线新增明确范围排除17条，主库不删除。最终正式五篇并非把未审核论文凑进去。
