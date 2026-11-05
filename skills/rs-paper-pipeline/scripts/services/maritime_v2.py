@@ -321,6 +321,13 @@ def merge_records(library, records, rules, touch=True):
             for field, value in version.items():
                 if field in ("reading", "translation", "paper_id", "metadata_source", "metadata_records", "assessment", "quality", "recommendation", "merge_conflicts") or value in (None, "", [], {}):
                     continue
+                if field in ('corresponding_authors','corresponding_author_verified','corresponding_author_source') and current.get('corresponding_author_verified') and not version.get('corresponding_author_verified'):
+                    continue
+                if field in ('published','publication_date','publication_date_source'):
+                    precise=current.get('publication_date','')
+                    incoming_date=version.get('publication_date','')
+                    if len(precise)==10 and len(incoming_date) in (4,7) and precise.startswith(incoming_date):
+                        continue
                 if field == "abstract":
                     if len(value.strip()) > len(current.get("abstract", "").strip()):
                         current[field] = value

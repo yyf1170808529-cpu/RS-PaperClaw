@@ -707437,9 +707437,9 @@
         "Davy Pissoort",
         "Mathias Verbeke"
       ],
-      "published": "2026-10",
-      "publication_date": "2026-10",
-      "publication_date_source": "published",
+      "published": "2026-10-28",
+      "publication_date": "2026-10-28",
+      "publication_date_source": "Elsevier verified DOI/title coredata",
       "source_type": "journal",
       "publication_status": "published",
       "venue": "Information Fusion",
@@ -707669,7 +707669,8 @@
         "url": "https://api.elsevier.com/content/article/pii/S1566253526007852",
         "checked_at": "2026-11-05",
         "doi": "10.1016/j.inffus.2026.104909",
-        "title": "AIS-Vision Fusion for Robust Maritime Vessel Instance Segmentation under Visual Corruptions "
+        "title": "AIS-Vision Fusion for Robust Maritime Vessel Instance Segmentation under Visual Corruptions ",
+        "date": "2026-10-28"
       },
       "abstract_access": {
         "status": "unavailable",

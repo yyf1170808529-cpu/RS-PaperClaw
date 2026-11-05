@@ -87,3 +87,8 @@ test('CFUNet unread correction retains batch date, shown identities, English and
  s.progress.correct({[id]:{reason:'infrastructure_inspection',replacement:null}});const now=s.progress.read();
  assert.equal(now.completed,false);assert.equal(now.batch.payload.date,old.batch.payload.date);assert.deepEqual(now.shown,old.shown);assert.equal(now.batch.payload.papers.length,4);assert.equal(now.pending_corrections[0].abstract,'English');assert.equal(s.map.get('favorites'),'private note');
 });
+test('scope-corrected unfinished batch can explicitly complete and advance without resetting notes',()=>{
+ const s=setup();s.progress.read();s.progress.correct({'2610.10000':{reason:'communication core',replacement:null}});
+ assert.equal(s.progress.read().completed,false);s.progress.complete();s.day('2026-10-25');
+ assert.equal(s.progress.advance(batch('2026-10-25',20)).batch.payload.date,'2026-10-25');assert.equal(s.map.get('favorites'),'private note');
+});

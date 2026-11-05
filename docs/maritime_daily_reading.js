@@ -74,7 +74,7 @@
         doc.getElementById('reading-date').textContent='每日阅读 '+beijingDate();
         doc.getElementById('reading-batch-date').textContent='当前批次：'+state.batch.payload.date+' 精选';
         doc.getElementById('reading-status').textContent=state.completed?'':'本批尚未标记阅读完成';
-        const button=doc.getElementById('reading-complete');button.hidden=state.batch.payload.papers.length!==5;button.textContent=state.completed?'已阅读完成 · 明日更新':'✓ 本批五篇已阅读完成';button.disabled=state.completed;
+        const button=doc.getElementById('reading-complete');button.hidden=state.batch.payload.papers.length!==5&&!state.batch.payload.correction_pending;button.textContent=state.completed?'已阅读完成 · 明日更新':state.batch.payload.papers.length===5?'✓ 本批五篇已阅读完成':'✓ 本批已阅读完成';button.disabled=state.completed;
         doc.getElementById('reading-undo').hidden=!state.completed;
       }
       function render(state) {

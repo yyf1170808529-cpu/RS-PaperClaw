@@ -3,7 +3,7 @@ from pathlib import Path
 from datetime import date
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'skills/rs-paper-pipeline/scripts'))
 from services.relevance_scope import primary_scope_exclusion,traffic_task,research_directions
-from services.semantic_evaluation import ranking_info,validate,payload_for,settings,current_evaluation
+from services.semantic_evaluation import ranking_info,validate,payload_for,settings,current_evaluation,direct_task
 from services.mobile_digest import hard_eligible,candidate_pool,select_daily,refresh_reserve,reading_index,render_mobile_page
 from services.author_display import author_label
 ROOT=Path(__file__).resolve().parents[1]
@@ -18,16 +18,27 @@ class Scope388Tests(unittest.TestCase):
    p={'title':title,'abstract':''};self.assertTrue(primary_scope_exclusion(p));self.assertFalse(traffic_task(p))
   for title in ['ISAC Radar Target Recognition and Localization','Robust Cross-modal Representation Learning under Physical Adversarial Attacks','Robust Multimodal Fusion for Autonomous Driving Perception','Vessel Instance Segmentation','Radar-AIS Association','Vision-AIS Cross-modal Matching','Maritime Depth Estimation','Traffic Multi-object Tracking']:
    self.assertFalse(primary_scope_exclusion({'title':title}),title)
+  self.assertTrue(direct_task({'title':'Vessel Instance Segmentation','abstract':'Visual perception for ships.'}))
+  self.assertFalse(direct_task({'title':'Blood vessel segmentation','abstract':'Clinical imaging.'}))
  def test_actual_positive_metadata_and_evidence_fixture(self):
   p=copy.deepcopy(self.lib['papers']['doi:10.1016/j.inffus.2026.104909']);self.assertEqual(p['application_bucket'],'water');self.assertTrue(p['quality']['high_journal']);self.assertEqual(p['publication_date'],'2026-10-28')
+  from services.maritime_v2 import merge_records
+  from services.filter_assets import load_maritime_assets
+  mini={'papers':{p['paper_id']:copy.deepcopy(p)},'aliases':{},'days':{}}
+  incoming={**copy.deepcopy(p),'published':'2026-10','publication_date':'2026-10','publication_date_source':'published'}
+  merge_records(mini,[incoming],load_maritime_assets());self.assertEqual(mini['papers'][p['paper_id']]['publication_date'],'2026-10-28')
   # The following is a clearly labelled unit-test abstract, never real library data.
   p['abstract']='We project AIS signals into image space and integrate them through adaptive gated fusion for vessel instance segmentation.';p['abstract_quality']={'status':'validated'}
   p['semantic']=None;self.assertTrue(hard_eligible(p));self.assertEqual(research_directions(p),['A','B'])
  def test_scope_schema_new_required_old_cache_compatible(self):
   p=self.lib['papers']['2610.09700'];v=copy.deepcopy(p['semantic']['evaluation']);self.assertEqual(validate(v,p),v)
   with self.assertRaises(ValueError):validate(v,p,require_scope=True)
-  v.update(primary_domain='visual learning',primary_problem='hard negatives',target_task='representation',core_contribution='negative construction',application_context='vision language',security_centric=False,communication_centric=False)
+  v.update(primary_domain='general_visual_method',primary_problem='hard negatives',target_task='representation',core_contribution='negative construction',application_context='vision language',security_centric=False,communication_centric=False)
   self.assertEqual(validate(v,p,require_scope=True),v)
+  flagged=copy.deepcopy(p);flagged['semantic']['evaluation']={**v,'security_centric':True,'confidence':1,'transferability':5}
+  self.assertFalse(ranking_info(flagged)['eligible'])
+  flagged['semantic']['evaluation']={**v,'primary_domain':'communication_engineering','security_centric':False,'communication_centric':False,'confidence':1,'transferability':5}
+  self.assertFalse(ranking_info(flagged)['eligible'])
   self.assertIn('primary_problem',payload_for([p],settings())['messages'][0]['content'])
  def test_real_pool_reserve_reading_index_and_generic_examples(self):
   for k in ['2610.09700','2610.12871']:self.assertTrue(ranking_info(self.lib['papers'][k])['eligible'])
