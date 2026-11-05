@@ -707419,6 +707419,37 @@
             "url": "https://openalex.org/W7224079559",
             "type": "article"
           }
+        },
+        {
+          "doi": "10.1016/j.inffus.2026.104909",
+          "arxiv_id": null,
+          "title": "AIS-Vision Fusion for Robust Maritime Vessel Instance Segmentation under Visual Corruptions",
+          "authors": [
+            "Yunjia Wang",
+            "Zhongbi Luo",
+            "Zhenyi Wang",
+            "Kaizheng Wang",
+            "Holger Caesar",
+            "Jeroen Boydens",
+            "Davy Pissoort",
+            "Mathias Verbeke"
+          ],
+          "abstract": "",
+          "metadata_source": [
+            "Crossref",
+            "OpenAlex"
+          ],
+          "publication_date": "2026-10-28",
+          "venue": "Information Fusion",
+          "first_author_affiliations": [
+            "Department of Computer Science, KU Leuven, Bruges, 8200, Belgium",
+            "Flanders Make@KU Leuven, Leuven, 3001, Belgium"
+          ],
+          "publication_evidence": {
+            "source": "Crossref",
+            "url": "https://api.crossref.org/works/10.1016%2Fj.inffus.2026.104909",
+            "type": "journal-article"
+          }
         }
       ],
       "metadata_source": [
@@ -773006,6 +773037,34 @@
             "url": "https://openalex.org/W7214180620",
             "type": "article"
           }
+        },
+        {
+          "doi": "10.1109/tits.2026.3727609",
+          "arxiv_id": null,
+          "title": "MARS and ETMS: A Large-Scale Dataset and Ship-Size Sensitive Detection Method in Maritime Applications",
+          "authors": [
+            "Wen Chen",
+            "Xiaojun Wu",
+            "Qixun Yang",
+            "Haiyan Wei",
+            "Peng Li",
+            "Yunhui Liu"
+          ],
+          "abstract": "Real-time and accurate detection of ships is an essential requirement to improve marine vehicle collision avoidance and security for autonomous ship navigation. In this paper, we propose a practical large-scale detection dataset for marine ships (MARS), to handle the data requirements of ship detection tasks by considering background diversity, ship categories, ship sizes, viewpoint changes, and marine waves, etc. Furthermore, a lightweight anchor-free network called the enhanced training-time-friendly network (TTFNet) for marine ships (ETMS) is proposed, which achieves excellent detection performance for medium and small sized vessels. In particular, we first reconstruct the backbone structure and then make features perform adaptive weighted fusion in the neck structure to provide more abundant feature representations with a lightweight network. Second, a coordinate alignment compensation (CAC) module is proposed to solve the misalignment problem regarding the optimal location of different branches in the head structure, and the corresponding refinement loss is set to achieve consistency optimization. Our thorough experimental findings consistently prove that ETMS surpasses other ship detection methods, achieving an impressive 82.7 AP.5:.95 on SeaShips(7000) and 69.2 AP.5:.95 on MARS. These results highlight the effectiveness of ETMS for ship detection tasks. The application of deep learning in marine surveillance is of great significance for enhancing marine transportation safety and improving port traffic management efficiency.",
+          "metadata_source": [
+            "Crossref",
+            "OpenAlex"
+          ],
+          "publication_date": "2026-11",
+          "venue": "IEEE Transactions on Intelligent Transportation Systems",
+          "first_author_affiliations": [
+            "Harbin Institute of Technology, Shenzhen"
+          ],
+          "publication_evidence": {
+            "source": "Crossref",
+            "url": "https://api.crossref.org/works/10.1109%2Ftits.2026.3727609",
+            "type": "journal-article"
+          }
         }
       ],
       "metadata_source": [
@@ -808122,6 +808181,14 @@
         }
       ],
       "time": "2026-11-05T11:09:01.449528+00:00"
+    },
+    {
+      "missing_before": 1328,
+      "missing_after": 1328,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-05T11:22:32.870353+00:00"
     }
   ],
   "translation_batches": [

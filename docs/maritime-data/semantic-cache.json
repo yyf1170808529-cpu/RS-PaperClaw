@@ -57648,7 +57648,8 @@
         "communication_centric": false
       },
       "model": "deepseek-flash",
-      "request_id": "9c89f42b-a163-46e8-a908-8f3e7408b856"
+      "request_id": "9c89f42b-a163-46e8-a908-8f3e7408b856",
+      "compatible_fingerprints": []
     }
   }
 }
