@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-06",
+  "papers": [
+    {
+      "paper_id": "2609.24964",
+      "title": "Perception-Aware Communication Middleware for Distributed Visual Perception in UAV Swarms",
+      "authors": [
+        "Manveen Kaur",
+        "Kevin Loi",
+        "Ifunanya Okafor",
+        "Daniel Ng",
+        "Joseph Lucey-Renteria"
+      ],
+      "published": "2026-09-21",
+      "arxiv_url": "https://arxiv.org/abs/2609.24964",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.24964",
+      "pdf_url": "https://arxiv.org/pdf/2609.24964",
+      "open_access_url": "https://arxiv.org/pdf/2609.24964",
+      "venue": "",
+      "abstract": "Unmanned Aerial Vehicle (UAV) swarms increasingly support safety-critical applications that rely on distributed visual perception. Meeting the low-latency requirements of these applications can require perception models to execute within the swarm on inference-capable UAVs, creating a need for efficient UAV-to-UAV transport of high-bandwidth perception data. However, the Quality-of-Service (QoS) requirements of perception differ from conventional packet-level QoS; successful delivery of individual packets does not ensure that a complete, timely, and usable image is available for inference. We present a novel perception-aware communication middleware that treats complete perception-data samples as the communication objects for which QoS must be satisfied. The middleware extends a lightweight UDP broker-based publish-subscribe architecture with perception-specific services, including image fragmentation and reconstruction, concurrent packet transmission, priority-aware scheduling, and image quality assessment. The middleware is evaluated on a heterogeneous hardware testbed emulating a UAV swarm using YOLOv8n object detection. Experimental results demonstrate low end-to-end application latency, substantially higher throughput than a lightweight UDP broker, effective prioritization of perception traffic under increasing background load, and mitigation of object-detection degradation through middleware-level image quality assessment. This work provides an initial framework for integrating AI-specific data handling into communication middleware to support emerging distributed AI applications in multi-agent mobile cyber-physical systems.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Manveen Kaur",
+      "first_author_affiliations": [
+        "Department of Computer Science , California State University , Los Angeles Los Angeles , CA , USA"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": null,
+      "source": "arXiv",
+      "reason": "面向UAV通信中间件的感知数据传输，与船舶视觉、AIS关联或跨模态匹配无直接或具体可迁移方法联系，仅检测应用背景泛相关。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.24964",
+      "score": 11,
+      "rule_level": "一般相关",
+      "level": "直接相关",
+      "ai_score": 32,
+      "selection_source": "近期候选",
+      "summary_zh": "针对无人机集群分布式视觉感知中高带宽感知数据传输的QoS问题，提出以完整感知数据样本为通信对象的感知感知通信中间件，扩展UDP发布订阅架构并用YOLOv8n检测验证低时延与吞吐提升。",
+      "migration_zh": "研究推断：可将“完整感知数据样本为通信对象”的中间件用于多传感器融合前端，在Radar–AIS或视觉–AIS关联中将图像分片重组、优先级调度与质量评估模块接入传输层，以样本级监督过滤低质输入并降低融合时延。",
+      "abstract_zh": "无人机（UAV）集群日益支撑依赖分布式视觉感知的安全关键应用。满足这些应用的低时延需求可能要求感知模型在集群内具备推理能力的UAV上执行，从而产生高效UAV到UAV传输高带宽感知数据的需要。然而，感知的服务质量（QoS）需求不同于传统包级QoS；单个数据包的成功交付并不保证有完整、及时且可用的图像可用于推理。我们提出一种新颖的感知感知通信中间件，将完整感知数据样本视为必须满足QoS的通信对象。该中间件在轻量级基于UDP代理的发布-订阅架构上扩展了感知专用服务，包括图像分片与重建、并发数据包传输、优先级感知调度和图像质量评估。该中间件在模拟UAV集群的异构硬件测试床上使用YOLOv8n目标检测进行评估。实验结果表明其端到端应用时延低、吞吐量显著高于轻量级UDP代理、在背景负载增加时能有效优先处理感知流量，并通过中间件级图像质量评估缓解目标检测性能退化。本工作为将AI特定数据处理集成到通信中间件中提供了一个初步框架，以支撑多智能体移动信息物理系统中新兴的分布式AI应用。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.06121",
+      "title": "Radar2Plan: Benchmarking 4D Radar for End-to-End Open-Loop Ego-Trajectory Planning",
+      "authors": [
+        "Ling Yao",
+        "Yichun Xiao",
+        "Jin Jin",
+        "Yihan Zhang",
+        "Fangqiang Ding"
+      ],
+      "published": "2026-10-05",
+      "arxiv_url": "https://arxiv.org/abs/2610.06121",
+      "doi": "10.48550/arxiv.2610.06121",
+      "original_url": "https://doi.org/10.48550/arxiv.2610.06121",
+      "pdf_url": "https://arxiv.org/pdf/2610.06121",
+      "open_access_url": "https://arxiv.org/pdf/2610.06121",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Adverse weather and poor illumination remain major challenges for robust ego-trajectory planning in mobile autonomy. 4D radar offers reliable sensing under adverse conditions and direct radial-velocity measurements. However, sensing robustness does not necessarily translate into robust downstream planning, while existing 4D radar benchmarks focus primarily on perception rather than trajectory planning. We present Radar2Plan, a modular benchmark for open-loop ego-trajectory planning using real-world 4D radar data. Radar2Plan connects sensor encoders, scene representations, and planning heads through common interfaces, enabling controlled comparisons between different sensor and planner configurations. Using DSERT-RoLL and MAN TruckScenes, we evaluated seven combinations of camera, 4D radar, and LiDAR in four representative planning baselines and 12 weather and illumination conditions under a unified protocol. To our knowledge, Radar2Plan is the first benchmark dedicated to evaluating real-world 4D radars for autonomous driving planning. Experiments show that 4D radar alone supports competitive ego-trajectory planning and robust performance under adverse conditions. Sensor-configuration comparisons further demonstrate its complementary value to other modalities, while revealing dependencies on sensor combination and planning architecture. The modular design also supports additional datasets, sensing modalities, and planners, providing a flexible foundation for future research on radar-based autonomous driving planning.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Ling Yao",
+      "first_author_affiliations": [
+        "Shanghai Jiao Tong University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": null,
+      "source": "arXiv",
+      "reason": "4D雷达用于自动驾驶规划，虽涉及多传感器对比，但无船舶场景或跨模态匹配方法，直接和迁移相关性均低。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.06121",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "直接相关",
+      "ai_score": 36,
+      "selection_source": "近期候选",
+      "summary_zh": "论文提出Radar2Plan模块化基准，用真实4D雷达数据在统一协议下对比相机、4D雷达和LiDAR的七种组合与四种规划基线。",
+      "migration_zh": "研究推断：可将该模块化接口与天气鲁棒性评测流程迁至船舶视觉–雷达–AIS融合检测/分割中，在BEV场景表征后接融合检测头并统一多传感器配置对比。",
+      "abstract_zh": "恶劣天气和不良光照仍是移动自主中稳健自车轨迹规划的主要挑战。4D雷达在恶劣条件下提供可靠感知和直接径向速度测量。然而，感知鲁棒性并不必然转化为稳健的下游规划，而现有4D雷达基准主要关注感知而非轨迹规划。我们提出Radar2Plan，一个使用真实世界4D雷达数据进行开环自车轨迹规划的模块化基准。Radar2Plan通过通用接口连接传感器编码器、场景表征和规划头，从而实现对不同传感器和规划器配置的受控比较。使用DSERT-RoLL和MAN TruckScenes，我们在统一协议下评估了相机、4D雷达和LiDAR的七种组合在四种代表性规划基线和12种天气与光照条件下的表现。据我们所知，Radar2Plan是首个专门评估真实世界4D雷达用于自动驾驶规划的基准。实验表明，仅4D雷达即可支持有竞争力的自车轨迹规划，并在恶劣条件下保持稳健性能。传感器配置比较进一步证明其与其他模态的互补价值，同时揭示了对传感器组合和规划架构的依赖。模块化设计还支持额外数据集、传感模态和规划器，为基于雷达的自动驾驶规划未来研究提供了灵活基础。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 1256,
+    "ai_reviewed": 890,
+    "ai_states": {
+      "evaluated": 890,
+      "domain_excluded": 4,
+      "uncertain": 362
+    },
+    "stage_counts": {
+      "1": 43,
+      "2": 1165,
+      "0": 8,
+      "3": 40
+    },
+    "ai_rejected": 887,
+    "translation_deferred": 1,
+    "qualified_count": 2,
+    "selected_count": 2,
+    "shortfall": 3,
+    "translation_replacements": [
+      {
+        "paper_id": "2611.04034",
+        "attempt_date": "2026-11-06",
+        "reason": "本地译文尚未生成，或英文摘要已变化",
+        "requires_enrichment": true,
+        "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "partial",
+  "reserve_papers": [
+    {
+      "paper_id": "2609.24964",
+      "title": "Perception-Aware Communication Middleware for Distributed Visual Perception in UAV Swarms",
+      "authors": [
+        "Manveen Kaur",
+        "Kevin Loi",
+        "Ifunanya Okafor",
+        "Daniel Ng",
+        "Joseph Lucey-Renteria"
+      ],
+      "published": "2026-09-21",
+      "arxiv_url": "https://arxiv.org/abs/2609.24964",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2609.24964",
+      "pdf_url": "https://arxiv.org/pdf/2609.24964",
+      "open_access_url": "https://arxiv.org/pdf/2609.24964",
+      "venue": "",
+      "abstract": "Unmanned Aerial Vehicle (UAV) swarms increasingly support safety-critical applications that rely on distributed visual perception. Meeting the low-latency requirements of these applications can require perception models to execute within the swarm on inference-capable UAVs, creating a need for efficient UAV-to-UAV transport of high-bandwidth perception data. However, the Quality-of-Service (QoS) requirements of perception differ from conventional packet-level QoS; successful delivery of individual packets does not ensure that a complete, timely, and usable image is available for inference. We present a novel perception-aware communication middleware that treats complete perception-data samples as the communication objects for which QoS must be satisfied. The middleware extends a lightweight UDP broker-based publish-subscribe architecture with perception-specific services, including image fragmentation and reconstruction, concurrent packet transmission, priority-aware scheduling, and image quality assessment. The middleware is evaluated on a heterogeneous hardware testbed emulating a UAV swarm using YOLOv8n object detection. Experimental results demonstrate low end-to-end application latency, substantially higher throughput than a lightweight UDP broker, effective prioritization of perception traffic under increasing background load, and mitigation of object-detection degradation through middleware-level image quality assessment. This work provides an initial framework for integrating AI-specific data handling into communication middleware to support emerging distributed AI applications in multi-agent mobile cyber-physical systems.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Manveen Kaur",
+      "first_author_affiliations": [
+        "Department of Computer Science , California State University , Los Angeles Los Angeles , CA , USA"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": null,
+      "source": "arXiv",
+      "reason": "面向UAV通信中间件的感知数据传输，与船舶视觉、AIS关联或跨模态匹配无直接或具体可迁移方法联系，仅检测应用背景泛相关。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2609.24964",
+      "score": 11,
+      "rule_level": "一般相关",
+      "level": "直接相关",
+      "ai_score": 32,
+      "selection_source": "近期候选",
+      "summary_zh": "针对无人机集群分布式视觉感知中高带宽感知数据传输的QoS问题，提出以完整感知数据样本为通信对象的感知感知通信中间件，扩展UDP发布订阅架构并用YOLOv8n检测验证低时延与吞吐提升。",
+      "migration_zh": "研究推断：可将“完整感知数据样本为通信对象”的中间件用于多传感器融合前端，在Radar–AIS或视觉–AIS关联中将图像分片重组、优先级调度与质量评估模块接入传输层，以样本级监督过滤低质输入并降低融合时延。",
+      "abstract_zh": "无人机（UAV）集群日益支撑依赖分布式视觉感知的安全关键应用。满足这些应用的低时延需求可能要求感知模型在集群内具备推理能力的UAV上执行，从而产生高效UAV到UAV传输高带宽感知数据的需要。然而，感知的服务质量（QoS）需求不同于传统包级QoS；单个数据包的成功交付并不保证有完整、及时且可用的图像可用于推理。我们提出一种新颖的感知感知通信中间件，将完整感知数据样本视为必须满足QoS的通信对象。该中间件在轻量级基于UDP代理的发布-订阅架构上扩展了感知专用服务，包括图像分片与重建、并发数据包传输、优先级感知调度和图像质量评估。该中间件在模拟UAV集群的异构硬件测试床上使用YOLOv8n目标检测进行评估。实验结果表明其端到端应用时延低、吞吐量显著高于轻量级UDP代理、在背景负载增加时能有效优先处理感知流量，并通过中间件级图像质量评估缓解目标检测性能退化。本工作为将AI特定数据处理集成到通信中间件中提供了一个初步框架，以支撑多智能体移动信息物理系统中新兴的分布式AI应用。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2610.06121",
+      "title": "Radar2Plan: Benchmarking 4D Radar for End-to-End Open-Loop Ego-Trajectory Planning",
+      "authors": [
+        "Ling Yao",
+        "Yichun Xiao",
+        "Jin Jin",
+        "Yihan Zhang",
+        "Fangqiang Ding"
+      ],
+      "published": "2026-10-05",
+      "arxiv_url": "https://arxiv.org/abs/2610.06121",
+      "doi": "10.48550/arxiv.2610.06121",
+      "original_url": "https://doi.org/10.48550/arxiv.2610.06121",
+      "pdf_url": "https://arxiv.org/pdf/2610.06121",
+      "open_access_url": "https://arxiv.org/pdf/2610.06121",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Adverse weather and poor illumination remain major challenges for robust ego-trajectory planning in mobile autonomy. 4D radar offers reliable sensing under adverse conditions and direct radial-velocity measurements. However, sensing robustness does not necessarily translate into robust downstream planning, while existing 4D radar benchmarks focus primarily on perception rather than trajectory planning. We present Radar2Plan, a modular benchmark for open-loop ego-trajectory planning using real-world 4D radar data. Radar2Plan connects sensor encoders, scene representations, and planning heads through common interfaces, enabling controlled comparisons between different sensor and planner configurations. Using DSERT-RoLL and MAN TruckScenes, we evaluated seven combinations of camera, 4D radar, and LiDAR in four representative planning baselines and 12 weather and illumination conditions under a unified protocol. To our knowledge, Radar2Plan is the first benchmark dedicated to evaluating real-world 4D radars for autonomous driving planning. Experiments show that 4D radar alone supports competitive ego-trajectory planning and robust performance under adverse conditions. Sensor-configuration comparisons further demonstrate its complementary value to other modalities, while revealing dependencies on sensor combination and planning architecture. The modular design also supports additional datasets, sensing modalities, and planners, providing a flexible foundation for future research on radar-based autonomous driving planning.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Ling Yao",
+      "first_author_affiliations": [
+        "Shanghai Jiao Tong University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": null,
+      "source": "arXiv",
+      "reason": "4D雷达用于自动驾驶规划，虽涉及多传感器对比，但无船舶场景或跨模态匹配方法，直接和迁移相关性均低。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2610.06121",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "直接相关",
+      "ai_score": 36,
+      "selection_source": "近期候选",
+      "summary_zh": "论文提出Radar2Plan模块化基准，用真实4D雷达数据在统一协议下对比相机、4D雷达和LiDAR的七种组合与四种规划基线。",
+      "migration_zh": "研究推断：可将该模块化接口与天气鲁棒性评测流程迁至船舶视觉–雷达–AIS融合检测/分割中，在BEV场景表征后接融合检测头并统一多传感器配置对比。",
+      "abstract_zh": "恶劣天气和不良光照仍是移动自主中稳健自车轨迹规划的主要挑战。4D雷达在恶劣条件下提供可靠感知和直接径向速度测量。然而，感知鲁棒性并不必然转化为稳健的下游规划，而现有4D雷达基准主要关注感知而非轨迹规划。我们提出Radar2Plan，一个使用真实世界4D雷达数据进行开环自车轨迹规划的模块化基准。Radar2Plan通过通用接口连接传感器编码器、场景表征和规划头，从而实现对不同传感器和规划器配置的受控比较。使用DSERT-RoLL和MAN TruckScenes，我们在统一协议下评估了相机、4D雷达和LiDAR的七种组合在四种代表性规划基线和12种天气与光照条件下的表现。据我们所知，Radar2Plan是首个专门评估真实世界4D雷达用于自动驾驶规划的基准。实验表明，仅4D雷达即可支持有竞争力的自车轨迹规划，并在恶劣条件下保持稳健性能。传感器配置比较进一步证明其与其他模态的互补价值，同时揭示了对传感器组合和规划架构的依赖。模块化设计还支持额外数据集、传感模态和规划器，为基于雷达的自动驾驶规划未来研究提供了灵活基础。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ]
+}

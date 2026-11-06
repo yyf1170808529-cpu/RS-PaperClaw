@@ -57652,6 +57652,471 @@
       "model": "deepseek-flash",
       "request_id": "9c89f42b-a163-46e8-a908-8f3e7408b856",
       "compatible_fingerprints": []
+    },
+    "fdc6838a42b150c0780c1cc03f85c65269caa6591bca475d12a8b8455ee54598": {
+      "paper_id": "2611.06635",
+      "title": "Uncertainty-Driven Efficient Communication for UAV-Based Collaborative Perception",
+      "fingerprint": "fdc6838a42b150c0780c1cc03f85c65269caa6591bca475d12a8b8455ee54598",
+      "evaluation": {
+        "paper_id": "2611.06635",
+        "task_type": "uncertainty-driven collaborative perception",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "We propose UCP, an uncertainty-driven framework that characterizes collaborative value through observational uncertainty, identifying sensor-limited regions, and discriminative uncertainty, capturing model-level ambiguity near the decision boundary.",
+            "interpretation_zh": "提出UCP框架，通过观测不确定性和判别不确定性来量化协作价值，识别传感器受限区域和决策边界附近的模糊区域。",
+            "inference": false
+          },
+          {
+            "quote_en": "These estimates drive spatial request and supply maps for efficient inter-agent communication, and the received messages are aggregated via U-Fusion, an uncertainty-guided cross-attention module.",
+            "interpretation_zh": "不确定性估计驱动空间请求和供给图以实现高效通信，并通过不确定性引导的交叉注意力模块U-Fusion聚合接收到的消息。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "We propose UCP, an uncertainty-driven framework that characterizes collaborative value through observational uncertainty, identifying sensor-limited regions, and discriminative uncertainty, capturing model-level ambiguity near the decision boundary.",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将UCP中的不确定性估计与U-Fusion聚合机制迁移至多传感器船舶检测：输入从单无人机视角图像改为多传感器（如雷达、AIS、视觉）特征；不确定性估计需适配不同传感器模态和噪声特性；跨注意力聚合改为跨模态特征融合，训练目标仍为检测但需处理缺失模态。",
+          "inference": true
+        },
+        "limitations": [
+          "实验仅在3D目标检测和轨迹预测基准上验证，未涉及海事场景",
+          "协作感知设定是无人机间通信，与多传感器融合不完全相同",
+          "未说明不确定性估计在异构传感器上的适用性"
+        ],
+        "decision": "候选",
+        "reason_zh": "不确定性驱动的协作感知方法与多传感器船舶检测有迁移潜力，但非直接海事研究，需适配。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "无人机协作感知中的通信效率与不确定性量化",
+        "target_task": "collaborative perception",
+        "core_contribution": "提出基于观测与判别不确定性的UCP框架及U-Fusion聚合模块",
+        "application_context": "多无人机3D目标检测与轨迹预测",
+        "security_centric": false,
+        "communication_centric": true
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b8cf9819-5a85-47e2-ac63-3bf75726570d"
+    },
+    "13dfb244d292b78766c0d66ca97dd18bf43bf6dad5b7421c59dbe8f7a6b14969": {
+      "paper_id": "2611.07883",
+      "title": "InnerLogic-Surg: An Open Surgical Foundation Model via Continual Pretraining",
+      "fingerprint": "13dfb244d292b78766c0d66ca97dd18bf43bf6dad5b7421c59dbe8f7a6b14969",
+      "evaluation": {
+        "paper_id": "2611.07883",
+        "task_type": "surgical vision foundation model",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Our training recipe inherits DINOv3's pretraining stage to preserve representation ability after surgical adaptation, and additionally applies a learned feature-upsampling module for high-resolution dense prediction at low token cost.",
+            "interpretation_zh": "训练策略继承DINOv3的预训练阶段以保持外科适应后的表征能力，并加入可学习的特征上采样模块以低token成本实现高分辨率密集预测。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Our training recipe inherits DINOv3's pretraining stage to preserve representation ability after surgical adaptation, and additionally applies a learned feature-upsampling module for high-resolution dense prediction at low token cost.",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将外科图像编码器持续预训练与高分辨率密集预测模块迁移至船舶分割：输入改为海事图像，预训练需在海事数据上持续进行，上采样模块输出用于船舶分割的密集预测，训练目标调整为分割损失。",
+          "inference": true
+        },
+        "limitations": [
+          "领域为外科手术图像，与海事视觉差异大",
+          "未验证跨域迁移到船舶图像的可行性"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "外科视觉基础模型，与海事视觉关联弱，迁移需大幅领域适应，非优先方向。",
+        "confidence": 0.6,
+        "primary_domain": "biomedical",
+        "primary_problem": "外科图像分析缺乏专用视觉基础模型",
+        "target_task": "surgical image analysis",
+        "core_contribution": "构建通过持续预训练获得的外科视觉编码器系列，支持多任务密集预测",
+        "application_context": "外科手术图像的工作流、器械识别、分割、检测和深度估计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b8cf9819-5a85-47e2-ac63-3bf75726570d"
+    },
+    "59fa862ce745b1068591178992ca7bd4f343f2213bb4d7e1638866d2eab374c1": {
+      "paper_id": "2611.07705",
+      "title": "FlyingDrones: A Dataset and Benchmark for Optical Flow Estimation from UAV motion",
+      "fingerprint": "59fa862ce745b1068591178992ca7bd4f343f2213bb4d7e1638866d2eab374c1",
+      "evaluation": {
+        "paper_id": "2611.07705",
+        "task_type": "optical flow benchmark for UAV motion",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "聚焦于无人机光流估计基准，非船舶检测",
+          "方法迁移路径不明确，摘要未提供可直接用于多传感器关联的具体机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "无人机光流基准，与船舶视觉检测或跨模态匹配关联弱，无具体可迁移方法证据。",
+        "confidence": 0.65,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "小尺寸无人机目标的光流估计基准缺失",
+        "target_task": "optical flow estimation",
+        "core_contribution": "发布FlyingDrones合成基准并提出分辨率归一化光流误差指标",
+        "application_context": "空中监视、空域监测和远距离目标跟踪中的光流估计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b8cf9819-5a85-47e2-ac63-3bf75726570d"
+    },
+    "c4806564a9967a02c04b3874e6d6384bab622d7f59454a37f6d6f28d45d21f35": {
+      "paper_id": "2611.07702",
+      "title": "InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning",
+      "fingerprint": "c4806564a9967a02c04b3874e6d6384bab622d7f59454a37f6d6f28d45d21f35",
+      "evaluation": {
+        "paper_id": "2611.07702",
+        "task_type": "multimodal learning framework",
+        "direct_relevance": 3,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "Before fusion, InfMasking randomly masks the features of each modality; each sampled mask produces a different partial combination of cross-modal evidence and a fused representation of the corresponding modality interactions.",
+            "interpretation_zh": "融合前，InfMasking随机掩码每个模态的特征；每个采样掩码产生不同的跨模态证据部分组合及其对应模态交互的融合表征。",
+            "inference": false
+          },
+          {
+            "quote_en": "All masked fused representations are required to remain consistent with a reference target: the unmasked fused view when training is unsupervised, and the class proxy of the task label when labels are available.",
+            "interpretation_zh": "所有掩码融合表征需与参考目标保持一致：无监督训练时与未掩码融合视图一致，有标签时与任务标签的类代理一致。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Before fusion, InfMasking randomly masks the features of each modality; each sampled mask produces a different partial combination of cross-modal evidence and a fused representation of the corresponding modality interactions.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将InfMasking的无限掩码多模态学习框架迁移至雷达-AIS或视觉-AIS跨模态匹配：输入模态之一（如AIS）特征被随机掩码，要求融合表征与未掩码视图或匹配标签一致，迫使模型学习跨模态交互模式以应对模态缺失或部分观测；训练目标可设为匹配一致性损失。",
+          "inference": true
+        },
+        "limitations": [
+          "实验未涉及海事跨模态匹配任务",
+          "方法为通用多模态框架，需验证在传感器异构性上的效果"
+        ],
+        "decision": "候选",
+        "reason_zh": "多模态随机掩码融合框架与跨模态匹配方向契合，可迁移至雷达/视觉-AIS关联，需领域适配。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态融合中协同信息利用不足",
+        "target_task": "multimodal fusion",
+        "core_contribution": "提出基于无限掩码和变分界优化的多模态学习框架，促进跨模态交互学习",
+        "application_context": "多模态分类与表征学习基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b8cf9819-5a85-47e2-ac63-3bf75726570d"
+    },
+    "72a589a20d42681dac048ffe855feb24153ea0042e64ef23f67f75c34620c4f2": {
+      "paper_id": "2611.07543",
+      "title": "OptIMerge: Optimization-Based Merging of Diffusion Models",
+      "fingerprint": "72a589a20d42681dac048ffe855feb24153ea0042e64ef23f67f75c34620c4f2",
+      "evaluation": {
+        "paper_id": "2611.07543",
+        "task_type": "图像到图像扩散模型的多任务权重合并优化",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "for attention layers, a structured low-rank feature alignment with explicit channel biases",
+            "interpretation_zh": "在注意力层采用结构化低秩特征对齐并加入显式通道偏置，属于扩散模型权重合并的架构感知参数化，而非跨模态匹配或船舶感知。",
+            "inference": false
+          },
+          {
+            "quote_en": "a low-rank Cayley transform that aligns channels by orthogonal rotation without distorting the filters",
+            "interpretation_zh": "用低秩Cayley变换以正交旋转对齐卷积通道，属于模型合并中的滤波器对齐技术。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为I2I扩散模型权重合并，与海事多源关联、船舶视觉检测分割等任务无直接关系",
+          "摘要未涉及跨模态匹配、AIS关联或目标检测/分割表征，无法给出具体可迁移路径",
+          "正交旋转/低秩对齐服务于模型权重合并，调整为目标匹配任务缺乏摘要依据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向扩散模型权重合并，无海事或跨模态匹配、检测分割任务联系；仅通道对齐技术可泛泛借鉴，无法具体迁移。",
+        "confidence": 0.86,
+        "primary_domain": "other",
+        "primary_problem": "多个I2I扩散专家因空间先验冲突而朴素权重平均产生破坏性参数干扰，需要参数高效的多任务合并",
+        "target_task": "multi_task_model_merging",
+        "core_contribution": "提出基于梯度的OptIMerge，为注意力层学习低秩特征对齐与通道偏置、为卷积层学习逐核合并系数和低秩Cayley正交旋转，以少量图像优化轻量合并参数",
+        "application_context": "图像恢复等密集像素级I2I扩散模型的多任务合并",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "76deeeb3-acfd-4d08-9446-b737aab1f79a"
+    },
+    "55f5e86139b44e669972c99ff963b0d4b1a09b6ca53db336b2c1a4f9db256536": {
+      "paper_id": "2611.07830",
+      "title": "Scenario-aware Adaptive Neuromorphic Intelligence for multimodal sensor fusion",
+      "fingerprint": "55f5e86139b44e669972c99ff963b0d4b1a09b6ca53db336b2c1a4f9db256536",
+      "evaluation": {
+        "paper_id": "2611.07830",
+        "task_type": "神经形态多模态传感器融合与场景自适应",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "By coupling multiple sensor inputs through adaptive memristive synapses, the framework investigates how reliable and correlated observations can strengthen learned associations, while weak or obsolete relationships gradually decay through nonlinear forgetting.",
+            "interpretation_zh": "通过自适应忆阻突触耦合多传感器输入，可靠相关观测增强关联、弱或过时关系经非线性遗忘衰减；属于多传感器关联与可靠性加权的具体机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "scenario-dependent adaptability into individual stages of the neuromorphic decision-making pipeline, including sensor-data compression, nonlinear spike encoding, reliability assessment, and memristive learning-forgetting dynamics",
+            "interpretation_zh": "将场景相关自适应引入压缩、脉冲编码、可靠性评估与学习-遗忘动态各阶段。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "By coupling multiple sensor inputs through adaptive memristive synapses, the framework investigates how reliable and correlated observations can strengthen learned associations, while weak or obsolete relationships gradually decay through nonlinear forgetting.",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可将基于可靠性加权的多传感器关联增强与弱关联衰减思想用于雷达-AIS或视觉-AIS多源关联：将输入改为各传感器观测/轨迹特征，训练目标改为关联置信度与可靠性估计，结构上以可学习关联权重替代忆阻突触；需重设编码与遗忘机制。",
+          "inference": true
+        },
+        "limitations": [
+          "基于忆阻器脉冲神经形态仿真，与主流雷达-AIS或视觉-AIS关联流程差异大",
+          "实验用NuScenes驾驶场景与合成真值码，未涉及海事多源数据",
+          "摘要仅报告保留信息减少与逐位一致率，未提供目标级关联精度证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "多传感器可靠性加权的关联与遗忘机制对多源关联有可借鉴性，但神经形态硬件设定与海事场景差距大，迁移仅为推断。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "资源受限隔离条件下的多模态传感器融合可靠决策",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出场景自适应神经形态框架，在压缩、脉冲编码、可靠性评估与忆阻学习-遗忘各阶段引入场景相关自适应",
+        "application_context": "NuScenes驾驶场景的多模态传感融合仿真评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "76deeeb3-acfd-4d08-9446-b737aab1f79a"
+    },
+    "ec70dde8824c68ab88af7ea6cca7c12c473544413bac2b975977b419ea9e1266": {
+      "paper_id": "2611.07809",
+      "title": "Self-Supervised Learning of Local Predictive Directions as a Neural Computation",
+      "fingerprint": "ec70dde8824c68ab88af7ea6cca7c12c473544413bac2b975977b419ea9e1266",
+      "evaluation": {
+        "paper_id": "2611.07809",
+        "task_type": "自监督局部预测方向学习",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "LPD applies past-future canonical correlation analysis to temporal differences, making the learned representation invariant to translations of the underlying state",
+            "interpretation_zh": "对时间差分做过去-未来典型相关分析，学习对状态平移不变的表示，属于自监督时序表征方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "a non-negative similarity-matching objective, with offline and online algorithms, that partitions trajectory segments into predictive domains",
+            "interpretation_zh": "用非负相似度匹配目标把轨迹段划分为预测域，属于轨迹聚类/域划分的匹配学习机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a non-negative similarity-matching objective, with offline and online algorithms, that partitions trajectory segments into predictive domains, each associated with a distinct local predictive direction",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可将非负相似度匹配划分轨迹段到预测域的思想用于雷达-AIS或多传感器轨迹关联：输入改为多源轨迹时序片段，训练目标改为相似度匹配以聚类并区分关联域，结构上以预测方向特征替代局部动态方向；仅为推断。",
+          "inference": true
+        },
+        "limitations": [
+          "研究焦点是神经计算与感受野形成，并非目标检测、关联或多源融合",
+          "摘要未涉及船舶或雷达AIS数据，迁移缺乏直接证据",
+          "轨迹划分与预测方向学习同具体关联匹配任务差距较大"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属神经计算自监督表征研究，与海事感知或目标匹配无直接联系；相似度划分仅可泛泛推断迁移，证据不足。",
+        "confidence": 0.72,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "神经回路如何从时序经验中自监督发现环境动力学的局部几何",
+        "target_task": "trajectory_dynamics_representation",
+        "core_contribution": "提出LPD框架，用过去-未来典型相关分析学习局部预测方向，并用非负相似度匹配目标划分预测域",
+        "application_context": "随机非线性动力系统与自然感觉流（早期视觉感受野）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "76deeeb3-acfd-4d08-9446-b737aab1f79a"
+    },
+    "dcc6fae4f857cb3f0d499a300a833e8584bf6dee1584aa536fedc04eb8100963": {
+      "paper_id": "2611.07562",
+      "title": "FUSEMOS: Perceptual Evaluation of Text-to-Music Generation with Dual-Encoder Fusion and Ranking-Aware Composite Loss",
+      "fingerprint": "dcc6fae4f857cb3f0d499a300a833e8584bf6dee1584aa536fedc04eb8100963",
+      "evaluation": {
+        "paper_id": "2611.07562",
+        "task_type": "文本到音乐生成感知评价",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "a dual-encoder fusion framework that integrates CLAP with MERT, a self-supervised model pretrained on large scale music audio",
+            "interpretation_zh": "融合CLAP与MERT的双编码器，服务音乐感知评分预测，非跨模态检索或目标匹配。",
+            "inference": false
+          },
+          {
+            "quote_en": "we design a novel ranking-aware composite loss function",
+            "interpretation_zh": "排序感知复合损失用于评分回归的相对排名，并非跨模态匹配的困难样本损失。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为音乐生成质量评价（MOS预测），与海事融合、船舶视觉及目标匹配无关",
+          "双编码器融合针对音频文本语义与音色属性，无船舶或传感器模态对应证据",
+          "排序损失用于评分排序而非跨模态检索或轨迹关联，无法具体迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向音乐生成感知评分，与海事多源融合、船舶视觉及跨模态匹配任务无实质联系，无可具体迁移路径。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "现有CLAP模型难以捕捉音色与表现力等细粒度属性且回归损失无法衡量人类偏好的相对排序",
+        "target_task": "text_to_music_perceptual_evaluation",
+        "core_contribution": "提出CLAP与MERT双编码器融合框架并设计排序感知复合损失以预测OMI和TA评分",
+        "application_context": "MusicEval基准上的文本到音乐生成评价",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "76deeeb3-acfd-4d08-9446-b737aab1f79a"
+    },
+    "1a22d66c0dcd23bcaf83be2dff40ee5e553afb1692d49229c19abc9b721c6ccc": {
+      "paper_id": "2611.05874",
+      "title": "Feature Puzzles: Single-Image Supervision for Multi-View 3D-Aware Segmentation",
+      "fingerprint": "1a22d66c0dcd23bcaf83be2dff40ee5e553afb1692d49229c19abc9b721c6ccc",
+      "evaluation": {
+        "paper_id": "2611.05874",
+        "task_type": "general_visual_method",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "we propose a simple yet effective pipeline that constructs multi-view-consistent segmentation pseudo-labels through image cropping and geometric transformations",
+            "interpretation_zh": "通过图像裁剪与几何变换构造多视图一致的分割伪标签，是一种可利用单视图监督学习多视图一致性的方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "a lightweight, plug-and-play network that leverages the multi-view-consistent image features learned by existing pretrained 3D foundation models and the generated pseudo-labels to perform multi-view-consistent segmentation",
+            "interpretation_zh": "利用预训练3D基础模型的多视图一致图像特征和生成的伪标签进行多视图一致分割的轻量即插即用网络。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "constructs multi-view-consistent segmentation pseudo-labels through image cropping and geometric transformations",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将该伪标签构造思想迁移至船舶分割：对船舶图像进行裁剪与几何变换生成多视图一致的船舶分割伪标签，并训练轻量分割网络；输入调整为船舶图像，训练目标仍为分割损失，结构可沿用即插即用网络。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未提供在船舶或海事数据上的实验，迁移效果未知。",
+          "方法依赖预训练3D基础模型，海事场景可能缺乏相应多视图数据。",
+          "伪标签构造依赖图像裁剪与几何变换，可能不适合动态船舶场景。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出单图像监督的多视图一致分割伪标签方法，与船舶分割有潜在迁移性，但缺乏海事验证，迁移仅为推断。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "单图像监督下的多视图一致3D感知分割",
+        "target_task": "ship_segmentation",
+        "core_contribution": "提出Feature Puzzles框架，利用图像裁剪与几何变换构造多视图一致分割伪标签，并设计轻量即插即用网络进行多视图一致分割。",
+        "application_context": "通用计算机视觉中的3D场景分割，在NVOS、SPIn-NeRF、ScanNet++等数据集验证。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d5aeafb2-ba34-4f44-b770-11c183d15b2b"
+    },
+    "9c9f593799a6fdfc2084485c1800bda4453ca2b7948e71187779d38cf2f84f60": {
+      "paper_id": "2611.05131",
+      "title": "High-fidelity training-free photovoltaic module mapping from multi-view UAV imagery",
+      "fingerprint": "9c9f593799a6fdfc2084485c1800bda4453ca2b7948e71187779d38cf2f84f60",
+      "evaluation": {
+        "paper_id": "2611.05131",
+        "task_type": "general_visual_method",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Their contours are then transferred into object space through per-module slope correction to limit distortion from surface-model noise, and verified against representative module dimensions to guide cross-view instance selection.",
+            "interpretation_zh": "通过逐模块坡度校正将轮廓转移到对象空间，并利用代表性模块尺寸验证以引导跨视图实例选择。",
+            "inference": false
+          },
+          {
+            "quote_en": "accepted instances return to all covering images as box prompts for SAM~3, supplementing text prompts with spatial cues for iterative segmentation, verification and fusion.",
+            "interpretation_zh": "将接受的实例作为框提示返回所有覆盖图像，补充文本提示的空间线索，进行迭代分割、验证和融合。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "accepted instances return to all covering images as box prompts for SAM~3, supplementing text prompts with spatial cues for iterative segmentation, verification and fusion",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将基于SAM的迭代分割与跨视图融合框架迁移至船舶分割：使用船舶文本提示生成初始候选，利用船舶尺寸先验验证跨视图实例，并将接受的实例作为框提示返回所有视图进行迭代分割与融合；输入调整为船舶多视图图像，训练目标无需权重更新。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要针对光伏模块映射，未涉及船舶或海事场景。",
+          "方法依赖无人机多视图影像和地面采样距离约1厘米的高分辨率数据，船舶场景可能难以满足。",
+          "坡度校正和模块尺寸约束为光伏领域特定，迁移至船舶需重新设计几何校正与尺寸先验。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出基于视觉基础模型和跨视图融合的无训练分割框架，与船舶分割有潜在方法迁移性，但领域差异大且无海事验证。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多视图无人机影像中光伏模块的高保真实例分割与建图",
+        "target_task": "ship_segmentation",
+        "core_contribution": "提出MV-PVMapper无训练框架，耦合视觉基础模型与无人机摄影测量，通过轮廓转移、尺寸验证和迭代提示实现光伏模块分割与融合。",
+        "application_context": "屋顶光伏电站的无人机多视图影像测绘，在三个运营电站的五方向调查中验证。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d5aeafb2-ba34-4f44-b770-11c183d15b2b"
+    },
+    "019077b5e8e59b87c86f583ea7838b8a85023b6cb65f26b422bf0ab4ac3af70a": {
+      "paper_id": "2605.10739",
+      "title": "Geospatial-Temporal Sensemaking of Remote Sensing Activity Detections with Multimodal Large Language Model",
+      "fingerprint": "019077b5e8e59b87c86f583ea7838b8a85023b6cb65f26b422bf0ab4ac3af70a",
+      "evaluation": {
+        "paper_id": "2605.10739",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为遥感建筑活动视觉问答数据集与多模态大模型训练框架，与海事融合、船舶视觉、陆上交通感知及通用视觉匹配方法均无直接或具体方法联系。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究内容为遥感建筑活动视觉问答数据集与多模态大模型训练，与关注方向无直接任务或具体方法迁移联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "遥感建筑活动时空分析的视觉问答数据集构建与多模态大模型训练",
+        "target_task": "other",
+        "core_contribution": "构建SMART-HC-VQA数据集，将建筑工地标注转为视觉问答三元组，并实现多图像多模态大模型训练框架。",
+        "application_context": "基于Sentinel-2卫星影像的建筑工程活动时空分析。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d5aeafb2-ba34-4f44-b770-11c183d15b2b"
     }
   }
 }

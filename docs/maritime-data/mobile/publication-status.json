@@ -1,31 +1,31 @@
 {
-  "attempt_date": "2026-11-05",
-  "status": "complete",
+  "attempt_date": "2026-11-06",
+  "status": "partial",
   "published_date": "2026-11-05",
   "published_revision": "9f768774b4da64a0",
   "selection_audit": {
-    "candidate_count": 1253,
-    "ai_reviewed": 893,
+    "candidate_count": 1256,
+    "ai_reviewed": 890,
     "ai_states": {
-      "evaluated": 893,
-      "uncertain": 357,
-      "unassessed": 3
+      "evaluated": 890,
+      "domain_excluded": 4,
+      "uncertain": 362
     },
     "stage_counts": {
-      "1": 38,
+      "1": 43,
       "2": 1165,
-      "0": 11,
-      "3": 39
+      "0": 8,
+      "3": 40
     },
-    "ai_rejected": 885,
+    "ai_rejected": 887,
     "translation_deferred": 1,
-    "qualified_count": 7,
-    "selected_count": 5,
-    "shortfall": 0,
+    "qualified_count": 2,
+    "selected_count": 2,
+    "shortfall": 3,
     "translation_replacements": [
       {
         "paper_id": "2611.04034",
-        "attempt_date": "2026-11-05",
+        "attempt_date": "2026-11-06",
         "reason": "本地译文尚未生成，或英文摘要已变化",
         "requires_enrichment": true,
         "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7"
