@@ -450169,6 +450169,28 @@
           "venue": null,
           "first_author_affiliations": null,
           "publication_evidence": null
+        },
+        {
+          "doi": "",
+          "arxiv_id": "2609.24964",
+          "title": "Perception-Aware Communication Middleware for Distributed Visual Perception in UAV Swarms",
+          "authors": [
+            "Manveen Kaur",
+            "Kevin Loi",
+            "Ifunanya Okafor",
+            "Daniel Ng",
+            "Joseph Lucey-Renteria"
+          ],
+          "abstract": "Unmanned Aerial Vehicle (UAV) swarms increasingly support safety-critical applications that rely on distributed visual perception. Meeting the low-latency requirements of these applications can require perception models to execute within the swarm on inference-capable UAVs, creating a need for efficient UAV-to-UAV transport of high-bandwidth perception data. However, the Quality-of-Service (QoS) requirements of perception differ from conventional packet-level QoS; successful delivery of individual packets does not ensure that a complete, timely, and usable image is available for inference. We present a novel perception-aware communication middleware that treats complete perception-data samples as the communication objects for which QoS must be satisfied. The middleware extends a lightweight UDP broker-based publish-subscribe architecture with perception-specific services, including image fragmentation and reconstruction, concurrent packet transmission, priority-aware scheduling, and image quality assessment. The middleware is evaluated on a heterogeneous hardware testbed emulating a UAV swarm using YOLOv8n object detection. Experimental results demonstrate low end-to-end application latency, substantially higher throughput than a lightweight UDP broker, effective prioritization of perception traffic under increasing background load, and mitigation of object-detection degradation through middleware-level image quality assessment. This work provides an initial framework for integrating AI-specific data handling into communication middleware to support emerging distributed AI applications in multi-agent mobile cyber-physical systems.",
+          "metadata_source": [
+            "arXiv"
+          ],
+          "publication_date": "2026-09-21",
+          "venue": "",
+          "first_author_affiliations": [
+            "Department of Computer Science , California State University , Los Angeles Los Angeles , CA , USA"
+          ],
+          "publication_evidence": null
         }
       ],
       "arxiv_id": "2609.24964",
@@ -768937,7 +768959,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104921": {
       "metadata_records": [
@@ -769182,7 +769205,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104922": {
       "metadata_records": [
@@ -769436,7 +769460,8 @@
         "reason": "医学研究对象/实验任务：Medical Image"
       },
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3710645": {
       "metadata_records": [
@@ -769636,7 +769661,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3716276": {
       "metadata_records": [
@@ -769838,7 +769864,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3715632": {
       "metadata_records": [
@@ -770040,7 +770067,8 @@
       "research_directions": [
         "C"
       ],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3716617": {
       "metadata_records": [
@@ -770240,7 +770268,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3715534": {
       "metadata_records": [
@@ -770434,7 +770463,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3718439": {
       "metadata_records": [
@@ -770638,7 +770668,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3723178": {
       "metadata_records": [
@@ -770834,7 +770865,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3723430": {
       "metadata_records": [
@@ -771028,7 +771060,8 @@
       "research_directions": [
         "C"
       ],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3717450": {
       "metadata_records": [
@@ -771240,7 +771273,8 @@
       "research_directions": [
         "C"
       ],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3724952": {
       "metadata_records": [
@@ -771434,7 +771468,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3724229": {
       "metadata_records": [
@@ -771632,7 +771667,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3724877": {
       "metadata_records": [
@@ -771836,7 +771872,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3722043": {
       "metadata_records": [
@@ -772046,7 +772083,8 @@
       "research_directions": [
         "C"
       ],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3725849": {
       "metadata_records": [
@@ -772244,7 +772282,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3723995": {
       "metadata_records": [
@@ -772438,7 +772477,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3724457": {
       "metadata_records": [
@@ -772634,7 +772674,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3726517": {
       "metadata_records": [
@@ -772843,7 +772884,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3729642": {
       "metadata_records": [
@@ -773041,7 +773083,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3724288": {
       "metadata_records": [
@@ -773235,7 +773278,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3724379": {
       "metadata_records": [
@@ -773431,7 +773475,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3733533": {
       "metadata_records": [
@@ -773631,7 +773676,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1109/tits.2026.3727609": {
       "metadata_records": [
@@ -774222,7 +774268,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "2611.04300": {
       "metadata_records": [
@@ -776153,7 +776200,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "daily_domain_exclusion": null,
-      "research_directions": []
+      "research_directions": [],
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115192": {
       "metadata_records": [
@@ -776324,7 +776372,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115245": {
       "metadata_records": [
@@ -776495,7 +776544,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115153": {
       "metadata_records": [
@@ -776678,7 +776728,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "2611.04755": {
       "metadata_records": [
@@ -778926,7 +778977,8 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
       },
-      "research_directions": []
+      "research_directions": [],
+      "semantic": null
     },
     "2611.03438": {
       "metadata_records": [
@@ -779803,7 +779855,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104929": {
       "metadata_records": [
@@ -780068,7 +780121,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104928": {
       "metadata_records": [
@@ -780327,7 +780381,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "2611.05818": {
       "metadata_records": [
@@ -780523,7 +780578,8 @@
         "A",
         "B",
         "C"
-      ]
+      ],
+      "semantic": null
     },
     "2611.05989": {
       "metadata_records": [
@@ -781094,7 +781150,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117285": {
       "metadata_records": [
@@ -781263,7 +781320,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117307": {
       "metadata_records": [
@@ -781428,7 +781486,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117292": {
       "metadata_records": [
@@ -781601,7 +781660,8 @@
       },
       "daily_domain_exclusion": null,
       "research_directions": [],
-      "corresponding_author_verified": false
+      "corresponding_author_verified": false,
+      "semantic": null
     },
     "2611.06471": {
       "metadata_records": [
@@ -781804,7 +781864,8 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：clinical"
       },
-      "research_directions": []
+      "research_directions": [],
+      "semantic": null
     },
     "2611.06195": {
       "metadata_records": [
@@ -782792,7 +782853,8 @@
       },
       "research_directions": [
         "D"
-      ]
+      ],
+      "semantic": null
     },
     "2611.05223": {
       "metadata_records": [
@@ -783138,7 +783200,8 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Medical Image"
       },
-      "research_directions": []
+      "research_directions": [],
+      "semantic": null
     },
     "2611.05131": {
       "metadata_records": [
@@ -784127,7 +784190,8 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Brain MRI"
       },
-      "research_directions": []
+      "research_directions": [],
+      "semantic": null
     },
     "2611.05035": {
       "metadata_records": [
@@ -784287,7 +784351,8 @@
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Medical Image"
       },
-      "research_directions": []
+      "research_directions": [],
+      "semantic": null
     },
     "doi:10.1016/j.joes.2026.100785": {
       "metadata_records": [
@@ -784441,7 +784506,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.joes.2026.09.001": {
       "metadata_records": [
@@ -784601,7 +784667,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127297": {
       "metadata_records": [
@@ -784757,7 +784824,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127387": {
       "metadata_records": [
@@ -784917,7 +784985,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127502": {
       "metadata_records": [
@@ -785077,7 +785146,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127517": {
       "metadata_records": [
@@ -785237,7 +785307,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127753": {
       "metadata_records": [
@@ -785387,7 +785458,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128393": {
       "metadata_records": [
@@ -785543,7 +785615,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128686": {
       "metadata_records": [
@@ -785703,7 +785776,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128864": {
       "metadata_records": [
@@ -785863,7 +785937,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128633": {
       "metadata_records": [
@@ -786013,7 +786088,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128999": {
       "metadata_records": [
@@ -786171,7 +786247,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.129072": {
       "metadata_records": [
@@ -786327,7 +786404,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127015": {
       "metadata_records": [
@@ -786482,7 +786560,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127138": {
       "metadata_records": [
@@ -786644,7 +786723,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127331": {
       "metadata_records": [
@@ -786796,7 +786876,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127470": {
       "metadata_records": [
@@ -786954,7 +787035,8 @@
       "research_directions": [
         "B"
       ],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127421": {
       "metadata_records": [
@@ -787110,7 +787192,8 @@
       "research_directions": [
         "B"
       ],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127433": {
       "metadata_records": [
@@ -787270,7 +787353,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127588": {
       "metadata_records": [
@@ -787434,7 +787518,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128129": {
       "metadata_records": [
@@ -787590,7 +787675,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128136": {
       "metadata_records": [
@@ -787740,7 +787826,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128269": {
       "metadata_records": [
@@ -787898,7 +787985,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128216": {
       "metadata_records": [
@@ -788055,7 +788143,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128034": {
       "metadata_records": [
@@ -788227,7 +788316,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128363": {
       "metadata_records": [
@@ -788385,7 +788475,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128516": {
       "metadata_records": [
@@ -788533,7 +788624,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128642": {
       "metadata_records": [
@@ -788698,7 +788790,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128827": {
       "metadata_records": [
@@ -788856,7 +788949,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128650": {
       "metadata_records": [
@@ -789015,7 +789109,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128964": {
       "metadata_records": [
@@ -789167,7 +789262,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128781": {
       "metadata_records": [
@@ -789319,7 +789415,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.129077": {
       "metadata_records": [
@@ -789467,7 +789564,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.127726": {
       "metadata_records": [
@@ -789623,7 +789721,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128494": {
       "metadata_records": [
@@ -789775,7 +789874,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.oceaneng.2026.128492": {
       "metadata_records": [
@@ -789927,7 +790027,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104936": {
       "metadata_records": [
@@ -790184,7 +790285,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104918": {
       "metadata_records": [
@@ -790439,7 +790541,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104933": {
       "metadata_records": [
@@ -790686,7 +790789,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104934": {
       "metadata_records": [
@@ -790931,7 +791035,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104260": {
       "metadata_records": [
@@ -791184,7 +791289,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104285": {
       "metadata_records": [
@@ -791437,7 +791543,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104294": {
       "metadata_records": [
@@ -791690,7 +791797,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104431": {
       "metadata_records": [
@@ -791941,7 +792049,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104470": {
       "metadata_records": [
@@ -792195,7 +792304,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104913": {
       "metadata_records": [
@@ -792452,7 +792562,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104252": {
       "metadata_records": [
@@ -792705,7 +792816,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104256": {
       "metadata_records": [
@@ -792961,7 +793073,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104326": {
       "metadata_records": [
@@ -793223,7 +793336,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104440": {
       "metadata_records": [
@@ -793476,7 +793590,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104438": {
       "metadata_records": [
@@ -793730,7 +793845,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：medical image"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104350": {
       "metadata_records": [
@@ -793985,7 +794101,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104352": {
       "metadata_records": [
@@ -794238,7 +794355,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104327": {
       "metadata_records": [
@@ -794483,7 +794601,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104332": {
       "metadata_records": [
@@ -794730,7 +794849,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2611.06635": {
       "metadata_records": [
@@ -795550,7 +795670,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115210": {
       "metadata_records": [
@@ -795721,7 +795842,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2611.07883": {
       "metadata_records": [
@@ -796723,7 +796845,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：EEG"
-      }
+      },
+      "semantic": null
     },
     "2611.06725": {
       "metadata_records": [
@@ -796882,7 +797005,8 @@
       "research_directions": [
         "D"
       ],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2611.07543": {
       "metadata_records": [
@@ -822721,6 +822845,14 @@
         }
       ],
       "time": "2026-11-06T03:57:52.256830+00:00"
+    },
+    {
+      "missing_before": 1385,
+      "missing_after": 1385,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-06T12:15:03.251340+00:00"
     }
   ],
   "translation_batches": [
