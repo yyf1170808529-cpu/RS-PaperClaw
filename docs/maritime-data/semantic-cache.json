@@ -58128,6 +58128,126 @@
       "model": "deepseek-flash",
       "request_id": "d5aeafb2-ba34-4f44-b770-11c183d15b2b",
       "compatible_fingerprints": []
+    },
+    "2c23ed7ad481f85183efb1063ef5de2a5a4afd64bea6dd8803938a4c9c1bf301": {
+      "paper_id": "2611.08097",
+      "title": "STEP: Spatiotemporal Training with Explicit Prediction for Perceptive Humanoid Locomotion",
+      "fingerprint": "2c23ed7ad481f85183efb1063ef5de2a5a4afd64bea6dd8803938a4c9c1bf301",
+      "evaluation": {
+        "paper_id": "2611.08097",
+        "primary_domain": "general_visual_method",
+        "primary_problem": "现有方法仅融合视觉与本体感觉特征，未明确约束跨模态关系及动作依赖状态演化，且在视觉退化时鲁棒性不足。",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出STEP框架，在共享控制表示中联合监督跨模态关系与动作依赖状态演化，使用双向掩码预测和动作条件预测器。",
+        "application_context": "人形机器人感知运动，在仿真及23自由度Noetix E1硬件上验证地形遍历，包括楼梯、平台、间隙等场景。",
+        "security_centric": false,
+        "communication_centric": false,
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Bidirectional masked prediction uses each visible modality to predict latent features of the omitted modality, explicitly supervising terrain-body relationships.",
+            "interpretation_zh": "双向掩码预测利用可见模态预测缺失模态的潜在特征，可迁移为跨模态对齐中缺失模态补全与关系监督。",
+            "inference": true
+          },
+          {
+            "quote_en": "An action-conditioned predictor maps the current policy state and executed action to the next fused state, with an exponential-moving-average target defined directly in the policy representation space.",
+            "interpretation_zh": "动作条件预测器映射当前状态和动作到下一融合状态，使用EMA目标；迁移到跨模态匹配可调整为根据状态和动作预测下一帧融合特征。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Bidirectional masked prediction uses each visible modality to predict latent features of the omitted modality, explicitly supervising terrain-body relationships.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将可见模态（如视觉）与缺失模态（如AIS或雷达）的潜在特征预测机制引入跨模态船舶匹配：输入调整为视觉图像块与AIS轨迹特征；训练目标改为用视觉特征预测AIS轨迹的隐表示并用AIS预测视觉特征，以掩码重建和对比损失约束跨模态一致性；结构上保留双向掩码预测头。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦人形机器人运动，未涉及船舶或跨模态匹配任务。",
+          "未提供跨模态匹配的量化实验或损失函数细节。",
+          "迁移到海事跨模态匹配需额外设计模态编码器和匹配目标。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出双向掩码跨模态预测与动作条件状态预测，可迁移至跨模态匹配，但直接相关性低，需适配。",
+        "confidence": 0.6
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e"
+    },
+    "5846df979cbad8bb292073f31955d0530d7dc59696ff25c6aca9267606148d9b": {
+      "paper_id": "2611.08393",
+      "title": "Adaptive Low-Light Enhancement for Road Anomaly Detection: A Multi-Architecture Benchmark and Edge Deployment Study",
+      "fingerprint": "5846df979cbad8bb292073f31955d0530d7dc59696ff25c6aca9267606148d9b",
+      "evaluation": {
+        "paper_id": "2611.08393",
+        "primary_domain": "traffic_perception",
+        "primary_problem": "自动驾驶道路异常检测在低光、雨雾等退化条件下性能下降，统一低光增强在黄昏时反而损害检测。",
+        "target_task": "ship_enhancement",
+        "core_contribution": "基准测试四种检测架构在不同光照退化下的表现，提出免训练亮度自适应路由器选择增强策略。",
+        "application_context": "自动驾驶车辆在道路场景下检测异常，在Jetson Nano边缘硬件验证。",
+        "security_centric": false,
+        "communication_centric": false,
+        "task_type": "ship_enhancement",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We propose a lightweight, training-free luminance-adaptive router that selects between no enhancement, moderate SCI, and denoising plus strong SCI based on per-frame Rec. 601 luminance, recovering most of the dusk penalty while preserving low-light gains",
+            "interpretation_zh": "提出基于每帧亮度的自适应路由器，在无增强、适度SCI和去噪加强SCI间选择，可迁移到船舶图像增强中选择增强策略。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "We propose a lightweight, training-free luminance-adaptive router that selects between no enhancement, moderate SCI, and denoising plus strong SCI based on per-frame Rec. 601 luminance, recovering most of the dusk penalty while preserving low-light gains",
+          "target_task": "ship_enhancement",
+          "adaptation_zh": "将免训练亮度自适应路由器用于船舶图像增强：输入改为船载相机图像，根据每帧亮度选择无增强、适度增强或去噪加强增强；需在海上低光数据集上重新校准亮度阈值和增强强度。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要针对道路异常检测，未涉及船舶图像。",
+          "增强模块为SCI网络，非新方法；路由器依赖道路光照统计。",
+          "未提供在海上低光场景的验证。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出亮度自适应增强路由策略，可迁移到船舶图像增强，但直接相关性较弱，需海上数据校准。",
+        "confidence": 0.6
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e"
+    },
+    "af7ef7f5fbee3a641b7d568fc62a5eebc8a384f5ace9b0432c41cc1368c1220b": {
+      "paper_id": "2611.08368",
+      "title": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
+      "fingerprint": "af7ef7f5fbee3a641b7d568fc62a5eebc8a384f5ace9b0432c41cc1368c1220b",
+      "evaluation": {
+        "paper_id": "2611.08368",
+        "primary_domain": "general_visual_method",
+        "primary_problem": "现有仿真器理想化新兴传感器，隐藏模态特定失效模式，限制真实部署。",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出VisionSIM物理仿真平台，建模多种传感器原始测量过程并复现失效模式，发布同步数据集。",
+        "application_context": "机器人感知多模态传感器仿真，用于跨模态比较和数据集生成。",
+        "security_centric": false,
+        "communication_centric": false,
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦传感器仿真，未提出检测、匹配或融合算法。",
+          "未提供可迁移的学习机制或匹配方法。",
+          "与海事多源关联融合仅有间接场景联系。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "仿真平台不提供可直接迁移的感知学习或匹配算法，直接相关性低。",
+        "confidence": 0.8
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e"
     }
   }
 }
