@@ -58174,7 +58174,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e"
+      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e",
+      "compatible_fingerprints": []
     },
     "5846df979cbad8bb292073f31955d0530d7dc59696ff25c6aca9267606148d9b": {
       "paper_id": "2611.08393",
@@ -58216,7 +58217,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e"
+      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e",
+      "compatible_fingerprints": []
     },
     "af7ef7f5fbee3a641b7d568fc62a5eebc8a384f5ace9b0432c41cc1368c1220b": {
       "paper_id": "2611.08368",
@@ -58247,7 +58249,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e"
+      "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e",
+      "compatible_fingerprints": []
     }
   }
 }

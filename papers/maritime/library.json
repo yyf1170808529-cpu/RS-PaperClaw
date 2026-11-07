@@ -797501,7 +797501,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104935": {
       "metadata_records": [
@@ -797750,7 +797751,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104930": {
       "metadata_records": [
@@ -798005,7 +798007,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104944": {
       "metadata_records": [
@@ -798271,7 +798274,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Alzheimer"
-      }
+      },
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104932": {
       "metadata_records": [
@@ -798521,7 +798525,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2611.08393": {
       "metadata_records": [
@@ -799406,7 +799411,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.inffus.2026.104946": {
       "metadata_records": [
@@ -799653,7 +799659,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.knosys.2026.117266": {
       "metadata_records": [
@@ -799816,7 +799823,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115253": {
       "metadata_records": [
@@ -799987,7 +799995,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115263": {
       "metadata_records": [
@@ -800152,7 +800161,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "doi:10.1016/j.patcog.2026.115255": {
       "metadata_records": [
@@ -800317,7 +800327,8 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": null
     },
     "2611.08360": {
       "metadata_records": [
@@ -800477,7 +800488,8 @@
       "daily_domain_exclusion": {
         "domain": "biomedical",
         "reason": "医学研究对象/实验任务：Cancer, Patient"
-      }
+      },
+      "semantic": null
     }
   },
   "days": {
@@ -827019,6 +827031,14 @@
         }
       ],
       "time": "2026-11-07T03:16:02.777253+00:00"
+    },
+    {
+      "missing_before": 1396,
+      "missing_after": 1396,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-07T11:12:01.680605+00:00"
     }
   ],
   "translation_batches": [
