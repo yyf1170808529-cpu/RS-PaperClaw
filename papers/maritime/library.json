@@ -775661,7 +775661,72 @@
       "reading_enrichment_error": "Previous enrichment attempt requires audit; paid POST not repeated",
       "research_directions": [
         "C"
-      ]
+      ],
+      "reading_enrichment": {
+        "status": "success",
+        "paper_id": "2611.04034",
+        "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7",
+        "prompt_version": "3.8.6-1",
+        "purpose": "daily_translation",
+        "attempts": 2,
+        "previous_attempt": {
+          "status": "audit_required",
+          "paper_id": "2611.04034",
+          "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7",
+          "prompt_version": "3.8.6-1",
+          "purpose": "daily_translation",
+          "attempts": 1,
+          "previous_attempt": null,
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 575,
+            "completion_tokens": 448,
+            "total_tokens": 1023,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 575
+          },
+          "cost_upper_cny": 0.004734,
+          "created": 1793762371,
+          "candidate": {
+            "paper_id": "2611.04034",
+            "summary_zh": "该论文研究预训练骨干网络在多传感器物理传感器数据上的迁移效果，通过构建包含16个公开数据集、282万张图像的多传感器自动驾驶数据集合，采用MultiMAE进行域内预训练并调整损失以适应稀疏样本，系统比较ViT、MAE、DINO和MultiMAE在下游传感器融合任务中的表现。",
+            "migration_zh": "研究推断：可迁移至船舶多传感器检测与融合模块，将稀疏的物理传感器输入（如Radar、AIS、视觉）通过掩码自编码预训练对齐，并引入SSIM/FFT重建损失增强特征鲁棒性。",
+            "abstract_zh": "从预训练骨干网络进行迁移学习已成为多传感器计算机视觉中的标准做法——然而两个问题仍未解决：哪些预训练权重最适合迁移到多传感器设置，以及域内预训练能否优于现成解决方案？像MultiMAE这样的框架展示了掩码自编码在多模态上下文中的效用，但完全依赖于密集的、模型导出的模态。这些方法如何稳健地转换为使用物理传感器的实际应用尚不清楚，因为聚合多样化的公开数据集进行大规模预训练本质上会引入模态稀疏性。为了系统地研究这一问题，我们整理了一个多传感器自动驾驶集合，包含来自16个公开数据集的282万张图像，融合了物理硬件模态（RGB、LWIR、NIR、Event）和模型导出模态（Stereo Depth、Segmentation）。我们使用该集合基于MultiMAE方法进行域内预训练。我们调整了MultiMAE的损失公式以适应稀疏样本，并研究了强制编码器瓶颈对模态对齐的影响以及针对密集重建的额外损失（SSIM和FFT）的效果。然后，我们在下游传感器融合任务中系统地比较了常见的预训练骨干网络（ViT、MAE、DINO和MultiMAE）。我们发现MultiMAE是一个出奇强大的开箱即用基线，即使对从未见过的模态也能有效迁移，而我们针对性的修改在多传感器迁移和整体鲁棒性上产生了渐进但一致的改进。"
+          },
+          "error": "Missing source numbers"
+        },
+        "model": "deepseek-flash",
+        "usage": {
+          "prompt_tokens": 575,
+          "completion_tokens": 425,
+          "total_tokens": 1000,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 191
+        },
+        "cost_upper_cny": 0.00379736,
+        "created": 1793850357,
+        "candidate": {
+          "paper_id": "2611.04034",
+          "summary_zh": "该论文构建含282万图像、16个公开数据集的多传感器自动驾驶数据集，用于域内预训练并系统比较ViT、MAE、DINO和MultiMAE在下游传感器融合任务中的迁移效果。",
+          "migration_zh": "研究推断：可将多传感器预训练与稀疏样本适配的MultiMAE损失迁移至船舶多传感器融合检测，用Radar、AIS和视觉输入做域内预训练，并在融合编码器中加入模态对齐瓶颈与稠密重建辅助损失。",
+          "abstract_zh": "从预训练骨干网络进行迁移学习已成为多传感器计算机视觉中的标准做法——然而两个问题仍未解决：哪些预训练权重最适合迁移到多传感器设置，以及域内预训练能否超越现成方案？像MultiMAE这样的框架展示了掩码自编码在多模态语境中的效用，但完全依赖稠密的、模型导出的模态。目前尚不清楚这些方法能多稳健地迁移到使用物理传感器的真实应用中，在这些应用中，为大规模预训练而聚合多样化的公开数据集会固有地引入模态稀疏性。为系统研究这一问题，我们整理了一个多传感器自动驾驶数据集，包含来自16个公开数据集的282万张图像，涵盖物理硬件模态（RGB、LWIR、NIR、Event）和模型导出模态（立体深度、分割）。我们使用该数据集基于MultiMAE方法进行域内预训练。我们调整MultiMAE的损失公式以适应稀疏样本，并研究强制编码器瓶颈对模态对齐的影响以及针对稠密重建的额外损失（SSIM和FFT）的影响。然后，我们在下游传感器融合任务中系统性地与常见预训练骨干网络（ViT、MAE、DINO和MultiMAE）进行比较。我们发现，MultiMAE是一个出乎意料的强大开箱即用基线，即使对从未见过的模态也能有效迁移，而我们针对性的修改在多传感器迁移和整体鲁棒性上带来了渐进但一致的改进。"
+        },
+        "error": "Missing source numbers",
+        "content": {
+          "paper_id": "2611.04034",
+          "summary_zh": "该论文构建含282万图像、16个公开数据集的多传感器自动驾驶数据集，用于域内预训练并系统比较ViT、MAE、DINO和MultiMAE在下游传感器融合任务中的迁移效果。",
+          "migration_zh": "研究推断：可将多传感器预训练与稀疏样本适配的MultiMAE损失迁移至船舶多传感器融合检测，用Radar、AIS和视觉输入做域内预训练，并在融合编码器中加入模态对齐瓶颈与稠密重建辅助损失。",
+          "abstract_zh": "从预训练骨干网络进行迁移学习已成为多传感器计算机视觉中的标准做法——然而两个问题仍未解决：哪些预训练权重最适合迁移到多传感器设置，以及域内预训练能否超越现成方案？像MultiMAE这样的框架展示了掩码自编码在多模态语境中的效用，但完全依赖稠密的、模型导出的模态。目前尚不清楚这些方法能多稳健地迁移到使用物理传感器的真实应用中，在这些应用中，为大规模预训练而聚合多样化的公开数据集会固有地引入模态稀疏性。为系统研究这一问题，我们整理了一个多传感器自动驾驶数据集，包含来自16个公开数据集的$2.82M$张图像，涵盖物理硬件模态（RGB、LWIR、NIR、Event）和模型导出模态（立体深度、分割）。我们使用该数据集基于MultiMAE方法进行域内预训练。我们调整MultiMAE的损失公式以适应稀疏样本，并研究强制编码器瓶颈对模态对齐的影响以及针对稠密重建的额外损失（SSIM和FFT）的影响。然后，我们在下游传感器融合任务中系统性地与常见预训练骨干网络（ViT、MAE、DINO和MultiMAE）进行比较。我们发现，MultiMAE是一个出乎意料的强大开箱即用基线，即使对从未见过的模态也能有效迁移，而我们针对性的修改在多传感器迁移和整体鲁棒性上带来了渐进但一致的改进。"
+        },
+        "translation_source": "deepseek",
+        "revalidated_cached_response": true
+      }
     },
     "2611.02992": {
       "metadata_records": [

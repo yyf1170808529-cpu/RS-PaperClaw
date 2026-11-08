@@ -209,15 +209,17 @@ def fetch_crossref(journal, start, end, query, root, pages=5, rows=100, timeout=
 
 
 def fetch_openalex(start, end, query, root, pages=5, rows=100, timeout=20, retries=3):
-    result, cursor = [], "*"
+    result, cursor = [], None
     for page in range(pages):
         if page:
             time.sleep(1)
-        data = json_request("https://api.openalex.org/works", {"filter": f"from_publication_date:{start},to_publication_date:{end}",
-            "search": query, "per_page": min(rows, 100), "cursor": cursor}, root, timeout, retries)
+        params={"filter": f"from_publication_date:{start},to_publication_date:{end}","search": query,"per_page": min(rows,100)}
+        if cursor:params['cursor']=cursor
+        data = json_request("https://api.openalex.org/works", params, root, timeout, retries)
         batch = data.get("results", [])
         result.extend(openalex_paper(item) for item in batch)
         cursor = data.get("meta", {}).get("next_cursor")
+        if not openalex_key() and len(batch)>=min(rows,100):return result,False
         if not cursor or len(batch) < min(rows, 100) or len(result) >= data.get("meta", {}).get("count", 0):
             return result, True
     return result, False

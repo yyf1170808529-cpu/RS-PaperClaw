@@ -76,7 +76,10 @@ def translate_selected(root, library, day, config=None, seconds=180, enrichment=
         if enrichment:
             from services.reading_translation import enrich
             counts={'translated':0,'failed':0,'cached':0}
+            processed=[]
             for key in todo:
+                if time.monotonic()>=deadline:break
+                processed.append(key)
                 try:
                     from services.reading_translation import cached
                     was_cached=bool(cached(library['papers'][key]))
@@ -84,6 +87,7 @@ def translate_selected(root, library, day, config=None, seconds=180, enrichment=
                 except Exception as exc:
                     library['papers'][key]['reading_enrichment_error']=str(exc);counts['failed']+=1
                 save()
+            todo=processed
         else:counts=translate_budget(library,todo,len(todo),max(.01,deadline-time.monotonic()),save,selected=True)
         for name,count in counts.items():result[name]=result.get(name,0)+count
         attempted.update(todo)
@@ -93,7 +97,7 @@ def translate_selected(root, library, day, config=None, seconds=180, enrichment=
             if (cached(p) if enrichment else chosen_zh(p)[0]):
                 library.setdefault('selected_translation_repairs',{}).pop(key,None)
                 continue
-            failure={'paper_id':key,'attempt_date':str(day),'reason':translation_issue(p),
+            failure={'paper_id':key,'attempt_date':str(day),'reason':p.get('reading_enrichment_error') or translation_issue(p),
                      'requires_enrichment':enrichment,'english_hash':hashlib.sha256(p.get('abstract','').encode()).hexdigest()}
             failures.append(failure)
             library.setdefault('selected_translation_repairs',{})[key]=failure

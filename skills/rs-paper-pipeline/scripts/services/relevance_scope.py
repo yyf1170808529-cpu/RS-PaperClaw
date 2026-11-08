@@ -5,7 +5,7 @@ def primary_scope_exclusion(p):
     """Study objective evidence, not keywords found only in evaluation scenes."""
     title=p.get('title','')
     abstract=p.get('abstract','')
-    rules=[('communication_engineering',r'semantic communication|(?:adaptive )?pilot (?:selection|allocation|configuration)|channel estimation|communication resource allocation|waveform optimi[sz]ation|wireless communication protocols?',
+    rules=[('trajectory_planning',r'ego.trajectory planning|trajectory planning benchmark','核心贡献为轨迹规划基准而非感知算法'),('communication_engineering',r'communication middleware|semantic communication|(?:adaptive )?pilot (?:selection|allocation|configuration)|channel estimation|communication resource allocation|waveform optimi[sz]ation|wireless communication protocols?',
             '通信系统/波形/导频优化'),
            ('security_centric',r'cybersecurity|(?:security|stereo vision|camera) vulnerabilit\w*|physical adversarial attacks?|(?:camera|LiDAR|stereo) attacks?|adversarial robustness assessment (?:framework|toolkit)|network intrusion|attack exploitation|security threat assessment',
             '安全攻击或漏洞分析'),

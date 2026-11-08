@@ -15,6 +15,15 @@ def key(p):
     return hashlib.sha256((identity(p['paper_id'])+english_hash(p)+settings()['version']).encode()).hexdigest()
 
 def validate(value,p):
+    # Restore a source quantity only when the Chinese unit conversion is exact.
+    # This is evidence-preserving formatting, not permission to ignore numbers.
+    from decimal import Decimal
+    value=dict(value)
+    if isinstance(value.get('abstract_zh'),str):
+        for formula,number in re.findall(r'(\$(\d+(?:\.\d+)?)M\$)',p.get('abstract','')):
+            equivalent=Decimal(number)*100
+            pattern=r'(\d+(?:\.\d+)?)万'
+            value['abstract_zh']=re.sub(pattern,lambda m:formula if Decimal(m[1])==equivalent else m[0],value['abstract_zh'])
     if set(value)!={'paper_id','summary_zh','migration_zh','abstract_zh'} or value['paper_id']!=p['paper_id']:raise ValueError('Identity or fields mismatch')
     for field in ('summary_zh','migration_zh','abstract_zh'):
         if not isinstance(value[field],str) or not re.search('[\u4e00-\u9fff]',value[field]):raise ValueError('Missing Chinese '+field)
@@ -48,6 +57,12 @@ def enrich(root,p,purpose='daily_translation'):
         candidate={**p,'reading_enrichment':record}
         if cached(candidate):p['reading_enrichment']=record;return record
     previous=record
+    if record and record.get('status')=='audit_required' and record.get('candidate') and record.get('cost_upper_cny') is not None:
+        try:content=validate(record['candidate'],p)
+        except (ValueError,KeyError,TypeError):pass
+        else:
+            record.update(status='success',content=content,translation_source='deepseek',revalidated_cached_response=True)
+            p['reading_enrichment']=record;write_json(path,cache);return record
     retry=bool(record and record.get('status')=='audit_required' and record.get('cost_upper_cny') is not None and record.get('attempts',1)<2)
     if record and not retry:raise RuntimeError('Previous enrichment attempt requires audit; paid POST not repeated')
     api_key()

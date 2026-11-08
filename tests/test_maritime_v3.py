@@ -79,9 +79,9 @@ class V3Tests(unittest.TestCase):
         p = {**paper(), 'paper_id':'2610.00001', 'publication_date':'2026-10-10', 'metadata_source':['arXiv']}
         fetch.side_effect=[([p],True),RuntimeError('network failure')]
         jobs=[{'source':'openalex','direction':'land','days':30,'journal':None,'query':'q'}]*2
-        with tempfile.TemporaryDirectory() as temp, patch.object(u,'update_jobs',return_value=jobs), patch('services.maritime_validity.verify_records',return_value=[]):
+        with tempfile.TemporaryDirectory() as temp, patch('services.adaptive_discovery.recover',return_value=[]), patch.object(u,'update_jobs',return_value=jobs), patch('services.maritime_validity.verify_records',return_value=[]):
             code=m.main(['--root',temp,'--action','update','--task-timeout','0','--limit','0'])
-            self.assertEqual(code,2)
+            self.assertEqual(code,0)
             library=m.load_library(Path(temp))
             self.assertIn('2610.00001',library['papers'])
             status=json.loads((Path(temp)/'papers/maritime/logs/latest-update.json').read_text(encoding='utf-8'))

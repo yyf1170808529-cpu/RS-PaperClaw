@@ -260,7 +260,7 @@ if (typeof document !== 'undefined') {
       for (const [key, name] of Object.entries(data.topics)) { const option = node('option', `${key}. ${name}`); option.value = key; $('topic').append(option); }
       for (const date of Object.keys(data.days).sort().reverse()) { const option = node('option', date); option.value = date; $('date').append(option); }
       for (const [old,canonical] of Object.entries(data.aliases||{})) if(readings[old]&&!readings[canonical]) readings[canonical]=readings[old];
-      const status=updateStatus(data);message((brokenStorage!==null?'旧阅读记录格式异常，已保留原文；收藏可独立使用。 ':'')+status.text);
+      const status=updateStatus(data);const summary=data.update_summary;if(summary?.published_daily_date)status.text+='；最近一次正式精选：'+summary.published_daily_date;if(summary?.supplement?.length)status.text+='；补检'+summary.supplement.length+'轮，当前就绪'+summary.daily_selected+'/5';message((brokenStorage!==null?'旧阅读记录格式异常，已保留原文；收藏可独立使用。 ':'')+status.text);
       if($('update-detail-text')) $('update-detail-text').textContent=status.details;
       if($('update-details')) $('update-details').hidden=!status.details;
       $('export').addEventListener('click', () => {

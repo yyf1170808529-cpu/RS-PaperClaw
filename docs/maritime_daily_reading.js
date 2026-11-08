@@ -123,6 +123,8 @@
             }
           }
           const state=progress.read();render(state);
+          const statusResponse=await win.fetch(prefix+'maritime-data/mobile/supplement-status.json',{cache:'no-store'});
+          if(statusResponse.ok){const status=await statusResponse.json();if(status.attempt_date)doc.getElementById('reading-status').textContent+=(state.completed?'':' · ')+ '最近一次正式精选：'+initial.payload.date+'；本次补检 '+status.attempt_date+'，已就绪 '+status.complete+'/5';}
           if(!state.completed||beijingDate()<=state.completed_date)return;
           // Do not replace an editor while the user is writing a favorite note.
           if(doc.activeElement?.tagName==='TEXTAREA'||doc.querySelector('.paper-panels details[open]'))return;

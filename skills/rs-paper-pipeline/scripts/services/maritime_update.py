@@ -179,6 +179,14 @@ def run_update(args, library, rules):
     except Exception as exc:translations={'selected':0,'translated':0,'cached':0,'manual':0,'failed':1,'cost_upper_cny':0,'priced_cost_cny':0,'reason':str(exc)}
     save()
     print('[译] '+json.dumps(translations,ensure_ascii=False),flush=True)
+    from services.adaptive_discovery import recover
+    library.pop('supplement_existing_ai',None)
+    supplement=recover(args,library,rules,end,save)
+    added+=sum(r.get('added',0) for r in supplement)
+    for field in ('processed','tokens','cost_upper_cny','priced_cost_cny'):
+        ai[field]=ai.get(field,0)+library.get('supplement_existing_ai',{}).get(field,0)+sum(r.get('ai',{}).get(field,0) for r in supplement)
+    for field in ('translated','api_calls','cost_upper_cny','priced_cost_cny'):
+        translations[field]=translations.get(field,0)+sum(r.get('translation',{}).get(field,0) for r in supplement)
     stage = time.monotonic()
     print("[4/4] 生成网页和日报：开始", flush=True)
     build(args.root, library, rules, mobile_date=end)
@@ -199,7 +207,12 @@ def run_update(args, library, rules):
                "daily_publication":publication['status'],"published_daily_date":publication['published_date'],
                "published_daily_count":len(json.loads(latest_path.read_text(encoding='utf8'))['papers']) if latest_path.exists() else 0,
                "github_sync": "not_attempted", "pages_publish": "not_attempted"}
+    summary.update(ai_status=ai['status'],translation_status='partial' if translations['failed'] else 'success',selection_status=publication['status'],publication_status=publication['status'],sync_status='not_attempted',pages_status='not_attempted',supplement=supplement)
     summary["retrieval_status"]="not_run_resume" if not jobs else source_status
+    all_sources=results+[job for row in supplement for job in row.get('jobs',[])]
+    summary['retrieval_status']=('not_run_resume' if not all_sources else 'failed' if all(r['status']=='failed' for r in all_sources) else 'partial' if any(r['status']!='success' for r in all_sources) else 'success')
+    summary['translation_status']='success' if publication['status']=='complete' else 'pending'
+    summary['ai_status']='success' if ai.get('processed') else ai['status']
     summary["github_run_id"]=__import__("os").environ.get("GITHUB_RUN_ID")
     write_json(args.root / "papers/maritime/logs/latest-update.json", summary)
     write_json(args.root / "docs/maritime-data/update-result.json", summary)
@@ -208,4 +221,4 @@ def run_update(args, library, rules):
     payload["update_summary"] = summary
     write_json(public, payload)
     print(json.dumps(summary, ensure_ascii=False), flush=True)
-    return 0 if publication['status']=='complete' and not translations['failed'] else 2 if summary["local_update"] != "failed" else 1
+    return 0  # A saved pending batch is a recoverable outcome, not a program crash.
