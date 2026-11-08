@@ -1,5 +1,5 @@
 {
-  "attempt_date": "2026-11-07",
+  "attempt_date": "2026-11-08",
   "status": "partial",
   "published_date": "2026-11-05",
   "published_revision": "9f768774b4da64a0",
@@ -12,10 +12,9 @@
       "domain_excluded": 4
     },
     "stage_counts": {
-      "1": 44,
+      "1": 46,
       "2": 1172,
-      "0": 3,
-      "3": 40
+      "3": 41
     },
     "ai_rejected": 888,
     "translation_deferred": 1,
@@ -25,7 +24,7 @@
     "translation_replacements": [
       {
         "paper_id": "2611.04034",
-        "attempt_date": "2026-11-07",
+        "attempt_date": "2026-11-08",
         "reason": "本地译文尚未生成，或英文摘要已变化",
         "requires_enrichment": true,
         "english_hash": "52cc1a7e4a729c34db58fcbe5ac5543bc15a3e146453687403474bc6307d8cd7"
