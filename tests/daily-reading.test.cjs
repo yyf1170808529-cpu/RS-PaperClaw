@@ -92,3 +92,8 @@ test('scope-corrected unfinished batch can explicitly complete and advance witho
  assert.equal(s.progress.read().completed,false);s.progress.complete();s.day('2026-10-25');
  assert.equal(s.progress.advance(batch('2026-10-25',20)).batch.payload.date,'2026-10-25');assert.equal(s.map.get('favorites'),'private note');
 });
+test('completed historical batches are not rewritten by later scope corrections',()=>{
+ const s=setup();const old=s.progress.read();s.progress.complete();
+ const current=s.progress.correct({'2610.10000':{reason:'source changed',replacement:batch('2026-10-25',20).payload.papers[0]}});
+ assert.equal(current.completed,true);assert.equal(current.batch.payload.date,old.batch.payload.date);assert.equal(current.batch.payload.papers[0].paper_id,old.batch.payload.papers[0].paper_id);assert.equal(s.map.get('favorites'),'private note');
+});

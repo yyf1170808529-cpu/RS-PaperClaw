@@ -190,10 +190,10 @@ def run_update(args, library, rules):
     args.supplement_seconds=max(0,2400-(time.monotonic()-started))
     supplement=recover(args,library,rules,end,save)
     added+=sum(r.get('added',0) for r in supplement)
-    for field in ('processed','tokens','cost_upper_cny','priced_cost_cny'):
-        ai[field]=ai.get(field,0)+library.get('supplement_existing_ai',{}).get(field,0)+sum(r.get('ai',{}).get(field,0) for r in supplement)
-    for field in ('translated','api_calls','cost_upper_cny','priced_cost_cny'):
-        translations[field]=translations.get(field,0)+library.get('supplement_existing_translation',{}).get(field,0)+sum(r.get('translation',{}).get(field,0) for r in supplement)
+    ai_phases=[ai]+([library['supplement_existing_ai']] if library.get('supplement_existing_ai') else [])+[r['ai'] for r in supplement if r.get('ai')]
+    ai={**ai_phases[-1],**{field:sum(r.get(field,0) for r in ai_phases) for field in ('processed','tokens','failed','cost_upper_cny','priced_cost_cny')}}
+    translation_phases=[translations]+([library['supplement_existing_translation']] if library.get('supplement_existing_translation') else [])+[r['translation'] for r in supplement if r.get('translation')]
+    translations={**translation_phases[-1],**{field:sum(r.get(field,0) for r in translation_phases) for field in ('translated','api_calls','cost_upper_cny','priced_cost_cny')}}
     stage = time.monotonic()
     print("[4/4] 生成网页和日报：开始", flush=True)
     build(args.root, library, rules, mobile_date=end)
@@ -221,7 +221,7 @@ def run_update(args, library, rules):
     all_sources=results+[job for row in supplement for job in row.get('jobs',[])]
     summary['retrieval_status']=('not_run_resume' if not all_sources else 'failed' if all(r['status']=='failed' for r in all_sources) else 'partial' if any(r['status']!='success' for r in all_sources) else 'success')
     summary['translation_status']='success' if publication['status']=='complete' else 'pending'
-    summary['ai_status']='success' if ai.get('processed') else ai['status']
+    summary['ai_status']='partial' if ai.get('failed') or ai.get('status')=='partial' else 'success' if ai.get('processed') else ai['status']
     summary["github_run_id"]=__import__("os").environ.get("GITHUB_RUN_ID")
     write_json(args.root / "papers/maritime/logs/latest-update.json", summary)
     write_json(args.root / "docs/maritime-data/update-result.json", summary)

@@ -38,6 +38,7 @@
     }
     function correct(records) {
       const state=read(),papers=[];let changed=false;
+      if(state.completed)return state; // Preserve the exact batch the user already completed.
       for(const paper of [...state.batch.payload.papers,...(state.pending_corrections||[])]){
         const correction=records[paper.paper_id];
         if(!correction){papers.push(paper);continue;}
@@ -87,7 +88,7 @@
           article.append(el('p','作者：'+win.MaritimeAuthors.label(p)));
           const verified=p.affiliation_verified&&p.affiliation_source&&authors[0]&&p.first_author?.trim().toLowerCase()===authors[0].trim().toLowerCase();
           const affiliation=verified&&p.first_author_affiliations?.[0];
-          article.append(el('p','第一作者单位：'+(affiliation||'待核实')+(affiliation?'（'+p.affiliation_source+'）':'')),el('p',p.source||''),el('p',(p.level||'')+' · AI相关分 '+p.ai_score+'/100 '+(p.selection_source||'')),el('p','论文内容：'+(p.summary_zh||'')),el('p','迁移思路：'+(p.migration_zh||'')));
+          article.append(el('p','第一作者单位：'+(affiliation||'待核实')+(affiliation?'（'+p.affiliation_source+'）':'')),el('p',(p.source||'')+' · '+(p.published||'日期待核实')),el('p',(p.level||'')+' · AI相关分 '+p.ai_score+'/100 '+(p.selection_source||'')),el('p','论文内容：'+(p.summary_zh||'')),el('p','迁移思路：'+(p.migration_zh||'')));
           const abstracts=el('details'),english=el('p',p.abstract);english.lang='en';abstracts.append(el('summary','查看摘要（中文 / English）'),el('p',p.abstract_zh),english);article.append(abstracts);
           const actions=el('div');actions.className='paper-actions';
           const prompt=el('button','Prompt');prompt.type='button';prompt.dataset.promptPaper=p.paper_id;

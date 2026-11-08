@@ -247,9 +247,18 @@ def daily_evaluate(root,library,new_keys,end,limit=None,budget=None,disabled=Fal
                 t=datetime.fromtimestamp(response['created'],TZ)
                 peak=t.weekday()<5 and (9<=t.hour<12 or 14<=t.hour<18)
                 summary['priced_cost_cny']+=cost*(1 if peak else .5)
-                if response['choices'][0]['finish_reason']!='stop':raise ValueError('Incomplete AI response')
-                outputs=json.loads(response['choices'][0]['message']['content'])['evaluations']
-                if len(outputs)!=len(batch) or len({r['paper_id'] for r in outputs})!=len(batch):raise ValueError('Invalid AI batch identity')
+                try:
+                    if response['choices'][0]['finish_reason']!='stop':raise ValueError('Incomplete AI response')
+                    outputs=json.loads(response['choices'][0]['message']['content'])['evaluations']
+                    if len(outputs)!=len(batch) or len({r['paper_id'] for r in outputs})!=len(batch):raise ValueError('Invalid AI batch identity')
+                except (ValueError,KeyError,TypeError) as exc:
+                    # A received but invalid response is already charged. Preserve
+                    # it for audit; continue with different candidates, never POST
+                    # this batch again merely to repair its JSON.
+                    summary['failed']+=len(batch)
+                    summary.setdefault('validation_errors',[]).append({'paper_ids':[p['paper_id'] for p in batch],'reason':str(exc)})
+                    write_json(directory/'invalid'/(hashlib.sha256(str(response.get('id','batch')).encode()).hexdigest()+'.json'),{'paper_ids':[p['paper_id'] for p in batch],'response':response,'reason':str(exc)})
+                    continue
                 by_id={r['paper_id']:r for r in outputs}
                 for p in batch:
                     try:value=validate(by_id[p['paper_id']],p,require_scope=True)

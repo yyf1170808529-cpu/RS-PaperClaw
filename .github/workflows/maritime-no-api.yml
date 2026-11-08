@@ -146,6 +146,7 @@ jobs:
           path: |
             maritime-run.log
             papers/maritime/logs/
+            papers/maritime/private/deepseek/invalid/
           retention-days: 14
       - uses: actions/cache/save@v4
         if: always()
