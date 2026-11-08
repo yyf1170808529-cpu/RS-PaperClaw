@@ -930,9 +930,11 @@
       "paper_id": "2604.24044",
       "fingerprint": "9b4b287c75fc10513c3459ba9d832e6f2036fe6f5456cf9d1ae0ee721bf65b9d",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-08"
+      ],
+      "available": false
     },
     "doi:10.1109/icmlt69916.2026.11688998": {
       "paper_id": "doi:10.1109/icmlt69916.2026.11688998",
@@ -963,7 +965,17 @@
         "2026-11-08"
       ],
       "available": false
+    },
+    "2606.09634": {
+      "paper_id": "2606.09634",
+      "fingerprint": "6266c1266d4b8c6e6a7c89e34c2696ffdcdfb73eae4049408ae2d9b393fd0134",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-08"
+      ],
+      "available": false
     }
   },
-  "available_count": 1
+  "available_count": 0
 }

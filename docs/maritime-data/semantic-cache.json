@@ -58349,7 +58349,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9",
+      "compatible_fingerprints": []
     },
     "98ad3fc0b1ce0f05a4b8b042e47d8f9b16174044c7f7c6825006d758b9a6728e": {
       "paper_id": "2607.04098",
@@ -58401,7 +58402,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9",
+      "compatible_fingerprints": []
     },
     "fbc08b250204114050109a214041f402dacbeefa70647e2f01377f2e801b7da7": {
       "paper_id": "2605.21112",
@@ -58453,7 +58455,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9",
+      "compatible_fingerprints": []
     },
     "9b4b287c75fc10513c3459ba9d832e6f2036fe6f5456cf9d1ae0ee721bf65b9d": {
       "paper_id": "2604.24044",
@@ -58505,7 +58508,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe",
+      "compatible_fingerprints": []
     },
     "cb63b9c31eac8d8f22d09afbcda8837362cccc7b3e582e50edc69572c48a8941": {
       "paper_id": "2603.06670",
@@ -58604,7 +58608,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe",
+      "compatible_fingerprints": []
     },
     "264ea3f37c8745a8c0a5c945699b4a87bc42f32b9f2ec6f9dde6352168388b70": {
       "paper_id": "2604.08074",
@@ -58656,7 +58661,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe",
+      "compatible_fingerprints": []
     },
     "2f9e038879663c983e5dc682645d615233333831f310d44c990a7da47b17395a": {
       "paper_id": "2604.05405",
@@ -58707,7 +58713,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079",
+      "compatible_fingerprints": []
     },
     "b76ba423859b919b6a8e8379dc03e6053a60b472aad02cbbc68304333676907e": {
       "paper_id": "2603.11566",
@@ -58758,7 +58765,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079",
+      "compatible_fingerprints": []
     },
     "1584c467798879e95d2073c9f2228861a4d48a3a7ac799965812bd590aff3e8b": {
       "paper_id": "2605.15937",
@@ -58840,7 +58848,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079",
+      "compatible_fingerprints": []
     },
     "82f2c0494349ebf9190198db8364ed4f18ec684c9df09004365973275dc35c68": {
       "paper_id": "doi:10.1609/aaai.v40i12.37916",
@@ -58892,7 +58901,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf",
+      "compatible_fingerprints": []
     },
     "4ebbc4d9e17bc31d2ea89fccea89f70faf9e195d03c730cc4b05762741322c0b": {
       "paper_id": "2608.00096",
@@ -58944,7 +58954,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf",
+      "compatible_fingerprints": []
     },
     "9327ca5a3cdedcfa9861200884e504916930c36d4db9172bec848a19454aba02": {
       "paper_id": "2511.13125",
@@ -58996,7 +59007,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf",
+      "compatible_fingerprints": []
     },
     "2a5ea1eeb65e2a4b77537ba0c5099507b9c21b67368da65aa60a49e192af9efc": {
       "paper_id": "2412.15595",
@@ -59048,7 +59060,206 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf",
+      "compatible_fingerprints": []
+    },
+    "919785ee6c1d913361153bdff893296437a8e6fce90336c3810896ba51c8862d": {
+      "paper_id": "2609.14619",
+      "title": "ESAFusion: LiDAR--4-D Radar Fusion via Local Geometric Complementation and Multiscale Adaptive Interaction for 3-D Object Detection",
+      "fingerprint": "919785ee6c1d913361153bdff893296437a8e6fce90336c3810896ba51c8862d",
+      "evaluation": {
+        "paper_id": "2609.14619",
+        "task_type": "LiDAR-4D雷达融合3D目标检测",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "we introduce an Evidence-Aware Radar Selection (ERS) module to suppress radar clutter using motion and observation-quality evidence while retaining foreground confidence for subsequent fusion.",
+            "interpretation_zh": "ERS模块利用运动与观测质量证据抑制雷达杂波并保留前景置信度，可用于多传感器检测中的噪声抑制。",
+            "inference": false
+          },
+          {
+            "quote_en": "the Pillar-Level Complementary Encoder (PCE) improves cross-modal complementation under mismatched spatial sampling using local geometric support from neighboring LiDAR pillars.",
+            "interpretation_zh": "PCE利用邻近柱体的局部几何支撑改善空间采样不匹配下的跨模态互补。",
+            "inference": false
+          },
+          {
+            "quote_en": "Intra- and Inter-Scale Adaptive Fusion (ISAF) module to adaptively adjust the contributions of different modalities and feature scales in bird's-eye-view (BEV) space.",
+            "interpretation_zh": "ISAF在BEV空间自适应调整不同模态和特征尺度的贡献。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "the Pillar-Level Complementary Encoder (PCE) improves cross-modal complementation under mismatched spatial sampling using local geometric support from neighboring LiDAR pillars.",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将基于邻近LiDAR柱的局部几何支撑替换为邻近雷达/视觉特征单元，构建跨模态局部邻域聚合，调整输入为稀疏雷达点云与视觉BEV特征，训练目标为多传感器目标检测。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未给出AIS或海事场景证据",
+          "方法面向陆上车载LiDAR-4D雷达，迁移到海上多传感器需重新设计空间邻域与杂波抑制",
+          "仅提供VoD实验结果，未验证其他传感器配置"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上多传感器融合检测，有具体跨模态互补与自适应融合机制，可迁移至雷达/视觉多传感器检测，但无海事场景。",
+        "confidence": 0.75,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "LiDAR与4D雷达空间采样不匹配和稀疏观测下的可靠跨模态融合3D检测",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出证据感知雷达选择、柱级互补编码和尺度内/间自适应融合框架",
+        "application_context": "自动驾驶复杂驾驶环境3D目标检测（VoD数据集）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2"
+    },
+    "6550b47d03369bdf19dbb8a8f16305b8c286a5baaf61b70bc6a4d68ff672948d": {
+      "paper_id": "2609.01041",
+      "title": "ViTAMINS: An Empirical Study of Training Self-Supervised Vision Transformers with Synthetic Hard Negatives",
+      "fingerprint": "6550b47d03369bdf19dbb8a8f16305b8c286a5baaf61b70bc6a4d68ff672948d",
+      "evaluation": {
+        "paper_id": "2609.01041",
+        "task_type": "自监督视觉Transformer预训练与合成困难负样本",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a method that integrates synthetic hard negatives into unsupervised vision transformer pretraining to improve representation quality.",
+            "interpretation_zh": "将合成困难负样本集成到无监督ViT预训练中以提升表征质量。",
+            "inference": false
+          },
+          {
+            "quote_en": "through simple modifications to existing contrastive frameworks and outperforms competing methods while being more resource efficient",
+            "interpretation_zh": "通过对现有对比框架的简单修改实现更优且更高效的性能。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a method that integrates synthetic hard negatives into unsupervised vision transformer pretraining to improve representation quality.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将合成困难负样本生成机制用于视觉-雷达/AIS跨模态对比学习，调整训练目标为跨模态匹配，输入为图像与雷达/AIS嵌入，负样本在跨模态嵌入空间合成。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及跨模态匹配或海事任务",
+          "合成困难负样本在跨模态场景的有效性未验证",
+          "摘要无AIS或船舶相关证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "通用视觉自监督方法，困难负样本机制可迁至跨模态匹配，但无直接海事或跨模态证据，迁移需较大调整。",
+        "confidence": 0.65,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "无监督ViT预训练中表征质量不足",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "将合成困难负样本引入对比式ViT预训练，提升表征与分类性能",
+        "application_context": "ImageNet及图像检索、复制检测、分割等通用视觉任务",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2"
+    },
+    "6946424742e08fc4418bd7de20333a944d1ca0923bf85ada2b6956cbf54c42b1": {
+      "paper_id": "2609.01787",
+      "title": "CoViT: Instance-Correspondence Contrastive Learning for Vision Transformer",
+      "fingerprint": "6946424742e08fc4418bd7de20333a944d1ca0923bf85ada2b6956cbf54c42b1",
+      "evaluation": {
+        "paper_id": "2609.01787",
+        "task_type": "实例对应对比学习视觉Transformer",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Hardest contrastive mining: For each anchor, computing pairwise embedding similarities to select the intra-instance hardest positive (least similar patch within its mask) and inter-instance hardest negative (most similar patch from other instances), with intra-instance regions masked during negative search.",
+            "interpretation_zh": "为每个锚点计算嵌入相似度，选择实例内最难正样本和跨实例最难负样本，并在负样本搜索时掩蔽实例内区域。",
+            "inference": false
+          },
+          {
+            "quote_en": "Attention-guided masking: Refine multi-head attention via adaptive thresholding and morphological operations to generate instance masks, identifying foreground anchors",
+            "interpretation_zh": "通过自适应阈值和形态学操作细化多头注意力以生成实例掩码并识别前景锚点。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Hardest contrastive mining: For each anchor, computing pairwise embedding similarities to select the intra-instance hardest positive (least similar patch within its mask) and inter-instance hardest negative (most similar patch from other instances), with intra-instance regions masked during negative search.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将实例内/间最难正负样本挖掘用于视觉-雷达/AIS跨模态匹配，调整输入为双模态特征嵌入，训练目标为跨模态实例级对比损失，并在负样本搜索时掩蔽同目标区域。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及跨模态匹配或海事场景",
+          "方法依赖单模态注意力掩码生成实例掩码，跨模态需额外对齐",
+          "无AIS或船舶相关证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "通用视觉对比学习方法，提供实例级困难样本挖掘机制，可迁移至跨模态匹配，但无直接海事证据且迁移需设计。",
+        "confidence": 0.65,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "ViT缺乏实例级判别能力，影响检测与实例分割",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出几何引导的实例对应对比学习框架，通过注意力掩码与最难样本挖掘增强ViT实例感知",
+        "application_context": "通用视觉实例级感知任务（目标检测、实例分割）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2"
+    },
+    "6266c1266d4b8c6e6a7c89e34c2696ffdcdfb73eae4049408ae2d9b393fd0134": {
+      "paper_id": "2606.09634",
+      "title": "ATN3D: Density-Aware LiDAR-Radar Early 3D Object Detection Under Extreme Sparsity",
+      "fingerprint": "6266c1266d4b8c6e6a7c89e34c2696ffdcdfb73eae4049408ae2d9b393fd0134",
+      "evaluation": {
+        "paper_id": "2606.09634",
+        "task_type": "LiDAR-雷达早期融合稀疏3D目标检测",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Density-aware early fusion with cross-modal gating that conditions fusion on per-voxel density/sparsity and Radar evidence",
+            "interpretation_zh": "密度感知早期融合以逐体素密度/稀疏度和雷达证据为条件进行跨模态门控。",
+            "inference": false
+          },
+          {
+            "quote_en": "Occupancy-gated neighborhood aggregation with circular kernels to aggregate only from credible cells",
+            "interpretation_zh": "占用门控邻域聚合使用圆形核仅从可信单元聚合信息。",
+            "inference": false
+          },
+          {
+            "quote_en": "Evidence-conditioned channel self-attention to adapt channel weights with weather/range",
+            "interpretation_zh": "证据条件通道自注意力根据天气/距离自适应通道权重。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Density-aware early fusion with cross-modal gating that conditions fusion on per-voxel density/sparsity and Radar evidence",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将逐体素密度/稀疏度门控迁移至雷达-视觉多传感器检测，输入改为雷达点云体素与视觉特征，训练目标为多传感器目标检测，保留可信单元聚合。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及AIS或海事场景",
+          "方法面向车载LiDAR-雷达，海上传感器配置差异大",
+          "仅VoD数据集验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上多传感器稀疏融合检测，提供密度感知门控与可信邻域聚合，可迁移至雷达/视觉多传感器检测，但无海事场景。",
+        "confidence": 0.75,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "极端稀疏条件下早期多模态融合丢弃稀疏信息并注入噪声，远距离小目标检测性能下降",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出密度感知早期融合、占用门控邻域聚合、证据条件通道自注意力和距离感知损失",
+        "application_context": "自动驾驶与智能交通系统远距离3D目标检测（VoD晴/雾条件）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2"
     }
   }
 }

@@ -2,50 +2,6 @@
   "date": "2026-11-08",
   "papers": [
     {
-      "paper_id": "doi:10.1109/icmlt69916.2026.11688998",
-      "title": "Real-Time Edge AI Camera-Radar Fusion for MOT with YOLOv11 and ByteTrack",
-      "authors": [
-        "Raghunath Mallavarapu",
-        "P. Kanaka Raju"
-      ],
-      "published": "2026-05-01",
-      "arxiv_url": "",
-      "doi": "10.1109/icmlt69916.2026.11688998",
-      "original_url": "https://doi.org/10.1109/icmlt69916.2026.11688998",
-      "pdf_url": "",
-      "open_access_url": "",
-      "venue": "International Conference on Machine Learning Technologies (ICMLT)",
-      "abstract": "Multi-sensor data fusion (MSDF) is a critical research area for Advanced Driver Assistance Systems (ADAS) and Autonomous Driving. By combining data from complementary sensors such as cameras, radars, and LiDARs, fusion techniques overcome the inherent limitations of individual sensors, significantly reducing uncertainty and increasing perception reliability. This paper focused on a novel, real-time multi-sensor data fusion (MSDF) architecture that collectively optimizes object detection, tracking, and multi-sensor consistent information for ADAS algorithms. In this approach, a YOLOv11n is deployed on a high-performance Hailo AI (8L) accelerator for camera-based detection. The detected results are processed through the ByteTrack algorithm for object tracking, and a K-MD7 24GHz Radar with built-in object tracking is also deployed to track object information. The collected camera and radar data are processed through a tightly coupled fusion module that performs association via the Hungarian algorithm and uses the Maximum Likelihood Estimation(MLE) for state estimation. This coordinated combination of a high-speed vision pipeline and precise radar measurements produces a markedly more robust and consistent perception output compared to single-sensor approaches.",
-      "resource_type": "conference_paper",
-      "oa_evidence": false,
-      "validity": {
-        "status": "unverified"
-      },
-      "first_author": "Raghunath Mallavarapu",
-      "first_author_affiliations": [
-        "GITAM School of Science. (of GITAM Deemed to be University.)"
-      ],
-      "affiliation_source": "OpenAlex first authorship",
-      "affiliation_verified": true,
-      "affiliation_evidence": null,
-      "corresponding_authors": null,
-      "corresponding_author_source": null,
-      "corresponding_author_verified": false,
-      "source": "ICML 2026 · CCF A",
-      "reason": "陆上相机-雷达紧耦合关联与MLE状态估计对雷达-AIS/视觉-AIS关联有可迁移结构，直接相关性中等，适合候选",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ficmlt69916.2026.11688998",
-      "score": 17,
-      "rule_level": "方法可借鉴",
-      "level": "直接相关",
-      "ai_score": 60,
-      "selection_source": "近期新论文",
-      "summary_zh": "该论文面向ADAS与自动驾驶的多传感器融合问题，提出一种实时边缘AI架构，在Hailo加速器上部署YOLOv11n检测并结合ByteTrack跟踪与24GHz雷达目标跟踪，通过匈牙利算法关联和最大似然估计进行状态估计，从而提升目标检测跟踪的鲁棒性与一致性。",
-      "migration_zh": "研究推断：可将该相机–雷达紧耦合关联（匈牙利匹配加MLE状态估计）迁移到船舶检测中的视觉–Radar融合模块，输入为YOLO检测框与雷达跟踪点，监督为关联标签及状态真值，结构上增加多传感器一致性融合层以提升跟踪鲁棒性。",
-      "abstract_zh": "多传感器数据融合（MSDF）是高级驾驶辅助系统（ADAS）与自动驾驶的关键研究领域。通过融合相机、雷达和LiDAR等互补传感器数据，融合技术克服了单个传感器的固有局限，显著降低不确定性并提高感知可靠性。本文聚焦一种新颖的实时多传感器数据融合（MSDF）架构，该架构针对ADAS算法联合优化目标检测、跟踪与多传感器一致信息。在该方法中，YOLOv11n部署于高性能Hailo AI（8L）加速器以进行基于相机的检测。检测结果经ByteTrack算法处理以实现目标跟踪，同时部署内置目标跟踪的K-MD7 24GHz Radar以跟踪目标信息。采集的相机与雷达数据经紧耦合融合模块处理，该模块通过匈牙利算法进行关联，并使用最大似然估计（MLE）进行状态估计。这种高速视觉流水线与精确雷达测量的协同组合，相比单传感器方法产生了显著更鲁棒且一致的感知输出。",
-      "translation_source": "deepseek",
-      "translation_error": ""
-    },
-    {
       "paper_id": "2504.09197",
       "title": "Graph Learning-Driven Multi-Vessel Association: Fusing Multimodal Data for Maritime Intelligence",
       "authors": [
@@ -94,46 +50,52 @@
       "translation_error": ""
     },
     {
-      "paper_id": "2603.06670",
-      "title": "calibfusion: Transformer-Based Differentiable Calibration for Radar-Camera Fusion Detection in Water-Surface Environments",
+      "paper_id": "2604.24044",
+      "title": "CLLAP: Contrastive Learning-based LiDAR-Augmented Pretraining for Enhanced Radar-Camera Fusion",
       "authors": [
-        "Yuting Wan",
-        "Liguo Sun",
-        "Jiuwu Hao",
-        "Pin Lv"
+        "Bingyi Liu",
+        "Chuanhui Zhu",
+        "Hongfei Xue",
+        "Jian Teng",
+        "Jipeng Liu",
+        "Enshu Wang",
+        "Penglin Dai",
+        "Pu Wang"
       ],
-      "published": "2026-03-03",
-      "arxiv_url": "https://arxiv.org/abs/2603.06670",
-      "doi": "10.48550/arxiv.2603.06670",
-      "original_url": "https://doi.org/10.48550/arxiv.2603.06670",
-      "pdf_url": "https://arxiv.org/pdf/2603.06670",
-      "open_access_url": "https://arxiv.org/pdf/2603.06670",
+      "published": "2026-04-27",
+      "arxiv_url": "https://arxiv.org/abs/2604.24044",
+      "doi": "10.48550/arxiv.2604.24044",
+      "original_url": "https://doi.org/10.48550/arxiv.2604.24044",
+      "pdf_url": "https://arxiv.org/pdf/2604.24044",
+      "open_access_url": "https://arxiv.org/pdf/2604.24044",
       "venue": "arXiv (Cornell University)",
-      "abstract": "Millimeter-wave (mmWave) Radar--Camera fusion improves perception under adverse illumination and weather, but its performance is sensitive to Radar--Camera extrinsic calibration: residual misalignment biases Radar-to-image projection and degrades cross-modal aggregation for downstream 2D detection. Existing calibration and auto-calibration methods are mainly developed for road and urban scenes with abundant structures and object constraints, whereas water-surface environments feature large textureless regions, sparse and intermittent targets, and wave-/specular-induced Radar clutter, which weakens explicit object-centric matching. We propose CalibFusion, a calibration-conditioned Radar--Camera fusion detector that learns implicit extrinsic refinement end-to-end with the detection objective. CalibFusion builds a multi-frame persistence-aware Radar density representation with intensity weighting and Doppler-guided suppression of fast-varying clutter. A cross-modal transformer interaction module predicts a confidence-gated refinement of the initial extrinsics, which is integrated through a differentiable projection-and-splatting operator to generate calibration-conditioned image-plane Radar features. Experiments on WaterScenes and FLOW show improved fusion-based 2D detection and robustness under synthetic miscalibration, supported by sensitivity analyses and qualitative Radar-to-image overlays. Results on nuScenes indicate that the refinement mechanism transfers beyond water-surface scenarios.",
+      "abstract": "Accurate 3D object detection is critical for autonomous driving, necessitating reliable, cost-effective sensors capable of operating in adverse weather conditions. Camera and millimeter-wave radar fusion has emerged as a promising solution; however, these methods often rely on finely annotated radar data, which is scarce and labor-intensive to produce. To address this challenge, we present CLLAP, a Contrastive Learning-based LiDAR-Augmented Pretraining framework that enhances the performance of existing radar-camera fusion methods for 3D object detection. CLLAP leverages abundant LiDAR data to generate pseudo-radar data using the proposed L2R (LiDAR-to-Radar) Sampling method. Then, it incorporates this data into a novel dual-stage, dual-modality contrastive learning strategy, enabling effective self-supervised learning from paired pseudo-radar and image data. This approach facilitates effective pretraining of existing radar-camera fusion models in a plug-and-play manner, enhancing their feature extraction capabilities and improving detection accuracy and robustness. Experimental results using NuScenes and Lyft Level 5 datasets demonstrate significant performance improvements across three baseline models, highlighting CLLAP's effectiveness in advancing radar-camera fusion for autonomous driving applications.",
       "resource_type": "preprint",
       "oa_evidence": true,
       "validity": {
         "status": "unverified"
       },
-      "first_author": "Yuting Wan",
-      "first_author_affiliations": [],
-      "affiliation_source": "",
-      "affiliation_verified": false,
+      "first_author": "Bingyi Liu",
+      "first_author_affiliations": [
+        "Wuhan University of Technology"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
       "affiliation_evidence": null,
       "corresponding_authors": null,
       "corresponding_author_source": null,
       "corresponding_author_verified": false,
       "source": "arXiv",
-      "reason": "水面雷达-相机融合与可微标定对海事感知直接相关；跨模态可微投影机制可迁移到雷达-视觉关联，但需适配动态平台。",
-      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2603.06670",
+      "reason": "属陆上雷达-相机融合检测，直接相关性中等；双模态对比自监督预训练机制可迁移到跨模态匹配，但需具体适配，摘要未涉及海事。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2604.24044",
       "score": 12,
       "rule_level": "方法可借鉴",
       "level": "直接相关",
-      "ai_score": 60,
+      "ai_score": 44,
       "selection_source": "近期新论文",
-      "summary_zh": "针对水面场景雷达-相机外参残余失配导致投影偏差与融合检测退化的问题，提出CalibFusion以检测目标端到端学习隐式外参精化，并构建多帧持久性雷达密度表示与可微投影-溅射融合模块提升2D检测鲁棒性。",
-      "migration_zh": "研究推断：可将置信门控外参精化与可微投影-溅射模块迁移至船舶雷达-视觉或Radar-AIS关联检测中，以多帧持久性雷达密度为输入、检测损失为监督，替换固定外参投影层以增强跨模态特征对齐。",
-      "abstract_zh": "毫米波（mmWave）雷达--相机融合可在不利光照与天气下改善感知，但其性能对雷达--相机外参标定敏感：残余失配会使雷达到图像的投影产生偏差，并降低下游2D检测的跨模态聚合效果。现有标定与自标定方法主要面向结构丰富、目标约束充足的道路与城市场景，而水面环境具有大片无纹理区域、稀疏且间歇的目标以及波浪/镜面反射引起的雷达杂波，削弱了显式的以目标为中心的匹配。我们提出CalibFusion，一种标定条件化的雷达--相机融合检测器，以检测目标端到端地学习隐式外参精化。CalibFusion构建多帧持久性感知的雷达密度表示，采用强度加权与多普勒引导的快速变化杂波抑制。跨模态Transformer交互模块预测对初始外参的置信门控精化，并通过可微投影-溅射算子进行整合，以生成标定条件化的图像平面雷达特征。在WaterScenes与FLOW上的实验表明，融合式2D检测得到改善，且在合成失配下具有鲁棒性，并辅以敏感性分析与定性的雷达到图像叠加结果。nuScenes上的结果表明，该精化机制可迁移到水面场景之外。",
+      "summary_zh": "论文提出CLLAP预训练框架，用LiDAR生成伪雷达数据并结合双阶段双模态对比学习，提升现有雷达-相机融合3D检测模型的性能与鲁棒性。",
+      "migration_zh": "研究推断：可将L2R采样生成伪Radar与双阶段对比预训练迁移至Radar–AIS或视觉–AIS关联，在融合编码器前以伪模态输入和无标注对齐监督增强特征，并调整双分支对比结构。",
+      "abstract_zh": "准确的3D目标检测对自动驾驶至关重要，需要可靠、低成本且能在恶劣天气条件下工作的传感器。相机与毫米波雷达融合已成为一种有前景的解决方案；然而，这些方法通常依赖精细标注的雷达数据，而此类数据稀缺且标注劳动强度大。为应对这一挑战，我们提出CLLAP，一种基于对比学习的LiDAR增强预训练框架，可提升现有雷达-相机融合方法在3D目标检测中的性能。CLLAP利用丰富的LiDAR数据，通过所提出的L2R（LiDAR-to-Radar）采样方法生成伪雷达数据。然后，它将这些数据纳入一种新颖的双阶段、双模态对比学习策略，从而能够从配对的伪雷达与图像数据中进行有效的自监督学习。该方法以即插即用的方式促进现有雷达-相机融合模型的有效预训练，增强其特征提取能力并提高检测精度与鲁棒性。使用NuScenes和Lyft Level 5数据集的实验结果表明，三个基线模型均取得显著的性能提升，凸显了CLLAP在推进自动驾驶雷达-相机融合方面的有效性。",
       "translation_source": "deepseek",
       "translation_error": ""
     },
@@ -184,6 +146,48 @@
       "translation_error": ""
     },
     {
+      "paper_id": "2606.09634",
+      "title": "ATN3D: Density-Aware LiDAR-Radar Early 3D Object Detection Under Extreme Sparsity",
+      "authors": [
+        "Debojyoti Biswas",
+        "Xianbiao Hu"
+      ],
+      "published": "2026-06-08",
+      "arxiv_url": "https://arxiv.org/abs/2606.09634",
+      "doi": "10.48550/arxiv.2606.09634",
+      "original_url": "https://doi.org/10.48550/arxiv.2606.09634",
+      "pdf_url": "https://arxiv.org/pdf/2606.09634",
+      "open_access_url": "https://arxiv.org/pdf/2606.09634",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "3D object detection is the backbone of perception for automated vehicles (AV) and broader intelligent transportation systems applications. Long-range detection is challenging because sensing evidence is sparse; yet this ``long-range'' scenario is routine in traffic. Although >30m is often labeled long-range in computer vision, on roadways it affords only approx. 1-2s for perception and decision-making. Under such extreme sparsity, two core challenges arise. First, early multimodal fusion tends to discard sparsity information and inject noise from empty or falsely occupied cells, degrading long-range recall. Second, context-agnostic uniform channel supervision favors dense and near-range samples, leaving far and small objects under-optimized, delaying the earliest detection of distant objects. We propose ``Ask The Neighbor'' (ATN3D), a LiDAR-Radar framework tailored for sparse-range conditions. ATN3D introduces (i) Density-aware early fusion with cross-modal gating that conditions fusion on per-voxel density/sparsity and Radar evidence, (ii) Occupancy-gated neighborhood aggregation with circular kernels to aggregate only from credible cells, (iii) Evidence-conditioned channel self-attention to adapt channel weights with weather/range, and (iv) a Range-aware loss that re-balances classification and localization by distance, aligning training with distance-stratified evaluation. On the VoD benchmark across clear and foggy conditions, ATN3D surpasses strong baselines: +3.55% mAP in clear weather and +8.41% mAP under simulated heavy fog; for >30m objects, gains are +3.33% (clear) and +2.09% (heavy fog). These results indicate earlier and more reliable long-range detections under sparse sensing in on-road traffic.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Debojyoti Biswas",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "arXiv",
+      "reason": "陆上多传感器稀疏融合检测，提供密度感知门控与可信邻域聚合，可迁移至雷达/视觉多传感器检测，但无海事场景。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2606.09634",
+      "score": 16,
+      "rule_level": "方法可借鉴",
+      "level": "直接相关",
+      "ai_score": 44,
+      "selection_source": "近期新论文",
+      "summary_zh": "针对极端稀疏条件下远距离3D目标检测中早期融合丢失稀疏信息、均匀监督偏袒近距密集样本的问题，提出密度感知的LiDAR-Radar早期融合框架ATN3D，在VoD数据集雾天和晴天均提升mAP与远距召回。",
+      "migration_zh": "研究推断：可将密度感知跨模态门控与占用门控邻域聚合迁移至Radar–AIS或视觉–AIS关联前端，以体素/单元稀疏度与可信证据为门控输入，保留远距小目标特征并抑制空单元噪声。",
+      "abstract_zh": "3D目标检测是自动驾驶汽车（AV）及更广泛智能交通系统应用感知的骨干。远距离检测具有挑战性，因为传感证据稀疏；然而这种“远距离”场景在交通中是常态。尽管在计算机视觉中超过30m常被标为远距离，在道路上它仅提供约1-2s的感知与决策时间。在这种极端稀疏下，出现两个核心挑战。第一，早期多模态融合倾向于丢弃稀疏信息，并从空或虚假占用单元注入噪声，降低远距离召回。第二，上下文无关的均匀通道监督偏向密集和近距样本，使远距和小目标优化不足，延迟对远处目标的最早检测。我们提出“Ask The Neighbor”（ATN3D），一个面向稀疏距离条件的LiDAR-Radar框架。ATN3D引入（i）密度感知早期融合与跨模态门控，以逐体素密度/稀疏度和Radar证据为条件进行融合，（ii）占用门控邻域聚合与圆形核，仅从可信单元聚合，（iii）证据条件通道自注意力，随天气/距离自适应通道权重，以及（iv）距离感知损失，按距离重新平衡分类与定位，使训练与距离分层评估对齐。在VoD基准的晴天和雾天条件下，ATN3D超越强基线：晴天mAP +3.55%，模拟浓雾下mAP +8.41%；对于>30m目标，增益为+3.33%（晴天）和+2.09%（浓雾）。这些结果表明在道路上稀疏传感下更早、更可靠的远距离检测。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
       "paper_id": "2611.04034",
       "title": "Do Pretrained Backbones Transfer to Physical Sensors? A Systematic Study of Multimodal Initialization Across the Sensor Stack",
       "authors": [
@@ -230,23 +234,23 @@
     }
   ],
   "selection_audit": {
-    "candidate_count": 1324,
-    "ai_reviewed": 897,
+    "candidate_count": 1320,
+    "ai_reviewed": 895,
     "ai_states": {
-      "evaluated": 897,
-      "uncertain": 371,
+      "evaluated": 895,
+      "uncertain": 373,
       "domain_excluded": 5,
-      "unassessed": 51
+      "unassessed": 47
     },
     "stage_counts": {
-      "0": 66,
+      "0": 63,
       "1": 46,
-      "2": 1171,
+      "2": 1170,
       "3": 41
     },
-    "ai_rejected": 891,
+    "ai_rejected": 890,
     "translation_deferred": 0,
-    "qualified_count": 6,
+    "qualified_count": 5,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [],

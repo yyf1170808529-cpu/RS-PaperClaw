@@ -1,34 +1,58 @@
 {
-  "run_id": "2026-11-08T05:52:11.993018+00:00",
-  "completed_at": "2026-11-08T06:03:11.537880+00:00",
+  "run_id": "2026-11-08T06:14:43.817949+00:00",
+  "completed_at": "2026-11-08T06:19:15.766965+00:00",
   "local_update": "success",
   "jobs": 0,
   "successful": 0,
   "incomplete": 0,
   "failed": 0,
-  "added": 375,
+  "added": 0,
   "filled": 0,
   "merged": 0,
-  "before_count": 4300,
+  "before_count": 4675,
   "after_count": 4675,
   "translation": {
-    "translated": 4,
+    "translated": 2,
     "failed": 0,
-    "cached": 1,
+    "cached": 3,
     "manual": 0,
     "pending": 0,
     "missing_english": 0,
     "skipped_failed": 0,
     "attempted_ids": [
-      "2611.04034"
+      "2504.09197",
+      "2604.24044",
+      "2606.09634",
+      "2611.04034",
+      "doi:10.1609/aaai.v40i12.37916"
     ],
     "replacement_failures": [],
-    "selected": 1,
+    "selected": 5,
     "engine": "DeepSeek",
-    "api_calls": 4,
-    "cost_upper_cny": 0.017462000000000005,
-    "priced_cost_cny": 0.008731000000000003,
+    "api_calls": 2,
+    "cost_upper_cny": 0.00903000000000001,
+    "priced_cost_cny": 0.004514999999999991,
     "papers": [
+      {
+        "paper_id": "2504.09197",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "2604.24044",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "doi:10.1609/aaai.v40i12.37916",
+        "source": "deepseek",
+        "error": ""
+      },
+      {
+        "paper_id": "2606.09634",
+        "source": "deepseek",
+        "error": ""
+      },
       {
         "paper_id": "2611.04034",
         "source": "deepseek",
@@ -57,37 +81,83 @@
     [
       "doi:10.46299/isg.2026.2.6",
       "doi:10.46299/isg.p.2026.2.6"
+    ],
+    [
+      "2611.04300",
+      "doi:10.48550/arxiv.2611.04300"
+    ],
+    [
+      "2604.24044",
+      "doi:10.1109/cvprf71909.2026.00014"
     ]
   ],
   "ai": {
-    "status": "cached",
-    "processed": 16,
-    "cached": 1257,
+    "status": "partial",
+    "processed": 4,
+    "cached": 1269,
     "failed": 0,
-    "cost_upper_cny": 0.09548336,
-    "priced_cost_cny": 0.04774168,
-    "unsettled_upper_cny": 0.0,
-    "tokens": 27062,
+    "cost_upper_cny": 0.05133168,
+    "priced_cost_cny": 0.02566584,
+    "unsettled_upper_cny": 0,
+    "tokens": 14378,
     "missing_abstract": 0,
-    "candidate_count": 1257,
+    "candidate_count": 1320,
     "already_attempted_today": 0,
-    "pending_total": 0,
+    "pending_total": 51,
     "limit_deferred": 0,
-    "selected_count": 1,
-    "ai_reviewed": 889,
-    "shortfall": 4,
+    "selected_count": 5,
+    "ai_reviewed": 895,
+    "reason": "Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "shortfall": 0,
     "ai_states": {
-      "evaluated": 889,
-      "uncertain": 364,
-      "domain_excluded": 4
+      "evaluated": 895,
+      "uncertain": 373,
+      "domain_excluded": 5,
+      "unassessed": 47
     },
-    "publication_status": "partial",
-    "reserve_available": 1
+    "publication_status": "complete",
+    "reserve_available": 2
   },
   "affiliations": [
     {
+      "paper_id": "2504.09197",
+      "status": "cached_verified",
+      "source": "OpenAlex first authorship"
+    },
+    {
+      "paper_id": "doi:10.1609/aaai.v40i12.37916",
+      "status": "cached_verified",
+      "source": "OpenAlex first authorship"
+    },
+    {
       "paper_id": "2611.04034",
       "status": "cached_unverified"
+    },
+    {
+      "paper_id": "2606.09634",
+      "revision": 1,
+      "time": "2026-11-08T06:17:49.203318+00:00",
+      "status": "unverified",
+      "attempts": [
+        {
+          "source": "crossref",
+          "status": "unavailable",
+          "error": "api.crossref.org HTTP 404: Resource not found."
+        },
+        {
+          "source": "openalex",
+          "status": "received"
+        },
+        {
+          "source": "arxiv",
+          "status": "received"
+        }
+      ]
+    },
+    {
+      "paper_id": "2604.24044",
+      "status": "cached_verified",
+      "source": "OpenAlex first authorship"
     }
   ],
   "daily_selected": 5,
@@ -99,166 +169,10 @@
   "ai_status": "success",
   "translation_status": "success",
   "selection_status": "complete",
-  "publication_status": "complete",
+  "publication_status": "published",
   "sync_status": "not_attempted",
   "pages_status": "not_attempted",
-  "supplement": [
-    {
-      "round": 1,
-      "date": "2026-11-08",
-      "jobs": [
-        {
-          "source": "openalex",
-          "query": "vessel instance segmentation AIS vision",
-          "direction": "water",
-          "journal": null,
-          "start": "2025-11-09",
-          "end": "2026-11-08",
-          "status": "incomplete",
-          "retrieved": 100,
-          "added": 91,
-          "source_eligible": 4
-        },
-        {
-          "source": "openalex",
-          "query": "camera lidar radar object detection fusion",
-          "direction": "land",
-          "journal": null,
-          "start": "2025-11-09",
-          "end": "2026-11-08",
-          "status": "incomplete",
-          "retrieved": 100,
-          "added": 91,
-          "source_eligible": 23
-        },
-        {
-          "source": "openalex",
-          "query": "visual hard negative contrastive learning",
-          "direction": "general",
-          "journal": null,
-          "start": "2025-11-09",
-          "end": "2026-11-08",
-          "status": "incomplete",
-          "retrieved": 100,
-          "added": 99,
-          "source_eligible": 39
-        },
-        {
-          "source": "crossref",
-          "query": "vessel instance segmentation AIS vision",
-          "direction": "water",
-          "journal": "ocean-engineering",
-          "start": "2025-11-09",
-          "end": "2026-11-08",
-          "status": "incomplete",
-          "retrieved": 100,
-          "added": 94,
-          "source_eligible": 0
-        },
-        {
-          "source": "arxiv",
-          "query": "camera lidar radar object detection fusion",
-          "direction": "land",
-          "journal": null,
-          "start": "2025-11-09",
-          "end": "2026-11-08",
-          "status": "failed",
-          "error": "Candidate scan exceeded 1 pages; narrow dates/topics or increase --max-pages"
-        },
-        {
-          "source": "arxiv",
-          "query": "visual hard negative contrastive learning",
-          "direction": "general",
-          "journal": null,
-          "start": "2025-11-09",
-          "end": "2026-11-08",
-          "status": "failed",
-          "error": "Candidate scan exceeded 1 pages; narrow dates/topics or increase --max-pages"
-        }
-      ],
-      "added": 375,
-      "research_eligible": 66,
-      "ai": {
-        "status": "success",
-        "processed": 16,
-        "cached": 1257,
-        "failed": 0,
-        "cost_upper_cny": 0.09548336,
-        "priced_cost_cny": 0.04774168,
-        "unsettled_upper_cny": 0.0,
-        "tokens": 27062,
-        "missing_abstract": 0,
-        "candidate_count": 1324,
-        "already_attempted_today": 0,
-        "pending_total": 67,
-        "limit_deferred": 51,
-        "selected_count": 5,
-        "ai_reviewed": 897,
-        "shortfall": 0,
-        "ai_states": {
-          "evaluated": 897,
-          "uncertain": 371,
-          "domain_excluded": 5,
-          "unassessed": 51
-        },
-        "publication_status": "complete",
-        "reserve_available": 6
-      },
-      "ai_qualified": 5,
-      "translation": {
-        "translated": 4,
-        "failed": 0,
-        "cached": 1,
-        "manual": 0,
-        "pending": 0,
-        "missing_english": 0,
-        "skipped_failed": 0,
-        "attempted_ids": [
-          "2504.09197",
-          "2603.06670",
-          "2611.04034",
-          "doi:10.1109/icmlt69916.2026.11688998",
-          "doi:10.1609/aaai.v40i12.37916"
-        ],
-        "replacement_failures": [],
-        "selected": 5,
-        "engine": "DeepSeek",
-        "api_calls": 4,
-        "cost_upper_cny": 0.017462000000000005,
-        "priced_cost_cny": 0.008731000000000003,
-        "papers": [
-          {
-            "paper_id": "doi:10.1109/icmlt69916.2026.11688998",
-            "source": "deepseek",
-            "error": ""
-          },
-          {
-            "paper_id": "2504.09197",
-            "source": "deepseek",
-            "error": ""
-          },
-          {
-            "paper_id": "2603.06670",
-            "source": "deepseek",
-            "error": ""
-          },
-          {
-            "paper_id": "doi:10.1609/aaai.v40i12.37916",
-            "source": "deepseek",
-            "error": ""
-          },
-          {
-            "paper_id": "2611.04034",
-            "source": "deepseek",
-            "error": ""
-          }
-        ]
-      },
-      "complete": 5,
-      "elapsed_seconds": 329.81,
-      "gained": 4
-    }
-  ],
-  "retrieval_status": "partial",
-  "github_run_id": "42452360901"
+  "supplement": [],
+  "retrieval_status": "not_run_resume",
+  "github_run_id": "42453895648"
 }

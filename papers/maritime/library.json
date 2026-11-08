@@ -74211,6 +74211,33 @@
             "url": "https://openalex.org/W4416258280",
             "type": "article"
           }
+        },
+        {
+          "doi": "10.1016/j.inffus.2026.104377",
+          "arxiv_id": "2509.18613",
+          "title": "MLF-4DRCNet: Multi-level fusion with 4D radar and camera for 3D object detection in autonomous driving",
+          "authors": [
+            "Yuzhi Wu",
+            "Li Xiao",
+            "Jun Liu",
+            "Guangfeng Jiang",
+            "Xiang-Gen Xia"
+          ],
+          "abstract": "",
+          "metadata_source": [
+            "Crossref",
+            "OpenAlex"
+          ],
+          "publication_date": "2026-10",
+          "venue": "Information Fusion",
+          "first_author_affiliations": [
+            "MoE Key Laboratory of Brain-Inspired Intelligence Perception and Cognition, University of Science and Technology of China, Hefei, 230052, China"
+          ],
+          "publication_evidence": {
+            "source": "Crossref",
+            "url": "https://api.crossref.org/works/10.1016%2Fj.inffus.2026.104377",
+            "type": "journal-article"
+          }
         }
       ],
       "doi": "10.1016/j.inffus.2026.104377",
@@ -109182,6 +109209,36 @@
             "source": "OpenAlex",
             "url": "https://openalex.org/W7131821530",
             "type": "article"
+          }
+        },
+        {
+          "doi": "10.1016/j.patcog.2026.113398",
+          "arxiv_id": null,
+          "title": "SWG-Fusion: Soft weather-guided multimodal fusion with VLM-assistance for BEV object detection under harsh weather",
+          "authors": [
+            "Weimin Wang",
+            "Ruifeng Nie",
+            "Yingchi Liu",
+            "Long Ma",
+            "Chengpei Xu",
+            "Qi Jia",
+            "Yu Liu",
+            "Na Lei"
+          ],
+          "abstract": "",
+          "metadata_source": [
+            "Crossref",
+            "OpenAlex"
+          ],
+          "publication_date": "2026-10",
+          "venue": "Pattern Recognition",
+          "first_author_affiliations": [
+            "School of Software, Dalian University of Technology, Dalian, 116000, China"
+          ],
+          "publication_evidence": {
+            "source": "Crossref",
+            "url": "https://api.crossref.org/works/10.1016%2Fj.patcog.2026.113398",
+            "type": "journal-article"
           }
         }
       ],
@@ -147204,6 +147261,31 @@
           "abstract": "Vessel perception from space is crucial for a wide range of maritime applications, from traffic monitoring to environmental protection. However, most existing datasets predominantly focus on general object detection tasks in optical remote sensing (RS) images. Relying solely on single-modality optical RS images proves inadequate for effectively perceiving vessel objects in complex maritime scenarios, where ever-changing weather conditions (e.g., clouds and rain), the need for day-and-night coverage, and the inherent limitations of a single imaging modality pose significant challenges. To fill this gap, we introduce VesselBench-800K, the largest-to-date benchmark dataset on a global scale for vessel perception in multimodal RS images. As its name suggests, VesselBench-800K comprises 800,000 images, each at a resolution of 512x512 pixels, specifically curated for vessel perception tasks such as detection, counting, and density estimation. These multimodal image pairs (i.e., optical, SAR) are collected from diverse platforms, sensors, scenes, shooting heights, and synthetic sources, spanning spatial resolutions from 4.5m to 0.1m. Furthermore, we evaluate numerous state-of-the-art detection, counting, and density estimation models on VesselBench-800K through both qualitative and quantitative comparisons. By revealing previously unrecognized cues, this dataset holds immense potential to significantly advance our understanding of marine traffic. Our VesselBench dataset will be publicly available at https://github.com/danfenghong/IEEE_TGRS_VesselBench to support and contribute to community development.",
           "metadata_source": [
             "OpenAlex"
+          ],
+          "publication_date": "2026-01-01",
+          "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+          "first_author_affiliations": [
+            "Southeast University"
+          ],
+          "publication_evidence": {
+            "source": "OpenAlex",
+            "url": "https://openalex.org/W7214997550",
+            "type": "article"
+          }
+        },
+        {
+          "doi": "10.1109/tgrs.2026.3749162",
+          "arxiv_id": "2609.37003",
+          "title": "VesselBench-800K: A Large-scale Perception Benchmark for Multimodal Vessel Detection, Counting, and Density Estimation",
+          "authors": [
+            "Danfeng Hong",
+            "Chenyu Li",
+            "Jocelyn Chanussot"
+          ],
+          "abstract": "Vessel perception from space is crucial for a wide range of maritime applications, from traffic monitoring to environmental protection. However, most existing datasets predominantly focus on general object detection tasks in optical remote sensing (RS) images. Relying solely on single-modality optical RS images proves inadequate for effectively perceiving vessel objects in complex maritime scenarios, where ever-changing weather conditions (e.g., clouds and rain), the need for day-and-night coverage, and the inherent limitations of a single imaging modality pose significant challenges. To fill this gap, we introduce VesselBench-800K, the largest-to-date benchmark dataset on a global scale for vessel perception in multimodal RS images. As its name suggests, VesselBench-800K comprises 800,000 images, each at a resolution of 512x512 pixels, specifically curated for vessel perception tasks such as detection, counting, and density estimation. These multimodal image pairs (i.e., optical, SAR) are collected from diverse platforms, sensors, scenes, shooting heights, and synthetic sources, spanning spatial resolutions from 4.5m to 0.1m. Furthermore, we evaluate numerous state-of-the-art detection, counting, and density estimation models on VesselBench-800K through both qualitative and quantitative comparisons. By revealing previously unrecognized cues, this dataset holds immense potential to significantly advance our understanding of marine traffic. Our VesselBench dataset will be publicly available at https://github.com/danfenghong/IEEE_TGRS_VesselBench to support and contribute to community development.",
+          "metadata_source": [
+            "OpenAlex",
+            "arXiv"
           ],
           "publication_date": "2026-01-01",
           "venue": "IEEE Transactions on Geoscience and Remote Sensing",
@@ -246849,10 +246931,10 @@
       "jcr_partitions": [],
       "recommendation": {
         "section": "candidate",
-        "direct_relevance": 2,
-        "maritime": false,
+        "direct_relevance": 3,
+        "maritime": true,
         "bucket": "candidate",
-        "application": "general",
+        "application": "maritime",
         "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
@@ -246880,7 +246962,7 @@
         "reason": "",
         "raw_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "application_bucket": "general",
+      "application_bucket": "water",
       "semantic": null,
       "daily_domain_exclusion": null,
       "research_directions": [],
@@ -265468,10 +265550,10 @@
       "jcr_partitions": [],
       "recommendation": {
         "section": "candidate",
-        "direct_relevance": 2,
-        "maritime": false,
+        "direct_relevance": 3,
+        "maritime": true,
         "bucket": "candidate",
-        "application": "general",
+        "application": "maritime",
         "publication_quality": "unverified",
         "method_transfer_signal": true,
         "low_priority": false,
@@ -265499,7 +265581,7 @@
         "reason": "",
         "raw_hash": "d5e0c4eaadb8eb61822711ac2ccdce984611129b8f0e50dd76eef52417ec5918"
       },
-      "application_bucket": "general",
+      "application_bucket": "water",
       "semantic": null,
       "daily_domain_exclusion": null,
       "research_directions": []
@@ -283768,9 +283850,9 @@
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 0,
-        "maritime": false,
+        "maritime": true,
         "bucket": "candidate",
-        "application": "traffic",
+        "application": "maritime",
         "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
@@ -283779,7 +283861,7 @@
           "海事场景=[]",
           "方法证据=[]",
           "低优先级=[]",
-          "陆上场景=['vehicles']；已核验CCF A正式会议=False",
+          "陆上场景=[]；已核验CCF A正式会议=False",
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
@@ -283798,7 +283880,7 @@
         "reason": "",
         "raw_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "application_bucket": "land",
+      "application_bucket": "water",
       "semantic": null,
       "daily_domain_exclusion": null,
       "research_directions": [
@@ -308094,9 +308176,9 @@
       "recommendation": {
         "section": "candidate",
         "direct_relevance": 0,
-        "maritime": false,
+        "maritime": true,
         "bucket": "candidate",
-        "application": "general",
+        "application": "maritime",
         "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
@@ -308125,7 +308207,7 @@
         "reason": "",
         "raw_hash": "56d13063fe1fea65a53ec2e2138ce836b0b90e739e4a3f4800456e7c53bdb8da"
       },
-      "application_bucket": "other",
+      "application_bucket": "water",
       "semantic": {
         "paper_id": "2609.14903",
         "title": "HydroMap: Probabilistic Water Surface Elevation Mapping for Semantic Scene Representation in Inland Waterways",
@@ -308160,7 +308242,8 @@
         "model": "deepseek-flash",
         "request_id": "589400fc-674d-4b22-b5f1-ac2a60547942",
         "compatible_fingerprints": [
-          "6e729bb6e994de2117b05538d5984318ff6d3e0de6a02509995afaaec3ed4e3b"
+          "6e729bb6e994de2117b05538d5984318ff6d3e0de6a02509995afaaec3ed4e3b",
+          "31cad79e9796ca01d7cc6a2caa6c9091b1926ae813b6c91c672ed5b0ab4b4777"
         ]
       },
       "daily_domain_exclusion": null,
@@ -469639,6 +469722,33 @@
             "url": "https://openalex.org/W7162762005",
             "type": "article"
           }
+        },
+        {
+          "doi": "10.1109/tits.2026.3695618",
+          "arxiv_id": "2510.27166",
+          "title": "M 3 Detection: Multi-Frame Multi-Level Feature Fusion for Multi-Modal 3-D Object Detection With Camera and 4-D Imaging Radar",
+          "authors": [
+            "Xiaozhi Li",
+            "Huijun Di",
+            "Jian Li",
+            "Feng Liu",
+            "Wei Liang"
+          ],
+          "abstract": "Recent advances in 4D imaging radar have enabled robust perception in adverse weather, while camera sensors provide dense semantic information. Fusing these complementary modalities has great potential for accurate and cost-effective 3D perception. However, most existing camera-radar fusion methods are limited to single-frame inputs, capturing only a partial view of the scene. The incomplete scene information, compounded by image degradation and 4D radar sparsity, hinders overall detection performance. In contrast, multi-frame fusion offers richer spatial-temporal information but faces two challenges: achieving robust and effective object feature fusion across frames and modalities, and mitigating the computational cost of redundant feature extraction. Consequently, we propose M3Detection, a unified multi-frame 3D object detection framework that performs multi-level feature fusion on multi-modal data from camera and 4D imaging radar. In contrast to conventional architectures, our framework leverages intermediate features from the baseline detector and employs the tracker to produce reference trajectories, improving computational efficiency and providing richer information for second-stage. In the second stage, to address tracking uncertainties and enable fine-grained modeling, we design a global-level inter-object feature aggregation module (GOA) guided by radar information to align global features across candidate proposals and a local-level inter-grid feature aggregation module (LGA) that expands local features along the reference trajectories to enhance fine-grained object representation. The aggregated features are then processed by a trajectory-level multi-frame spatial-temporal fusion module (MSTF) to encode cross-frame interactions and enhance temporal representation. Extensive experiments on the View-of-Delft, TJ4DRadSet, and OmniHD-Scenes datasets demonstrate that M3Detection achieves state-of-the-art 3D detection performance, validating its effectiveness in multi-frame detection with camera-4D imaging radar fusion.",
+          "metadata_source": [
+            "Crossref",
+            "OpenAlex"
+          ],
+          "publication_date": "2026-09",
+          "venue": "IEEE Transactions on Intelligent Transportation Systems",
+          "first_author_affiliations": [
+            "Beijing Institute of Technology"
+          ],
+          "publication_evidence": {
+            "source": "Crossref",
+            "url": "https://api.crossref.org/works/10.1109%2Ftits.2026.3695618",
+            "type": "journal-article"
+          }
         }
       ],
       "metadata_source": [
@@ -472697,10 +472807,10 @@
       "jcr_partitions": [],
       "recommendation": {
         "section": "candidate",
-        "direct_relevance": 2,
-        "maritime": false,
+        "direct_relevance": 3,
+        "maritime": true,
         "bucket": "candidate",
-        "application": "traffic",
+        "application": "maritime",
         "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
@@ -472709,7 +472819,7 @@
           "海事场景=[]",
           "方法证据=[]",
           "低优先级=[]",
-          "陆上场景=['vehicles']；已核验CCF A正式会议=False",
+          "陆上场景=[]；已核验CCF A正式会议=False",
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
@@ -472721,7 +472831,7 @@
         "reason": "",
         "raw_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "application_bucket": "land",
+      "application_bucket": "water",
       "semantic": null,
       "daily_domain_exclusion": null,
       "publication_date_source": "published",
@@ -808186,6 +808296,36 @@
             "url": "https://api.crossref.org/works/10.1016%2Fj.oceaneng.2026.124226",
             "type": "journal-article"
           }
+        },
+        {
+          "doi": "10.1016/j.oceaneng.2026.124226",
+          "arxiv_id": null,
+          "title": "Monocular vision-based 3D ship detection: From image pixels to spatial perception",
+          "authors": [
+            "Zhe Kang",
+            "Feng Ma",
+            "He Li",
+            "Chen Chen",
+            "Zaili Yang",
+            "Jin Wang"
+          ],
+          "abstract": "",
+          "metadata_source": [
+            "Crossref",
+            "OpenAlex"
+          ],
+          "publication_date": "2026-03",
+          "venue": "Ocean Engineering",
+          "first_author_affiliations": [
+            "Intelligent Transportation Systems Research Center, Wuhan University of Technology, Wuhan, 430063, PR China",
+            "School of Engineering, Liverpool John Moores University, Liverpool, L3 3AF, UK",
+            "State Key Laboratory of Maritime Technology and Safety, Wuhan University of Technology, Wuhan, 430063, PR China"
+          ],
+          "publication_evidence": {
+            "source": "Crossref",
+            "url": "https://api.crossref.org/works/10.1016%2Fj.oceaneng.2026.124226",
+            "type": "journal-article"
+          }
         }
       ],
       "metadata_source": [
@@ -818350,6 +818490,43 @@
         "model": "deepseek-flash",
         "request_id": "f6480763-4a11-461f-8329-1acb76d937fe",
         "compatible_fingerprints": []
+      },
+      "reading_enrichment": {
+        "status": "success",
+        "paper_id": "2604.24044",
+        "english_hash": "e8ff9d007885359ad8f750a7452debaddc7fd7224214a0ead12ffceb23dc0282",
+        "prompt_version": "3.8.6-1",
+        "purpose": "daily_translation",
+        "attempts": 1,
+        "previous_attempt": null,
+        "model": "deepseek-flash",
+        "usage": {
+          "prompt_tokens": 509,
+          "completion_tokens": 354,
+          "total_tokens": 863,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 509
+        },
+        "cost_upper_cny": 0.00385,
+        "created": 1794118690,
+        "candidate": {
+          "paper_id": "2604.24044",
+          "summary_zh": "论文提出CLLAP预训练框架，用LiDAR生成伪雷达数据并结合双阶段双模态对比学习，提升现有雷达-相机融合3D检测模型的性能与鲁棒性。",
+          "migration_zh": "研究推断：可将L2R采样生成伪Radar与双阶段对比预训练迁移至Radar–AIS或视觉–AIS关联，在融合编码器前以伪模态输入和无标注对齐监督增强特征，并调整双分支对比结构。",
+          "abstract_zh": "准确的3D目标检测对自动驾驶至关重要，需要可靠、低成本且能在恶劣天气条件下工作的传感器。相机与毫米波雷达融合已成为一种有前景的解决方案；然而，这些方法通常依赖精细标注的雷达数据，而此类数据稀缺且标注劳动强度大。为应对这一挑战，我们提出CLLAP，一种基于对比学习的LiDAR增强预训练框架，可提升现有雷达-相机融合方法在3D目标检测中的性能。CLLAP利用丰富的LiDAR数据，通过所提出的L2R（LiDAR-to-Radar）采样方法生成伪雷达数据。然后，它将这些数据纳入一种新颖的双阶段、双模态对比学习策略，从而能够从配对的伪雷达与图像数据中进行有效的自监督学习。该方法以即插即用的方式促进现有雷达-相机融合模型的有效预训练，增强其特征提取能力并提高检测精度与鲁棒性。使用NuScenes和Lyft Level 5数据集的实验结果表明，三个基线模型均取得显著的性能提升，凸显了CLLAP在推进自动驾驶雷达-相机融合方面的有效性。"
+        },
+        "content": {
+          "paper_id": "2604.24044",
+          "summary_zh": "论文提出CLLAP预训练框架，用LiDAR生成伪雷达数据并结合双阶段双模态对比学习，提升现有雷达-相机融合3D检测模型的性能与鲁棒性。",
+          "migration_zh": "研究推断：可将L2R采样生成伪Radar与双阶段对比预训练迁移至Radar–AIS或视觉–AIS关联，在融合编码器前以伪模态输入和无标注对齐监督增强特征，并调整双分支对比结构。",
+          "abstract_zh": "准确的3D目标检测对自动驾驶至关重要，需要可靠、低成本且能在恶劣天气条件下工作的传感器。相机与毫米波雷达融合已成为一种有前景的解决方案；然而，这些方法通常依赖精细标注的雷达数据，而此类数据稀缺且标注劳动强度大。为应对这一挑战，我们提出CLLAP，一种基于对比学习的LiDAR增强预训练框架，可提升现有雷达-相机融合方法在3D目标检测中的性能。CLLAP利用丰富的LiDAR数据，通过所提出的L2R（LiDAR-to-Radar）采样方法生成伪雷达数据。然后，它将这些数据纳入一种新颖的双阶段、双模态对比学习策略，从而能够从配对的伪雷达与图像数据中进行有效的自监督学习。该方法以即插即用的方式促进现有雷达-相机融合模型的有效预训练，增强其特征提取能力并提高检测精度与鲁棒性。使用NuScenes和Lyft Level 5数据集的实验结果表明，三个基线模型均取得显著的性能提升，凸显了CLLAP在推进自动驾驶雷达-相机融合方面的有效性。"
+        },
+        "translation_source": "deepseek",
+        "priced_cost_cny": 0.001925,
+        "translated_at": "2026-11-08T14:18:10+08:00"
       }
     },
     "doi:10.2139/ssrn.7597565": {
@@ -820474,101 +820651,11 @@
         "jcr_q1": false,
         "both": false,
         "high_journal": false,
-        "high_conference": true,
-        "ccf_a": true,
-        "conference_name": "ICML",
-        "ccf_grade": "A",
-        "ccf_evidence": {
-          "version": "2026第七版，正式发布2026-03-31；官方2026-04-09勘误说明已核对",
-          "checked_at": "2026-10-13",
-          "official_release": "https://www.ccf.org.cn/Academic_Evaluation/By_category/2026-03-31/870181.shtml",
-          "catalog_copy": "https://scdm-shu.github.io/ccf/2026-CCF-Ranking.pdf",
-          "conferences": [
-            {
-              "name": "CVPR",
-              "grade": "A",
-              "aliases": [
-                "CVPR",
-                "Conference on Computer Vision and Pattern Recognition"
-              ]
-            },
-            {
-              "name": "ICCV",
-              "grade": "A",
-              "aliases": [
-                "ICCV",
-                "International Conference on Computer Vision"
-              ]
-            },
-            {
-              "name": "NeurIPS",
-              "grade": "A",
-              "aliases": [
-                "NeurIPS",
-                "NIPS",
-                "Neural Information Processing Systems"
-              ]
-            },
-            {
-              "name": "ICML",
-              "grade": "A",
-              "aliases": [
-                "ICML",
-                "International Conference on Machine Learning"
-              ]
-            },
-            {
-              "name": "ICLR",
-              "grade": "A",
-              "aliases": [
-                "ICLR",
-                "International Conference on Learning Representations"
-              ]
-            },
-            {
-              "name": "AAAI",
-              "grade": "A",
-              "aliases": [
-                "AAAI",
-                "AAAI Conference on Artificial Intelligence"
-              ]
-            },
-            {
-              "name": "ACL",
-              "grade": "A",
-              "aliases": [
-                "ACL",
-                "Annual Meeting of the Association for Computational Linguistics"
-              ]
-            },
-            {
-              "name": "ACM MM",
-              "grade": "A",
-              "aliases": [
-                "ACM MM",
-                "ACM Multimedia",
-                "ACM International Conference on Multimedia"
-              ]
-            },
-            {
-              "name": "IJCAI",
-              "grade": "B",
-              "aliases": [
-                "IJCAI",
-                "International Joint Conference on Artificial Intelligence"
-              ]
-            },
-            {
-              "name": "ECCV",
-              "grade": "B",
-              "aliases": [
-                "ECCV",
-                "European Conference on Computer Vision"
-              ]
-            }
-          ],
-          "note": "官网发布说明与勘误声明、CCF原目录高校镜像表核对；仅Full/Regular主会，排除Workshop/Demo/Short/Findings。未列入的会议待核验。"
-        },
+        "high_conference": false,
+        "ccf_a": false,
+        "conference_name": null,
+        "ccf_grade": null,
+        "ccf_evidence": null,
         "cas_year": 2025,
         "one_type": "待核验",
         "jif": null,
@@ -820587,12 +820674,12 @@
       "jcr_partitions": [],
       "application_bucket": "land",
       "recommendation": {
-        "section": "methods",
+        "section": "candidate",
         "direct_relevance": 2,
         "maritime": false,
         "bucket": "candidate",
         "application": "traffic",
-        "publication_quality": "high_conference",
+        "publication_quality": "unverified",
         "method_transfer_signal": false,
         "low_priority": false,
         "reasons": [
@@ -820600,7 +820687,7 @@
           "海事场景=[]",
           "方法证据=[]",
           "低优先级=[]",
-          "陆上场景=['autonomous driving']；已核验CCF A正式会议=True",
+          "陆上场景=['autonomous driving']；已核验CCF A正式会议=False",
           "发表质量=unverified；CAS一区=False，JIF Q1=False"
         ],
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
@@ -826207,7 +826294,117 @@
       "research_directions": [
         "C"
       ],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2606.09634",
+        "title": "ATN3D: Density-Aware LiDAR-Radar Early 3D Object Detection Under Extreme Sparsity",
+        "fingerprint": "6266c1266d4b8c6e6a7c89e34c2696ffdcdfb73eae4049408ae2d9b393fd0134",
+        "evaluation": {
+          "paper_id": "2606.09634",
+          "task_type": "LiDAR-雷达早期融合稀疏3D目标检测",
+          "direct_relevance": 2,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "Density-aware early fusion with cross-modal gating that conditions fusion on per-voxel density/sparsity and Radar evidence",
+              "interpretation_zh": "密度感知早期融合以逐体素密度/稀疏度和雷达证据为条件进行跨模态门控。",
+              "inference": false
+            },
+            {
+              "quote_en": "Occupancy-gated neighborhood aggregation with circular kernels to aggregate only from credible cells",
+              "interpretation_zh": "占用门控邻域聚合使用圆形核仅从可信单元聚合信息。",
+              "inference": false
+            },
+            {
+              "quote_en": "Evidence-conditioned channel self-attention to adapt channel weights with weather/range",
+              "interpretation_zh": "证据条件通道自注意力根据天气/距离自适应通道权重。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "Density-aware early fusion with cross-modal gating that conditions fusion on per-voxel density/sparsity and Radar evidence",
+            "target_task": "multi_sensor_detection",
+            "adaptation_zh": "将逐体素密度/稀疏度门控迁移至雷达-视觉多传感器检测，输入改为雷达点云体素与视觉特征，训练目标为多传感器目标检测，保留可信单元聚合。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未涉及AIS或海事场景",
+            "方法面向车载LiDAR-雷达，海上传感器配置差异大",
+            "仅VoD数据集验证"
+          ],
+          "decision": "候选",
+          "reason_zh": "陆上多传感器稀疏融合检测，提供密度感知门控与可信邻域聚合，可迁移至雷达/视觉多传感器检测，但无海事场景。",
+          "confidence": 0.75,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "极端稀疏条件下早期多模态融合丢弃稀疏信息并注入噪声，远距离小目标检测性能下降",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出密度感知早期融合、占用门控邻域聚合、证据条件通道自注意力和距离感知损失",
+          "application_context": "自动驾驶与智能交通系统远距离3D目标检测（VoD晴/雾条件）",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2",
+        "compatible_fingerprints": []
+      },
+      "affiliation_check": {
+        "revision": 1,
+        "time": "2026-11-08T06:17:49.203318+00:00",
+        "status": "unverified",
+        "attempts": [
+          {
+            "source": "crossref",
+            "status": "unavailable",
+            "error": "api.crossref.org HTTP 404: Resource not found."
+          },
+          {
+            "source": "openalex",
+            "status": "received"
+          },
+          {
+            "source": "arxiv",
+            "status": "received"
+          }
+        ]
+      },
+      "reading_enrichment": {
+        "status": "success",
+        "paper_id": "2606.09634",
+        "english_hash": "87f77ada8d76111f58e9224fafe4e9a315c7d8cd8f40ee3882f94cf1c78b53ee",
+        "prompt_version": "3.8.6-1",
+        "purpose": "daily_translation",
+        "attempts": 1,
+        "previous_attempt": null,
+        "model": "deepseek-flash",
+        "usage": {
+          "prompt_tokens": 634,
+          "completion_tokens": 489,
+          "total_tokens": 1123,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 634
+        },
+        "cost_upper_cny": 0.00518,
+        "created": 1794118685,
+        "candidate": {
+          "paper_id": "2606.09634",
+          "summary_zh": "针对极端稀疏条件下远距离3D目标检测中早期融合丢失稀疏信息、均匀监督偏袒近距密集样本的问题，提出密度感知的LiDAR-Radar早期融合框架ATN3D，在VoD数据集雾天和晴天均提升mAP与远距召回。",
+          "migration_zh": "研究推断：可将密度感知跨模态门控与占用门控邻域聚合迁移至Radar–AIS或视觉–AIS关联前端，以体素/单元稀疏度与可信证据为门控输入，保留远距小目标特征并抑制空单元噪声。",
+          "abstract_zh": "3D目标检测是自动驾驶汽车（AV）及更广泛智能交通系统应用感知的骨干。远距离检测具有挑战性，因为传感证据稀疏；然而这种“远距离”场景在交通中是常态。尽管在计算机视觉中超过30m常被标为远距离，在道路上它仅提供约1-2s的感知与决策时间。在这种极端稀疏下，出现两个核心挑战。第一，早期多模态融合倾向于丢弃稀疏信息，并从空或虚假占用单元注入噪声，降低远距离召回。第二，上下文无关的均匀通道监督偏向密集和近距样本，使远距和小目标优化不足，延迟对远处目标的最早检测。我们提出“Ask The Neighbor”（ATN3D），一个面向稀疏距离条件的LiDAR-Radar框架。ATN3D引入（i）密度感知早期融合与跨模态门控，以逐体素密度/稀疏度和Radar证据为条件进行融合，（ii）占用门控邻域聚合与圆形核，仅从可信单元聚合，（iii）证据条件通道自注意力，随天气/距离自适应通道权重，以及（iv）距离感知损失，按距离重新平衡分类与定位，使训练与距离分层评估对齐。在VoD基准的晴天和雾天条件下，ATN3D超越强基线：晴天mAP +3.55%，模拟浓雾下mAP +8.41%；对于>30m目标，增益为+3.33%（晴天）和+2.09%（浓雾）。这些结果表明在道路上稀疏传感下更早、更可靠的远距离检测。"
+        },
+        "content": {
+          "paper_id": "2606.09634",
+          "summary_zh": "针对极端稀疏条件下远距离3D目标检测中早期融合丢失稀疏信息、均匀监督偏袒近距密集样本的问题，提出密度感知的LiDAR-Radar早期融合框架ATN3D，在VoD数据集雾天和晴天均提升mAP与远距召回。",
+          "migration_zh": "研究推断：可将密度感知跨模态门控与占用门控邻域聚合迁移至Radar–AIS或视觉–AIS关联前端，以体素/单元稀疏度与可信证据为门控输入，保留远距小目标特征并抑制空单元噪声。",
+          "abstract_zh": "3D目标检测是自动驾驶汽车（AV）及更广泛智能交通系统应用感知的骨干。远距离检测具有挑战性，因为传感证据稀疏；然而这种“远距离”场景在交通中是常态。尽管在计算机视觉中超过30m常被标为远距离，在道路上它仅提供约1-2s的感知与决策时间。在这种极端稀疏下，出现两个核心挑战。第一，早期多模态融合倾向于丢弃稀疏信息，并从空或虚假占用单元注入噪声，降低远距离召回。第二，上下文无关的均匀通道监督偏向密集和近距样本，使远距和小目标优化不足，延迟对远处目标的最早检测。我们提出“Ask The Neighbor”（ATN3D），一个面向稀疏距离条件的LiDAR-Radar框架。ATN3D引入（i）密度感知早期融合与跨模态门控，以逐体素密度/稀疏度和Radar证据为条件进行融合，（ii）占用门控邻域聚合与圆形核，仅从可信单元聚合，（iii）证据条件通道自注意力，随天气/距离自适应通道权重，以及（iv）距离感知损失，按距离重新平衡分类与定位，使训练与距离分层评估对齐。在VoD基准的晴天和雾天条件下，ATN3D超越强基线：晴天mAP +3.55%，模拟浓雾下mAP +8.41%；对于>30m目标，增益为+3.33%（晴天）和+2.09%（浓雾）。这些结果表明在道路上稀疏传感下更早、更可靠的远距离检测。"
+        },
+        "translation_source": "deepseek",
+        "priced_cost_cny": 0.00259,
+        "translated_at": "2026-11-08T14:18:05+08:00"
+      }
     },
     "2511.06666": {
       "metadata_records": [
@@ -827052,7 +827249,60 @@
         "notice": "方法借鉴仅是关键词证据，不判断真实创新性；机构不参与排名"
       },
       "research_directions": [],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2609.14619",
+        "title": "ESAFusion: LiDAR--4-D Radar Fusion via Local Geometric Complementation and Multiscale Adaptive Interaction for 3-D Object Detection",
+        "fingerprint": "919785ee6c1d913361153bdff893296437a8e6fce90336c3810896ba51c8862d",
+        "evaluation": {
+          "paper_id": "2609.14619",
+          "task_type": "LiDAR-4D雷达融合3D目标检测",
+          "direct_relevance": 2,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "we introduce an Evidence-Aware Radar Selection (ERS) module to suppress radar clutter using motion and observation-quality evidence while retaining foreground confidence for subsequent fusion.",
+              "interpretation_zh": "ERS模块利用运动与观测质量证据抑制雷达杂波并保留前景置信度，可用于多传感器检测中的噪声抑制。",
+              "inference": false
+            },
+            {
+              "quote_en": "the Pillar-Level Complementary Encoder (PCE) improves cross-modal complementation under mismatched spatial sampling using local geometric support from neighboring LiDAR pillars.",
+              "interpretation_zh": "PCE利用邻近柱体的局部几何支撑改善空间采样不匹配下的跨模态互补。",
+              "inference": false
+            },
+            {
+              "quote_en": "Intra- and Inter-Scale Adaptive Fusion (ISAF) module to adaptively adjust the contributions of different modalities and feature scales in bird's-eye-view (BEV) space.",
+              "interpretation_zh": "ISAF在BEV空间自适应调整不同模态和特征尺度的贡献。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "the Pillar-Level Complementary Encoder (PCE) improves cross-modal complementation under mismatched spatial sampling using local geometric support from neighboring LiDAR pillars.",
+            "target_task": "multi_sensor_detection",
+            "adaptation_zh": "将基于邻近LiDAR柱的局部几何支撑替换为邻近雷达/视觉特征单元，构建跨模态局部邻域聚合，调整输入为稀疏雷达点云与视觉BEV特征，训练目标为多传感器目标检测。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未给出AIS或海事场景证据",
+            "方法面向陆上车载LiDAR-4D雷达，迁移到海上多传感器需重新设计空间邻域与杂波抑制",
+            "仅提供VoD实验结果，未验证其他传感器配置"
+          ],
+          "decision": "候选",
+          "reason_zh": "陆上多传感器融合检测，有具体跨模态互补与自适应融合机制，可迁移至雷达/视觉多传感器检测，但无海事场景。",
+          "confidence": 0.75,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "LiDAR与4D雷达空间采样不匹配和稀疏观测下的可靠跨模态融合3D检测",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出证据感知雷达选择、柱级互补编码和尺度内/间自适应融合框架",
+          "application_context": "自动驾驶复杂驾驶环境3D目标检测（VoD数据集）",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2",
+        "compatible_fingerprints": []
+      }
     },
     "doi:10.3390/electronics15030685": {
       "metadata_records": [
@@ -827772,13 +828022,13 @@
       "partition_year": null,
       "partition_evidence": [],
       "jcr_partitions": [],
-      "application_bucket": "general",
+      "application_bucket": "water",
       "recommendation": {
-        "section": "candidate",
-        "direct_relevance": 2,
-        "maritime": false,
+        "section": "preprints",
+        "direct_relevance": 3,
+        "maritime": true,
         "bucket": "candidate",
-        "application": "general",
+        "application": "maritime",
         "publication_quality": "unverified",
         "method_transfer_signal": true,
         "low_priority": false,
@@ -827845,7 +828095,9 @@
         "review_version": "3.8.8",
         "model": "deepseek-flash",
         "request_id": "f6480763-4a11-461f-8329-1acb76d937fe",
-        "compatible_fingerprints": []
+        "compatible_fingerprints": [
+          "690087b98cce03653f9158a052f15a7d8ca32cdc34fb480363b94c7bb7af42c2"
+        ]
       },
       "reading_enrichment": {
         "status": "success",
@@ -844287,7 +844539,55 @@
       "research_directions": [
         "D"
       ],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2609.01787",
+        "title": "CoViT: Instance-Correspondence Contrastive Learning for Vision Transformer",
+        "fingerprint": "6946424742e08fc4418bd7de20333a944d1ca0923bf85ada2b6956cbf54c42b1",
+        "evaluation": {
+          "paper_id": "2609.01787",
+          "task_type": "实例对应对比学习视觉Transformer",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "Hardest contrastive mining: For each anchor, computing pairwise embedding similarities to select the intra-instance hardest positive (least similar patch within its mask) and inter-instance hardest negative (most similar patch from other instances), with intra-instance regions masked during negative search.",
+              "interpretation_zh": "为每个锚点计算嵌入相似度，选择实例内最难正样本和跨实例最难负样本，并在负样本搜索时掩蔽实例内区域。",
+              "inference": false
+            },
+            {
+              "quote_en": "Attention-guided masking: Refine multi-head attention via adaptive thresholding and morphological operations to generate instance masks, identifying foreground anchors",
+              "interpretation_zh": "通过自适应阈值和形态学操作细化多头注意力以生成实例掩码并识别前景锚点。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "Hardest contrastive mining: For each anchor, computing pairwise embedding similarities to select the intra-instance hardest positive (least similar patch within its mask) and inter-instance hardest negative (most similar patch from other instances), with intra-instance regions masked during negative search.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将实例内/间最难正负样本挖掘用于视觉-雷达/AIS跨模态匹配，调整输入为双模态特征嵌入，训练目标为跨模态实例级对比损失，并在负样本搜索时掩蔽同目标区域。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未涉及跨模态匹配或海事场景",
+            "方法依赖单模态注意力掩码生成实例掩码，跨模态需额外对齐",
+            "无AIS或船舶相关证据"
+          ],
+          "decision": "候选",
+          "reason_zh": "通用视觉对比学习方法，提供实例级困难样本挖掘机制，可迁移至跨模态匹配，但无直接海事证据且迁移需设计。",
+          "confidence": 0.65,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "ViT缺乏实例级判别能力，影响检测与实例分割",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出几何引导的实例对应对比学习框架，通过注意力掩码与最难样本挖掘增强ViT实例感知",
+          "application_context": "通用视觉实例级感知任务（目标检测、实例分割）",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2",
+        "compatible_fingerprints": []
+      }
     },
     "doi:10.1109/tmm.2026.3733559": {
       "metadata_records": [
@@ -845751,7 +846051,55 @@
       "research_directions": [
         "D"
       ],
-      "daily_domain_exclusion": null
+      "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2609.01041",
+        "title": "ViTAMINS: An Empirical Study of Training Self-Supervised Vision Transformers with Synthetic Hard Negatives",
+        "fingerprint": "6550b47d03369bdf19dbb8a8f16305b8c286a5baaf61b70bc6a4d68ff672948d",
+        "evaluation": {
+          "paper_id": "2609.01041",
+          "task_type": "自监督视觉Transformer预训练与合成困难负样本",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "a method that integrates synthetic hard negatives into unsupervised vision transformer pretraining to improve representation quality.",
+              "interpretation_zh": "将合成困难负样本集成到无监督ViT预训练中以提升表征质量。",
+              "inference": false
+            },
+            {
+              "quote_en": "through simple modifications to existing contrastive frameworks and outperforms competing methods while being more resource efficient",
+              "interpretation_zh": "通过对现有对比框架的简单修改实现更优且更高效的性能。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "a method that integrates synthetic hard negatives into unsupervised vision transformer pretraining to improve representation quality.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将合成困难负样本生成机制用于视觉-雷达/AIS跨模态对比学习，调整训练目标为跨模态匹配，输入为图像与雷达/AIS嵌入，负样本在跨模态嵌入空间合成。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未涉及跨模态匹配或海事任务",
+            "合成困难负样本在跨模态场景的有效性未验证",
+            "摘要无AIS或船舶相关证据"
+          ],
+          "decision": "候选",
+          "reason_zh": "通用视觉自监督方法，困难负样本机制可迁至跨模态匹配，但无直接海事或跨模态证据，迁移需较大调整。",
+          "confidence": 0.65,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "无监督ViT预训练中表征质量不足",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "将合成困难负样本引入对比式ViT预训练，提升表征与分类性能",
+          "application_context": "ImageNet及图像检索、复制检测、分割等通用视觉任务",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "c3cf70fd-064b-4b40-a696-f967d770f9f2",
+        "compatible_fingerprints": []
+      }
     },
     "doi:10.1109/tpami.2025.3644900": {
       "metadata_records": [
@@ -893082,6 +893430,14 @@
       "attempts": [],
       "errors": [],
       "time": "2026-11-08T05:53:42.945029+00:00"
+    },
+    {
+      "missing_before": 1516,
+      "missing_after": 1516,
+      "filled": 0,
+      "attempts": [],
+      "errors": [],
+      "time": "2026-11-08T06:16:01.352208+00:00"
     }
   ],
   "translation_batches": [
@@ -893325,39 +893681,14 @@
   "selected_translation_plan": {
     "date": "2026-11-08",
     "paper_ids": [
-      "2611.04034",
       "2504.09197",
-      "2603.06670",
-      "doi:10.1109/icmlt69916.2026.11688998",
-      "doi:10.1609/aaai.v40i12.37916"
+      "doi:10.1609/aaai.v40i12.37916",
+      "2611.04034",
+      "2606.09634",
+      "2604.24044"
     ]
   },
   "reading_enrichment_enabled": true,
-  "supplement_existing_ai": {
-    "status": "cached",
-    "processed": 0,
-    "cached": 1257,
-    "failed": 0,
-    "cost_upper_cny": 0.0,
-    "priced_cost_cny": 0.0,
-    "unsettled_upper_cny": 0.0,
-    "tokens": 0,
-    "missing_abstract": 0,
-    "candidate_count": 1257,
-    "already_attempted_today": 0,
-    "pending_total": 0,
-    "limit_deferred": 0,
-    "selected_count": 1,
-    "ai_reviewed": 889,
-    "shortfall": 4,
-    "ai_states": {
-      "evaluated": 889,
-      "uncertain": 364,
-      "domain_excluded": 4
-    },
-    "publication_status": "partial",
-    "reserve_available": 1
-  },
   "supplement_history": [
     {
       "round": 1,
