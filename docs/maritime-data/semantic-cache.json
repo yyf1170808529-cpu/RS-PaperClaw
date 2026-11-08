@@ -58251,6 +58251,804 @@
       "model": "deepseek-flash",
       "request_id": "2663c8c4-ae0d-4ce2-b12b-30c7c7ef593e",
       "compatible_fingerprints": []
+    },
+    "876a161f07b4594d88e5748883ee9f4ebd11f3ec01bd9ee8d154cec826da70cc": {
+      "paper_id": "doi:10.1109/icmlt69916.2026.11688998",
+      "title": "Real-Time Edge AI Camera-Radar Fusion for MOT with YOLOv11 and ByteTrack",
+      "fingerprint": "876a161f07b4594d88e5748883ee9f4ebd11f3ec01bd9ee8d154cec826da70cc",
+      "evaluation": {
+        "paper_id": "doi:10.1109/icmlt69916.2026.11688998",
+        "primary_domain": "traffic_perception",
+        "primary_problem": "面向ADAS的相机-雷达紧耦合多目标跟踪融合架构在边缘设备上的实时性与感知一致性",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出在Hailo加速器上部署YOLOv11n检测、ByteTrack跟踪并结合24GHz雷达，通过匈牙利算法关联与最大似然估计状态估计实现紧耦合相机-雷达融合的实时多目标跟踪架构",
+        "application_context": "高级驾驶辅助系统与自动驾驶的实时感知",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "performs association via the Hungarian algorithm and uses the Maximum Likelihood Estimation(MLE) for state estimation",
+            "interpretation_zh": "采用匈牙利算法做跨传感器关联并用最大似然估计进行状态估计，是可复用的多源数据关联与融合机制",
+            "inference": false
+          },
+          {
+            "quote_en": "a tightly coupled fusion module that performs association",
+            "interpretation_zh": "紧耦合融合模块执行关联，可作为迁移到雷达-AIS或视觉-AIS关联的结构参考",
+            "inference": false
+          },
+          {
+            "quote_en": "This coordinated combination of a high-speed vision pipeline and precise radar measurements produces a markedly more robust and consistent perception output",
+            "interpretation_zh": "视觉流水线与雷达测量协同产生更鲁棒一致的感知输出，体现补模态融合思路",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "performs association via the Hungarian algorithm and uses the Maximum Likelihood Estimation(MLE) for state estimation",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将相机-雷达目标关联替换为视觉船舶检测框与AIS航迹点的关联：输入改为视觉检测框与AIS时空位置，关联目标改为跨模态目标匹配，状态估计可由MLE改为对船舶运动状态的估计，融合结构保留紧耦合关联+状态估计框架",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未给出关联精度、跟踪指标或数据集细节",
+          "方法针对ADAS车载相机-雷达，海事AIS与视觉的时空异步、尺度差异未涉及",
+          "边缘加速器部署细节与可移植性摘要描述有限"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上相机-雷达紧耦合关联与MLE状态估计对雷达-AIS/视觉-AIS关联有可迁移结构，直接相关性中等，适合候选",
+        "confidence": 0.7,
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+    },
+    "238c6db5bb676116ddf59664ac946604aaab8cc6b7a1c4c015116d4d019fb071": {
+      "paper_id": "2504.09197",
+      "title": "Graph Learning-Driven Multi-Vessel Association: Fusing Multimodal Data for Maritime Intelligence",
+      "fingerprint": "238c6db5bb676116ddf59664ac946604aaab8cc6b7a1c4c015116d4d019fb071",
+      "evaluation": {
+        "paper_id": "2504.09197",
+        "primary_domain": "maritime_fusion",
+        "primary_problem": "拥挤复杂航道中AIS与CCTV多模态数据的多船关联面临维度差异、目标数不匹配、尺度变化、遮挡与异步数据流等挑战",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出图学习驱动的多船关联方法GMvA，融合AIS与CCTV，用时间序列学习与图神经网络捕捉轨迹时空特征，结合时序图注意力、时空注意力、基于MLP的不确定性融合模块计算相似度并用匈牙利算法进行全局一致匹配，并构建MaritimeMmD数据集",
+        "application_context": "海事智能感知、航道监控与智能航运交通管理",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 5,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "By integrating AIS and CCTV data, GMvA leverages time series learning and graph neural networks to capture the spatiotemporal features of vessel trajectories effectively",
+            "interpretation_zh": "直接融合AIS与CCTV，用时序学习与图神经网络建模船舶轨迹时空特征，是视觉-AIS关联的核心方法证据",
+            "inference": false
+          },
+          {
+            "quote_en": "a multi-layer perceptron-based uncertainty fusion module computes robust similarity scores, and the Hungarian algorithm is adopted to ensure globally consistent and accurate target matching",
+            "interpretation_zh": "MLP不确定性融合计算相似度并配合匈牙利算法实现全局一致匹配，是可复用的跨模态匹配机制",
+            "inference": false
+          },
+          {
+            "quote_en": "outperforming existing methods even in challenging scenarios with high vessel density and incomplete or unevenly distributed AIS and CCTV data",
+            "interpretation_zh": "在高密度及AIS/CCTV不完整或不均匀分布场景下仍优，直接覆盖缺失/不均衡模态的鲁棒关联",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未给出具体关联精度数值与消融细节",
+          "数据集主要围绕其所建MaritimeMmD，泛化到其他港口/水域未知",
+          "遮挡与异步数据流的具体处理机制摘要未细化"
+        ],
+        "decision": "重点推荐",
+        "reason_zh": "直接面向AIS-CCTV多船跨模态关联匹配，含图学习时空特征、不确定性融合与匈牙利全局匹配，与雷达-AIS/视觉-AIS关联高度契合",
+        "confidence": 0.9,
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+    },
+    "98ad3fc0b1ce0f05a4b8b042e47d8f9b16174044c7f7c6825006d758b9a6728e": {
+      "paper_id": "2607.04098",
+      "title": "Sparse4D-Radar: An Efficient and Robust Framework for Surround-View 3D Object Detection via 4D Radar-Camera Fusion",
+      "fingerprint": "98ad3fc0b1ce0f05a4b8b042e47d8f9b16174044c7f7c6825006d758b9a6728e",
+      "evaluation": {
+        "paper_id": "2607.04098",
+        "primary_domain": "traffic_perception",
+        "primary_problem": "主流4D雷达-相机融合仅支持前视，扩展到360°环视带来过高计算成本",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出Sparse4D-Radar环视多模态融合框架，用Deformable Fusion将雷达-相机特征嵌入稀疏查询，加入速度一致性采样与自适应模态门控，构建Sparse4D-Radar-Acc",
+        "application_context": "自动驾驶环视3D目标检测",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "Velocity-Consistency Sampling (VCS) refines features via radar velocity cues for motion awareness",
+            "interpretation_zh": "利用雷达速度线索精炼特征以增强运动感知，是可迁移的跨模态特征精炼机制",
+            "inference": false
+          },
+          {
+            "quote_en": "Adaptive Modality Gating (AMG) dynamically adjusts cross-modal fusion weights according to feature confidence",
+            "interpretation_zh": "按特征置信度动态调整跨模态融合权重，可为多源关联中模态可靠性差异提供思路",
+            "inference": false
+          },
+          {
+            "quote_en": "We first design a Deformable Fusion module to embed radar-camera features into sparse queries",
+            "interpretation_zh": "可变形融合将雷达-相机特征嵌入稀疏查询，是可复用的跨模态特征嵌入结构",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Adaptive Modality Gating (AMG) dynamically adjusts cross-modal fusion weights according to feature confidence",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将雷达-相机模态门控改为视觉-AIS两模态的置信度加权：输入改为视觉检测特征置信度与AIS航迹可靠性，训练目标改为按模态置信度动态调整关联相似度权重以应对缺失/低质量AIS，结构上将门控模块嵌入跨模态匹配打分",
+          "inference": true
+        },
+        "limitations": [
+          "面向自动驾驶环视3D检测，非海事场景",
+          "摘要未报告关联任务表现",
+          "模态门控为融合权重，直接用于匹配打分需额外设计"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上4D雷达-相机环视融合，模态门控与雷达速度特征精炼可迁移至多源关联，直接相关性中等偏弱",
+        "confidence": 0.6,
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+    },
+    "fbc08b250204114050109a214041f402dacbeefa70647e2f01377f2e801b7da7": {
+      "paper_id": "2605.21112",
+      "title": "RCGDet3D: Rethinking 4D Radar-Camera Fusion-based 3D Object Detection with Enhanced Radar Feature Encoding",
+      "fingerprint": "fbc08b250204114050109a214041f402dacbeefa70647e2f01377f2e801b7da7",
+      "evaluation": {
+        "paper_id": "2605.21112",
+        "primary_domain": "traffic_perception",
+        "primary_problem": "4D雷达点云稀疏导致3D检测困难，复杂融合策略计算开销大影响实时部署",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "RCGDet3D聚焦雷达特征编码并简化多模态融合，含射线对齐坐标系的R-PGE与引入视觉线索的语义注入模块",
+        "application_context": "自动驾驶4D雷达-相机3D目标检测",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a Semantic Injection (SI) module incorporates visual cues from images, producing more geometrically accurate and semantically enriched radar features",
+            "interpretation_zh": "语义注入将视觉线索融入雷达特征，是可迁移的跨模态特征增强思路",
+            "inference": false
+          },
+          {
+            "quote_en": "decoupling the coordinate transformation from representation learning",
+            "interpretation_zh": "解耦坐标变换与表征学习以降低学习难度、提升几何一致性，是可复用的表征学习机制",
+            "inference": false
+          },
+          {
+            "quote_en": "its point cloud sparsity challenges 3D object detection",
+            "interpretation_zh": "指出点云稀疏对检测的挑战，为稀疏传感器模态处理提供问题背景",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a Semantic Injection (SI) module incorporates visual cues from images, producing more geometrically accurate and semantically enriched radar features",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将图像到雷达的语义注入改为AIS航迹语义/时空线索向视觉船舶特征或雷达表征的注入：输入改为AIS时空位置与视觉/雷达特征，训练目标改为生成语义增强的跨模态匹配表征，结构上把语义注入模块接入关联前的特征编码",
+          "inference": true
+        },
+        "limitations": [
+          "面向自动驾驶雷达-相机3D检测，不含海事或AIS数据",
+          "摘要未给出跨模态匹配/关联任务实验",
+          "语义注入目的为检测表征而非匹配相似度，迁移需重设计目标"
+        ],
+        "decision": "候选",
+        "reason_zh": "雷达-相机检测中视觉语义注入雷达特征与解耦表征学习可迁移至跨模态表征，直接相关性中等偏弱",
+        "confidence": 0.6,
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a8d0092f-f6dc-4b74-8782-dd39c78a0bd9"
+    },
+    "9b4b287c75fc10513c3459ba9d832e6f2036fe6f5456cf9d1ae0ee721bf65b9d": {
+      "paper_id": "2604.24044",
+      "title": "CLLAP: Contrastive Learning-based LiDAR-Augmented Pretraining for Enhanced Radar-Camera Fusion",
+      "fingerprint": "9b4b287c75fc10513c3459ba9d832e6f2036fe6f5456cf9d1ae0ee721bf65b9d",
+      "evaluation": {
+        "paper_id": "2604.24044",
+        "task_type": "Radar-Camera 3D检测（LiDAR增强对比预训练）",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a novel dual-stage, dual-modality contrastive learning strategy, enabling effective self-supervised learning from paired pseudo-radar and image data",
+            "interpretation_zh": "提出双阶段双模态对比学习，实现伪雷达与图像配对的自监督预训练",
+            "inference": false
+          },
+          {
+            "quote_en": "CLLAP leverages abundant LiDAR data to generate pseudo-radar data using the proposed L2R (LiDAR-to-Radar) Sampling method",
+            "interpretation_zh": "用LiDAR生成伪雷达数据以缓解雷达标注稀缺",
+            "inference": false
+          },
+          {
+            "quote_en": "facilitates effective pretraining of existing radar-camera fusion models in a plug-and-play manner",
+            "interpretation_zh": "以即插即用方式预训练雷达-相机融合模型，增强特征提取",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a novel dual-stage, dual-modality contrastive learning strategy, enabling effective self-supervised learning from paired pseudo-radar and image data",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "借鉴其双模态对比预训练思路：在海事多传感器场景中，可用一种模态（如AIS或高质图像）生成/对齐另一种模态（雷达或低质图像）的伪配对样本，构造正负样本对并以对比损失预训练融合特征提取器；需调整配对生成方式与模态编码器，但摘要未给出海事雷达稀疏点云适配细节",
+          "inference": true
+        },
+        "limitations": [
+          "实验限于NuScenes/Lyft道路场景，未涉及海事环境",
+          "伪雷达由LiDAR采样生成，海事雷达稀疏杂波特性未验证",
+          "未报告跨模态匹配精度指标，仅报告3D检测性能"
+        ],
+        "decision": "候选",
+        "reason_zh": "属陆上雷达-相机融合检测，直接相关性中等；双模态对比自监督预训练机制可迁移到跨模态匹配，但需具体适配，摘要未涉及海事。",
+        "confidence": 0.72,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "雷达标注稀缺导致雷达-相机融合3D检测性能受限",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出LiDAR生成伪雷达数据与双阶段双模态对比自监督预训练框架，即插即用增强现有雷达-相机融合检测器",
+        "application_context": "自动驾驶3D目标检测（NuScenes、Lyft Level 5）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+    },
+    "cb63b9c31eac8d8f22d09afbcda8837362cccc7b3e582e50edc69572c48a8941": {
+      "paper_id": "2603.06670",
+      "title": "calibfusion: Transformer-Based Differentiable Calibration for Radar-Camera Fusion Detection in Water-Surface Environments",
+      "fingerprint": "cb63b9c31eac8d8f22d09afbcda8837362cccc7b3e582e50edc69572c48a8941",
+      "evaluation": {
+        "paper_id": "2603.06670",
+        "task_type": "水面雷达-相机融合检测与可微外参标定",
+        "direct_relevance": 3,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "A cross-modal transformer interaction module predicts a confidence-gated refinement of the initial extrinsics",
+            "interpretation_zh": "跨模态transformer交互模块预测置信度门控的外参细化量",
+            "inference": false
+          },
+          {
+            "quote_en": "integrated through a differentiable projection-and-splatting operator to generate calibration-conditioned image-plane Radar features",
+            "interpretation_zh": "用可微投影-泼溅算子生成标定条件化的图像平面雷达特征",
+            "inference": false
+          },
+          {
+            "quote_en": "a multi-frame persistence-aware Radar density representation with intensity weighting and Doppler-guided suppression of fast-varying clutter",
+            "interpretation_zh": "多帧持续性感知雷达密度表示并抑制快变杂波",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "integrated through a differentiable projection-and-splatting operator to generate calibration-conditioned image-plane Radar features",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可微投影-泼溅与隐式外参细化可迁移到海事雷达-视觉/AIS关联：将雷达点投影到图像平面做条件化特征聚合，并以检测损失端到端学习外参修正；需调整投影模型以适配运动平台与AIS坐标，摘要未给出海上动态标定细节",
+          "inference": true
+        },
+        "limitations": [
+          "水面场景数据集规模有限（WaterScenes、FLOW）",
+          "仅2D检测，未验证3D定位或AIS轨迹关联",
+          "外参细化依赖初始标定质量，摘要未量化失效边界"
+        ],
+        "decision": "候选",
+        "reason_zh": "水面雷达-相机融合与可微标定对海事感知直接相关；跨模态可微投影机制可迁移到雷达-视觉关联，但需适配动态平台。",
+        "confidence": 0.75,
+        "primary_domain": "maritime_fusion",
+        "primary_problem": "水面场景雷达-相机外参失配削弱跨模态聚合与2D检测",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出标定条件化的端到端雷达-相机融合检测器，含可微投影-泼溅与置信门控外参细化及杂波抑制表示",
+        "application_context": "水面环境雷达-相机融合2D检测（WaterScenes、FLOW，nuScenes验证迁移）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+    },
+    "ea01d7557fe9d08276acf3c01130151ec50882c742dec09e69550f740049a896": {
+      "paper_id": "2609.08338",
+      "title": "A Multi-Modal Perception Pipeline for Object Detection and Tracking in Autonomous Racing",
+      "fingerprint": "ea01d7557fe9d08276acf3c01130151ec50882c742dec09e69550f740049a896",
+      "evaluation": {
+        "paper_id": "2609.08338",
+        "task_type": "自动驾驶赛车多模态检测与跟踪",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Independent detections from cameras, LiDARs, and RADARs are combined to provide timely and robust state estimates of surrounding vehicles",
+            "interpretation_zh": "相机、LiDAR、雷达独立检测经后融合提供状态估计",
+            "inference": false
+          },
+          {
+            "quote_en": "The tracking method explicitly compensates for detection delays and embeds in its model prior knowledge of vehicle dynamics and track layout",
+            "interpretation_zh": "跟踪显式补偿检测延迟并嵌入车辆动力学与赛道先验",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The tracking method explicitly compensates for detection delays and embeds in its model prior knowledge of vehicle dynamics and track layout",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将检测延迟补偿与动力学先验思路用于海上多目标跟踪：将车辆动力学换成船舶运动模型、赛道布局换成航道/地理先验，传感输入替换为雷达/AIS/视觉；属结构层面适配，摘要未给出海事验证",
+          "inference": true
+        },
+        "limitations": [
+          "场景为赛车与道路，非海事",
+          "晚期融合框架较通用，缺少跨模态表征细节",
+          "未报告AIS或雷达-视觉关联实验"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上多传感器检测跟踪，与海事多目标跟踪有场景联系；延迟补偿与动力学先验可迁移但摘要证据较粗。",
+        "confidence": 0.6,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "高速赛车场景下多传感器目标检测与跟踪鲁棒性",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出相机-LiDAR-雷达晚融合检测与补偿检测延迟、嵌入动力学先验的多目标跟踪流水线",
+        "application_context": "自动驾驶赛车及城市边缘场景感知",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+    },
+    "264ea3f37c8745a8c0a5c945699b4a87bc42f32b9f2ec6f9dde6352168388b70": {
+      "paper_id": "2604.08074",
+      "title": "DinoRADE: Full Spectral Radar-Camera Fusion with Vision Foundation Model Features for Multi-class Object Detection in Adverse Weather",
+      "fingerprint": "264ea3f37c8745a8c0a5c945699b4a87bc42f32b9f2ec6f9dde6352168388b70",
+      "evaluation": {
+        "paper_id": "2604.08074",
+        "task_type": "恶劣天气雷达-相机多类目标检测",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "aggregates vision features around transformed reference points in the camera perspective via deformable cross-attention",
+            "interpretation_zh": "在相机视角变换参考点周围用可变形交叉注意力聚合视觉特征",
+            "inference": false
+          },
+          {
+            "quote_en": "Vision features are provided by a DINOv3 Vision Foundation Model",
+            "interpretation_zh": "使用DINOv3视觉基础模型提供图像特征",
+            "inference": false
+          },
+          {
+            "quote_en": "processes dense Radar tensors",
+            "interpretation_zh": "以密集雷达张量作为雷达输入",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "aggregates vision features around transformed reference points in the camera perspective via deformable cross-attention",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可变形交叉注意力参考点聚合可迁移到海事雷达-视觉融合检测：将雷达点云投影参考点与图像特征对齐，替换基础模型backbone并重训练检测头；需处理海上稀疏小目标与海杂波，摘要未提供此适配",
+          "inference": true
+        },
+        "limitations": [
+          "数据集为道路K-Radar，无海事验证",
+          "密集雷达张量表示可能不适配海事稀疏雷达",
+          "未涉及AIS关联或跨模态匹配评估"
+        ],
+        "decision": "候选",
+        "reason_zh": "属雷达-相机鲁棒检测，可变形交叉注意力有跨模态融合迁移潜力；但场景为陆上，海事适配与稀疏雷达问题未讨论。",
+        "confidence": 0.65,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "恶劣天气下雷达-相机多类检测，尤其弱势道路使用者小目标",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出雷达中心、DINOv3基础模型特征经可变形交叉注意力聚合的检测流水线，并做多类别逐类评估",
+        "application_context": "自动驾驶恶劣天气多类目标检测（K-Radar）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f6480763-4a11-461f-8329-1acb76d937fe"
+    },
+    "2f9e038879663c983e5dc682645d615233333831f310d44c990a7da47b17395a": {
+      "paper_id": "2604.05405",
+      "title": "Weather-Conditioned Branch Routing for Robust LiDAR-Radar 3D Object Detection",
+      "fingerprint": "2f9e038879663c983e5dc682645d615233333831f310d44c990a7da47b17395a",
+      "evaluation": {
+        "paper_id": "2604.05405",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 3,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "we reformulate multi-modal perception as a weather-conditioned branch routing problem",
+            "interpretation_zh": "将多模态感知重构为天气条件驱动的分支路由问题，核心是动态选择模态偏好。",
+            "inference": false
+          },
+          {
+            "quote_en": "our framework explicitly maintains three parallel 3D feature streams: a pure LiDAR branch, a pure 4D radar branch, and a condition-gated fusion branch",
+            "interpretation_zh": "框架显式维护三个并行3D特征流：纯LiDAR分支、纯4D雷达分支和条件门控融合分支。",
+            "inference": false
+          },
+          {
+            "quote_en": "a lightweight router dynamically predicts sample-specific weights to softly aggregate these representations",
+            "interpretation_zh": "轻量路由器动态预测样本级权重以软聚合表示，可被借鉴为传感器可靠性加权机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a lightweight router dynamically predicts sample-specific weights to softly aggregate these representations",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将LiDAR/4D雷达分支路由思想迁移至船舶多传感器检测（如雷达与视觉）：输入需改为雷达点云或视觉特征分支，路由条件可改为海况/能见度令牌，训练目标增加传感器可靠性辅助分类与分支多样性正则化，避免单一模态主导。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅涉及LiDAR-4D雷达融合，未涉及AIS或视觉-雷达跨模态匹配。",
+          "迁移到船舶多传感器场景需要重新定义天气/海况条件令牌和传感器分支，摘要未提供相关证据。"
+        ],
+        "decision": "候选",
+        "reason_zh": "面向恶劣天气的LiDAR-4D雷达3D检测，提出条件分支路由动态调节模态权重，属于多传感器感知与融合方向；与船舶场景有感知任务联系，但摘要未涉及海事或AIS。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "恶劣天气下LiDAR-4D雷达融合3D目标检测的模态偏好动态调整问题",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出天气条件驱动的分支路由框架，维护纯LiDAR、纯4D雷达与条件门控融合三个并行特征流，并用轻量路由器动态聚合。",
+        "application_context": "自动驾驶场景下的K-Radar基准评测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+    },
+    "b76ba423859b919b6a8e8379dc03e6053a60b472aad02cbbc68304333676907e": {
+      "paper_id": "2603.11566",
+      "title": "R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection",
+      "fingerprint": "b76ba423859b919b6a8e8379dc03e6053a60b472aad02cbbc68304333676907e",
+      "evaluation": {
+        "paper_id": "2603.11566",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 3,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "enhances depth estimation quality via the Panoramic Depth Fusion module, enabling mutual reinforcement between absolute and relative depth",
+            "interpretation_zh": "通过全景深度融合模块提升深度估计质量，实现绝对深度与相对深度的相互增强。",
+            "inference": false
+          },
+          {
+            "quote_en": "we design a Deformable Gated Temporal Fusion module that does not rely on the ego vehicle's pose",
+            "interpretation_zh": "设计不依赖自车位姿的可变形门控时序融合模块，提升缺失位姿下的鲁棒性。",
+            "inference": false
+          },
+          {
+            "quote_en": "we built an Instance-Guided Dynamic Refinement module that extracts semantic prototypes from 2D instance guidance",
+            "interpretation_zh": "构建实例引导的动态细化模块，从2D实例引导中提取语义原型。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we design a Deformable Gated Temporal Fusion module that does not rely on the ego vehicle's pose",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将不依赖位姿的可变形门控时序融合迁移至船舶雷达-视觉多传感器检测：输入改为船舶雷达点云与视觉特征，移除自车位姿依赖，训练目标改为3D船舶检测，结构保留可变形门控时序融合但需适配海事目标尺度与运动模式。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦自动驾驶4D雷达-相机融合，未涉及海事场景或AIS。",
+          "迁移至船舶检测需要重新设计深度融合与实例引导模块，摘要未提供海事适配证据。"
+        ],
+        "decision": "候选",
+        "reason_zh": "4D雷达-相机融合3D检测，提出全景深度融合、不依赖位姿的时序融合和实例引导细化，属于多传感器感知与融合方向；与船舶视觉检测有感知任务联系，但摘要未涉及海事。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "4D雷达-相机融合3D目标检测中深度估计不鲁棒、时序融合依赖位姿及小目标雷达稀疏问题",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出R4Det，包含全景深度融合模块、可变形门控时序融合模块和实例引导动态细化模块。",
+        "application_context": "自动驾驶场景下的TJ4DRadSet和VoD数据集评测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+    },
+    "1584c467798879e95d2073c9f2228861a4d48a3a7ac799965812bd590aff3e8b": {
+      "paper_id": "2605.15937",
+      "title": "A Retrieval-Enhanced Transformer for Multi-Step Port-of-Call Sequence Prediction in Global Liner Shipping",
+      "fingerprint": "1584c467798879e95d2073c9f2228861a4d48a3a7ac799965812bd590aff3e8b",
+      "evaluation": {
+        "paper_id": "2605.15937",
+        "task_type": "other",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "CCRE introduces a retrieval-enhanced historical encoder that queries a global maritime database for contextually similar navigational precedents",
+            "interpretation_zh": "CCRE引入检索增强的历史编码器，从全球海事数据库查询上下文相似的航行先例。",
+            "inference": false
+          },
+          {
+            "quote_en": "Integrating this with a Transformer-based trajectory encoder, the architecture executes adaptive \"middle fusion\" via cross-attention",
+            "interpretation_zh": "与Transformer轨迹编码器集成，通过交叉注意力执行自适应中间融合。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究目标是港口挂靠序列预测，属于轨迹预测与航运管理，非船舶视觉感知或多源关联匹配。",
+          "检索增强与交叉注意力机制针对序列预测任务，摘要未提供面向船舶检测/匹配的可迁移证据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向全球班轮航运的港口挂靠序列预测，核心是轨迹预测与航运管理，不属于海事多源关联融合或船舶视觉感知；AIS仅作为数据背景，不涉及关联匹配。",
+        "confidence": 0.9,
+        "primary_domain": "maritime_fusion",
+        "primary_problem": "多步港口挂靠序列预测中的航程不确定性与长尾路线数据稀疏问题",
+        "target_task": "other",
+        "core_contribution": "提出连接约束与检索增强的CCRE框架，利用检索增强历史编码器和交叉注意力中间融合进行自治回归序列生成。",
+        "application_context": "全球班轮航运的港口挂靠序列预测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+    },
+    "bbcf9e9006c6145efb927920a546f8f1740b644d4d068f54400402d821d8a29c": {
+      "paper_id": "2610.39441",
+      "title": "PathCowork: Learning from real-world pathology practice to build AI copilots",
+      "fingerprint": "bbcf9e9006c6145efb927920a546f8f1740b644d4d068f54400402d821d8a29c",
+      "evaluation": {
+        "paper_id": "2610.39441",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "a framework that turns pathologists' narrated examinations into supervision for visual grounding and procedures that guide diagnostic AI agents",
+            "interpretation_zh": "将病理学家的叙述检查转化为视觉定位和诊断AI代理流程的监督框架。",
+            "inference": false
+          },
+          {
+            "quote_en": "Synchronized gaze, narration and navigation link visual findings to the process of interpreting them",
+            "interpretation_zh": "同步的注视、叙述和导航将视觉发现与其解读过程联系起来。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究领域为病理学AI，与海事感知、多源关联融合及船舶视觉无关。",
+          "视觉定位监督来自病理学家检查过程，不涉及跨模态匹配或船舶目标检测的可迁移机制。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "病理学AI辅助系统，利用病理学家检查过程监督视觉定位与诊断流程，与海事多源融合、船舶视觉检测及通用视觉匹配方法均无直接联系。",
+        "confidence": 0.9,
+        "primary_domain": "biomedical",
+        "primary_problem": "病理学AI如何从病理学家的检查过程中学习视觉定位和诊断流程",
+        "target_task": "other",
+        "core_contribution": "提出PathCowork框架，将病理学家叙述检查转化为视觉定位和诊断流程监督，训练部署代理。",
+        "application_context": "病理学临床实践中的AI辅助诊断",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f94d9694-d92d-444b-a134-0f5df3322079"
+    },
+    "82f2c0494349ebf9190198db8364ed4f18ec684c9df09004365973275dc35c68": {
+      "paper_id": "doi:10.1609/aaai.v40i12.37916",
+      "title": "Towards Accurate 3D Object Detection in Adverse Weather by Leveraging 4D Radar for LiDAR Geometry Enhancement",
+      "fingerprint": "82f2c0494349ebf9190198db8364ed4f18ec684c9df09004365973275dc35c68",
+      "evaluation": {
+        "paper_id": "doi:10.1609/aaai.v40i12.37916",
+        "task_type": "3D object detection with 4D radar-guided LiDAR geometry enhancement",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "dynamically generate virtual LiDAR points",
+            "interpretation_zh": "用4D雷达特征动态生成虚拟LiDAR点以补足退化点云密度",
+            "inference": false
+          },
+          {
+            "quote_en": "Position-Guided Cross Attention (PGCA) module",
+            "interpretation_zh": "提出位置引导的跨模态注意力增强虚拟点表征",
+            "inference": false
+          },
+          {
+            "quote_en": "Adaptive Feature Fusion (AFF) module is designed to integrate virtual and real LiDAR features",
+            "interpretation_zh": "自适应融合虚拟与真实LiDAR特征",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "dynamically generate virtual LiDAR points",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将4D雷达引导生成虚拟点云的思路用于雷达/视觉与AIS多源船舶检测：以稳健模态（如AIS或雷达）特征生成/增强退化视觉模态的表征，需调整输入为船舶多源数据、训练目标为多源检测，并改造跨模态注意力与融合结构以适配海上目标尺度与稀疏标注。",
+          "inference": true
+        },
+        "limitations": [
+          "实验为车载LiDAR-4D雷达，非海事船舶或AIS场景",
+          "摘要未提供海上目标尺度、稀疏标注或跨模态关联的验证",
+          "迁移到船舶多源检测仅属推断，需重新设计与验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "车载4D雷达引导LiDAR几何增强与自适应跨模态融合，对多传感器船舶检测有可迁移的融合思路；但场景非海事，迁移需重设计。",
+        "confidence": 0.7,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "恶劣天气下LiDAR点云退化导致3D目标检测性能下降",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出REL框架，用4D雷达特征生成虚拟LiDAR点并结合位置引导跨注意力与自适应融合提升退化点云检测",
+        "application_context": "自动驾驶在雨雾等恶劣天气下的3D目标检测，K-Radar与Vod-Fog数据集验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+    },
+    "4ebbc4d9e17bc31d2ea89fccea89f70faf9e195d03c730cc4b05762741322c0b": {
+      "paper_id": "2608.00096",
+      "title": "Logographic Character Visual Pretraining via Semantic-based Contrastive Learning",
+      "fingerprint": "4ebbc4d9e17bc31d2ea89fccea89f70faf9e195d03c730cc4b05762741322c0b",
+      "evaluation": {
+        "paper_id": "2608.00096",
+        "task_type": "logographic character visual pretraining via semantic contrastive learning",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "multi-modal learning approach using visual semantics and contextual semantics of characters",
+            "interpretation_zh": "用视觉语义与上下文语义的多模态学习做字符识别",
+            "inference": false
+          },
+          {
+            "quote_en": "A novel pre-training strategy is designed to enhance deep visual representations",
+            "interpretation_zh": "设计预训练策略增强深度视觉表征，针对不平衡与稀有样本",
+            "inference": false
+          },
+          {
+            "quote_en": "validate the contrastive pre-training strategy through several downstream tasks",
+            "interpretation_zh": "通过下游任务验证对比预训练策略",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "extracting the contextual semantics of each character from the corresponding language models",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将“从语言模型抽取上下文语义并与视觉语义对比预训练”的机制迁移到视觉–AIS跨模态匹配：以AIS轨迹/文本语义为上下文语义源，船舶图像为视觉语义，构造正负样本对做对比预训练，并调整输入模态与采样策略以适应海上稀疏和不平衡数据。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为文字字符识别，非船舶或交通感知",
+          "摘要未给出与跨模态船舶匹配相关的实验",
+          "迁移到视觉–AIS匹配需重新定义语义源与负样本，属推断"
+        ],
+        "decision": "候选",
+        "reason_zh": "语义对比预训练可迁移至视觉–AIS跨模态表征学习，但原任务为字符识别、无海事证据，迁移需具体改造。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "文字字符数据分布不平衡且稀有样本多导致识别性能受限",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出融合视觉语义与语言模型上下文语义的多模态对比预训练策略，增强不平衡字符数据的深度视觉表征",
+        "application_context": "表意文字（如中文）字符识别及历史文本完成等下游任务",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+    },
+    "9327ca5a3cdedcfa9861200884e504916930c36d4db9172bec848a19454aba02": {
+      "paper_id": "2511.13125",
+      "title": "Region-Point Joint Representation for Effective Trajectory Similarity Learning",
+      "fingerprint": "9327ca5a3cdedcfa9861200884e504916930c36d4db9172bec848a19454aba02",
+      "evaluation": {
+        "paper_id": "2511.13125",
+        "task_type": "trajectory similarity learning with region-point joint representation",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "jointly encodes Region-wise and Point-wise features to capture both spatial context and fine-grained moving patterns",
+            "interpretation_zh": "联合编码区域级与点级特征以捕捉空间上下文和细粒度运动模式",
+            "inference": false
+          },
+          {
+            "quote_en": "combined with region-wise features using cross-attention",
+            "interpretation_zh": "用交叉注意力融合点级与区域级特征形成轨迹嵌入",
+            "inference": false
+          },
+          {
+            "quote_en": "we adopt a contrastive loss with hard negative samples to provide similarity ranking supervision",
+            "interpretation_zh": "采用带困难负样本的对比损失提供相似度排序监督",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we adopt a contrastive loss with hard negative samples to provide similarity ranking supervision",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将困难负样本对比损失用于雷达–AIS或视觉–AIS轨迹关联：把候选关联对作为样本，以位置/运动特征嵌入做相似度排序，困难负样本取空间邻近但非同一目标的候选；需调整输入为多源轨迹表征并改造交叉注意力融合结构以支持模态异构。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为GPS轨迹相似度，不是雷达–AIS或视觉–AIS关联",
+          "摘要未验证海上轨迹或跨模态关联",
+          "困难负样本迁移到多源关联属推断，需重新定义正负样本"
+        ],
+        "decision": "候选",
+        "reason_zh": "区域-点联合表征与困难负样本对比学习可迁移到轨迹/跨模态关联，但原任务为GPS轨迹相似度，无海事证据。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "现有学习式轨迹相似度方法未能综合利用轨迹的多层次信息",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出RePo联合编码区域级与点级特征并用交叉注意力融合，配困难负样本对比损失学习轨迹嵌入",
+        "application_context": "GPS轨迹相似度计算与检索，跨数据集评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
+    },
+    "2a5ea1eeb65e2a4b77537ba0c5099507b9c21b67368da65aa60a49e192af9efc": {
+      "paper_id": "2412.15595",
+      "title": "Mask-RadarNet: Enhancing Radar Object Detection With Spatio-Temporal Context",
+      "fingerprint": "2a5ea1eeb65e2a4b77537ba0c5099507b9c21b67368da65aa60a49e192af9efc",
+      "evaluation": {
+        "paper_id": "2412.15595",
+        "task_type": "radar object detection using spatio-temporal context",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "exploits the combination of interleaved convolution and attention operations in the encoder",
+            "interpretation_zh": "编码器交错使用卷积与注意力操作",
+            "inference": false
+          },
+          {
+            "quote_en": "patch shift is introduced to Mask-RadarNet for efficient spatial-temporal feature learning",
+            "interpretation_zh": "引入patch shift进行高效时空特征学习",
+            "inference": false
+          },
+          {
+            "quote_en": "we design the class masking attention module (CMAM) in our encoder",
+            "interpretation_zh": "设计类掩码注意力模块捕捉时空语义上下文",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "patch shift is introduced to Mask-RadarNet for efficient spatial-temporal feature learning",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将patch shift与类掩码注意力用于雷达图像序列的船舶检测：把RF图像序列替换为海上雷达/视觉序列输入，保留时空特征学习与轻量辅助解码器结构，并调整类别掩码与先验图以适配船舶目标。",
+          "inference": true
+        },
+        "limitations": [
+          "实验为车载雷达RF图像，非海事船舶或AIS",
+          "摘要未提供多传感器融合或跨模态关联机制",
+          "迁移到海上船舶检测仅属推断"
+        ],
+        "decision": "候选",
+        "reason_zh": "车载雷达RF图像检测的时空特征学习与轻量解码有可迁移性，但场景非海事、缺少多源关联证据。",
+        "confidence": 0.6,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "RF图像雷达目标检测计算成本高且需高效时空建模",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出Mask-RadarNet，结合交错卷积-注意力、patch shift和类掩码注意力实现低复杂度雷达目标检测",
+        "application_context": "汽车雷达RF图像目标检测，CRUW数据集验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0e7dacde-f7b5-4240-811c-ceb504d1adcf"
     }
   }
 }
