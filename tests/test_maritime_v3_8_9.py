@@ -62,3 +62,9 @@ class RecoveryTests(unittest.TestCase):
     value=daily_evaluate(root,{'papers':{p['paper_id']:p for p in ps}},[],date(2026,11,8),limit=8)
    self.assertEqual(api.call_count,2);self.assertEqual(value['failed'],4);self.assertEqual(value['processed'],4);self.assertAlmostEqual(value['cost_upper_cny'],.002)
    ids=[{p['paper_id'] for p in json.loads(call.args[1]['messages'][1]['content'])['papers']} for call in api.call_args_list];self.assertFalse(ids[0]&ids[1])
+ def test_five_complete_qualified_cached_papers_need_no_new_translation(self):
+  from services.mobile_digest import select_daily
+  ps=[{'paper_id':f'2611.{20000+i}','arxiv_id':f'2611.{20000+i}','title':'Visual matching','abstract':'English','published':'2026-11-08','assessment':{'score':i,'level':'high'},'recommendation':{'bucket':'general'},'quality':{}} for i in range(8)]
+  with tempfile.TemporaryDirectory() as d,patch('services.mobile_digest.candidate_pool',return_value=[(p,0) for p in ps]),patch('services.semantic_evaluation.ranking_info',side_effect=lambda p,c=None:{'eligible':True,'state':'evaluated','score':p['assessment']['score']}),patch('services.reading_translation.cached',side_effect=lambda p:p['assessment']['score']<5):
+   chosen,audit=select_daily(Path(d),{'papers':{p['paper_id']:p for p in ps}},date(2026,11,8))
+  self.assertEqual({p['paper_id'] for p,_,_ in chosen},{p['paper_id'] for p in ps[:5]});self.assertEqual(audit['qualified_count'],8)

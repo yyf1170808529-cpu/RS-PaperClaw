@@ -48,7 +48,7 @@ test('daily DOM pins content and prompt, keeps favorites/notes, marks and undoes
   const doc={getElementById:id=>nodes.get(id),createElement:tag=>new Element(tag),addEventListener(){},querySelector:()=>null,querySelectorAll:s=>walk(nodes.get('reading-papers')).filter(n=>s==='[data-prompt-paper]'&&n.dataset.promptPaper)};
   const context=vm.createContext({document:doc,Date:class extends Date{constructor(...args){super(...(args.length?args:[now]));}},
     localStorage:{get length(){return storage.size;},key:i=>[...storage.keys()][i],getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{pathname:'/RS-PaperClaw/maritime-daily.html'},addEventListener(){},setInterval:fn=>{tick=fn;},fetch:async url=>({ok:true,json:async()=>url.includes('content-corrections')?{records:{}}:url.includes('reading-index')?{batches:[{date:latest.payload.date}]}:latest.payload})});
+    navigator:{clipboard:{writeText:async text=>{copied=text;}}},location:{pathname:'/RS-PaperClaw/maritime-daily.html'},addEventListener(){},setInterval:fn=>{tick=fn;},fetch:async url=>({ok:true,json:async()=>url.includes('content-corrections')?{records:{}}:url.includes('supplement-status')?{attempt_date:'2026-10-25',complete:5}:url.includes('publication-status')?{published_date:'2026-10-25'}:url.includes('reading-index')?{batches:[{date:latest.payload.date}]}:latest.payload})});
   for(const file of ['maritime_authors.js','maritime_favorites.js','maritime_prompt.js','maritime_daily_prompt.js','maritime_daily_reading.js'])vm.runInContext(fs.readFileSync(require('node:path').join(__dirname,'../docs',file),'utf8'),context);
   await new Promise(setImmediate);
   const articles=nodes.get('reading-papers').children;assert.equal(articles.length,5);
@@ -57,6 +57,7 @@ test('daily DOM pins content and prompt, keeps favorites/notes, marks and undoes
   find('☆收藏').click();const editor=walk(articles[0]).find(n=>n.tagName==='TEXTAREA');editor.value='中文 **笔记**';editor.handlers.input();find('保存笔记').click();
   assert.ok([...storage.values()].some(v=>v.includes('中文 **笔记**')));
   now='2026-10-25T00:00:00Z';await tick();assert.equal(nodes.get('reading-papers').children[0],articles[0]);assert.equal(nodes.get('reading-date').textContent,'每日阅读 2026-10-25');
+  await tick();assert.equal(nodes.get('reading-status').textContent.split('最近一次正式精选').length,2);assert.ok(nodes.get('reading-status').textContent.includes('最近一次正式精选：2026-10-25'));assert.equal(nodes.get('reading-batch-date').textContent,'当前批次：2026-10-24 精选');
   nodes.get('reading-complete').click();assert.equal(nodes.get('reading-complete').textContent,'已阅读完成 · 明日更新');
   await tick();assert.equal(nodes.get('reading-papers').children[0],articles[0]);
   nodes.get('reading-undo').click();assert.equal(JSON.parse(storage.get(KEY)).completed,false);
