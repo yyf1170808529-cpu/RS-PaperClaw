@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-08T06:38:56.020821+00:00",
-  "completed_at": "2026-11-08T06:46:18.639451+00:00",
+  "run_id": "2026-11-08T11:22:28.744511+00:00",
+  "completed_at": "2026-11-08T11:27:12.338168+00:00",
   "local_update": "success",
   "jobs": 0,
   "successful": 0,
@@ -92,40 +92,21 @@
     ]
   ],
   "ai": {
-    "status": "partial",
-    "processed": 37,
-    "cached": 1273,
-    "failed": 6,
-    "cost_upper_cny": 0.23105824000000005,
-    "priced_cost_cny": 0.11552912000000003,
+    "status": "deferred",
+    "processed": 0,
+    "cached": 1310,
+    "failed": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "unsettled_upper_cny": 0.0,
-    "tokens": 67921,
+    "tokens": 0,
     "missing_abstract": 0,
     "candidate_count": 1320,
-    "already_attempted_today": 4,
-    "pending_total": 43,
+    "already_attempted_today": 10,
+    "pending_total": 0,
     "limit_deferred": 0,
     "selected_count": 5,
     "ai_reviewed": 910,
-    "validation_errors": [
-      {
-        "paper_ids": [
-          "2610.00730",
-          "2609.33741",
-          "2609.21061",
-          "2609.07540"
-        ],
-        "reason": "Expecting ',' delimiter: line 1 column 3659 (char 3658)"
-      },
-      {
-        "paper_id": "2608.11343",
-        "reason": "Evidence is not an exact abstract quotation"
-      },
-      {
-        "paper_id": "2605.02116",
-        "reason": "Evidence is not an exact abstract quotation"
-      }
-    ],
     "shortfall": 0,
     "ai_states": {
       "evaluated": 910,
@@ -167,7 +148,7 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "ai_status": "partial",
+  "ai_status": "deferred",
   "translation_status": "success",
   "selection_status": "complete",
   "publication_status": "published",
@@ -175,5 +156,5 @@
   "pages_status": "not_attempted",
   "supplement": [],
   "retrieval_status": "not_run_resume",
-  "github_run_id": "42455564908"
+  "github_run_id": "42475406073"
 }
