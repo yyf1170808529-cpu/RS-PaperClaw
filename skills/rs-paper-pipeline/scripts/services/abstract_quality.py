@@ -66,7 +66,7 @@ def application(paper, policy):
     contexts = [s for s in re.split(r'(?<=[.!?])\s+',abstract) if any(has(s,t) for t in terms) and
                 re.search(r'\b(ship|ships|vessel|vessels|AIS|navigation|port|harbou?r|maritime|marine)\b',s,re.I) and
                 re.search(r'\b(detect\w*|track\w*|dataset\w*|experiment\w*|perception|fusion|monitor\w*|we|propos\w*|study|paper|method)\b',s,re.I)]
-    water = any(has(title,t) for t in terms) or bool(contexts)
+    water = any(has(title,t) for t in terms) or bool(contexts) or bool(re.search(r'water.surface|waterborne',title,re.I))
     text=title+'\n'+abstract
     from services.relevance_scope import traffic_task
     land = traffic_task(paper)

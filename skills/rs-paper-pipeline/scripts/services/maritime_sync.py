@@ -19,7 +19,7 @@ def api(url, timeout=20):
 
 def sync(root, wait_seconds=180):
     config=json.loads((root/'skills/rs-paper-pipeline/scripts/config/maritime/publication.json').read_text(encoding='utf8'))
-    result={'github_sync':'not_attempted','pages_publish':'not_attempted'}
+    result={'github_sync':'not_attempted','pages_publish':'not_attempted','sync_status':'not_attempted','pages_status':'not_attempted'}
     proxy=os.environ.get('RS_PROXY_URL') or os.environ.get('HTTPS_PROXY')
     prefix=['git']+(['-c','http.proxy='+proxy] if proxy else [])
     def git(*args):
@@ -53,10 +53,10 @@ def sync(root, wait_seconds=180):
             git('commit','-m','Update public paper data and mobile digest')
         sha=git('rev-parse','HEAD')
         git('push','origin',config['branch'])
-        result.update(github_sync='success',commit=sha)
+        result.update(github_sync='success',sync_status='success',commit=sha)
         print('GitHub推送成功：'+sha,flush=True)
         if os.environ.get('GITHUB_ACTIONS')=='true':
-            result['pages_publish']='workflow_run_pending'
+            result['pages_publish']='workflow_run_pending';result['pages_status']='workflow_run_pending'
             from services.maritime import write_json
             write_json(root/'papers/maritime/logs/latest-sync.json',result)
             print(json.dumps(result,ensure_ascii=False),flush=True)
@@ -76,6 +76,7 @@ def sync(root, wait_seconds=180):
     except Exception as exc:
         result['reason']=str(exc)
         if result['github_sync']!='success':result['github_sync']='stopped'
+    result.update(sync_status=result['github_sync'],pages_status=result['pages_publish'])
     from services.maritime import write_json
     write_json(root/'papers/maritime/logs/latest-sync.json',result)
     print(json.dumps(result,ensure_ascii=False),flush=True)

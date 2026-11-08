@@ -44,7 +44,7 @@ def venue_quality(paper, venues, policy):
         categories.setdefault(r.get("category") or "institutional journal-level JIF summary", set()).add(r["quartile"])
     jcr_ok = any(values == {"Q1"} for values in categories.values())
     catalog = policy.get("ccf", {})
-    matches = [r for r in catalog.get("conferences", []) if any(re.search(r"\b" + re.escape(alias) + r"\b", paper.get("venue", ""), re.I) for alias in r["aliases"])]
+    matches = [r for r in catalog.get("conferences", []) if any(re.search(r"\b" + re.escape(alias) + (r"\b(?=\s*(?:$|[0-9(,:;/\-]|conference\b|proceedings\b))" if " " in alias else r"\b"), paper.get("venue", ""), re.I) for alias in r["aliases"])]
     conference_record = matches[0] if len(matches) == 1 else {}
     conference = False
     if (paper.get("venue_type") == "conference" and paper.get("publication_status") == "published"

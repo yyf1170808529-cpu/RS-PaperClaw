@@ -334,7 +334,9 @@ def fetch_topic_candidates(query: str, start_date: str, end_date: str,
                 return list(items.values())
         except (ET.ParseError, ValueError) as exc:
             raise ArxivUnavailableError(f"Invalid arXiv response: {exc}") from exc
-    raise ArxivUnavailableError(f"Candidate scan exceeded {max_pages} pages; narrow dates/topics or increase --max-pages")
+    error=ArxivUnavailableError(f"Candidate scan exceeded {max_pages} pages; narrow dates/topics or increase --max-pages")
+    error.partial_results=list(items.values())
+    raise error
 
 
 def download_pdf(arxiv_id: str) -> tuple[Path | None, bool]:

@@ -34,11 +34,16 @@ def fetch_job(job, args, start, end):
         return scholarly_client.fetch_openalex(str(start), str(end), job["query"], args.root,
             args.max_pages, min(args.page_size, 100), args.timeout, args.retries)
     time.sleep(3)
-    batch = arxiv_client.fetch_topic_candidates(job["query"], str(start), str(end), args.page_size,
-        args.max_pages, args.retries, args.timeout)
+    complete=True
+    try:
+        batch = arxiv_client.fetch_topic_candidates(job["query"], str(start), str(end), args.page_size,
+            args.max_pages, args.retries, args.timeout)
+    except arxiv_client.ArxivUnavailableError as exc:
+        if not job.get('supplement') or not getattr(exc,'partial_results',None):raise
+        batch=exc.partial_results;complete=False
     for p in batch:
         p.update(paper_id=p["arxiv_id"], publication_date=p["published"], metadata_source=["arXiv"])
-    return batch, True
+    return batch, complete
 
 
 def _fetch_worker(queue, job, args, start, end):
@@ -181,15 +186,19 @@ def run_update(args, library, rules):
     print('[译] '+json.dumps(translations,ensure_ascii=False),flush=True)
     from services.adaptive_discovery import recover
     library.pop('supplement_existing_ai',None)
+    library.pop('supplement_existing_translation',None)
+    args.supplement_seconds=max(0,2400-(time.monotonic()-started))
     supplement=recover(args,library,rules,end,save)
     added+=sum(r.get('added',0) for r in supplement)
     for field in ('processed','tokens','cost_upper_cny','priced_cost_cny'):
         ai[field]=ai.get(field,0)+library.get('supplement_existing_ai',{}).get(field,0)+sum(r.get('ai',{}).get(field,0) for r in supplement)
     for field in ('translated','api_calls','cost_upper_cny','priced_cost_cny'):
-        translations[field]=translations.get(field,0)+sum(r.get('translation',{}).get(field,0) for r in supplement)
+        translations[field]=translations.get(field,0)+library.get('supplement_existing_translation',{}).get(field,0)+sum(r.get('translation',{}).get(field,0) for r in supplement)
     stage = time.monotonic()
     print("[4/4] 生成网页和日报：开始", flush=True)
     build(args.root, library, rules, mobile_date=end)
+    from services.mobile_digest import refresh_mobile_pages
+    refresh_mobile_pages(args.root,library)
     save()
     print(f"[4/4] 完成，耗时 {time.monotonic()-stage:.1f}s", flush=True)
     source_status = "success" if all(r["status"] == "success" for r in results) else "partial" if any(r["status"] != "failed" for r in results) else "failed"
@@ -207,7 +216,7 @@ def run_update(args, library, rules):
                "daily_publication":publication['status'],"published_daily_date":publication['published_date'],
                "published_daily_count":len(json.loads(latest_path.read_text(encoding='utf8'))['papers']) if latest_path.exists() else 0,
                "github_sync": "not_attempted", "pages_publish": "not_attempted"}
-    summary.update(ai_status=ai['status'],translation_status='partial' if translations['failed'] else 'success',selection_status=publication['status'],publication_status=publication['status'],sync_status='not_attempted',pages_status='not_attempted',supplement=supplement)
+    summary.update(ai_status=ai['status'],translation_status='partial' if translations['failed'] else 'success',selection_status='complete' if publication['status']=='complete' else 'pending',publication_status='published' if publication['status']=='complete' else 'pending',sync_status='not_attempted',pages_status='not_attempted',supplement=supplement)
     summary["retrieval_status"]="not_run_resume" if not jobs else source_status
     all_sources=results+[job for row in supplement for job in row.get('jobs',[])]
     summary['retrieval_status']=('not_run_resume' if not all_sources else 'failed' if all(r['status']=='failed' for r in all_sources) else 'partial' if any(r['status']!='success' for r in all_sources) else 'success')

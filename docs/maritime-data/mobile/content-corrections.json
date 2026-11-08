@@ -94,6 +94,14 @@
     "2609.39969": {
       "reason": "核心任务为规划/操作而非视觉感知或匹配：LLM Tactical Planning",
       "replacement": null
+    },
+    "doi:10.1109/icmlt69916.2026.11688998": {
+      "reason": "ICMLT不是ICML；未满足CCF A正式会议要求",
+      "replacement": null
+    },
+    "2603.06670": {
+      "reason": "水面海事预印本不满足水路正式高水平期刊门槛",
+      "replacement": null
     }
   }
 }

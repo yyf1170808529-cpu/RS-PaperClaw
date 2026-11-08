@@ -82,6 +82,9 @@ def refresh_reserve(root,library,day,config=None):
     return payload
 
 def review_bucket(p):
+    from services.semantic_evaluation import current_evaluation
+    evaluation=current_evaluation(p)
+    if evaluation and evaluation.get('primary_domain') in ('maritime_fusion','ship_vision'):return 'water'
     application=p.get('application_bucket')
     if application=='water' or p.get('recommendation',{}).get('application')=='maritime':return 'water'
     bucket=p.get('recommendation',{}).get('bucket')

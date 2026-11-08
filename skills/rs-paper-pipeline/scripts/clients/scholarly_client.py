@@ -209,7 +209,7 @@ def fetch_crossref(journal, start, end, query, root, pages=5, rows=100, timeout=
 
 
 def fetch_openalex(start, end, query, root, pages=5, rows=100, timeout=20, retries=3):
-    result, cursor = [], None
+    result, cursor = [], "*" if openalex_key() else None
     for page in range(pages):
         if page:
             time.sleep(1)
