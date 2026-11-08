@@ -2,15 +2,15 @@
   "attempt_date": "2026-11-08",
   "status": "complete",
   "published_date": "2026-11-08",
-  "published_revision": "9457f2148e079247",
+  "published_revision": "d18624720a990eb9",
   "selection_audit": {
     "candidate_count": 1320,
-    "ai_reviewed": 895,
+    "ai_reviewed": 910,
     "ai_states": {
-      "evaluated": 895,
-      "uncertain": 373,
-      "domain_excluded": 5,
-      "unassessed": 47
+      "evaluated": 910,
+      "uncertain": 389,
+      "domain_excluded": 11,
+      "unassessed": 10
     },
     "stage_counts": {
       "0": 63,
@@ -18,9 +18,9 @@
       "2": 1170,
       "3": 41
     },
-    "ai_rejected": 890,
+    "ai_rejected": 900,
     "translation_deferred": 0,
-    "qualified_count": 5,
+    "qualified_count": 10,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [],

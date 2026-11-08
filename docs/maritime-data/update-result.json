@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-08T06:14:43.817949+00:00",
-  "completed_at": "2026-11-08T06:19:15.766965+00:00",
+  "run_id": "2026-11-08T06:38:56.020821+00:00",
+  "completed_at": "2026-11-08T06:46:18.639451+00:00",
   "local_update": "success",
   "jobs": 0,
   "successful": 0,
@@ -12,9 +12,9 @@
   "before_count": 4675,
   "after_count": 4675,
   "translation": {
-    "translated": 2,
+    "translated": 0,
     "failed": 0,
-    "cached": 3,
+    "cached": 5,
     "manual": 0,
     "pending": 0,
     "missing_english": 0,
@@ -29,9 +29,9 @@
     "replacement_failures": [],
     "selected": 5,
     "engine": "DeepSeek",
-    "api_calls": 2,
-    "cost_upper_cny": 0.00903000000000001,
-    "priced_cost_cny": 0.004514999999999991,
+    "api_calls": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "papers": [
       {
         "paper_id": "2504.09197",
@@ -93,34 +93,57 @@
   ],
   "ai": {
     "status": "partial",
-    "processed": 4,
-    "cached": 1269,
-    "failed": 0,
-    "cost_upper_cny": 0.05133168,
-    "priced_cost_cny": 0.02566584,
-    "unsettled_upper_cny": 0,
-    "tokens": 14378,
+    "processed": 37,
+    "cached": 1273,
+    "failed": 6,
+    "cost_upper_cny": 0.23105824000000005,
+    "priced_cost_cny": 0.11552912000000003,
+    "unsettled_upper_cny": 0.0,
+    "tokens": 67921,
     "missing_abstract": 0,
     "candidate_count": 1320,
-    "already_attempted_today": 0,
-    "pending_total": 51,
+    "already_attempted_today": 4,
+    "pending_total": 43,
     "limit_deferred": 0,
     "selected_count": 5,
-    "ai_reviewed": 895,
-    "reason": "Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+    "ai_reviewed": 910,
+    "validation_errors": [
+      {
+        "paper_ids": [
+          "2610.00730",
+          "2609.33741",
+          "2609.21061",
+          "2609.07540"
+        ],
+        "reason": "Expecting ',' delimiter: line 1 column 3659 (char 3658)"
+      },
+      {
+        "paper_id": "2608.11343",
+        "reason": "Evidence is not an exact abstract quotation"
+      },
+      {
+        "paper_id": "2605.02116",
+        "reason": "Evidence is not an exact abstract quotation"
+      }
+    ],
     "shortfall": 0,
     "ai_states": {
-      "evaluated": 895,
-      "uncertain": 373,
-      "domain_excluded": 5,
-      "unassessed": 47
+      "evaluated": 910,
+      "uncertain": 389,
+      "domain_excluded": 11,
+      "unassessed": 10
     },
     "publication_status": "complete",
-    "reserve_available": 2
+    "reserve_available": 5
   },
   "affiliations": [
     {
       "paper_id": "2504.09197",
+      "status": "cached_verified",
+      "source": "OpenAlex first authorship"
+    },
+    {
+      "paper_id": "2604.24044",
       "status": "cached_verified",
       "source": "OpenAlex first authorship"
     },
@@ -130,34 +153,12 @@
       "source": "OpenAlex first authorship"
     },
     {
-      "paper_id": "2611.04034",
+      "paper_id": "2606.09634",
       "status": "cached_unverified"
     },
     {
-      "paper_id": "2606.09634",
-      "revision": 1,
-      "time": "2026-11-08T06:17:49.203318+00:00",
-      "status": "unverified",
-      "attempts": [
-        {
-          "source": "crossref",
-          "status": "unavailable",
-          "error": "api.crossref.org HTTP 404: Resource not found."
-        },
-        {
-          "source": "openalex",
-          "status": "received"
-        },
-        {
-          "source": "arxiv",
-          "status": "received"
-        }
-      ]
-    },
-    {
-      "paper_id": "2604.24044",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "paper_id": "2611.04034",
+      "status": "cached_unverified"
     }
   ],
   "daily_selected": 5,
@@ -166,7 +167,7 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "ai_status": "success",
+  "ai_status": "partial",
   "translation_status": "success",
   "selection_status": "complete",
   "publication_status": "published",
@@ -174,5 +175,5 @@
   "pages_status": "not_attempted",
   "supplement": [],
   "retrieval_status": "not_run_resume",
-  "github_run_id": "42453895648"
+  "github_run_id": "42455564908"
 }

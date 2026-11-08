@@ -383408,7 +383408,59 @@
         "raw_hash": "9263f6de691a071ec471b6b73a9e8fb0e89f79efc57cfdd2d50f822f3e48a791"
       },
       "application_bucket": "general",
-      "semantic": null,
+      "semantic": {
+        "paper_id": "doi:10.1109/tits.2026.3695618",
+        "title": "M 3 Detection: Multi-Frame Multi-Level Feature Fusion for Multi-Modal 3-D Object Detection With Camera and 4-D Imaging Radar",
+        "fingerprint": "a8af344e1e18a4b9a5140a26d74eda7a5057483506520786d9ed21079b4247f5",
+        "evaluation": {
+          "paper_id": "doi:10.1109/tits.2026.3695618",
+          "task_type": "traffic_perception",
+          "direct_relevance": 2,
+          "transferability": 4,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "相机与4D成像雷达单帧融合信息不完整，多帧融合面临跨帧跨模态特征对齐与冗余计算问题",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出多帧多层级相机-4D雷达融合3D检测框架，含雷达引导的全局候选对齐、轨迹局部网格聚合与轨迹级时空融合",
+          "application_context": "自动驾驶/智能交通中的相机与4D成像雷达3D目标检测",
+          "method_evidence": [
+            {
+              "quote_en": "a global-level inter-object feature aggregation module (GOA) guided by radar information to align global features across candidate proposals",
+              "interpretation_zh": "雷达信息引导的全局级目标间特征聚合，用于在候选框间对齐全局特征，可对应雷达引导的候选级多模态对齐。",
+              "inference": false
+            },
+            {
+              "quote_en": "a local-level inter-grid feature aggregation module (LGA) that expands local features along the reference trajectories",
+              "interpretation_zh": "沿参考轨迹扩展局部特征的网格级聚合，增强细粒度目标表征，可对应跟踪轨迹引导的局部特征融合。",
+              "inference": false
+            },
+            {
+              "quote_en": "a trajectory-level multi-frame spatial-temporal fusion module (MSTF) to encode cross-frame interactions and enhance temporal representation",
+              "interpretation_zh": "轨迹级多帧时空融合编码跨帧交互，可对应雷达-AIS或多传感器时序轨迹特征融合。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "a trajectory-level multi-frame spatial-temporal fusion module (MSTF) to encode cross-frame interactions and enhance temporal representation",
+            "target_task": "multi_sensor_detection",
+            "adaptation_zh": "将轨迹级多帧时空融合与雷达引导候选对齐迁移到船舶多传感器检测/融合：输入从相机-4D雷达帧改为视觉船舶检测候选与雷达/AIS轨迹；训练目标改为沿AIS/雷达参考轨迹聚合多帧视觉与雷达特征并融合为检测框；结构上保留GOA候选对齐、LGA轨迹局部扩展与MSTF时序融合，但需把汽车3D框替换为船舶框并适配海上稀疏雷达点云。",
+            "inference": true
+          },
+          "limitations": [
+            "原始场景为道路自动驾驶相机-4D雷达，非海事船舶或AIS",
+            "海上目标尺度、稀疏雷达点云与AIS异步更新需重新设计关联",
+            "摘要未提供开源代码细节或跨域泛化实验"
+          ],
+          "decision": "重点推荐",
+          "reason_zh": "相机-雷达多帧多层级融合、雷达引导候选对齐与轨迹级时空融合对多传感器船舶检测及雷达/AIS轨迹融合有明确可迁移结构证据，属优先方向。",
+          "confidence": 0.82,
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "86e7786b-82d6-420a-9763-67211580c3dd",
+        "compatible_fingerprints": []
+      },
       "daily_domain_exclusion": null,
       "research_directions": [],
       "arxiv_id": "2510.27166",
@@ -383431,10 +383483,10 @@
         "source": "https://openalex.org/W7162762005",
         "relation": "arxiv landing location"
       },
-      "ai_score": null,
-      "ai_demoted": true,
-      "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_score": 48,
+      "ai_demoted": false,
+      "recommendation_status": "direct",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -667572,10 +667624,53 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2605.31284",
+        "title": "SAM for Robust Mitochondria Instance Segmentation in Fluorescence Microscopy",
+        "fingerprint": "1c89b4b683a04b4bf1dd6b6063bad33a3c35114fba2d8860b0bbd46746fec060",
+        "evaluation": {
+          "paper_id": "2605.31284",
+          "task_type": "synthetic-data fine-tuning of SAM for mitochondria instance segmentation",
+          "direct_relevance": 0,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "we propose a scalable solution to this data scarcity by finetuning SAM exclusively on synthetically generated FM data",
+              "interpretation_zh": "摘要提出仅在合成荧光显微镜数据上微调SAM以缓解标注稀缺。",
+              "inference": false
+            },
+            {
+              "quote_en": "We simulate realistic mitochondria data and emulate the optical properties of fluorescence microscopes to create a large-scale annotated dataset",
+              "interpretation_zh": "通过模拟线粒体数据和荧光显微镜光学特性构建大规模标注数据。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "研究对象为荧光显微镜线粒体实例分割，与海事/交通感知无关",
+            "方法为合成数据微调SAM，缺乏对本任务可复用匹配/融合机制的摘要证据",
+            "无法具体说明输入/训练/结构在目标任务的调整"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "生物医学显微图像分割，与AIS关联、船舶视觉及通用匹配方法无直接联系，方法证据不足以支撑具体迁移。",
+          "confidence": 0.85,
+          "primary_domain": "biomedical",
+          "primary_problem": "荧光显微镜线粒体实例分割中严重域偏移与高质量标注稀缺",
+          "target_task": "ship_segmentation",
+          "core_contribution": "仅用合成荧光显微镜数据微调SAM，提升真实数据上的线粒体实例分割精度",
+          "application_context": "细胞形态学分析中的线粒体分割",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "9884b45d-31cf-48b7-9116-dc5da36db2b2",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -685106,10 +685201,63 @@
         "C"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2512.22972",
+        "title": "Wavelet-based Multi-View Fusion of 4D Radar Tensor and Camera for Robust 3D Object Detection",
+        "fingerprint": "99accf444478d535b78ff3c3e69980fc302e37df63e2e93fed90d75b943d3a77",
+        "evaluation": {
+          "paper_id": "2512.22972",
+          "task_type": "4D radar tensor-camera 3D object detection via wavelet multi-view fusion",
+          "direct_relevance": 3,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "A Wavelet Attention Module embedded in a wavelet-based Feature Pyramid Network (FPN), which enhances the representation of sparse radar signals and image data by capturing joint spatial-frequency features",
+              "interpretation_zh": "摘要提出小波注意力模块嵌入小波FPN，以联合空频特征增强稀疏雷达与图像表示。",
+              "inference": false
+            },
+            {
+              "quote_en": "A Geometry-guided Progressive Fusion mechanism, a two-stage query-based fusion strategy that progressively aligns multi-view radar and visual features through geometric priors",
+              "interpretation_zh": "摘要提出几何引导渐进融合，两阶段查询式策略借助几何先验逐步对齐多视图雷达与视觉特征。",
+              "inference": false
+            },
+            {
+              "quote_en": "enabling modality-agnostic and efficient integration without overwhelming computational overhead",
+              "interpretation_zh": "该融合被描述为模态无关且计算高效。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "A Geometry-guided Progressive Fusion mechanism, a two-stage query-based fusion strategy that progressively aligns multi-view radar and visual features through geometric priors",
+            "target_task": "multi_sensor_detection",
+            "adaptation_zh": "将几何引导的两阶段查询式渐进对齐用于雷达/AIS与视觉船舶检测融合：以AIS点投影几何先验替代雷达视图先验，第一阶段粗对齐、第二阶段查询式精对齐，训练目标为船舶检测框回归。",
+            "inference": true
+          },
+          "limitations": [
+            "验证在K-Radar自动驾驶基准，非海事场景",
+            "摘要未涉及AIS关联或船舶数据",
+            "迁移需重新设计几何先验来源"
+          ],
+          "decision": "候选",
+          "reason_zh": "多视图雷达-视觉几何引导渐进融合方法具体，与多传感器船舶检测有可迁移性，但原场景为陆上自动驾驶。",
+          "confidence": 0.65,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "4D雷达张量表示的信息损失与原始张量计算代价过高之间的权衡",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出WRCFormer，用小波注意力FPN与几何引导渐进融合联合原始4D雷达立方与相机图像做3D检测",
+          "application_context": "自动驾驶与机器人感知中的全天候3D目标检测",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "9884b45d-31cf-48b7-9116-dc5da36db2b2",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -688467,10 +688615,58 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2511.06666",
+        "title": "REOcc: Camera-Radar Fusion with Radar Feature Enrichment for 3D Occupancy Prediction",
+        "fingerprint": "d23ab7cb50f38180387b54a50c8b991b8de5bb9eeff520c062ec17f051269afb",
+        "evaluation": {
+          "paper_id": "2511.06666",
+          "task_type": "camera-radar fusion for 3D occupancy prediction",
+          "direct_relevance": 3,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "a Radar Densifier and a Radar Amplifier, which refine radar features by integrating spatial and contextual information, effectively enhancing spatial density and quality",
+              "interpretation_zh": "提出雷达特征稠密化与放大模块，利用空间和上下文信息提升稀疏/噪声雷达特征密度与质量。",
+              "inference": false
+            },
+            {
+              "quote_en": "a novel camera-radar fusion network designed to enrich radar feature representations for 3D occupancy prediction",
+              "interpretation_zh": "面向相机-雷达融合网络增强雷达表征，用于3D占据预测。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "a Radar Densifier and a Radar Amplifier, which refine radar features by integrating spatial and contextual information, effectively enhancing spatial density and quality",
+            "target_task": "multi_sensor_detection",
+            "adaptation_zh": "将雷达特征稠密化与放大扩展到多传感器船舶检测：输入改为雷达点云与AIS/视觉特征，输出由占据网格改为检测框或目标关联特征，训练目标加入检测/关联损失。",
+            "inference": true
+          },
+          "limitations": [
+            "验证场景为Occ3D-nuScenes自动驾驶占据预测，非海事场景",
+            "摘要未给出雷达稠密化/放大模块的具体网络结构与损失细节",
+            "未涉及AIS关联或船舶目标"
+          ],
+          "decision": "候选",
+          "reason_zh": "相机-雷达融合与雷达特征增强对多传感器船舶检测有可迁移性，但非直接海事任务，迁移需结构调整。",
+          "confidence": 0.75,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "解决雷达稀疏与噪声导致相机-雷达融合次优的问题",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出雷达稠密器与放大器以丰富雷达特征表征，提升相机-雷达融合3D占据预测",
+          "application_context": "Occ3D-nuScenes自动驾驶3D占据预测基准",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "411c5a77-29be-41cf-b7ac-ffa1a5f2d648",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 64,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -690778,10 +690974,63 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2605.11840",
+        "title": "Selection, Not Fusion: Radar-Modulated State Space Models for Radar-Camera Depth Estimation",
+        "fingerprint": "dc95f80ae155889c3d1e8ea1a7b0b21762c68ec3df2d34914e1539614ecb232f",
+        "evaluation": {
+          "paper_id": "2605.11840",
+          "task_type": "radar-camera depth estimation via radar-modulated Mamba selection",
+          "direct_relevance": 2,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "We introduce Radar-Modulated Selection (RMS), which injects radar inside the selective scan of Mamba",
+              "interpretation_zh": "摘要提出在Mamba选择性扫描内部注入雷达调制。",
+              "inference": false
+            },
+            {
+              "quote_en": "Radar adds learned perturbations, initialised at zero, to the step size $Δ$ and the readout $\\mathbf{C}$",
+              "interpretation_zh": "雷达以零初始化学习扰动作用于步长Δ和读出C。",
+              "inference": false
+            },
+            {
+              "quote_en": "The construction also couples the two modalities at linear cost and falls back to the image backbone when radar is missing",
+              "interpretation_zh": "该结构以线性代价耦合两模态，并在雷达缺失时回退到图像主干。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "The construction also couples the two modalities at linear cost and falls back to the image backbone when radar is missing",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将雷达调制的选择/缺失回退机制用于视觉-AIS关联：把AIS稀疏点作为调制信号注入视觉序列选择，零初始化使AIS仅在提升关联准确时生效，并在AIS缺失时回退视觉单模态，训练目标改为关联/匹配。",
+            "inference": true
+          },
+          "limitations": [
+            "验证任务为深度估计而非跨模态关联匹配，迁移为推断",
+            "雷达与AIS的稀疏性及时空统计差异未讨论",
+            "摘要未提供关联评价指标"
+          ],
+          "decision": "候选",
+          "reason_zh": "在序列选择内部注入稀疏雷达并支持缺失模态回退，思路具体，可迁移到视觉-AIS关联，但原任务为深度估计。",
+          "confidence": 0.6,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "稀疏雷达信号与图像融合的深度估计，模态融合位置与鲁棒性问题",
+          "target_task": "ship_depth",
+          "core_contribution": "提出Radar-Modulated Selection，在Mamba选择性扫描内注入雷达并在缺失时回退图像主干",
+          "application_context": "自动驾驶nuScenes上的雷达-相机深度估计",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "9884b45d-31cf-48b7-9116-dc5da36db2b2",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -690926,10 +691175,58 @@
         "C"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2606.00416",
+        "title": "4D Radar Meets LiDAR and Camera: Cooperative Perception under Adverse Weather",
+        "fingerprint": "a8b6b76d81156d31824aded3db272ca12d56f99615d6001d4d64feb92532dc16",
+        "evaluation": {
+          "paper_id": "2606.00416",
+          "task_type": "多传感器融合感知",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "introducing a Doppler-guided spatial attention mechanism for multi-agent fusion",
+              "interpretation_zh": "提出多普勒引导的空间注意力用于多智能体融合，可借鉴于多传感器关联融合中的跨模态注意力设计",
+              "inference": false
+            },
+            {
+              "quote_en": "a radar-camera pipeline where radar substitutes LiDAR",
+              "interpretation_zh": "雷达替代LiDAR的流水线结构，表明雷达与相机融合的灵活替换机制",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "introducing a Doppler-guided spatial attention mechanism for multi-agent fusion",
+            "target_task": "multi_sensor_detection",
+            "adaptation_zh": "将多普勒引导的空间注意力机制迁移到船载多传感器（如雷达-视觉）检测融合中，调整输入为船舶传感器特征，训练目标为融合后的目标检测损失，结构上保留注意力融合模块但需适配海事目标尺度和传感器配置。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未提供多普勒引导注意力的具体网络结构或计算细节",
+            "实验场景为车路协同，未涉及海事目标或AIS",
+            "迁移到船舶检测需重新设计输入表征和训练目标，但摘要未验证此类迁移"
+          ],
+          "decision": "候选",
+          "reason_zh": "方法涉及多传感器融合和多普勒注意力，可迁移至海事多传感器检测，但直接相关性低，需具体适配。",
+          "confidence": 0.65,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "恶劣天气下相机和LiDAR退化时的协同感知鲁棒性",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "集成4D成像雷达作为天气鲁棒模态，提出多普勒引导空间注意力用于多智能体融合，并发布雷达增强基准",
+          "application_context": "自动驾驶协同感知，验证于OPV2V-R、Adver-City-R和MAN TruckScenes",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ef7bd064-9347-45f0-9eb8-241c96287b46",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -691066,10 +691363,48 @@
         "C"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2512.08262",
+        "title": "RLCNet: An end-to-end deep learning framework for simultaneous online calibration of LiDAR, RADAR, and Camera",
+        "fingerprint": "24fbb35e65061b2f217178dd805791c632d931b33781ea506dcca22e39210965",
+        "evaluation": {
+          "paper_id": "2512.08262",
+          "task_type": "LiDAR-RADAR-camera online extrinsic calibration",
+          "direct_relevance": 1,
+          "transferability": 1,
+          "method_evidence": [
+            {
+              "quote_en": "online calibration framework is introduced that incorporates a weighted moving average and outlier rejection",
+              "interpretation_zh": "引入加权移动平均与离群点剔除的在线标定框架，可处理传感器参数漂移。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "核心贡献是多传感器外参在线标定，不是目标检测、匹配或关联方法",
+            "摘要未给出可复用的跨模态匹配表征或检测机制",
+            "离群剔除仅用于标定参数平滑，难以直接支撑船舶跨模态匹配"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "在线外参标定与目标关联匹配任务差异大，缺少可具体迁移的匹配或检测机制证据。",
+          "confidence": 0.6,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "LiDAR、雷达与相机多模态外参在线标定",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出端到端可训练的RLCNet在线标定框架，结合加权移动平均与离群剔除提升鲁棒性",
+          "application_context": "自动驾驶多传感器外参在线标定",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "51318480-88f8-4f45-b52f-42f7f4f014ba",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -691208,10 +691543,63 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2606.08844",
+        "title": "Geometry-Aware Fisheye-LiDAR Fusion for Robust 3D Object Detection in Low-Overlap Setups",
+        "fingerprint": "2cba1d769693c2b5bd20c04e2de1347880924c2d668117125bd51b759c36c85c",
+        "evaluation": {
+          "paper_id": "2606.08844",
+          "task_type": "3D object detection via geometry-aware fisheye-LiDAR fusion",
+          "direct_relevance": 2,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "fisheye features are lifted into a polar BEV grid via a Distortion-Aware Lift-Splat-Shoot (LSS) module to preserve native angular density",
+              "interpretation_zh": "摘要明确提出将鱼眼特征经畸变感知LSS模块提升到极坐标BEV网格，保留原生角度密度。",
+              "inference": false
+            },
+            {
+              "quote_en": "we introduce a Dual-Attention Warping Correction module that applies spatial and channel attention to the warped camera features before fusion",
+              "interpretation_zh": "摘要说明融合前采用空间与通道注意力对经warp的相机特征进行校正。",
+              "inference": false
+            },
+            {
+              "quote_en": "LiDAR features are processed in native Cartesian space for metric fidelity of bounding box regression",
+              "interpretation_zh": "激光雷达特征在原生笛卡尔空间处理以保持框回归的度量精度。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "we introduce a Dual-Attention Warping Correction module that applies spatial and channel attention to the warped camera features before fusion",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将双注意力warping校正用于视觉-AIS跨模态对齐：以AIS投影到图像平面后，针对位置偏移和低质量边缘区域，在融合前对视觉特征施加空间/通道注意力校正，训练目标仍为匹配/关联。",
+            "inference": true
+          },
+          "limitations": [
+            "实验在KITTI-360、Dur360BEV、Fisheye3DOD上的3D检测，非海事AIS场景",
+            "未提供跨模态关联/匹配任务的直接证据",
+            "AIS投影与鱼眼畸变模型差异未讨论"
+          ],
+          "decision": "候选",
+          "reason_zh": "陆上多传感器融合与几何感知特征校正有明确方法描述，可借鉴到视觉-AIS对齐，但直接对象为自动驾驶3D检测。",
+          "confidence": 0.6,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "稀疏视角鱼眼相机与LiDAR融合时的几何畸变和低重叠导致特征失真",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出几何感知混合融合框架GA-HF，用畸变感知LSS和双注意力warping校正融合鱼眼与LiDAR",
+          "application_context": "自动驾驶稀疏传感器配置下的3D目标检测",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "9884b45d-31cf-48b7-9116-dc5da36db2b2",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -691355,10 +691743,62 @@
         "C"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2604.25574",
+        "title": "Control Your Queries: Heterogeneous Query Interaction for Camera-Radar Fusion",
+        "fingerprint": "8cbb75cc27c455b643f888573d364d96ec9ba9b57b113fb36437fccffa3a3afd",
+        "evaluation": {
+          "paper_id": "2604.25574",
+          "task_type": "camera-radar 3D object detection",
+          "direct_relevance": 2,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "heterogeneous query mixing (QMix), which performs dedicated cross-type attention after feature sampling",
+              "interpretation_zh": "QMix通过跨类型注意力在特征采样后融合异构查询，可视为跨模态对齐的通用机制。",
+              "inference": false
+            },
+            {
+              "quote_en": "interactive query swap sampling (QSwap), which improves feature sampling by allowing related queries to exchange informative feature tokens",
+              "interpretation_zh": "QSwap允许相关查询交换信息特征令牌，可迁移至跨模态匹配中的特征采样与对齐。",
+              "inference": false
+            },
+            {
+              "quote_en": "ConFusion combines image queries, radar queries, and learnable world queries distributed in 3D space",
+              "interpretation_zh": "用图像、雷达与可学习世界查询进行融合，是多源传感器表征融合思路。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "heterogeneous query mixing (QMix), which performs dedicated cross-type attention after feature sampling",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将图像查询-雷达查询的跨类型注意力替换为视觉-AIS或视觉-雷达跨模态查询交互，把AIS/雷达特征作为另一类查询，训练目标改为跨模态目标匹配或关联分数预测，结构上保留查询采样与交换机制。",
+            "inference": true
+          },
+          "limitations": [
+            "验证仅限nuScenes自动驾驶相机-雷达3D检测，无海事或多源轨迹关联实验",
+            "跨模态匹配迁移未在摘要中验证，属推断"
+          ],
+          "decision": "候选",
+          "reason_zh": "相机-雷达查询交互与交换采样有具体可迁移机制，可借鉴到视觉-AIS/雷达跨模态匹配，但非海事且迁移为推断。",
+          "confidence": 0.6,
+          "primary_domain": "traffic_perception",
+          "primary_problem": "相机-雷达异构查询交互与3D目标检测融合",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "提出异构查询交互范式ConFusion，用QMix跨类型注意力和QSwap查询交换采样提升融合检测",
+          "application_context": "自动驾驶nuScenes相机-雷达3D目标检测",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "51318480-88f8-4f45-b52f-42f7f4f014ba",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -695247,10 +695687,57 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2605.31312",
+        "title": "Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization",
+        "fingerprint": "ad9f2b86e71c5bad62aa92b4707bb810747e95d067a271657ddd038b52d525c8",
+        "evaluation": {
+          "paper_id": "2605.31312",
+          "task_type": "general_visual_method",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "propose a contrastive sample editing strategy that generates hard negatives via precise semantic perturbations",
+              "interpretation_zh": "通过精确语义扰动生成困难负样本的对比样本编辑策略",
+              "inference": false
+            },
+            {
+              "quote_en": "placing contrastive images within a shared multi-image context",
+              "interpretation_zh": "将对比图像放入共享多图上下文进行视觉对比优化",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "contrastive sample editing strategy that generates hard negatives via precise semantic perturbations",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将语义扰动式困难负样本生成迁移到视觉-AIS跨模态匹配：对AIS轨迹文本或视觉局部区域施加语义扰动构造AIS-图像不匹配的困难负样本对，在跨模态对比目标中替代随机负样本，并与多图上下文对比思想结合。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未给出跨模态匹配实验，迁移需重新设计负样本模态与匹配目标",
+            "方法聚焦视觉语言模型幻觉，无法确认对传感器关联的适用性"
+          ],
+          "decision": "候选",
+          "reason_zh": "通用视觉多模态困难负样本方法，可迁移至视觉–AIS匹配，但无海事证据。",
+          "confidence": 0.5,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "缓解视觉语言模型多模态幻觉",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出IC-VCO及基于语义扰动的对比样本编辑生成困难负样本",
+          "application_context": "视觉语言模型基准测试",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "126f9064-92d1-4f26-a7d7-2aa471c41c72",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -696371,10 +696858,57 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2605.28441",
+        "title": "Bayesian Gated Non-Negative Contrastive Learning",
+        "fingerprint": "4deedd51cf0393a0a7b2f20b2b0136d12b092e2cb11695c7ebb558cf9a28b18a",
+        "evaluation": {
+          "paper_id": "2605.28441",
+          "task_type": "general_visual_method",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "BayesNCL introduces a probabilistic gating mechanism that dynamically filters out task-irrelevant, high-frequency common features while selectively retaining discriminative semantics",
+              "interpretation_zh": "用概率门控动态过滤任务无关高频共有特征并保留判别语义",
+              "inference": false
+            },
+            {
+              "quote_en": "formalizing feature selection as a variational inference problem with a sparse Bernoulli prior",
+              "interpretation_zh": "以稀疏伯努利先验将特征选择形式化为变分推断",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "probabilistic gating mechanism that dynamically filters out task-irrelevant, high-frequency common features while selectively retaining discriminative semantics",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将概率门控用于视觉–AIS跨模态表征学习：在融合特征上加入门控，抑制背景/海杂波等共有冗余维度，保留关联判别特征；训练目标改为跨模态正负对对比损失，门控先验保持稀疏伯努利。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要仅在ImageNet-100图像自监督分类验证",
+            "未涉及跨模态或传感数据，迁移细节需重新设计"
+          ],
+          "decision": "候选",
+          "reason_zh": "通用对比表征门控方法可迁移，但无海事及跨模态直接证据。",
+          "confidence": 0.45,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "对比学习潜表征纠缠与不可解释问题",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出贝叶斯门控非负对比学习，通过变分推断稀疏门控过滤冗余特征",
+          "application_context": "图像自监督表征学习",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "126f9064-92d1-4f26-a7d7-2aa471c41c72",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -696518,10 +697052,58 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
-      "ai_demoted": true,
-      "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "semantic": {
+        "paper_id": "2603.25722",
+        "title": "No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models",
+        "fingerprint": "f51cef656663821f5a66fcf47c26822bd729e7dcc5cabfe9d27018a486dd0d09",
+        "evaluation": {
+          "paper_id": "2603.25722",
+          "task_type": "general_visual_method",
+          "direct_relevance": 2,
+          "transferability": 4,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "对比式视觉-语言模型难以学习组合式表征，且依赖困难负样本训练易导致零样本与检索能力退化",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出概念中心短标题对齐与无参数跨模态注意力池化，替代困难负样本以提升组合性并保持零样本/检索性能",
+          "application_context": "通用视觉-语言对比学习与组合性基准评测",
+          "method_evidence": [
+            {
+              "quote_en": "We introduce a parameter-free cross-modal attention-pooling to obtain concept centric visual embeddings from the image encoder.",
+              "interpretation_zh": "用无参数跨模态注意力池化从图像编码器获得概念中心的视觉嵌入，可作为跨模态匹配中的概念/局部区域池化替代全局池化。",
+              "inference": false
+            },
+            {
+              "quote_en": "We obtain short concept centric caption parts using standard NLP software and align those with the image",
+              "interpretation_zh": "通过将长描述拆成概念中心短片段并与图像对齐，实现更细粒度的跨模态监督信号。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "We introduce a parameter-free cross-modal attention-pooling to obtain concept centric visual embeddings from the image encoder.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "在视觉-AIS或雷达-AIS跨模态匹配中，将AIS/雷达结构化文本字段（船名、MMSI、位置、航向、航速）拆成概念中心短片段，并以无参数跨模态注意力池化替代全局池化，得到概念中心视觉/雷达嵌入；训练目标由长文本对比改为概念片段-图像/雷达局部区域对齐，并保留零样本检索评估。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要为通用视觉-语言组合性任务，未涉及海事、雷达或AIS数据",
+            "方法依赖短概念片段切分，海事结构化字段到概念片段的映射需额外设计",
+            "未报告跨模态几何/空间对应或传感器噪声鲁棒性"
+          ],
+          "decision": "候选",
+          "reason_zh": "无参数跨模态注意力池化与概念中心对齐对视觉-AIS跨模态匹配有具体可迁移性；但非海事任务，迁移需自行设计字段到概念片段映射。",
+          "confidence": 0.78,
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "86e7786b-82d6-420a-9763-67211580c3dd",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 48,
+      "ai_demoted": false,
+      "recommendation_status": "transfer",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -696665,10 +697247,63 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2512.12678",
+        "title": "$β$-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment",
+        "fingerprint": "8a7a455570317efaa2442cc4ab2160312630dd49756c1b107ae1838160bb288d",
+        "evaluation": {
+          "paper_id": "2512.12678",
+          "task_type": "vision_language_alignment",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "hierarchical alignment between multiple textual granularities",
+              "interpretation_zh": "在多种文本粒度（整句、句子、短语）与对应视觉区域之间做层次化对齐。",
+              "inference": false
+            },
+            {
+              "quote_en": "cross-attention to dynamically pool image patches, producing contextualized visual embeddings",
+              "interpretation_zh": "用交叉注意力动态汇聚图像块，形成上下文相关的视觉表征。",
+              "inference": false
+            },
+            {
+              "quote_en": "parameterizes the trade-off between strict query-specific matching and relaxed intra-image contextualization",
+              "interpretation_zh": "损失函数在严格查询匹配与宽松图像内上下文之间可调权衡。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "cross-attention to dynamically pool image patches, producing contextualized visual embeddings",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将多粒度文本条件对比与交叉注意力池化用于视觉–AIS关联：把文本替换为AIS轨迹/船舶标识嵌入，用交叉注意力在图像块上汇聚与AIS查询对应的区域表征，并以层次对比损失对齐视觉区域与AIS片段。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要为图像-文本检索/对齐，非海事或AIS",
+            "细粒度区域标注需求可能限制迁移",
+            "需替换文本编码器为轨迹/属性编码器，属推断"
+          ],
+          "decision": "候选",
+          "reason_zh": "多粒度跨模态对齐与交叉注意力池化对视觉–AIS关联有参考价值，但需较大改造。",
+          "confidence": 0.55,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "CLIP细粒度视觉-语言对齐不足",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出β-CLIP多粒度文本条件对比学习及β-CAL损失，实现层次化视觉-文本区域对齐。",
+          "application_context": "图像-文本检索与细粒度对应基准实验",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "7138b920-82c7-401b-970a-24631ff489ca",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -696943,10 +697578,63 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2601.21999",
+        "title": "Negatives-Dominant Contrastive Learning for Generalization in Imbalanced Domains",
+        "fingerprint": "6993bafa71772af4119ec6962d4cc84eb1fa93906c4ca1a0d010094884c96f1f",
+        "evaluation": {
+          "paper_id": "2601.21999",
+          "task_type": "domain_generalization_contrastive_learning",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "placing greater emphasis on negatives as the primary signal in our contrastive learning",
+              "interpretation_zh": "该方法将负样本作为对比学习的主要信号，以增强类间决策边界分离，属于困难负样本/负样本主导的对比学习机制。",
+              "inference": false
+            },
+            {
+              "quote_en": "intra-class compactness is encouraged through a re-weighted cross-entropy strategy",
+              "interpretation_zh": "通过重加权交叉熵促进类内紧凑性，处理长尾/类别不平衡。",
+              "inference": false
+            },
+            {
+              "quote_en": "posterior consistency across domains is enforced through a prediction-central alignment strategy",
+              "interpretation_zh": "通过预测中心对齐实现跨域后验一致性，属于域泛化对齐策略。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "placing greater emphasis on negatives as the primary signal in our contrastive learning",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将负样本主导的对比学习思想用于视觉–AIS跨模态匹配：把非对应的视觉- AIS样本对作为主要负信号，调整对比损失以放大难负样本梯度；需将原方法的域标签/域后验对齐替换为模态对齐目标，输入改为图像与AIS轨迹表征。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未涉及海事、视觉- AIS或多传感器场景",
+            "方法面向图像分类式域泛化，非检测/分割/匹配任务",
+            "需自行设计跨模态结构与对齐目标，迁移仅是推断"
+          ],
+          "decision": "候选",
+          "reason_zh": "负样本主导对比学习可迁移到跨模态匹配，但非直接海事相关，迁移需较大调整。",
+          "confidence": 0.55,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "不平衡域泛化下的决策边界偏移",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出负样本主导对比学习（NDCL）及重加权交叉熵、预测中心对齐，缓解类别与域双重偏移。",
+          "application_context": "图像分类基准上的不平衡域泛化实验",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "7138b920-82c7-401b-970a-24631ff489ca",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -698363,10 +699051,53 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2604.27411",
+        "title": "Detecting is Easy, Adapting is Hard: Local Expert Growth for Visual Model-Based Reinforcement Learning under Distribution Shift",
+        "fingerprint": "87183f516221c13f904dc9d55a560ae43e1ab9e9250549ab64496dc328a412af",
+        "evaluation": {
+          "paper_id": "2604.27411",
+          "task_type": "视觉模型强化学习",
+          "direct_relevance": 0,
+          "transferability": 1,
+          "method_evidence": [
+            {
+              "quote_en": "frozen JEPA representation only for problem indexing",
+              "interpretation_zh": "冻结的JEPA表示仅用于问题索引，而非直接用于控制",
+              "inference": false
+            },
+            {
+              "quote_en": "cluster-specific residual experts add local action corrections on top of the original controller",
+              "interpretation_zh": "聚类特定的残差专家在原始控制器上添加局部动作校正",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "聚焦于视觉模型强化学习的分布偏移适应，与船舶感知任务无直接联系",
+            "方法涉及动作校正和控制器，不适用于检测、分割或跨模态匹配",
+            "摘要未提供可迁移到海事感知的通用学习机制"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "研究视觉强化学习中的分布偏移适应，与海事多源关联融合及船舶视觉感知无直接关联。",
+          "confidence": 0.9,
+          "primary_domain": "other",
+          "primary_problem": "视觉模型强化学习在分布偏移下的动作级适应",
+          "target_task": "multi_object_tracking",
+          "core_contribution": "提出JEPA索引局部专家增长方法，通过聚类特定残差专家实现分布外动作校正",
+          "application_context": "视觉模型强化学习，在多个分布偏移条件下评估",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ef7bd064-9347-45f0-9eb8-241c96287b46",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -698791,10 +699522,58 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2607.03647",
+        "title": "Do Medical Vision Language Models Actually See? A Counterfactual Grounding Framework and Hard-Negative Contrastive Training for Visually-Reliant Medical VLMs",
+        "fingerprint": "4bc635c6ab02bb8b473892fe1694cb73f2999c8ccbc9103470a91cddcfe9647b",
+        "evaluation": {
+          "paper_id": "2607.03647",
+          "task_type": "biomedical",
+          "direct_relevance": 0,
+          "transferability": 1,
+          "primary_domain": "biomedical",
+          "primary_problem": "医疗视觉-语言模型是否真正依赖视觉证据，而非文本捷径",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出反事实视觉 grounding 评估框架与困难负样本对比 grounding 训练目标",
+          "application_context": "医疗视觉问答基准的视觉依赖性审计",
+          "method_evidence": [
+            {
+              "quote_en": "a Contrastive Grounding Objective (CGO) that penalises answer invariance under hard-negative image swaps",
+              "interpretation_zh": "对比 grounding 目标惩罚在困难负样本图像替换下答案不变，属于对视觉依赖性的训练约束。",
+              "inference": false
+            },
+            {
+              "quote_en": "substituting input images with controlled surrogates blank, pixel-shuffled, image-absent, and CLIP-retrieved hard negatives",
+              "interpretation_zh": "用空白、像素打乱、缺图与CLIP检索困难负样本替换输入图像，构造反事实评估。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "a Contrastive Grounding Objective (CGO) that penalises answer invariance under hard-negative image swaps",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "可将困难负样本替换下的答案不变性惩罚用于视觉-AIS匹配：把某一船舶图像替换为相似但不同船舶图像作为困难负样本，要求匹配分数显著下降，以约束模型不依赖文本/AIS元数据捷径；但需改造为匹配打分而非生成式VQA答案，且原始方法未涉及海事数据。",
+            "inference": true
+          },
+          "limitations": [
+            "主要研究目标为医疗VQA，海事迁移仅为概念性推断",
+            "评估与训练依赖生成式VLM架构，改为匹配模型需重构损失",
+            "摘要自述存在训练/评估基准重叠与统计功效不足"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "聚焦医疗VQA视觉依赖审计，与海事多源关联融合无直接任务联系；困难负样本思想虽可借鉴，但需较大改造且非摘要核心可复用机制。",
+          "confidence": 0.7,
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "86e7786b-82d6-420a-9763-67211580c3dd",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -699361,10 +700140,62 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
-      "ai_demoted": true,
-      "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "semantic": {
+        "paper_id": "2605.03076",
+        "title": "AdNGCL: Adaptive Negative Scheduling for Graph Contrastive Learning",
+        "fingerprint": "aabb036fd44e9d125a4122f50df285a227ed2843e7050c603944e73d74f91624",
+        "evaluation": {
+          "paper_id": "2605.03076",
+          "task_type": "graph contrastive learning",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "maintains a bounded per-anchor candidate reservoir and periodically reassesses candidate hardness as representations evolve.",
+              "interpretation_zh": "为每个锚点维护有界候选池，并随表示演化周期性重估候选难度。",
+              "inference": false
+            },
+            {
+              "quote_en": "uses a category-specific training-response signal to determine whether exposure to easy, intermediate, or hard negatives should increase at each scheduling opportunity.",
+              "interpretation_zh": "利用类特定训练响应信号在调度点决定增加易、中、难负样本的暴露。",
+              "inference": false
+            },
+            {
+              "quote_en": "reliability-aware candidate refresh handles potentially positive-like candidates",
+              "interpretation_zh": "可靠性感知的候选刷新处理可能为正例的候选。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "maintains a bounded per-anchor candidate reservoir and periodically reassesses candidate hardness as representations evolve.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将图对比学习的每锚点候选池与难度调度迁移到视觉-AIS跨模态匹配：锚点为图像船舶目标，候选池为AIS轨迹嵌入；用匹配损失响应信号调度易/中/难负样本，可靠性刷新过滤正样本误判。需将图邻接输入改为图像与AIS特征对，并保留InfoNCE目标。",
+            "inference": true
+          },
+          "limitations": [
+            "方法针对图结构数据，迁移到视觉-AIS跨模态匹配需重新设计锚点与候选池的构造方式。",
+            "摘要未提供跨模态或视觉匹配实验，迁移有效性需验证。"
+          ],
+          "decision": "候选",
+          "reason_zh": "图对比学习中的负样本调度与可靠性刷新机制可具体迁移至跨模态匹配，但需调整输入与锚点定义。",
+          "confidence": 0.7,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "图对比学习中负样本候选暴露与难度的自适应调度",
+          "target_task": "graph contrastive learning",
+          "core_contribution": "提出AdNGCL框架，通过硬度感知负调度和可靠性刷新自适应调节负样本暴露",
+          "application_context": "图自监督学习基准数据集",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "296e6e8c-fd0b-48eb-8383-70ce7b060307",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 28,
+      "ai_demoted": false,
+      "recommendation_status": "transfer",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -700500,10 +701331,58 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2610.15388",
+        "title": "Approximation in Contrastive Representation Learning",
+        "fingerprint": "9243ef6f3dc63f077b0a01b0ec14d70d19474bd4c9dec06d76e3ce55b53d81a9",
+        "evaluation": {
+          "paper_id": "2610.15388",
+          "task_type": "contrastive representation learning theory",
+          "direct_relevance": 1,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "By linking PMI to a compact operator, we show that $D$-dimensional inner-product models perform rank-$D$ spectral approximation, with error controlled by the spectral tail",
+              "interpretation_zh": "将PMI与紧算子联系，证明D维内积模型执行秩D谱近似，误差受谱尾控制。",
+              "inference": false
+            },
+            {
+              "quote_en": "we establish a fast calibration rate from contrastive excess risk to downstream retrieval error under a density-ratio Tsybakov noise condition",
+              "interpretation_zh": "建立对比超额风险到下游检索误差的快速校准率。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "By linking PMI to a compact operator, we show that $D$-dimensional inner-product models perform rank-$D$ spectral approximation, with error controlled by the spectral tail",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将内积评分与谱近似分析作为跨模态匹配表示设计的理论指导：视觉-AIS匹配中约束嵌入维度与评分函数，按谱尾与噪声条件调节对比训练，而非直接套用实验模块。",
+            "inference": true
+          },
+          "limitations": [
+            "纯理论分析，无具体感知实验或代码",
+            "摘要未提供可直接实现的网络模块或训练细节",
+            "迁移到跨模态匹配仅为理论指导层面的推断"
+          ],
+          "decision": "候选",
+          "reason_zh": "对比表示学习理论对跨模态匹配表征设计有间接指导，但无具体可复用训练模块，迁移依据较弱。",
+          "confidence": 0.55,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "解释内积对比评分为何能近似不可分离的PMI总体目标及其泛化性质",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "从谱近似角度分析对比表示学习，给出神经网络评分函数一致性与快速校准率",
+          "application_context": "对比表示学习的理论研究与下游检索分析",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "411c5a77-29be-41cf-b7ac-ffa1a5f2d648",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -701935,10 +702814,53 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2610.36809",
+        "title": "Latent Visual Contrastive Reasoning with Multi-Branch Exploration",
+        "fingerprint": "e1f2e0c5e332db9faaf1d86503cba2fa2ef92be0f62e2f2a1e1c31db7bc443b3",
+        "evaluation": {
+          "paper_id": "2610.36809",
+          "task_type": "multimodal_latent_reasoning",
+          "direct_relevance": 0,
+          "transferability": 1,
+          "method_evidence": [
+            {
+              "quote_en": "introduces a soft contrastive branch-evidence alignment objective",
+              "interpretation_zh": "引入软对比分支-证据对齐目标，使证据相关分支对齐标注区域并对比负证据。",
+              "inference": false
+            },
+            {
+              "quote_en": "generates multiple question-conditioned latent visual branches as soft hypotheses over image tokens",
+              "interpretation_zh": "生成多个问题条件化的潜在视觉分支作为图像块上的软假设。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "面向视觉问答/推理，非检测、分割或跨模态关联任务",
+            "依赖边界框证据标注与LLM backbone，迁移到视觉–AIS匹配缺乏具体路径",
+            "直接相关性为0"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "多模态大模型视觉推理，与海事感知及船舶视觉任务无直接联系，迁移路径不具体。",
+          "confidence": 0.75,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "复杂视觉推理中的多证据定位与对比",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出分支感知潜在视觉推理框架与软对比分支-证据对齐目标。",
+          "application_context": "感知密集型视觉推理基准实验",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "7138b920-82c7-401b-970a-24631ff489ca",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 4,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -702525,10 +703447,63 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2603.09921",
+        "title": "WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition",
+        "fingerprint": "dca8b1d16ab7e4541a68daf0c7461701077beb135491d8fac96dafb78c0a153d",
+        "evaluation": {
+          "paper_id": "2603.09921",
+          "task_type": "open-domain visual entity recognition",
+          "direct_relevance": 0,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "Vision-Guided Knowledge Adaptor (VGKA) that aligns textual semantics with visual cues at the patch level",
+              "interpretation_zh": "视觉引导知识适配器在patch级对齐文本语义与视觉线索，属细粒度跨模态对齐。",
+              "inference": false
+            },
+            {
+              "quote_en": "Hard Negative Synthesis Mechanism generates visually similar but semantically distinct negatives during training",
+              "interpretation_zh": "困难负样本合成生成视觉相似但语义不同的负例，可迁移至跨模态匹配训练。",
+              "inference": false
+            },
+            {
+              "quote_en": "leverages large language model embeddings as knowledge-rich entity representations",
+              "interpretation_zh": "用大语言模型嵌入作为知识丰富实体表示，可用于AIS实体语义嵌入。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "Hard Negative Synthesis Mechanism generates visually similar but semantically distinct negatives during training",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将视觉相似但语义不同的负样本合成用于视觉-雷达或视觉-AIS匹配，替换实体为船舶目标，负样本从视觉相似但属于不同AIS轨迹/身份的目标中构造，训练目标改为跨模态匹配判别。",
+            "inference": true
+          },
+          "limitations": [
+            "任务是开放域视觉实体识别分类，非船舶或传感器匹配",
+            "困难负样本生成细节摘要未展开，迁移需自行设计",
+            "无海事数据验证"
+          ],
+          "decision": "候选",
+          "reason_zh": "patch级视觉-文本对齐与困难负样本合成有跨模态匹配迁移价值，但通用实体识别任务，迁移为推断。",
+          "confidence": 0.55,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "开放域视觉实体识别的对比学习基线",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出WikiCLIP，用LLM实体嵌入、VGKA patch级视觉-语义对齐和困难负样本合成实现高效视觉实体识别",
+          "application_context": "OVEN等开放域视觉实体识别基准",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "51318480-88f8-4f45-b52f-42f7f4f014ba",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -702808,10 +703783,53 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2607.07470",
+        "title": "A Theory of Contrastive Learning with Natural Images",
+        "fingerprint": "3532763611317c1e2a6dc0583166cd3201096e5da78f248b9ad035447150a4fe",
+        "evaluation": {
+          "paper_id": "2607.07470",
+          "task_type": "对比学习理论分析（通用）",
+          "direct_relevance": 0,
+          "transferability": 1,
+          "method_evidence": [
+            {
+              "quote_en": "analytically computing the optimal representation in terms of a contrastive loss for a range of basic augmentations",
+              "interpretation_zh": "摘要称对基础增强下的对比损失最优表征进行解析计算，属于理论分析。",
+              "inference": false
+            },
+            {
+              "quote_en": "the optimal weights in such CNNs for more complicated augmentations are still sinusoids",
+              "interpretation_zh": "说明更复杂增强下CNN最优权重仍为正弦，属理论结论。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "摘要为纯理论分析，未提供可用于跨模态匹配或目标检测的具体训练机制",
+            "未涉及雷达、AIS、船舶视觉或其他任务场景",
+            "无法具体说明输入、训练目标或结构的可迁移调整"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "为对比学习的理论分析，缺乏可直接复用至跨模态匹配或船舶视觉的具体方法机制，与关注方向无关。",
+          "confidence": 0.75,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "解释简单图像与增强下的对比学习为何产生有用表征",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "解析计算对比损失下的最优表征，证明某些增强下最优CNN首层为正弦滤波器并伴随部分白化",
+          "application_context": "通用图像数据集与增强实验，不涉及海事或其他专门场景",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ff4c0842-66f4-483e-a8d7-cd8b4756ed06",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 4,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -703084,10 +704102,48 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2609.38834",
+        "title": "Optimal VC Dimension of Contrastive Learning with Margin",
+        "fingerprint": "796319934bae3e38cf516342f6321e98d298d17465e29cefa318e061ee09a3ae",
+        "evaluation": {
+          "paper_id": "2609.38834",
+          "task_type": "VC dimension theory of contrastive learning with margin",
+          "direct_relevance": 1,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "we resolve their question by proving that the VC dimension of contrastive learning under any margin $α\\in(0,1)$ is in fact $O(n/α^2)$",
+              "interpretation_zh": "证明间隔对比学习在任意margin下的VC维上界为O(n/α²)。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "纯理论VC维分析，无可执行训练方法或模块",
+            "摘要未提供可迁移到跨模态匹配的具体结构或损失调整方案",
+            "从理论界到实际匹配训练缺少明确映射"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "为间隔对比学习的VC维理论界，缺乏可直接迁移到跨模态匹配的具体方法或结构调整依据。",
+          "confidence": 0.8,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "确定带间隔对比学习的VC维最优界",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "证明间隔对比学习VC维为O(n/α²)并给出匹配下界",
+          "application_context": "对比学习泛化理论分析",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "411c5a77-29be-41cf-b7ac-ffa1a5f2d648",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 24,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -703524,10 +704580,53 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2605.08802",
+        "title": "CoLVR: Enhancing Exploratory Latent Visual Reasoning via Contrastive Optimization",
+        "fingerprint": "f9cc86dda80293aeba2375d7216fc159a85751741aa9a3ade42358bef0baa514",
+        "evaluation": {
+          "paper_id": "2605.08802",
+          "task_type": "多模态大模型视觉推理",
+          "direct_relevance": 0,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "a latent contrastive objective guided by angle-based perturbation",
+              "interpretation_zh": "基于角度扰动的潜在对比目标，用于学习多样化的潜在表示",
+              "inference": false
+            },
+            {
+              "quote_en": "a latent trajectory contrastive reward for RL (Reinforcement Learning) post-training",
+              "interpretation_zh": "用于强化学习后训练的潜在轨迹对比奖励，优化潜在视觉推理过程",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "方法针对多模态大模型的潜在视觉推理，与船舶感知任务差异大",
+            "摘要未提供可直接迁移到跨模态匹配或检测的具体机制",
+            "对比优化目标依赖连续隐藏状态传播，难以直接适配传统感知任务"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "研究多模态大模型潜在推理，与海事感知和跨模态匹配直接关联弱，迁移路径不明确。",
+          "confidence": 0.8,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "多模态大模型中潜在视觉推理的探索性受硬对齐目标限制",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出CoLVR框架，包含角度扰动引导的潜在对比目标和强化学习轨迹对比奖励",
+          "application_context": "多模态大模型视觉推理，验证于VSP、Jigsaw和MMStar",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ef7bd064-9347-45f0-9eb8-241c96287b46",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 8,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -704077,10 +705176,47 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2602.08886",
+        "title": "Contrastive Learning for Diversity-Aware Product Recommendations in Retail",
+        "fingerprint": "ed791df247d76febe541fc13eac08c90b58144dff0e92fe02345bfc3faaa390d",
+        "evaluation": {
+          "paper_id": "2602.08886",
+          "task_type": "general_visual_method",
+          "direct_relevance": 0,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "we integrate contrastive learning with carefully selected negative samples.",
+              "interpretation_zh": "将对比学习与精选负样本结合以改善长尾覆盖。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "方法针对零售推荐系统，与船舶视觉感知任务差异极大。",
+            "负样本选择策略未详细描述，难以具体迁移。"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "零售推荐中的对比学习负采样，与海事感知任务无关，无具体迁移路径。",
+          "confidence": 0.8,
+          "primary_domain": "other",
+          "primary_problem": "推荐系统长尾分布和目录覆盖不足",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "在零售推荐中结合对比学习和精选负样本提升目录覆盖度。",
+          "application_context": "IKEA零售推荐系统",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "73132277-8946-4105-a365-5685c1d692b3",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -704691,10 +705827,57 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2605.13943",
+        "title": "A Unified Geometric Framework for Weighted Contrastive Learning",
+        "fingerprint": "02183c0aa75157cd689953511e5f29c3a228f89a0474c93af8533dcbee533511",
+        "evaluation": {
+          "paper_id": "2605.13943",
+          "task_type": "general_visual_method",
+          "direct_relevance": 1,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "weighted InfoNCE objectives can be interpreted as Distance Geometry Problems",
+              "interpretation_zh": "加权InfoNCE目标可解释为距离几何问题",
+              "inference": false
+            },
+            {
+              "quote_en": "the choice of weighting scheme determines whether contrastive learning is geometrically realizable, degenerate, or inconsistent",
+              "interpretation_zh": "加权方案决定对比学习几何上可实现、退化或不一致",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "weighted InfoNCE objectives can be interpreted as Distance Geometry Problems",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将加权方案几何分析用于视觉–AIS匹配的InfoNCE权重设计：根据类别/船舶样本不均衡选择加权，避免类内坍缩和跨类相似度偏差，指导跨模态正负对权重配置。",
+            "inference": true
+          },
+          "limitations": [
+            "纯理论几何分析，无感知或跨模态实证",
+            "无具体可复用的训练/结构模块，迁移抽象"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "理论分析为主，缺具体可操作迁移模块与任务证据，迁移价值有限。",
+          "confidence": 0.4,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "加权对比学习的表征几何理解",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "将加权InfoNCE解释为距离几何问题并刻画最优嵌入条件",
+          "application_context": "监督与弱监督对比学习理论分析",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "126f9064-92d1-4f26-a7d7-2aa471c41c72",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -705272,10 +706455,57 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2604.20318",
+        "title": "UniCVR: From Alignment to Reranking for Unified Zero-Shot Composed Visual Retrieval",
+        "fingerprint": "30b33851bb683ef716891fb889e885b65f52e5379c451835e233b1275770254d",
+        "evaluation": {
+          "paper_id": "2604.20318",
+          "task_type": "general_visual_method",
+          "direct_relevance": 0,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "A cluster-based hard negative sampling strategy is proposed to strengthen contrastive supervision.",
+              "interpretation_zh": "基于聚类的困难负样本采样策略，可用于增强对比学习中的负样本质量。",
+              "inference": false
+            },
+            {
+              "quote_en": "we train the MLLM as a compositional query embedder via contrastive learning on a curated multi-source dataset",
+              "interpretation_zh": "使用对比学习训练多模态大语言模型作为组合查询嵌入器，桥接异构嵌入空间。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "A cluster-based hard negative sampling strategy is proposed to strengthen contrastive supervision.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将基于聚类的困难负样本采样用于视觉-AIS跨模态匹配：对视觉船舶嵌入和AIS轨迹嵌入进行聚类，在聚类边界处选择困难负样本对，增强对比学习监督，调整负样本选择策略而非模型结构。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未提供船舶或海事数据实验，迁移效果未知。",
+            "困难负样本采样依赖于聚类质量，在跨模态异构空间中需重新设计。"
+          ],
+          "decision": "候选",
+          "reason_zh": "提出基于聚类的困难负样本采样和对比学习桥接异构嵌入空间，可迁移至视觉-AIS跨模态匹配，但无海事证据。",
+          "confidence": 0.7,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "统一零样本组合视觉检索框架",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出UniCVR统一零样本组合视觉检索框架，包括MLLM对比学习训练和聚类困难负样本采样。",
+          "application_context": "组合图像/视频检索基准测试",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "73132277-8946-4105-a365-5685c1d692b3",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 16,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -705419,10 +706649,57 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2605.27449",
+        "title": "Checking Fact with Better Retrieval: Dynamic Contrastive Learning for Evidence Retrieval",
+        "fingerprint": "725efce9da7d65576a0073c953ba038b3933a4e770232950e5dacc9c88ce82dd",
+        "evaluation": {
+          "paper_id": "2605.27449",
+          "task_type": "general_visual_method",
+          "direct_relevance": 1,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "optimizing the contrastive loss and mining hard negative samples",
+              "interpretation_zh": "通过优化对比损失并挖掘困难负样本增强检索",
+              "inference": false
+            },
+            {
+              "quote_en": "three loss functions at two levels (semantic and event) based on the InfoNCE loss",
+              "interpretation_zh": "基于InfoNCE构建语义和事件两层三个损失函数",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "optimizing the contrastive loss and mining hard negative samples",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "借鉴其困难负样本挖掘与多层对比损失设计，用于视觉–AIS关联：将'相似但不相关'的样本设为困难负样本（如同一海域不同船舶），并以船舶身份/轨迹为'事件级'监督构建两级对比损失，两阶段召回-重排用于AIS候选关联。",
+            "inference": true
+          },
+          "limitations": [
+            "任务是文本化后的事实核查证据检索，非传感器关联",
+            "依赖MLLM转换，迁移到视觉–AIS需替换编码与匹配目标"
+          ],
+          "decision": "候选",
+          "reason_zh": "困难负样本与两级对比检索机制可迁移至跨模态匹配，但无海事验证。",
+          "confidence": 0.5,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "多模态事实核查中证据检索相似而不相关",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出DACLR动态自适应对比学习，含困难负样本挖掘与语义/事件双层损失",
+          "application_context": "多模态事实核查证据检索",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "126f9064-92d1-4f26-a7d7-2aa471c41c72",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -706183,10 +707460,63 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2604.17710",
+        "title": "Dynamic Visual-semantic Alignment for Zero-shot Learning with Ambiguous Labels",
+        "fingerprint": "dda5c1b8bb2a68f8376b5f699f127558612582ef7e515b672d29f1c04ababc39",
+        "evaluation": {
+          "paper_id": "2604.17710",
+          "task_type": "zero-shot learning with ambiguous labels",
+          "direct_relevance": 0,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "bidirectional visual-semantic alignment module with attention to mutually calibrate visual features and attribute prototypes",
+              "interpretation_zh": "双向视觉-语义对齐模块可校正两类表征，属跨模态对齐机制。",
+              "inference": false
+            },
+            {
+              "quote_en": "contrastive optimization grounded in Mutual Information (MI) at the attribute level",
+              "interpretation_zh": "属性级互信息对比优化可强化判别性语义一致表征。",
+              "inference": false
+            },
+            {
+              "quote_en": "dynamic label disambiguation mechanism iteratively corrects noisy supervision",
+              "interpretation_zh": "动态标签消歧迭代纠正噪声监督，可用于标签质量有限的多源关联。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "bidirectional visual-semantic alignment module with attention to mutually calibrate visual features and attribute prototypes",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将视觉特征与属性原型对齐改为视觉图像特征与AIS/雷达语义表征的双向对齐，属性原型替换为AIS实体/属性嵌入，训练目标改为跨模态匹配对比损失，并加入标签消歧处理关联噪声。",
+            "inference": true
+          },
+          "limitations": [
+            "任务是零样本分类，非目标匹配或检测",
+            "摘要未提供视觉-AIS或传感器关联实验",
+            "迁移到跨模态匹配需重新设计负样本与标签机制"
+          ],
+          "decision": "候选",
+          "reason_zh": "双向视觉-语义对齐、互信息对比与标签消歧有通用匹配学习价值，但任务与海事无关，迁移为推断。",
+          "confidence": 0.55,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "含歧义标签的零样本学习视觉-语义对齐",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出DVSA框架，含双向视觉-语义对齐、属性级互信息对比优化和动态标签消歧",
+          "application_context": "标准零样本学习基准上的歧义监督识别",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "51318480-88f8-4f45-b52f-42f7f4f014ba",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -706466,10 +707796,52 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2605.11291",
+        "title": "Optimal Representations for Generalized Contrastive Learning with Imbalanced Datasets",
+        "fingerprint": "43aa331c065dc3b3f843dd48dff45b9591be034e659df548a31eb21fef064c7a",
+        "evaluation": {
+          "paper_id": "2605.11291",
+          "task_type": "contrastive representation learning theory",
+          "direct_relevance": 1,
+          "transferability": 1,
+          "method_evidence": [
+            {
+              "quote_en": "the optimal representations of all samples from the same class collapse to their class means and their geometry exhibits an angular symmetry structure that is determined by the relative class proportions.",
+              "interpretation_zh": "描述了不平衡对比学习中同类样本表示坍缩到类均值且几何由类比例决定的对称结构。",
+              "inference": false
+            },
+            {
+              "quote_en": "CL exhibits a phenomenon called Minority Collapse (MC) where all samples from the minority classes (classes with small probabilities) collapse into a single vector, whenever the class imbalance exceeds a threshold",
+              "interpretation_zh": "指出极端不平衡时少数类样本坍缩为单一向量，与负样本数量阈值有关。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "摘要为纯理论分析，未提供可直接用于跨模态匹配或检测的具体损失设计或训练策略。",
+            "未涉及任何视觉或多模态感知任务，仅有对比学习理论。"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "纯理论对比学习不平衡分析，未涉及视觉匹配或船舶等感知任务，无可操作迁移点。",
+          "confidence": 0.9,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "不平衡数据下对比学习最优表示几何的理论刻画",
+          "target_task": "contrastive representation learning",
+          "core_contribution": "推导不平衡对比学习最优表示的角对称结构及少数类坍缩条件",
+          "application_context": "不特定于任何感知应用，仅为理论分析",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "296e6e8c-fd0b-48eb-8383-70ce7b060307",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 20,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -706619,10 +707991,47 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2603.10101",
+        "title": "CLIPO: Contrastive Learning in Policy Optimization Generalizes RLVR",
+        "fingerprint": "20a9939b304e57373413c96a7410767f5365a791960bb455965b158575192c18",
+        "evaluation": {
+          "paper_id": "2603.10101",
+          "task_type": "general_visual_method",
+          "direct_relevance": 0,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "By optimizing a contrastive loss over successful rollouts, CLIPO steers the LLM to capture the invariant structure shared across correct reasoning paths.",
+              "interpretation_zh": "对成功轨迹优化对比损失，使模型捕获正确路径间的不变结构。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "方法针对LLM推理的强化学习，与视觉感知任务差异大。",
+            "摘要未涉及视觉或多模态匹配，迁移路径不具体。"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "面向LLM强化学习推理的对比学习机制，与船舶视觉或多源关联任务无关，无具体迁移路径。",
+          "confidence": 0.8,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "强化学习与可验证奖励中的过程监督不足",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "将对比学习机制融入策略优化，利用成功轨迹间的不变结构正则化RLVR训练。",
+          "application_context": "大语言模型推理基准",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "73132277-8946-4105-a365-5685c1d692b3",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 8,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -707178,10 +708587,58 @@
       },
       "research_directions": [],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2605.17959",
+        "title": "Text-Video Retrieval With Global-Local Contrastive Consistency Learning",
+        "fingerprint": "7b29233f2eccec7127e22b5db517ace8ba785deb439a918bee8086e9862a8fc1",
+        "evaluation": {
+          "paper_id": "2605.17959",
+          "task_type": "跨模态检索",
+          "direct_relevance": 1,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "a Contrastive Score Consistency (CSC) loss is developed to promote consistency learning among different scores on positive pairs and suppress consistency learning on negative pairs",
+              "interpretation_zh": "设计对比分数一致性损失，在正样本对之间促进一致性学习，在负样本对之间抑制一致性学习",
+              "inference": false
+            },
+            {
+              "quote_en": "CSC loss provides the model with robust discriminative power between positives and hard negatives",
+              "interpretation_zh": "CSC损失增强模型对正样本与困难负样本的判别能力",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "a Contrastive Score Consistency (CSC) loss is developed to promote consistency learning among different scores on positive pairs and suppress consistency learning on negative pairs",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将对比分数一致性损失迁移到视觉–AIS跨模态匹配任务，调整输入为正样本对（同一船舶的视觉与AIS轨迹特征）和困难负样本对（不同船舶），训练目标为跨模态匹配分数的一致性约束，结构上保留双编码器但需适配船舶轨迹序列和视觉特征维度。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要未说明GLIM模块的具体实现细节",
+            "实验限于文本-视频检索，未涉及船舶或AIS数据",
+            "迁移到跨模态匹配需要重新设计特征提取和负样本构造策略"
+          ],
+          "decision": "候选",
+          "reason_zh": "提出困难负样本对比学习机制，可迁移至跨模态匹配，但需适配海事模态和任务。",
+          "confidence": 0.7,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "文本-视频检索中语义部分相关和计算效率问题",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出全局-局部对比一致性学习，包括无参数全局-局部交互模块和对比分数一致性损失",
+          "application_context": "文本-视频检索，验证于MSR-VTT、DiDeMo、VATEX",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ef7bd064-9347-45f0-9eb8-241c96287b46",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 32,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -707767,10 +709224,57 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
+      "semantic": {
+        "paper_id": "2604.26057",
+        "title": "Similarity Choice and Negative Scaling in Supervised Contrastive Learning for Deepfake Audio Detection",
+        "fingerprint": "3f2e88f01ae665e6cbec993d426db19aad9f7f4a8714996cfa26a4159daaec4e",
+        "evaluation": {
+          "paper_id": "2604.26057",
+          "task_type": "supervised contrastive learning",
+          "direct_relevance": 1,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "varies (i) similarity in SupCon (cosine vs angular similarity derived from the hyperspherical angle) and (ii) negative scaling using a warm-started global cross-batch queue.",
+              "interpretation_zh": "研究监督对比学习中余弦与角相似度的选择，以及使用全局跨批队列的负样本缩放。",
+              "inference": false
+            },
+            {
+              "quote_en": "Cosine SupCon with a delayed queue achieves the best ITW EER (8.29%) and pooled EER (4.44), while angular similarity performs strongly without queued negatives (ITW 8.70), indicating reduced reliance on large negative sets.",
+              "interpretation_zh": "余弦相似度配合延迟队列效果最佳，角相似度无需队列负样本也表现良好，表明对大量负样本依赖降低。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "varies (i) similarity in SupCon (cosine vs angular similarity derived from the hyperspherical angle) and (ii) negative scaling using a warm-started global cross-batch queue.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将监督对比学习中相似度度量与负样本队列迁移到视觉-AIS跨模态匹配：图像与AIS嵌入分别经投影头后计算余弦或角相似度，使用跨批队列扩展负样本；需调整输入为图像-AIS对，训练目标为匹配/非匹配的SupCon损失。",
+            "inference": true
+          },
+          "limitations": [
+            "研究针对音频深度伪造检测，音频特征与视觉-AIS跨模态特征差异大。",
+            "摘要未涉及视觉或多模态匹配任务，迁移需重新设计骨干与投影头。"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "音频深度伪造检测的监督对比学习实验，跨模态匹配迁移需大量改造且证据不足。",
+          "confidence": 0.8,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "音频深度伪造检测中监督对比学习的相似度选择与负样本缩放",
+          "target_task": "audio deepfake detection",
+          "core_contribution": "控制实验分析SupCon中余弦/角相似度及跨批队列负样本对检测性能的影响",
+          "application_context": "音频深度伪造检测数据集ASVspoof",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "296e6e8c-fd0b-48eb-8383-70ce7b060307",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 24,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -707914,10 +709418,63 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
-      "ai_demoted": true,
-      "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "semantic": {
+        "paper_id": "2608.06060",
+        "title": "Learning from Failures: Retrieval-Centric CoT via Hard Negatives for Unified Multimodal Retrieval",
+        "fingerprint": "262b2d72d87072c8e3fa4c09ac54c46d07e3ffe9dc390bad2a1c31a3bb805907",
+        "evaluation": {
+          "paper_id": "2608.06060",
+          "task_type": "跨模态检索/匹配（通用）",
+          "direct_relevance": 1,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "we mine hard negatives to simulate realistic retrieval failures",
+              "interpretation_zh": "摘要明确说明通过挖掘困难负样本模拟真实检索失败，是具体可复用的训练机制。",
+              "inference": false
+            },
+            {
+              "quote_en": "align the adviser with retrieval outcomes through supervised learning and retrieval-oriented reinforcement learning",
+              "interpretation_zh": "通过监督学习与检索导向强化学习将建议器与检索结果对齐，属于具体训练策略。",
+              "inference": false
+            },
+            {
+              "quote_en": "generates RC-CoT to refine the retrieval direction and performs full-corpus re-retrieval with a dual-mode embedder",
+              "interpretation_zh": "生成检索导向思维链以修正检索方向并进行全库重检索，体现反馈驱动重检索结构。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "we mine hard negatives to simulate realistic retrieval failures",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "可将困难负样本挖掘与检索反馈重排序用于视觉-雷达/AIS跨模态关联：把语义相近但非同一目标的候选构造为困难负样本，训练时模拟初始检索失败；结构上需将文本-图像嵌入替换为视觉与雷达/AIS轨迹表征，并调整重排序输入为初始关联候选集。摘要支持困难负样本与重排序机制，但迁移到海事关联仍为推断。",
+            "inference": true
+          },
+          "limitations": [
+            "实验在MMEB-V2及通用多模态检索基准上，未涉及雷达、AIS或海事场景",
+            "RC-CoT依赖LVLM推理，实时性与部署成本未在摘要中讨论",
+            "迁移到视觉-雷达/AIS关联需重新设计候选表示和负样本来源"
+          ],
+          "decision": "候选",
+          "reason_zh": "提供困难负样本挖掘与反馈驱动重排序的具体机制，可迁移到跨模态关联匹配；但无海事验证，需自行适配。",
+          "confidence": 0.7,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "统一多模态检索中因语义相似候选造成混淆，需依据检索反馈进行推理与重排序",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出UniME-R1嵌入器-建议器框架，挖掘困难负样本并生成检索导向思维链，联合直接检索与增强检索进行训练",
+          "application_context": "通用多模态检索基准（MMEB-V2等），不涉及海事多源融合",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ff4c0842-66f4-483e-a8d7-cd8b4756ed06",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 32,
+      "ai_demoted": false,
+      "recommendation_status": "transfer",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -708202,10 +709759,53 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2512.07512",
+        "title": "Dictionary-Based Contrastive Learning for GNSS Jamming Detection",
+        "fingerprint": "94fbfb6b3988f5741f0decce9c4d970ddef648d11d1427e3b90cec7b1330d9b5",
+        "evaluation": {
+          "paper_id": "2512.07512",
+          "task_type": "gnss_jamming_detection",
+          "direct_relevance": 0,
+          "transferability": 1,
+          "method_evidence": [
+            {
+              "quote_en": "dictionary-based contrastive learning (DBCL) framework for GNSS jamming detection",
+              "interpretation_zh": "提出字典基对比学习框架用于GNSS干扰检测。",
+              "inference": false
+            },
+            {
+              "quote_en": "applies structured pruning and knowledge distillation to reduce model complexity",
+              "interpretation_zh": "用结构化剪枝与知识蒸馏压缩模型，面向嵌入式实时检测。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "研究对象为GNSS干扰检测，属通信/导航安全，非视觉感知",
+            "未提供可直接复用的视觉/多模态匹配机制",
+            "直接相关性为0，不能通过迁移分弥补"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "属GNSS干扰检测（通信/安全核心），与海事融合及船舶视觉无直接联系，方法不易具体迁移。",
+          "confidence": 0.8,
+          "primary_domain": "communication_engineering",
+          "primary_problem": "资源受限嵌入式平台上的GNSS干扰实时检测",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "结合对比表示学习、字典损失、迁移学习与模型压缩的GNSS干扰检测框架。",
+          "application_context": "嵌入式接收机上的GNSS干扰检测实验",
+          "security_centric": false,
+          "communication_centric": true
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "7138b920-82c7-401b-970a-24631ff489ca",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -708919,10 +710519,63 @@
         "D"
       ],
       "daily_domain_exclusion": null,
-      "ai_score": null,
-      "ai_demoted": true,
-      "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "semantic": {
+        "paper_id": "2607.10698",
+        "title": "On the modality gap and the contrastive loss in multi-modal representation learning",
+        "fingerprint": "16bf536d83ed60ad9d12ea029928d91d90004633d1cd6333f1b8fde095d3019e",
+        "evaluation": {
+          "paper_id": "2607.10698",
+          "task_type": "跨模态表征学习/对齐（通用）",
+          "direct_relevance": 1,
+          "transferability": 4,
+          "method_evidence": [
+            {
+              "quote_en": "We propose a simple modification called xNCE, which uses intermodal as well as intra-modality negative contrastive pairs",
+              "interpretation_zh": "摘要明确提出xNCE同时使用模态间与模态内负对比对，是具体可复用的对比损失修改。",
+              "inference": false
+            },
+            {
+              "quote_en": "show that the modality gap is indeed a mode-failure of InfoNCE, but only at low temperatures",
+              "interpretation_zh": "给出低温度下InfoNCE模态间隙的理论分析，可用于跨模态对齐训练设计。",
+              "inference": false
+            },
+            {
+              "quote_en": "reduces the modality gap without sacrificing the discriminative geometry needed for transfer",
+              "interpretation_zh": "说明在缩小模态间隙的同时保持可迁移的判别几何，是训练目标层面的证据。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "We propose a simple modification called xNCE, which uses intermodal as well as intra-modality negative contrastive pairs",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "可将xNCE的模态间+模态内负对比对用于视觉-雷达/AIS跨模态对齐：在图像编码器与雷达/AIS编码器之间构造模态间负对，同时在各模态内部构造负对以降低模态间隙；训练目标由标准InfoNCE改为xNCE，结构上保留双编码器。摘要支持该损失改造，但迁移到海事模态仍为推断。",
+            "inference": true
+          },
+          "limitations": [
+            "摘要为通用CLIP式图像-文本实验，未涉及雷达/AIS等异质传感器模态",
+            "理论分析针对低温度下的InfoNCE，其他损失形式适用性未知",
+            "海事数据中正负样本定义与模态统计差异需重新设计"
+          ],
+          "decision": "候选",
+          "reason_zh": "给出可复用的xNCE对比损失修改以缓解跨模态间隙，适合迁移到视觉-雷达/AIS对齐，但缺乏海事验证。",
+          "confidence": 0.7,
+          "primary_domain": "general_visual_method",
+          "primary_problem": "CLIP式双编码器对比学习中图像与文本嵌入存在模态间隙的问题",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "理论分析InfoNCE在低温度下产生模态间隙，并提出xNCE加入模态间与模态内负对比对以缩小间隙且保持判别几何",
+          "application_context": "通用图文检索与零样本分类，不涉及海事场景",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "ff4c0842-66f4-483e-a8d7-cd8b4756ed06",
+        "compatible_fingerprints": []
+      },
+      "ai_score": 32,
+      "ai_demoted": false,
+      "recommendation_status": "transfer",
+      "ai_state": "evaluated",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -709063,10 +710716,48 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2610.08116",
+        "title": "Soft Contrastive Learning for Unsupervised Discovery of Phases of Matter",
+        "fingerprint": "3bee7d2415d47a2c9ca4a723ff377ea2c0339a4dd820dda614e785143d8eaaca",
+        "evaluation": {
+          "paper_id": "2610.08116",
+          "task_type": "contrastive learning for phase diagram construction",
+          "direct_relevance": 0,
+          "transferability": 2,
+          "method_evidence": [
+            {
+              "quote_en": "a variant of the method, in which derived descriptors are used as soft labels in the contrastive objective",
+              "interpretation_zh": "用派生描述符作为软标签纳入对比目标的方法变体。",
+              "inference": false
+            }
+          ],
+          "transfer_path": null,
+          "limitations": [
+            "应用领域为凝聚态相图构建，与海事或交通感知无直接联系",
+            "摘要仅给出软标签对比目标这一通用思路，缺少可迁移到目标匹配的具体输入/训练/结构说明",
+            "迁移路径需大量自行假设，证据不足"
+          ],
+          "decision": "不推荐",
+          "reason_zh": "属于凝聚态物理相图构建，软标签对比仅宽泛方法信号，无法具体说明到跨模态匹配的调整。",
+          "confidence": 0.8,
+          "primary_domain": "other",
+          "primary_problem": "未知相结构凝聚态系统的相图构建",
+          "target_task": "multi_sensor_detection",
+          "core_contribution": "结合物理描述符与对比表示学习及两阶段数据生成构建相图",
+          "application_context": "PbZrO3启发模型势的相图构建实验",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "411c5a77-29be-41cf-b7ac-ffa1a5f2d648",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "domain_excluded",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -709211,10 +710902,57 @@
         "D"
       ],
       "daily_domain_exclusion": null,
+      "semantic": {
+        "paper_id": "2602.15236",
+        "title": "BindCLIP: A Unified Contrastive-Generative Representation Learning Framework for Virtual Screening",
+        "fingerprint": "22c300da0db73077cd5fd55dd3826124dc4017051b369cde04d7d97a11376cfb",
+        "evaluation": {
+          "paper_id": "2602.15236",
+          "task_type": "general_visual_method",
+          "direct_relevance": 0,
+          "transferability": 3,
+          "method_evidence": [
+            {
+              "quote_en": "we introduce hard-negative augmentation and a ligand-ligand anchoring regularizer that prevents representation collapse.",
+              "interpretation_zh": "引入困难负样本增强和配体-配体锚定正则化防止表示坍缩。",
+              "inference": false
+            },
+            {
+              "quote_en": "BindCLIP jointly trains pocket and ligand encoders using CLIP-style contrastive learning together with a pocket-conditioned diffusion objective",
+              "interpretation_zh": "联合CLIP风格对比学习和口袋条件扩散目标训练两个编码器。",
+              "inference": false
+            }
+          ],
+          "transfer_path": {
+            "source_quote_en": "we introduce hard-negative augmentation and a ligand-ligand anchoring regularizer that prevents representation collapse.",
+            "target_task": "cross_modal_matching",
+            "adaptation_zh": "将困难负样本增强与锚定正则化迁移至视觉-AIS匹配：对视觉和AIS嵌入使用困难负样本增强，并加入同类样本锚定正则防止跨模态表示坍缩，调整负样本构造和正则项。",
+            "inference": true
+          },
+          "limitations": [
+            "方法针对分子虚拟筛选，跨模态匹配的适用性需验证。",
+            "扩散目标与船舶视觉任务关联弱。"
+          ],
+          "decision": "候选",
+          "reason_zh": "困难负样本增强和锚定正则化可迁移至跨模态匹配，但领域为生物医药，直接相关性低。",
+          "confidence": 0.65,
+          "primary_domain": "biomedical",
+          "primary_problem": "虚拟筛选中表示对细粒度结合不敏感且依赖捷径相关",
+          "target_task": "cross_modal_matching",
+          "core_contribution": "提出BindCLIP统一对比-生成表示学习框架，结合困难负样本增强和锚定正则化。",
+          "application_context": "分子虚拟筛选基准",
+          "security_centric": false,
+          "communication_centric": false
+        },
+        "review_version": "3.8.8",
+        "model": "deepseek-flash",
+        "request_id": "73132277-8946-4105-a365-5685c1d692b3",
+        "compatible_fingerprints": []
+      },
       "ai_score": null,
       "ai_demoted": true,
       "recommendation_status": "candidate",
-      "ai_state": "unassessed",
+      "ai_state": "uncertain",
       "display_abstract_zh": "",
       "display_translation_source": "english_only",
       "display_translation_error": "本地译文尚未生成，或英文摘要已变化"
@@ -768850,8 +770588,8 @@
     }
   ],
   "update_summary": {
-    "run_id": "2026-11-08T06:14:43.817949+00:00",
-    "completed_at": "2026-11-08T06:19:15.766965+00:00",
+    "run_id": "2026-11-08T06:38:56.020821+00:00",
+    "completed_at": "2026-11-08T06:46:18.639451+00:00",
     "local_update": "success",
     "jobs": 0,
     "successful": 0,
@@ -768863,9 +770601,9 @@
     "before_count": 4675,
     "after_count": 4675,
     "translation": {
-      "translated": 2,
+      "translated": 0,
       "failed": 0,
-      "cached": 3,
+      "cached": 5,
       "manual": 0,
       "pending": 0,
       "missing_english": 0,
@@ -768880,9 +770618,9 @@
       "replacement_failures": [],
       "selected": 5,
       "engine": "DeepSeek",
-      "api_calls": 2,
-      "cost_upper_cny": 0.00903000000000001,
-      "priced_cost_cny": 0.004514999999999991,
+      "api_calls": 0,
+      "cost_upper_cny": 0.0,
+      "priced_cost_cny": 0.0,
       "papers": [
         {
           "paper_id": "2504.09197",
@@ -768944,34 +770682,57 @@
     ],
     "ai": {
       "status": "partial",
-      "processed": 4,
-      "cached": 1269,
-      "failed": 0,
-      "cost_upper_cny": 0.05133168,
-      "priced_cost_cny": 0.02566584,
-      "unsettled_upper_cny": 0,
-      "tokens": 14378,
+      "processed": 37,
+      "cached": 1273,
+      "failed": 6,
+      "cost_upper_cny": 0.23105824000000005,
+      "priced_cost_cny": 0.11552912000000003,
+      "unsettled_upper_cny": 0.0,
+      "tokens": 67921,
       "missing_abstract": 0,
       "candidate_count": 1320,
-      "already_attempted_today": 0,
-      "pending_total": 51,
+      "already_attempted_today": 4,
+      "pending_total": 43,
       "limit_deferred": 0,
       "selected_count": 5,
-      "ai_reviewed": 895,
-      "reason": "Expecting ',' delimiter: line 1 column 1096 (char 1095)",
+      "ai_reviewed": 910,
+      "validation_errors": [
+        {
+          "paper_ids": [
+            "2610.00730",
+            "2609.33741",
+            "2609.21061",
+            "2609.07540"
+          ],
+          "reason": "Expecting ',' delimiter: line 1 column 3659 (char 3658)"
+        },
+        {
+          "paper_id": "2608.11343",
+          "reason": "Evidence is not an exact abstract quotation"
+        },
+        {
+          "paper_id": "2605.02116",
+          "reason": "Evidence is not an exact abstract quotation"
+        }
+      ],
       "shortfall": 0,
       "ai_states": {
-        "evaluated": 895,
-        "uncertain": 373,
-        "domain_excluded": 5,
-        "unassessed": 47
+        "evaluated": 910,
+        "uncertain": 389,
+        "domain_excluded": 11,
+        "unassessed": 10
       },
       "publication_status": "complete",
-      "reserve_available": 2
+      "reserve_available": 5
     },
     "affiliations": [
       {
         "paper_id": "2504.09197",
+        "status": "cached_verified",
+        "source": "OpenAlex first authorship"
+      },
+      {
+        "paper_id": "2604.24044",
         "status": "cached_verified",
         "source": "OpenAlex first authorship"
       },
@@ -768981,34 +770742,12 @@
         "source": "OpenAlex first authorship"
       },
       {
-        "paper_id": "2611.04034",
+        "paper_id": "2606.09634",
         "status": "cached_unverified"
       },
       {
-        "paper_id": "2606.09634",
-        "revision": 1,
-        "time": "2026-11-08T06:17:49.203318+00:00",
-        "status": "unverified",
-        "attempts": [
-          {
-            "source": "crossref",
-            "status": "unavailable",
-            "error": "api.crossref.org HTTP 404: Resource not found."
-          },
-          {
-            "source": "openalex",
-            "status": "received"
-          },
-          {
-            "source": "arxiv",
-            "status": "received"
-          }
-        ]
-      },
-      {
-        "paper_id": "2604.24044",
-        "status": "cached_verified",
-        "source": "OpenAlex first authorship"
+        "paper_id": "2611.04034",
+        "status": "cached_unverified"
       }
     ],
     "daily_selected": 5,
@@ -769017,7 +770756,7 @@
     "published_daily_count": 5,
     "github_sync": "not_attempted",
     "pages_publish": "not_attempted",
-    "ai_status": "success",
+    "ai_status": "partial",
     "translation_status": "success",
     "selection_status": "complete",
     "publication_status": "published",
@@ -769025,7 +770764,7 @@
     "pages_status": "not_attempted",
     "supplement": [],
     "retrieval_status": "not_run_resume",
-    "github_run_id": "42453895648"
+    "github_run_id": "42455564908"
   },
   "recommendation_policy": {
     "schema_version": 2,
