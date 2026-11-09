@@ -1,20 +1,20 @@
 {
-  "run_id": "2026-11-09T02:42:22.795537+00:00",
-  "completed_at": "2026-11-09T03:24:58.929210+00:00",
-  "local_update": "partial",
-  "jobs": 63,
-  "successful": 60,
-  "incomplete": 3,
+  "run_id": "2026-11-09T13:00:08.494274+00:00",
+  "completed_at": "2026-11-09T13:02:51.434881+00:00",
+  "local_update": "success",
+  "jobs": 0,
+  "successful": 0,
+  "incomplete": 0,
   "failed": 0,
-  "added": 164,
+  "added": 0,
   "filled": 0,
   "merged": 0,
-  "before_count": 4675,
+  "before_count": 4839,
   "after_count": 4839,
   "translation": {
-    "translated": 5,
+    "translated": 0,
     "failed": 0,
-    "cached": 0,
+    "cached": 5,
     "manual": 0,
     "pending": 0,
     "missing_english": 0,
@@ -29,9 +29,9 @@
     "replacement_failures": [],
     "selected": 5,
     "engine": "DeepSeek",
-    "api_calls": 5,
-    "cost_upper_cny": 0.02097800000000001,
-    "priced_cost_cny": 0.020977999999999997,
+    "api_calls": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "papers": [
       {
         "paper_id": "2608.14085",
@@ -92,80 +92,21 @@
     ]
   ],
   "ai": {
-    "status": "partial",
-    "processed": 71,
-    "cached": 1292,
-    "failed": 16,
-    "cost_upper_cny": 0.49680047999999993,
-    "priced_cost_cny": 0.49680047999999993,
+    "status": "deferred",
+    "processed": 0,
+    "cached": 1362,
+    "failed": 0,
+    "cost_upper_cny": 0.0,
+    "priced_cost_cny": 0.0,
     "unsettled_upper_cny": 0.0,
-    "tokens": 143740,
+    "tokens": 0,
     "missing_abstract": 0,
-    "candidate_count": 1379,
-    "already_attempted_today": 0,
-    "pending_total": 87,
+    "candidate_count": 1378,
+    "already_attempted_today": 16,
+    "pending_total": 0,
     "limit_deferred": 0,
     "selected_count": 5,
     "ai_reviewed": 938,
-    "validation_errors": [
-      {
-        "paper_id": "2608.09270",
-        "reason": "Evidence is not an exact abstract quotation"
-      },
-      {
-        "paper_id": "2610.30912",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2610.27479",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2610.27757",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2610.25257",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_ids": [
-          "2610.19071",
-          "2609.00666",
-          "2611.08577",
-          "2408.07445"
-        ],
-        "reason": "Expecting ',' delimiter: line 1 column 1104 (char 1103)"
-      },
-      {
-        "paper_id": "2610.24814",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2610.22450",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2611.00071",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2610.18276",
-        "reason": "Invalid evaluation fields"
-      },
-      {
-        "paper_id": "2609.33741",
-        "reason": "Evidence is not an exact abstract quotation"
-      },
-      {
-        "paper_id": "2608.11343",
-        "reason": "Evidence is not an exact abstract quotation"
-      },
-      {
-        "paper_id": "2605.02116",
-        "reason": "Evidence is not an exact abstract quotation"
-      }
-    ],
     "shortfall": 0,
     "ai_states": {
       "evaluated": 938,
@@ -174,7 +115,7 @@
       "unassessed": 16
     },
     "publication_status": "complete",
-    "reserve_available": 10
+    "reserve_available": 5
   },
   "affiliations": [
     {
@@ -189,34 +130,17 @@
     },
     {
       "paper_id": "2611.04912",
-      "revision": 1,
-      "time": "2026-11-09T03:23:10.590702+00:00",
-      "status": "unverified",
-      "attempts": [
-        {
-          "source": "crossref",
-          "status": "unavailable",
-          "error": "api.crossref.org HTTP 404: Resource not found."
-        },
-        {
-          "source": "openalex",
-          "status": "received"
-        },
-        {
-          "source": "arxiv",
-          "status": "received"
-        }
-      ]
-    },
-    {
-      "paper_id": "2610.37153",
-      "status": "cached_verified",
-      "source": "OpenAlex first authorship"
+      "status": "cached_unverified"
     },
     {
       "paper_id": "doi:10.1109/tits.2026.3695618",
       "status": "cached_verified",
       "source": "Crossref first author"
+    },
+    {
+      "paper_id": "2610.37153",
+      "status": "cached_verified",
+      "source": "OpenAlex first authorship"
     }
   ],
   "daily_selected": 5,
@@ -225,13 +149,13 @@
   "published_daily_count": 5,
   "github_sync": "not_attempted",
   "pages_publish": "not_attempted",
-  "ai_status": "partial",
+  "ai_status": "deferred",
   "translation_status": "success",
   "selection_status": "complete",
   "publication_status": "published",
   "sync_status": "not_attempted",
   "pages_status": "not_attempted",
   "supplement": [],
-  "retrieval_status": "partial",
-  "github_run_id": "42552327867"
+  "retrieval_status": "not_run_resume",
+  "github_run_id": "42621565208"
 }
