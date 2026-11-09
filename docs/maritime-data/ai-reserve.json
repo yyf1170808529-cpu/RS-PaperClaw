@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "target": 15,
   "records": {
     "2610.12871": {
@@ -980,9 +980,11 @@
       "paper_id": "doi:10.1109/tits.2026.3695618",
       "fingerprint": "a8af344e1e18a4b9a5140a26d74eda7a5057483506520786d9ed21079b4247f5",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-09"
+      ],
+      "available": false
     },
     "2603.25722": {
       "paper_id": "2603.25722",
@@ -1015,6 +1017,54 @@
       "qualified": true,
       "pushed_dates": [],
       "available": true
+    },
+    "2610.37153": {
+      "paper_id": "2610.37153",
+      "fingerprint": "14afb6278243c463dcf87b5fce8f1a889e489b221410e5084fe5ac187127cbfa",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-09"
+      ],
+      "available": false
+    },
+    "2611.04912": {
+      "paper_id": "2611.04912",
+      "fingerprint": "d281b19939b2a0746791658ebf64ea61220e98aa4213943249afc806ebb7c792",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-09"
+      ],
+      "available": false
+    },
+    "2603.14822": {
+      "paper_id": "2603.14822",
+      "fingerprint": "483a68c941591e6db8896fe98baca51641b838458137e6ec9292fc4dc530f575",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "2608.14085": {
+      "paper_id": "2608.14085",
+      "fingerprint": "d281a125feb1b02eca4bdf19ba989a38e565217879b96247461112d71c40a904",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-09"
+      ],
+      "available": false
+    },
+    "2608.09590": {
+      "paper_id": "2608.09590",
+      "fingerprint": "4ec7dcb2eeb1ac5fb0eb0457a77ad31286f1a1f751185fff082109d364c9d51e",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-09"
+      ],
+      "available": false
     }
   },
   "available_count": 5

@@ -1763,6 +1763,191 @@
       "translation_source": "deepseek",
       "priced_cost_cny": 0.001925,
       "translated_at": "2026-11-08T14:18:10+08:00"
+    },
+    "4041716f982952708b087baf4d174bfcea0e4427a339fda25b00f42204218be4": {
+      "status": "success",
+      "paper_id": "2608.14085",
+      "english_hash": "0920a0deb829dbc16fd6cccd3b83f8531c5f64c54df3605efb34a2cf49c8c846",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 507,
+        "completion_tokens": 370,
+        "total_tokens": 877,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 507
+      },
+      "cost_upper_cny": 0.003974,
+      "created": 1794194604,
+      "candidate": {
+        "paper_id": "2608.14085",
+        "summary_zh": "论文针对多源噪声下协同感知融合特征质量下降的问题，提出CoDS框架，通过协同可靠性图、语义专家混合模块和双向任务互补交互联合优化检测与BEV分割。",
+        "migration_zh": "研究推断：可将CoRM质量量化用于Radar–AIS或视觉–AIS关联的置信度图，S-MoE按噪声水平分专家处理融合特征，BTCI以检测与BEV分割互注入提升船舶多传感器融合鲁棒性。",
+        "abstract_zh": "协同感知通过多智能体信息交换突破单视角局限。然而，位姿误差和通信延迟等多源噪声会降低融合特征质量，制约感知性能。检测与BEV分割的联合训练提供了自然的补救途径，其中分割出的道路区域有助于约束目标分布，检测边界框有助于恢复模糊的分割边界。为此，我们提出一种由专家驱动检测和BEV分割的鲁棒协同感知框架（CoDS）。为解决融合质量中的空间不一致性，我们首先引入协同可靠性图（CoRM）来显式量化特征质量分布。基于CoRM，我们设计语义专家混合（S-MoE）模块，为不一致的特征需求提取差异化特征。最后，为进一步缓解特征噪声退化，双向任务互补交互（BTCI）通过双向注入来细化任务感知特征。在OPV2V和V2V4Real数据集上的大量实验表明，我们的CoDS在两个任务上均超越现有基线，并在多源噪声下保持稳定的鲁棒性。代码：https://github.com/JinlongW128/CoDS 和 https://openi.pcl.ac.cn/OpenAIDriving/CoDS。"
+      },
+      "content": {
+        "paper_id": "2608.14085",
+        "summary_zh": "论文针对多源噪声下协同感知融合特征质量下降的问题，提出CoDS框架，通过协同可靠性图、语义专家混合模块和双向任务互补交互联合优化检测与BEV分割。",
+        "migration_zh": "研究推断：可将CoRM质量量化用于Radar–AIS或视觉–AIS关联的置信度图，S-MoE按噪声水平分专家处理融合特征，BTCI以检测与BEV分割互注入提升船舶多传感器融合鲁棒性。",
+        "abstract_zh": "协同感知通过多智能体信息交换突破单视角局限。然而，位姿误差和通信延迟等多源噪声会降低融合特征质量，制约感知性能。检测与BEV分割的联合训练提供了自然的补救途径，其中分割出的道路区域有助于约束目标分布，检测边界框有助于恢复模糊的分割边界。为此，我们提出一种由专家驱动检测和BEV分割的鲁棒协同感知框架（CoDS）。为解决融合质量中的空间不一致性，我们首先引入协同可靠性图（CoRM）来显式量化特征质量分布。基于CoRM，我们设计语义专家混合（S-MoE）模块，为不一致的特征需求提取差异化特征。最后，为进一步缓解特征噪声退化，双向任务互补交互（BTCI）通过双向注入来细化任务感知特征。在OPV2V和V2V4Real数据集上的大量实验表明，我们的CoDS在两个任务上均超越现有基线，并在多源噪声下保持稳定的鲁棒性。代码：https://github.com/JinlongW128/CoDS 和 https://openi.pcl.ac.cn/OpenAIDriving/CoDS。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.003974,
+      "translated_at": "2026-11-09T11:23:24+08:00"
+    },
+    "f42d6c1b01d582d875d6e7b8bcf7ac099ec9b78c95100b2e07d886cf88ef9d9d": {
+      "status": "success",
+      "paper_id": "2608.09590",
+      "english_hash": "18f519a5f0c08f97ef92cd54adef1abbb0f2711278c250224eb5733a6ccd250a",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 496,
+        "completion_tokens": 351,
+        "total_tokens": 847,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 496
+      },
+      "cost_upper_cny": 0.0038,
+      "created": 1794194609,
+      "candidate": {
+        "paper_id": "2608.09590",
+        "summary_zh": "论文提出TeaMatch框架，以可教性为跨模态表征学习准则，通过弱学生模拟失败模式并评估可恢复性来优化教师，提升噪声、低重叠和模糊结构下2D–3D匹配的鲁棒性。",
+        "migration_zh": "研究推断：可将可教性弱学生评估机制迁移到船舶视觉–AIS关联的特征编码模块，以退化图像/点云或低重叠输入监督学生恢复关联表征，调整教师融合结构而不增加推理成本。",
+        "abstract_zh": "学习图像与点云之间可靠的对应关系是2D–3D匹配的基础。尽管无检测方法近期取得了进展，现有方法主要在单个模型内优化匹配，在噪声输入、低重叠和模糊结构等挑战性条件下往往难以保持可靠对应。在本工作中，我们提出TeaMatch，一种新颖框架，将可教性引入为跨模态表征学习的准则。我们将可教性定义为表征在退化输入下能被弱学习器有效恢复的能力，反映其结构一致性与鲁棒性。为此，我们构建一组任务特定的弱学生，模拟常见失败模式，并在训练划分上训练它们模仿教师，同时在不相交的元划分上评估其可恢复性。随后优化教师以提升学生恢复可靠对应关系的能力，并由对应级和几何感知约束引导。我们的框架可无缝集成到现有由粗到细的匹配流程中，且不增加额外推理成本。大量实验表明，TeaMatch提升了匹配鲁棒性，并在具有挑战性的2D–3D匹配基准上取得最先进性能。"
+      },
+      "content": {
+        "paper_id": "2608.09590",
+        "summary_zh": "论文提出TeaMatch框架，以可教性为跨模态表征学习准则，通过弱学生模拟失败模式并评估可恢复性来优化教师，提升噪声、低重叠和模糊结构下2D–3D匹配的鲁棒性。",
+        "migration_zh": "研究推断：可将可教性弱学生评估机制迁移到船舶视觉–AIS关联的特征编码模块，以退化图像/点云或低重叠输入监督学生恢复关联表征，调整教师融合结构而不增加推理成本。",
+        "abstract_zh": "学习图像与点云之间可靠的对应关系是2D–3D匹配的基础。尽管无检测方法近期取得了进展，现有方法主要在单个模型内优化匹配，在噪声输入、低重叠和模糊结构等挑战性条件下往往难以保持可靠对应。在本工作中，我们提出TeaMatch，一种新颖框架，将可教性引入为跨模态表征学习的准则。我们将可教性定义为表征在退化输入下能被弱学习器有效恢复的能力，反映其结构一致性与鲁棒性。为此，我们构建一组任务特定的弱学生，模拟常见失败模式，并在训练划分上训练它们模仿教师，同时在不相交的元划分上评估其可恢复性。随后优化教师以提升学生恢复可靠对应关系的能力，并由对应级和几何感知约束引导。我们的框架可无缝集成到现有由粗到细的匹配流程中，且不增加额外推理成本。大量实验表明，TeaMatch提升了匹配鲁棒性，并在具有挑战性的2D–3D匹配基准上取得最先进性能。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.0038,
+      "translated_at": "2026-11-09T11:23:29+08:00"
+    },
+    "38ff27528cbd0ff16a084ec291706d6fef97fc681cf23a98c25bc17c5bdc72ef": {
+      "status": "success",
+      "paper_id": "2611.04912",
+      "english_hash": "b827b4e022cb28bcf77afaf3b1186d75b234047ccbb0dc75316ec889d22c7b8f",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 533,
+        "completion_tokens": 395,
+        "total_tokens": 928,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 533
+      },
+      "cost_upper_cny": 0.004226,
+      "created": 1794194614,
+      "candidate": {
+        "paper_id": "2611.04912",
+        "summary_zh": "该论文提出MiCaDe在线方法，利用标准目标检测器输出的2D/3D边界框互匹配得到几何一致性指标，经变点模型检测LiDAR-相机外参标定漂移，无需标定靶标且开销小。",
+        "migration_zh": "研究推断：可将跨模态检测匹配与几何一致性序列检测模块迁移至视觉–AIS关联监控，用检测框匹配残差作为证据流，由变点模型触发重关联或标定更新，无需修改融合主干。",
+        "abstract_zh": "自动驾驶中可靠的多传感器感知需要相机与LiDAR之间的精确标定。然而，长期部署中标定漂移往往不可避免：振动、热效应和轻微机械冲击可能改变传感器间的相对位姿，导致下游融合任务出现系统性误差。我们提出MiCaDe（标定变化检测），一种在线解决方案，通过序贯变化检测来检测外参LiDAR-相机标定参数何时不再准确。MiCaDe无需标定靶标，也无需修改感知栈，能以可忽略的计算开销提供低虚警率。我们的关键洞察是：在标定正确时，标准目标检测器产生的3D和2D边界框应在几何上保持一致。通过匹配跨模态检测，我们导出几何一致性度量，作为外参漂移的敏感指标。这些度量被聚合为固定大小的批次，并与参考分布进行评分，产生一个似然流，由变化点模型（CPM）监控。关键的是，CPM随时间累积统计证据，从而能够检测原本会被忽略的细微漂移。在多个长序列数据集以及一个物理诱导标定误差的真实世界数据集上的实验证实，在多种条件下均能可靠检测。代码见：https://github.com/CarloSgaravatti/MiCaDe。"
+      },
+      "content": {
+        "paper_id": "2611.04912",
+        "summary_zh": "该论文提出MiCaDe在线方法，利用标准目标检测器输出的2D/3D边界框互匹配得到几何一致性指标，经变点模型检测LiDAR-相机外参标定漂移，无需标定靶标且开销小。",
+        "migration_zh": "研究推断：可将跨模态检测匹配与几何一致性序列检测模块迁移至视觉–AIS关联监控，用检测框匹配残差作为证据流，由变点模型触发重关联或标定更新，无需修改融合主干。",
+        "abstract_zh": "自动驾驶中可靠的多传感器感知需要相机与LiDAR之间的精确标定。然而，长期部署中标定漂移往往不可避免：振动、热效应和轻微机械冲击可能改变传感器间的相对位姿，导致下游融合任务出现系统性误差。我们提出MiCaDe（标定变化检测），一种在线解决方案，通过序贯变化检测来检测外参LiDAR-相机标定参数何时不再准确。MiCaDe无需标定靶标，也无需修改感知栈，能以可忽略的计算开销提供低虚警率。我们的关键洞察是：在标定正确时，标准目标检测器产生的3D和2D边界框应在几何上保持一致。通过匹配跨模态检测，我们导出几何一致性度量，作为外参漂移的敏感指标。这些度量被聚合为固定大小的批次，并与参考分布进行评分，产生一个似然流，由变化点模型（CPM）监控。关键的是，CPM随时间累积统计证据，从而能够检测原本会被忽略的细微漂移。在多个长序列数据集以及一个物理诱导标定误差的真实世界数据集上的实验证实，在多种条件下均能可靠检测。代码见：https://github.com/CarloSgaravatti/MiCaDe。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.004226,
+      "translated_at": "2026-11-09T11:23:34+08:00"
+    },
+    "641069444e7b694c5cdfb2d87f7494d825b6710d49e2d09080206a3076a99848": {
+      "status": "success",
+      "paper_id": "2610.37153",
+      "english_hash": "371f44d07aa888e6c5fed25b82df12f749704ae339b0c8cf690a4e6dfa8a02fa",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 501,
+        "completion_tokens": 351,
+        "total_tokens": 852,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 501
+      },
+      "cost_upper_cny": 0.00381,
+      "created": 1794194619,
+      "candidate": {
+        "paper_id": "2610.37153",
+        "summary_zh": "提出FastBEVFusion多模态3D检测系统，将LiDAR与相机特征投影到半对齐BEV空间并用轻量交叉注意力动态融合，在nuScenes上以超50 FPS实时运行且对校准误差鲁棒。",
+        "migration_zh": "研究推断：可将半对齐BEV投影与轻量交叉注意力融合模块迁移至Radar–AIS或视觉–AIS关联，以Radar/视觉BEV特征为输入、AIS位置为监督，消除深度估计并增强标定误差鲁棒性。",
+        "abstract_zh": "基于LiDAR和相机数据的可靠实时3D目标检测对于自动驾驶安全至关重要，系统必须以最小延迟准确感知周围环境。许多最先进系统能获得高质量检测结果，但无法满足实时约束，限制了其实际应用。为应对这一挑战，我们提出FastBEVFusion，一个简单、快速且鲁棒的3D目标检测融合系统。基于模态特定特征，FastBEVFusion将这些特征投影到半对齐的模态特定BEV空间中，而不依赖计算密集且可能易出错的深度估计。给定这些BEV空间，我们提出一个基于交叉注意力的轻量、软性且动态的融合模块，它动态适应场景上下文并实现跨整个BEV空间的特征融合。在复杂nuScenes数据集上的实验表明，FastBEVFusion优于最先进的实时系统，并在不使用部署库的情况下达到超过50 FPS。此外，我们的系统对校准误差表现出强鲁棒性，使FastBEVFusion成为面向实际应用的有力3D目标检测系统。"
+      },
+      "content": {
+        "paper_id": "2610.37153",
+        "summary_zh": "提出FastBEVFusion多模态3D检测系统，将LiDAR与相机特征投影到半对齐BEV空间并用轻量交叉注意力动态融合，在nuScenes上以超50 FPS实时运行且对校准误差鲁棒。",
+        "migration_zh": "研究推断：可将半对齐BEV投影与轻量交叉注意力融合模块迁移至Radar–AIS或视觉–AIS关联，以Radar/视觉BEV特征为输入、AIS位置为监督，消除深度估计并增强标定误差鲁棒性。",
+        "abstract_zh": "基于LiDAR和相机数据的可靠实时3D目标检测对于自动驾驶安全至关重要，系统必须以最小延迟准确感知周围环境。许多最先进系统能获得高质量检测结果，但无法满足实时约束，限制了其实际应用。为应对这一挑战，我们提出FastBEVFusion，一个简单、快速且鲁棒的3D目标检测融合系统。基于模态特定特征，FastBEVFusion将这些特征投影到半对齐的模态特定BEV空间中，而不依赖计算密集且可能易出错的深度估计。给定这些BEV空间，我们提出一个基于交叉注意力的轻量、软性且动态的融合模块，它动态适应场景上下文并实现跨整个BEV空间的特征融合。在复杂nuScenes数据集上的实验表明，FastBEVFusion优于最先进的实时系统，并在不使用部署库的情况下达到超过50 FPS。此外，我们的系统对校准误差表现出强鲁棒性，使FastBEVFusion成为面向实际应用的有力3D目标检测系统。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.00381,
+      "translated_at": "2026-11-09T11:23:39+08:00"
+    },
+    "9756c8d229d082113b094dd3c6b6f5f74e9b48066b890a669669fcf762fe5ad0": {
+      "status": "success",
+      "paper_id": "doi:10.1109/tits.2026.3695618",
+      "english_hash": "9263f6de691a071ec471b6b73a9e8fb0e89f79efc57cfdd2d50f822f3e48a791",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 644,
+        "completion_tokens": 485,
+        "total_tokens": 1129,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 644
+      },
+      "cost_upper_cny": 0.005168,
+      "created": 1794194624,
+      "candidate": {
+        "paper_id": "doi:10.1109/tits.2026.3695618",
+        "summary_zh": "提出M3Detection多帧多级融合框架，利用相机与4D成像雷达中间特征和跟踪轨迹，通过全局/局部聚合与时序融合解决跨帧跨模态融合及计算冗余问题，提升3D检测性能。",
+        "migration_zh": "研究推断：可将GOA的雷达引导全局聚合与LGA的轨迹邻域网格扩展用于视觉–Radar–AIS多传感器关联的候选特征对齐模块，以跟踪轨迹为监督参考、雷达BEV为引导输入，在第二级检测头前增加时序聚合。",
+        "abstract_zh": "4D成像雷达的最新进展使恶劣天气下的感知变得鲁棒，而相机传感器提供密集的语义信息。融合这些互补模态对于准确且经济的3D感知具有巨大潜力。然而，大多数现有的相机-雷达融合方法局限于单帧输入，仅捕获场景的部分视图。不完整的场景信息，加之图像退化与4D雷达稀疏性，阻碍了整体检测性能。相比之下，多帧融合提供更丰富的时空信息，但面临两个挑战：实现跨帧和跨模态的鲁棒且有效的目标特征融合，以及缓解冗余特征提取的计算成本。因此，我们提出M3Detection，一个统一的多帧3D目标检测框架，对来自相机和4D成像雷达的多模态数据执行多级特征融合。与传统架构不同，我们的框架利用基线检测器的中间特征，并采用跟踪器生成参考轨迹，提高计算效率并为第二阶段提供更丰富的信息。在第二阶段，为解决跟踪不确定性并实现细粒度建模，我们设计了一个由雷达信息引导的全局级目标间特征聚合模块（GOA），以在候选提议之间对齐全局特征；以及一个局部级网格间特征聚合模块（LGA），沿参考轨迹扩展局部特征以增强细粒度目标表示。聚合后的特征随后由轨迹级多帧时空融合模块（MSTF）处理，以编码跨帧交互并增强时序表示。在View-of-Delft、TJ4DRadSet和OmniHD-Scenes数据集上的大量实验表明，M3Detection实现了最先进的3D检测性能，验证了其在相机-4D成像雷达融合多帧检测中的有效性。"
+      },
+      "content": {
+        "paper_id": "doi:10.1109/tits.2026.3695618",
+        "summary_zh": "提出M3Detection多帧多级融合框架，利用相机与4D成像雷达中间特征和跟踪轨迹，通过全局/局部聚合与时序融合解决跨帧跨模态融合及计算冗余问题，提升3D检测性能。",
+        "migration_zh": "研究推断：可将GOA的雷达引导全局聚合与LGA的轨迹邻域网格扩展用于视觉–Radar–AIS多传感器关联的候选特征对齐模块，以跟踪轨迹为监督参考、雷达BEV为引导输入，在第二级检测头前增加时序聚合。",
+        "abstract_zh": "4D成像雷达的最新进展使恶劣天气下的感知变得鲁棒，而相机传感器提供密集的语义信息。融合这些互补模态对于准确且经济的3D感知具有巨大潜力。然而，大多数现有的相机-雷达融合方法局限于单帧输入，仅捕获场景的部分视图。不完整的场景信息，加之图像退化与4D雷达稀疏性，阻碍了整体检测性能。相比之下，多帧融合提供更丰富的时空信息，但面临两个挑战：实现跨帧和跨模态的鲁棒且有效的目标特征融合，以及缓解冗余特征提取的计算成本。因此，我们提出M3Detection，一个统一的多帧3D目标检测框架，对来自相机和4D成像雷达的多模态数据执行多级特征融合。与传统架构不同，我们的框架利用基线检测器的中间特征，并采用跟踪器生成参考轨迹，提高计算效率并为第二阶段提供更丰富的信息。在第二阶段，为解决跟踪不确定性并实现细粒度建模，我们设计了一个由雷达信息引导的全局级目标间特征聚合模块（GOA），以在候选提议之间对齐全局特征；以及一个局部级网格间特征聚合模块（LGA），沿参考轨迹扩展局部特征以增强细粒度目标表示。聚合后的特征随后由轨迹级多帧时空融合模块（MSTF）处理，以编码跨帧交互并增强时序表示。在View-of-Delft、TJ4DRadSet和OmniHD-Scenes数据集上的大量实验表明，M3Detection实现了最先进的3D检测性能，验证了其在相机-4D成像雷达融合多帧检测中的有效性。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.005168,
+      "translated_at": "2026-11-09T11:23:44+08:00"
     }
   }
 }
