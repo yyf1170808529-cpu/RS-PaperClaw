@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-10",
   "target": 15,
   "records": {
     "2610.12871": {
@@ -990,9 +990,11 @@
       "paper_id": "2603.25722",
       "fingerprint": "f51cef656663821f5a66fcf47c26822bd729e7dcc5cabfe9d27018a486dd0d09",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-10"
+      ],
+      "available": false
     },
     "2605.03076": {
       "paper_id": "2605.03076",
@@ -1006,9 +1008,11 @@
       "paper_id": "2608.06060",
       "fingerprint": "262b2d72d87072c8e3fa4c09ac54c46d07e3ffe9dc390bad2a1c31a3bb805907",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-10"
+      ],
+      "available": false
     },
     "2607.10698": {
       "paper_id": "2607.10698",
@@ -1042,9 +1046,11 @@
       "paper_id": "2603.14822",
       "fingerprint": "483a68c941591e6db8896fe98baca51641b838458137e6ec9292fc4dc530f575",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-10"
+      ],
+      "available": false
     },
     "2608.14085": {
       "paper_id": "2608.14085",
@@ -1065,7 +1071,27 @@
         "2026-11-09"
       ],
       "available": false
+    },
+    "2610.22450": {
+      "paper_id": "2610.22450",
+      "fingerprint": "647b2ab5b1819878d9a3cc66dc84bc1cc5307abecc6df8e0b411cac627a3049c",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-10"
+      ],
+      "available": false
+    },
+    "2610.30912": {
+      "paper_id": "2610.30912",
+      "fingerprint": "a7e665c5c966d7cfd967cc05389930f40add40fa0acaba0dafe16f21aab7cac4",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-10"
+      ],
+      "available": false
     }
   },
-  "available_count": 5
+  "available_count": 2
 }
