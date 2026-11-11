@@ -66056,6 +66056,1601 @@
       "model": "deepseek-flash",
       "request_id": "28f41bbd-17cb-4950-89d3-5553cf6be1e2",
       "compatible_fingerprints": []
+    },
+    "6f62e11c84cf5427c8e348440c158e2b0cf5c4ff0a323c5f069561aef8b35e83": {
+      "paper_id": "2611.06168",
+      "title": "Reasoning-Aware Cross-Modal Association Unlearning in Multimodal Large Reasoning Models",
+      "fingerprint": "6f62e11c84cf5427c8e348440c158e2b0cf5c4ff0a323c5f069561aef8b35e83",
+      "evaluation": {
+        "paper_id": "2611.06168",
+        "task_type": "cross-modal association unlearning / multimodal reasoning",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "VKCR first localizes the edit to a compact association-conditioned parameter subspace.",
+            "interpretation_zh": "该方法将编辑定位到紧凑的关联条件参数子空间，体现跨模态关联建模。",
+            "inference": false
+          },
+          {
+            "quote_en": "It then reduces support for the designated target at task outputs and counterfactually rebinds the affected reasoning behavior by discouraging target-bearing or unsupported continuations while favoring valid non-sensitive alternatives.",
+            "interpretation_zh": "通过反事实重绑定抑制特定目标承载行为并鼓励有效替代，可用于缓解跨模态关联偏差。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "VKCR first localizes the edit to a compact association-conditioned parameter subspace.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将图像-知识关联子空间的编辑思想用于视觉-AIS匹配特征子空间，在训练中抑制错误关联、鼓励正确配对，需调整输入为视觉目标与AIS候选及训练目标为关联重绑定。",
+          "inference": true
+        },
+        "limitations": [
+          "聚焦多模态大模型隐私遗忘，非海事或通用匹配基准",
+          "方法依赖中间推理过程，迁移到视觉-AIS匹配需大幅改造",
+          "摘要未涉及匹配准确率或船舶场景验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "涉及跨模态关联与表征编辑，可为视觉-AIS匹配提供间接思路，但直接相关性和迁移证据有限。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态大推理模型中视觉-知识关联的遗忘与隐私泄漏",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出参数高效的视觉键控反事实重绑定框架VKCR，用于跨模态关联编辑与遗忘",
+        "application_context": "多模态大模型隐私保护与敏感信息遗忘评估",
+        "security_centric": true,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2f96a53e-4a15-490e-9b40-6ec2f720b76f",
+      "compatible_fingerprints": []
+    },
+    "f16621a6434209bc731afebaf45cc73ff6be09b761a13b7e42e58de3b791afdb": {
+      "paper_id": "2611.10199",
+      "title": "RigidGS: Geometry-Aware Object Decoupling for Rigid-Body Interaction in 3D Gaussian Splatting",
+      "fingerprint": "f16621a6434209bc731afebaf45cc73ff6be09b761a13b7e42e58de3b791afdb",
+      "evaluation": {
+        "paper_id": "2611.10199",
+        "task_type": "3D Gaussian splatting object decoupling and refinement",
+        "direct_relevance": 1,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "面向VR/MR三维重建与物体操作，与船舶检测分割任务差异大",
+          "掩膜精炼针对SAM2失败模式，非船舶场景",
+          "无匹配或检测迁移证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究对象为3DGS场景重建与物体操作，直接相关性低且摘要未提供可迁移到船舶视觉或匹配的具体方法证据。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "3D高斯表示中的标签-几何耦合与掩膜噪声问题",
+        "target_task": "other",
+        "core_contribution": "提出RigidGS解耦几何学习与物体身份，结合深度时序感知掩膜精炼",
+        "application_context": "交互式VR/MR实时三维渲染与刚体操作",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2f96a53e-4a15-490e-9b40-6ec2f720b76f",
+      "compatible_fingerprints": []
+    },
+    "d756b512fcd5c66b5229808a53b6a47b07eee1ab0f12cfd5f263b589a3b6d7f1": {
+      "paper_id": "2611.00071",
+      "title": "How Reliable Are Object Detection Models Beyond Clear Weather? A Deployment-Oriented Robustness Study for Autonomous Driving",
+      "fingerprint": "d756b512fcd5c66b5229808a53b6a47b07eee1ab0f12cfd5f263b589a3b6d7f1",
+      "evaluation": {
+        "paper_id": "2611.00071",
+        "task_type": "robust object detection evaluation",
+        "direct_relevance": 3,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Robustness is assessed using performance Drop (%), a Weather Robustness Index (WRI), and class-level sensitivity analysis for critical road participants, including cars, buses, trucks, and persons.",
+            "interpretation_zh": "提出跨天气鲁棒性评价指标与类别敏感度分析，可用于评估检测器在域偏移下的稳定性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "主要为评估研究，非新检测方法或匹配算法",
+          "仅自动驾驶陆上场景，未涉及船舶或AIS",
+          "无具体可迁移训练/结构设计"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上交通参与者检测鲁棒性评估，与船舶视觉检测和域偏移评估有间接联系，但方法迁移证据较弱。",
+        "confidence": 0.7,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "自动驾驶检测器在跨天气域偏移下的鲁棒性与置信度可靠性",
+        "target_task": "other",
+        "core_contribution": "系统评估多种检测器在恶劣天气下源域泛化表现并提出鲁棒性指标",
+        "application_context": "安全关键智能车辆感知系统部署评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2f96a53e-4a15-490e-9b40-6ec2f720b76f",
+      "compatible_fingerprints": []
+    },
+    "2e5755dd54b068ef5fd8969e28dff0891a6176af02c415921be2d7c243883689": {
+      "paper_id": "2408.07445",
+      "title": "Modality-Invariant Multimodal Learning to Handle Missing Modalities: A Single-Branch Approach",
+      "fingerprint": "2e5755dd54b068ef5fd8969e28dff0891a6176af02c415921be2d7c243883689",
+      "evaluation": {
+        "paper_id": "2408.07445",
+        "task_type": "missing-modality robust multimodal learning",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "It consists of a single-branch network sharing weights across multiple modalities to learn inter-modality representations to maximize performance as well as robustness to missing modalities.",
+            "interpretation_zh": "单分支跨模态共享权重学习模态间表征，可提升缺失模态下的鲁棒性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "It consists of a single-branch network sharing weights across multiple modalities to learn inter-modality representations to maximize performance as well as robustness to missing modalities.",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将单分支权共享跨模态表征用于雷达/AIS/视觉多传感器检测，在训练中随机屏蔽或缺失某一模态输入，保持共享编码器输出稳定融合特征。",
+          "inference": true
+        },
+        "limitations": [
+          "仅验证分类任务，未涉及检测、匹配或分割",
+          "缺少海事或传感器场景",
+          "单分支结构迁移到检测需重新设计检测头与特征融合"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出单分支权共享的缺失模态鲁棒表征方法，可间接用于多传感器融合，但直接应用证据不足。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态融合网络在缺失模态时性能下降",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出模态不变单分支共享权重学习框架以增强缺失模态鲁棒性",
+        "application_context": "文本-视觉、音频-视觉多模态分类",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2f96a53e-4a15-490e-9b40-6ec2f720b76f",
+      "compatible_fingerprints": []
+    },
+    "86dbb84bba95bf818a5adcf3fcb0e09e90a4c5328cb5f1cd2f8e474ea4b73b7f": {
+      "paper_id": "2609.33741",
+      "title": "Multi-Marginal Inverse Optimal Transport for Contrastive Learning Via Explicit Anchor-Positive-Negative Coupling",
+      "fingerprint": "86dbb84bba95bf818a5adcf3fcb0e09e90a4c5328cb5f1cd2f8e474ea4b73b7f",
+      "evaluation": {
+        "paper_id": "2609.33741",
+        "task_type": "general_representation_learning",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "these methods $\\textit{DO NOT}$ utilize negative pairs and hence are not truly contrastive in their approach",
+            "interpretation_zh": "指出以往基于最优传输的表征学习未使用负样本，因此并非真正对比学习",
+            "inference": false
+          },
+          {
+            "quote_en": "learns representations such that the global multi-marginal OT (MMOT) coupling between a triple of data marginals, with respect to a carefully designed ground-cost between triplets of data points in the representation space, concentrates on the anchor-positive-negative $\\textit{triplets}$",
+            "interpretation_zh": "提出利用锚点-正样本-负样本三元组的多边际最优传输耦合来学习表征",
+            "inference": false
+          },
+          {
+            "quote_en": "Neg-IOT-CL-PushPull, that is a computationally efficient alternative to Neg-MMIOT-CL, alleviating the high cost of computing MMOT plans needed during implementation",
+            "interpretation_zh": "给出计算高效的替代方案以降低多边际最优传输计划的计算成本",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "learns representations such that the global multi-marginal OT (MMOT) coupling between a triple of data marginals, with respect to a carefully designed ground-cost between triplets of data points in the representation space, concentrates on the anchor-positive-negative $\\textit{triplets}$",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将锚点-正样本-负样本三元组的表征耦合用于视觉-雷达/AIS跨模态匹配：输入改为图像与雷达/AIS点云或轨迹嵌入；训练目标改为让同目标跨模态嵌入在MMOT耦合中靠近、异目标负样本远离；结构上需设计跨模态ground-cost（距离度量）以替代原单模态表征空间中的代价",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅给出对比学习与最优传输的一般性表征学习，未涉及任何海事或跨模态匹配实验",
+          "未说明如何构造跨模态正负样本及代价函数，迁移需额外设计",
+          "多边际最优传输计算成本高，摘要虽提PushPull近似但未给出跨模态适配细节"
+        ],
+        "decision": "候选",
+        "reason_zh": "通用对比表征学习，负样本与最优传输耦合机制可迁移至跨模态匹配，但无海事和跨模态证据，仅作方法候选。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "现有基于最优传输的表征学习方法未利用负样本导致维度塌缩，需将锚点-正样本-负样本三元组纳入多边际最优传输对比学习以改善表征质量",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出Neg-MMIOT-CL多边际逆最优传输对比学习方法，使全局多边际OT耦合聚焦于锚点-正样本-负样本三元组，并给出计算高效的PushPull替代方案",
+        "application_context": "通用表征学习与对比学习，在合成和真实世界数据集上验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "30895456-2a0a-48c9-ab4f-250f68c5e19b",
+      "compatible_fingerprints": []
+    },
+    "3e90fd7ba8f26af06081577baad8c563f48db47cdb577e581705a9081dbc35ba": {
+      "paper_id": "2604.12380",
+      "title": "Modality-Agnostic Prompt Learning for Multi-Modal Camouflaged Object Detection",
+      "fingerprint": "3e90fd7ba8f26af06081577baad8c563f48db47cdb577e581705a9081dbc35ba",
+      "evaluation": {
+        "paper_id": "2604.12380",
+        "task_type": "通用多模态伪装目标检测（COD），基于SAM的模态无关提示学习",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "generates modality-agnostic multi-modal prompts for the Segment Anything Model (SAM), enabling parameter-efficient adaptation to arbitrary auxiliary modalities",
+            "interpretation_zh": "该方法生成模态无关的多模态提示以适配SAM，从而参数高效地适应任意辅助模态；此机制可能用于视觉–AIS跨模态匹配中的提示构造与模态泛化，但需重新设计提示生成器和适配目标。",
+            "inference": true
+          },
+          {
+            "quote_en": "we model multi-modal learning through interactions between a data-driven content domain and a knowledge-driven prompt domain, distilling task-relevant cues into unified prompts for SAM decoding",
+            "interpretation_zh": "通过数据驱动内容域与知识驱动提示域的交互进行多模态学习，并将任务相关线索蒸馏为统一提示；这一思路可迁移到跨模态对齐，但原文未涉及船舶或AIS。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "generates modality-agnostic multi-modal prompts for the Segment Anything Model (SAM), enabling parameter-efficient adaptation to arbitrary auxiliary modalities",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将模态无关提示生成机制用于视觉–AIS匹配：输入改为图像特征与AIS点/轨迹特征，提示生成器输出统一匹配提示，训练目标调整为跨模态关联预测，需修改提示生成网络与匹配解码结构。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未提及AIS、船舶、遥感或海上场景，直接相关性为0。",
+          "实验仅在RGB-Depth、RGB-Thermal、RGB-Polarization伪装目标检测基准上验证，未涉及跨模态匹配任务。",
+          "方法核心是分割提示学习，与跨模态关联匹配的训练目标和评价方式存在差距。"
+        ],
+        "decision": "候选",
+        "reason_zh": "无海事直接相关性，但模态无关提示生成与跨模态泛化思路可迁移至视觉–AIS匹配，属于通用视觉方法候选。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态伪装目标检测中模态特定架构限制跨模态泛化与可扩展性",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出面向SAM的模态无关多模态提示生成框架，通过内容域与提示域交互蒸馏任务线索，并引入轻量掩码精炼模块",
+        "application_context": "RGB-Depth、RGB-Thermal、RGB-Polarization伪装目标检测基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "97e8af72-4c09-4745-840d-dadbbe49655b",
+      "compatible_fingerprints": []
+    },
+    "fd5655baa948bc36030622cc43734e7883de9ba890b08ad9ad7f9242c0b8dcd8": {
+      "paper_id": "2601.06550",
+      "title": "Generative Semantic Multi-Object Tracking: A Large-Scale Benchmark and an MLLM-Driven Reasoning Framework",
+      "fingerprint": "fd5655baa948bc36030622cc43734e7883de9ba890b08ad9ad7f9242c0b8dcd8",
+      "evaluation": {
+        "paper_id": "2601.06550",
+        "task_type": "语义多目标跟踪，基于多模态大语言模型的开集生成式推理框架",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "employs a Spatio-Temporal Fusion Module to compress discrete geometric trajectories into continuous semantic tokens",
+            "interpretation_zh": "时空融合模块将离散几何轨迹压缩为连续语义token；该轨迹表征方法可能用于AIS轨迹与雷达轨迹的关联匹配，但需调整输入轨迹特征与匹配训练目标。",
+            "inference": true
+          },
+          {
+            "quote_en": "validate that LLMTrack achieves state-of-the-art geometric tracking robustness while delivering a qualitative leap in generative semantic reasoning",
+            "interpretation_zh": "框架同时提升几何跟踪鲁棒性与语义推理能力，其轨迹鲁棒跟踪思路可借鉴到多传感器目标跟踪，但未涉及海事传感器。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "employs a Spatio-Temporal Fusion Module to compress discrete geometric trajectories into continuous semantic tokens",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "将时空融合轨迹token化机制用于雷达–AIS多传感器跟踪：输入改为雷达点迹序列与AIS轨迹，训练目标改为多源轨迹关联与状态估计，需调整token编码器与解码器输出。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及海事、雷达或AIS数据，直接相关性低。",
+          "核心是多模态大语言模型驱动的语义推理与基准构建，与跨模态关联匹配任务差异较大。",
+          "未提供可直接用于雷达–AIS匹配的具体训练目标或结构细节。"
+        ],
+        "decision": "候选",
+        "reason_zh": "直接相关性低，但时空轨迹token化与多目标跟踪鲁棒性方法可迁移至雷达–AIS轨迹关联，作为通用跟踪方法候选。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "语义多目标跟踪中闭集交互标签与碎片化感知管道限制大模型利用",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "构建Grand-SMOT大规模基准并提出LLMTrack多模态大模型驱动框架，含时空融合模块与宏观理解优先机制",
+        "application_context": "语义多目标跟踪基准与动态场景视频理解",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "97e8af72-4c09-4745-840d-dadbbe49655b",
+      "compatible_fingerprints": []
+    },
+    "ea458862483eb056fd7b359987c8bbea2836956d5d843b074f56efdbac3abf80": {
+      "paper_id": "2608.04949",
+      "title": "UG-UMRE: Uncertainty-Guided Modality Augmentation and Distributional Calibration for Unified Multimodal Relation Extraction",
+      "fingerprint": "ea458862483eb056fd7b359987c8bbea2836956d5d843b074f56efdbac3abf80",
+      "evaluation": {
+        "paper_id": "2608.04949",
+        "task_type": "统一多模态关系抽取中的不确定性引导模态增强与分布校准",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "an Uncertainty-Driven Unimodal Augmentation (UDUA) module, which models features as Gaussian distributions based on the Variational Information Bottleneck",
+            "interpretation_zh": "UDUA模块基于变分信息瓶颈将特征建模为高斯分布，以过滤噪声并保持语义一致性；该不确定性建模可迁移到视觉–AIS跨模态匹配的特征对齐，但需调整输入特征与匹配损失。",
+            "inference": true
+          },
+          {
+            "quote_en": "By incorporating an uncertainty-aware self-supervised contrastive learning mechanism, UDUA effectively filters out noise while maintaining semantic consistency",
+            "interpretation_zh": "不确定性感知的自监督对比学习机制可过滤噪声；此机制可改造为视觉–AIS跨模态对比对齐训练，但原文任务是关系抽取。",
+            "inference": true
+          },
+          {
+            "quote_en": "JAUA leverages probabilistic distribution consistency to construct a shared latent space, eliminating the distributional gap by synchronizing cross-modal statistical properties",
+            "interpretation_zh": "JAUA利用概率分布一致性构建共享潜在空间，同步跨模态统计特性以消除分布差异；该跨模态对齐机制可迁移到视觉–AIS表征对齐，需调整模态编码器与对齐目标。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "JAUA leverages probabilistic distribution consistency to construct a shared latent space, eliminating the distributional gap by synchronizing cross-modal statistical properties",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将概率分布一致性对齐用于视觉–AIS匹配：输入改为图像区域特征与AIS轨迹特征，以分布同步构建共享空间，训练目标改为跨模态关联匹配，需调整模态编码器与对齐损失。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及海事、船舶或AIS场景，直接相关性低。",
+          "任务为文本实体与视觉对象的关系抽取，与目标检测/跟踪匹配任务不同。",
+          "未提供在跨模态匹配基准上的验证证据。"
+        ],
+        "decision": "候选",
+        "reason_zh": "直接相关性低，但不确定性建模、自监督对比与分布一致性对齐机制具体可迁移至视觉–AIS跨模态匹配。",
+        "confidence": 0.78,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "统一多模态关系抽取中忽略偶然不确定性导致噪声传播，且模态分布异质阻碍对齐",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出UG-UMRE网络，含不确定性驱动单模态增强模块与联合偶然不确定性对齐模块，通过高斯分布建模和分布一致性实现跨模态对齐",
+        "application_context": "UMRE、MORE、MNRE多模态关系抽取基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "97e8af72-4c09-4745-840d-dadbbe49655b",
+      "compatible_fingerprints": []
+    },
+    "ba475bb7a00fcb891e2637fa0c9695367db0714e1c847d493152087ed1b85234": {
+      "paper_id": "2607.23245",
+      "title": "FedTaste: Topology-Aware Structural Transfer for Multimodal Federated Learning with Missing Modalities",
+      "fingerprint": "ba475bb7a00fcb891e2637fa0c9695367db0714e1c847d493152087ed1b85234",
+      "evaluation": {
+        "paper_id": "2607.23245",
+        "task_type": "multimodal_federated_missing_modality",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "FedTaste exploits transferable group-level semantic relations within a shared semantic-group space",
+            "interpretation_zh": "利用共享语义组空间中的组级语义关系进行结构迁移，属于可跨任务复用的跨模态对齐机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "Missing-modality clients optimize only the prompts attached to their available branches and align their partial representations with the blueprint through topology and spectral regularization",
+            "interpretation_zh": "缺失模态客户端仅优化可用分支的提示，并通过拓扑与谱正则将部分表征对齐到全局蓝图，可迁移为跨模态缺失情况下的对齐策略。",
+            "inference": false
+          },
+          {
+            "quote_en": "Experiments on standard cross-modal retrieval benchmarks show that FedTaste consistently outperforms representative baselines",
+            "interpretation_zh": "在跨模态检索基准上验证，说明其对齐目标面向跨模态匹配任务。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "align their partial representations with the blueprint through topology and spectral regularization",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将视觉与AIS/雷达两模态视为可用分支，缺失模态时仅优化现有分支提示，并以拓扑/谱正则把部分表征拉向共享语义蓝图；输入改为视觉与AIS/雷达特征，训练目标改为跨模态匹配对齐，结构保留冻结编码器加模态自适应提示。",
+          "inference": true
+        },
+        "limitations": [
+          "原文为联邦学习与视觉-语言跨模态检索，非海事多源数据",
+          "拓扑/谱正则与提示的具体实现细节摘要未给出",
+          "来自ACM MM论文，但迁移到雷达-AIS需重新验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供具体的缺失模态对齐与结构迁移机制，可迁移至视觉-AIS跨模态匹配，但非直接海事任务，需验证。",
+        "confidence": 0.72,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态联邦学习中客户端级模态缺失与非独立同分布导致的表征漂移",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出FedTaste，通过模态自适应结构提示与置信度全局蓝图，在缺失模态下实现组级语义结构迁移，无需显式插补或原始数据交换",
+        "application_context": "标准跨模态检索基准上的联邦多模态学习验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb7af6c8-d439-4a4e-b39d-64eb68b7674e",
+      "compatible_fingerprints": []
+    },
+    "384cd9905696b7bef580c4298f8a99c78db8e98d1849047bb054e71183746676": {
+      "paper_id": "doi:10.1109/tits.2026.3679586",
+      "title": "Multi-Object Tracking at the Edge of IoT Using LiDAR Data for Railway Applications",
+      "fingerprint": "384cd9905696b7bef580c4298f8a99c78db8e98d1849047bb054e71183746676",
+      "evaluation": {
+        "paper_id": "doi:10.1109/tits.2026.3679586",
+        "task_type": "lidar_multi_object_tracking_edge",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "state-of-the-art tracking algorithms are optimised to reduce computational demands while maintaining high performance, particularly for processing point-cloud data",
+            "interpretation_zh": "针对点云数据优化现有跟踪算法以降低计算需求，属于可迁移的跟踪效率优化思路。",
+            "inference": false
+          },
+          {
+            "quote_en": "Using Light Detection and Ranging sensors as a case study, the feasibility of real-time execution is demonstrated",
+            "interpretation_zh": "以LiDAR为案例验证实时执行可行性，说明方法面向点云多目标跟踪。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "state-of-the-art tracking algorithms are optimised to reduce computational demands while maintaining high performance, particularly for processing point-cloud data",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "将点云多目标跟踪的计算优化思路迁移到雷达/激光船舶多目标跟踪，输入改为船舶点云序列，训练目标仍为时序关联与轨迹维持，结构上采用轻量化跟踪器适配嵌入式部署。",
+          "inference": true
+        },
+        "limitations": [
+          "面向铁路场景的LiDAR跟踪，非海事",
+          "未给出具体跟踪算法结构或损失细节",
+          "主要为对现有跟踪器的实现与评估，方法创新证据有限"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上交通多目标跟踪与边缘部署，与船舶跟踪有任务联系，但缺少具体可复用算法细节，迁移需较多调整。",
+        "confidence": 0.6,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "资源受限边缘设备上的LiDAR点云多目标跟踪实时性与计算开销",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "系统评估并优化现有跟踪器在极端边缘设备上的可行性，降低点云跟踪计算需求同时保持性能",
+        "application_context": "铁路智能交通场景中LiDAR多目标跟踪的嵌入式实时部署",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb7af6c8-d439-4a4e-b39d-64eb68b7674e",
+      "compatible_fingerprints": []
+    },
+    "75d171302d78ac08e0f5126ada2ebfedea7ae773d4882f6b586c678f062ce63f": {
+      "paper_id": "2610.29249",
+      "title": "MOSAIC: An Omni-Modal Benchmark for Long-Term Memory and Cross-Modal Reasoning in Conversational Agents",
+      "fingerprint": "75d171302d78ac08e0f5126ada2ebfedea7ae773d4882f6b586c678f062ce63f",
+      "evaluation": {
+        "paper_id": "2610.29249",
+        "task_type": "omni_modal_memory_benchmark",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "MOSAIC constructs targeted spatial, temporal, and prosodic signals rather than decorative media",
+            "interpretation_zh": "构建空间、时间与韵律信号用于诊断多模态记忆，属于评估协议设计而非匹配学习机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "representation loss is modality-dependent, residual reading dominates even under gold evidence",
+            "interpretation_zh": "发现表征损失具有模态依赖性，可用于理解跨模态信息丢失，但非具体可迁移算法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "为对话代理长时记忆评测基准，非视觉检测或跨模态匹配方法",
+          "无具体可复用匹配/对齐算法",
+          "摘要未提供可直接迁移的训练或结构细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向对话代理多模态记忆评测，与海事关联融合及船舶视觉任务无直接联系，迁移路径不具体。",
+        "confidence": 0.75,
+        "primary_domain": "other",
+        "primary_problem": "全模态对话代理长期记忆与跨模态推理的细粒度诊断评测",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出MOSAIC基准，通过受控诊断协议分解全模态记忆在表征、检索、传递与阅读环节的失败",
+        "application_context": "对话代理长时程多模态记忆与推理评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb7af6c8-d439-4a4e-b39d-64eb68b7674e",
+      "compatible_fingerprints": []
+    },
+    "ea5a33a0678cbeb05e8126845134a00589f9a54c770e6359ea15f4043c086910": {
+      "paper_id": "2610.20965",
+      "title": "MSP: Modality Self-Play for Training Multimodal LLMs Without Paired Cross-Modal Data",
+      "fingerprint": "ea5a33a0678cbeb05e8126845134a00589f9a54c770e6359ea15f4043c086910",
+      "evaluation": {
+        "paper_id": "2610.20965",
+        "task_type": "multimodal_llm_without_paired_data",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "MSP uses anchor-supporting proxy textual descriptions of unseen modalities as semantic bridges during training",
+            "interpretation_zh": "用代理文本描述作为未见模态的语义桥梁，属于免配对跨模态对齐的具体机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "the model generates proxy descriptions for complementary unseen modalities, which are then encoded and aligned with the observed modality through learned bridges",
+            "interpretation_zh": "生成代理描述并通过学习桥接与观测模态对齐，可迁移为无配对数据下的跨模态对齐训练。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "which are then encoded and aligned with the observed modality through learned bridges",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将视觉或雷达作为锚模态，用代理文本/描述桥接另一缺失模态，通过可学习桥接层对齐两侧表征；输入改为视觉/雷达特征与代理语义桥，训练目标改为跨模态对齐匹配，结构加入模态分布桥校准。",
+          "inference": true
+        },
+        "limitations": [
+          "面向大语言多模态模型的零样本模态组合，非检测/匹配专用",
+          "仍依赖模态-文本对与对比预训练编码器",
+          "迁移到雷达-AIS需重新标定模态分布桥"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供无配对数据下代理语义桥接与可学习对齐机制，可迁移至视觉-AIS跨模态匹配，但需显著适配。",
+        "confidence": 0.68,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态基础模型训练中配对跨模态数据稀缺与难以扩展",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出Modality Self-Play，以锚模态加代理文本描述构建语义桥，实现无真实配对非文本监督的零样本模态组合与对齐",
+        "application_context": "大规模多模态基准上的零样本跨模态组合与推理验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb7af6c8-d439-4a4e-b39d-64eb68b7674e",
+      "compatible_fingerprints": []
+    },
+    "b6dcf8d63eb3c8e1f69c9905485b8cfa88639b0aa0b4c0e5d815a98baa2d329b": {
+      "paper_id": "2609.36193",
+      "title": "Physical Cross-Modal Masked Autoencoding for Seismic-to-Well Representation Learning",
+      "fingerprint": "b6dcf8d63eb3c8e1f69c9905485b8cfa88639b0aa0b4c0e5d815a98baa2d329b",
+      "evaluation": {
+        "paper_id": "2609.36193",
+        "task_type": "general_cross_modal_representation_learning",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce a physically grounded cross-modal masked autoencoder (CM-MAE) for seismic-to-well representation learning.",
+            "interpretation_zh": "提出CM-MAE进行地震-井跨模态表征学习，属于跨模态预训练方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "The model jointly tokenizes seismic volumes and well-log depth patches, embeds both modalities in continuous physical coordinates using four-axis rotary position embeddings, and reconstructs masked targets with a cross-modal decoder.",
+            "interpretation_zh": "联合分词两模态，用物理坐标和旋转位置编码嵌入，跨模态解码器重建掩码目标。",
+            "inference": false
+          },
+          {
+            "quote_en": "Matched-mask ablations show strongly asymmetric information flow.",
+            "interpretation_zh": "匹配掩码消融显示信息流强不对称，可用于设计非对称跨模态融合。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The model jointly tokenizes seismic volumes and well-log depth patches, embeds both modalities in continuous physical coordinates using four-axis rotary position embeddings, and reconstructs masked targets with a cross-modal decoder.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将地震体/井测曲线替换为雷达与AIS/视觉序列，改为联合分词与坐标位置编码，训练目标由掩码重建改为跨模态匹配/对比对齐，解码器用于匹配头。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及海事雷达-AIS或船舶视觉，直接相关性低。",
+          "迁移路径为推断，未见匹配任务实验。",
+          "绝对伪测井标定依赖调查区，泛化风险。"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态掩码表征方法可借鉴用于雷达-AIS对齐，但无海事场景，需具体改造。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "极端模态不对称下的跨模态掩码表征学习",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "物理坐标与旋转位置编码的跨模态掩码自编码器",
+        "application_context": "地震-井测地下表征",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ce4dd7c5-aec8-498a-befe-884a5ff05d21",
+      "compatible_fingerprints": []
+    },
+    "9a6927b7cdbcf7faa05245e07605eec13a2fa541f4d3068970a3ded4e9b22615": {
+      "paper_id": "2608.08867",
+      "title": "Zero-Shot Traffic Accident Detection via a Coarse-to-Fine VLM-Tracking Pipeline",
+      "fingerprint": "9a6927b7cdbcf7faa05245e07605eec13a2fa541f4d3068970a3ded4e9b22615",
+      "evaluation": {
+        "paper_id": "2608.08867",
+        "task_type": "zero_shot_traffic_accident_detection",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce a training-free, two-pass coarse-to-fine pipeline that pairs a frozen Qwen3-VL-32B-Instruct vision-language model with YOLO11x object detection and BoT-SORT tracking.",
+            "interpretation_zh": "无训练两阶段由粗到细流程，结合VLM、检测和跟踪。",
+            "inference": false
+          },
+          {
+            "quote_en": "A first pass sparsely samples the full clip to anchor the collision moment in time; a second pass re-examines a tight window around that estimate using frames annotated with stable vehicle identities and normalized bounding-box coordinates",
+            "interpretation_zh": "先粗采样定位事故时刻，再在窗口内用稳定ID和归一化框精细复核。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "A first pass sparsely samples the full clip to anchor the collision moment in time; a second pass re-examines a tight window around that estimate using frames annotated with stable vehicle identities and normalized bounding-box coordinates",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "将两阶段粗到细采样迁移到海上多目标跟踪：粗阶段稀疏帧定位目标出现，细阶段在窗口内结合稳定ID与归一化框，由VLM和检测器复核。",
+          "inference": true
+        },
+        "limitations": [
+          "面向交通事故检测，非船舶或雷达-AIS。",
+          "依赖VLM和检测跟踪组合，迁移需适配海上目标外观。",
+          "方法验证为事件检测而非匹配学习。"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上交通粗到细检测跟踪流程可迁移至海上多目标跟踪，但无海事直接证据。",
+        "confidence": 0.5,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "无标签真实数据下零样本交通事故联合预测",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "VLM与检测跟踪的无训练粗到细两阶段流程",
+        "application_context": "交通监控事故检测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ce4dd7c5-aec8-498a-befe-884a5ff05d21",
+      "compatible_fingerprints": []
+    },
+    "adc062b4fa0d9e11267cf1ea9246dfcb14d2d1db48461cc807c17f595387afd4": {
+      "paper_id": "2608.07183",
+      "title": "Conformal Fusion Under Missing Modalities",
+      "fingerprint": "adc062b4fa0d9e11267cf1ea9246dfcb14d2d1db48461cc807c17f595387afd4",
+      "evaluation": {
+        "paper_id": "2608.07183",
+        "task_type": "missing_modality_multimodal_fusion",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "MCCF combines a multimodal bottleneck fusion backbone trained with modality dropout, per-modality evidential heads producing modality-decomposed Dirichlet distributions, and a Dempster-Shafer combination rule that fuses the per-modality evidence into a joint predictive distribution",
+            "interpretation_zh": "多模态瓶颈融合、模态dropout训练、逐模态证据头和D-S组合规则构成缺失模态鲁棒融合。",
+            "inference": false
+          },
+          {
+            "quote_en": "an absent modality contributes vacuous evidence that is structurally ignored, so the fused uncertainty automatically reflects the reduced information without test-time imputation",
+            "interpretation_zh": "缺失模态贡献空证据被结构忽略，融合不确定性自动反映信息减少。",
+            "inference": false
+          },
+          {
+            "quote_en": "A Mondrian conformal calibration module keyed on the modality-presence mask then provides finite-sample group-conditional coverage for every non-empty modality subset.",
+            "interpretation_zh": "按模态存在掩码进行Mondrian共形校准，提供分组条件覆盖。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "MCCF combines a multimodal bottleneck fusion backbone trained with modality dropout, per-modality evidential heads producing modality-decomposed Dirichlet distributions, and a Dempster-Shafer combination rule that fuses the per-modality evidence into a joint predictive distribution",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将MCCF的多模态瓶颈融合与D-S证据组合迁移到雷达/视觉/AIS多传感器检测：输入改为各传感器特征，训练加入模态dropout模拟传感器缺失，输出逐模态证据融合及检测置信度校准。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为通用多模态基准，无海事传感数据。",
+          "迁移到检测任务需重构输出头，未验证。",
+          "共形保证依赖可交换性假设。"
+        ],
+        "decision": "重点推荐",
+        "reason_zh": "缺失模态鲁棒的证据融合与共形校准可具体迁移到多传感器船舶检测，机制清晰。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "任意模态缺失下的融合校准不确定性",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "模态条件共形融合与证据D-S组合",
+        "application_context": "多模态基准与合成问题",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ce4dd7c5-aec8-498a-befe-884a5ff05d21",
+      "compatible_fingerprints": []
+    },
+    "bb91ac59faae516c5e44f041b3c415194222ad9a740e1c95efb3f30fd61f7bb8": {
+      "paper_id": "2608.01282",
+      "title": "Multimodal domain adaptation under label shift and blockwise missing modalities",
+      "fingerprint": "bb91ac59faae516c5e44f041b3c415194222ad9a740e1c95efb3f30fd61f7bb8",
+      "evaluation": {
+        "paper_id": "2608.01282",
+        "task_type": "general_visual_method",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "The auxiliary modalities are then mapped to a common, target-defined representation obtained by canonical correlation analysis (CCA) in the target and reproduced in each source by ridge-regression maps.",
+            "interpretation_zh": "使用CCA构建目标定义的表征，并通过岭回归映射将各源模态映射到该共同表征。",
+            "inference": false
+          },
+          {
+            "quote_en": "When gold-standard source labels are sparse, a surrogate-label-assisted approach is developed to enable robust domain adaptation.",
+            "interpretation_zh": "在源标签稀疏时，采用代理标签辅助方法进行鲁棒域适应。",
+            "inference": false
+          },
+          {
+            "quote_en": "A reference modality observed in every source and the target is used to estimate the target outcome distribution and reweight source observations before alignment.",
+            "interpretation_zh": "使用在每个源和目标中都观测到的参考模态估计目标结果分布，并在对齐前重加权源样本。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The auxiliary modalities are then mapped to a common, target-defined representation obtained by canonical correlation analysis (CCA) in the target and reproduced in each source by ridge-regression maps.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将CCA对齐思路用于视觉–AIS跨模态匹配：把图像和AIS特征视为辅助模态，在目标域（如无标注海事数据）上用CCA学习共同表征，再通过岭回归将源域（有标注关联数据）特征映射到该表征；训练目标改为跨模态匹配损失，结构上增加模态投影头和岭回归映射层。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及视觉或海事场景，迁移路径为推断。",
+          "方法依赖在源和目标中都出现的参考模态，跨模态匹配场景需验证是否存在类似参考。",
+          "肾细胞癌应用与船舶视觉无关，需重新设计输入和训练目标。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出CCA与岭回归的跨模态对齐及缺失模态处理，可尝试迁移至视觉–AIS匹配，但摘要无海事证据，需自行验证。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态域适应中的标签偏移与块缺失模态问题",
+        "target_task": "跨模态匹配",
+        "core_contribution": "提出参考锚定的域适应方法，利用参考模态估计目标分布并重加权源样本，通过CCA和岭回归映射对齐辅助模态，结合密度比模型迁移结果信息。",
+        "application_context": "肾细胞癌预测的仿真实验，属于医学多模态域适应验证场景。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "376c9593-5a40-41a9-bd06-b4c5df2a6c6c",
+      "compatible_fingerprints": []
+    },
+    "6739ecec40dee91142821a1e6918811c459711406e41ee26e048a6876eb29600": {
+      "paper_id": "2607.28375",
+      "title": "HyperClaim: Fine-Grained Cross-Modal Hypergraph Reasoning for Video Misinformation Detection",
+      "fingerprint": "6739ecec40dee91142821a1e6918811c459711406e41ee26e048a6876eb29600",
+      "evaluation": {
+        "paper_id": "2607.28375",
+        "task_type": "general_visual_method",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "HyperClaim constructs a sparse heterogeneous hypergraph over query tokens, evidence tokens, and sampled frames",
+            "interpretation_zh": "构建包含查询token、证据token和采样帧的稀疏异质超图。",
+            "inference": false
+          },
+          {
+            "quote_en": "performs adaptive soft-incidence reasoning with residual text-video calibration",
+            "interpretation_zh": "执行带残差文本-视频校准的自适应软关联推理。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为视频虚假信息检测，与海事感知无关。",
+          "超图结构依赖文本查询和证据token，难以直接迁移到无文本的船舶视觉任务。",
+          "摘要未提供跨模态匹配或检测分割的可复用机制证据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "视频虚假信息检测与海事多源关联、船舶视觉无直接联系，超图方法依赖文本查询，可迁移性低。",
+        "confidence": 0.8,
+        "primary_domain": "other",
+        "primary_problem": "视频虚假信息检测中的细粒度跨模态推理",
+        "target_task": "视频虚假信息检测",
+        "core_contribution": "提出基于时序超图的判别框架HyperClaim，通过异质超图、置信度感知过滤和软关联推理保留细粒度跨模态与时间结构。",
+        "application_context": "在FakeSV、FakeTT、FakeVV等视频虚假信息检测基准上验证。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "376c9593-5a40-41a9-bd06-b4c5df2a6c6c",
+      "compatible_fingerprints": []
+    },
+    "fe15099942edc44c6183a3d0c6148109e2509be1871da4c263b71e49978c9049": {
+      "paper_id": "2607.26720",
+      "title": "CaIRec: Calibrated Modality Imputation for Incomplete Multimodal Recommendation",
+      "fingerprint": "fe15099942edc44c6183a3d0c6148109e2509be1871da4c263b71e49978c9049",
+      "evaluation": {
+        "paper_id": "2607.26720",
+        "task_type": "general_visual_method",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Structural Imputation Calibration (SIC) estimates missing-modality representations from shared information inferred from available modalities and calibrates their cross-modal organization through structural regularization and correspondence supervision from observed modality pairs.",
+            "interpretation_zh": "SIC利用可用模态推断共享信息估计缺失模态表征，并通过结构正则和观测模态对的对应监督校准跨模态组织。",
+            "inference": false
+          },
+          {
+            "quote_en": "It constructs pseudo-missing instances to align recovered representations with observed counterparts shaped by ranking supervision in the recommendation space.",
+            "interpretation_zh": "构建伪缺失实例，将恢复表征与推荐空间排序监督塑造的观测对应物对齐。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为推荐系统，核心目标是排序而非感知匹配。",
+          "摘要未涉及视觉检测、分割或跨模态匹配的具体机制，迁移依据不足。",
+          "缺失模态填补方法需针对推荐场景的偏好传播，难以直接用于海事感知。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "推荐系统场景，与海事感知或目标检测分割无直接关联，缺失模态方法面向偏好排序，迁移价值低。",
+        "confidence": 0.8,
+        "primary_domain": "other",
+        "primary_problem": "不完整多模态推荐中的模态缺失与跨模态结构失真",
+        "target_task": "不完整多模态推荐",
+        "core_contribution": "提出两阶段框架CaIRec，通过结构填补校准和偏好导向表征校准处理缺失模态，构建完成感知的物品图。",
+        "application_context": "在三个推荐数据集的不同模态缺失设置下验证。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "376c9593-5a40-41a9-bd06-b4c5df2a6c6c",
+      "compatible_fingerprints": []
+    },
+    "bce52c6642c4e375691340a631ef0637f4580f64cd4730fbfe787b773f960e9a": {
+      "paper_id": "2607.00514",
+      "title": "Cross4D-JEPA: Dense Cross-modal Correspondence Distillation for 4D Point Cloud Representation Learning",
+      "fingerprint": "bce52c6642c4e375691340a631ef0637f4580f64cd4730fbfe787b773f960e9a",
+      "evaluation": {
+        "paper_id": "2607.00514",
+        "task_type": "general_visual_method",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "The proposed method combines (1) a dense cross-modal correspondence that maps every 3D point to the teacher patch feature it projects to, and (2) a per-point objective that trains the student to match these features in latent space with no masking, negatives, or decoder.",
+            "interpretation_zh": "方法结合稠密跨模态对应（将每个3D点映射到其投影的教师patch特征）和逐点目标（训练学生在潜空间匹配这些特征，无需掩码、负样本或解码器）。",
+            "inference": false
+          },
+          {
+            "quote_en": "We propose Cross4D-JEPA, a teacher-student method that distills a frozen 2D foundation model, an image model DINOv2, or a video model V-JEPA 2, into a 4D point encoder.",
+            "interpretation_zh": "提出教师-学生方法Cross4D-JEPA，将冻结的2D基础模型（DINOv2）或视频模型（V-JEPA 2）蒸馏到4D点云编码器。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "The proposed method combines (1) a dense cross-modal correspondence that maps every 3D point to the teacher patch feature it projects to, and (2) a per-point objective that trains the student to match these features in latent space with no masking, negatives, or decoder.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "借鉴稠密跨模态对应蒸馏用于视觉–AIS匹配：将AIS点投影到图像平面，建立每个AIS点与图像patch特征的稠密对应；训练目标改为让学生网络（AIS编码器）匹配冻结图像教师特征在潜空间中的对应，结构上增加投影几何映射和逐点匹配损失，无需负样本或解码器。",
+          "inference": true
+        },
+        "limitations": [
+          "原任务为4D点云表征学习，非海事视觉–AIS关联。",
+          "迁移需解决AIS点与图像patch的投影几何对应，摘要未涉及此场景。",
+          "摘要未验证跨模态匹配本身，仅验证动作识别等基准。"
+        ],
+        "decision": "候选",
+        "reason_zh": "稠密跨模态对应蒸馏机制具体，可迁移至视觉–AIS匹配，但无海事证据，需自行构建投影对应与训练目标。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "4D点云自监督表征学习中的跨模态知识蒸馏",
+        "target_task": "跨模态匹配",
+        "core_contribution": "提出Cross4D-JEPA，通过稠密跨模态对应和逐点潜空间匹配目标，将冻结2D基础模型蒸馏到4D点云编码器。",
+        "application_context": "在MSR-Action3D、DeformingThings4D、NTU-RGB+D 60、HOI4D等4D点云基准上验证动作识别与迁移性能。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "376c9593-5a40-41a9-bd06-b4c5df2a6c6c",
+      "compatible_fingerprints": []
+    },
+    "fe57ae6108d101f608774f9bc784736ea2d917fe4ab694c7a625940f72576a84": {
+      "paper_id": "2611.14124",
+      "title": "CroCoMAE: Cross-modal self-supervised collaborative representation learning for SAR-optical remote sensing data",
+      "fingerprint": "fe57ae6108d101f608774f9bc784736ea2d917fe4ab694c7a625940f72576a84",
+      "evaluation": {
+        "paper_id": "2611.14124",
+        "task_type": "cross-modal self-supervised representation learning (SAR-optical remote sensing)",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "a cross-modal contrastive objective aligns a shared subspace across SAR and optical patch tokens, leaving the complementary subspace unconstrained to retain modality-specific information",
+            "interpretation_zh": "用跨模态对比损失在patch token层面对齐共享子空间，同时保留模态特有子空间",
+            "inference": false
+          },
+          {
+            "quote_en": "masked image modeling drives fine-grained per-modality representations",
+            "interpretation_zh": "对每个模态分别做掩码图像建模以获得细粒度表征",
+            "inference": false
+          },
+          {
+            "quote_en": "an intra-modality contrastive loss on the class token yields globally discriminative, augmentation-invariant representations",
+            "interpretation_zh": "模态内对比损失在class token上产生全局判别表征",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a cross-modal contrastive objective aligns a shared subspace across SAR and optical patch tokens, leaving the complementary subspace unconstrained to retain modality-specific information",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将SAR-光学双流ViT改为视觉图像与AIS/雷达特征双流；把SAR/光学patch token替换为视觉patch token与AIS轨迹token，保留共享子空间对比对齐并保留模态特有子空间；预训练仍用掩码建模，微调阶段接入匹配头输出视觉目标与AIS轨迹的关联得分",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为SAR-光学遥感，与船舶视觉-AIS跨模态匹配的模态、目标对象不同",
+          "未给出跨模态匹配/关联任务的实验证据",
+          "跨模态对齐停留在表征预训练层面，未验证配准或关联精度"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供双层级跨模态对比+掩码建模的具体可复用表征学习机制，可迁移至视觉-AIS匹配，但需改造模态与任务，属推断性迁移，无海事证据。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "SAR与光学遥感数据缺乏标注下的跨模态自监督表征学习",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "统一对比学习与掩码图像建模的双层级跨模态自监督框架，在图像级与patch级分别对齐共享子空间并保留模态特有信息",
+        "application_context": "SAR-光学遥感场景分类与语义分割基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f"
+    },
+    "309d64d63b74aba0b80849f8694f64976d978ff1dd5a2feef8de15b5370b4100": {
+      "paper_id": "2603.23159",
+      "title": "Conformal Cross-Modal Active Learning",
+      "fingerprint": "309d64d63b74aba0b80849f8694f64976d978ff1dd5a2feef8de15b5370b4100",
+      "evaluation": {
+        "paper_id": "2603.23159",
+        "task_type": "cross-modal active learning for annotation-efficient visual recognition",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "CCMA employs a pretrained VLM as a teacher to provide semantically grounded uncertainty estimates, conformally calibrated to guide sample selection for a vision-only student model",
+            "interpretation_zh": "用预训练视觉语言模型作教师，经共形校准的不确定性指导纯视觉学生模型的样本选择",
+            "inference": false
+          },
+          {
+            "quote_en": "integrating multimodal conformal scoring with diversity-aware selection strategies",
+            "interpretation_zh": "将多模态共形评分与多样性选择策略结合进行样本采集",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "CCMA employs a pretrained VLM as a teacher to provide semantically grounded uncertainty estimates, conformally calibrated to guide sample selection for a vision-only student model",
+          "target_task": "ship_detection",
+          "adaptation_zh": "将视觉语言教师替换为可提供文本先验/语义置信度的模型（如AIS语义或VLM），把共形校准的不确定性用于船舶检测训练样本的主动标注选择；学生模型改为船舶检测器，训练目标仍为检测损失但样本由CCMA评分挑选",
+          "inference": true
+        },
+        "limitations": [
+          "任务为通用主动学习与图像分类式识别，非检测或跨模态匹配",
+          "无海事或跨模态关联实验",
+          "迁移到船舶检测需替换教师与学生结构，摘要未验证检测场景"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "共形校准主动学习可用于降低船舶检测标注成本，但与跨模态匹配或船舶视觉核心任务联系较弱，迁移链较长且无检测证据。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "主动学习中如何利用视觉语言模型的多模态知识进行信息量样本选择",
+        "target_task": "ship_detection",
+        "core_contribution": "提出基于教师-学生结构与共形校准多模态评分结合的主动学习采集框架",
+        "application_context": "通用视觉识别基准的数据高效学习",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f"
+    },
+    "1d4600729e21d20cb06682497a6f6360b02b1c65ea9146f67c861d035a99ed8e": {
+      "paper_id": "2604.18572",
+      "title": "Back into Plato's Cave: Examining Cross-modal Representational Convergence at Scale",
+      "fingerprint": "1d4600729e21d20cb06682497a6f6360b02b1c65ea9146f67c861d035a99ed8e",
+      "evaluation": {
+        "paper_id": "2604.18572",
+        "task_type": "analysis of cross-modal representational convergence",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "The mutual $k$-nearest-neighbor metric used on 1024 text-image pairs in the original study captures only coarse structure",
+            "interpretation_zh": "指出原始研究的互k近邻度量只能捕捉粗粒度结构",
+            "inference": false
+          },
+          {
+            "quote_en": "alignment decreases with non-bijective data",
+            "interpretation_zh": "非一一对应的数据会降低对齐程度",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "为分析/批判性论文，未提出可用于迁移的匹配或学习新方法",
+          "研究对象为文本-图像表征收敛，与船舶视觉或视觉-AIS关联无直接关系",
+          "互kNN度量本身是评估工具，不能构成可复用感知方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯分析性工作，仅讨论跨模态表征收敛证据强弱，未提出可迁移的学习机制，与海事/多模态匹配任务无实质连接。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "检验柏拉图表征假说中跨模态表征收敛证据的可靠性",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "通过放大k、非双射数据等分析削弱跨模态细粒度表征收敛的证据",
+        "application_context": "文本-图像表征对齐的度量与实证分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f"
+    },
+    "399ba4aa7769fc324c1274d70f68e6ffb7f75b7c64462c118890ed82c1295c27": {
+      "paper_id": "2604.15312",
+      "title": "Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo",
+      "fingerprint": "399ba4aa7769fc324c1274d70f68e6ffb7f75b7c64462c118890ed82c1295c27",
+      "evaluation": {
+        "paper_id": "2604.15312",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "learns finely aligned stereo representations within a target canonical space",
+            "interpretation_zh": "提出在目标规范空间中学习对齐的立体表征，可用于跨模态特征对齐",
+            "inference": false
+          },
+          {
+            "quote_en": "integrates complementary representations by projecting each modality into both event and frame domains",
+            "interpretation_zh": "通过双向投影整合互补模态表征，减轻模态鸿沟",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "learns finely aligned stereo representations within a target canonical space",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将事件-帧立体匹配的双向提示对齐思路迁移到视觉-AIS关联：输入改为视觉图像与AIS航迹特征，训练目标改为学习共享规范空间中的视觉-AIS对齐表征并相互投影，结构上保留双向跨模态提示模块",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未给出视觉-AIS或海事场景实验",
+          "仅基于事件与帧相机模态验证",
+          "匹配几何与船舶目标特性差异大"
+        ],
+        "decision": "候选",
+        "reason_zh": "事件-帧跨模态立体匹配的双向提示与规范空间对齐机制具体，可迁移至视觉-AIS跨模态表征学习，但无海事直接验证。",
+        "confidence": 0.68,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "事件-帧非对称立体匹配中的模态鸿沟导致域特定线索被边缘化",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "Bi-CMPStereo双向跨模态提示框架，在目标规范空间学习对齐的立体表征并双向投影整合互补模态",
+        "application_context": "快速运动与挑战光照下的3D感知立体匹配",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+    },
+    "9154b0d964b3d5ce04b41007a64b9fb3c2459d6c854c4d908245ca5bd37cc529": {
+      "paper_id": "2604.02948",
+      "title": "CrossWeaver: Cross-modal Weaving for Arbitrary-Modality Semantic Segmentation",
+      "fingerprint": "9154b0d964b3d5ce04b41007a64b9fb3c2459d6c854c4d908245ca5bd37cc529",
+      "evaluation": {
+        "paper_id": "2604.02948",
+        "task_type": "ship_segmentation",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "a Modality Interaction Block (MIB), which enables selective and reliability-aware cross-modal interaction within the encoder",
+            "interpretation_zh": "提出可靠度感知的选择性跨模态交互模块",
+            "inference": false
+          },
+          {
+            "quote_en": "a lightweight Seam-Aligned Fusion (SAF) module further aggregates the enhanced features",
+            "interpretation_zh": "轻量融合模块聚合增强后的多模态特征",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a Modality Interaction Block (MIB), which enables selective and reliability-aware cross-modal interaction within the encoder",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将任意模态语义分割的MIB与SAF迁移到多传感器船舶分割：输入改为可见光/红外/雷达等模态特征，训练目标保持语义分割，结构上在编码器内加入可靠性感知的模态交互与对齐融合，处理模态缺失或组合变化",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未涉及海事数据或船舶目标",
+          "仅报告分割基准",
+          "未说明真实模态缺失下的鲁棒性"
+        ],
+        "decision": "候选",
+        "reason_zh": "任意模态跨模态交互与对齐融合机制具体，可迁移到多传感器船舶分割，但直接海事相关性低。",
+        "confidence": 0.66,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "现有多模态分割融合策略灵活性与跨模态协调不足",
+        "target_task": "ship_segmentation",
+        "core_contribution": "CrossWeaver任意模态语义分割框架，含可靠性感知模态交互块与轻量接缝对齐融合模块",
+        "application_context": "多模态语义分割基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+    },
+    "98d194723b750c3932b7810ad9cf0d72e0fa847d4a648b65120ea5e94c5f6f4a": {
+      "paper_id": "2604.02108",
+      "title": "Cross-Modal Visuo-Tactile Object Perception",
+      "fingerprint": "98d194723b750c3932b7810ad9cf0d72e0fa847d4a648b65120ea5e94c5f6f4a",
+      "evaluation": {
+        "paper_id": "2604.02108",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "CMLF supports bidirectional transfer of cross-modal priors between vision and touch",
+            "interpretation_zh": "提出视觉与触觉间双向跨模态先验迁移",
+            "inference": false
+          },
+          {
+            "quote_en": "integrates sensory evidence through a Bayesian inference process that evolves over time",
+            "interpretation_zh": "用随时间演化的贝叶斯推断整合多模态证据",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "CMLF supports bidirectional transfer of cross-modal priors between vision and touch",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将视觉-触觉跨模态先验双向迁移与随时间贝叶斯融合机制迁移到视觉-AIS关联：输入改为视觉特征与AIS航迹观测，建立潜在状态空间并随时间整合观测证据，训练目标改为跨模态一致性与不确定性估计",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦触觉操作物理属性估计，无视觉-AIS或海事证据",
+          "机器人操作场景与船舶关联差异大",
+          "迁移需大幅重构状态空间"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态先验双向迁移与随时间贝叶斯融合机制可借鉴，但触觉操作场景与海事关联差距大，迁移需大幅调整。",
+        "confidence": 0.5,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "接触丰富操作中物理属性难以直接观测、跨模态融合未考虑时间演化不确定性",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "Cross-Modal Latent Filter，学习结构化因果潜在状态空间并进行双向跨模态先验迁移与随时间贝叶斯推断",
+        "application_context": "机器人接触丰富操作中的视触觉物理属性估计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+    },
+    "f331e394398682250f3df369f22b42fa67803c8c5997dc5d5114efab0d747896": {
+      "paper_id": "2602.06218",
+      "title": "Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings",
+      "fingerprint": "f331e394398682250f3df369f22b42fa67803c8c5997dc5d5114efab0d747896",
+      "evaluation": {
+        "paper_id": "2602.06218",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "an Aligned Sparse Autoencoder (SAE) that encourages energy consistency during training while preserving reconstruction",
+            "interpretation_zh": "用能量一致性正则的对齐稀疏自编码器分析共享嵌入空间",
+            "inference": false
+          },
+          {
+            "quote_en": "sparse bimodal atoms carry the entire cross-modal alignment signal",
+            "interpretation_zh": "发现承载跨模态对齐信号的双模态稀疏原子",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "an Aligned Sparse Autoencoder (SAE) that encourages energy consistency during training while preserving reconstruction",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将能量一致性稀疏自编码器分析迁移到视觉-AIS嵌入空间：输入改为视觉与AIS特征，训练目标加入跨模态能量一致性正则，用双模态/单模态原子分解定位模态鸿沟并改进匹配",
+          "inference": true
+        },
+        "limitations": [
+          "摘要为嵌入空间几何分析而非检测或关联任务",
+          "无海事数据验证",
+          "方法为分析工具，检索改进有限"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨模态冗余与对齐稀疏自编码器分析可启发视觉-AIS嵌入空间对齐诊断，但非直接匹配方法且无海事验证。",
+        "confidence": 0.5,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "视觉-语言模型共享嵌入空间的几何结构缺乏理解",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出Iso-Energy假设与对齐稀疏自编码器，揭示双模态/单模态原子的对齐结构与模态鸿沟成因",
+        "application_context": "视觉-语言模型嵌入空间几何分析与检索编辑",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+    },
+    "054dbff5d0934ee2ff685060f8c71ccaef702932edea5de25ad989c4126da11a": {
+      "paper_id": "2601.13979",
+      "title": "Active Cross-Modal Visuo-Tactile Perception of Deformable Linear Objects",
+      "fingerprint": "054dbff5d0934ee2ff685060f8c71ccaef702932edea5de25ad989c4126da11a",
+      "evaluation": {
+        "paper_id": "2601.13979",
+        "task_type": "cross_modal_perception",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "integrates foundation-model-based visual perception with adaptive tactile exploration",
+            "interpretation_zh": "提出视觉与触觉跨模态感知框架，融合基础模型视觉感知与自适应触觉探索。",
+            "inference": false
+          },
+          {
+            "quote_en": "Occluded cable segments are autonomously identified and explored with a tactile sensor, which provides local point clouds that are merged with the visual data through Euclidean clustering and topology-preserving fusion",
+            "interpretation_zh": "遮挡段用触觉传感器自主探索，通过欧氏聚类和拓扑保持融合与视觉点云合并。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "integrates foundation-model-based visual perception with adaptive tactile exploration",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "该跨模态融合思路或可迁移至视觉–AIS关联：将触觉局部点云替换为AIS轨迹点，利用视觉检测结果与AIS轨迹进行时空对齐和拓扑保持融合；但触觉与AIS数据特性差异大，需要重新设计融合约束和匹配度量。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为可变形线性物体（电缆），非船舶或交通场景。",
+          "依赖触觉传感器主动探索，与AIS数据特性不同。",
+          "未涉及雷达/AIS关联或船舶视觉任务。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向机器人操作中的触觉-视觉融合，与海事感知任务差异大，跨模态融合方法迁移证据有限。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "可变形线性物体在严重遮挡下的三维形状重建",
+        "target_task": "3D shape reconstruction of deformable linear objects",
+        "core_contribution": "视觉-触觉跨模态感知框架，集成基础模型视觉感知与自适应触觉探索进行形状重建",
+        "application_context": "机器人操作中的电缆等可变形物体感知",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+    },
+    "c96d5e574a81e8cf7c8ee7122a413948123a21219344c401bfef1d05182dbae4": {
+      "paper_id": "2512.07568",
+      "title": "Dual-Stream Cross-Modal Representation Learning via Residual Semantic Decorrelation",
+      "fingerprint": "c96d5e574a81e8cf7c8ee7122a413948123a21219344c401bfef1d05182dbae4",
+      "evaluation": {
+        "paper_id": "2512.07568",
+        "task_type": "cross_modal_representation_learning",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "disentangles modality-specific and modality-shared information through residual decomposition and explicit semantic decorrelation constraints",
+            "interpretation_zh": "通过残差分解和显式语义去相关约束解耦模态特定与共享信息。",
+            "inference": false
+          },
+          {
+            "quote_en": "a residual semantic alignment head that maps shared factors from different modalities into a common space using a combination of contrastive and regression-style objectives",
+            "interpretation_zh": "残差语义对齐头使用对比和回归目标将共享因子映射到公共空间。",
+            "inference": false
+          },
+          {
+            "quote_en": "a decorrelation and orthogonality loss that regularizes the covariance structure of the shared space while enforcing orthogonality between shared and private streams",
+            "interpretation_zh": "去相关与正交损失正则化共享空间协方差并强制共享/私有流正交。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "disentangles modality-specific and modality-shared information through residual decomposition and explicit semantic decorrelation constraints",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可将双流残差分解与语义去相关用于视觉–AIS跨模态表征：视觉检测特征与AIS轨迹特征分别输入双流网络，通过共享/私有因子分解和去相关损失减少模态主导与冗余，增强跨模态匹配鲁棒性；需调整输入为图像特征和轨迹特征，训练目标增加跨模态匹配损失。",
+          "inference": true
+        },
+        "limitations": [
+          "实验仅在教育基准上进行，未涉及视觉或海事感知。",
+          "摘要未明确缺失模态处理的具体机制。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出模态共享/私有解耦与去相关损失，可迁移至视觉–AIS跨模态匹配，但缺乏感知任务验证。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态表示中的模态主导、冗余耦合和虚假跨模态关联",
+        "target_task": "next-step prediction and final outcome prediction",
+        "core_contribution": "双流残差语义去相关网络（DSRSD-Net），通过残差分解和显式语义去相关约束解耦模态特定与共享信息",
+        "application_context": "教育基准上的多模态预测任务",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+    },
+    "6fdf17b67d1e9c4ac3a608e5a6cb09c4390cf0ff5b83b48f5c65b5e210f882c6": {
+      "paper_id": "2511.19117",
+      "title": "3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion",
+      "fingerprint": "6fdf17b67d1e9c4ac3a608e5a6cb09c4390cf0ff5b83b48f5c65b5e210f882c6",
+      "evaluation": {
+        "paper_id": "2511.19117",
+        "task_type": "thermal_image_super_resolution",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "integrates a cross-modal self-attention module (CSM) into the diffusion UNet, replacing the original self-attention layers to adaptively align thermal and RGB features throughout the denoising process, without requiring explicit camera calibration",
+            "interpretation_zh": "在扩散UNet中集成跨模态自注意力模块，替换原自注意力层，在去噪过程中自适应对齐热红外与RGB特征，无需显式相机标定。",
+            "inference": false
+          },
+          {
+            "quote_en": "the thermal images enhanced by 3M-TI lead to substantial gains in critical downstream tasks like object detection and segmentation",
+            "interpretation_zh": "增强后的热红外图像在目标检测和分割等下游任务上带来显著增益。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "integrates a cross-modal self-attention module (CSM) into the diffusion UNet, replacing the original self-attention layers to adaptively align thermal and RGB features throughout the denoising process, without requiring explicit camera calibration",
+          "target_task": "ship_enhancement",
+          "adaptation_zh": "该免标定跨模态扩散增强框架可尝试用于船舶视觉图像增强（如可见光-红外船舶图像融合增强）：将热红外/可见光输入替换为船舶场景下的低质量图像与参考模态，调整跨模态自注意力模块以对齐船舶结构特征，训练目标改为船舶图像增强损失；但需重新训练扩散模型并适配海事数据分布。",
+          "inference": true
+        },
+        "limitations": [
+          "聚焦移动热成像超分辨率，非船舶场景。",
+          "扩散模型训练成本高，迁移需大量海事数据。",
+          "未涉及AIS或雷达关联。"
+        ],
+        "decision": "候选",
+        "reason_zh": "免标定跨模态扩散增强思路可探索用于船舶图像增强，但非直接海事任务，迁移需数据适配。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "移动平台热传感器空间分辨率和纹理保真度受限导致图像模糊",
+        "target_task": "thermal image super-resolution and downstream object detection/segmentation",
+        "core_contribution": "免标定多相机跨模态扩散框架3M-TI，通过跨模态自注意力模块在去噪过程中对齐热红外与RGB特征",
+        "application_context": "移动热成像增强及其下游目标检测与分割",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+    },
+    "e626e1fcce6ac4b8262909890cb8b9f333cc1374b12532770654494229bff10b": {
+      "paper_id": "2511.13904",
+      "title": "Edge Assisted Multi-Camera Vehicle Tracking Framework for Real-Time and Scalable Deployment",
+      "fingerprint": "e626e1fcce6ac4b8262909890cb8b9f333cc1374b12532770654494229bff10b",
+      "evaluation": {
+        "paper_id": "2511.13904",
+        "task_type": "multi_camera_vehicle_tracking",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a server-side re-match module to reconnect fragmented tracklets, and a self-supervised camera link model that learns spatio-temporal constraints to accelerate and stabilise cross-camera association",
+            "interpretation_zh": "服务器端重匹配模块重连碎片化轨迹，自监督相机链路模型学习时空约束以加速和稳定跨相机关联。",
+            "inference": false
+          },
+          {
+            "quote_en": "only lightweight metadata, including vehicle locations and appearance features, is sent to the central server for cross-camera association",
+            "interpretation_zh": "仅轻量元数据（车辆位置和外观特征）发送至中心服务器进行跨相机关联。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a server-side re-match module to reconnect fragmented tracklets, and a self-supervised camera link model that learns spatio-temporal constraints to accelerate and stabilise cross-camera association",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将跨相机轨迹重匹配与自监督时空约束学习迁移至多传感器船舶跟踪：将车辆轨迹元数据替换为船舶AIS轨迹与雷达/视觉检测轨迹，重匹配模块用于连接断裂的船舶轨迹，自监督链路模型学习船舶运动时空约束以稳定关联；需调整特征提取和目标域。",
+          "inference": true
+        },
+        "limitations": [
+          "场景为陆上交通车辆跟踪，非海事。",
+          "方法依赖相机网络，未涉及AIS或雷达。",
+          "实时分布式系统设计，算法创新有限。"
+        ],
+        "decision": "候选",
+        "reason_zh": "跨相机轨迹关联与时空约束学习可迁移至多传感器船舶跟踪，但非直接海事研究，需适配。",
+        "confidence": 0.8,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "多相机车辆跟踪的实时性与可扩展性不足",
+        "target_task": "multi-camera vehicle tracking",
+        "core_contribution": "边缘辅助可扩展高效多相机车辆跟踪框架EASE-MCVT，包括动态特征提取、服务器端重匹配和自监督相机链路模型",
+        "application_context": "智能交通系统中的城市级车辆轨迹重建",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+    },
+    "e269646314d53d5bbf4b5c4044a14a8473b3a16368f768cec57de8de0c9df535": {
+      "paper_id": "2511.12034",
+      "title": "Calibrated Multimodal Representation Learning with Missing Modalities",
+      "fingerprint": "e269646314d53d5bbf4b5c4044a14a8473b3a16368f768cec57de8de0c9df535",
+      "evaluation": {
+        "paper_id": "2511.12034",
+        "task_type": "多模态表示学习与跨模态对齐",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "CalMRL leverages the priors and the inherent connections among modalities to model the imputation for the missing ones at the representation level",
+            "interpretation_zh": "在表示层利用模态先验与模态间关联对缺失模态进行插补，是可用于缺失模态跨模态匹配的具体机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "we employ a bi-step learning method with the closed-form solution of the posterior distribution of shared latents",
+            "interpretation_zh": "用共享隐变量的后验闭式解进行两步优化，以校准不完整对齐；摘要支持该训练机制，但未提公式细节。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "CalMRL leverages the priors and the inherent connections among modalities to model the imputation for the missing ones at the representation level",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将缺失模态表示插补机制用于视觉–AIS关联：当AIS或视觉某一侧缺失/稀疏时，在共享隐空间用可见模态先验插补缺失侧表示后再做匹配；需把原通用模态对替换为图像特征与AIS轨迹特征，训练目标保持对齐并增加关联匹配损失。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未给出具体模态对、数据集或匹配任务实验",
+          "未说明插补机制在强异质模态（如图像与轨迹）上的适用性",
+          "无海事或交通场景验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "通用缺失模态对齐方法有具体表示层插补与两步学习机制，可推断迁移至视觉–AIS跨模态关联，但缺乏海事证据，需验证。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "缺失模态下的跨模态对齐偏移",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出CalMRL，在表示层插补缺失模态并校准不完整对齐，附理论分析与两步优化",
+        "application_context": "通用多模态表示学习数据集",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+    },
+    "62564ec14c96af6052f13d08798cbe7ab0ec6e134fd5a870a9c46b3c437a42ad": {
+      "paper_id": "2511.11512",
+      "title": "Collaborative Representation Learning for Alignment of Tactile, Language, and Vision Modalities",
+      "fingerprint": "62564ec14c96af6052f13d08798cbe7ab0ec6e134fd5a870a9c46b3c437a42ad",
+      "evaluation": {
+        "paper_id": "2511.11512",
+        "task_type": "触觉–语言–视觉协同表示学习",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "TLV-CoRe introduces a Sensor-Aware Modulator to unify tactile features across different sensors and employs tactile-irrelevant decoupled learning to disentangle irrelevant tactile features",
+            "interpretation_zh": "用传感器感知调制器统一不同传感器特征，并解耦无关触觉特征，是可复用的跨传感器表征归一化与解耦思路。",
+            "inference": false
+          },
+          {
+            "quote_en": "a Unified Bridging Adapter is introduced to enhance tri-modal interaction within the shared representation space",
+            "interpretation_zh": "在共享表示空间中用统一桥接适配器增强三模态交互，属于具体跨模态对齐结构。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "TLV-CoRe introduces a Sensor-Aware Modulator to unify tactile features across different sensors and employs tactile-irrelevant decoupled learning to disentangle irrelevant tactile features",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将传感器感知调制器与无关特征解耦用于多传感器船舶检测：把触觉传感器差异替换为雷达/视觉/AIS等传感器域差异，调制器统一各传感器特征，解耦学习去除与检测无关的传感器特有噪声；训练目标为多传感器检测与特征对齐联合。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦触觉–语言–视觉，与海事多源关联差异较大",
+          "未提供跨传感器泛化的定量细节",
+          "迁移到雷达/AIS需重设计传感器调制器"
+        ],
+        "decision": "候选",
+        "reason_zh": "有具体跨传感器统一与三模态桥接机制，可推断迁移至多传感器检测，但原任务为触觉机器人感知，海事证据不足。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "触觉传感器不标准化导致跨传感器泛化差及三模态交互不足",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出TLV-CoRe协同表示学习方法与RSS评估框架",
+        "application_context": "机器人触觉–语言–视觉多模态感知",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+    },
+    "3e544f237243dceceaffd9a50786391540caa6e4adcef876d48fe4ac22f5930b": {
+      "paper_id": "2611.14479",
+      "title": "Learning a model of non-stationary nuisances with non-local correlations for object detection",
+      "fingerprint": "3e544f237243dceceaffd9a50786391540caa6e4adcef876d48fe4ac22f5930b",
+      "evaluation": {
+        "paper_id": "2611.14479",
+        "task_type": "统计目标检测（微弱目标）",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "we propose a data-driven approach based on sparse precision matrix modeling, where the precision matrix is approximated through a pivoted sparse Cholesky factorization whose non-zeros coefficients are learned by maximum likelihood",
+            "interpretation_zh": "用稀疏精度矩阵与主元稀疏Cholesky分解建模相关干扰，属于统计检测建模，非视觉检测网络。",
+            "inference": false
+          },
+          {
+            "quote_en": "we derive a generalized likelihood ratio test for faint source detection enabling direct control of the false alarm rate",
+            "interpretation_zh": "基于该模型导出广义似然比检验并控制虚警率，是检测决策机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "应用为天文高对比度成像，与船舶视觉或雷达–AIS关联差异大",
+          "摘要未涉及跨模态匹配或多传感器关联",
+          "统计假设与船舶场景相关性未知"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "虽为微弱目标检测且控制虚警率，但属天文统计建模，与海事关联融合或船舶视觉任务缺少具体可迁移接口。",
+        "confidence": 0.65,
+        "primary_domain": "other",
+        "primary_problem": "强空间相关干扰下微弱目标检测的低样本统计建模",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "稀疏精度矩阵建模与广义似然比检验用于微弱源检测",
+        "application_context": "天文高对比度成像系外行星检测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+    },
+    "17296b99c191f3acc224ea5fba5ef91f569081ca950f38bdea0c7ab73869022b": {
+      "paper_id": "2611.14440",
+      "title": "UGG: Unified Generative Geometry Model",
+      "fingerprint": "17296b99c191f3acc224ea5fba5ef91f569081ca950f38bdea0c7ab73869022b",
+      "evaluation": {
+        "paper_id": "2611.14440",
+        "task_type": "4D场景统一生成与几何预测",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "By assigning different noise levels across modalities and time, UGG formulates visual generation and geometric prediction as conditional completion within a single generative model",
+            "interpretation_zh": "以跨模态与时间的不同噪声水平把生成与几何预测统一为条件补全，属通用生成式几何框架。",
+            "inference": false
+          },
+          {
+            "quote_en": "our generative formulation enables inference-time search over multiple plausible scene hypotheses, using geometric evidence extracted from observed RGB frames to improve geometric prediction without ground truth geometry",
+            "interpretation_zh": "推理时利用RGB帧几何证据搜索多个场景假设以改进几何预测，是具体推理机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向通用4D场景RGB–深度–位姿，摘要未涉及船舶或AIS",
+          "未说明对细粒度目标检测/关联的适用性",
+          "迁移需重构输入模态与训练目标，摘要证据不足"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "为通用4D场景生成与几何预测，虽含深度估计但与船舶视觉或多源关联缺少具体可迁移接口，直接相关性低。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "统一4D场景的RGB视频与几何表示理解",
+        "target_task": "ship_depth",
+        "core_contribution": "提出UGG统一生成式几何框架，联合建模RGB与深度/位姿",
+        "application_context": "通用4D场景相机控制视频生成与深度估计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
     }
   }
 }
