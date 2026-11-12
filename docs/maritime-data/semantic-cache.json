@@ -67003,7 +67003,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f"
+      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f",
+      "compatible_fingerprints": []
     },
     "309d64d63b74aba0b80849f8694f64976d978ff1dd5a2feef8de15b5370b4100": {
       "paper_id": "2603.23159",
@@ -67050,7 +67051,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f"
+      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f",
+      "compatible_fingerprints": []
     },
     "1d4600729e21d20cb06682497a6f6360b02b1c65ea9146f67c861d035a99ed8e": {
       "paper_id": "2604.18572",
@@ -67092,7 +67094,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f"
+      "request_id": "f2e5d9a6-932c-4de3-9f45-0aec855b3f3f",
+      "compatible_fingerprints": []
     },
     "399ba4aa7769fc324c1274d70f68e6ffb7f75b7c64462c118890ed82c1295c27": {
       "paper_id": "2604.15312",
@@ -67139,7 +67142,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d",
+      "compatible_fingerprints": []
     },
     "9154b0d964b3d5ce04b41007a64b9fb3c2459d6c854c4d908245ca5bd37cc529": {
       "paper_id": "2604.02948",
@@ -67186,7 +67190,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d",
+      "compatible_fingerprints": []
     },
     "98d194723b750c3932b7810ad9cf0d72e0fa847d4a648b65120ea5e94c5f6f4a": {
       "paper_id": "2604.02108",
@@ -67233,7 +67238,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d",
+      "compatible_fingerprints": []
     },
     "f331e394398682250f3df369f22b42fa67803c8c5997dc5d5114efab0d747896": {
       "paper_id": "2602.06218",
@@ -67280,7 +67286,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d"
+      "request_id": "11f90215-23f5-4f3a-a427-e41111e9ef3d",
+      "compatible_fingerprints": []
     },
     "054dbff5d0934ee2ff685060f8c71ccaef702932edea5de25ad989c4126da11a": {
       "paper_id": "2601.13979",
@@ -67327,7 +67334,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85",
+      "compatible_fingerprints": []
     },
     "c96d5e574a81e8cf7c8ee7122a413948123a21219344c401bfef1d05182dbae4": {
       "paper_id": "2512.07568",
@@ -67378,7 +67386,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85",
+      "compatible_fingerprints": []
     },
     "6fdf17b67d1e9c4ac3a608e5a6cb09c4390cf0ff5b83b48f5c65b5e210f882c6": {
       "paper_id": "2511.19117",
@@ -67425,7 +67434,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85"
+      "request_id": "6c8edb54-0ffb-42f6-bfa3-a044288d2b85",
+      "compatible_fingerprints": []
     },
     "e626e1fcce6ac4b8262909890cb8b9f333cc1374b12532770654494229bff10b": {
       "paper_id": "2511.13904",
@@ -67519,7 +67529,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c",
+      "compatible_fingerprints": []
     },
     "62564ec14c96af6052f13d08798cbe7ab0ec6e134fd5a870a9c46b3c437a42ad": {
       "paper_id": "2511.11512",
@@ -67566,7 +67577,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c",
+      "compatible_fingerprints": []
     },
     "3e544f237243dceceaffd9a50786391540caa6e4adcef876d48fe4ac22f5930b": {
       "paper_id": "2611.14479",
@@ -67608,7 +67620,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c",
+      "compatible_fingerprints": []
     },
     "17296b99c191f3acc224ea5fba5ef91f569081ca950f38bdea0c7ab73869022b": {
       "paper_id": "2611.14440",
@@ -67650,7 +67663,4089 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c"
+      "request_id": "b9a91037-fcca-49be-9cfb-62eb56dd123c",
+      "compatible_fingerprints": []
+    },
+    "97c51584ce5900f204c2f1e40765d27497add6bed5d1462deaf1a0d360959dd6": {
+      "paper_id": "2611.14003",
+      "title": "Spatio-Temporal Calibration of a Vehicle-Mounted Microphone Array for Autonomous Driving",
+      "fingerprint": "97c51584ce5900f204c2f1e40765d27497add6bed5d1462deaf1a0d360959dd6",
+      "evaluation": {
+        "paper_id": "2611.14003",
+        "task_type": "vehicle-mounted microphone array spatio-temporal calibration",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "We propose a pipeline that uses a balloon burst as a single cross-modal target, which the LiDAR locates in metric coordinates, every microphone hears as a sharp onset and a camera times.",
+            "interpretation_zh": "使用单一跨模态目标（气球爆裂声）进行多传感器标定，LiDAR提供度量坐标，麦克风检测起始时刻，相机提供时间戳。",
+            "inference": false
+          },
+          {
+            "quote_en": "Each observation is weighted by its own timing variance, which discounts shadowed arrivals instead of discarding them and needs no model of the vehicle.",
+            "interpretation_zh": "按观测到时方差加权，对受遮挡到达信号降权而非丢弃，无需车辆模型。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Each observation is weighted by its own timing variance, which discounts shadowed arrivals instead of discarding them and needs no model of the vehicle.",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将按定时方差对观测加权、对遮挡到达降权的思想迁移至多传感器船舶检测中的时间/空间标定环节：输入改为各传感器（雷达、AIS、视觉）对同一目标的观测时间与坐标，训练目标保持最小化加权残差，结构上可替换方差估计方式（如用传感器噪声协方差），无需改变加权融合框架。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要主要解决车载麦克风阵列标定，与船舶感知任务直接关联弱。",
+          "未涉及船舶、海事场景或AIS/雷达关联。",
+          "迁移路径仅基于加权思想，具体到船舶多传感检测的适配未在摘要中体现。"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上车载多传感标定，与海事关联弱，但加权处理遮挡观测的方法可考虑迁移。",
+        "confidence": 0.7,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "车载麦克风阵列与LiDAR、相机的跨模态时空标定",
+        "target_task": "多传感器标定与跨模态目标关联",
+        "core_contribution": "提出使用气球爆裂声作为跨模态目标，并按定时方差加权观测的标定流程，无需车辆模型即可处理声影遮挡。",
+        "application_context": "自动驾驶车辆的多传感器感知系统标定",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e450e154-4663-4c95-bda3-df268d4088fa"
+    },
+    "e518077918a241962cd35c8b8b596122c28164d438efcf6aaa427e60768a2495": {
+      "paper_id": "2611.12870",
+      "title": "SWAM: Scaling World Action Models with Cross-Modal Alignment",
+      "fingerprint": "e518077918a241962cd35c8b8b596122c28164d438efcf6aaa427e60768a2495",
+      "evaluation": {
+        "paper_id": "2611.12870",
+        "task_type": "world action model pretraining with cross-modal alignment",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "we systematically study how language-video supervision, language-video-action supervision, and the joint use of these two forms affect WAM performance.",
+            "interpretation_zh": "系统研究语言-视频监督、语言-视频-动作监督及其联合使用对世界动作模型性能的影响。",
+            "inference": false
+          },
+          {
+            "quote_en": "how action supervision from UMI and robot demonstrations extends these capabilities to language-video-action modeling.",
+            "interpretation_zh": "研究来自UMI和机器人演示的动作监督如何将语言-视频能力扩展到语言-视频-动作建模。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "聚焦机器人动作生成与视频预测，非船舶视觉检测或跨模态匹配。",
+          "未涉海事场景或AIS/雷达关联。",
+          "抽象方法为动作学习与视频预测，无法具体迁移到船舶感知任务。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向机器人世界动作模型，与海事感知及跨模态匹配任务无关，迁移路径不明确。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "在动作学习中保持语言-视频对齐的世界动作模型训练策略",
+        "target_task": "机器人动作生成与视频预测",
+        "core_contribution": "系统研究不同监督形式对语言-视频对齐的影响，并给出数据与训练配方。",
+        "application_context": "机器人操作与视频预测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e450e154-4663-4c95-bda3-df268d4088fa"
+    },
+    "95b0c5518f7521a44a46d3d86940633c5dca9dbe572e72e0b39956fed9ab7c64": {
+      "paper_id": "2611.12351",
+      "title": "UniOMA: Unified Optimal-Transport Multi-Modal Structural Alignment for Robot Perception",
+      "fingerprint": "95b0c5518f7521a44a46d3d86940633c5dca9dbe572e72e0b39956fed9ab7c64",
+      "evaluation": {
+        "paper_id": "2611.12351",
+        "task_type": "multimodal alignment via optimal transport regularization",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "we propose a novel multimodal alignment method that augments existing contrastive losses with a geometry-aware Gromov--Wasserstein (GW) distance-based regularization.",
+            "interpretation_zh": "提出一种多模态对齐方法，用几何感知的Gromov-Wasserstein距离正则化增强现有对比损失。",
+            "inference": false
+          },
+          {
+            "quote_en": "we encode intra-modal geometry for each modality and reduce cross-modal structural discrepancies through a dynamically learned GW barycenter, thereby encouraging structural consistency in addition to instance-level contrastive alignment.",
+            "interpretation_zh": "为每个模态编码模态内几何，通过动态学习的GW重心减小跨模态结构差异，在实例级对比对齐之外鼓励结构一致性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we encode intra-modal geometry for each modality and reduce cross-modal structural discrepancies through a dynamically learned GW barycenter, thereby encouraging structural consistency in addition to instance-level contrastive alignment.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将GW正则化迁移至视觉-AIS跨模态匹配：输入为视觉船舶特征与AIS轨迹特征，训练目标在实例级对比损失（如InfoNCE）上加入GW距离以约束两种模态邻域结构一致性；结构上需用视觉和AIS各自的模态内距离矩阵计算GW重心，可能需调整特征维度与距离度量。",
+          "inference": true
+        },
+        "limitations": [
+          "实验验证限于机器人感知（力、触觉等模态），未涉及视觉与AIS或船舶场景。",
+          "迁移到视觉-AIS匹配需要大量适配，摘要未讨论海事数据特性。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出可插拔的GW结构对齐正则，可迁移至视觉-AIS跨模态匹配，但无直接海事验证。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "机器人学习中多模态表征的结构一致性对齐",
+        "target_task": "多模态表征对齐与下游机器人感知任务",
+        "core_contribution": "提出基于Gromov-Wasserstein距离的几何感知正则化，增强对比学习中的跨模态结构一致性。",
+        "application_context": "机器人感知与多模态表征学习",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e450e154-4663-4c95-bda3-df268d4088fa"
+    },
+    "6abe2ff25c421761e2bcc4a996fd48f29ef908fa73e5857484a0da2d5d1c0af9": {
+      "paper_id": "2611.12149",
+      "title": "EgoLabel: Zero-Shot Egocentric Auto-Labeling with Cross-Modal Consistency",
+      "fingerprint": "6abe2ff25c421761e2bcc4a996fd48f29ef908fa73e5857484a0da2d5d1c0af9",
+      "evaluation": {
+        "paper_id": "2611.12149",
+        "task_type": "zero-shot egocentric auto-labeling with cross-modal consistency",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We present \\textbf{EgoLabel}, a zero-shot pipeline that combines off-the-shelf models without target-domain labeled training and provides explicit cross-modal registration and consistency diagnostics.",
+            "interpretation_zh": "提出EgoLabel零样本流水线，组合现成模型，无需目标域标注训练，提供显式跨模态配准和一致性诊断。",
+            "inference": false
+          },
+          {
+            "quote_en": "Differences in units, coordinate conventions, and scale can make individually plausible predictions geometrically inconsistent.",
+            "interpretation_zh": "指出单位、坐标约定和尺度的差异会导致单独合理的预测在几何上不一致。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向第一人称视角的人手与深度等模态配准，与船舶视觉或AIS关联无直接联系。",
+          "摘要未提供可迁移至海事多源匹配的具体算法机制。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "第一人称自标注流水线，与海事感知及跨模态匹配关联弱，无具体可迁移方法。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "第一人称视角下多模型输出的零样本跨模态配准与一致性诊断",
+        "target_task": "第一人称视频中的深度、相机位姿、物体与人体姿态联合配准",
+        "core_contribution": "组合现成模型实现零样本自动标注，并给出跨模态配准与一致性诊断方法。",
+        "application_context": "第一人称视觉数据自动标注",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e450e154-4663-4c95-bda3-df268d4088fa"
+    },
+    "00d2aea5ea70a1f45fb39bb829f699c9d3fd33298846e6180e06e5829c61568f": {
+      "paper_id": "2611.13425",
+      "title": "Prompt2Echo (P2Echo): Text-Prompted Multi-View Echocardiography Segmentation with One Model",
+      "fingerprint": "00d2aea5ea70a1f45fb39bb829f699c9d3fd33298846e6180e06e5829c61568f",
+      "evaluation": {
+        "paper_id": "2611.13425",
+        "task_type": "通用视觉分割",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Dynamic Image-Text Alignment (DyITA) module",
+            "interpretation_zh": "摘要提出动态图文对齐模块，用于根据文本提示调控分割解码器特征，属于跨模态对齐机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "integrates a differentiable routing mechanism and token differential operators",
+            "interpretation_zh": "该模块包含可微路由和token差分算子，实现自适应处理路径切换，可视为可微匹配/路由的通用结构。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Dynamic Image-Text Alignment (DyITA) module",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将图文对齐机制中的可微路由调整为视觉-AIS跨模态匹配中的特征路由，输入需改为视觉特征与AIS文本化特征，训练目标改为匹配分数预测。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未提供跨模态匹配的具体训练目标或匹配损失细节",
+          "医学超声领域与海事场景差异大，结构适配需较大改动",
+          "未在视觉-AIS关联任务上验证"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "摘要聚焦医学超声多视图分割，与海事多源关联融合及船舶视觉任务无直接联系；仅包含可微路由机制，迁移路径需较多假设，证据有限。",
+        "confidence": 0.95,
+        "primary_domain": "biomedical",
+        "primary_problem": "多视图超声心动图分割中解剖和外观变异大，需要单一模型适应不同视图。",
+        "target_task": "通用视觉分割",
+        "core_contribution": "提出P2Echo统一框架，通过结构化文本提示和动态图文对齐模块实现多视图心脏结构分割。",
+        "application_context": "临床超声心动图分析，用于多平面心脏评估。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ae901ea1-7791-41ba-82e9-2e5ca5a6e189"
+    },
+    "aa4a3b4c5ebce601e5427d8d31d763c3fc30c03c6691a1bb38e9afa6c5ff8131": {
+      "paper_id": "2611.13271",
+      "title": "RaMOD: Moving-Object Detection from Raw mmWave Radar Cubes under Ego Motion",
+      "fingerprint": "aa4a3b4c5ebce601e5427d8d31d763c3fc30c03c6691a1bb38e9afa6c5ff8131",
+      "evaluation": {
+        "paper_id": "2611.13271",
+        "task_type": "雷达移动目标检测",
+        "direct_relevance": 3,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "explicitly estimates frame-wise ego motion and uses the estimated radar translational velocity to predict the Doppler region of world-static structures and suppress returns within it",
+            "interpretation_zh": "方法估计自车运动并预测静止结构多普勒区域进行抑制，属于雷达信号处理与运动补偿策略。",
+            "inference": false
+          },
+          {
+            "quote_en": "temporally encodes the suppressed cubes into multi-scale features to predict RAD-space boxes with class labels",
+            "interpretation_zh": "对抑制后的RAD立方体进行时序编码和多尺度特征提取，用于预测目标框，是雷达数据表征与检测方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "explicitly estimates frame-wise ego motion and uses the estimated radar translational velocity to predict the Doppler region of world-static structures and suppress returns within it",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将自车运动估计与静止杂波抑制方法迁移到海事雷达多传感器检测：输入改为船载雷达RAD立方体，需估计本船运动并抑制海杂波/静止目标，训练目标改为水面目标检测框和速度估计。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要针对车载毫米波雷达，海杂波特性与地面杂波不同，需重新建模",
+          "仅验证单车载数据集，未涉及多传感器融合或AIS",
+          "摘要未提供跨模态匹配机制"
+        ],
+        "decision": "候选",
+        "reason_zh": "研究雷达原始数据移动目标检测与自运动补偿，与多传感器感知及雷达目标检测相关，但非海事场景且无跨模态关联；可作为雷达检测方法候选。",
+        "confidence": 0.8,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "车载毫米波雷达原始RAD立方体在自运动下检测移动目标时，静止结构多普勒干扰与速度模糊问题。",
+        "target_task": "多传感器检测",
+        "core_contribution": "提出RaMOD实时框架，从原始RAD立方体显式估计自运动、抑制静止杂波，并预测目标框与速度。",
+        "application_context": "自动驾驶车辆感知，用于移动目标检测与速度估计。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ae901ea1-7791-41ba-82e9-2e5ca5a6e189"
+    },
+    "b9d9199eff310be8a74fb9227e3854d61a33398582263052096be8393185aca3": {
+      "paper_id": "2611.04452",
+      "title": "DynOSeg: Dynamic Object Segmentation via Motion-Geometry Fusion",
+      "fingerprint": "b9d9199eff310be8a74fb9227e3854d61a33398582263052096be8393185aca3",
+      "evaluation": {
+        "paper_id": "2611.04452",
+        "task_type": "视频运动目标分割",
+        "direct_relevance": 2,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "combines a geometry-aware residual map and depth encoding into a geometric representation of motion",
+            "interpretation_zh": "融合几何残差图与深度编码构建运动几何表示，是视觉运动与几何融合的分割方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "further incorporate semantic features to refine object understanding",
+            "interpretation_zh": "进一步融合语义特征以细化目标理解，属于多阶段特征融合策略。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "combines a geometry-aware residual map and depth encoding into a geometric representation of motion",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "将运动几何残差与深度编码融合用于水面动态目标分割：输入改为海上视频序列与深度图，调整相机运动估计以适配船载视角，训练目标为船舶动态目标掩码。",
+          "inference": true
+        },
+        "limitations": [
+          "面向城市驾驶场景，海上动态目标与水面反射等特性差异大",
+          "未涉及多传感器或AIS关联",
+          "摘要未提供可跨模态匹配的直接机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "针对陆上视频运动目标分割，与船舶视觉分割任务场景差异大；方法融合几何与语义，迁移至船舶分割需较大调整且证据有限。",
+        "confidence": 0.85,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "视频运动目标分割中相机与目标运动耦合及外观变化导致视觉运动线索模糊。",
+        "target_task": "视频运动目标分割",
+        "core_contribution": "提出DynOSeg两阶段融合框架，融合运动几何表示与语义特征进行动态目标分割。",
+        "application_context": "城市驾驶视频中的动态目标分割。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ae901ea1-7791-41ba-82e9-2e5ca5a6e189"
+    },
+    "8dd54f1fcc76216afa544e64d6f4b7d11ed41f96e3283d6c6769b9d40af8a9a3": {
+      "paper_id": "2611.04472",
+      "title": "Beyond Token Representations: Explicit Visual Object Grounding for Video Reasoning Segmentation",
+      "fingerprint": "8dd54f1fcc76216afa544e64d6f4b7d11ed41f96e3283d6c6769b9d40af8a9a3",
+      "evaluation": {
+        "paper_id": "2611.04472",
+        "task_type": "视频推理分割",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "query a multimodal large language model to generate explicit spatial prompts (i.e., bounding box and point set) for the target and then refine them through multi-step dialogue",
+            "interpretation_zh": "利用多模态大语言模型生成显式空间提示（框和点集）并多轮对话细化，属于提示生成与对齐方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "enforce cross-query consistency between their predicted spatial prompts",
+            "interpretation_zh": "强制不同查询预测的空间提示间跨查询一致性，可视为一致性正则化机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "query a multimodal large language model to generate explicit spatial prompts (i.e., bounding box and point set) for the target and then refine them through multi-step dialogue",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将多模态大模型生成空间提示用于视觉-AIS跨模态匹配：输入改为视觉图像与AIS文本描述，利用大模型生成候选区域提示并细化，训练目标改为视觉-AIS对应关系。",
+          "inference": true
+        },
+        "limitations": [
+          "聚焦视频推理分割，无跨模态匹配直接实验",
+          "大模型提示生成方法依赖强算力，海事场景适用性未验证",
+          "摘要未提供匹配损失或关联评估"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究视频推理分割，与海事多源关联或船舶视觉任务无直接联系；所提提示生成机制迁移至跨模态匹配需大量改造，证据不足。",
+        "confidence": 0.9,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "视频推理分割中分割token语义单调且空间模糊，难以指导掩码预测。",
+        "target_task": "视频推理分割",
+        "core_contribution": "提出显式视觉目标定位框架，利用多模态大模型生成空间提示并跨查询对齐进行视频推理分割。",
+        "application_context": "通用视频理解与分割任务。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ae901ea1-7791-41ba-82e9-2e5ca5a6e189"
+    },
+    "06b254165bad57dfff3b844747d4710da0f1525bc73a86ef3f8304e5f41f9809": {
+      "paper_id": "2611.12955",
+      "title": "Predictive Surprise as Self-Grounding Concept Bottleneck for Interpretable Time Series",
+      "fingerprint": "06b254165bad57dfff3b844747d4710da0f1525bc73a86ef3f8304e5f41f9809",
+      "evaluation": {
+        "paper_id": "2611.12955",
+        "task_type": "general_time_series_interpretability",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce ConceptTime, which closes the loop through a single self-supervised signal.",
+            "interpretation_zh": "提出一种基于自监督信号的概念发现框架，用于时间序列分割与分类。",
+            "inference": false
+          },
+          {
+            "quote_en": "A frozen probabilistic forecaster predicts a distribution over the next observation at every timestep of the sequence.",
+            "interpretation_zh": "使用冻结的概率预测器对每个时间步的下一观测进行分布预测，产生预测惊喜度。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "未涉及船舶视觉、雷达/AIS关联或跨模态匹配等任务",
+          "自监督概念发现方法难以直接迁移到船舶感知任务"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "时间序列可解释性研究，与海事多源融合或船舶视觉任务无关，无可迁移至目标任务的特定方法。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "时间序列可解释分类与概念发现",
+        "target_task": "none",
+        "core_contribution": "提出ConceptTime，利用预测惊喜度自监督发现时序概念，实现可解释分类与拒识。",
+        "application_context": "风险敏感领域的时间序列分类",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a676b5c5-0bb4-464b-9b86-fa0953104191"
+    },
+    "3517fe5fd2633ecde10ba87d5b3d683297f230a8989a2bf1b127b54155f19325": {
+      "paper_id": "2611.04112",
+      "title": "Co-Occurrence Priors Override Visual Spatial Evidence: Understanding False Alarms in Vision-Language Models for Construction Struck-By Hazard Detection",
+      "fingerprint": "3517fe5fd2633ecde10ba87d5b3d683297f230a8989a2bf1b127b54155f19325",
+      "evaluation": {
+        "paper_id": "2611.04112",
+        "task_type": "vision_language_hazard_detection",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "conditioning hazard decisions on the model's own spatial-relation representation improved Qwen's specificity from 0.36 to 0.58 at matched sensitivity",
+            "interpretation_zh": "将危害决策条件于模型自身的空间关系表征，可提升特异性，缓和共现先验偏差。",
+            "inference": false
+          },
+          {
+            "quote_en": "false alarms stem primarily from decision-making failures rather than deficiencies in object recognition or spatial encoding",
+            "interpretation_zh": "错误警报主要源于决策环节而非物体识别或空间编码缺陷，提示可利用已编码的空间证据改进决策。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "conditioning hazard decisions on the model's own spatial-relation representation improved Qwen's specificity from 0.36 to 0.58 at matched sensitivity",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴其利用空间关系表征约束决策的思路：在视觉–AIS关联中，将视觉检测目标与AIS点的空间关系（距离、方位）作为决策条件，而非仅依赖外观特征或共现先验，可减少虚警。需调整输入为视觉检测框和AIS位置序列，训练目标加入空间关系一致性损失。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为建筑安全危害检测，非海事场景",
+          "方法依赖视觉语言模型，迁移至跨模态匹配需重新设计空间关系表征接口"
+        ],
+        "decision": "候选",
+        "reason_zh": "建筑安全视觉语言模型虚警研究，可借鉴其利用空间关系表征抑制共现先验偏差的思路，对视觉–AIS关联中的虚警抑制有参考价值。",
+        "confidence": 0.8,
+        "primary_domain": "specialized_industrial",
+        "primary_problem": "视觉语言模型在建筑安全危害检测中的虚警成因与决策纠正",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "揭示虚警主要源于决策受共现先验主导，提出将决策条件于模型自身空间关系表征的纠正方法。",
+        "application_context": "建筑工地打击危害监测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a676b5c5-0bb4-464b-9b86-fa0953104191"
+    },
+    "3c6f55b7d7ab1c4491f081376721cf97b6e0542a6eaf4da60156ce5dab0394a1": {
+      "paper_id": "2611.14136",
+      "title": "HaiRuo: Forecasting Ocean Eddies as Fields and Objects with a Satellite-Altimetry Foundation Model",
+      "fingerprint": "3c6f55b7d7ab1c4491f081376721cf97b6e0542a6eaf4da60156ce5dab0394a1",
+      "evaluation": {
+        "paper_id": "2611.14136",
+        "task_type": "ocean_eddy_forecasting",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a Lagrangian object decoder that samples the evolving forecast in each eddy's co-moving polar frame and refines the 15-day path across three look-ahead rounds",
+            "interpretation_zh": "提出拉格朗日对象解码器，在随动极坐标系中采样预报并迭代细化轨迹。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为海洋中尺度涡旋，非船舶或交通参与者",
+          "轨迹预测方法针对流体运动，与船舶目标关联差异大"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "海洋涡旋预报研究，虽然涉及轨迹但对象为流体，与船舶多源关联融合或视觉检测任务无关，无可直接迁移方法。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "海洋中尺度涡旋的场与对象联合预报",
+        "target_task": "none",
+        "core_contribution": "提出HaiRuo，结合卫星测高基础模型与拉格朗日对象解码器，同时预报物理场和涡旋轨迹。",
+        "application_context": "海洋中尺度涡旋预报",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a676b5c5-0bb4-464b-9b86-fa0953104191"
+    },
+    "e4f19c815ebfb536b662c817913c38862b8d35d13fd321640f2b1fb5a79a2d4e": {
+      "paper_id": "2611.13759",
+      "title": "Exploring Synchrony for Communication in Modular Neural Networks",
+      "fingerprint": "e4f19c815ebfb536b662c817913c38862b8d35d13fd321640f2b1fb5a79a2d4e",
+      "evaluation": {
+        "paper_id": "2611.13759",
+        "task_type": "modular_neural_network_communication",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "separates module content from a dynamical phase state: learnt Kuramoto dynamics evolve the phases, while phase alignment determines communication through a shared channel",
+            "interpretation_zh": "将模块内容与动态相位状态分离，利用相位对齐控制模块间通信。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为模块化网络通信与组合泛化，与海事感知无关",
+          "方法针对合成数据集，缺乏感知任务验证"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "模块化神经网络通信机制研究，与船舶视觉、多源关联融合或跨模态匹配任务无关，无可迁移的具体方法。",
+        "confidence": 0.95,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "模块化神经网络中通信机制的组织与组合泛化",
+        "target_task": "none",
+        "core_contribution": "提出SyncNet，利用动态相位对齐控制模块通信，但实验表明优势来自模块分解而非同步本身。",
+        "application_context": "合成视觉推理与系统泛化基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a676b5c5-0bb4-464b-9b86-fa0953104191"
+    },
+    "2a6862eafe05571edc4a41229825e76ad7715f2664c3e36aa1806bb2bfe22342": {
+      "paper_id": "2611.13222",
+      "title": "AlphaHits: Full-Event Tracking and Reconstruction Towards a Hit-Level Foundation Model",
+      "fingerprint": "2a6862eafe05571edc4a41229825e76ad7715f2664c3e36aa1806bb2bfe22342",
+      "evaluation": {
+        "paper_id": "2611.13222",
+        "task_type": "hit-level粒子轨迹重建与多任务物理事件分类",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "AlphaHits is pretrained on charged-particle tracking and fine-tuned for multi-task reconstruction and classification.",
+            "interpretation_zh": "先用带电粒子跟踪预训练，再微调做重建与分类，属于多任务表征学习范式。",
+            "inference": false
+          },
+          {
+            "quote_en": "From a shared hit-level representation, it predicts tracks, jets, jet flavour, and event-level observables.",
+            "interpretation_zh": "共享hit级表征同时支持轨迹、喷注、味分类及事件级回归，可作为多任务共享表征参考。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "It processes both pixel and strip hits in events containing up to $1.5\\times10^5$ hits under HL-LHC-like pileup conditions and assigns hits to individual reconstructed trajectories across its kinematic range.",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "需重新定义'hit'为传感器检测点，将轨迹分配目标从粒子轨迹改为船舶/目标轨迹，调整输入坐标系为雷达点迹或图像检测框，训练目标改为轨迹关联与连续性，结构需适配稀疏点迹输入而非高能物理稠密hit。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为LHC粒子物理，非海事或陆上交通场景",
+          "hit级输入与船舶/雷达点迹语义差异大",
+          "摘要未给出可直接迁移的匹配损失设计"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "高能物理粒子轨迹重建，与海事融合及船舶视觉无直接联系，仅共享hit级多任务表征概念，迁移路径推断性强。",
+        "confidence": 0.85,
+        "primary_domain": "other",
+        "primary_problem": "LHC全事件带电粒子hit级轨迹重建与多任务事件重建分类",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出基于TrackFormer的AlphaHits，直接处理探测器hit实现全事件带电粒子重建与多任务共享表征",
+        "application_context": "LHC高堆积条件下的像素与条带探测器hit数据",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "df635f73-fd2f-47d8-99a3-bc2c4bbec84e"
+    },
+    "02fdce4ee48c89a74f616502a266731144387d2404b52613c2b7b31bbd43bab9": {
+      "paper_id": "2611.14143",
+      "title": "GARD: Gradient-Guided Adversarial Representation Defense against Backdoors in Multimodal Contrastive Learning Models",
+      "fingerprint": "02fdce4ee48c89a74f616502a266731144387d2404b52613c2b7b31bbd43bab9",
+      "evaluation": {
+        "paper_id": "2611.14143",
+        "task_type": "多模态对比学习模型后门防御",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "GARD optimizes complementary global and local adversarial probes to maximally displace clean-image representations, and then realigns the perturbed representations with detached clean anchors while preserving image-text alignment.",
+            "interpretation_zh": "用全局与局部对抗探针扰动表征，再用分离的干净锚点重对齐并保持图文对齐，是跨模态对齐鲁棒化机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "We observe that backdoored encoders exhibit structure-dependent representation sensitivity: global perturbations preferentially expose distributed backdoors, whereas local patch perturbations are more effective for localized backdoors.",
+            "interpretation_zh": "表征对不同结构扰动有差异化敏感度，可启发多粒度扰动设计。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "GARD optimizes complementary global and local adversarial probes to maximally displace clean-image representations, and then realigns the perturbed representations with detached clean anchors while preserving image-text alignment.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可借鉴其对偶探针+锚点重对齐思路增强视觉-AIS跨模态匹配鲁棒性：需将图文对齐替换为图像特征与AIS时空特征对齐，锚点由AIS轨迹构建，扰动改为传感器噪声/缺失，训练目标改为保持匹配对一致性。",
+          "inference": true
+        },
+        "limitations": [
+          "主要针对后门安全防御，非感知匹配任务",
+          "图文模态与视觉-雷达/AIS模态差异大",
+          "迁移路径为推断，摘要无匹配精度证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "提供任务无关的对抗探针与跨模态重对齐机制，可迁移至视觉-AIS匹配鲁棒性，但原任务为后门防御，直接相关性低。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "CLIP等多模态对比模型受后门攻击",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出无需攻击目标与触发器假设的梯度引导对抗表征防御，保持图文对齐",
+        "application_context": "多模态对比学习模型的后门防御评估",
+        "security_centric": true,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "df635f73-fd2f-47d8-99a3-bc2c4bbec84e"
+    },
+    "8519913b6aa3c9f1f46cba75b8751894e732949b0e5282fd97858bc9f09fd029": {
+      "paper_id": "2611.14383",
+      "title": "An Energy-Based Perspective on Machine Learning",
+      "fingerprint": "8519913b6aa3c9f1f46cba75b8751894e732949b0e5282fd97858bc9f09fd029",
+      "evaluation": {
+        "paper_id": "2611.14383",
+        "task_type": "能量模型统一框架综述",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "representation learning methods such as contrastive learning, word2vec, BERT, denoising auto-encoders, and diffusion representations",
+            "interpretation_zh": "将对比学习等表征学习方法统一为能量模型视角，属任务无关的理论框架。",
+            "inference": false
+          },
+          {
+            "quote_en": "with composition of energies as a principled way to combine learned models at inference time",
+            "interpretation_zh": "用能量组合在推理时融合模型，可作为多模态/多传感器融合的理论参考。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "with composition of energies as a principled way to combine learned models at inference time",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可借鉴能量组合思想融合相机与雷达/AIS检测分数：需将各传感器检测得分定义为能量项，设计组合规则与推理采样流程，训练目标改为联合能量拟合，但摘要未给出具体匹配损失，迁移为概念性。",
+          "inference": true
+        },
+        "limitations": [
+          "综述/教程性质，无具体任务实验",
+          "与海事感知无直接关联",
+          "能量组合到检测融合的迁移仅为概念推断"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯理论综述，未提供可直接迁移的匹配或检测方法细节，与海事感知无直接联系。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "用能量模型统一解释各类机器学习方法",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "以能量模型为统一视角组织表征学习、生成模型与强化学习并提出组件替换思路",
+        "application_context": "机器学习方法论教程",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "df635f73-fd2f-47d8-99a3-bc2c4bbec84e"
+    },
+    "01968285fc7a90d8ee73c784407317f5d3e5dda9270e4dad8bd5d35ac02ffc53": {
+      "paper_id": "2611.14432",
+      "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
+      "fingerprint": "01968285fc7a90d8ee73c784407317f5d3e5dda9270e4dad8bd5d35ac02ffc53",
+      "evaluation": {
+        "paper_id": "2611.14432",
+        "task_type": "长时家庭任务视觉-语言-动作策略",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "variance-reduced multi-sample flow matching with a simple noise-vs-compute model that picks the number of action-expert samples per observation without ablations",
+            "interpretation_zh": "用方差缩减多样本流匹配并自适应选择样本数，属动作生成训练技巧。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为家庭机器人操作与动作生成",
+          "与海事/交通感知任务无明确联系",
+          "迁移路径不明确，摘要无感知匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "家庭长时任务VLA策略，核心为动作生成与训练技巧，与船舶/海事/交通感知无直接联系，迁移不明。",
+        "confidence": 0.85,
+        "primary_domain": "other",
+        "primary_problem": "100项长时家庭任务的机器人策略学习",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "单一VLA模型覆盖100项家庭任务，结合流匹配训练与部分任务路由给编码智能体",
+        "application_context": "OmniGibson仿真中的家庭机器人操作挑战",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "df635f73-fd2f-47d8-99a3-bc2c4bbec84e"
+    },
+    "e196fcd657cb63ec1231eba51be000a51b21013ae3f63a654e1151843cace214": {
+      "paper_id": "2611.14496",
+      "title": "RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval",
+      "fingerprint": "e196fcd657cb63ec1231eba51be000a51b21013ae3f63a654e1151843cace214",
+      "evaluation": {
+        "paper_id": "2611.14496",
+        "task_type": "研究论文",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "we propose scan-path views, which treat two reading orders of the same image as two views with identical pixels and predict the hidden patches in one order from the visible patches in the other.",
+            "interpretation_zh": "提出扫描路径视图，将同一图像的不同读取顺序作为两个视图进行自监督预测。",
+            "inference": false
+          },
+          {
+            "quote_en": "we propose Adversarial View Coupling (AVC), which learns the hardest split of the visible patches",
+            "interpretation_zh": "对抗视图耦合学习最难的可见块划分，增加预测难度。",
+            "inference": false
+          },
+          {
+            "quote_en": "a neighbourhood consensus loss that aligns the scene similarities of both sensors",
+            "interpretation_zh": "邻域一致性损失对齐两个传感器的场景相似性。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we propose Adversarial View Coupling (AVC), which learns the hardest split of the visible patches, and a neighbourhood consensus loss that aligns the scene similarities of both sensors.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将对抗视图耦合（学习最难的可见块划分）用于跨模态匹配训练：以雷达/AIS或SAR/光学图像对作为输入，构造不同模态的可见块划分并学习最难划分以增强预测难度；将邻域一致性损失用于对齐跨模态场景相似性，需要调整输入为跨模态配对、训练目标为跨模态表示对齐。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅涉及SAR-光学、PAN-MS等遥感跨传感器检索，未涉及海事或AIS数据。",
+          "方法依赖配准图像对训练，跨模态匹配任务需数据配对，迁移需验证。",
+          "未提供跨模态目标匹配或检测实验。"
+        ],
+        "decision": "候选",
+        "reason_zh": "遥感跨传感器检索，直接相关性低；对抗视图耦合和邻域一致性损失可具体迁移至跨模态匹配，但需调整输入与训练目标，迁移证据中等。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "跨传感器遥感图像检索中的自监督联合嵌入学习",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出RS-JEPA框架，基于Vision Mamba编码器，利用扫描路径视图和对抗视图耦合进行自监督跨传感器检索",
+        "application_context": "SAR-光学和PAN-MS遥感图像检索基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "1f96f2f2-5c0c-4c7a-b3c3-be20f9442a14"
+    },
+    "1e11beb4f486a0394811ec77f26a78d24d7225e0e8588c2b702f50083369c264": {
+      "paper_id": "2611.14266",
+      "title": "Physics-Constrained Autoencoder for Interpretable Health Representation Learning in Turbofan Engines",
+      "fingerprint": "1e11beb4f486a0394811ec77f26a78d24d7225e0e8588c2b702f50083369c264",
+      "evaluation": {
+        "paper_id": "2611.14266",
+        "task_type": "研究论文",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "a physics-constrained autoencoder that embeds system knowledge as an inductive bias in the decoder architecture and as a learning bias in the loss function",
+            "interpretation_zh": "物理约束自编码器，将系统知识作为解码器架构的归纳偏置和损失函数的学习偏置。",
+            "inference": false
+          },
+          {
+            "quote_en": "The decoder contains differentiable physical equations that receive latent variables and operating conditions as inputs",
+            "interpretation_zh": "解码器包含可微物理方程，接收潜在变量和工况作为输入。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向涡扇发动机健康指标学习，与船舶视觉、跨模态匹配等任务无关。",
+          "物理约束依赖具体领域方程，难以直接迁移至感知任务。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "涡扇发动机健康表示学习，与海事感知、跨模态匹配或船舶视觉无直接联系；物理约束自编码器方法任务特定，缺乏可复用通用机制。",
+        "confidence": 0.9,
+        "primary_domain": "specialized_industrial",
+        "primary_problem": "涡扇发动机健康指标的可解释表示学习",
+        "target_task": "none",
+        "core_contribution": "提出物理约束自编码器，将可微物理方程嵌入解码器以学习可解释健康指标",
+        "application_context": "涡扇发动机退化监测与诊断",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "1f96f2f2-5c0c-4c7a-b3c3-be20f9442a14"
+    },
+    "d48e36b0656e6bcd3815b5a633a53406ed6cc6dca96a85cb2062576fc7e0b7cd": {
+      "paper_id": "2611.14241",
+      "title": "Dyship: Leveraging Acoustic Features For Speaker Relationship Classification From Dyadic Conversations",
+      "fingerprint": "d48e36b0656e6bcd3815b5a633a53406ed6cc6dca96a85cb2062576fc7e0b7cd",
+      "evaluation": {
+        "paper_id": "2611.14241",
+        "task_type": "研究论文",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We compare five speech representations: spectrograms, MFCCs, self-supervised WavLM representations, x-vectors, and estimated articulatory movements.",
+            "interpretation_zh": "比较五种语音表示用于说话人关系分类。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "语音说话人关系分类，与海事视觉、跨模态匹配无关。",
+          "方法为声学特征比较，无通用匹配机制。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "语音说话人关系分类，纯音频任务，与船舶视觉、跨模态对齐等方向无直接或可迁移方法联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "双人对话中说话人熟悉度与亲属关系分类",
+        "target_task": "none",
+        "core_contribution": "比较五种语音表示在说话人关系分类上的性能",
+        "application_context": "Seamless Interaction语料库的对话分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "1f96f2f2-5c0c-4c7a-b3c3-be20f9442a14"
+    },
+    "86a28c2ace36831906defa966d0055117c135b8c341caf46b17f69fd315f28c2": {
+      "paper_id": "2611.14141",
+      "title": "Deviation-Aware Pretraining for Cardiovascular Disease Detection from Electrocardiograms",
+      "fingerprint": "86a28c2ace36831906defa966d0055117c135b8c341caf46b17f69fd315f28c2",
+      "evaluation": {
+        "paper_id": "2611.14141",
+        "task_type": "研究论文",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "Deviation Localization Embedding (DLE), which detects waveform-level deviations from normal patterns",
+            "interpretation_zh": "偏差定位嵌入检测波形级异常。",
+            "inference": false
+          },
+          {
+            "quote_en": "Association Reconstruction Embedding (ARE), which models cross-lead associations through deviation-guided reconstruction",
+            "interpretation_zh": "关联重建嵌入通过偏差引导重建建模跨导联关联。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向心电图心血管疾病检测，与海事感知无关。",
+          "跨导联关联建模为医学信号特定，难以迁移至视觉跨模态匹配。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "心电图自监督特征提取用于心血管疾病检测，属生物医学领域，与船舶视觉、跨模态匹配等无直接或具体可迁移方法联系。",
+        "confidence": 0.95,
+        "primary_domain": "biomedical",
+        "primary_problem": "心电图心血管疾病检测的自监督特征学习",
+        "target_task": "none",
+        "core_contribution": "提出自监督ECG特征提取框架，包含偏差定位嵌入和关联重建嵌入",
+        "application_context": "12导联心电图心血管疾病检测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "1f96f2f2-5c0c-4c7a-b3c3-be20f9442a14"
+    },
+    "2f12184969253af2b0a1a31fd127112f988a0745d2869e480e32047c86de3b6e": {
+      "paper_id": "2611.14397",
+      "title": "A Margin Perspective on LoRA: Robustness to Catastrophic Forgetting and Adapter Merging (MaLoRA)",
+      "fingerprint": "2f12184969253af2b0a1a31fd127112f988a0745d2869e480e32047c86de3b6e",
+      "evaluation": {
+        "paper_id": "2611.14397",
+        "task_type": "通用视觉/多模态学习方法",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "we analyze adapter merging, proving that merged models achieve positive margin on each task and deriving optimal mixing coefficients that balance margins across tasks and maximize the margin over their union",
+            "interpretation_zh": "分析多任务适配器合并，推导平衡各任务间隔的最优混合系数。",
+            "inference": false
+          },
+          {
+            "quote_en": "These results lead to a simple, training-free merging rule, which we term \\textit{margin-based LoRA merging} (MaLoRA)",
+            "interpretation_zh": "提出无需训练的基于间隔的LoRA合并规则。",
+            "inference": false
+          },
+          {
+            "quote_en": "the optimal adapter aligns with the \\emph{max-margin solution} on the fine-tuning data",
+            "interpretation_zh": "最优适配器与微调数据上的最大间隔解对齐。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "These results lead to a simple, training-free merging rule, which we term \\textit{margin-based LoRA merging} (MaLoRA)",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可将多个独立训练的跨模态（视觉-AIS）分支适配器的间隔平衡合并思路用于融合，但摘要仅在多类分类任务验证，需重新定义跨模态匹配损失与混合系数，属较间接推断。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅涉及多类分类与理论线性分析",
+          "未涉及跨模态匹配或海事场景",
+          "合并方法为全局参数混合，未处理模态缺失或时空关联"
+        ],
+        "primary_domain": "general_visual_method",
+        "primary_problem": "理解并理论解释LoRA对灾难性遗忘的鲁棒性及适配器合并性质",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出基于间隔视角的LoRA理论分析及免训练MaLoRA合并规则",
+        "application_context": "视觉与语言多类分类任务的适配器合并验证",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "通用LoRA理论与适配器合并，与船舶感知及多源关联关联弱，迁移仅间接且需大幅重构。",
+        "confidence": 0.7
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a0e75d8a-3794-4728-aaec-4be86974a763"
+    },
+    "96f1bd80a3f2c8ecdc91f7bd9b1d901d51bad742483934bd548b736d9face745": {
+      "paper_id": "2611.14274",
+      "title": "From Prediction to Action: Learning Physical Context for Deformable Linear Object Manipulation",
+      "fingerprint": "96f1bd80a3f2c8ecdc91f7bd9b1d901d51bad742483934bd548b736d9face745",
+      "evaluation": {
+        "paper_id": "2611.14274",
+        "task_type": "其他（可变形物体操作）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we introduce Geometry-Pointer-Flow (GPF), a geometry-grounded policy that separates grasp-location selection from grasp-conditioned motion generation",
+            "interpretation_zh": "提出几何锚定策略，分离抓取位置选择与条件运动生成。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为可变形线性物体操作",
+          "无海事或目标检测/分割任务",
+          "未提供可复用跨模态匹配机制"
+        ],
+        "primary_domain": "other",
+        "primary_problem": "可变形线性物体抓取形状控制的决策效用",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出GPF策略并比较物理上下文表征对预测与控制的不同作用",
+        "application_context": "仿真训练迁移至实体机器人的形状控制",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "机器人可变形物体操作，与海事感知及跨模态匹配无明确联系，迁移路径不可具体说明。",
+        "confidence": 0.75
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a0e75d8a-3794-4728-aaec-4be86974a763"
+    },
+    "4cd7d8876a49a7f1d0b7e376cb973eeebbc7d9f1539d524052c3b2d4cf93a739": {
+      "paper_id": "2611.14220",
+      "title": "SHARP: Semantic Hierarchical Agentic Reasoning for Next POI Prediction with Dynamic Memory",
+      "fingerprint": "4cd7d8876a49a7f1d0b7e376cb973eeebbc7d9f1539d524052c3b2d4cf93a739",
+      "evaluation": {
+        "paper_id": "2611.14220",
+        "task_type": "其他（兴趣点预测）",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "A trajectory memory agent maintains a dynamic trajectory memory bank that preserves earlier mobility patterns and tracks behavioral changes with limited context growth",
+            "interpretation_zh": "轨迹记忆代理维护动态记忆库以保留历史移动模式并跟踪行为变化。",
+            "inference": false
+          },
+          {
+            "quote_en": "We construct multi-granularity time-aware category transition graphs with global and time-conditioned views to preserve temporal regularities",
+            "interpretation_zh": "构建多粒度时间感知类别转移图保留时序规律。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "A trajectory memory agent maintains a dynamic trajectory memory bank that preserves earlier mobility patterns and tracks behavioral changes with limited context growth",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "动态轨迹记忆可用于船舶轨迹关联，但摘要面向POI语义与类别转移，需将输入与目标改为传感器观测-轨迹匹配，属推断。",
+          "inference": true
+        },
+        "limitations": [
+          "面向用户POI预测，非物理传感器感知",
+          "无跨模态视觉-AIS匹配证据",
+          "迁移需重构输入与监督信号"
+        ],
+        "primary_domain": "other",
+        "primary_problem": "下一兴趣点预测中的语义推理与时序移动建模",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出语义层级代理框架SHARP及动态轨迹记忆与多粒度类别转移图",
+        "application_context": "个性化位置服务的POI预测评估",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "POI预测非海事感知或跨模态匹配；动态记忆有间接轨迹关联潜力但证据弱。",
+        "confidence": 0.7
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a0e75d8a-3794-4728-aaec-4be86974a763"
+    },
+    "1fc702370b56d3999ae67b4a516502847a0b0358f1732feb1577f723e1f8a805": {
+      "paper_id": "2611.14207",
+      "title": "DailyWildfireCAN: A Dataset and Benchmark for Next-Day Wildfire Spread Prediction in Canada",
+      "fingerprint": "1fc702370b56d3999ae67b4a516502847a0b0358f1732feb1577f723e1f8a805",
+      "evaluation": {
+        "paper_id": "2611.14207",
+        "task_type": "其他（野火蔓延预测）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we present DailyWildfireCAN, a multi-modal, multi-temporal dataset and benchmark for predicting next-day wildfire spread across Canada",
+            "interpretation_zh": "提出加拿大野火蔓延预测的多模态多时相数据集与基准。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "数据集与任务为野火蔓延预测",
+          "未提出具体可复用匹配或检测方法",
+          "与船舶及跨模态关联无直接联系"
+        ],
+        "primary_domain": "other",
+        "primary_problem": "加拿大次日野火蔓延预测的数据与基准缺失",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "构建多模态多时相野火蔓延数据集及评估基准",
+        "application_context": "加拿大野火管理中的卫星与气象数据建模",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "野火蔓延预测数据集，无船舶感知或多源关联方法证据，迁移路径不可具体说明。",
+        "confidence": 0.75
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "a0e75d8a-3794-4728-aaec-4be86974a763"
+    },
+    "797ad441b72de43ed896e772330d118519ad0c08f8afa20968edf6ebcc86d064": {
+      "paper_id": "2611.14186",
+      "title": "Koopman Model-Based Reinforcement Learning",
+      "fingerprint": "797ad441b72de43ed896e772330d118519ad0c08f8afa20968edf6ebcc86d064",
+      "evaluation": {
+        "paper_id": "2611.14186",
+        "task_type": "reinforcement_learning_control",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为机器人强化学习控制，无感知、匹配或检测任务",
+          "未提供可迁移至跨模态匹配或船舶感知的具体机制",
+          "Koopman线性动力学与critic设计面向控制策略学习"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人控制RL，与海事关联、船舶视觉及跨模态匹配无直接或具体可迁移联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "未知非线性机器人系统的Koopman模型强化学习控制",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出基于随机Koopman算子的模型强化学习方法，结合critic与一步预测降低长程误差",
+        "application_context": "HalfCheetah、四足机器人行走与摆起任务的仿真和实物控制",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d9c4390a-c44c-4d6a-96f6-277b21b42400"
+    },
+    "6f5b1731aecbd705a963de1e4232856b7db591b7341116c59a2ef01704623848": {
+      "paper_id": "2611.14252",
+      "title": "Semantic Chains: From Reachable Facts to Justified Answers",
+      "fingerprint": "6f5b1731aecbd705a963de1e4232856b7db591b7341116c59a2ef01704623848",
+      "evaluation": {
+        "paper_id": "2611.14252",
+        "task_type": "logical_reasoning",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为逻辑事实图与解释链生成，非视觉或多模态匹配",
+          "未给出可用于船舶检测或跨模态对齐的学习机制",
+          "图搜索与文本保留性质属符号推理"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "逻辑事实图与答案解释链，与海事融合、船舶视觉及通用感知匹配无具体联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "从问题出发寻找可解释答案的逻辑事实链",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "将上下文建模为逻辑事实图，给出保持性边搜索与链排序的完备枚举条件",
+        "application_context": "自然语言问答解释生成的理论模型",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d9c4390a-c44c-4d6a-96f6-277b21b42400"
+    },
+    "c92f4d5b97b7f86d42110be06920c3972cb24dffa05aae74ade5caaaa2c938b3": {
+      "paper_id": "2611.14238",
+      "title": "Unveiling the Extreme Universe with Recent IACT Discoveries",
+      "fingerprint": "c92f4d5b97b7f86d42110be06920c3972cb24dffa05aae74ade5caaaa2c938b3",
+      "evaluation": {
+        "paper_id": "2611.14238",
+        "task_type": "astrophysics_review",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "综述性天文物理文章，仅提及深度学习重建但无具体方法",
+          "无海事感知或通用视觉匹配机制证据",
+          "应用场景为伽马射线天文观测"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "高能天体物理论述，仅泛提及深度学习，无具体可迁移感知方法或海事相关性。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "综述IACT阵列的甚高能伽马射线天文发现",
+        "target_task": "ship_detection",
+        "core_contribution": "汇总近期IACT观测突破及CTAO进展的会议综述",
+        "application_context": "地面伽马射线天文观测与天体物理研究",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d9c4390a-c44c-4d6a-96f6-277b21b42400"
+    },
+    "a099607b6d13047122f896a1ac23c444a432f9d56fb0e8923efa1df1f32893f5": {
+      "paper_id": "2611.14206",
+      "title": "Yang-Lee edge singularity at $\\mathcal{O}(\\partial^4)$ from the functional renormalization group: revised analysis",
+      "fingerprint": "a099607b6d13047122f896a1ac23c444a432f9d56fb0e8923efa1df1f32893f5",
+      "evaluation": {
+        "paper_id": "2611.14206",
+        "task_type": "statistical_physics",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "凝聚态/统计场论临界指数计算，与感知任务无关",
+          "功能重整化群与导数展开不适用于视觉匹配",
+          "无任何检测、分割或多模态证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "Yang-Lee奇点临界指数计算，与海事多源融合及船舶视觉无任何联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "用功能重整化群计算Yang-Lee边缘奇点临界指数",
+        "target_task": "ship_segmentation",
+        "core_contribution": "在四阶导数展开下修正场展开参考点并给出临界指数",
+        "application_context": "统计场论与临界现象理论研究",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d9c4390a-c44c-4d6a-96f6-277b21b42400"
+    },
+    "dd2f9548eca483d1a39f25ed7e262e725083de34aef1956b20c0a010353b2bc0": {
+      "paper_id": "2611.14509",
+      "title": "Artificial Currency and Separate Selling: A 3-Approximation for Consumer Surplus",
+      "fingerprint": "dd2f9548eca483d1a39f25ed7e262e725083de34aef1956b20c0a010353b2bc0",
+      "evaluation": {
+        "paper_id": "2611.14509",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "The better of separate selling and artificial-currency mechanisms provides a 3-approximation to optimal consumer surplus.",
+            "interpretation_zh": "拍卖机制与消费者剩余近似，与视觉/多模态感知匹配无方法联系。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯机制设计与近似算法",
+          "摘要不涉及任何感知、匹配或跨模态任务",
+          "无可复用表征或匹配学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机制设计与消费者剩余理论，与海事感知及跨模态匹配无任何关联。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "不可分物品分配中消费者剩余的近似机制设计",
+        "target_task": "none",
+        "core_contribution": "提出人工货币与分开销售结合的3-近似机制",
+        "application_context": "无感知应用，纯理论机制设计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "58a68ecb-39aa-417d-ba41-4b87e4b26b23"
+    },
+    "64938b6b7bb90503c8179453c2d8077e5d5c6d8221ca6763041a4708ce7dcaf9": {
+      "paper_id": "2611.14507",
+      "title": "Local Rigidity of Bergman Logarithmic Flatness on Compact Hermitian Symmetric Spaces",
+      "fingerprint": "64938b6b7bb90503c8179453c2d8077e5d5c6d8221ca6763041a4708ce7dcaf9",
+      "evaluation": {
+        "paper_id": "2611.14507",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We prove the local rigidity of Bergman logarithmic flatness near the standard metrics associated with fixed invariant positive polarizations on compact Hermitian symmetric spaces.",
+            "interpretation_zh": "复几何刚性定理，无感知或匹配方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学复几何研究",
+          "不涉及视觉、多模态或传感器",
+          "无可迁移学习方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "Hermitian对称空间上的Bergman平坦刚性，纯数学，与目标方向无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "Bergman对数平坦性的局部刚性",
+        "target_task": "none",
+        "core_contribution": "证明小变形由全纯自同构与常数缩放诱导",
+        "application_context": "无应用，纯理论数学",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "58a68ecb-39aa-417d-ba41-4b87e4b26b23"
+    },
+    "ccf36ee2e00041a048f65a1b003710f25c4f2bcff50393aea0a13329d52294c1": {
+      "paper_id": "2611.14503",
+      "title": "$G_2'$-Slodowy Slices II: Anosov Representations",
+      "fingerprint": "ccf36ee2e00041a048f65a1b003710f25c4f2bcff50393aea0a13329d52294c1",
+      "evaluation": {
+        "paper_id": "2611.14503",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We find \\emph{exotic} connected components of Anosov representations of surface groups in the higher rank group $G=G_2'$ that are neither $ι$-Fuchsian deformations nor higher rank Teichmüller spaces.",
+            "interpretation_zh": "高维李群表示论几何，无感知方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯几何与表示论",
+          "不涉及任何视觉或多模态任务",
+          "无学习方法可迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "Anosov表示与Higgs丛理论，纯数学，与目标方向无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "G2'群中Anosov表示的奇异连通分支",
+        "target_task": "none",
+        "core_contribution": "通过G2'-Higgs丛构造奇异连通分支并给出下界",
+        "application_context": "无应用，纯数学几何",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "58a68ecb-39aa-417d-ba41-4b87e4b26b23"
+    },
+    "2d24d9e449a77ba6504c6a3fcaf6e49f2044881a4a33e4f7274f4a35941b5dac": {
+      "paper_id": "2611.14499",
+      "title": "Spatial patterns of transportation choice in Niterói",
+      "fingerprint": "2d24d9e449a77ba6504c6a3fcaf6e49f2044881a4a33e4f7274f4a35941b5dac",
+      "evaluation": {
+        "paper_id": "2611.14499",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "Here, we introduce a computational framework that uses macroscopic, aggregated, and static urban data to construct a microscopic, dynamic, and spatially detailed representation of urban mobility.",
+            "interpretation_zh": "城市交通出行选择的宏观仿真，不涉及目标检测、跟踪或跨模态匹配。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "宏观出行方式选择仿真，非感知检测/跟踪",
+          "无视觉或多模态匹配机制",
+          "陆上交通但非交通参与者感知，属出行规划管理"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "城市交通出行方式空间分布仿真，属交通规划管理，非目标感知任务。",
+        "confidence": 0.93,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "基于宏观城市数据模拟居民出行方式选择的空间分布",
+        "target_task": "none",
+        "core_contribution": "用合成人口与路网构建微观动态出行仿真框架",
+        "application_context": "巴西Niterói市约47.5万合成居民的通勤方式选择",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "58a68ecb-39aa-417d-ba41-4b87e4b26b23"
+    },
+    "69f8db014cd05da99406c86cd5ba4ba6e34a652dfaef630f3ab353653c34df2e": {
+      "paper_id": "2611.14493",
+      "title": "Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents",
+      "fingerprint": "69f8db014cd05da99406c86cd5ba4ba6e34a652dfaef630f3ab353653c34df2e",
+      "evaluation": {
+        "paper_id": "2611.14493",
+        "task_type": "LLM智能体评估框架比较",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦LLM企业分析智能体评估，不涉及视觉/多模态匹配、船舶或交通感知",
+          "无可迁移到跨模态匹配或船舶视觉检测的具体机制",
+          "文本仅提及trace与red-teaming，未给出可复用的感知学习结构"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "LLM企业分析智能体评估研究，与海事多源关联、船舶视觉及通用视觉匹配方法无关。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "企业LLM分析智能体的评估框架稳定性、风险检测与未知风险发现",
+        "target_task": "none",
+        "core_contribution": "提出三阶段比较研究，对比trace-based LLM判定、文本LLM判定加红队与确定性启发式三类评估框架，并建议功能评估与安全红队双框架策略",
+        "application_context": "企业多工具工作流中的LLM分析智能体部署与评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "13a125fa-5c66-48bb-bd0b-0a7ddeeddc4e"
+    },
+    "b9264459ce1dba2c850a7a82aaade260769402c5f0a86358221b6e90b055c3ba": {
+      "paper_id": "2611.14489",
+      "title": "Second-Best Trade Is Half Efficient in Multidimensional Markets",
+      "fingerprint": "b9264459ce1dba2c850a7a82aaade260769402c5f0a86358221b6e90b055c3ba",
+      "evaluation": {
+        "paper_id": "2611.14489",
+        "task_type": "多维双边市场机制设计理论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为市场机制与对偶理论证明，无感知、视觉或多模态内容",
+          "无可迁移的跨模态匹配或检测方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "多维双边市场机制设计理论研究，与海事融合、船舶视觉及感知匹配方法无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "多维双边市场中保证至少一半最优贸易收益的机制设计",
+        "target_task": "none",
+        "core_contribution": "证明满足贝叶斯激励相容、临时个体理性与强预算平衡的机制可达第一最优收益一半，并给出基于Cai–Devanur–Weinberg对偶与连续时间马尔可夫链的证明",
+        "application_context": "带附加价值与成本、向下封闭可行性约束的双边市场",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "13a125fa-5c66-48bb-bd0b-0a7ddeeddc4e"
+    },
+    "d3f689678cc437c0adf63d2135b4a12a3c9e36e868c334e27093d236d5e31ac0": {
+      "paper_id": "2611.14487",
+      "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
+      "fingerprint": "d3f689678cc437c0adf63d2135b4a12a3c9e36e868c334e27093d236d5e31ac0",
+      "evaluation": {
+        "paper_id": "2611.14487",
+        "task_type": "LLM研究构思评估游戏",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦LLM研究构思与提问游戏，无视觉或多模态匹配机制",
+          "不涉及船舶检测、跨模态对齐或感知学习"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "LLM研究构思评估研究，与海事多源关联、船舶视觉及通用视觉匹配方法无关。",
+        "confidence": 0.96,
+        "primary_domain": "other",
+        "primary_problem": "评估LLM在研究构思中的搜索过程与瓶颈",
+        "target_task": "none",
+        "core_contribution": "构建Re-Search二十问式研究构思基准，发现瓶颈在生成而非判断，并提出外部想法与问题增强搜索的设计原则",
+        "application_context": "基于200篇ICML论文的LLM研究构思评测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "13a125fa-5c66-48bb-bd0b-0a7ddeeddc4e"
+    },
+    "f2d1a7ed46ae8642d6ae224175621e22682b1a9da5311205a5554a33cf3cde56": {
+      "paper_id": "2611.14485",
+      "title": "A fourth-order dimensionally split exponential time differencing scheme with real and distinct pole rational approximation for non-linear reaction-diffusion systems",
+      "fingerprint": "f2d1a7ed46ae8642d6ae224175621e22682b1a9da5311205a5554a33cf3cde56",
+      "evaluation": {
+        "paper_id": "2611.14485",
+        "task_type": "反应扩散系统数值格式",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为数值偏微分方程格式，无感知或视觉任务",
+          "无可迁移到跨模态匹配或船舶视觉的具体机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "非线性反应扩散系统数值求解格式研究，与海事融合、船舶视觉及感知匹配方法无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "非线性反应扩散系统的四阶L稳定指数时间差分数值求解",
+        "target_task": "none",
+        "core_contribution": "提出ETDRK4RDP-IF格式，用四阶L可接受实极点有理逼近矩阵指数并采用维分裂积分因子，提升串并行效率",
+        "application_context": "带Dirichlet与Neumann边界条件的反应扩散方程数值实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "13a125fa-5c66-48bb-bd0b-0a7ddeeddc4e"
+    },
+    "97da77dcff3ee0a80fe98f72b9b9cd4e2800a30e01bfcda592d6a0b2632f877c": {
+      "paper_id": "2611.14483",
+      "title": "Mechanistic Interpretability Needs a Logic of Inference",
+      "fingerprint": "97da77dcff3ee0a80fe98f72b9b9cd4e2800a30e01bfcda592d6a0b2632f877c",
+      "evaluation": {
+        "paper_id": "2611.14483",
+        "task_type": "mechanistic_interpretability_theory",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We propose five principles and organize them into a recursive logic for a more rigorous procedure of mechanistic inference.",
+            "interpretation_zh": "提出机制可解释性的推断逻辑原则，属于理论框架而非可复用感知匹配方法。",
+            "inference": false
+          },
+          {
+            "quote_en": "it helps turn local interpretability findings into cumulative knowledge of mechanisms within models",
+            "interpretation_zh": "目标是累积模型内部机制知识，不涉及跨模态对齐或目标检测等任务。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯理论/可解释性框架，摘要无可用于船舶视觉或跨模态匹配的具体算法机制",
+          "不涉及任何多源关联、检测、分割或匹配训练目标"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究机制可解释性的推断逻辑，与海事多源关联、船舶视觉及可迁移匹配学习无具体方法联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "从复杂神经系统中推断机制缺乏严谨推断逻辑",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出五条原则并组织为递归的机制推断逻辑框架",
+        "application_context": "神经网络机制可解释性研究",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "94eaf3df-6f69-4af7-b0b5-8ca737a7d384"
+    },
+    "b4b0e5cd227062fab35243f3dbc2968f501c7a8398ae9a281bd3febcc723197e": {
+      "paper_id": "2611.14478",
+      "title": "Non-local phase transition models for partial singularities",
+      "fingerprint": "b4b0e5cd227062fab35243f3dbc2968f501c7a8398ae9a281bd3febcc723197e",
+      "evaluation": {
+        "paper_id": "2611.14478",
+        "task_type": "mathematical_analysis",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We study $Γ$-convergence, under appropriate scalings, of the energy functionals",
+            "interpretation_zh": "研究泛函的Gamma收敛，属于纯数学分析。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学泛函分析，与视觉或多模态感知无任何方法联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "非局部相变模型的数学分析，与海事感知、船舶视觉和跨模态匹配均无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "非局部相变能量泛函的Gamma收敛与极限行为",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "刻画多井势下能量泛函在不同尺度下的极限模型",
+        "application_context": "数学分析理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "94eaf3df-6f69-4af7-b0b5-8ca737a7d384"
+    },
+    "71fef15768ae39628af3c8d884715a201375e12cfaf36fb1a79c700f601e3b1b": {
+      "paper_id": "2611.14476",
+      "title": "BoviShift: A Six-Year Multi-Attribute Audit of Visual Cattle Phenotyping Across Animals and Time",
+      "fingerprint": "71fef15768ae39628af3c8d884715a201375e12cfaf36fb1a79c700f601e3b1b",
+      "evaluation": {
+        "paper_id": "2611.14476",
+        "task_type": "visual_phenotyping_benchmark",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Image-random splitting can place views of the same animal in both training and test sets",
+            "interpretation_zh": "指出图像随机划分导致同个体出现在训练与测试集的泄漏问题，并提出个体不交划分评估。",
+            "inference": false
+          },
+          {
+            "quote_en": "zero-shot video-frame aggregation exposes a still-to-video domain gap",
+            "interpretation_zh": "揭示静态图像到视频帧的域差异，属评估协议层面的观察。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为牲畜表型视觉，属专用场景而非通用匹配方法",
+          "未给出跨模态对齐或可微匹配等任务无关算法机制",
+          "仅评估划分策略，未提出可迁移学习模块"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "牲畜视觉表型评估协议研究，属专用场景，无跨模态匹配或船舶感知的具体可迁移机制。",
+        "confidence": 0.9,
+        "primary_domain": "specialized_industrial",
+        "primary_problem": "相关图像与视频帧导致牲畜视觉表型评估不可靠",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "构建跨六年队列的牲畜视觉数据集并审计划分与未来队列评估策略",
+        "application_context": "牲畜表型非接触视觉估计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "94eaf3df-6f69-4af7-b0b5-8ca737a7d384"
+    },
+    "36bda1e242ab9dbf8619d1c263bfbc6badf44e76a060254afcbc7614e6727d3a": {
+      "paper_id": "2611.14470",
+      "title": "TanCRAFT: Context-Reasoned Anticipatory Feedback for Assembly Tasks",
+      "fingerprint": "36bda1e242ab9dbf8619d1c263bfbc6badf44e76a060254afcbc7614e6727d3a",
+      "evaluation": {
+        "paper_id": "2611.14470",
+        "task_type": "assembly_error_prevention_assistance",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "forecasts the near-future motion of manipulated pieces, and intervenes when the predicted placement is incompatible with the target",
+            "interpretation_zh": "预测被操作部件的近未来运动并在不兼容时干预，属装配辅助中的动作预测。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为装配任务的错误预防与动作预测，属机器人操作辅助",
+          "未提供任务无关的跨模态匹配或船舶视觉可复用机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "装配任务预测反馈系统，涉及动作预测而非感知匹配，与海事关联和船舶视觉无具体方法联系。",
+        "confidence": 0.93,
+        "primary_domain": "other",
+        "primary_problem": "装配顺序自由时难以在错误发生前干预",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "四阶段实时预测辅助系统，跟踪场景状态并预测部件运动以提前干预",
+        "application_context": "七巧板装配任务与机器人工作单元辅助",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "94eaf3df-6f69-4af7-b0b5-8ca737a7d384"
+    },
+    "d69cd9668717c029fc267bddc9ad0711f4c3c73e6ee5ec57b4a6e474572e9b9a": {
+      "paper_id": "2611.14467",
+      "title": "A Theory of Policy Optimization in Post-Training: Coverage Collapse and Reference Resets",
+      "fingerprint": "d69cd9668717c029fc267bddc9ad0711f4c3c73e6ee5ec57b4a6e474572e9b9a",
+      "evaluation": {
+        "paper_id": "2611.14467",
+        "task_type": "语言模型策略优化理论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We formalize this intervention in Approximate Policy Mirror Descent (APMD), a meta-algorithm that approximately solves a sequence of KL-regularized RL subproblems.",
+            "interpretation_zh": "提出APMD元算法，通过参考重置序列求解KL正则化RL子问题，属语言模型后训练理论，与海事感知任务无具体可复用学习机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯语言模型后训练理论，无视觉/多模态感知任务",
+          "摘要未给出可迁移到目标检测或跨模态匹配的具体机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "语言模型策略优化理论，与海事感知、船舶视觉及跨模态匹配无具体可迁移机制。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "语言模型后训练中策略优化的覆盖崩溃与参考重置理论分析",
+        "target_task": "无",
+        "core_contribution": "提出APMD元算法及coverage-preserving保证，解释正则化、裁剪和目标选择对采样的影响",
+        "application_context": "语言模型后训练",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "09fc8738-7fbd-458c-a2ec-525ff1662fe1"
+    },
+    "c402255c0ee0c790469a96f746c4ce63fd293140e0a4e588d0a078ea843672e4": {
+      "paper_id": "2611.14452",
+      "title": "Revisiting the centrifugal breakout scaling relationship for H$α$ emission in light of $ρ$ Oph C, the coolest B-type star with an H$α$-bright centrifugal magnetosphere",
+      "fingerprint": "c402255c0ee0c790469a96f746c4ce63fd293140e0a4e588d0a078ea843672e4",
+      "evaluation": {
+        "paper_id": "2611.14452",
+        "task_type": "恒星磁层观测天体物理",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We present a new dataset of high-resolution ESPaDOnS spectropolarimetry covering the star's rotational period, which is revisited by combining Hipparcos, K2 and TESS photometry.",
+            "interpretation_zh": "天体光谱偏振观测与光度数据结合分析，属天文观测，与感知方法无关。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯天体物理观测研究，无感知或匹配方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "天体物理恒星磁层观测，与海事融合、船舶视觉及通用视觉匹配方法均无关联。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "B型星离心磁层Hα辐射与自转周期分析",
+        "target_task": "无",
+        "core_contribution": "结合光谱偏振与多源测光重新约束ρ Oph C磁场与Hα辐射",
+        "application_context": "恒星天体物理观测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "09fc8738-7fbd-458c-a2ec-525ff1662fe1"
+    },
+    "b98286deb17cd9a16214796758b137c80300b72dcdb99a80e59e61b12deb29ef": {
+      "paper_id": "2611.14451",
+      "title": "A Lightweight Differentiable Method for Real-Time Skin Rendering and Digitization",
+      "fingerprint": "b98286deb17cd9a16214796758b137c80300b72dcdb99a80e59e61b12deb29ef",
+      "evaluation": {
+        "paper_id": "2611.14451",
+        "task_type": "可微皮肤次表面散射渲染",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce a differentiable Screen-Space Subsurface Scattering (SSSS) framework that enables the joint optimization of spatially varying base textures and scattering distances.",
+            "interpretation_zh": "提出可微屏幕空间次表面散射框架联合优化纹理与散射距离，属渲染逆问题，与感知检测/匹配任务无直接通用机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "Optimization is driven by a masked loss function targeting regions where subsurface scattering effects are dominant.",
+            "interpretation_zh": "用掩码损失聚焦主导区域，属渲染优化细节，不能直接说明对船舶检测或跨模态匹配的可迁移性。",
+            "inference": true
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "为渲染逆问题，非感知检测/分割/匹配",
+          "掩码损失与可微渲染到目标感知任务的调整无摘要证据支持"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "皮肤可微渲染研究，与海事融合、船舶视觉及通用匹配方法缺乏具体可迁移机制。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "面向实时渲染的可微皮肤次表面散射参数估计",
+        "target_task": "无",
+        "core_contribution": "可微SSSS框架联合优化基纹理和散射距离，生成可用于实时着色器的参数",
+        "application_context": "皮肤外观采集与实时渲染",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "09fc8738-7fbd-458c-a2ec-525ff1662fe1"
+    },
+    "462fe11cd396ce47e24501f843031a9b13fc4312e3a84afaadb3b5e2c0f54c7c": {
+      "paper_id": "2611.14435",
+      "title": "A Statistical Analysis of Lopsidedness in Disk Galaxies",
+      "fingerprint": "462fe11cd396ce47e24501f843031a9b13fc4312e3a84afaadb3b5e2c0f54c7c",
+      "evaluation": {
+        "paper_id": "2611.14435",
+        "task_type": "盘星系不对称性统计分析",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We present a statistical analysis of Fourier lopsidedness in disk galaxies based on a deduplicated compilation of 606 unique objects",
+            "interpretation_zh": "对盘星系傅里叶不对称性做统计，属天体测量统计，与感知匹配无关。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯天文统计研究，无感知或匹配方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "盘星系不对称性统计研究，与海事多源关联、船舶视觉和通用视觉方法无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "盘星系m=1/m=2傅里叶不对称性的统计规律",
+        "target_task": "无",
+        "core_contribution": "基于606星系样本给出不对称性分布、相关性与模拟对比",
+        "application_context": "星系形态学统计",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "09fc8738-7fbd-458c-a2ec-525ff1662fe1"
+    },
+    "836b11e4af1fbfb796f8adb1b7987402143abf8c576ba86bfd8d1aed746ec2a7": {
+      "paper_id": "2611.14431",
+      "title": "Demonstration of MANA: Multi-perspective Alignment of NPC Agents",
+      "fingerprint": "836b11e4af1fbfb796f8adb1b7987402143abf8c576ba86bfd8d1aed746ec2a7",
+      "evaluation": {
+        "paper_id": "2611.14431",
+        "task_type": "embodied NPC behavior authoring via demonstration",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要涉及Minecraft中NPC行为示教与策略蒸馏，未涉及船舶视觉、跨模态匹配或海上多源融合",
+          "摘要未提供可复用的感知-匹配学习机制细节（仅有‘distills each demonstration into a generalized policy’等高层描述）"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "游戏NPC行为示教与策略蒸馏，与海事多源关联、船舶视觉及通用跨模态匹配无实质联系。",
+        "confidence": 0.92,
+        "primary_domain": "other",
+        "primary_problem": "通过具身示教为NPC编写行为策略",
+        "target_task": "general_visual_method",
+        "core_contribution": "提出MANA交互式示教与策略蒸馏框架",
+        "application_context": "Minecraft中NPC行为对齐演示",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "949b1775-2e22-45cd-9daf-122ac6901e71"
+    },
+    "14746ac6c605a120dc8a2481b742df8fd2cb8a5cfa55699af86798f8bb662248": {
+      "paper_id": "2611.14428",
+      "title": "Convergence and global optimality of Wasserstein--Fisher--Rao descent for Gaussian mixtures",
+      "fingerprint": "14746ac6c605a120dc8a2481b742df8fd2cb8a5cfa55699af86798f8bb662248",
+      "evaluation": {
+        "paper_id": "2611.14428",
+        "task_type": "Gaussian mixture fitting optimization theory",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学优化与统计理论，摘要无任何视觉/多模态感知任务或匹配机制",
+          "未提供可迁移到跨模态匹配或船舶感知的具体学习模块"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "高斯混合Wasserstein-Fisher-Rao下降收敛性理论，与目标感知任务无直接或可具体迁移联系。",
+        "confidence": 0.93,
+        "primary_domain": "other",
+        "primary_problem": "高斯位置混合非参数极大似然的WFR下降收敛与全局最优性",
+        "target_task": "general_visual_method",
+        "core_contribution": "证明WFR下降序列弱收敛、有限长度及次优不动点概率",
+        "application_context": "统计建模理论分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "949b1775-2e22-45cd-9daf-122ac6901e71"
+    },
+    "e01e98c2747710da28198a8cc62d714ac66b2a882bef4b33bec823121e062f18": {
+      "paper_id": "2611.14425",
+      "title": "Quantifying the Sampling Frequency Invariance of Time-Series Foundation Models for Sensor Data Applications",
+      "fingerprint": "e01e98c2747710da28198a8cc62d714ac66b2a882bef4b33bec823121e062f18",
+      "evaluation": {
+        "paper_id": "2611.14425",
+        "task_type": "time-series foundation model evaluation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究时序基础模型的采样频率不变性评估，未涉及船舶检测/分割或视觉-AIS跨模态关联",
+          "所提指标FSI/FDI/CDI为评估指标，非可迁移的匹配或检测学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "时序基础模型采样频率不变性压力测试，与海事融合、船舶视觉及跨模态匹配学习无直接联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "量化时序基础模型对采样频率变化的鲁棒性",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出FSI/FDI/CDI指标并系统评估四个TSFM的SF不变性",
+        "application_context": "传感器时序数据应用中的模型评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "949b1775-2e22-45cd-9daf-122ac6901e71"
+    },
+    "1a9c005defded975b12e001445b2d51923715ad403b82bd8358b8c8dccdfa265": {
+      "paper_id": "2611.14422",
+      "title": "The energetic cost of loading classical data in quantum computers",
+      "fingerprint": "1a9c005defded975b12e001445b2d51923715ad403b82bd8358b8c8dccdfa265",
+      "evaluation": {
+        "paper_id": "2611.14422",
+        "task_type": "quantum data loading energy cost",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究量子计算中QRAM数据加载能耗，属量子硬件与通信/计算工程范畴",
+          "摘要无视觉感知、跨模态匹配或目标检测的可迁移方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子随机存取存储器查询能耗分析，与海事多源关联、船舶视觉及通用匹配方法无关。",
+        "confidence": 0.93,
+        "primary_domain": "other",
+        "primary_problem": "量化超导处理器上QRAM查询的动态能耗与保真度权衡",
+        "target_task": "general_visual_method",
+        "core_contribution": "基于metric-noise-resource框架分析QRAM查询能耗并提出优化",
+        "application_context": "量子计算数据加载硬件过程评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "949b1775-2e22-45cd-9daf-122ac6901e71"
+    },
+    "d0f0aa87592edd5f12d920ee97f3e15527928f4d6bb5f6db69fa149357d9f3e4": {
+      "paper_id": "2611.14419",
+      "title": "Evaluating LLM-Generated World Models for Neuro-Symbolic Reasoning",
+      "fingerprint": "d0f0aa87592edd5f12d920ee97f3e15527928f4d6bb5f6db69fa149357d9f3e4",
+      "evaluation": {
+        "paper_id": "2611.14419",
+        "task_type": "LLM生成形式化世界模型及神经符号推理基准评测",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要不涉及视觉/多模态匹配、目标检测分割跟踪或雷达/AIS等感知任务",
+          "无具体可复用的匹配或表征学习机制，仅评测LLM生成的博弈结构",
+          "无法据此推断任何输入、训练目标或结构层面对目标任务的适配"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究LLM生成部分可观测随机博弈世界模型的评测基准，属形式化推理与规划，与海事多源关联、船舶视觉及通用视觉/多模态匹配均无方法联系。",
+        "confidence": 0.93,
+        "primary_domain": "other",
+        "primary_problem": "评估LLM生成的形式化世界模型在机械有效性、结构一致性与语义上是否忠实反映决策问题",
+        "target_task": "神经符号推理与规划中的形式化世界模型评测",
+        "core_contribution": "提出44个场景的基准，从机械有效性、参考相对结构一致性与语义三维度评测LLM生成的POMG世界模型",
+        "application_context": "博弈、情境与文化场景下的多智能体决策问题形式化",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3bbf8614-cf99-49ed-a099-b9212696b055"
+    },
+    "ce3e502dea03136b8823575ff62cbe4ba9576e33eae89b35625f9472017a62bd": {
+      "paper_id": "2611.14409",
+      "title": "Regularity of $Q$-valued $C^1$ harmonic functions with applications to stable minimal hypersurfaces",
+      "fingerprint": "ce3e502dea03136b8823575ff62cbe4ba9576e33eae89b35625f9472017a62bd",
+      "evaluation": {
+        "paper_id": "2611.14409",
+        "task_type": "Q值调和函数正则性与稳定极小超曲面研究",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯几何测度论与调和分析理论工作，无视觉或多模态任务",
+          "无可迁移到感知的算法或学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数学正则性理论研究，涉及Q值调和函数与稳定极小超曲面，与船舶感知、多源融合及通用视觉匹配无任何联系。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "Q值C^1调和函数的正则性及分支集结构",
+        "target_task": "稳定极小超曲面的正则性理论",
+        "core_contribution": "证明Q值调和函数导数的Dirichlet极小性、分支集可求长及多值C^{1,α}正则性",
+        "application_context": "几何测度论与极小曲面理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3bbf8614-cf99-49ed-a099-b9212696b055"
+    },
+    "95a0b032ec924cf04aa880f6775cc6beff95676b3a2ff8836300293baf3e526f": {
+      "paper_id": "2611.14407",
+      "title": "Causal Concept Explanations for Deep Neural Models",
+      "fingerprint": "95a0b032ec924cf04aa880f6775cc6beff95676b3a2ff8836300293baf3e526f",
+      "evaluation": {
+        "paper_id": "2611.14407",
+        "task_type": "基于干预中介分析的因果概念解释训练目标",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce Causal Concept Wrapper Network (CCW-Net), the first use of interventional mediation analysis from fields such as economics, medicine, and epidemiology as a training objective to align causal effects of concept-based explanations with a model's output.",
+            "interpretation_zh": "以中介分析作为训练目标对齐概念表示与模型输出，属可解释性训练机制，与匹配学习无直接机制联系。",
+            "inference": false
+          },
+          {
+            "quote_en": "Counterfactual concept representations anchor a set of causal alignment criteria: necessity, sufficiency, and independence.",
+            "interpretation_zh": "提出必要性、充分性与独立性三种因果对齐准则，可视为一种表示约束，但面向概念可解释性而非跨模态匹配。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向概念解释的因果对齐，非跨模态或目标级匹配学习",
+          "摘要未给出可用于输入对齐、困难负样本或缺失模态建模的具体机制",
+          "若迁移到跨模态匹配需大幅重构训练目标，摘要无相应证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究因果概念解释训练目标，验证于飞机控制、驾驶与图像分类，未涉及海事融合或船舶视觉，其因果对齐约束与匹配学习关系间接且摘要证据不足。",
+        "confidence": 0.85,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "概念解释与模型输出之间的因果关系引导与量化",
+        "target_task": "概念基解释的因果对齐训练与评估",
+        "core_contribution": "提出CCW-Net，用干预中介分析构造必要性、充分性、独立性因果对齐训练目标",
+        "application_context": "飞机控制、驾驶与图像分类等自主系统的可解释性评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3bbf8614-cf99-49ed-a099-b9212696b055"
+    },
+    "93841e2a15590c821a3f67442e2550b5da5688659236dc7cf71623a619415815": {
+      "paper_id": "2611.14406",
+      "title": "Multidimensional Quantum Block Turbo Codes",
+      "fingerprint": "93841e2a15590c821a3f67442e2550b5da5688659236dc7cf71623a619415815",
+      "evaluation": {
+        "paper_id": "2611.14406",
+        "task_type": "多维量子分组Turbo码译码理论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "属量子纠错编码理论，与视觉感知无关联",
+          "无可迁移的感知或匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子分组Turbo码译码理论研究，属通信/编码核心，与海事关联融合、船舶视觉及通用视觉匹配无关。",
+        "confidence": 0.97,
+        "primary_domain": "communication_engineering",
+        "primary_problem": "多维量子分组Turbo码的迭代译码算法",
+        "target_task": "多层乘积码的量子Turbo译码",
+        "core_contribution": "提出多维量子分组Turbo码理论并仿真三维情形在去极化信道上的性能",
+        "application_context": "量子纠错编码与信道译码",
+        "security_centric": false,
+        "communication_centric": true
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3bbf8614-cf99-49ed-a099-b9212696b055"
+    },
+    "4e6c425bfcfcc7c119aa479fdee4b699f2132e36c9af8cc87a6dc80cecbf0c61": {
+      "paper_id": "2611.14401",
+      "title": "Discovering Equations for the Thermodynamics of South Asian Monsoon Precipitation",
+      "fingerprint": "4e6c425bfcfcc7c119aa479fdee4b699f2132e36c9af8cc87a6dc80cecbf0c61",
+      "evaluation": {
+        "paper_id": "2611.14401",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "气象降水预测，与海事关联融合、船舶视觉或多模态匹配无任务联系",
+          "符号蒸馏/符号回归方法未给出可迁移到感知匹配的具体机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "季风降水热力学方程发现，与船舶感知及跨模态匹配无直接任务或具体可迁移方法联系。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "利用符号蒸馏从再分析数据中学习可解释的季风降水热力学方程",
+        "target_task": "其他",
+        "core_contribution": "结合神经网络与符号回归发现可解释的降水闭式方程",
+        "application_context": "南亚季风降水再分析数据",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ff1fc355-6377-45f2-820f-a42e97c5a61a"
+    },
+    "4b3705b801905e227d71195297c67f8fd48e7f68c20aa005840b54e6680d74d6": {
+      "paper_id": "2611.14399",
+      "title": "REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding",
+      "fingerprint": "4b3705b801905e227d71195297c67f8fd48e7f68c20aa005840b54e6680d74d6",
+      "evaluation": {
+        "paper_id": "2611.14399",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "REAL, a real EAL training loss that uses path weights for unbiased estimation and Rao-Blackwellization for variance reduction",
+            "interpretation_zh": "提出用路径权重无偏估计与Rao-Blackwell化降低方差的真实期望接受长度训练损失",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向LLM投机解码的接受长度训练损失，摘要未给出跨模态匹配或目标检测的可迁移证据",
+          "无海事或视觉感知任务联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "LLM投机解码训练损失优化，与海事感知及跨模态匹配无直接关联，且无可具体说明的迁移路径。",
+        "confidence": 0.96,
+        "primary_domain": "other",
+        "primary_problem": "投机解码中期望接受长度(EAL)的训练损失精确建模",
+        "target_task": "其他",
+        "core_contribution": "导出REAL损失，用路径权重无偏估计和Rao-Blackwell化降低方差",
+        "application_context": "大语言模型投机解码推理加速",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ff1fc355-6377-45f2-820f-a42e97c5a61a"
+    },
+    "39115aacc07edeeb06c7a65ff0666ee1454dadadee7ffd59ea115637e04e7b28": {
+      "paper_id": "2611.14388",
+      "title": "The two-component picture of soft hadron production: Regge exchange, duality, and resonance cascades",
+      "fingerprint": "39115aacc07edeeb06c7a65ff0666ee1454dadadee7ffd59ea115637e04e7b28",
+      "evaluation": {
+        "paper_id": "2611.14388",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "高能物理软强子产生综述，与感知任务或匹配方法无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "软强子产生/Regge交换综述，与海事多源融合及视觉感知无任何任务或方法联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "软强子碰撞碎裂区的双组分图像与共振级联理论",
+        "target_task": "其他",
+        "core_contribution": "综述Regge交换、对偶性与共振级联描述软强子产生",
+        "application_context": "高能强子碰撞实验数据（如NA49）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ff1fc355-6377-45f2-820f-a42e97c5a61a"
+    },
+    "e5203d4460c32795d26f9bca7b00059bf91231ca77d4e7e986dd9488c96013bd": {
+      "paper_id": "2611.14385",
+      "title": "Semiparametric Inference in Panel Data with Interactive and High-dimensional Confounding",
+      "fingerprint": "e5203d4460c32795d26f9bca7b00059bf91231ca77d4e7e986dd9488c96013bd",
+      "evaluation": {
+        "paper_id": "2611.14385",
+        "task_type": "其他",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "计量经济学面板数据推断，与视觉/多模态感知匹配无任务联系",
+          "因子增广DML无与感知检测匹配的具体迁移证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "高维混杂面板数据的半参数推断方法，与船舶感知或跨模态匹配无直接任务或具体可迁移联系。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "含高维观测协变量与潜在交互混杂的面板模型中低维处理系数推断",
+        "target_task": "其他",
+        "core_contribution": "提出因子增广DML(FA-DML)及三重单元级交叉拟合实现有效推断",
+        "application_context": "美国各州最低工资与工资比率的实证应用",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ff1fc355-6377-45f2-820f-a42e97c5a61a"
+    },
+    "4ec3b965f2c6da3a89a748d26c07532e5a9ce1c600955e62c3d516dabd0bbaff": {
+      "paper_id": "2611.14380",
+      "title": "What Factors Matter for Collection-Level Counting with Human-AI Collaboration?",
+      "fingerprint": "4ec3b965f2c6da3a89a748d26c07532e5a9ce1c600955e62c3d516dabd0bbaff",
+      "evaluation": {
+        "paper_id": "2611.14380",
+        "task_type": "human-AI协作的集合级目标计数",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Estimation efficiency improves further when model predictions are used to prioritize which units humans label, rather than sampling uniformly.",
+            "interpretation_zh": "摘要提出用模型预测优先选择人工标注单元以提升估计效率，属于人机协作标注采样策略，与跨模态匹配或船舶感知无直接算法机制联系。",
+            "inference": false
+          },
+          {
+            "quote_en": "modern multimodal models provide a strong, training-free starting point for many tasks",
+            "interpretation_zh": "摘要称现成多模态模型可作为许多任务的强起点，但未给出可复用的匹配/对齐学习机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为集合级计数与人机协作标注，不涉及船舶、雷达/AIS或道路目标感知。",
+          "未给出跨模态对齐、困难负样本或可微匹配等具体可复用机制。",
+          "多模态模型仅作为现成工具提及，缺少方法细节。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "主题为集合级计数与人工标注策略，无海事或陆上感知任务联系，也无具体可迁移匹配机制。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "面向大批量图像集合的目标总数估计与人机协作标注策略选择",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "在12个计数任务上系统比较模型、估计器与适配策略，并提出用模型预测优先选择人工标注单元",
+        "application_context": "生物医学显微、野生动物航拍调查与城市结构航拍影像的集合级计数",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "193213ac-eaf6-40e7-b7c3-d8697ef5b299"
+    },
+    "94cf3a03b90fe7fefdf1e57176749d05135a9bcda587ec5de914a0be2f7d9559": {
+      "paper_id": "2611.14379",
+      "title": "Complexity of Deciding Existence of Maltsev Polymorphisms of Finite Relational Structures",
+      "fingerprint": "94cf3a03b90fe7fefdf1e57176749d05135a9bcda587ec5de914a0be2f7d9559",
+      "evaluation": {
+        "paper_id": "2611.14379",
+        "task_type": "有限关系结构的Maltsev多态性判定复杂性",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯组合/代数复杂性理论，与视觉或多模态感知无关。",
+          "摘要不含任何感知、匹配学习或船舶任务证据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯代数复杂性论文，与海事感知及通用视觉匹配方法均无联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "判定有限关系结构是否具有Maltsev多态性的计算复杂性",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "证明该判定问题可在多项式时间内求解，并归约到二元关系结构",
+        "application_context": "理论计算机科学与代数组合",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "193213ac-eaf6-40e7-b7c3-d8697ef5b299"
+    },
+    "323034d0dc4d676b16cfe8351042f5dc3fe13119c36ff60f9587a91cbc23d04d": {
+      "paper_id": "2611.14378",
+      "title": "Parabolic semiinfinite sheaves on affine flag varieties",
+      "fingerprint": "323034d0dc4d676b16cfe8351042f5dc3fe13119c36ff60f9587a91cbc23d04d",
+      "evaluation": {
+        "paper_id": "2611.14378",
+        "task_type": "仿射旗簇上的抛物半无限层论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学表示论/几何论文，与感知任务无关。",
+          "无任何可迁移的机器学习方法证据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数学层论研究，与海事融合、船舶视觉及通用视觉方法无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "仿射旗簇上抛物半无限层论中的t-结构与等价",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "在抛物半无限背景下定义perverse t-结构与Raskin等价并研究Gaitsgory层类比",
+        "application_context": "代数几何与Langlands纲领相关理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "193213ac-eaf6-40e7-b7c3-d8697ef5b299"
+    },
+    "212d205140dea4907be3806b2750ae0331d62cd8b73cbbc2d06fffde7e8a96a6": {
+      "paper_id": "2611.14375",
+      "title": "From Distribution of Extremes With Degradation to the Stress Redundancy Principle",
+      "fingerprint": "212d205140dea4907be3806b2750ae0331d62cd8b73cbbc2d06fffde7e8a96a6",
+      "evaluation": {
+        "paper_id": "2611.14375",
+        "task_type": "带退化源的首达时间极值分布与压力冗余原理",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "统计物理/随机过程理论，与视觉感知无关。",
+          "摘要无可用于目标检测或跨模态匹配的算法机制。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "随机过程与首达时间理论研究，与海事感知及通用视觉匹配方法无联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "退化源如何影响多个随机粒子中最快到达窄目标的首达时间与逃逸位置统计",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "推导大种群下最快粒子平均首达时间渐近式并提出压力冗余原理",
+        "application_context": "细胞与分子时间尺度的统计物理建模",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "193213ac-eaf6-40e7-b7c3-d8697ef5b299"
+    },
+    "9c2271c0a203442f5103f732361eda2c6cf4be221fa7c6b929564f0a39b0f09f": {
+      "paper_id": "2611.14374",
+      "title": "Uncertainty-Aware Hybrid Offline Reinforcement Learning with Online Action Selection Enabled by Sparse Gaussian-Process Critics",
+      "fingerprint": "9c2271c0a203442f5103f732361eda2c6cf4be221fa7c6b929564f0a39b0f09f",
+      "evaluation": {
+        "paper_id": "2611.14374",
+        "task_type": "offline_reinforcement_learning_control",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "replace the critic and AAE with a sparse variational Gaussian-process (sGP) critic",
+            "interpretation_zh": "用稀疏变分高斯过程critic替代树集成critic与AAE惩罚，属于离线强化学习不确定性建模",
+            "inference": false
+          },
+          {
+            "quote_en": "Actions maximise $μ- κσ$, an uncertainty-adjusted estimate of the return",
+            "interpretation_zh": "以均值减κ倍标准差作为不确定性调整的动作选择准则",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要未涉及视觉或多模态感知任务",
+          "无任何船舶/雷达/AIS/匹配相关场景",
+          "方法核心是离线RL控制而非跨模态匹配或检测表征"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究聚合反应器离线强化学习控制，与船舶视觉、多源关联、跨模态匹配无任务或方法联系。",
+        "confidence": 0.95,
+        "primary_domain": "specialized_industrial",
+        "primary_problem": "聚合反应器启动与牌号切换的离线强化学习动作选择",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "用稀疏变分高斯过程critic替换树集成与AAE惩罚，实现不确定性调整的离线RL在线动作选择",
+        "application_context": "HOFLON聚合反应器基准的启动控制",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "46e66c74-9fc2-4a0d-b94f-be48e2287d45"
+    },
+    "8ef47fc1c969ccb248cc2636c2860760ce4cb9380ebe31caaec1c5c8919bb34a": {
+      "paper_id": "2611.14373",
+      "title": "Gaussian Process-Augmented Model Predictive Contouring Control for 6-DoF Trajectory Tracking with a Holonomic AUV",
+      "fingerprint": "8ef47fc1c969ccb248cc2636c2860760ce4cb9380ebe31caaec1c5c8919bb34a",
+      "evaluation": {
+        "paper_id": "2611.14373",
+        "task_type": "auv_trajectory_tracking_control",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "residual dynamics learned via Gaussian Process (GP) regression",
+            "interpretation_zh": "用高斯过程回归学习残差动力学，属于控制中的模型误差补偿",
+            "inference": false
+          },
+          {
+            "quote_en": "embedded in the optimal control problem through a zero-order robust optimization scheme",
+            "interpretation_zh": "将学习残差以零阶鲁棒优化嵌入最优控制问题",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "目标是AUV六自由度轨迹跟踪控制，非感知",
+          "摘要无匹配、检测或跨模态对齐机制",
+          "残差动力学学习不具备任务无关的可复用匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究AUV模型预测轮廓控制的GP残差动力学补偿，属控制规划方向，与感知匹配无具体联系。",
+        "confidence": 0.95,
+        "primary_domain": "specialized_industrial",
+        "primary_problem": "holonomic AUV在动力学不精确下的6-DoF轨迹跟踪",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "用GP学习残差动力学并以零阶鲁棒优化嵌入非线性MPCC，实现25Hz实时跟踪",
+        "application_context": "MOLA AUV水下结构近距离巡检",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "46e66c74-9fc2-4a0d-b94f-be48e2287d45"
+    },
+    "efadb8aca859919f3b81250df0d33538106daa2fd4e5595f1bed9e750e2b91e8": {
+      "paper_id": "2611.14362",
+      "title": "How Well Do SAST Tools Work Across Languages? An Empirical Study Using OCPP Implementations",
+      "fingerprint": "efadb8aca859919f3b81250df0d33538106daa2fd4e5595f1bed9e750e2b91e8",
+      "evaluation": {
+        "paper_id": "2611.14362",
+        "task_type": "sast_tool_evaluation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "empirical evaluation of Static Application Security Testing (SAST) tool performance across multiple programming languages",
+            "interpretation_zh": "跨语言静态应用安全测试工具性能的实证评估，属软件安全工具评测",
+            "inference": false
+          },
+          {
+            "quote_en": "using OCPP implementations as a real-world test corpus",
+            "interpretation_zh": "以OCPP实现作为真实测试语料，属软件漏洞检测场景",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为充电站软件安全工具，非视觉或多模态感知",
+          "无船舶检测、跟踪或跨模态匹配方法",
+          "安全评测非攻击方法，且与感知学习无任务联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "评估电充协议实现的SAST工具跨语言表现，属软件安全评测，与目标感知方向无关。",
+        "confidence": 0.95,
+        "primary_domain": "cybersecurity",
+        "primary_problem": "跨编程语言SAST工具在OCPP实现上的检测差异",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "首个用OCPP 1.6多语言实现语料评测SAST工具性能的实证研究",
+        "application_context": "电动汽车充电站软件安全性评估",
+        "security_centric": true,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "46e66c74-9fc2-4a0d-b94f-be48e2287d45"
+    },
+    "89b03ce68c54eca61d4ccf19442594c48fd54562efbac739d5df6f10caf18e5b": {
+      "paper_id": "2611.14361",
+      "title": "Multi-quadratic equations associated with KdV-type equations",
+      "fingerprint": "89b03ce68c54eca61d4ccf19442594c48fd54562efbac739d5df6f10caf18e5b",
+      "evaluation": {
+        "paper_id": "2611.14361",
+        "task_type": "integrable_systems_mathematics",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "most KdV-type equations admit multi-quadratic quad equations as algebraic condition on Bäcklund transformation",
+            "interpretation_zh": "讨论KdV型方程的多二次quad方程作为Bäcklund变换代数条件，属数学可积系统",
+            "inference": false
+          },
+          {
+            "quote_en": "These quad equations also yield three-point discrete symmetries",
+            "interpretation_zh": "这些quad方程给出三点离散对称性",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学可积系统研究",
+          "无感知、检测或匹配任务",
+          "摘要无任何可迁移学习方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究KdV型方程的多二次quad方程与离散对称性，属纯数学，与感知任务无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "KdV型方程的多二次quad方程与Bäcklund变换代数结构",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "建立KdV型方程与Atkinson–Nieszporski类多二次quad方程的对应及离散对称性",
+        "application_context": "可积系统理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "46e66c74-9fc2-4a0d-b94f-be48e2287d45"
+    },
+    "476a0ef2be1fa1c9f79aaae49cc4854d24c95721c36cff1516a5b6347098196a": {
+      "paper_id": "2611.14360",
+      "title": "Direction-Selective Anomalous Quantum Transport from Saddle-like Topological Surface States Coupled to an Electronic Instability in YbSb$_{2}$",
+      "fingerprint": "476a0ef2be1fa1c9f79aaae49cc4854d24c95721c36cff1516a5b6347098196a",
+      "evaluation": {
+        "paper_id": "2611.14360",
+        "task_type": "quantum_transport_physics",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "Raman and coherent phonon spectroscopy reveal additional low-temperature modes consistent with a density-wave instability.",
+            "interpretation_zh": "该证据仅为凝聚态物理中的拉曼与相干声子谱测量，与视觉/多模态感知方法无关。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "主题为拓扑表面态与量子输运，属凝聚态物理",
+          "摘要不含任何计算机视觉、多模态匹配或船舶感知方法",
+          "无可复用学习/匹配机制证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "凝聚态量子输运研究，与海事融合、船舶视觉及通用视觉匹配均无方法联系。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "研究YbSb2薄膜中方向选择性反常量子输运及其与密度波不稳定的耦合",
+        "target_task": "none",
+        "core_contribution": "通过量子振荡、拉曼与相干声子谱揭示各向异性拓扑表面态与场响应密度波不稳定之间的动态耦合",
+        "application_context": "凝聚态物理基础研究，可外延薄膜输运测量",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb4efb8b-903c-4ebe-85bc-ded88a9b4bf5"
+    },
+    "faec2f76da072cf57632f1a9c662c4f337c99c422ac5898d96bad5336ba85495": {
+      "paper_id": "2611.14349",
+      "title": "Shape Perturbation of the Galerkin Boundary Element Dirichlet-to-Neumann Matrix on Moving Polygons",
+      "fingerprint": "faec2f76da072cf57632f1a9c662c4f337c99c422ac5898d96bad5336ba85495",
+      "evaluation": {
+        "paper_id": "2611.14349",
+        "task_type": "numerical_analysis_boundary_element",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We study the symmetric Galerkin boundary element matrix on the polygons in a Lipschitz neighborhood of a smooth reference curve.",
+            "interpretation_zh": "该证据为多边形上的对称Galerkin边界元矩阵误差分析，属数值分析，非感知学习方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "主题为边界元法误差分析与形状导数，非感知任务",
+          "摘要不含跨模态、检测、分割或匹配学习机制",
+          "无可迁移至船舶视觉的具体输入/训练/结构调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "边界元数值分析论文，与所关注感知、匹配方向无方法关联。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "分析移动多边形上Galerkin边界元Dirichlet-to-Neumann矩阵的形状扰动误差界",
+        "target_task": "none",
+        "core_contribution": "证明一阶变分与二阶余项在能量范数和Lipschitz范数下的统一界，并与连续算子一致",
+        "application_context": "Mullins-Sekerka等非局部界面演化问题的数值分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb4efb8b-903c-4ebe-85bc-ded88a9b4bf5"
+    },
+    "da70610ed856b251a5ec447495deba5eca4d7c88e95934335684c9330a8a1670": {
+      "paper_id": "2611.14346",
+      "title": "Generalized Cramér-Rao Inequalities Associated with $(h,τ)$-Divergence and $(h,τ)$-Exponential Family",
+      "fingerprint": "da70610ed856b251a5ec447495deba5eca4d7c88e95934335684c9330a8a1670",
+      "evaluation": {
+        "paper_id": "2611.14346",
+        "task_type": "information_geometry_theory",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We also provide a proof of this inequality based on the Cauchy-Schwarz inequality, thereby extending its applicability to models with more general support sets.",
+            "interpretation_zh": "该证据为基于柯西-施瓦茨不等式的统计不等式证明，属信息几何理论，非感知学习机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "主题为信息几何与Cramér-Rao不等式理论推广",
+          "摘要不含任何视觉、多模态或船舶感知方法",
+          "无可迁移的具体学习/匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "信息几何理论论文，与海事融合、船舶视觉及通用匹配方法无具体联系。",
+        "confidence": 0.96,
+        "primary_domain": "other",
+        "primary_problem": "建立与(h,τ)-散度和(h,τ)-指数族相关的广义Cramér-Rao不等式",
+        "target_task": "none",
+        "core_contribution": "利用信息几何与柯西-施瓦茨不等式证明(h,τ)-CR不等式，并给出该指数族的可达不等式",
+        "application_context": "统计推断与信息几何理论研究",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb4efb8b-903c-4ebe-85bc-ded88a9b4bf5"
+    },
+    "80af95a49dfb019ba8746a0e542ff0da611a1a7c1958ab2bc473d5163e91d76c": {
+      "paper_id": "2611.14343",
+      "title": "Leveraging Lensing-driven Early Warnings: Joint Detectability of lensed Gravitational Waves and their LSST Optical Counterparts",
+      "fingerprint": "80af95a49dfb019ba8746a0e542ff0da611a1a7c1958ab2bc473d5163e91d76c",
+      "evaluation": {
+        "paper_id": "2611.14343",
+        "task_type": "astrophysics_gravitational_wave",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "Furthermore, we define a detectability index ($\\rm DI$), which determines the EM-detectability in optical of lensed GW-detectable BNS and NSBH mergers.",
+            "interpretation_zh": "该证据定义透镜化引力波事件的光学可探测性指数，属天体物理模拟，非通用视觉匹配方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "主题为引力波透镜化与光学对应体联合探测，属天体物理",
+          "摘要不含视觉检测/分割/多模态匹配的可复用学习机制",
+          "无可迁移至船舶感知的具体方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "天体物理引力波与光学联合探测研究，与所关注感知与匹配方向无方法联系。",
+        "confidence": 0.96,
+        "primary_domain": "other",
+        "primary_problem": "评估O5期间透镜化BNS/NSBH引力波事件及其千新星光学对应体在LSST中的联合可探测性",
+        "target_task": "none",
+        "core_contribution": "模拟透镜化事件族群并定义可探测性指数DI以评估光学可探测性",
+        "application_context": "引力波与LSST光学巡天联合观测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cb4efb8b-903c-4ebe-85bc-ded88a9b4bf5"
+    },
+    "ba46011a2e892322d68eb89fcffd16551289d2cad16e6b9c0e6249afec5e9ceb": {
+      "paper_id": "2611.14341",
+      "title": "Numerical analysis of coupled flow, deformation and frictional contact mechanics in a fractured porous medium",
+      "fingerprint": "ba46011a2e892322d68eb89fcffd16551289d2cad16e6b9c0e6249afec5e9ceb",
+      "evaluation": {
+        "paper_id": "2611.14341",
+        "task_type": "numerical_analysis_porous_media",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要研究裂缝多孔介质流固耦合数值分析，与船舶视觉、多源关联、跨模态匹配无关",
+          "未提供可用于感知匹配或检测分割的具体学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "裂缝多孔介质数值分析，与海事感知、船舶视觉及跨模态匹配无任何任务或方法联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "裂缝多孔介质中流动-黏弹性变形-摩擦接触耦合模型的数值离散与误差分析",
+        "target_task": "none",
+        "core_contribution": "提出空间协调有限元加隐式欧拉的全离散格式，并证明离散解存在唯一性、稳定性及先验误差估计",
+        "application_context": "裂缝性多孔介质地下流动工程数值模拟验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f233c0c2-bfda-4fe4-87d1-58f77e050829"
+    },
+    "e9f7d647f168c248d99b8966936d2821789058332a0d60be6dbc694039c00164": {
+      "paper_id": "2611.14336",
+      "title": "Pareto Front Tracing in Higher Dimensions Using Numerical Integration",
+      "fingerprint": "e9f7d647f168c248d99b8966936d2821789058332a0d60be6dbc694039c00164",
+      "evaluation": {
+        "paper_id": "2611.14336",
+        "task_type": "multiobjective_optimization",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为多目标优化Pareto前沿数值追踪，不涉及视觉或多模态学习",
+          "无检测、分割、匹配或缺失模态相关方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "多目标优化Pareto前沿数值积分追踪，与感知匹配、船舶视觉无任务或可迁移方法联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "无约束连续多目标优化中高维Pareto前沿的追踪",
+        "target_task": "none",
+        "core_contribution": "基于加权和标量化敏感性的PDE系统与Runge-Kutta数值积分追踪策略及误差分析",
+        "application_context": "凸二次问题与WFG基准多目标优化测试",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f233c0c2-bfda-4fe4-87d1-58f77e050829"
+    },
+    "c6d014d32ecf091cf6caf28ba9b0492810b35d075cc39dc7a6bb62ecc2cd3edc": {
+      "paper_id": "2611.14330",
+      "title": "An Archival Search for Outer Solar System Objects in the NOIRLab Source Catalog DR2: 65 Candidates, Including Four L4 Neptune Trojans",
+      "fingerprint": "c6d014d32ecf091cf6caf28ba9b0492810b35d075cc39dc7a6bb62ecc2cd3edc",
+      "evaluation": {
+        "paper_id": "2611.14330",
+        "task_type": "astronomical_object_search",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为太阳系外天体档案检索，与海事感知无关",
+          "单夜检测链接与轨道模型属天文领域，无跨模态匹配或船舶感知的直接或具体迁移路径"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "外太阳系天体档案检索，研究目标与任务场景均与海事多源融合及船舶视觉无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "在NOIRLab源表目录中搜寻外太阳系天体候选",
+        "target_task": "none",
+        "core_contribution": "结合单夜检测、束缚轨道链接模型与forced photometry进行候选筛选和档案确认",
+        "application_context": "天文源表档案数据中的海王星特洛伊等天体候选发现",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f233c0c2-bfda-4fe4-87d1-58f77e050829"
+    },
+    "7ba7e1754616c9ada2964f750e378ef0bafb49ed5220940c11ffaa4e80aff403": {
+      "paper_id": "2611.14322",
+      "title": "Bounding and Approximating Kostka Numbers",
+      "fingerprint": "7ba7e1754616c9ada2964f750e378ef0bafb49ed5220940c11ffaa4e80aff403",
+      "evaluation": {
+        "paper_id": "2611.14322",
+        "task_type": "combinatorial_approximation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为Kostka数近似算法与Schur多项式容量分析，与视觉感知无关",
+          "无跨模态匹配或船舶检测可用的具体机制证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "Kostka数近似与Schur多项式容量算法，属组合数学问题，与感知匹配和船舶视觉无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "Kostka数的确定性近似算法",
+        "target_task": "none",
+        "core_contribution": "结合Gurvits容量界与Schur多项式容量近似，给出加性误差多项式时间算法",
+        "application_context": "组合代数与多项式容量理论计算",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f233c0c2-bfda-4fe4-87d1-58f77e050829"
+    },
+    "8433e617989b7486d2bf27d373dd5a5abc93d879dd6208f06b5401287238ec15": {
+      "paper_id": "2611.14319",
+      "title": "A New Computational Model for the Spin-Free Sum-of-Squares Energy Bounds of Electronic Hamiltonian",
+      "fingerprint": "8433e617989b7486d2bf27d373dd5a5abc93d879dd6208f06b5401287238ec15",
+      "evaluation": {
+        "paper_id": "2611.14319",
+        "task_type": "quantum chemistry optimization",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "与海事多源关联、船舶视觉、陆上交通感知及通用视觉多模态匹配均无任务联系",
+          "内容为电子哈密顿量SOS能量界优化，属量子化学数值优化"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子化学SOS优化，非感知或匹配任务，无迁移价值。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "电子哈密顿量spin-free sum-of-squares能量界的可扩展优化",
+        "target_task": "none",
+        "core_contribution": "将SOS半定规划等价重构为单一对称矩阵上的凸二次规划，并用缓存式Frank-Wolfe求解",
+        "application_context": "分子几何与氢环电子结构数值实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95f3fb3c-3afa-44c3-bfdc-91ade8f0dc78"
+    },
+    "6e04d312be7e6127d6cc5afb3f107c92862337d2eee6c67245c71034bd6b4fab": {
+      "paper_id": "2611.14311",
+      "title": "Multimodal Abstention That Preserves Acquired Correct Answers",
+      "fingerprint": "6e04d312be7e6127d6cc5afb3f107c92862337d2eee6c67245c71034bd6b4fab",
+      "evaluation": {
+        "paper_id": "2611.14311",
+        "task_type": "multimodal abstention",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "a linear probe on first-token logits, threshold calibration on held-out image clusters",
+            "interpretation_zh": "在首token对数上做线性探针并在留出图像簇上校准阈值，属于多模态模型拒答机制",
+            "inference": false
+          },
+          {
+            "quote_en": "a deterministic veto that replaces rejected outputs with the displayed \"none of the above\" option",
+            "interpretation_zh": "用确定性否决将拒答输出替换为展示的none选项并保留其他回答",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "核心为视觉语言模型拒答与答案保留，非检测/匹配/关联",
+          "摘要未显示与船舶或跨模态匹配任务的直接接口，迁移需大幅改造且证据不足"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "多模态拒答与答案保留机制，与海事感知和跨模态匹配关联弱，迁移路径不具体。",
+        "confidence": 0.9,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "任务适配多模态模型加入拒答时丢失已获正确回答",
+        "target_task": "none",
+        "core_contribution": "提出ReFrain以线性探针、阈值校准和确定否决实现零回归拒答修复",
+        "application_context": "Qwen2.5-VL等视觉语言模型问答",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95f3fb3c-3afa-44c3-bfdc-91ade8f0dc78"
+    },
+    "9a16b49ee10713187c42c2979782b32f7d0f236f1f3118c9e5def28db99614c1": {
+      "paper_id": "2611.14309",
+      "title": "MMDM: Measuring Massive Multitask Decision Making",
+      "fingerprint": "9a16b49ee10713187c42c2979782b32f7d0f236f1f3118c9e5def28db99614c1",
+      "evaluation": {
+        "paper_id": "2611.14309",
+        "task_type": "benchmark decision making",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "为决策模型基准评测，不涉及视觉检测、分割或跨模态匹配方法",
+          "与海事关联融合及船舶视觉无任务联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "决策模型基准，非感知匹配任务，无可复用感知学习方法证据。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "系统1决策模型在多任务结构化决策上的评测",
+        "target_task": "none",
+        "core_contribution": "构建5448题16类别的MMDM基准并评测28个决策模型",
+        "application_context": "智能体状态跟踪、工具选择、约束规划等决策评测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95f3fb3c-3afa-44c3-bfdc-91ade8f0dc78"
+    },
+    "41c9d502cc8516d5cef4417089c342e4eff383c5747f99db5e301d1534a7778f": {
+      "paper_id": "2611.14307",
+      "title": "TaoMate-R1: Temporal Role Specialization for Streaming Multi-Reference Video Generation",
+      "fingerprint": "41c9d502cc8516d5cef4417089c342e4eff383c5747f99db5e301d1534a7778f",
+      "evaluation": {
+        "paper_id": "2611.14307",
+        "task_type": "video generation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "为多参考视频生成，属生成任务而非检测/匹配/关联感知",
+          "无与船舶视觉或跨模态匹配的任务证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "流式多参考视频生成，与目标感知和跨模态匹配无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "流式多参考视频生成中场景建立与延续的自适应参数组织",
+        "target_task": "none",
+        "core_contribution": "提出时间角色特化的低秩适配器分配与Self Gradient Forcing联合训练",
+        "application_context": "多参考人物物体流式视频生成",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95f3fb3c-3afa-44c3-bfdc-91ade8f0dc78"
+    },
+    "56c559ba85cd78deac90319168789dabe3ff98e68ad3a34135e0ce9c2fed7f16": {
+      "paper_id": "2611.14303",
+      "title": "Whittaker supermodules for the Takiff superalgebra \\mathfrak{osp}(1|2)",
+      "fingerprint": "56c559ba85cd78deac90319168789dabe3ff98e68ad3a34135e0ce9c2fed7f16",
+      "evaluation": {
+        "paper_id": "2611.14303",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学李超代数分类，与感知、多模态匹配、船舶视觉等无任何联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数学李超代数分类，不涉及任何视觉、多模态或感知任务，无迁移价值。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "分类Takiff李超代数上的简单Whittaker超模",
+        "target_task": "other",
+        "core_contribution": "分类了与正幂零子代数偶部上Whittaker character相关的Takiff李超代数osp(1|2)⊗C[t]/(t^2)的所有简单Whittaker超模",
+        "application_context": "纯数学（李超代数表示论）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e64e7ed3-5419-44c0-aca9-8c55f83d603d"
+    },
+    "5b52a103e6f8058f2f25fcfd902f7c290da8d9c30b9c7405a5707e37d9ab8e46": {
+      "paper_id": "2611.14300",
+      "title": "Negative-Dimensional Simplicial Complexes via the Grothendieck Group of the Join Monoid",
+      "fingerprint": "5b52a103e6f8058f2f25fcfd902f7c290da8d9c30b9c7405a5707e37d9ab8e46",
+      "evaluation": {
+        "paper_id": "2611.14300",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯组合拓扑数学，与视觉感知任务无直接联系，无可复用学习/匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "组合拓扑数学构造，不涉及视觉或多模态学习，无可迁移的感知方法。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "通过join幺半群的Grothendieck群扩展单纯复形到负维",
+        "target_task": "other",
+        "core_contribution": "引入负维单纯复形框架，适配f/h向量与Euler示性数，并赋予Alexandroff拓扑",
+        "application_context": "纯数学（组合拓扑）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e64e7ed3-5419-44c0-aca9-8c55f83d603d"
+    },
+    "c6ea64ef4b792764a4b0a80b687f1e61889457998034d367627d7b6def15deb6": {
+      "paper_id": "2611.14299",
+      "title": "Energy- and Time-Efficient Multi-Vehicle Trajectory Planning Using Augmented DAG Search in Configuration Space",
+      "fingerprint": "c6ea64ef4b792764a4b0a80b687f1e61889457998034d367627d7b6def15deb6",
+      "evaluation": {
+        "paper_id": "2611.14299",
+        "task_type": "multi_vehicle_trajectory_planning",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究多车轨迹规划与优化，非感知、检测、关联或跨模态匹配任务",
+          "摘要无与船舶视觉、AIS关联、多传感器融合或通用匹配学习相关的具体方法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "多车轨迹规划优化，非感知/检测/关联任务，与船舶视觉或多源融合无直接联系，无方法迁移路径。",
+        "confidence": 0.95,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "CAV多车轨迹规划中能量与旅行时间的联合优化及可扩展性",
+        "target_task": "other",
+        "core_contribution": "扩展配置空间框架，以加权能量-旅行时间目标和增强DAG搜索实现可扩展无碰撞多车协调",
+        "application_context": "智能交通交叉口多车轨迹规划",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e64e7ed3-5419-44c0-aca9-8c55f83d603d"
+    },
+    "0765ffd33562195c23b602295e172e536f1e795a642530d9f599efc46ff4a08f": {
+      "paper_id": "2611.14296",
+      "title": "Composite local observables of sine-Gordon via stochastic analysis",
+      "fingerprint": "0765ffd33562195c23b602295e172e536f1e795a642530d9f599efc46ff4a08f",
+      "evaluation": {
+        "paper_id": "2611.14296",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学物理（量子场论）研究，与视觉感知、多模态匹配无联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子场论局部复合可观测量构造，与感知任务无关，无方法迁移价值。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "欧氏量子场论中一般局部复合可观测量的严格构造",
+        "target_task": "other",
+        "core_contribution": "结合重整化群与随机分析，构造sine-Gordon模型至β²<6π的各类局部可观测量的非微扰框架",
+        "application_context": "数学物理（构造量子场论）",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e64e7ed3-5419-44c0-aca9-8c55f83d603d"
+    },
+    "4c2d4c2ac364ed98752243dd5c74e1832f8784aa3b1d1883f4f4ddd7cd5c31fa": {
+      "paper_id": "2611.14291",
+      "title": "Nonreciprocal Josephson Dynamics of a $\\mathcal{PT}$-Symmetric Atomtronic SQUID",
+      "fingerprint": "4c2d4c2ac364ed98752243dd5c74e1832f8784aa3b1d1883f4f4ddd7cd5c31fa",
+      "evaluation": {
+        "paper_id": "2611.14291",
+        "task_type": "量子物理/原子电子学（非感知非视觉）",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为AQUID/PT对称约瑟夫森动力学，与船舶视觉、多源关联融合、跨模态匹配均无具体方法联系",
+          "摘要未提出可迁移到感知任务的匹配、检测、分割或表征学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子物理研究，非感知非视觉，与海事融合或通用视觉方法均无具体迁移路径。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "研究PT对称原子电子SQUID中的非互易约瑟夫森输运与集体激发",
+        "target_task": "其他",
+        "core_contribution": "揭示PT对称AQUID在增益损耗和光势垒调制下的非互易约瑟夫森动力学及Shapiro台阶",
+        "application_context": "驱动量子流体中的非互易输运控制",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6bb603bb-0d39-4eba-874b-a8a8b79ccb7e"
+    },
+    "db40af373e2bf7f5c5fa3aedce684218532b9e7d6b7afa62c36b2c6e337aa333": {
+      "paper_id": "2611.14290",
+      "title": "Intermediate Growth and Rigidity in Primitive Circulant Spectral Algebras",
+      "fingerprint": "db40af373e2bf7f5c5fa3aedce684218532b9e7d6b7afa62c36b2c6e337aa333",
+      "evaluation": {
+        "paper_id": "2611.14290",
+        "task_type": "纯数学/谱代数理论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学谱代数与滤过结构研究，无任何视觉或多模态感知方法",
+          "无法提供面向感知任务的输入、训练目标或结构迁移"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数学代数结构研究，与感知匹配或海事任务无研究方法关联。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "研究循环图本原谱代数的增长与刚性代数结构",
+        "target_task": "其他",
+        "core_contribution": "证明本原谱求值代数与约化代数的滤过保持同构及非有理Hilbert级数等结论",
+        "application_context": "循环谱代数的抽象代数分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6bb603bb-0d39-4eba-874b-a8a8b79ccb7e"
+    },
+    "3e93fdae98ed8052a2d44c1b80723c00f91c17f56de9a854afb9e751acaf0d35": {
+      "paper_id": "2611.14288",
+      "title": "Can AI be a 'Researcher Without Borders'? Auditing Bias in AI-Assisted Social Science Research about China and the US",
+      "fingerprint": "3e93fdae98ed8052a2d44c1b80723c00f91c17f56de9a854afb9e751acaf0d35",
+      "evaluation": {
+        "paper_id": "2611.14288",
+        "task_type": "AI社会科学研究偏倚审计",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "主题为LLM撰写社会科学短文的国别偏倚审计，无视觉或多模态感知匹配方法",
+          "摘要未提出可迁移到检测/匹配/分割的具体学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "社会科学偏倚审计研究，与海事多源融合及视觉感知方法无关联。",
+        "confidence": 0.96,
+        "primary_domain": "other",
+        "primary_problem": "审计LLM在美国与中国社会科学问题上的国别偏倚与引用来源差异",
+        "target_task": "其他",
+        "core_contribution": "构建多条件基准任务并人工标注分析模型政治偏倚和引用差异",
+        "application_context": "AI辅助社会科学研究的使用建议",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "6bb603bb-0d39-4eba-874b-a8a8b79ccb7e"
+    },
+    "5c7b5c8c3ef758f22e5f3fca8512e91db2d205545020ce9ad0fecdaa35bf0ac6": {
+      "paper_id": "2611.14272",
+      "title": "Federated Learning for Cross-Regional Epidemic Forecasting with Asynchronous Outbreaks",
+      "fingerprint": "5c7b5c8c3ef758f22e5f3fca8512e91db2d205545020ce9ad0fecdaa35bf0ac6",
+      "evaluation": {
+        "paper_id": "2611.14272",
+        "task_type": "联邦学习疫情预测",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "医学疫情预测，与海事、船舶、多源关联无关",
+          "联邦学习机制缺乏直接感知匹配联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "联邦学习疫情预测，与关注方向无关。",
+        "confidence": 0.9,
+        "primary_domain": "biomedical",
+        "primary_problem": "跨区域异步疫情下的隐私保护短期预测",
+        "target_task": "疫情病例数预测",
+        "core_contribution": "构建联邦LSTM框架实现跨区域疫情预测",
+        "application_context": "COVID-19病例数预测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "186c786f-fd4b-4fdf-bedf-57bb5991599b"
+    },
+    "31c3dde62de2e18635462d35e446519a47b7029a3f36c2d4c09b7ff890fc570a": {
+      "paper_id": "2611.14268",
+      "title": "A Symmetrization for Almost Symmetric Numerical Semigroups",
+      "fingerprint": "31c3dde62de2e18635462d35e446519a47b7029a3f36c2d4c09b7ff890fc570a",
+      "evaluation": {
+        "paper_id": "2611.14268",
+        "task_type": "数论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学研究，与感知、匹配无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数学数论，无关。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "几乎对称数值半群的性质刻画",
+        "target_task": "数值半群理论",
+        "core_contribution": "基于Young图刻画几乎对称半群并引入对称化过程",
+        "application_context": "数学理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "186c786f-fd4b-4fdf-bedf-57bb5991599b"
+    },
+    "b7b66092b6f78a1264f307e7649d41dae2a1c59f5cdb0f766d37cbceea5a7ebf": {
+      "paper_id": "2611.14263",
+      "title": "Chain of Physics: Supporting Fault Diagnosis with Engineering-Inspired Large Language Model Reasoning",
+      "fingerprint": "b7b66092b6f78a1264f307e7649d41dae2a1c59f5cdb0f766d37cbceea5a7ebf",
+      "evaluation": {
+        "paper_id": "2611.14263",
+        "task_type": "LLM故障诊断",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "LLM故障诊断，与海事多源关联、船舶视觉无关",
+          "缺乏直接感知任务联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "LLM故障诊断，无直接感知或跨模态关联。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "基于知识图谱的LLM故障诊断推理",
+        "target_task": "工业故障诊断",
+        "core_contribution": "提出Chain of Physics框架，结合约束知识图谱增强LLM诊断推理",
+        "application_context": "工业资产故障诊断",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "186c786f-fd4b-4fdf-bedf-57bb5991599b"
+    },
+    "b6a4e2c3de259d78070886260a9174e6544c5efb4e26342f86872b7bbb43c729": {
+      "paper_id": "2611.14258",
+      "title": "Scattering Resonances of Plane-Embedded Cavities: A Finite Element DtN Approach",
+      "fingerprint": "b6a4e2c3de259d78070886260a9174e6544c5efb4e26342f86872b7bbb43c729",
+      "evaluation": {
+        "paper_id": "2611.14258",
+        "task_type": "平面嵌入式腔体散射共振的有限元DtN数值计算",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要属于计算电磁/声学散射共振的数值方法，未涉及雷达–AIS关联、船舶视觉或多传感器目标感知。",
+          "有限元DtN与谱指示器方法用于特征值求解，与跨模态匹配、检测分割/跟踪表征没有可具体说明的迁移接口。",
+          "无法从摘要确认可用于船舶检测/分割/深度估计的输入、训练目标或结构改造方式。"
+        ],
+        "primary_domain": "other",
+        "primary_problem": "计算平面嵌入式腔体的散射共振，处理无界域截断与非线性矩阵特征值问题。",
+        "target_task": "scattering_resonance_computation",
+        "core_contribution": "用DtN边界算子截断无界域，将问题转化为全纯Fredholm算子函数特征值问题，并用Lagrange有限元和截断DtN展开离散化，结合多步并行谱指示器法求解。",
+        "application_context": "工程中的散射共振计算，验证场景为数值实验与基准解。",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "数值散射共振求解，与海事融合、船舶视觉及通用匹配学习无关，无具体可迁移感知方法。",
+        "confidence": 0.97
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95e2e92a-b2e9-46b0-83e7-140f2a704d93"
+    },
+    "54cd16911ed20b5f2744d7517dd598214686971dcc9c48f3bce9bb907525e6ce": {
+      "paper_id": "2611.14255",
+      "title": "Simulation-Based Inference on EMRI Frequency Tracks: Harmonic Identification and Parameter Constraints from Search Outputs",
+      "fingerprint": "54cd16911ed20b5f2744d7517dd598214686971dcc9c48f3bce9bb907525e6ce",
+      "evaluation": {
+        "paper_id": "2611.14255",
+        "task_type": "基于模拟推断的EMRI频率轨迹谐波识别与参数约束",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为空间引力波探测器EMRI波形与频率轨迹，不属于海事融合、船舶视觉或陆上交通感知。",
+          "模拟推断和截断先验序贯方案用于天体物理参数估计，摘要未提供可具体迁移到船舶检测/分割/跟踪的输入、训练目标或结构改造。",
+          "谐波轨迹配对与检测统计量交叉验证属于特定物理信号处理，无法直接视为通用跨模态匹配方法。"
+        ],
+        "primary_domain": "other",
+        "primary_problem": "利用时频搜索得到的频率轨迹识别EMRI谐波并约束内禀参数，降低后续MCMC分析负担。",
+        "target_task": "emri_harmonic_identification_and_parameter_constraint",
+        "core_contribution": "训练模拟推断网络处理方位向和径向基频轨迹，通过谐波标签假设下的候选配对分类与序贯截断先验SBI，结合检测统计量交叉验证实现快速波形无关的谐波识别和参数先验收缩。",
+        "application_context": "空间引力波探测器EMRI搜索与参数估计，验证场景为模拟频率轨迹实验。",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "天体物理EMRI参数推断，与船舶视觉、雷达AIS关联及通用视觉匹配无具体可迁移连接。",
+        "confidence": 0.96
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95e2e92a-b2e9-46b0-83e7-140f2a704d93"
+    },
+    "f112c94b4dba93ae314554754842ab917f4fe86edeb689416fcabb49e021e81e": {
+      "paper_id": "2611.14254",
+      "title": "Location Matters: Sparse Latent-Variance Attacks for Face Privacy against Diffusion Personalization",
+      "fingerprint": "f112c94b4dba93ae314554754842ab917f4fe86edeb689416fcabb49e021e81e",
+      "evaluation": {
+        "paper_id": "2611.14254",
+        "task_type": "扩散模型个性化的人脸隐私稀疏对抗保护",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要属于人脸隐私对抗保护与生成模型安全，研究对象为面部图像身份保护，不是船舶检测/分割/深度估计或多传感器感知。",
+          "稀疏top-k掩码与潜变量方差目标针对VAE编码器身份表征，无法具体说明如何迁移到跨模态匹配或船舶视觉任务。",
+          "对抗扰动位置优化和显著性惩罚属于安全/隐私领域机制，不构成任务无关的通用感知匹配方法证据。"
+        ],
+        "primary_domain": "cybersecurity",
+        "primary_problem": "防止文本到图像扩散模型从少量参考照片学习并复现个人身份，同时保持受保护图像质量。",
+        "target_task": "face_privacy_protection_against_diffusion_personalization",
+        "core_contribution": "提出SEAL稀疏对抗保护框架，仅修改5%空间位置，联合优化可微top-k掩码位置与扰动值，并采用冻结VAE编码器潜分布方差目标和显著性引导分散惩罚破坏身份一致性表征。",
+        "application_context": "人脸图像发布前的隐私保护，验证场景为CelebA-HQ和VGGFace2上的身份相似度与图像质量评估。",
+        "security_centric": true,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "安全核心的人脸对抗隐私保护，与海事感知及船舶视觉任务无直接或具体可迁移方法联系。",
+        "confidence": 0.95
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "95e2e92a-b2e9-46b0-83e7-140f2a704d93"
+    },
+    "e9b75cad9b8a3dc422d9ddc0f0f8a74cdf999b52f67232d9ecbb7a67e547e69e": {
+      "paper_id": "2611.14250",
+      "title": "CFAR Detection on Non-Coherently Integrated Angular Maps for mmWave Radio SLAM",
+      "fingerprint": "e9b75cad9b8a3dc422d9ddc0f0f8a74cdf999b52f67232d9ecbb7a67e547e69e",
+      "evaluation": {
+        "paper_id": "2611.14250",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we derive a modified detector for non-coherently integrated angular power maps",
+            "interpretation_zh": "该工作针对非相干积分角功率图的CFAR检测器进行修改，属于毫米波ISAC雷达多径检测，是固定虚警率检测器设计，与目标检测/跨模态匹配/船舶视觉无直接任务联系。",
+            "inference": false
+          },
+          {
+            "quote_en": "we introduce a multi-cell cell-under-test formulation and a plus-shaped training window",
+            "interpretation_zh": "提出多单元待测单元公式与十字形训练窗，用于提升CFAR检测的计算效率并考虑旁瓣结构；这是雷达检测器结构设计，不是可复用的跨模态匹配或船舶视觉检测方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象是60 GHz室内ISAC多径SLAM中的CFAR检测，非船舶/遥感/多传感器海上目标检测",
+          "未涉及视觉、AIS、轨迹关联或跨模态表征学习",
+          "未提供可迁移到船舶检测/跨模态匹配的通用学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属于毫米波ISAC雷达多径CFAR检测器设计，与Radar–AIS关联、船舶视觉检测分割或多传感器目标关联均无直接任务联系，也未提供可复用跨模态匹配方法。",
+        "confidence": 0.9,
+        "primary_domain": "communication_engineering",
+        "primary_problem": "为非相干积分角功率图设计CFAR多径检测器以改善毫米波ISAC SLAM定位",
+        "target_task": "other",
+        "core_contribution": "推导适用于非相干积分角图噪声统计的CFAR检测器，并引入多单元待测单元与十字形训练窗降低计算量",
+        "application_context": "用于60 GHz室内测量的多径无线SLAM定位验证",
+        "security_centric": false,
+        "communication_centric": true
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0702464a-8e8b-41b6-b610-bca2c9d161c5"
+    },
+    "baf49e21e68eeb5e3cb4a39a502199b56550e31a53e9884e16c3169a4a76a9cc": {
+      "paper_id": "2611.14246",
+      "title": "SinkState: On-the-Fly SVD of Recurrent States for Efficient Hybrid LLM Serving",
+      "fingerprint": "baf49e21e68eeb5e3cb4a39a502199b56550e31a53e9884e16c3169a4a76a9cc",
+      "evaluation": {
+        "paper_id": "2611.14246",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "SinkState stores each recurrent state in an adaptive low-rank form throughout inference",
+            "interpretation_zh": "该工作将循环状态以自适应低秩形式存储以降低解码内存流量，属于混合LLM推理服务系统优化，与视觉/多模态感知及船舶视觉任务无关。",
+            "inference": false
+          },
+          {
+            "quote_en": "a local SVD restricted to the top subspace",
+            "interpretation_zh": "采用限制在顶子空间的局部SVD，针对线性注意力循环状态压缩；其任务无关性仅限于LLM推理系统层面，未涉及目标检测、分割或跨模态匹配。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为LLM推理服务系统，与海事多源融合和船舶视觉无直接关系",
+          "未涉及任何视觉、雷达或AIS感知任务",
+          "低秩状态压缩属于LLM服务优化，未提供可迁移到船舶感知的匹配学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "该文解决混合LLM推理服务中循环状态存储与解码效率问题，与海事多源关联、船舶视觉检测分割及跨模态匹配无直接任务联系，也无可用迁移机制。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "降低混合LLM推理时循环状态的内存流量并加速解码",
+        "target_task": "other",
+        "core_contribution": "利用线性注意力状态低秩特性，在推理中自适应低秩存储循环状态以降低内存并加速解码",
+        "application_context": "在Mamba-2与Gated DeltaNet混合模型上的LLM服务评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0702464a-8e8b-41b6-b610-bca2c9d161c5"
+    },
+    "4887224487a429a34c73fa6f6918fe26984a1d3817fce9ef16a612a5ec96c82e": {
+      "paper_id": "2611.14245",
+      "title": "Deep Learning for Operator Maps in Optimal Liquidation",
+      "fingerprint": "4887224487a429a34c73fa6f6918fe26984a1d3817fce9ef16a612a5ec96c82e",
+      "evaluation": {
+        "paper_id": "2611.14245",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we show that the strategy is locally Lipschitz continuous with respect to the underlying model parameters",
+            "interpretation_zh": "证明最优清算策略关于模型参数的局部Lipschitz连续性，属于金融数学中的最优执行问题，与感知检测/分割/跨模态匹配无关。",
+            "inference": false
+          },
+          {
+            "quote_en": "Continuity of this map justifies the application of neural-net based approximations which take model parameters as inputs",
+            "interpretation_zh": "利用解映射连续性论证神经网络近似模型参数到交易策略的映射；这是金融策略近似，不是视觉或多模态匹配方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为金融最优清算与价格影响核，与海事感知无直接关系",
+          "未涉及视觉、雷达、AIS或目标检测分割任务",
+          "神经网络仅用于策略映射近似，不构成可迁移的感知学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属于金融最优清算策略的神经网络近似研究，与Radar–AIS关联、船舶视觉检测分割及通用视觉多模态匹配均无直接任务联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "在一般瞬态价格影响核下用神经网络近似最优清算策略映射",
+        "target_task": "other",
+        "core_contribution": "证明最优执行策略关于模型参数的局部Lipschitz连续性，并据此构造神经网络近似与核投影方法",
+        "application_context": "最优清算问题的金融成本量化",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0702464a-8e8b-41b6-b610-bca2c9d161c5"
+    },
+    "50113be34a9e08f6c611c0297e35509b36e188063c9955f898e4433dbb26b2a5": {
+      "paper_id": "2611.14242",
+      "title": "PARLEY: Evaluating LLM Collaboration Through Cooperative Asymmetric Puzzles",
+      "fingerprint": "50113be34a9e08f6c611c0297e35509b36e188063c9955f898e4433dbb26b2a5",
+      "evaluation": {
+        "paper_id": "2611.14242",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We introduce PARLEY, an extensible platform for studying LLM agent collaboration through four asymmetric puzzle tasks",
+            "interpretation_zh": "提出用于研究LLM智能体协作的非对称谜题平台，属于语言模型协作与失败分析，与船舶视觉/多传感器融合无直接任务联系。",
+            "inference": false
+          },
+          {
+            "quote_en": "we derived the data-driven PAC taxonomy: six failure types organized into Perception",
+            "interpretation_zh": "从对话中归纳包含感知类失败在内的PAC分类法；其中的Perception指LLM智能体视觉解释与空间推理，不是船舶视觉检测或跨模态匹配方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为LLM智能体协作评测，与海事多源融合、船舶检测分割无直接关系",
+          "未涉及视觉检测、分割、深度估计或跨模态对齐模型",
+          "感知失败分类法不构成可复用的目标检测/跨模态匹配学习机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "该文研究LLM智能体协作评测与失败分类，与Radar–AIS关联、船舶视觉检测分割及通用视觉多模态匹配方法无直接或可具体说明的迁移联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "评估LLM智能体在非对称协作任务中的协作能力与失败模式",
+        "target_task": "other",
+        "core_contribution": "提出PARLEY协作评测平台与PAC失败分类法，并验证分类法引导干预可提升任务成功率",
+        "application_context": "认知心理学启发的LLM智能体协作实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0702464a-8e8b-41b6-b610-bca2c9d161c5"
+    },
+    "67678a1edfe7b579cb708c5bacd5a4baf9d88616159630731b03b452138b7d53": {
+      "paper_id": "2611.14239",
+      "title": "On Federated Averaging with Partial Participation under a General Variance Condition",
+      "fingerprint": "67678a1edfe7b579cb708c5bacd5a4baf9d88616159630731b03b452138b7d53",
+      "evaluation": {
+        "paper_id": "2611.14239",
+        "task_type": "联邦学习收敛性分析",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要研究联邦平均(FedAvg)部分参与下的非凸优化收敛界与ABC方差条件，属优化理论",
+          "未涉及任何视觉、跨模态匹配或船舶/多传感器感知任务",
+          "无可复用至跨模态匹配或目标检测/分割的匹配或表征机制证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "联邦学习优化收敛理论，与海事融合、船舶视觉及通用视觉多模态匹配均无方法或任务联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "FedAvg部分参与下在广义方差条件下的收敛性分析",
+        "target_task": "其他",
+        "core_contribution": "在ABC方差条件下给出部分参与FedAvg的有限时间平稳性界，并去除有界梯度差异假设",
+        "application_context": "联邦学习分布式训练优化理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3226427a-b99e-4843-87a5-56ee9867fc73"
+    },
+    "6a11d2e2a6251ed1d79625aeb841a9c1fb6cd3811a30d5a2ad99b21062731f62": {
+      "paper_id": "2611.14232",
+      "title": "Intelligent Carbon Emission-aware Radio Unit Activation Control in Dense Heterogeneous Energy 6G Networks",
+      "fingerprint": "6a11d2e2a6251ed1d79625aeb841a9c1fb6cd3811a30d5a2ad99b21062731f62",
+      "evaluation": {
+        "paper_id": "2611.14232",
+        "task_type": "通信网络能耗与碳排放优化",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "核心为O-RAN中RU休眠控制的碳感知DRL与资源激活策略",
+          "摘要含3GPP信道与移动模型，但目标为能耗/碳排放最小化而非目标识别或感知",
+          "无跨模态匹配、困难负样本或检测表征等可迁移感知方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属通信网络资源与能耗优化，非目标识别/定位，与感知任务及通用视觉匹配方法无实质联系。",
+        "confidence": 0.93,
+        "primary_domain": "communication_engineering",
+        "primary_problem": "密集异构6G网络中碳感知的RU休眠激活控制",
+        "target_task": "其他",
+        "core_contribution": "比较TD3/PPO/启发式在碳感知奖励下的RU休眠策略，提出联合能量-碳-QoS奖励",
+        "application_context": "O-RAN可再生匹配基站部署的能耗与碳排放优化",
+        "security_centric": false,
+        "communication_centric": true
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3226427a-b99e-4843-87a5-56ee9867fc73"
+    },
+    "c640412e0fd8b509283fd808bb0508dbba476067c9e92b16345e79215ea6aa8d": {
+      "paper_id": "2611.14230",
+      "title": "The Multiscale Principle in phase transition: Geometric structure, thermodynamic entropy, and dynamical instability",
+      "fingerprint": "c640412e0fd8b509283fd808bb0508dbba476067c9e92b16345e79215ea6aa8d",
+      "evaluation": {
+        "paper_id": "2611.14230",
+        "task_type": "统计物理与相变理论",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究临界现象中临界指数、分形维数与热力学形式化的联系",
+          "基于2d Ising模型，不涉及感知、检测、匹配或任何视觉任务",
+          "无可迁移至目标感知的学习或匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "相变物理理论研究，与海事融合、船舶视觉及通用视觉多模态学习无任何联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "临界相变中几何结构、热力学熵与动力学不稳定的统一刻画",
+        "target_task": "其他",
+        "core_contribution": "将热力学分形维数与关联长度、熵变联系，解释接近临界时的宏观相干与混沌",
+        "application_context": "统计物理临界现象与2d Ising模型",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3226427a-b99e-4843-87a5-56ee9867fc73"
+    },
+    "9841f6daa43229aca4ae62170c57b410c3505148c1e348bc5cbab87f6a59fb0d": {
+      "paper_id": "2611.14226",
+      "title": "Counting Rational Points on Cayley's Cubic Surface",
+      "fingerprint": "9841f6daa43229aca4ae62170c57b410c3505148c1e348bc5cbab87f6a59fb0d",
+      "evaluation": {
+        "paper_id": "2611.14226",
+        "task_type": "数论与代数几何",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究Cayley三次曲面上有界高度有理点计数",
+          "纯数学方法，无感知、检测、匹配或任何视觉学习机制",
+          "无任何可迁移工程或算法感知证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数论研究，与海事融合、船舶视觉及通用视觉多模态匹配方法完全无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "Cayley三次曲面去除九条线后的有理点计数渐近",
+        "target_task": "其他",
+        "core_contribution": "结合格点计数与Poisson求和控制两套方法，得到Peyre常数的渐近计数公式",
+        "application_context": "代数几何有理点分布理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "3226427a-b99e-4843-87a5-56ee9867fc73"
+    },
+    "5c540789252c4f339257cdf427ed481fd6cc916c64434add40f240577e0086c3": {
+      "paper_id": "2611.14221",
+      "title": "Stagewise and interpretable emergence of inside-outside computation in Transformer-based language models",
+      "fingerprint": "5c540789252c4f339257cdf427ed481fd6cc916c64434add40f240577e0086c3",
+      "evaluation": {
+        "paper_id": "2611.14221",
+        "task_type": "general_visual_method",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "the Transformer develops an encoder-decoder structure where the most abstract latent information is encoded in the middle, and the latter half of the network is used to progressively refine the final token prediction",
+            "interpretation_zh": "该句描述Transformer在训练中形成编码器-解码器结构，中间层编码抽象隐变量，后半部分逐步细化预测；这是一种网络内部计算组织方式，并非直接可迁移到目标任务的匹配或检测机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究主题为NLP中语法解析的可解释性，与海事融合、船舶视觉、陆上感知无关。",
+          "摘要未涉及跨模态匹配、困难负样本、可微匹配或缺失模态等可迁移方法。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯NLP理论分析，无海事或可迁移匹配机制。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "研究Transformer在合成上下文无关语法上的inside-outside计算涌现过程与可解释性",
+        "target_task": "none",
+        "core_contribution": "以合成语法学习动态和表示探测揭示Transformer逐步发展出编码器-解码器式的inside-outside计算结构",
+        "application_context": "自然语言处理中的句法解析与语言模型可解释性",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "fcd93c79-3cde-4b2f-814b-68894c813c60"
+    },
+    "92714c414e7273a33a3d29984f246fb0664bb74de14c867973778f53cb1b86fa": {
+      "paper_id": "2611.14215",
+      "title": "Scattering of water waves in presence of a partially immersed obstacle",
+      "fingerprint": "92714c414e7273a33a3d29984f246fb0664bb74de14c867973778f53cb1b86fa",
+      "evaluation": {
+        "paper_id": "2611.14215",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究内容为线性水波散射的数学分析，与目标方向无关。",
+          "摘要未涉及任何感知、检测、匹配或融合方法。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "数学物理论文，无感知或可迁移方法。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "研究含部分浸没障碍物的二维线性水波散射的适定性与能量衰减",
+        "target_task": "none",
+        "core_contribution": "构造调和提升并证明Dirichlet-to-Neumann算子的性质，得到全局适定性和局部能量代数衰减",
+        "application_context": "水波动力学数学理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "fcd93c79-3cde-4b2f-814b-68894c813c60"
+    },
+    "4482bcc2693790e47bf93e61e2a5b8e3f5c969709786afcc74cea12a58c1b1f5": {
+      "paper_id": "2611.14213",
+      "title": "$\\varphi$-symmetric Sasakian Lie algebras",
+      "fingerprint": "4482bcc2693790e47bf93e61e2a5b8e3f5c969709786afcc74cea12a58c1b1f5",
+      "evaluation": {
+        "paper_id": "2611.14213",
+        "task_type": "other",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学李代数结构研究，与目标方向无关。",
+          "摘要未涉及任何感知或学习方法。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯数学论文，无感知或可迁移方法。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "研究具有二维ad_ξ像的Sasakian李代数的φ-对称性条件",
+        "target_task": "none",
+        "core_contribution": "给出φ-对称的充要条件并证明七维及以下该类李代数均φ-对称，九维存在反例",
+        "application_context": "微分几何与李代数理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "fcd93c79-3cde-4b2f-814b-68894c813c60"
+    },
+    "f880da99fc6e6772aa649eb3f682b402416d8ecf6f6b4bb61fdfd62be7632c09": {
+      "paper_id": "2611.14211",
+      "title": "Verifiable Agentic Traffic Class: A Policed Quality-of-Service Mechanism for Agentic AI Traffic, Evaluated from Simulation to Real-Kernel Adversarial Testing",
+      "fingerprint": "f880da99fc6e6772aa649eb3f682b402416d8ecf6f6b4bb61fdfd62be7632c09",
+      "evaluation": {
+        "paper_id": "2611.14211",
+        "task_type": "communication_engineering",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究核心为网络流量分类与服务质量调度，属于通信网络工程。",
+          "摘要未涉及任何视觉感知、跨模态匹配或目标检测方法。",
+          "验证场景为合成或沙箱规模流量，无海事或陆上感知任务联系。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "通信流量QoS机制，与感知方向无关。",
+        "confidence": 0.98,
+        "primary_domain": "communication_engineering",
+        "primary_problem": "为大语言模型代理生成的网络流量设计可验证的服务质量分类与调度机制",
+        "target_task": "none",
+        "core_contribution": "提出VATC机制，结合DSCP标记、路由器侧分类降级和限速优先队列，在模拟与真实内核中评估",
+        "application_context": "网络流量管理与服务质量保障",
+        "security_centric": false,
+        "communication_centric": true
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "fcd93c79-3cde-4b2f-814b-68894c813c60"
+    },
+    "f1855086f8a973cc93be2ee25d2e6283ea5b02272350ce6e5aa5f331de718ef8": {
+      "paper_id": "2611.14210",
+      "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+      "fingerprint": "f1855086f8a973cc93be2ee25d2e6283ea5b02272350ce6e5aa5f331de718ef8",
+      "evaluation": {
+        "paper_id": "2611.14210",
+        "task_type": "language_model_weight_repair",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "casts this repair as a sparse discrete optimization problem over the model's own BF16 weights",
+            "interpretation_zh": "将语言模型权重修复建模为稀疏离散优化问题。",
+            "inference": false
+          },
+          {
+            "quote_en": "We decompose this objective exactly into independent QUBO (Ising) problems, one per output row, which we solve on a GPU using simulated annealing or quantum-inspired simulated bifurcation.",
+            "interpretation_zh": "按输出行分解为QUBO并用模拟退火或模拟分叉求解，属于语言模型权重层面的组合优化。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向语言模型权重空间修复与比特翻转，不涉及任何视觉或多模态感知任务",
+          "未提供可复用于跨模态匹配或船舶视觉的可学习表征机制",
+          "摘要未支持其机制可用于检测、分割、匹配等感知任务"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究语言模型权重空间的离散修复，与海事融合、船舶视觉及通用视觉多模态匹配均无直接联系，也无具体可迁移感知机制。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "通过比特级Ising编辑修复语言模型权重空间中的推理循环",
+        "target_task": "language_model_weight_repair",
+        "core_contribution": "将BF16权重修复表述为稀疏离散优化并分解为按行QUBO求解",
+        "application_context": "语言模型数学推理基准的重量空间修复验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "dbfa630d-a3b2-4fc8-afc1-c4be933cb67e"
+    },
+    "2136b6a7ccbb1f568d944c70d6c453f1c60d8d18509f2ed38a8731558bb17cf8": {
+      "paper_id": "2611.14209",
+      "title": "Breakdown of Autoregressive Multi-Step Reasoning Under Concentrated vs. Diffuse Attention Head Dropout",
+      "fingerprint": "2136b6a7ccbb1f568d944c70d6c453f1c60d8d18509f2ed38a8731558bb17cf8",
+      "evaluation": {
+        "paper_id": "2611.14209",
+        "task_type": "llm_attention_head_dropout_reasoning_robustness",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we contrast clustered bursts of attention head masking against budget-matched diffuse i.i.d. dropout",
+            "interpretation_zh": "对比集中式注意力头掩码与预算匹配的弥散独立同分布dropout对推理的影响。",
+            "inference": false
+          },
+          {
+            "quote_en": "dispersing the identical cumulative budget uniformly across generation steps via stratified quintile matching yields substantially milder degradation",
+            "interpretation_zh": "通过分层五分位匹配将扰动预算均匀分散到生成步骤，属于语言模型推理鲁棒性实验设计。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为自回归大语言模型的注意力头扰动与数学推理鲁棒性",
+          "未涉及视觉、多模态匹配或任何船舶感知任务",
+          "摘要中的掩码与预算分配设计是语言模型诊断实验，未证明可迁移至感知匹配训练目标"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究LLM注意力头集中式扰动对推理链的影响，与海事多源关联、船舶视觉及通用视觉多模态匹配无直接联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "集中式与弥散式注意力头dropout对自回归多步推理的影响",
+        "target_task": "llm_attention_head_dropout_reasoning_robustness",
+        "core_contribution": "通过预算匹配实验表明自回归推理链对集中结构扰动更脆弱",
+        "application_context": "GSM8K数学推理基准上的LLM鲁棒性评测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "dbfa630d-a3b2-4fc8-afc1-c4be933cb67e"
+    },
+    "aac926095ebf58f37a3f8783f8b9711573f271745854a60dd6dd2342408929ab": {
+      "paper_id": "2611.14196",
+      "title": "Joint Quantization and Dynamic Partitioning for Context-Aware Edge Vision Transformers",
+      "fingerprint": "aac926095ebf58f37a3f8783f8b9711573f271745854a60dd6dd2342408929ab",
+      "evaluation": {
+        "paper_id": "2611.14196",
+        "task_type": "edge_vision_transformer_split_inference_quantization",
+        "direct_relevance": 3,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "jointly selects model partition points, per-layer quantization bitwidths, and execution placement across heterogeneous vehicular compute nodes",
+            "interpretation_zh": "联合选择模型切分点、逐层量化位宽与异构车联网计算节点上的执行位置。",
+            "inference": false
+          },
+          {
+            "quote_en": "The joint partitioning and mixed-precision allocation problem is formulated as a Mixed-Integer Linear Program (MILP) that minimizes compute and communication energy subject to end-to-end latency and task-quality constraints.",
+            "interpretation_zh": "将联合切分与混合精度分配建模为MILP，在时延与任务质量约束下降低计算与通信能耗。",
+            "inference": false
+          },
+          {
+            "quote_en": "while limiting the reduction in 3D detection accuracy to $3.1$--$4.1$ percentage points in $\\mathrm{mAP}_{50}$ relative to FP16 execution",
+            "interpretation_zh": "以3D检测精度下降幅度作为任务质量约束的验证，核心仍是部署编排优化。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "jointly selects model partition points, per-layer quantization bitwidths, and execution placement across heterogeneous vehicular compute nodes",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "若迁移至多传感器船舶检测，需要把模型切分点和逐层量化位宽决策的输入从车联网V2V带宽与节点异构性改为船载多传感器节点（雷达、AIS、相机）的链路带宽与算力约束；训练目标由最小化计算与通信能耗改为在检测时延与mAP约束下分配混合精度；结构上需按多模态融合网络层重新定义可切分点与量化敏感层。摘要未验证这些变化，属推断。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为车联网边缘视觉Transformer的切分推理与量化部署，不是海事感知算法",
+          "核心贡献是MILP能耗与时延优化，检测仅为约束验证指标",
+          "迁移至船舶多传感器检测需重构约束与融合结构，摘要无证据支持"
+        ],
+        "decision": "候选",
+        "reason_zh": "陆上车联网视觉Transformer部署优化，含多路视频流3D检测验证，与多传感器感知部署有联系，但核心为通信与计算资源优化而非感知匹配，迁移需具体重构。",
+        "confidence": 0.85,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "车联网异构边缘节点上视觉Transformer的模型切分、混合精度量化与执行放置联合优化",
+        "target_task": "edge_vision_transformer_deployment",
+        "core_contribution": "将联合切分与逐层量化建模为MILP以降低V2V通信与计算能耗",
+        "application_context": "车联网OPV2V多路视频流3D检测的Jetson边缘部署验证",
+        "security_centric": false,
+        "communication_centric": true
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "dbfa630d-a3b2-4fc8-afc1-c4be933cb67e"
+    },
+    "2eda5604b51d059bf26d91e494e19a46f501a4a67c4b17d90c74b9f64cf2e88c": {
+      "paper_id": "2611.14192",
+      "title": "A stochastic chemical system in contact with reservoirs",
+      "fingerprint": "2eda5604b51d059bf26d91e494e19a46f501a4a67c4b17d90c74b9f64cf2e88c",
+      "evaluation": {
+        "paper_id": "2611.14192",
+        "task_type": "stochastic_chemical_system_master_equation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We prove that the master equation has a spectral gap that is independent on $ε$ and we analyse in detail the asymptotics of the solution to the master equation as $ε\\to 0$.",
+            "interpretation_zh": "证明主方程具有与ε无关的谱隙并分析ε趋于0时的渐近解。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯随机化学反应系统的概率与渐近分析",
+          "与视觉、多模态、海事感知及任何匹配学习方法无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "随机化学系统主方程的谱隙与渐近分析，与海事多源融合、船舶视觉及通用视觉匹配方法均无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "与储层接触的随机化学系统主方程的谱隙与渐近行为分析",
+        "target_task": "stochastic_chemical_system_master_equation",
+        "core_contribution": "证明近似主方程的谱隙与ε无关并给出渐近解",
+        "application_context": "随机化学反应动力学理论分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "dbfa630d-a3b2-4fc8-afc1-c4be933cb67e"
+    },
+    "482e9e59747b0810dbb2bdccdaf16ce3f2c2aac328ecbadd4e24888ff2458592": {
+      "paper_id": "2611.14190",
+      "title": "Affine Springer fibers, Cherednik algebra modules and Hilbert schemes: torus link case",
+      "fingerprint": "482e9e59747b0810dbb2bdccdaf16ce3f2c2aac328ecbadd4e24888ff2458592",
+      "evaluation": {
+        "paper_id": "2611.14190",
+        "task_type": "affine_springer_fiber",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学论文，无感知或视觉任务"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "代数与表示论数学论文，与海事感知、跨模态匹配无关。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "affine Springer fibers 与 Cherednik 代数的联系",
+        "target_task": "other",
+        "core_contribution": "用 Hodge 模与 shuffle 定理联系三类对象",
+        "application_context": "纯数学理论",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f07f180a-5719-4255-b500-08e9db73f7b6"
+    },
+    "22362f398005a894b3b7de8b43661f09de1d183279a95e4a69b5cf04f79cc55d": {
+      "paper_id": "2611.14183",
+      "title": "An Augmented Lagrangian Approach to Lifted Bellman Linear Programming",
+      "fingerprint": "22362f398005a894b3b7de8b43661f09de1d183279a95e4a69b5cf04f79cc55d",
+      "evaluation": {
+        "paper_id": "2611.14183",
+        "task_type": "offline_reinforcement_learning",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "We solve the same program with the method of multipliers",
+            "interpretation_zh": "用乘子法求解约束优化，属强化学习优化技术",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "无跨模态匹配或感知任务证据",
+          "乘子法仅为优化技术，未展示可迁移到视觉匹配"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "离线强化学习优化论文，与感知匹配任务无直接联系，方法迁移缺乏具体路径。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "离线强化学习中 LBLP 的约束求解",
+        "target_task": "other",
+        "core_contribution": "用乘子法学约束系数并由对偶上升更新",
+        "application_context": "OGBench 离线强化学习基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f07f180a-5719-4255-b500-08e9db73f7b6"
+    },
+    "25c67d9d5010adcc3bcf94b881e9ddf0963095ed9a736655e4f683b263940fa4": {
+      "paper_id": "2611.14174",
+      "title": "Cross-Border Fulfillment Center Selection via Doubly Robust Estimation and Linear Programming",
+      "fingerprint": "25c67d9d5010adcc3bcf94b881e9ddf0963095ed9a736655e4f683b263940fa4",
+      "evaluation": {
+        "paper_id": "2611.14174",
+        "task_type": "fulfillment_center_selection",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "跨境电商物流优化，非感知任务"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "跨境履约中心选择优化，与海事目标感知无关。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "跨境履约中心选择优化",
+        "target_task": "other",
+        "core_contribution": "结合预测、双稳健估计与线性规划进行中心选择",
+        "application_context": "电商国际航运走廊",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f07f180a-5719-4255-b500-08e9db73f7b6"
+    },
+    "bc38db4bd5f32a681e352909d23a2d479571d5e8aaa8004f57c7967869ca6eaf": {
+      "paper_id": "2611.14172",
+      "title": "Generalizations of Courant brackets in the T-dual description of a weakly curved string background",
+      "fingerprint": "bc38db4bd5f32a681e352909d23a2d479571d5e8aaa8004f57c7967869ca6eaf",
+      "evaluation": {
+        "paper_id": "2611.14172",
+        "task_type": "string_theory_physics",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "理论物理，无感知学习内容"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "弦论与 Courant 括号理论物理论文，与任务无关。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "弱弯曲背景下 Courant 括号的推广",
+        "target_task": "other",
+        "core_contribution": "构造 T 对偶下的广义 Courant 代数结构",
+        "application_context": "理论物理",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "f07f180a-5719-4255-b500-08e9db73f7b6"
+    },
+    "385e93b61f68eb1116d9c55b440ca375f65ce7f4813cfb39fb35522ce26eb20a": {
+      "paper_id": "2611.14511",
+      "title": "Pyrite: Building and Benchmarking Protein-Ligand Pose Ranking Agents",
+      "fingerprint": "385e93b61f68eb1116d9c55b440ca375f65ce7f4813cfb39fb35522ce26eb20a",
+      "evaluation": {
+        "paper_id": "2611.14511",
+        "task_type": "protein-ligand pose ranking / LLM-guided feature discovery",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we introduce PyriteRep, a structured representation of molecular geometry, protein-ligand interactions, and physicochemical scores",
+            "interpretation_zh": "提出面向分子几何与蛋白-配体相互作用的领域专用结构化表征，属于计算化学特有的特征工程。",
+            "inference": false
+          },
+          {
+            "quote_en": "PyriteFeaturizer, which generates executable code to construct features for logistic regression",
+            "interpretation_zh": "用LLM生成代码构建特征供logistic回归排序，机制依赖化学评分与分子特征。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为蛋白-配体对接位姿排序，与海事/交通/通用视觉匹配无直接任务联系",
+          "PyriteRep是化学专用表征，摘要未给出任务无关的跨模态匹配机制",
+          "LLM特征发现与GRPO改进均围绕化学位姿排序评估，无法具体映射到视觉检测或跨模态对齐"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "蛋白质-配体位姿排序，属药物发现，与船舶感知及可迁移通用匹配方法均无具体联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "可靠地对共折叠模型生成的蛋白-配体候选位姿进行成对排序",
+        "target_task": "其他",
+        "core_contribution": "构建Pyrite成对位姿排序基准，并提出PyriteRep结构化表征与两个LLM智能体用于位姿排序",
+        "application_context": "小分子药物发现中的分子对接与候选位姿筛选",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "307f6fb2-c16c-4f1f-9d49-ab9e64a774c8"
+    },
+    "6abb1d3267aa8fd3263aed5ae70aefb24c68c08652676bd0631d16d35a2ea3db": {
+      "paper_id": "2611.14508",
+      "title": "When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology",
+      "fingerprint": "6abb1d3267aa8fd3263aed5ae70aefb24c68c08652676bd0631d16d35a2ea3db",
+      "evaluation": {
+        "paper_id": "2611.14508",
+        "task_type": "connectome-constrained model evaluation / structure-function inference",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We separate three estimands: physiology tuned on the real wiring and transferred to nulls (P1), each wiring tuned on its own (P2), and P2 restricted to physiology consistent with independent data (P3)",
+            "interpretation_zh": "提出三种评估设定以分离连接组结构与参数调优的混淆，属于神经科学实证方法学。",
+            "inference": false
+          },
+          {
+            "quote_en": "we measure what they do to biological conclusions, using synthetic ground truth, placebo nulls and three Drosophila circuit models",
+            "interpretation_zh": "用合成真值、安慰剂零模型与果蝇回路模型检验评估偏差对生物学结论的影响。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为果蝇连接组与神经回路结构-功能推断，与船舶视觉或多源关联无任务联系",
+          "评估协议与生理参数调优是神经科学专用，摘要未提供任务无关的匹配/检测学习机制",
+          "所涉ML偏差概念为分析框架而非可复用感知算法"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "连接组结构-功能推断的方法学评估，属神经科学，缺乏海事或通用视觉匹配的具体可迁移方法。",
+        "confidence": 0.93,
+        "primary_domain": "other",
+        "primary_problem": "连接组约束模型的结构-功能比较易受参数调优混淆，需更可信的评估协议",
+        "target_task": "其他",
+        "core_contribution": "提出三种估计设定分离连线与调优混淆，并量化其对果蝇回路结构-功能结论的影响",
+        "application_context": "果蝇神经回路连接组约束模型的基准检验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "307f6fb2-c16c-4f1f-9d49-ab9e64a774c8"
+    },
+    "adaf6e86f9fb9e76cf3ebc5e32a60f0c865d0465b98ead12d8a5477094f2d32a": {
+      "paper_id": "2611.14477",
+      "title": "FERN: Cross-Benchmark Table Retrieval for Text-to-SQL with Frozen Retrievers and Learned Ranking",
+      "fingerprint": "adaf6e86f9fb9e76cf3ebc5e32a60f0c865d0465b98ead12d8a5477094f2d32a",
+      "evaluation": {
+        "paper_id": "2611.14477",
+        "task_type": "table retrieval for text-to-SQL with learned ranking",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "FERN (Feature-Engineered Ranking with No generative LLM) instead fuses three frozen retrievers into 100 candidates, describes each with up to 120 features, and reorders them with LightGBM rankers fitted once on BIRD's training questions",
+            "interpretation_zh": "融合多个冻结检索器候选并用手工特征加LightGBM重排序，属于文本表格检索排序流程。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为文本到SQL的表格检索，与船舶视觉、多源关联及跨模态匹配无直接任务联系",
+          "重排序依赖表格检索专用特征，摘要未给出可迁移至视觉/雷达匹配的通用机制",
+          "跨基准泛化结论仅针对表格召回指标"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "面向Text-to-SQL的跨基准表格检索排序，属NLP检索，与船舶感知和可复用跨模态匹配方法无具体联系。",
+        "confidence": 0.93,
+        "primary_domain": "other",
+        "primary_problem": "大规模合并表目录下文本到SQL的表格检索召回与排序",
+        "target_task": "其他",
+        "core_contribution": "提出FERN：冻结检索器融合、特征工程与LightGBM重排序的无生成LLM表格检索方法",
+        "application_context": "跨BIRD、Spider、Fiben等基准的Text-to-SQL表格检索",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "307f6fb2-c16c-4f1f-9d49-ab9e64a774c8"
+    },
+    "c98750127b843e1caf1a6047dbd21e323f87220b32d314363d28c95b743f1798": {
+      "paper_id": "2611.14463",
+      "title": "A Theory of Cross-Validation Variance",
+      "fingerprint": "c98750127b843e1caf1a6047dbd21e323f87220b32d314363d28c95b743f1798",
+      "evaluation": {
+        "paper_id": "2611.14463",
+        "task_type": "theory of cross-validation variance",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "we prove an exact finite-sample identity for the variance of the cross-validated estimate",
+            "interpretation_zh": "证明交叉验证估计方差的有限样本恒等式，属统计评估理论。",
+            "inference": false
+          },
+          {
+            "quote_en": "K-fold cross-validation, whose weights are equal across observations by design, is therefore variance optimal at first order",
+            "interpretation_zh": "由恒等式推出K折交叉验证在一阶上方差最优的设计原则。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为交叉验证方差统计理论，与感知任务无直接联系",
+          "结论针对一般模型评估设计，未提供可用于视觉检测或跨模态匹配的具体学习方法",
+          "摘要方法为理论推导，无法具体说明对目标感知任务的输入/训练/结构调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "交叉验证方差的统计理论分析，与船舶视觉、多源关联及可迁移感知匹配方法无具体联系。",
+        "confidence": 0.94,
+        "primary_domain": "other",
+        "primary_problem": "交叉验证估计的方差来源与最优切分设计缺乏精确理论",
+        "target_task": "其他",
+        "core_contribution": "给出交叉验证方差的有限样本恒等式、分解及方差最优切分设计原则",
+        "application_context": "模型预测性能评估的交叉验证设计选择与推断",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "307f6fb2-c16c-4f1f-9d49-ab9e64a774c8"
     }
   }
 }
