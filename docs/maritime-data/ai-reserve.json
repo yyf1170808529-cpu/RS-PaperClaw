@@ -1175,7 +1175,31 @@
         "2026-11-12"
       ],
       "available": false
+    },
+    "2511.11460": {
+      "paper_id": "2511.11460",
+      "fingerprint": "13df64ae8abcf024c418f7981a818fd42371940a06a2fb393dd6c4b504ac3885",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "doi:10.1109/tits.2025.3620759": {
+      "paper_id": "doi:10.1109/tits.2025.3620759",
+      "fingerprint": "d2c224c2662c423f5bb4c0ff65e4d13fdd4b898107b3eb02e4fae84e897fcc0c",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
+    },
+    "doi:10.1109/tits.2025.3628677": {
+      "paper_id": "doi:10.1109/tits.2025.3628677",
+      "fingerprint": "ce86d5b895c7604f1c3e5ce0a966529b693ac2f831691352e08091a8cb5cafac",
+      "review_version": 2,
+      "qualified": true,
+      "pushed_dates": [],
+      "available": true
     }
   },
-  "available_count": 0
+  "available_count": 3
 }

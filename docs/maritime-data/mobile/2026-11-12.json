@@ -238,23 +238,23 @@
     }
   ],
   "selection_audit": {
-    "candidate_count": 1623,
-    "ai_reviewed": 969,
+    "candidate_count": 1625,
+    "ai_reviewed": 986,
     "ai_states": {
-      "evaluated": 969,
-      "domain_excluded": 135,
-      "uncertain": 425,
-      "unassessed": 94
+      "evaluated": 986,
+      "domain_excluded": 177,
+      "uncertain": 443,
+      "unassessed": 19
     },
     "stage_counts": {
       "0": 13,
       "1": 213,
-      "3": 128,
+      "3": 130,
       "2": 1269
     },
-    "ai_rejected": 964,
+    "ai_rejected": 978,
     "translation_deferred": 0,
-    "qualified_count": 5,
+    "qualified_count": 8,
     "selected_count": 5,
     "shortfall": 0,
     "translation_replacements": [],
