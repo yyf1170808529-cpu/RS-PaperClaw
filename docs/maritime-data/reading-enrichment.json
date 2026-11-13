@@ -2503,6 +2503,146 @@
       "translation_source": "deepseek",
       "priced_cost_cny": 0.002257,
       "translated_at": "2026-11-12T12:24:17+08:00"
+    },
+    "7bb84bd1973847495216d116afa097136993dcd019eb65772ec93a658181eacf": {
+      "status": "audit_required",
+      "paper_id": "doi:10.1109/tits.2025.3628677",
+      "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 574,
+        "completion_tokens": 411,
+        "total_tokens": 985,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 190
+      },
+      "cost_upper_cny": 0.00368336,
+      "created": 1794573016,
+      "candidate": {
+        "paper_id": "doi:10.1109/tits.2025.3628677",
+        "summary_zh": "针对无人水面艇受水面反射、尾迹和太阳耀斑干扰难以识别小尺度水面障碍物的问题，提出实时分割网络RSOS-Net，通过改进轻量特征金字塔、快速金字塔池化和注意力特征融合实现线上检测。",
+        "migration_zh": "研究推断：可将FPPM级联池化用于多传感器融合的Radar–视觉–AIS特征全局上下文建模，将AFFM通道-空间注意力嵌入视觉–AIS关联的特征精炼模块，以增强小目标与位置细节监督。",
+        "abstract_zh": "由于水面反射、尾迹和太阳耀斑，无人水面艇（UWV）在识别水面障碍物，尤其是外观尺度较小的障碍物方面长期面临挑战。本文受编码器-解码器架构启发，构建了实时水面障碍物分割网络（RSOS-Net），以实现UWV的在线水面障碍物检测。首先，部署改进的轻量特征金字塔网络结构，以同时灵活适应显著的尺度变化并增强对小障碍物的关注。为解决水面扰动引起的视觉歧义，快速金字塔池化模块（FPPM）和基于注意力的特征融合模块（AFFM）分别整体设计于轻量编码器和解码器中。因此，FPPM能够通过级联池化捕获局部和全局上下文信息，从而将障碍物与太阳耀斑区分开，而AFFM凭借通道-空间注意力机制增强细节特征和空间位置，能够排除反射。结果表明，RSOS-Net在LaRS数据集上达到65.1%的F1分数，同时在NVIDIA RTX 3060平台上检测速度达到79.5帧每秒。值得注意的是，RSOS-Net在第三届基于USV的嵌入式障碍物分割挑战赛中获得第一名，官方结果见https://macvi.org/workshop/macvi25/summary"
+      },
+      "error": "Missing source numbers"
+    },
+    "5d73357a13be3070585a0b9a201a64bb7f4e57d1eda53c923a6ba1744715ad57": {
+      "status": "success",
+      "paper_id": "2511.11460",
+      "english_hash": "ab6214e47d37597a50e0b5c32c0d0514b50604682ecc7443bd6b9ffb298d2cad",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 470,
+        "completion_tokens": 334,
+        "total_tokens": 804,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 214
+      },
+      "cost_upper_cny": 0.00311024,
+      "created": 1794573021,
+      "candidate": {
+        "paper_id": "2511.11460",
+        "summary_zh": "论文从条件计算角度重新审视遥感多模态缺失分类，提出参数高效的Missing-aware Mixture-of-LoRAs框架，用双路由解耦共享与动态专家，实现单模型自适应多种模态缺失场景。",
+        "migration_zh": "研究推断：可将双路由MoE-LoRA思想迁移到多传感器融合船舶检测/分割的融合模块，针对Radar、AIS或视觉-AIS关联中输入模态随机缺失，用模态可用性作为路由监督，解耦共享与模态感知专家，保持检测头输入结构不变并提升鲁棒性。",
+        "abstract_zh": "多模态遥感分类常因传感器故障和环境干扰而出现模态缺失，导致性能严重下降。本文从条件计算视角重新思考缺失模态学习，并探究混合专家（MoE）模型能否内在地适应多样的模态缺失场景。我们首先系统研究了代表性MoE范式在多种缺失模态设置下的表现，揭示其潜力与局限。基于这些发现，我们提出Missing-aware Mixture-of-LoRAs（MaMOL），一种参数高效的MoE框架，将多种模态缺失情况统一于单一模型。MaMOL引入双路由机制，解耦模态不变的共享专家与模态感知的动态专家，从而根据可用模态自动激活专家。在多个遥感基准上的大量实验表明，MaMOL以极小的计算开销显著提升了多样缺失模态场景下的鲁棒性与泛化能力。在自然图像数据集上的迁移实验进一步验证了其可扩展性与跨域适用性。"
+      },
+      "content": {
+        "paper_id": "2511.11460",
+        "summary_zh": "论文从条件计算角度重新审视遥感多模态缺失分类，提出参数高效的Missing-aware Mixture-of-LoRAs框架，用双路由解耦共享与动态专家，实现单模型自适应多种模态缺失场景。",
+        "migration_zh": "研究推断：可将双路由MoE-LoRA思想迁移到多传感器融合船舶检测/分割的融合模块，针对Radar、AIS或视觉-AIS关联中输入模态随机缺失，用模态可用性作为路由监督，解耦共享与模态感知专家，保持检测头输入结构不变并提升鲁棒性。",
+        "abstract_zh": "多模态遥感分类常因传感器故障和环境干扰而出现模态缺失，导致性能严重下降。本文从条件计算视角重新思考缺失模态学习，并探究混合专家（MoE）模型能否内在地适应多样的模态缺失场景。我们首先系统研究了代表性MoE范式在多种缺失模态设置下的表现，揭示其潜力与局限。基于这些发现，我们提出Missing-aware Mixture-of-LoRAs（MaMOL），一种参数高效的MoE框架，将多种模态缺失情况统一于单一模型。MaMOL引入双路由机制，解耦模态不变的共享专家与模态感知的动态专家，从而根据可用模态自动激活专家。在多个遥感基准上的大量实验表明，MaMOL以极小的计算开销显著提升了多样缺失模态场景下的鲁棒性与泛化能力。在自然图像数据集上的迁移实验进一步验证了其可扩展性与跨域适用性。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.00155512,
+      "translated_at": "2026-11-13T20:30:21+08:00"
+    },
+    "611f2c1aa4dc5bac8d6cc2180b522f11d6d745ee5977803513ab89159d01795f": {
+      "status": "success",
+      "paper_id": "doi:10.1109/tits.2025.3620759",
+      "english_hash": "f14d308ad05147977c87ee92c6e1be1c3108c86262972a8371fa36175096a048",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 606,
+        "completion_tokens": 411,
+        "total_tokens": 1017,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 222
+      },
+      "cost_upper_cny": 0.00374736,
+      "created": 1794573025,
+      "candidate": {
+        "paper_id": "doi:10.1109/tits.2025.3620759",
+        "summary_zh": "该论文针对仅靠AIS难以监管关闭设备或未装AIS船舶的问题，提出利用SAR图像经实例分割提取船舶尺寸，再通过多元回归预测载重吨位，实现水域智能监管。",
+        "migration_zh": "研究推断：可将SAR实例分割提取船体尺寸并回归载重吨位的思路迁移至船舶检测/分割任务，以尺寸为监督信号，融合Radar与视觉或AIS关联模块，调整多任务输出头增强鲁棒性。",
+        "abstract_zh": "船舶被规定须根据其类型、尺寸、载运能力等在指定水域内运营。然而，尽管有相关规定，一些船东仍试图通过伪造证书、隐瞒船舶信息或未经授权的非法行为来规避规定，以降低运营成本或获取额外利益，这对海上交通安全构成重大威胁。仅通过自动识别系统（AIS）数据进行监测存在局限，因为它依赖于船舶主动提交信息，无法追踪故意关闭AIS或未配备AIS设备的船舶。本文提出一种智能水路运输监管方法，利用合成孔径雷达（SAR）遥感技术自动检测船舶目标并预测其载重吨位（DWT）。通过基于SAR海洋图像的实例分割模型识别船舶目标并提取其主要尺寸。随后，多元回归分析建立船舶类型、尺寸与DWT之间的关系，有效预测其载运能力。实验结果表明，三种主要船型（即集装箱船、散货船、油轮）的平均绝对百分比误差（MAPE）分别为4.99%、6.09%和4.20%。所提方法可作为繁琐传统人工方法的辅助，能够大规模、批量地自动检测船舶及其载运能力，无论船舶是否在港。该方法可应用于船舶航线调度和航道布局，作为避免检查疏漏的额外参考，并显著提升海事监管效率。"
+      },
+      "content": {
+        "paper_id": "doi:10.1109/tits.2025.3620759",
+        "summary_zh": "该论文针对仅靠AIS难以监管关闭设备或未装AIS船舶的问题，提出利用SAR图像经实例分割提取船舶尺寸，再通过多元回归预测载重吨位，实现水域智能监管。",
+        "migration_zh": "研究推断：可将SAR实例分割提取船体尺寸并回归载重吨位的思路迁移至船舶检测/分割任务，以尺寸为监督信号，融合Radar与视觉或AIS关联模块，调整多任务输出头增强鲁棒性。",
+        "abstract_zh": "船舶被规定须根据其类型、尺寸、载运能力等在指定水域内运营。然而，尽管有相关规定，一些船东仍试图通过伪造证书、隐瞒船舶信息或未经授权的非法行为来规避规定，以降低运营成本或获取额外利益，这对海上交通安全构成重大威胁。仅通过自动识别系统（AIS）数据进行监测存在局限，因为它依赖于船舶主动提交信息，无法追踪故意关闭AIS或未配备AIS设备的船舶。本文提出一种智能水路运输监管方法，利用合成孔径雷达（SAR）遥感技术自动检测船舶目标并预测其载重吨位（DWT）。通过基于SAR海洋图像的实例分割模型识别船舶目标并提取其主要尺寸。随后，多元回归分析建立船舶类型、尺寸与DWT之间的关系，有效预测其载运能力。实验结果表明，三种主要船型（即集装箱船、散货船、油轮）的平均绝对百分比误差（MAPE）分别为4.99%、6.09%和4.20%。所提方法可作为繁琐传统人工方法的辅助，能够大规模、批量地自动检测船舶及其载运能力，无论船舶是否在港。该方法可应用于船舶航线调度和航道布局，作为避免检查疏漏的额外参考，并显著提升海事监管效率。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.00187368,
+      "translated_at": "2026-11-13T20:30:25+08:00"
+    },
+    "8de9abf56725c95a1e44eb1c7305c9a276afb8b802f86e73ff169ff8aab16a6b": {
+      "status": "success",
+      "paper_id": "2602.05037",
+      "english_hash": "1debbc5c2de04b5c5f612676197181c85f5f432e5994745b7ac847a861514f21",
+      "prompt_version": "3.8.6-1",
+      "purpose": "daily_translation",
+      "attempts": 1,
+      "previous_attempt": null,
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 465,
+        "completion_tokens": 354,
+        "total_tokens": 819,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 465
+      },
+      "cost_upper_cny": 0.003762,
+      "created": 1794573584,
+      "candidate": {
+        "paper_id": "2602.05037",
+        "summary_zh": "UniTrack提出一种即插即用的图论损失函数，通过统一可微学习直接优化跟踪目标，将检测精度、身份保持和时空一致性集成到端到端损失中，在不修改架构的情况下提升多种MOT模型的性能。",
+        "migration_zh": "研究推断：可将UniTrack的图表示损失函数迁移至船舶多目标跟踪任务，结合Radar与AIS数据构建跨模态图结构，在检测与身份关联模块中引入时空一致性监督，提升船舶身份保持能力。",
+        "abstract_zh": "我们提出UniTrack，一种即插即用的图论损失函数，旨在通过统一的可微学习直接优化跟踪特定目标，从而显著提升多目标跟踪（MOT）性能。与先前重新设计跟踪架构的基于图的MOT方法不同，UniTrack提供了一种通用的训练目标，将检测精度、身份保持和时空一致性集成到一个端到端可训练的损失函数中，无需架构修改即可与现有MOT系统无缝集成。通过可微图表示学习，UniTrack使网络能够学习跨帧运动连续性和身份关系的整体表示。我们在多种跟踪模型和多个具有挑战性的基准上验证了UniTrack，在包括Trackformer、MOTR、FairMOT、ByteTrack、GTR和MOTE在内的所有测试架构和数据集上均表现出持续改进。大量评估表明，在具有挑战性的基准上，身份切换最多减少53%，IDF1提升12%，其中GTR在SportsMOT上实现了9.7%的MOTA峰值性能提升。"
+      },
+      "content": {
+        "paper_id": "2602.05037",
+        "summary_zh": "UniTrack提出一种即插即用的图论损失函数，通过统一可微学习直接优化跟踪目标，将检测精度、身份保持和时空一致性集成到端到端损失中，在不修改架构的情况下提升多种MOT模型的性能。",
+        "migration_zh": "研究推断：可将UniTrack的图表示损失函数迁移至船舶多目标跟踪任务，结合Radar与AIS数据构建跨模态图结构，在检测与身份关联模块中引入时空一致性监督，提升船舶身份保持能力。",
+        "abstract_zh": "我们提出UniTrack，一种即插即用的图论损失函数，旨在通过统一的可微学习直接优化跟踪特定目标，从而显著提升多目标跟踪（MOT）性能。与先前重新设计跟踪架构的基于图的MOT方法不同，UniTrack提供了一种通用的训练目标，将检测精度、身份保持和时空一致性集成到一个端到端可训练的损失函数中，无需架构修改即可与现有MOT系统无缝集成。通过可微图表示学习，UniTrack使网络能够学习跨帧运动连续性和身份关系的整体表示。我们在多种跟踪模型和多个具有挑战性的基准上验证了UniTrack，在包括Trackformer、MOTR、FairMOT、ByteTrack、GTR和MOTE在内的所有测试架构和数据集上均表现出持续改进。大量评估表明，在具有挑战性的基准上，身份切换最多减少53%，IDF1提升12%，其中GTR在SportsMOT上实现了9.7%的MOTA峰值性能提升。"
+      },
+      "translation_source": "deepseek",
+      "priced_cost_cny": 0.001881,
+      "translated_at": "2026-11-13T20:39:44+08:00"
     }
   }
 }

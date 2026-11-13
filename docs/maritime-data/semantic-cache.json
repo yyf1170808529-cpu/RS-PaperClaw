@@ -71889,7 +71889,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a"
+      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a",
+      "compatible_fingerprints": []
     },
     "a07ef4256ff649cdf70cc94b0a38bf4767b4b4fd44bef2a5dfbb1bef7c95d552": {
       "paper_id": "2611.14461",
@@ -71920,7 +71921,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a"
+      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a",
+      "compatible_fingerprints": []
     },
     "9f7165a11302784125a054814b6a4ce4e84a873f7d3c4333d9a65eeeeaccd338": {
       "paper_id": "2611.14459",
@@ -71951,7 +71953,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a"
+      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a",
+      "compatible_fingerprints": []
     },
     "49a812ec86c63ba1658d8726fc65d0a37e26c064687bf035f4ac842f709c2f6c": {
       "paper_id": "2611.14454",
@@ -71982,7 +71985,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a"
+      "request_id": "b5a34fb7-9d68-4505-80a0-071cae01f72a",
+      "compatible_fingerprints": []
     },
     "6aa96331b1d0b7cddd6866a258dfc538a3127c290601353878513371ca03fc33": {
       "paper_id": "2611.14437",
@@ -72012,7 +72016,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a"
+      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a",
+      "compatible_fingerprints": []
     },
     "70ebae5b295a96b4f4b46035c0c2c4c44aaccca3fffa4ddeaaaabf964586af67": {
       "paper_id": "2611.14434",
@@ -72042,7 +72047,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a"
+      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a",
+      "compatible_fingerprints": []
     },
     "edc8588c87ec21c78fe90760a4b1ff77595ead13e6f2d0bb8c45704ea1adad06": {
       "paper_id": "2611.14426",
@@ -72072,7 +72078,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a"
+      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a",
+      "compatible_fingerprints": []
     },
     "a0f1ffd13ab076eaa0a6f9a7f979a00a9317b628f1ed4be318e0513ff86c0194": {
       "paper_id": "2611.14421",
@@ -72102,7 +72109,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a"
+      "request_id": "62803b21-9f0b-464b-a306-5709ba56001a",
+      "compatible_fingerprints": []
     },
     "e71f175e77d9e1e2c114034428bb5e2a774c50ec29bbef7f61600c21e1213302": {
       "paper_id": "2611.14415",
@@ -72154,7 +72162,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "6162a0c3-aa2d-4d23-8bb4-6cd75e46d9ab"
+      "request_id": "6162a0c3-aa2d-4d23-8bb4-6cd75e46d9ab",
+      "compatible_fingerprints": []
     },
     "0d3827edb7376ae6bd74e2eb92f1e430e5fec35aa018a6cc42a1ced75ac998b8": {
       "paper_id": "2611.14377",
@@ -72183,7 +72192,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404"
+      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404",
+      "compatible_fingerprints": []
     },
     "563ceb03fe2951c9d91feccff2917a15ccc28a8a9e8126cdd0cd740fd3210916": {
       "paper_id": "2611.14376",
@@ -72212,7 +72222,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404"
+      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404",
+      "compatible_fingerprints": []
     },
     "c889d4f63c486ed84df84d9d4caf7dc6e32ca62baf6d26888f85783e8a71d2dc": {
       "paper_id": "2611.14369",
@@ -72241,7 +72252,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404"
+      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404",
+      "compatible_fingerprints": []
     },
     "6e0728ec4f4985c2a82f4af218bbb560f913392dbd97cc9b9b82bd10face9346": {
       "paper_id": "2611.14365",
@@ -72270,7 +72282,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404"
+      "request_id": "528d1ce4-b5cf-41e5-81e2-e50d7dd24404",
+      "compatible_fingerprints": []
     },
     "12d651a390feadcf10d05278a30e1d0c7173bd633dfdb98974fa0bbd94d437d0": {
       "paper_id": "2611.14363",
@@ -72300,7 +72313,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a"
+      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a",
+      "compatible_fingerprints": []
     },
     "3c55304589c9cc30fb303de5783277c4cac161552689bc662c34050eaf5aea7c": {
       "paper_id": "2611.14356",
@@ -72330,7 +72344,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a"
+      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a",
+      "compatible_fingerprints": []
     },
     "ad3abf4685763c706f9e1e3bd3c7b79c493380614ce89cd72d0692a80e144380": {
       "paper_id": "2611.14352",
@@ -72360,7 +72375,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a"
+      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a",
+      "compatible_fingerprints": []
     },
     "19b63266d12c14379b28350fcac89ea6a664578ebeeca03b7a628132f2b19ff5": {
       "paper_id": "2611.14347",
@@ -72390,7 +72406,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a"
+      "request_id": "02084936-578c-4b92-8677-3dce6693aa1a",
+      "compatible_fingerprints": []
     },
     "ecee0ca316760927d81552580a51d00dfd83f146643ad85b421d9e31a80c4133": {
       "paper_id": "2611.14345",
@@ -72420,7 +72437,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704"
+      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704",
+      "compatible_fingerprints": []
     },
     "938d87dff546c364d1ffc62451c0f4ab2eadea3193c60be2681135a35d2114c3": {
       "paper_id": "2611.14342",
@@ -72450,7 +72468,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704"
+      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704",
+      "compatible_fingerprints": []
     },
     "f2e93caa59e626de64c2935767fe1d681138ae063d4d0bb70a0b91e31e668270": {
       "paper_id": "2611.14335",
@@ -72479,7 +72498,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704"
+      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704",
+      "compatible_fingerprints": []
     },
     "140b2c415b14d1e0140974e1ea51b775eaad1ceaf75c25e0c03745a12e247d37": {
       "paper_id": "2611.14324",
@@ -72508,7 +72528,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704"
+      "request_id": "a5c7a1c4-905a-4b06-a777-25037d250704",
+      "compatible_fingerprints": []
     },
     "4ca0e37af9b9d9f14d032b5df9a88ed167a9ed46cbd9ded058f42d01c01c6968": {
       "paper_id": "2611.14323",
@@ -72550,7 +72571,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9"
+      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9",
+      "compatible_fingerprints": []
     },
     "f96fc83b78b3359b014b2910f7371e4eebfb325496e23d6242d127f541270e4f": {
       "paper_id": "2611.14320",
@@ -72592,7 +72614,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9"
+      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9",
+      "compatible_fingerprints": []
     },
     "594dd889e5a380fefd64a05b647745cbe072f9894aa1e73e13dcdb68b84121bb": {
       "paper_id": "2611.14302",
@@ -72622,7 +72645,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9"
+      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9",
+      "compatible_fingerprints": []
     },
     "8dc78937a2a549ed6d5aaa5612cc5c4e459bf98fc24334ccb9d73a7e16715ed2": {
       "paper_id": "2611.14287",
@@ -72664,7 +72688,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9"
+      "request_id": "a6925492-dd50-4d79-90d2-d63f669055a9",
+      "compatible_fingerprints": []
     },
     "efadf2329ac0547d767c33b1c5b1ce3fb2cb847d4aada8be87c277cbcdc67f7b": {
       "paper_id": "2611.14286",
@@ -72711,7 +72736,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15"
+      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15",
+      "compatible_fingerprints": []
     },
     "bd0a2c1ba5da55bfd274d6da47d3901365fdbcd826d429ca5af641497d7b7c51": {
       "paper_id": "2611.14285",
@@ -72741,7 +72767,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15"
+      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15",
+      "compatible_fingerprints": []
     },
     "81e39e9d6c275c30fcab2aec4c882f1a5411519cdf3cc1e545bebc72ed1e59e8": {
       "paper_id": "2611.14276",
@@ -72770,7 +72797,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15"
+      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15",
+      "compatible_fingerprints": []
     },
     "90d9c1387a010b85cba2af1669910436270d800612ca4eff5ea291d802f2c472": {
       "paper_id": "2611.14256",
@@ -72812,7 +72840,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15"
+      "request_id": "a05a9b0e-ccb4-4da9-b1f6-d648364efc15",
+      "compatible_fingerprints": []
     },
     "09e4944b21fd37cf0b48790e368cac2f6f7b48203901c32a755093a0df9af52c": {
       "paper_id": "2611.14244",
@@ -72853,7 +72882,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a29cbd5b-e199-4437-91b0-5d875e70a959"
+      "request_id": "a29cbd5b-e199-4437-91b0-5d875e70a959",
+      "compatible_fingerprints": []
     },
     "28aa294db87ce50cba7a37ba05e1359206baf598dc4d39e8a162d1100897b457": {
       "paper_id": "2611.14235",
@@ -72889,7 +72919,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a29cbd5b-e199-4437-91b0-5d875e70a959"
+      "request_id": "a29cbd5b-e199-4437-91b0-5d875e70a959",
+      "compatible_fingerprints": []
     },
     "5b24f881e03342c0ff394fd8eac74bd759e1e208af5978024f4943c83c57f702": {
       "paper_id": "2611.14234",
@@ -72925,7 +72956,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "a29cbd5b-e199-4437-91b0-5d875e70a959"
+      "request_id": "a29cbd5b-e199-4437-91b0-5d875e70a959",
+      "compatible_fingerprints": []
     },
     "ef31c38b6574b344273d48c949dee1f6af54711effd8ea85e2322bf8f9342d17": {
       "paper_id": "2611.14176",
@@ -72972,7 +73004,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8"
+      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8",
+      "compatible_fingerprints": []
     },
     "63ed605c9ed0e9fe09829ece32d5e35f551cec67f3521f7749ba7de2f7994f8b": {
       "paper_id": "2611.14171",
@@ -73009,7 +73042,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8"
+      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8",
+      "compatible_fingerprints": []
     },
     "8f789b8033e6c6afb9307263a2ca04c64a51d9b5ad6200cbe463f1a7088010af": {
       "paper_id": "2611.14169",
@@ -73046,7 +73080,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8"
+      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8",
+      "compatible_fingerprints": []
     },
     "13ea243c520886b087239a32b0fe37654a7e5ad61f50321ae87e1d3a136a188f": {
       "paper_id": "2611.14168",
@@ -73083,7 +73118,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8"
+      "request_id": "2ba9575f-125a-4609-af93-9dc7941099f8",
+      "compatible_fingerprints": []
     },
     "e93be5e2b408a5ca48d6d62e639259edf0d9b2aa37bbfba73a8ee01a7707cca9": {
       "paper_id": "2611.14166",
@@ -73120,7 +73156,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7"
+      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7",
+      "compatible_fingerprints": []
     },
     "cf46337b0ec40f2b07d982a940e1660e679f530b78a61731507d634e235815a6": {
       "paper_id": "2611.14161",
@@ -73156,7 +73193,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7"
+      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7",
+      "compatible_fingerprints": []
     },
     "3c2a379423e8e5a1eefd6324bf9c9519f27ff3c2f84e9a882a3bd9b467ad1e0a": {
       "paper_id": "2611.14156",
@@ -73192,7 +73230,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7"
+      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7",
+      "compatible_fingerprints": []
     },
     "95a9edc523a0b5718397b4317f76b277f07b2dd4618fb1e62c3b2a632d15b914": {
       "paper_id": "2611.14154",
@@ -73228,7 +73267,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7"
+      "request_id": "872d92da-49ce-4481-8c16-54ab45f6a9f7",
+      "compatible_fingerprints": []
     },
     "1c7993a7e32724aa7a60f8091bd9c6977f15ff4227cfd05320afa7ac1d5c279a": {
       "paper_id": "2611.14132",
@@ -73265,7 +73305,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8"
+      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8",
+      "compatible_fingerprints": []
     },
     "4dd8cb8725c416062c68adc17ac22d1800ed9ee2529b4c4fed525d6106ccefd9": {
       "paper_id": "2611.14414",
@@ -73302,7 +73343,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8"
+      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8",
+      "compatible_fingerprints": []
     },
     "132e3e410c679562b11ae1a8812cd322a9eba9977c29c4409cff7660454414d7": {
       "paper_id": "2611.14498",
@@ -73339,7 +73381,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8"
+      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8",
+      "compatible_fingerprints": []
     },
     "78517fc563a216f922d74e9c70fa3e3a3ca6c76e2e49bb1d6d840e28b6afda8f": {
       "paper_id": "2611.06195",
@@ -73386,7 +73429,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8"
+      "request_id": "7d1d37dd-f7cc-4207-ae94-a2000b00b1c8",
+      "compatible_fingerprints": []
     },
     "d6ceac8c3ee05d62fd1b91b19dcf911ae59a7e01ae0d0e0b13f08ae7bb173892": {
       "paper_id": "2611.00105",
@@ -73433,7 +73477,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "fb305dc3-60ac-4177-9b6a-ddc6318e8342"
+      "request_id": "fb305dc3-60ac-4177-9b6a-ddc6318e8342",
+      "compatible_fingerprints": []
     },
     "f6ab17db9b171dc93fecf85baf0b8a22de79b340713e88f27561058d3bbf861c": {
       "paper_id": "2609.12261",
@@ -73475,7 +73520,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "fb305dc3-60ac-4177-9b6a-ddc6318e8342"
+      "request_id": "fb305dc3-60ac-4177-9b6a-ddc6318e8342",
+      "compatible_fingerprints": []
     },
     "78025fa6ab6ed092195585b683acbf128d0928c9f74a3812eb3a37645c81227f": {
       "paper_id": "2609.00924",
@@ -73527,7 +73573,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "fb305dc3-60ac-4177-9b6a-ddc6318e8342"
+      "request_id": "fb305dc3-60ac-4177-9b6a-ddc6318e8342",
+      "compatible_fingerprints": []
     },
     "d2c224c2662c423f5bb4c0ff65e4d13fdd4b898107b3eb02e4fae84e897fcc0c": {
       "paper_id": "doi:10.1109/tits.2025.3620759",
@@ -73568,7 +73615,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "0ac2da19-b219-4bf8-8956-c4b7ae7b9632"
+      "request_id": "0ac2da19-b219-4bf8-8956-c4b7ae7b9632",
+      "compatible_fingerprints": []
     },
     "026aeff12334bdcba5a475b7541d961577811a85b03984315d97fe94a8938427": {
       "paper_id": "2608.07795",
@@ -73620,7 +73668,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279"
+      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279",
+      "compatible_fingerprints": []
     },
     "ce86d5b895c7604f1c3e5ce0a966529b693ac2f831691352e08091a8cb5cafac": {
       "paper_id": "doi:10.1109/tits.2025.3628677",
@@ -73672,7 +73721,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279"
+      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279",
+      "compatible_fingerprints": []
     },
     "6d02da8f1b05cb7c414c9599aa649c581eb7269b9d48f52a66b402122f5d7e5b": {
       "paper_id": "2608.03559",
@@ -73724,7 +73774,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279"
+      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279",
+      "compatible_fingerprints": []
     },
     "1f6d1a05dc02d3ac725498f99adf2391491970895743eec786237fb133a5c4bc": {
       "paper_id": "2605.04877",
@@ -73776,7 +73827,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279"
+      "request_id": "435b1798-9c94-4e99-ace8-4e64174ba279",
+      "compatible_fingerprints": []
     },
     "9d220e0f1fda943bd876cb37cb55c06622df6ff49cfe16a467110ba7bb906c7a": {
       "paper_id": "2607.17157",
@@ -73823,7 +73875,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff"
+      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff",
+      "compatible_fingerprints": []
     },
     "cb18de87491ccc0e00142ac599304ce876bbd185e706fae51230d1a8e2c0af59": {
       "paper_id": "2606.14094",
@@ -73865,7 +73918,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff"
+      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff",
+      "compatible_fingerprints": []
     },
     "5127cbfc654e68ca86071c328b0148094366d34429452b4c26d969418cf8cc44": {
       "paper_id": "2606.03590",
@@ -73912,7 +73966,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff"
+      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff",
+      "compatible_fingerprints": []
     },
     "d61b23f45ce02468666dc8d4f7fc8bc06d54138a903cb1b197117c7067f5a916": {
       "paper_id": "2604.16522",
@@ -73954,7 +74009,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff"
+      "request_id": "776b7473-4f28-4e40-b3fc-155cf87e4dff",
+      "compatible_fingerprints": []
     },
     "69aa60164675580ad6db159b6a2f78b8b18ee1affe7f357f931a6993861618a5": {
       "paper_id": "2604.10527",
@@ -74001,7 +74057,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63"
+      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63",
+      "compatible_fingerprints": []
     },
     "6efc1c9a5f39c6461d8bef0ca3ae7718e18aae72329aa2b54b1afd66724b6d17": {
       "paper_id": "2604.00452",
@@ -74042,7 +74099,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63"
+      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63",
+      "compatible_fingerprints": []
     },
     "b96ae2c36da4aae3fc5266cd41c75cfa82813ec98d403a59cb4ae6ff9968b265": {
       "paper_id": "2603.06254",
@@ -74089,7 +74147,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63"
+      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63",
+      "compatible_fingerprints": []
     },
     "41a77acec4482990c69754ec7a651c2d4498d4ab6bdfc3ae0c40768f3af38528": {
       "paper_id": "2603.05970",
@@ -74125,7 +74184,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63"
+      "request_id": "96f67835-b5b5-4de6-bad4-56f8a6a4bf63",
+      "compatible_fingerprints": []
     },
     "49c2779d8120bc64955cf78821cc320b04b9ae14eaf55a2f550d970338e9364c": {
       "paper_id": "2603.06034",
@@ -74177,7 +74237,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2"
+      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2",
+      "compatible_fingerprints": []
     },
     "ce29e7c4d01b16533e4542608e54b80f550e1a5ba98789bbeecfdfcf7670ee13": {
       "paper_id": "2512.14595",
@@ -74219,7 +74280,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2"
+      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2",
+      "compatible_fingerprints": []
     },
     "22b208029e6b1edcd17731d3dcb891a920dde6464ae0dceb48123c8a77898479": {
       "paper_id": "2511.15433",
@@ -74271,7 +74333,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2"
+      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2",
+      "compatible_fingerprints": []
     },
     "7b6fb33b1bb1f162e4ddca7c0e9a36ad7f269943febb0223d10dff536b91b443": {
       "paper_id": "2607.17262",
@@ -74323,7 +74386,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2"
+      "request_id": "1a840c91-cda6-4f9b-9a47-8a49cc5975b2",
+      "compatible_fingerprints": []
     },
     "e3c7adebe6326dec4adee042f7a5dae44f15075dff40335131e72c43182f1a43": {
       "paper_id": "2607.01821",
@@ -74375,7 +74439,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277"
+      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277",
+      "compatible_fingerprints": []
     },
     "b98b4646c142ae5b756fdc433eaffafef5d2aba4cd10d664901861a3875b41df": {
       "paper_id": "2606.15514",
@@ -74427,7 +74492,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277"
+      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277",
+      "compatible_fingerprints": []
     },
     "3c402c5c9f420e4ece3da10814b1f0e68906283f69940a6907c6e6bfa1752271": {
       "paper_id": "2605.12517",
@@ -74479,7 +74545,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277"
+      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277",
+      "compatible_fingerprints": []
     },
     "62790a59cce143281349a74b3d8040e0218b4397a56222da8ab3c64d56e95a20": {
       "paper_id": "2602.16144",
@@ -74526,7 +74593,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277"
+      "request_id": "d6a77345-0697-43c6-af88-4fb5bba70277",
+      "compatible_fingerprints": []
     },
     "13df64ae8abcf024c418f7981a818fd42371940a06a2fb393dd6c4b504ac3885": {
       "paper_id": "2511.11460",
@@ -74578,7 +74646,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4"
+      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4",
+      "compatible_fingerprints": []
     },
     "91c869c2c52f9ba826ac3bbf42d61145942d041b3eed49cb561d23142a3c0f90": {
       "paper_id": "2604.19093",
@@ -74625,7 +74694,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4"
+      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4",
+      "compatible_fingerprints": []
     },
     "490ab83c96a19355fabd9069417190bd42aa35c49425065b50503bfe6ac8a029": {
       "paper_id": "2604.13247",
@@ -74667,7 +74737,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4"
+      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4",
+      "compatible_fingerprints": []
     },
     "cc3342261ffe8cf30374daaa885ead8405ae9e20f4566477acf6397b4f073173": {
       "paper_id": "2603.26801",
@@ -74714,7 +74785,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4"
+      "request_id": "2f2b88e2-57fd-4b0d-b57b-4bd2414671e4",
+      "compatible_fingerprints": []
     },
     "1fdaf2a93ce7fb1fedcb746e4a34737c5b02f4603ccd4f26829c8d180bd6f740": {
       "paper_id": "2602.21137",
@@ -74756,7 +74828,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb"
+      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb",
+      "compatible_fingerprints": []
     },
     "0174f4823b1ab8404dae0431ff1b25b2c1c5b400e42cab6547ea7f06e820eaf5": {
       "paper_id": "2512.20975",
@@ -74803,7 +74876,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb"
+      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb",
+      "compatible_fingerprints": []
     },
     "e438ad39ac7efbf81c999b8d44b1644427884c6d160e9125ae83842634ac1977": {
       "paper_id": "doi:10.1109/tits.2025.3635392",
@@ -74845,7 +74919,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb"
+      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb",
+      "compatible_fingerprints": []
     },
     "e0b6695af8d300cb8144f2bcd5d848eba853c4566f392cd844976bed6f3697c0": {
       "paper_id": "2605.08764",
@@ -74892,7 +74967,8 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb"
+      "request_id": "c8e92c1d-cea6-4c68-9a17-7cfa68c6eacb",
+      "compatible_fingerprints": []
     },
     "36cd0ce19970065fef0fec1694abb3efeec68f9748b5589b81b7ac8c9fea7cc9": {
       "paper_id": "2608.09240",
@@ -74944,7 +75020,1348 @@
       },
       "review_version": "3.8.8",
       "model": "deepseek-flash",
-      "request_id": "77a4e8a2-78e9-4e41-bcd7-bf1f0b7418b1"
+      "request_id": "77a4e8a2-78e9-4e41-bcd7-bf1f0b7418b1",
+      "compatible_fingerprints": []
+    },
+    "29cd6d17500e13adb843d856f5a252edf9732b361343e4448099accaaf256927": {
+      "paper_id": "2611.14126",
+      "title": "Hierarchical Graph Representation Learning with Pooling-Induced Substructures",
+      "fingerprint": "29cd6d17500e13adb843d856f5a252edf9732b361343e4448099accaaf256927",
+      "evaluation": {
+        "paper_id": "2611.14126",
+        "task_type": "图表示学习（层次图池化）",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "We propose Pooled-Substructure-Aware GNNs, an approach to graph pooling that explicitly preserves and processes substructures uncovered by structure-based pooling schemes.",
+            "interpretation_zh": "提出一种图池化方法，显式保留和处理由结构池化方案揭示的子结构；属于特定图数据的表示学习，与视觉/多模态匹配无直接通用关系。",
+            "inference": false
+          },
+          {
+            "quote_en": "We show that this design enhances the expressive power of pooling-based GNNs in the sense of the Weisfeiler-Lehman (WL) test.",
+            "interpretation_zh": "从WL测试角度证明设计增强池化GNN的表达能力；未涉及跨模态对齐或船舶感知。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "方法面向图结构数据，无法直接说明如何适配视觉或雷达/AIS序列匹配任务",
+          "摘要未提供与跨模态匹配或船舶检测相关的输入调整或训练目标设计"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "图池化与船舶多源关联/视觉检测无直接联系，迁移路径不具体。",
+        "confidence": 0.9,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "层次图池化中保留子结构的表示学习",
+        "target_task": "图级别分类/层次图推理",
+        "core_contribution": "提出Pooled-Substructure-Aware GNNs，显式保留池化诱导的子结构并证明增强WL表达力",
+        "application_context": "合成数据集和真实图级基准上的层次结构任务",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ec7ed2ef-fd2e-4bb2-a5a6-570cb3b77b70",
+      "compatible_fingerprints": []
+    },
+    "7f8d2c6f6a83707768c6e95a18b930c8bb8421bc46a8c885e8474bae06596d7b": {
+      "paper_id": "2611.14420",
+      "title": "OnlyAct: Extracting Action Representations from Foundation Models for World Models",
+      "fingerprint": "7f8d2c6f6a83707768c6e95a18b930c8bb8421bc46a8c885e8474bae06596d7b",
+      "evaluation": {
+        "paper_id": "2611.14420",
+        "task_type": "动作表征学习与世界模型",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "We propose a label-free contrastive adaptation framework that pulls together frame pairs sharing the same motion under a different scene and pushes apart pairs from the same scene with different motion, reshaping the geometry of the pretrained space without imposing a reconstruction bottleneck.",
+            "interpretation_zh": "无标签对比适应框架：将不同场景下相同运动的帧对拉近，将相同场景下不同运动的帧对推远；该机制可抽象为基于成对关系的跨模态/跨视图对比对齐，但摘要未涉船舶感知。",
+            "inference": false
+          },
+          {
+            "quote_en": "Compared with annotation-free latent-action methods, our representations are substantially more expressive while matching their scene invariance, and they yield world models that transfer demonstrated actions to new scenes more faithfully.",
+            "interpretation_zh": "强调表征的场景不变性和可迁移性；可类比视觉–AIS关联中需抑制场景干扰、保留目标关联信息的思路。",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "We propose a label-free contrastive adaptation framework that pulls together frame pairs sharing the same motion under a different scene and pushes apart pairs from the same scene with different motion, reshaping the geometry of the pretrained space without imposing a reconstruction bottleneck.",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将“相同运动/不同场景”的对比约束改造为跨模态匹配约束：以同一船舶目标的视觉图像与AIS数据（或雷达与AIS）为正样本对，以不同目标的跨模态样本为负样本，在预训练特征空间上施加对比适应，训练目标从运动一致性转为跨模态目标身份一致性，输入需适配为图像–AIS序列对。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦动作表征，未涉及船舶、AIS或雷达数据",
+          "迁移到跨模态匹配需重新定义正负样本对及输入模态，摘要未提供该适配证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "对比对齐机制可迁移至跨模态匹配，但缺海事证据且需具体改造。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "从视频基础模型提取动作表征用于世界模型",
+        "target_task": "动作表征学习、动作条件视频生成",
+        "core_contribution": "提出无标签对比适应框架，从预训练V-JEPA 2中提取动作表征并保持场景不变性",
+        "application_context": "机器人操作、相机导航、游戏和驾驶视频基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ec7ed2ef-fd2e-4bb2-a5a6-570cb3b77b70",
+      "compatible_fingerprints": []
+    },
+    "92bdaa4b019a6866e8ddd8f2b5dd2703f698a19a9bfcea8b736cb64fe85a0c0d": {
+      "paper_id": "2611.14504",
+      "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
+      "fingerprint": "92bdaa4b019a6866e8ddd8f2b5dd2703f698a19a9bfcea8b736cb64fe85a0c0d",
+      "evaluation": {
+        "paper_id": "2611.14504",
+        "task_type": "分子相互作用基础模型",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "We extend this paradigm to multimodal biology with Bonbon, a foundation model for molecular interactions trained on approximately 3.2 trillion tokens of paired protein-ligand sequences.",
+            "interpretation_zh": "在蛋白质–配体配对序列上训练多模态基础模型；对象为生物分子，与船舶或视觉感知无关。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "生物分子领域，无任何船舶/雷达/AIS或通用视觉匹配任务证据",
+          "摘要未提供可迁移至海事多源关联或船舶视觉的方法细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "生物分子基础模型，与海事感知及通用视觉匹配无直接或具体迁移联系。",
+        "confidence": 0.95,
+        "primary_domain": "biomedical",
+        "primary_problem": "分子相互作用表征与零样本能力涌现",
+        "target_task": "结合位点定位、共价/非共价判别、亲和力预测",
+        "core_contribution": "Bonbon多模态分子相互作用基础模型，展示零样本涌现能力并实现快速结合预测",
+        "application_context": "蛋白质–配体结合预测与湿实验验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ec7ed2ef-fd2e-4bb2-a5a6-570cb3b77b70",
+      "compatible_fingerprints": []
+    },
+    "ff48ec1b2377aa403eb9232fd9c3166b9803a71dd53bdaaffbc22bce5576f2b5": {
+      "paper_id": "2611.14491",
+      "title": "TimeSeek: Multi-Task and Multi-Domain Pretraining for Generalized Time Series Analytics",
+      "fingerprint": "ff48ec1b2377aa403eb9232fd9c3166b9803a71dd53bdaaffbc22bce5576f2b5",
+      "evaluation": {
+        "paper_id": "2611.14491",
+        "task_type": "时间序列基础模型多任务预训练",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "From the perspective of the diversity of tasks, we propose multi-task collaborative training, which leverages task specificity and task commonality through task customization and cross-task training, effectively unifying multiple tasks in pre-training and better adapting to diverse downstream scenarios.",
+            "interpretation_zh": "多任务协同训练统一预测、异常检测、分类；面向通用时间序列，未涉及跨模态匹配或船舶感知。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯时间序列分析，与船舶视觉、跨模态关联或检测分割无直接联系",
+          "摘要未提供可迁移至雷达/AIS关联的具体匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "时间序列基础模型，与海事多源关联及船舶视觉任务无直接或具体方法联系。",
+        "confidence": 0.9,
+        "primary_domain": "other",
+        "primary_problem": "多域多任务时间序列预训练",
+        "target_task": "时间序列预测、异常检测、分类",
+        "core_contribution": "提出TimeSeek，通过多域特征提取器和多任务协同训练统一多种时序分析任务",
+        "application_context": "跨域时间序列基准的少样本和零样本分析",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "ec7ed2ef-fd2e-4bb2-a5a6-570cb3b77b70",
+      "compatible_fingerprints": []
+    },
+    "7942dd5fdef9f2f49e618e6cc5828afbc18b14302cfcabe79ee5746143c299cf": {
+      "paper_id": "2611.14281",
+      "title": "UniFlow-RS: Unified Generative Prediction for Heterogeneous Remote-Sensing Tasks",
+      "fingerprint": "7942dd5fdef9f2f49e618e6cc5828afbc18b14302cfcabe79ee5746143c299cf",
+      "evaluation": {
+        "paper_id": "2611.14281",
+        "task_type": "remote sensing heterogeneous task unified generative prediction",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "we cast heterogeneous task outputs into structured visual targets in a common latent space, allowing them to be modeled by the same pretrained flow predictor",
+            "interpretation_zh": "将异构任务输出统一映射为共同潜空间的结构化视觉目标，可用同一预训练流匹配预测器建模。",
+            "inference": false
+          },
+          {
+            "quote_en": "Task-Modality Adaptive Timestep Sampling (TMAS), which dynamically allocates training timesteps according to the online learning state of each task-modality group",
+            "interpretation_zh": "按任务-模态组在线学习状态动态分配训练时间步，缓解多任务多模态优化失配。",
+            "inference": false
+          },
+          {
+            "quote_en": "Task-dependent conditioning further accommodates differences in input configurations",
+            "interpretation_zh": "通过任务相关条件化处理不同输入配置差异。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "we cast heterogeneous task outputs into structured visual targets in a common latent space, allowing them to be modeled by the same pretrained flow predictor",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "可尝试将雷达与视觉/AIS观测映射到共同潜空间作为条件，共享流匹配预测器输出检测目标；需重新设计目标结构化表示和条件输入，加入传感器缺失处理与时间同步，而非直接套用遥感六任务设定。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦遥感多任务生成式预测，未涉及海事雷达/AIS或船舶目标",
+          "统一预测机制在检测类感知任务上的有效性未在摘要中验证",
+          "迁移到多传感器船舶检测需要大量结构重设计，摘要未提供相关证据"
+        ],
+        "decision": "候选",
+        "reason_zh": "任务无关的统一异构输出与自适应时间步采样机制有多任务学习借鉴价值，但海事直接相关性低，迁移仅为推断。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "异构遥感任务预测空间与联合优化不统一",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出单一潜在流匹配预测器，将异构任务输出映射到共同潜空间并用统一Flow Matching目标训练，辅以任务-模态自适应时间步采样。",
+        "application_context": "遥感多任务（六个任务、十三个数据集）及零样本跨数据集、近红外影像迁移验证。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e17040dd-c0e3-4d85-9cf6-cc44154d9f09",
+      "compatible_fingerprints": []
+    },
+    "3a41de05b758ae5f2f557479924cd76a7ebf8c301fe6e3b7e9f040f14b4c91ea": {
+      "paper_id": "2611.14260",
+      "title": "Lilo: A Multi-Agent Conversational Sandbox for Children's Digital Communication",
+      "fingerprint": "3a41de05b758ae5f2f557479924cd76a7ebf8c301fe6e3b7e9f040f14b4c91ea",
+      "evaluation": {
+        "paper_id": "2611.14260",
+        "task_type": "multi-agent conversational sandbox for children",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "研究主题为儿童数字化沟通练习与多智能体对话",
+          "与海事感知、船舶视觉、多传感器融合及通用匹配学习均无方法联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "主题为社会交互式对话系统，与关注的感知与跨模态匹配方向无关。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "儿童同伴冲突对话练习干预",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "构建多智能体对话沙盒与导师交通灯干预，评估儿童应对不良信息的自我效能。",
+        "application_context": "9-11岁儿童群聊冲突模拟的探索性用户研究。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e17040dd-c0e3-4d85-9cf6-cc44154d9f09",
+      "compatible_fingerprints": []
+    },
+    "449ac225139ba9fd22d8e7abbcb30baf10f988463f260ce0d3fa80122060491c": {
+      "paper_id": "2611.14408",
+      "title": "A minimal intuitionistic public announcement logic",
+      "fingerprint": "449ac225139ba9fd22d8e7abbcb30baf10f988463f260ce0d3fa80122060491c",
+      "evaluation": {
+        "paper_id": "2611.14408",
+        "task_type": "intuitionistic public announcement logic",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "主题为直觉主义公开宣告逻辑的可靠性与完全性",
+          "与视觉、多模态匹配及任何感知任务无联系"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯逻辑理论研究，和目标方向完全无关。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "直觉主义公开宣告逻辑的框架与完备性",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出由双关系框架刻画的直觉主义公开宣告逻辑Lmin与Lequ，并证明其可靠性、完全性。",
+        "application_context": "形式逻辑与认知模态的框架研究，无感知应用场景。",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "e17040dd-c0e3-4d85-9cf6-cc44154d9f09",
+      "compatible_fingerprints": []
+    },
+    "fbe09a5d1ec1982d3ed68146ddf3ff1aa2f6e9a3af46127c9a2b53b8e2e04c19": {
+      "paper_id": "2611.14387",
+      "title": "Blurring the Block Boundaries: Overlapping Block Denoising for Efficient Diffusion Language Models",
+      "fingerprint": "fbe09a5d1ec1982d3ed68146ddf3ff1aa2f6e9a3af46127c9a2b53b8e2e04c19",
+      "evaluation": {
+        "paper_id": "2611.14387",
+        "task_type": "efficient_diffusion_language_model_inference",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "two blocks are refined in parallel within a shared forward pass",
+            "interpretation_zh": "该方法通过共享一次前向传播并行细化两个块，属于扩散语言模型推理加速，不涉及视觉或多传感器感知。",
+            "inference": false
+          },
+          {
+            "quote_en": "training-free and hyperparameter-free acceleration method",
+            "interpretation_zh": "摘要强调免训练、免超参的加速特性，任务为语言生成加速。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为扩散语言模型生成，非视觉/海事感知任务",
+          "摘要未提供可与船舶检测、跨模态匹配直接对应的输入输出或训练目标",
+          "并行块细化属于语言解码加速，缺少任务无关的感知表征学习机制证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "内容为扩散语言模型推理加速，与海事多源关联、船舶视觉及通用视觉多模态匹配均无具体方法联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "扩散语言模型块去噪推理延迟",
+        "target_task": "none",
+        "core_contribution": "提出免训练、免超参的并行块细化加速方法",
+        "application_context": "语言模型文本生成推理",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "254805aa-16aa-40b0-9071-a25b63c6a34c",
+      "compatible_fingerprints": []
+    },
+    "380354433aa7bb62076273724fc8be2044181158effac8262af5674ce6a8f552": {
+      "paper_id": "2611.14386",
+      "title": "On the topology of some linear systems of hyperelliptic curves in Hirzebruch surfaces",
+      "fingerprint": "380354433aa7bb62076273724fc8be2044181158effac8262af5674ce6a8f552",
+      "evaluation": {
+        "paper_id": "2611.14386",
+        "task_type": "algebraic_geometry_topology",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "algebro-geometric techniques to compute cohomological obstructions",
+            "interpretation_zh": "摘要使用代数几何技巧计算上同调障碍，属纯数学拓扑研究。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学代数几何研究，无感知或学习方法内容",
+          "摘要不含可迁移的视觉/多模态匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "纯代数几何拓扑研究，与海事感知、船舶视觉和通用视觉匹配方法无任何联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "超椭圆曲线线性系统的拓扑与富化单值表示",
+        "target_task": "none",
+        "core_contribution": "计算若干线性系统的富化单值表示及上同调障碍",
+        "application_context": "代数几何理论研究",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "254805aa-16aa-40b0-9071-a25b63c6a34c",
+      "compatible_fingerprints": []
+    },
+    "9a19aab7693ae78cf5dd0ed61fb80bd6a244748da8135d60a11e54597286a1de": {
+      "paper_id": "2611.14229",
+      "title": "The PAU Survey: Dissecting strong-lensing systems with narrow-band photometric redshifts",
+      "fingerprint": "9a19aab7693ae78cf5dd0ed61fb80bd6a244748da8135d60a11e54597286a1de",
+      "evaluation": {
+        "paper_id": "2611.14229",
+        "task_type": "astronomical_photometric_redshift_estimation",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "point-reflection subtraction to reduce contamination",
+            "interpretation_zh": "利用点反射相减降低前景光污染，属于天文图像成分分离技术。",
+            "inference": false
+          },
+          {
+            "quote_en": "BCNz estimates separate lens and source redshift distributions without imposing their expected ordering",
+            "interpretation_zh": "BCNz分别估计透镜与源的红移分布，不强制排序，属天文测光红移估计。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "应用于天文强透镜系统红移估计，非船舶或交通感知",
+          "点反射相减与红移估计缺少与跨模态船舶匹配的直接结构对应证据",
+          "未给出可复用学习机制的任务无关性证明"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "天文强透镜测光红移研究，与海事关联融合、船舶视觉及通用多模态匹配无具体方法联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "强透镜系统中透镜与源的红移分离估计",
+        "target_task": "none",
+        "core_contribution": "结合窄带与宽带测光及点反射相减实现混合系统成分红移恢复",
+        "application_context": "天文强透镜候选系统红移测量",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "254805aa-16aa-40b0-9071-a25b63c6a34c",
+      "compatible_fingerprints": []
+    },
+    "c53edcab5e9ca51b896ee2faddaf4f0dc28b6d89b422b22b1f9906589baf0d32": {
+      "paper_id": "2611.14219",
+      "title": "Sub-Ice: semi-automated mapping of basal channels from ice shelf surface elevation data",
+      "fingerprint": "c53edcab5e9ca51b896ee2faddaf4f0dc28b6d89b422b22b1f9906589baf0d32",
+      "evaluation": {
+        "paper_id": "2611.14219",
+        "task_type": "ice_shelf_basal_channel_mapping",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "traces the channel centerline by iteratively locating elevation minima",
+            "interpretation_zh": "通过迭代寻找高程极小值追踪中心线，属地理高程数据半自动制图。",
+            "inference": false
+          },
+          {
+            "quote_en": "delineates channel edges using one of three methods",
+            "interpretation_zh": "使用三种阈值/膝点/峰值突出度方法勾画边缘，属地形特征提取。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为冰架底部通道地形制图，非船舶或多传感器感知",
+          "中心线追踪与边缘阈值属规则化地形处理，缺少与跨模态匹配或船舶检测的结构对应",
+          "摘要未提供可迁移的通用学习匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "冰架底部通道半自动制图，研究对象和任务与海事感知、船舶视觉及通用视觉匹配均无关。",
+        "confidence": 0.96,
+        "primary_domain": "other",
+        "primary_problem": "冰架底部通道几何的半自动提取与一致性比较",
+        "target_task": "none",
+        "core_contribution": "提出Sub-Ice工具从表面高程数据追踪通道中心线与边缘",
+        "application_context": "冰架底部通道地形制图",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "254805aa-16aa-40b0-9071-a25b63c6a34c",
+      "compatible_fingerprints": []
+    },
+    "04901314c792782c8025369947dcf8149af781dcfbf563db2d34ff82f3036ea7": {
+      "paper_id": "2611.14218",
+      "title": "ViGA-FLAME: Aligning Latent Visual and Geometric Representations for Robust 3D Head Expression Estimation",
+      "fingerprint": "04901314c792782c8025369947dcf8149af781dcfbf563db2d34ff82f3036ea7",
+      "evaluation": {
+        "paper_id": "2611.14218",
+        "task_type": "通用视觉-几何表征对齐（3D头部表情估计）",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "Asymmetric attention enables ViGA to align semantic image features from the visual encoder with the structured geometric information represented in the PG-VAE latent space",
+            "interpretation_zh": "用非对称注意力把预训练视觉编码器的语义特征对齐到结构化几何潜空间，且不改变原视觉流。",
+            "inference": false
+          },
+          {
+            "quote_en": "Supervision on geometry and parameters, together with consistency between the two decoding branches",
+            "interpretation_zh": "用解码分支间一致性约束连接表面细节与参数结构，可作为跨模态一致性训练思路。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a trainable Visual-Geometric Adapter (ViGA) maps features from a pretrained semantic visual encoder into this latent space",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "把视觉-几何适配器改为视觉-几何/AIS信息适配器：输入为视觉特征与另一模态的结构化表征，调整对齐目标为跨模态样本匹配而非人脸几何回归，并保留原视觉流不变。",
+          "inference": true
+        },
+        "limitations": [
+          "任务为3D头部表情估计，与人脸几何强绑定",
+          "未见海事或目标匹配实验",
+          "摘要未给出匹配检索的定量证据"
+        ],
+        "primary_domain": "general_visual_method",
+        "primary_problem": "单图像3D头部表情估计中的视觉外观到几何潜空间对齐",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出两阶段框架：PG-VAE学习统一几何潜空间，ViGA适配器用非对称注意力将语义视觉特征映射进该潜空间",
+        "application_context": "人脸/头部三维重建与表情估计，鲁棒应对大视角与形变",
+        "security_centric": false,
+        "communication_centric": false,
+        "decision": "不推荐",
+        "reason_zh": "任务为人脸几何估计，与海事和船舶视觉无关；对齐机制虽可用于跨模态匹配，但迁移需重构训练目标，证据有限。",
+        "confidence": 0.75
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "2bf98ff1-13bd-45a6-89d8-c4d13668991f",
+      "compatible_fingerprints": []
+    },
+    "530db934b2fab029764ffb59b98ba2f1576c413ae5b2ea9ad5614c2d637881c9": {
+      "paper_id": "2610.20543",
+      "title": "Reliability-Aware Multimodal Sentiment Prediction Under Local Modality Missingness",
+      "fingerprint": "530db934b2fab029764ffb59b98ba2f1576c413ae5b2ea9ad5614c2d637881c9",
+      "evaluation": {
+        "paper_id": "2610.20543",
+        "task_type": "低相关-缺失模态多模态情感预测",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "represents unobserved positions with a learned token",
+            "interpretation_zh": "用学习到的token表示未观测位置，可作为缺失模态下保留时序位置的占位机制",
+            "inference": true
+          },
+          {
+            "quote_en": "trained with dual-view masking of contiguous segments",
+            "interpretation_zh": "对连续片段做双视图掩码训练，用于模拟局部缺失并增强鲁棒性",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "trained with dual-view masking of contiguous segments",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将连续片段掩码训练用于多传感器检测中传感器短时失效的模拟，调整输入为多传感器时序序列，训练目标保持检测损失并加入缺失片段重建或一致性约束，结构需增加可学习的缺失位置token。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为CMU-MOSEI情感预测，与海事视觉/雷达关联无直接联系",
+          "摘要称验证集已用于架构、checkpoint和融合选择，且测试划分在开发中检视，非盲测",
+          "缺失鲁棒性机制仅为潜在迁移，摘要无目标检测或多传感器融合实验"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "摘要聚焦多模态情感预测与局部缺失，与海事关联、船舶视觉或多传感器检测无直接任务联系；缺失token与掩码训练仅可泛化借鉴，证据不足以推荐。",
+        "confidence": 0.82,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多模态情感预测中局部模态缺失下的可靠性建模",
+        "target_task": "多模态情感预测",
+        "core_contribution": "提出RM-Net，以学习token表示未观测时序位置、按观测质量门控模态贡献，并用双视图连续片段掩码训练，融合文本专家进行情感预测",
+        "application_context": "CMU-MOSEI对齐特征上的多模态情感分类",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b98620fe-f1a2-403c-a3a7-a94f1a524977",
+      "compatible_fingerprints": []
+    },
+    "c302060a3a1df08cf5e9b794710effc2678d04793494826fef0960a120c47c12": {
+      "paper_id": "2610.38152",
+      "title": "BridgeRouter: Gain-Aware Instance Routing over Cross-Modal Bridge Portfolios",
+      "fingerprint": "c302060a3a1df08cf5e9b794710effc2678d04793494826fef0960a120c47c12",
+      "evaluation": {
+        "paper_id": "2610.38152",
+        "task_type": "低相关-生物信号跨模态桥路由",
+        "direct_relevance": 0,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "introduce BridgeRouter, a gain-aware router over a portfolio of frozen cross-modal pathways",
+            "interpretation_zh": "在多个冻结跨模态桥路径上做实例级增益感知路由，属于具体可复用的跨模态选择机制",
+            "inference": true
+          },
+          {
+            "quote_en": "a lightweight MLP predicts these route-specific gains from a target-modality representation extracted by a frozen encoder",
+            "interpretation_zh": "用冻结编码器提取目标模态表征，再用轻量MLP预测各路径相对最优单路径的增益",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a lightweight MLP predicts these route-specific gains from a target-modality representation extracted by a frozen encoder",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将实例级桥路由用于视觉-雷达或视觉-AIS跨模态匹配：以共享或目标模态编码器提取特征，训练轻量路由网络预测不同跨模态对齐路径相对默认路径的匹配增益，按阈值选择单一匹配路径，训练需多路径匹配损失与相对增益标签。",
+          "inference": true
+        },
+        "limitations": [
+          "研究为EEG基础模型到EMG/ECG的生物信号桥迁移，无海事或感知任务",
+          "跨模态桥组合与增益预测需目标任务多路径候选，迁移成本较高",
+          "摘要未提供视觉-雷达或视觉-AIS匹配实验，迁移仅属推断"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "核心为EEG等生物信号跨模态桥的实例级路由，与海事融合和船舶视觉无直接联系；增益感知路由可泛化到跨模态匹配，但需多路径候选，迁移证据有限。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "多跨模态桥路径的实例级选择与迁移增益预测",
+        "target_task": "生物信号跨模态迁移",
+        "core_contribution": "将多桥迁移形式化为实例级算法选择，提出以锚定单最佳路径为默认、用冻结编码器表征预测各路径相对增益的BridgeRouter",
+        "application_context": "EMG冻结步态检测与ECG睡眠分类",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b98620fe-f1a2-403c-a3a7-a94f1a524977",
+      "compatible_fingerprints": []
+    },
+    "55662aa6a47d3cd25daba31d6979f2ab60d9e8236a192f72d409c6e7a19bf4b4": {
+      "paper_id": "2610.20526",
+      "title": "Lluna: Collaborative Unimodal Models for Missing-Modality Inference",
+      "fingerprint": "55662aa6a47d3cd25daba31d6979f2ab60d9e8236a192f72d409c6e7a19bf4b4",
+      "evaluation": {
+        "paper_id": "2610.20526",
+        "task_type": "低相关-缺失模态协作推理",
+        "direct_relevance": 0,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "combines a direct private prediction path from adapted unimodal features with a common graph-based collaboration branch that provides a residual correction",
+            "interpretation_zh": "结合单模态私有预测路径与图结构协作分支残差校正，用于缺失模态下保持单模态可靠性",
+            "inference": true
+          },
+          {
+            "quote_en": "Progressive Collaboration Consistency organizes richer-to-poorer guidance along single-modality removals",
+            "interpretation_zh": "按单模态移除由丰富到贫乏组织一致性指导，属于可用作缺失模态鲁棒训练的具体机制",
+            "inference": true
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "Progressive Collaboration Consistency organizes richer-to-poorer guidance along single-modality removals",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将渐进协作一致性用于多传感器检测中的传感器缺失：以完整传感器组合指导缺失组合，调整训练目标为检测损失加归一化公共表征对齐，结构上保留各传感器私有检测头并增加图协作残差分支。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要验证场景为情感计算、场景理解和医学预测，无海事或船舶感知任务",
+          "图协作分支与渐进一致性训练需按多传感器检测重新设计，摘要未提供检测实验",
+          "方法迁移仅为推断，缺乏跨域验证证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究缺失模态下的单模态模型协作推理，验证于情感、场景与医学任务，与海事融合和船舶视觉无直接联系；私有路径与渐进一致性可泛化借鉴但非直接相关。",
+        "confidence": 0.83,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "缺失模态下预训练单模态模型协作预测可靠性下降",
+        "target_task": "多模态缺失模态推理",
+        "core_contribution": "提出Lluna，将单模态私有预测路径与图协作残差分支结合，并用渐进协作一致性按模态移除组织训练",
+        "application_context": "情感计算、场景理解与医学预测等八个数据集",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "b98620fe-f1a2-403c-a3a7-a94f1a524977",
+      "compatible_fingerprints": []
+    },
+    "7709e0ef5e1df2d3c2bc5e1038a6e9ae241c8e86c12c5972f0eec6690d9da5f6": {
+      "paper_id": "2606.26455",
+      "title": "Active Adversarial Perturbation-driven Associative Memory Retrieval for RGB-Event Visual Object Tracking",
+      "fingerprint": "7709e0ef5e1df2d3c2bc5e1038a6e9ae241c8e86c12c5972f0eec6690d9da5f6",
+      "evaluation": {
+        "paper_id": "2606.26455",
+        "task_type": "RGB-Event视觉目标跟踪（多模态鲁棒感知）",
+        "direct_relevance": 0,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "which separately simulate full-modal failure and localized target region absence",
+            "interpretation_zh": "通过模态级和空间级扰动分别模拟整模态失效与局部目标区域缺失，可在其他缺失/退化模态任务中作为训练增广参考。",
+            "inference": false
+          },
+          {
+            "quote_en": "This module evaluates retrieval confidence based on association footprints between queries and memory banks, and calibrates the retrieval metric space prior to Hopfield matching",
+            "interpretation_zh": "基于查询与记忆库的关联足迹评估检索置信度，并在Hopfield匹配前校准度量空间，属于可复用的匹配/检索机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "which separately simulate full-modal failure and localized target region absence",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将模态级/空间级退化扰动用于视觉–AIS或Radar–AIS关联训练：输入替换为视觉外观特征与AIS/雷达特征，训练目标改为跨模态匹配/关联分类，并保留层次路由避免叠加退化导致特征坍塌；需将记忆检索的查询-记忆结构改为跨模态候选-轨迹匹配。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦RGB-Event跟踪，未涉及海事或AIS/雷达模态。",
+          "对抗扰动与检索方法在跨模态关联中的有效性未经验证，迁移依赖推测。"
+        ],
+        "decision": "候选",
+        "reason_zh": "多模态缺失退化建模与关联检索匹配有可迁移性，但研究对象为RGB-Event跟踪，无直接海事联系，迁移需较大改造。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "RGB-Event跟踪中模态退化与目标部分缺失下的鲁棒融合与历史信息检索",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出层次对抗扰动与足迹引导的Hopfield检索框架，处理模态失效与局部目标缺失",
+        "application_context": "RGB-Event视觉目标跟踪基准实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0db3ff88-6b47-4ff5-b286-d3e7e1bcfd69"
+    },
+    "f38f5ddd27441e02a7d26eb4f1a6f3c5a3dd7b1fd195cdaad5afa3996db88a80": {
+      "paper_id": "2608.08147",
+      "title": "SAMOT: State-Aware Step Modulation and Optimal Transport Matching for Audio-Visual Instance Segmentation",
+      "fingerprint": "f38f5ddd27441e02a7d26eb4f1a6f3c5a3dd7b1fd195cdaad5afa3996db88a80",
+      "evaluation": {
+        "paper_id": "2608.08147",
+        "task_type": "音视频实例分割（跨模态实例级匹配）",
+        "direct_relevance": 0,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "explicitly formulates instance-level cross-modal matching as an entropy-regularized optimal transport problem solved via log-domain Sinkhorn iterations",
+            "interpretation_zh": "将实例级跨模态匹配显式建模为熵正则最优传输并用Sinkhorn求解，是可复用的跨模态匹配机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "enforces distribution-level coherence with an MMD regularizer",
+            "interpretation_zh": "用MMD正则约束分布级一致性，可迁移用于跨模态特征对齐。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "explicitly formulates instance-level cross-modal matching as an entropy-regularized optimal transport problem solved via log-domain Sinkhorn iterations",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将音视频实例匹配的最优传输模块用于视觉–AIS或Radar–AIS关联：输入端替换为视觉检测实例特征与AIS/雷达轨迹特征，代价矩阵按时空距离与外观相似度设计，训练目标改为跨模态实例关联，并保留Sinkhorn求解与MMD分布正则。",
+          "inference": true
+        },
+        "limitations": [
+          "研究对象为音视频分割，与海事多源关联场景差异大。",
+          "最优传输匹配迁移到时空轨迹关联的代价设计与规模效率未在摘要中验证。"
+        ],
+        "decision": "候选",
+        "reason_zh": "最优传输跨模态实例匹配与分布对齐方法具体可迁移至跨模态关联，但无直接海事相关性，迁移需重新设计代价与输入。",
+        "confidence": 0.65,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "音视频实例分割中模态状态变化与跨模态分布不一致导致的实例级关联困难",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出自适应动态步长调制与最优传输匹配调制框架",
+        "application_context": "音视频实例分割基准AVIS",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0db3ff88-6b47-4ff5-b286-d3e7e1bcfd69"
+    },
+    "de24445b6dc518443dbead26cf9e707b829bfb4b0f20095710fe43ddbb64a6d2": {
+      "paper_id": "2611.16925",
+      "title": "Report of the 8th LSVOS Challenge: Mobile Unified Multimodal Understanding",
+      "fingerprint": "de24445b6dc518443dbead26cf9e707b829bfb4b0f20095710fe43ddbb64a6d2",
+      "evaluation": {
+        "paper_id": "2611.16925",
+        "task_type": "移动统一多模态理解挑战赛报告（多任务统一模型）",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a shared low-rank adapter trained on coverage-aware multi-source data with task-dependent decoding",
+            "interpretation_zh": "共享低秩适配器加任务相关解码，属于轻量化多任务适配结构，但摘要未给出可迁移的匹配/对齐机制细节。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "为挑战赛总结报告，方法描述笼统，缺少可复用的具体匹配或跨模态对齐机制。",
+          "任务为图像标注、开放词表检测与描述生成，与海事感知任务联系弱。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "挑战赛报告以竞赛方案综述为主，方法细节不足，无法具体说明向船舶检测或跨模态关联的调整路径。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "受限资源下统一多概念标注、开放词表检测与图像描述的多任务模型",
+        "target_task": "ship_detection",
+        "core_contribution": "总结MUMU赛道任务设置、评测协议与前三名团队方案",
+        "application_context": "ECCV 2026 LSVOS挑战赛MUMU赛道",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0db3ff88-6b47-4ff5-b286-d3e7e1bcfd69"
+    },
+    "39b5232f12eae8b32c2504f10ccf7425a0ac4c0f230cf28bd33f81695b94df8f": {
+      "paper_id": "2607.26817",
+      "title": "From Uncertainty to Determinism: Coarse-to-Fine Visual Floorplan Localization without Ray Matching",
+      "fingerprint": "39b5232f12eae8b32c2504f10ccf7425a0ac4c0f230cf28bd33f81695b94df8f",
+      "evaluation": {
+        "paper_id": "2607.26817",
+        "task_type": "视觉平面图定位（跨模态匹配与多假设位姿）",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "design an image-conditioned pose diffusion model to parameterize the continuous multimodal pose distribution",
+            "interpretation_zh": "用图像条件扩散模型参数化连续多模态位姿分布，可用于处理多假设匹配问题。",
+            "inference": false
+          },
+          {
+            "quote_en": "predicts bounded sub-meter pose residuals from candidate-centered floorplan crops",
+            "interpretation_zh": "从候选中心裁剪图预测有界残差，属于由粗到细的候选精化机制，可迁移到候选关联精化。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "predicts bounded sub-meter pose residuals from candidate-centered floorplan crops",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将由粗到细的候选中心裁剪残差回归用于视觉–AIS关联：粗阶段生成候选匹配对，精阶段以候选为中心的局部时空/图像裁剪预测关联残差或置信度；需将位姿残差目标改为匹配偏移/相似度，输入由平面图裁剪改为候选区域视觉与AIS轨迹特征。",
+          "inference": true
+        },
+        "limitations": [
+          "室内定位任务与海事多源关联场景差异显著。",
+          "扩散位姿分布与残差精化迁移到跨模态关联缺乏摘要证据支持。"
+        ],
+        "decision": "候选",
+        "reason_zh": "由粗到细多假设候选精化机制具体可迁移至跨模态候选关联精化，但场景无关且需大幅改造，直接相关性低。",
+        "confidence": 0.55,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "室内视觉平面图定位中跨模态信息不对称与布局重复导致的多模态位姿分布",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出绕开射线匹配的由粗到细视觉定位框架，用位姿扩散与局部精化器",
+        "application_context": "S3D与ZInD室内定位基准",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "0db3ff88-6b47-4ff5-b286-d3e7e1bcfd69"
+    },
+    "e817afeda69061706c7da7603f2b5b48d0e6ed4760c83a5349f2e8338067ab9e": {
+      "paper_id": "2603.17813",
+      "title": "M2P: Improving Visual Foundation Models with Mask-to-Point Weakly-Supervised Learning for Dense Point Tracking",
+      "fingerprint": "e817afeda69061706c7da7603f2b5b48d0e6ed4760c83a5349f2e8338067ab9e",
+      "evaluation": {
+        "paper_id": "2603.17813",
+        "task_type": "通用视觉表征学习与点跟踪（掩码弱监督）",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a local structure consistency loss, which leverages Procrustes analysis to model the cohesive motion of points lying within a local structure, achieving more reliable point-to-point matching learning",
+            "interpretation_zh": "提出用Procrustes分析建模局部结构内点的协同运动，作为局部结构一致性损失，用于改进点对点匹配学习。",
+            "inference": false
+          },
+          {
+            "quote_en": "a mask label consistency (MLC) loss, which enforces that sampled foreground points strictly match foreground regions across frames",
+            "interpretation_zh": "提出掩码标签一致性损失，约束跨帧前景采样点与前景区域匹配，同时作为正则稳定训练。",
+            "inference": false
+          },
+          {
+            "quote_en": "mask boundary constrain is applied to explicitly supervise boundary points",
+            "interpretation_zh": "对边界点施加显式监督的掩码边界约束。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a local structure consistency loss, which leverages Procrustes analysis to model the cohesive motion of points lying within a local structure, achieving more reliable point-to-point matching learning",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将局部结构一致性（Procrustes）与前景/边界掩码约束用于多目标跟踪中的跨帧目标点匹配：以检测框或分割掩码构造目标内部关键点集合，训练时加入局部几何一致性损失与前景一致性正则，而非直接使用其TAP架构。属推断性调整。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未给出海事、AIS或雷达场景证据",
+          "未提供点跟踪与目标检测/关联之间直接衔接的实验",
+          "迁移需重新构造关键点集合与掩码监督，摘要未验证"
+        ],
+        "decision": "候选",
+        "reason_zh": "局部结构一致性、掩码前景/边界约束可作为跨帧匹配学习的通用正则，具一定迁移价值；但与海事多源关联直接联系弱，迁移属推断。",
+        "confidence": 0.72,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "改进视觉基础模型用于稠密点跟踪的弱监督表征学习",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出Mask-to-Point弱监督学习，用局部结构一致性、掩码标签一致性及边界约束改进视觉基础模型的点跟踪表征",
+        "application_context": "视频点跟踪基准（TAP-Vid-DAVIS）上的通用视觉任务验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d7752b06-6ec5-488f-b9d6-9ecaaf70d397"
+    },
+    "37fdd22976c1ef167ccda3c5fb5358206d7bbb9d3735a1083077dc2ee445c739": {
+      "paper_id": "2602.05037",
+      "title": "UniTrack: Differentiable Graph Representation Learning for Multi-Object Tracking",
+      "fingerprint": "37fdd22976c1ef167ccda3c5fb5358206d7bbb9d3735a1083077dc2ee445c739",
+      "evaluation": {
+        "paper_id": "2602.05037",
+        "task_type": "多目标跟踪的图表示学习损失",
+        "direct_relevance": 1,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "a plug-and-play graph-theoretic loss function designed to significantly enhance multi-object tracking (MOT) performance by directly optimizing tracking-specific objectives through unified differentiable learning",
+            "interpretation_zh": "提出即插即用的图论损失，通过统一可微学习直接优化跟踪目标以提升MOT性能。",
+            "inference": false
+          },
+          {
+            "quote_en": "integrates detection accuracy, identity preservation, and spatiotemporal consistency into a single end-to-end trainable loss function",
+            "interpretation_zh": "将检测精度、身份保持与时空一致性整合进单一端到端可训练损失函数。",
+            "inference": false
+          },
+          {
+            "quote_en": "differentiable graph representation learning, UniTrack enables networks to learn holistic representations of motion continuity and identity relationships across frames",
+            "interpretation_zh": "通过可微图表示学习，使网络学习跨帧运动连续性与身份关系的整体表示。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "integrates detection accuracy, identity preservation, and spatiotemporal consistency into a single end-to-end trainable loss function",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将该即插即用图损失迁移到船舶多目标跟踪：以船舶检测框为图节点，构造跨帧身份关联图，将检测置信度、身份保持与时空一致性作为可微损失训练现有跟踪器；需替换输入为海事视频检测序列，无需改结构。属推断性调整。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅验证陆上通用MOT基准，无海事数据",
+          "需重新定义图节点/边构造与时空一致性度量",
+          "未说明对雷达/AIS多源关联的适用性"
+        ],
+        "decision": "候选",
+        "reason_zh": "即插即用的可微图表示与身份/时空一致性损失，可直接用于船舶多目标跟踪训练目标层；但缺少海事直接证据，迁移需调整输入与图构造。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "为多目标跟踪提供统一可微的图论训练目标",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出UniTrack即插即用图论损失，将检测精度、身份保持与时空一致性统一为端到端可训练目标",
+        "application_context": "在Trackformer、MOTR、FairMOT、ByteTrack等多跟踪模型与基准上验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d7752b06-6ec5-488f-b9d6-9ecaaf70d397"
+    },
+    "e8a3fd599707d1f7c41a355bc0f7ba139a3e2fe3800aed81b42d7fce68286e6c": {
+      "paper_id": "2611.17334",
+      "title": "Unbundling Multimodal Vision Encoding",
+      "fingerprint": "e8a3fd599707d1f7c41a355bc0f7ba139a3e2fe3800aed81b42d7fce68286e6c",
+      "evaluation": {
+        "paper_id": "2611.17334",
+        "task_type": "多模态视觉编码设计分析",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder",
+            "interpretation_zh": "在融合早期骨干层加入纯视觉模块可达到与前置编码器相当效果。",
+            "inference": false
+          },
+          {
+            "quote_en": "we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute",
+            "interpretation_zh": "在共同数据上从头预训练全部模型，并在VQA与语言基准上做等算力对比。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为多模态大语言模型视觉编码，非目标检测/匹配",
+          "摘要未给出可迁移到跨模态匹配的具体训练目标或结构算法",
+          "无海事或船舶相关证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "属多模态语言模型视觉编码设计分析，与海事多源关联融合及可复用匹配机制无具体衔接，仅泛化架构讨论，不宜作方法迁移。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "辨析多模态语言模型中视觉编码器预训练先验、容量与放置位置的作用",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "通过受控框架解耦视觉先验、容量与融合位置三项设计，发现专用视觉容量而非预训练先验更关键",
+        "application_context": "视觉问答与语言基准上的多模态模型对照实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d7752b06-6ec5-488f-b9d6-9ecaaf70d397"
+    },
+    "3ad0f4f4bc675a282db092a9284f90fc1283d4fd8a1545791f1777e4cebd0679": {
+      "paper_id": "2611.16984",
+      "title": "ElasticDino: Dense Semantic Features Using Elastic Deformations",
+      "fingerprint": "3ad0f4f4bc675a282db092a9284f90fc1283d4fd8a1545791f1777e4cebd0679",
+      "evaluation": {
+        "paper_id": "2611.16984",
+        "task_type": "高分辨率稠密语义特征适配器",
+        "direct_relevance": 0,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "a lightweight adapter which produces high-resolution feature maps, adhering to the fine details of the input image",
+            "interpretation_zh": "提出轻量适配器生成高分辨率特征图并贴合输入图像细节。",
+            "inference": false
+          },
+          {
+            "quote_en": "Using a slim architecture based on spatial deformations, ElasticDino produces pixel-aligned, high-resolution feature maps efficiently",
+            "interpretation_zh": "基于空间形变的瘦身架构高效产生像素对齐的高分辨率特征图。",
+            "inference": false
+          },
+          {
+            "quote_en": "we employ pixel-level semantic segmentation and depth estimation with linear heads to predict a set of downstream dense tasks",
+            "interpretation_zh": "用线性头做像素级语义分割与深度估计，作为下游稠密任务的引导。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a lightweight adapter which produces high-resolution feature maps, adhering to the fine details of the input image",
+          "target_task": "ship_segmentation",
+          "adaptation_zh": "可将基于空间形变的轻量适配器接到船舶视觉ViT骨干后，提升高分辨率特征图用于船舶与海面目标分割/深度头；需更换输入为海事图像并重训下游线性头，适配器本身任务无关。属推断性调整。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要验证于通用稠密任务基准，无船舶或海事数据",
+          "迁移到船舶分割/深度需重新训练头与调参，摘要未验证",
+          "未涉及多传感器或AIS信息"
+        ],
+        "decision": "候选",
+        "reason_zh": "空间形变轻量适配器可提升ViT高分辨率稠密特征，对船舶分割/深度有潜在价值；但缺海事证据，迁移属推断。",
+        "confidence": 0.62,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "ViT自注意力限制分辨率并产生空间伪影，需高效高分辨率稠密特征",
+        "target_task": "ship_segmentation",
+        "core_contribution": "提出ElasticDino轻量空间形变适配器，产生像素对齐高分辨率特征并避免平滑偏差",
+        "application_context": "通用分割与深度估计等稠密任务基准验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "d7752b06-6ec5-488f-b9d6-9ecaaf70d397"
+    },
+    "5d1fab4eba30c83f16023f340251695c116a5caa797334cef398bb09c031fec5": {
+      "paper_id": "2611.16980",
+      "title": "CT-RespGeomLib: Deterministic reconstruction of CT airway masks into editable,port-matched lumen geometry",
+      "fingerprint": "5d1fab4eba30c83f16023f340251695c116a5caa797334cef398bb09c031fec5",
+      "evaluation": {
+        "paper_id": "2611.16980",
+        "task_type": "CT airway mask reconstruction (biomedical)",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "converts CT airway masks into two complementary representations",
+            "interpretation_zh": "将CT气道掩膜转为可编辑管状/接合块表示与融合管腔表面；属医学几何重建，与海事感知任务无关。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为CT气道几何重建，与船舶视觉、多源关联或通用匹配学习无联系",
+          "未提供可复用至海事感知的匹配或表征方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学气道几何重建，与海事多源关联、船舶视觉及通用匹配方法均无直接或可迁移联系。",
+        "confidence": 0.95,
+        "primary_domain": "biomedical",
+        "primary_problem": "从CT气道掩膜确定性重建可编辑管腔几何",
+        "target_task": "ship_depth",
+        "core_contribution": "提出确定性框架将CT气道掩膜转换为可编辑管状拓扑与融合管腔表面，并支持局部狭窄/扩张建模",
+        "application_context": "基于ATM22与AeroPath气道掩膜及OpenFOAM下游仿真验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "87384a71-553c-457b-8199-f60ae6641817"
+    },
+    "5e2ead583f839d6709e317ea3dd713ed2845d875951e29216bdb600e896fee82": {
+      "paper_id": "2609.27509",
+      "title": "Know-Your-Scene (KYS)-SLAM: Hierarchical Semantic-Motion Priors for Feature Matching in Stereo Visual SLAM",
+      "fingerprint": "5e2ead583f839d6709e317ea3dd713ed2845d875951e29216bdb600e896fee82",
+      "evaluation": {
+        "paper_id": "2609.27509",
+        "task_type": "Stereo visual SLAM feature matching with semantic-motion priors",
+        "direct_relevance": 2,
+        "transferability": 3,
+        "method_evidence": [
+          {
+            "quote_en": "reframing of contextual evidence as correspondence cost, applied within feature matching",
+            "interpretation_zh": "将语义、全景与运动先验作为连续匹配代价调制特征匹配，而非二值剔除；该匹配代价机制可迁移至跨模态关联。",
+            "inference": false
+          },
+          {
+            "quote_en": "semantic class and instance identity enforce structural plausibility while a zero-shot motion score down-weights features on independently moving objects",
+            "interpretation_zh": "逐关键点融合语义类别、实例身份与运动得分形成分层兼容性，可用于抑制动态干扰关联。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "reframing of contextual evidence as correspondence cost, applied within feature matching",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将逐关键点的语义/实例/运动兼容性代价改造为视觉–AIS或雷达–AIS候选关联的打分项：以AIS或雷达提供的航向、运动状态替代零样本运动得分，把类别/实例一致性替换为船舶身份与类型一致性，在关联匹配阶段作为软代价而非硬阈值剔除。",
+          "inference": true
+        },
+        "limitations": [
+          "对象为SLAM立体特征匹配，非船舶检测或AIS关联",
+          "迁移到跨模态匹配需替换先验来源，仅为推断"
+        ],
+        "decision": "候选",
+        "reason_zh": "其连续对应代价与分层语义-运动兼容机制对跨模态船舶关联有具体可迁移价值，但非海事任务，需改造先验来源。",
+        "confidence": 0.7,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "语义歧义与动态物体导致的数据关联错误和轨迹漂移",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "将语义、全景与运动先验融合为连续对应代价调制特征匹配，替代二值特征剔除",
+        "application_context": "KITTI、EuRoC、Virtual KITTI 2上的立体视觉SLAM轨迹评估",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "87384a71-553c-457b-8199-f60ae6641817"
+    },
+    "6aef481390b0fc562735985e27a22235867acbcec39fa1dfef72f127158f9754": {
+      "paper_id": "2607.01395",
+      "title": "Rethinking Generic Object Tracking Toward Human-Level Perceptual Intelligence",
+      "fingerprint": "6aef481390b0fc562735985e27a22235867acbcec39fa1dfef72f127158f9754",
+      "evaluation": {
+        "paper_id": "2607.01395",
+        "task_type": "Generic object tracking (dissertation overview)",
+        "direct_relevance": 1,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "proposing a series of methods that systematically enhance the target discrimination, robust adaptation, and geometric reasoning capabilities of tracking models",
+            "interpretation_zh": "摘要仅泛述将提出增强判别、自适应与几何推理的跟踪方法，未给出具体可复用机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "仅为学位论文概述，缺少具体方法、公式与实验证据",
+          "无直接海事任务联系，无法具体说明迁移调整"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "泛化目标跟踪综述性概述，缺乏具体可迁移方法证据，与海事及跨模态匹配无直接联系。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "通用目标跟踪的泛化与在线自适应瓶颈",
+        "target_task": "multi_object_tracking",
+        "core_contribution": "提出一系列方法提升跟踪模型的判别、自适应与几何推理能力（摘要未给具体机制）",
+        "application_context": "通用视觉目标跟踪任务",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "87384a71-553c-457b-8199-f60ae6641817"
+    },
+    "c1e5dc7b6aba4682075c76f9292e95b631c0175eebd22802ae519f8225f67f66": {
+      "paper_id": "2611.17105",
+      "title": "Predicting Ethanol Drinking Status from Nonhuman Primate Liver Histology: A Proof of Concept for Parameter-efficient Fine-tuning in Few-Shot Vision-Language Modeling",
+      "fingerprint": "c1e5dc7b6aba4682075c76f9292e95b631c0175eebd22802ae519f8225f67f66",
+      "evaluation": {
+        "paper_id": "2611.17105",
+        "task_type": "Few-shot WSI classification via VLM+PEFT (pathology)",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Combining vision-language models (VLMs) with parameter-efficient fine-tuning (PEFT) offers a promising approach to few-shot whole-slide image (WSI) classification",
+            "interpretation_zh": "将视觉语言模型与参数高效微调结合用于少样本全切片图像分类；属医学病理任务。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "任务为灵长类肝脏组织切片分类，与海事感知无联系",
+          "仅泛化视觉语言模型与适配器微调，未给出可具体改造至船舶任务的证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "医学病理少样本分类，虽涉及视觉语言模型与PEFT，但无具体任务无关匹配机制证据，直接相关性为零。",
+        "confidence": 0.9,
+        "primary_domain": "biomedical",
+        "primary_problem": "少样本全切片图像分类中参数高效微调的有效性",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "评估视觉语言模型与适配器微调用于少样本全切片图像分类",
+        "application_context": "MATRR灵长类肝脏组织学乙醇饮用状态预测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "87384a71-553c-457b-8199-f60ae6641817"
+    },
+    "1ee9820f9272d07b7db09152cd23f68d5781c1ab318fde9d2b5f55d6f478bf3e": {
+      "paper_id": "2611.17019",
+      "title": "Temporal Regularized Learning: Self-Supervised Learning Local in Space and Time",
+      "fingerprint": "1ee9820f9272d07b7db09152cd23f68d5781c1ab318fde9d2b5f55d6f478bf3e",
+      "evaluation": {
+        "paper_id": "2611.17019",
+        "task_type": "通用自监督序列表征学习",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "instantiate a VICReg-style objective with temporally adjacent positives and non-differentiated running population statistics",
+            "interpretation_zh": "用时间相邻正样本与不参与梯度的运行统计量构造VICReg式在线损失，属于时序自监督表征机制",
+            "inference": false
+          },
+          {
+            "quote_en": "its gradient is a Hebbian update of the feedforward weights and an anti-Hebbian update of one lateral matrix per layer",
+            "interpretation_zh": "给出前馈权重与侧向矩阵的具体更新规则，但对跨模态匹配任务无直接结构对应",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "instantiate a VICReg-style objective with temporally adjacent positives and non-differentiated running population statistics",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "可将时间相邻正样本替换为跨模态正对（如雷达回波与AIS轨迹片段），以运行统计量作为负样本约束实现无标签跨模态表征对齐；但摘要未涉及跨模态输入与匹配目标，需重构正负样本构造与骨干输入，属较大改动",
+          "inference": true
+        },
+        "limitations": [
+          "仅在两层全连接网络与MNIST流上验证，规模极小",
+          "目标为层局部在线学习规则，未涉及跨模态或检测分割任务",
+          "作者明确不追求与反向传播竞争，泛化性证据弱"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "时序局部自监督学习规则，与海事关联融合及船舶视觉任务无直接联系，迁移路径需大幅改造，仅为弱候选方法证据。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "批内损失在时间上非局部，提出时空局部自监督学习规则",
+        "target_task": "self_supervised_sequence_representation",
+        "core_contribution": "TeReL：基于VICReg式目标与运行统计的逐神经元在线学习规则",
+        "application_context": "类块化MNIST序列上的小网络表征学习验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "493889d1-15db-4730-86da-f07942873f0f"
+    },
+    "3c6ab0529b639a100febcbee1cf8ebb95bf731de5b55158bf071862412f41d83": {
+      "paper_id": "2611.17176",
+      "title": "Validation-Guided Prompt Selection for Differential Morphing Attack Detection",
+      "fingerprint": "3c6ab0529b639a100febcbee1cf8ebb95bf731de5b55158bf071862412f41d83",
+      "evaluation": {
+        "paper_id": "2611.17176",
+        "task_type": "安全攻击检测（人脸变形攻击）",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "selects the top-ranked instruction using a security-oriented loss that prioritises missed morph attacks",
+            "interpretation_zh": "基于安全导向损失从候选提示中挑选指令，属提示选择机制而非可复用感知匹配方法",
+            "inference": false
+          },
+          {
+            "quote_en": "Version~2 recursively revises prompts using aggregate validation feedback",
+            "interpretation_zh": "利用验证集聚合反馈递归改写提示，为冻结VLM的提示优化流程",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究对象为人脸变形攻击检测，属安全核心，与海事感知无任务联系",
+          "验证集仅10名受试者，规模小",
+          "提示选择依赖安全损失，难以抽象为任务无关匹配机制"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "安全导向的人脸变形攻击检测，提示选择机制与跨模态匹配、船舶视觉无具体可迁移联系。",
+        "confidence": 0.85,
+        "primary_domain": "cybersecurity",
+        "primary_problem": "冻结参数视觉语言评测器的差分变形攻击检测提示选择",
+        "target_task": "differential_morphing_attack_detection",
+        "core_contribution": "提出基于验证集安全损失与递归修订的提示选择方法",
+        "application_context": "人脸证件图像变形攻击检测基准（LMA/MIPGAN-2/PIPE）",
+        "security_centric": true,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "493889d1-15db-4730-86da-f07942873f0f"
+    },
+    "220959e2d7e990220a4141b98b861f93f267deb980d6ae6353eb24164a99e737": {
+      "paper_id": "2609.11697",
+      "title": "ActSafeGuard: Differentiable and Training-Aligned Constraint Enforcement for Flow-Matching Policies",
+      "fingerprint": "220959e2d7e990220a4141b98b861f93f267deb980d6ae6353eb24164a99e737",
+      "evaluation": {
+        "paper_id": "2609.11697",
+        "task_type": "机器人操作安全约束",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "differentiable and training-aligned safeguard layer for flow-matching based policies",
+            "interpretation_zh": "为流匹配策略设计可微且训练对齐的安全约束层，面向动作可行性",
+            "inference": false
+          },
+          {
+            "quote_en": "analytical ray-scaling operator design, ActSafeGuard enables boundary-aware gradients",
+            "interpretation_zh": "解析射线缩放算子生成边界感知梯度，属机器人动作约束机制",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "面向机器人操作的硬物理约束，与船舶检测/分割/跨模态匹配无直接任务联系",
+          "方法核心为动作可行性约束而非感知表征学习",
+          "摘要未提供可迁移到感知匹配的任何结构"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "机器人操作安全约束层，属动作生成范畴，与海事多源关联融合及船舶视觉检测无具体迁移路径。",
+        "confidence": 0.85,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "VLA/流匹配策略生成动作可能违反硬物理约束",
+        "target_task": "safe_robot_action_generation",
+        "core_contribution": "ActSafeGuard可微训练对齐安全约束层与射线缩放算子",
+        "application_context": "通用机器人操作策略（π0.5/Fast-WAM）安全部署验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "493889d1-15db-4730-86da-f07942873f0f"
+    },
+    "184ba806707fd4c62bb0c6f0ed5d89b96e732f2023fe1526b55b6525363d44a3": {
+      "paper_id": "2609.04203",
+      "title": "Temporal Self-Distillation: Learning Visual State Tracking in Videos Without Supervision",
+      "fingerprint": "184ba806707fd4c62bb0c6f0ed5d89b96e732f2023fe1526b55b6525363d44a3",
+      "evaluation": {
+        "paper_id": "2609.04203",
+        "task_type": "视频状态跟踪自监督学习",
+        "direct_relevance": 1,
+        "transferability": 2,
+        "method_evidence": [
+          {
+            "quote_en": "treats temporal sampling density as privileged information",
+            "interpretation_zh": "把时间采样密度作为特权信息，构造稠密视图教师信号",
+            "inference": false
+          },
+          {
+            "quote_en": "a sparse-view student with the same weights learns to match its next-token distribution",
+            "interpretation_zh": "稀疏视图学生匹配教师下一token分布，属自蒸馏训练目标",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "treats temporal sampling density as privileged information",
+          "target_task": "multi_object_tracking",
+          "adaptation_zh": "可将稠密时序视图自蒸馏用于船舶多目标跟踪中的稀疏帧输入：以高帧率片段作教师、低帧率作学生，但需将下一token分布匹配改为轨迹状态/关联表征蒸馏，并更换视频-语言骨干为检测跟踪网络，改动较大",
+          "inference": true
+        },
+        "limitations": [
+          "针对视频语言模型状态问答，非检测/分割/关联任务",
+          "无标签依赖合成片段训练，真实船舶场景适配证据缺失",
+          "迁移需重构输出目标与骨干结构，摘要未提供直接支持"
+        ],
+        "decision": "候选",
+        "reason_zh": "稠密视图自蒸馏属可复用时序表征训练思路，对多目标跟踪有潜在价值，但与海事任务无直接联系，迁移需较大改动。",
+        "confidence": 0.5,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "无监督连续视频状态跟踪训练",
+        "target_task": "video_state_tracking",
+        "core_contribution": "S3T：以时间采样密度为特权信息的自监督自蒸馏框架",
+        "application_context": "LLaVA-OneVision视频状态问答与动作计数基准验证",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "493889d1-15db-4730-86da-f07942873f0f"
     }
   }
 }

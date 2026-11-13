@@ -1,29 +1,37 @@
 {
-  "attempt_date": "2026-11-12",
-  "status": "complete",
+  "attempt_date": "2026-11-13",
+  "status": "partial",
   "published_date": "2026-11-12",
   "published_revision": "4bbb9213769bf658",
   "selection_audit": {
-    "candidate_count": 1625,
-    "ai_reviewed": 986,
+    "candidate_count": 1753,
+    "ai_reviewed": 994,
     "ai_states": {
-      "evaluated": 986,
-      "domain_excluded": 177,
-      "uncertain": 443,
-      "unassessed": 19
+      "evaluated": 994,
+      "uncertain": 449,
+      "domain_excluded": 188,
+      "unassessed": 122
     },
     "stage_counts": {
-      "0": 13,
-      "1": 213,
-      "3": 130,
-      "2": 1269
+      "0": 134,
+      "3": 128,
+      "1": 202,
+      "2": 1289
     },
-    "ai_rejected": 978,
-    "translation_deferred": 0,
-    "qualified_count": 8,
-    "selected_count": 5,
-    "shortfall": 0,
-    "translation_replacements": [],
+    "ai_rejected": 990,
+    "translation_deferred": 1,
+    "qualified_count": 3,
+    "selected_count": 3,
+    "shortfall": 2,
+    "translation_replacements": [
+      {
+        "paper_id": "doi:10.1109/tits.2025.3628677",
+        "attempt_date": "2026-11-13",
+        "reason": "Missing source numbers",
+        "requires_enrichment": true,
+        "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680"
+      }
+    ],
     "translation_environment_errors": [],
     "translation_errors": []
   }
