@@ -1,24 +1,24 @@
 {
-  "attempt_date": "2026-11-13",
+  "attempt_date": "2026-11-14",
   "status": "partial",
   "published_date": "2026-11-12",
   "published_revision": "4bbb9213769bf658",
   "selection_audit": {
-    "candidate_count": 1753,
-    "ai_reviewed": 994,
+    "candidate_count": 1756,
+    "ai_reviewed": 1026,
     "ai_states": {
-      "evaluated": 994,
-      "uncertain": 449,
-      "domain_excluded": 188,
-      "unassessed": 122
+      "evaluated": 1026,
+      "uncertain": 455,
+      "domain_excluded": 263,
+      "unassessed": 12
     },
     "stage_counts": {
-      "0": 134,
-      "3": 128,
-      "1": 202,
-      "2": 1289
+      "3": 154,
+      "0": 3,
+      "1": 279,
+      "2": 1320
     },
-    "ai_rejected": 990,
+    "ai_rejected": 1022,
     "translation_deferred": 1,
     "qualified_count": 3,
     "selected_count": 3,
@@ -26,7 +26,7 @@
     "translation_replacements": [
       {
         "paper_id": "doi:10.1109/tits.2025.3628677",
-        "attempt_date": "2026-11-13",
+        "attempt_date": "2026-11-14",
         "reason": "Missing source numbers",
         "requires_enrichment": true,
         "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680"

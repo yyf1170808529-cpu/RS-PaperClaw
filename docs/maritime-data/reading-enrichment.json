@@ -2510,26 +2510,54 @@
       "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680",
       "prompt_version": "3.8.6-1",
       "purpose": "daily_translation",
-      "attempts": 1,
-      "previous_attempt": null,
+      "attempts": 2,
+      "previous_attempt": {
+        "status": "audit_required",
+        "paper_id": "doi:10.1109/tits.2025.3628677",
+        "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680",
+        "prompt_version": "3.8.6-1",
+        "purpose": "daily_translation",
+        "attempts": 1,
+        "previous_attempt": null,
+        "model": "deepseek-flash",
+        "usage": {
+          "prompt_tokens": 574,
+          "completion_tokens": 411,
+          "total_tokens": 985,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 190
+        },
+        "cost_upper_cny": 0.00368336,
+        "created": 1794573016,
+        "candidate": {
+          "paper_id": "doi:10.1109/tits.2025.3628677",
+          "summary_zh": "针对无人水面艇受水面反射、尾迹和太阳耀斑干扰难以识别小尺度水面障碍物的问题，提出实时分割网络RSOS-Net，通过改进轻量特征金字塔、快速金字塔池化和注意力特征融合实现线上检测。",
+          "migration_zh": "研究推断：可将FPPM级联池化用于多传感器融合的Radar–视觉–AIS特征全局上下文建模，将AFFM通道-空间注意力嵌入视觉–AIS关联的特征精炼模块，以增强小目标与位置细节监督。",
+          "abstract_zh": "由于水面反射、尾迹和太阳耀斑，无人水面艇（UWV）在识别水面障碍物，尤其是外观尺度较小的障碍物方面长期面临挑战。本文受编码器-解码器架构启发，构建了实时水面障碍物分割网络（RSOS-Net），以实现UWV的在线水面障碍物检测。首先，部署改进的轻量特征金字塔网络结构，以同时灵活适应显著的尺度变化并增强对小障碍物的关注。为解决水面扰动引起的视觉歧义，快速金字塔池化模块（FPPM）和基于注意力的特征融合模块（AFFM）分别整体设计于轻量编码器和解码器中。因此，FPPM能够通过级联池化捕获局部和全局上下文信息，从而将障碍物与太阳耀斑区分开，而AFFM凭借通道-空间注意力机制增强细节特征和空间位置，能够排除反射。结果表明，RSOS-Net在LaRS数据集上达到65.1%的F1分数，同时在NVIDIA RTX 3060平台上检测速度达到79.5帧每秒。值得注意的是，RSOS-Net在第三届基于USV的嵌入式障碍物分割挑战赛中获得第一名，官方结果见https://macvi.org/workshop/macvi25/summary"
+        },
+        "error": "Missing source numbers"
+      },
       "model": "deepseek-flash",
       "usage": {
         "prompt_tokens": 574,
-        "completion_tokens": 411,
-        "total_tokens": 985,
+        "completion_tokens": 433,
+        "total_tokens": 1007,
         "prompt_tokens_details": {
           "cached_tokens": 384
         },
         "prompt_cache_hit_tokens": 384,
         "prompt_cache_miss_tokens": 190
       },
-      "cost_upper_cny": 0.00368336,
-      "created": 1794573016,
+      "cost_upper_cny": 0.00385936,
+      "created": 1794657095,
       "candidate": {
         "paper_id": "doi:10.1109/tits.2025.3628677",
-        "summary_zh": "针对无人水面艇受水面反射、尾迹和太阳耀斑干扰难以识别小尺度水面障碍物的问题，提出实时分割网络RSOS-Net，通过改进轻量特征金字塔、快速金字塔池化和注意力特征融合实现线上检测。",
-        "migration_zh": "研究推断：可将FPPM级联池化用于多传感器融合的Radar–视觉–AIS特征全局上下文建模，将AFFM通道-空间注意力嵌入视觉–AIS关联的特征精炼模块，以增强小目标与位置细节监督。",
-        "abstract_zh": "由于水面反射、尾迹和太阳耀斑，无人水面艇（UWV）在识别水面障碍物，尤其是外观尺度较小的障碍物方面长期面临挑战。本文受编码器-解码器架构启发，构建了实时水面障碍物分割网络（RSOS-Net），以实现UWV的在线水面障碍物检测。首先，部署改进的轻量特征金字塔网络结构，以同时灵活适应显著的尺度变化并增强对小障碍物的关注。为解决水面扰动引起的视觉歧义，快速金字塔池化模块（FPPM）和基于注意力的特征融合模块（AFFM）分别整体设计于轻量编码器和解码器中。因此，FPPM能够通过级联池化捕获局部和全局上下文信息，从而将障碍物与太阳耀斑区分开，而AFFM凭借通道-空间注意力机制增强细节特征和空间位置，能够排除反射。结果表明，RSOS-Net在LaRS数据集上达到65.1%的F1分数，同时在NVIDIA RTX 3060平台上检测速度达到79.5帧每秒。值得注意的是，RSOS-Net在第三届基于USV的嵌入式障碍物分割挑战赛中获得第一名，官方结果见https://macvi.org/workshop/macvi25/summary"
+        "summary_zh": "针对水面反光、尾迹和太阳耀斑干扰下无人水面艇难以识别小型水面障碍的问题，提出编码器-解码器架构的实时水面障碍分割网络RSOS-Net，通过改进轻量特征金字塔、快速金字塔池化与注意力特征融合实现在线分割。",
+        "migration_zh": "研究推断：可将FPPM的级联池化多尺度上下文捕获与AFFM的通道-空间注意力特征增强迁移至船舶视觉检测或分割编码器中，用于抑制海面反光与耀斑干扰，并以分割掩码作监督、在轻量骨干后接入改进特征金字塔以兼顾小目标与实时性。",
+        "abstract_zh": "由于水面反射、尾迹和太阳耀斑，无人水面艇（UWV）在识别水面障碍尤其是小尺度外观障碍方面长期面临挑战。本文受编码器-解码器架构启发，构建了实时水面障碍分割网络（RSOS-Net），以实现无人水面艇的在线水面障碍检测。首先，部署改进的轻量特征金字塔网络结构，以灵活适应显著的尺度变化，并同时增强对小型障碍的关注。为解决水面扰动引起的视觉模糊，快速金字塔池化模块（FPPM）和基于注意力的特征融合模块（AFFM）分别整体设计于轻量编码器和解码器中。相应地，FPPM能够通过级联池化捕获局部和全局上下文信息，从而将障碍与太阳耀斑区分开；而AFFM能够借助通道-空间注意力机制增强细节特征和空间位置，从而排除反射干扰。结果表明，RSOS-Net在LaRS数据集上取得65.1%的F1分数，同时在NVIDIA RTX 3060平台上检测速度达到79.5帧每秒。值得注意的是，RSOS-Net在第三届基于USV的嵌入式障碍分割挑战赛中获得第一名，官方结果见https://macvi.org/workshop/macvi25/summary"
       },
       "error": "Missing source numbers"
     },

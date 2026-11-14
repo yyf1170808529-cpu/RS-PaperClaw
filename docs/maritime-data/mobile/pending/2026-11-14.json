@@ -1,0 +1,320 @@
+{
+  "date": "2026-11-14",
+  "papers": [
+    {
+      "paper_id": "doi:10.1109/tits.2025.3620759",
+      "title": "A Novel Approach for Monitoring Vessel Load Capacity Through Ship Dimension Extraction From Synthetic Aperture Radar Images",
+      "authors": [
+        "Di Zhang",
+        "Zidong Xu",
+        "Liang Fan",
+        "Liang Huang",
+        "Chengpeng Wan"
+      ],
+      "published": "2025-12",
+      "arxiv_url": "",
+      "doi": "10.1109/tits.2025.3620759",
+      "original_url": "https://doi.org/10.1109/tits.2025.3620759",
+      "pdf_url": "",
+      "open_access_url": "",
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "abstract": "Vessels are regulated to operate within designated water areas based on their types, dimensions, load-carrying capacity, etc. However, despite regulations, some ship operators still attempt to evade them to reduce operational costs or obtain additional benefits. This is achieved through certificate forgery, vessel information concealing or unauthorized illegal behavior, which poses a significant threat to maritime traffic safety. Monitoring through only Automatic Identification System (AIS) data has limitations, as it relies on vessels actively submitting information, and is unable to track vessels intentionally shutting down AIS or those without AIS equipment. This paper proposes a method for intelligent waterway transportation supervision that utilizes Synthetic Aperture Radar (SAR) remote sensing technology to automatically detect vessel targets and predict their Deadweight Tonnage (DWT). Vessel targets are identified and their main dimensions are extracted through instance segmentation models based on SAR marine images. Subsequently, a multiple regression analysis establishes the relationship between vessel type, dimensions, and DWT, effectively predicting their load capacity. The experimental results show that the Mean Absolute Percentage Error (MAPE) for the three primary types of ships (i.e., container ship, bulk carrier, tanker) are 4.99%, 6.09%, and 4.20%, respectively. The proposed method serves as an auxiliary to laborious traditional manual methods, which can automatically detect vessels and their load capacity on a large scale and in batches, regardless of whether the ships are in port or not. It can be applied in scheduling vessel routes and channel layouts, serving as an additional reference to avoid inspection oversights, and significantly enhance maritime regulatory efficiency.",
+      "resource_type": "journal_article",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Di Zhang",
+      "first_author_affiliations": [
+        "State Key Laboratory of Maritime Technology and Safety, the Intelligent Transportation Systems Research Center, and the School of Transportation and Logistics Engineering, Wuhan University of Technology, Wuhan, China"
+      ],
+      "affiliation_source": "Crossref first author",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "直接面向船舶视觉检测与分割，并结合SAR图像进行船舶尺寸与载重估计，与船舶视觉方向高度相关。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftits.2025.3620759",
+      "score": 5,
+      "rule_level": "一般相关",
+      "level": "直接相关",
+      "ai_score": 68,
+      "selection_source": "历史补荐",
+      "summary_zh": "该论文针对仅靠AIS难以监管关闭设备或未装AIS船舶的问题，提出利用SAR图像经实例分割提取船舶尺寸，再通过多元回归预测载重吨位，实现水域智能监管。",
+      "migration_zh": "研究推断：可将SAR实例分割提取船体尺寸并回归载重吨位的思路迁移至船舶检测/分割任务，以尺寸为监督信号，融合Radar与视觉或AIS关联模块，调整多任务输出头增强鲁棒性。",
+      "abstract_zh": "船舶被规定须根据其类型、尺寸、载运能力等在指定水域内运营。然而，尽管有相关规定，一些船东仍试图通过伪造证书、隐瞒船舶信息或未经授权的非法行为来规避规定，以降低运营成本或获取额外利益，这对海上交通安全构成重大威胁。仅通过自动识别系统（AIS）数据进行监测存在局限，因为它依赖于船舶主动提交信息，无法追踪故意关闭AIS或未配备AIS设备的船舶。本文提出一种智能水路运输监管方法，利用合成孔径雷达（SAR）遥感技术自动检测船舶目标并预测其载重吨位（DWT）。通过基于SAR海洋图像的实例分割模型识别船舶目标并提取其主要尺寸。随后，多元回归分析建立船舶类型、尺寸与DWT之间的关系，有效预测其载运能力。实验结果表明，三种主要船型（即集装箱船、散货船、油轮）的平均绝对百分比误差（MAPE）分别为4.99%、6.09%和4.20%。所提方法可作为繁琐传统人工方法的辅助，能够大规模、批量地自动检测船舶及其载运能力，无论船舶是否在港。该方法可应用于船舶航线调度和航道布局，作为避免检查疏漏的额外参考，并显著提升海事监管效率。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2602.05037",
+      "title": "UniTrack: Differentiable Graph Representation Learning for Multi-Object Tracking",
+      "authors": [
+        "Bishoy M. Galoaa",
+        "Xiangyu Bai",
+        "Utsav Nandi",
+        "Sai Siddhartha Vivek Dhir Rangoju",
+        "Somaieh Amraee",
+        "Sarah Ostadabbas"
+      ],
+      "published": "2026-02-04",
+      "arxiv_url": "https://arxiv.org/abs/2602.05037",
+      "doi": "10.48550/arxiv.2602.05037",
+      "original_url": "https://doi.org/10.48550/arxiv.2602.05037",
+      "pdf_url": "https://arxiv.org/pdf/2602.05037",
+      "open_access_url": "https://arxiv.org/pdf/2602.05037",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "We present UniTrack, a plug-and-play graph-theoretic loss function designed to significantly enhance multi-object tracking (MOT) performance by directly optimizing tracking-specific objectives through unified differentiable learning. Unlike prior graph-based MOT methods that redesign tracking architectures, UniTrack provides a universal training objective that integrates detection accuracy, identity preservation, and spatiotemporal consistency into a single end-to-end trainable loss function, enabling seamless integration with existing MOT systems without architectural modifications. Through differentiable graph representation learning, UniTrack enables networks to learn holistic representations of motion continuity and identity relationships across frames. We validate UniTrack across diverse tracking models and multiple challenging benchmarks, demonstrating consistent improvements across all tested architectures and datasets including Trackformer, MOTR, FairMOT, ByteTrack, GTR, and MOTE. Extensive evaluations show up to 53\\% reduction in identity switches and 12\\% IDF1 improvements across challenging benchmarks, with GTR achieving peak performance gains of 9.7\\% MOTA on SportsMOT.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Bishoy M. Galoaa",
+      "first_author_affiliations": [
+        "Augmented Cognition Lab (ACLab) , Electrical and Computer Engineering Department , Northeastern University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "arXiv",
+      "reason": "多目标跟踪的图表示学习损失；可将该即插即用图损失迁移到船舶多目标跟踪：以船舶检测框为图节点，构造跨帧身份关联图，将检测置信度、身份保持与时空一致性作为可微损失训练现有跟踪器；需替换输入为海事视频检测序",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2602.05037",
+      "score": 25,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 28,
+      "selection_source": "历史补荐",
+      "summary_zh": "UniTrack提出一种即插即用的图论损失函数，通过统一可微学习直接优化跟踪目标，将检测精度、身份保持和时空一致性集成到端到端损失中，在不修改架构的情况下提升多种MOT模型的性能。",
+      "migration_zh": "研究推断：可将UniTrack的图表示损失函数迁移至船舶多目标跟踪任务，结合Radar与AIS数据构建跨模态图结构，在检测与身份关联模块中引入时空一致性监督，提升船舶身份保持能力。",
+      "abstract_zh": "我们提出UniTrack，一种即插即用的图论损失函数，旨在通过统一的可微学习直接优化跟踪特定目标，从而显著提升多目标跟踪（MOT）性能。与先前重新设计跟踪架构的基于图的MOT方法不同，UniTrack提供了一种通用的训练目标，将检测精度、身份保持和时空一致性集成到一个端到端可训练的损失函数中，无需架构修改即可与现有MOT系统无缝集成。通过可微图表示学习，UniTrack使网络能够学习跨帧运动连续性和身份关系的整体表示。我们在多种跟踪模型和多个具有挑战性的基准上验证了UniTrack，在包括Trackformer、MOTR、FairMOT、ByteTrack、GTR和MOTE在内的所有测试架构和数据集上均表现出持续改进。大量评估表明，在具有挑战性的基准上，身份切换最多减少53%，IDF1提升12%，其中GTR在SportsMOT上实现了9.7%的MOTA峰值性能提升。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2511.11460",
+      "title": "Rethinking Efficient Mixture-of-Experts for Remote Sensing Modality-Missing Classification",
+      "authors": [
+        "Qi Gao",
+        "Qu, Jiahui",
+        "Wenqian Dong"
+      ],
+      "published": "2025-11-14",
+      "arxiv_url": "https://arxiv.org/abs/2511.11460",
+      "doi": "10.48550/arxiv.2511.11460",
+      "original_url": "https://doi.org/10.48550/arxiv.2511.11460",
+      "pdf_url": "https://arxiv.org/pdf/2511.11460",
+      "open_access_url": "https://arxiv.org/pdf/2511.11460",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Multimodal remote sensing classification often suffers from missing modalities caused by sensor failures and environmental interference, leading to severe performance degradation. In this work, we rethink missing-modality learning from a conditional computation perspective and investigate whether Mixture-of-Experts (MoE) models can inherently adapt to diverse modality-missing scenarios. We first conduct a systematic study of representative MoE paradigms under various missing-modality settings, revealing both their potential and limitations. Building on these insights, we propose a Missing-aware Mixture-of-LoRAs (MaMOL), a parameter-efficient MoE framework that unifies multiple modality-missing cases within a single model. MaMOL introduces a dual-routing mechanism to decouple modality-invariant shared experts and modality-aware dynamic experts, enabling automatic expert activation conditioned on available modalities. Extensive experiments on multiple remote sensing benchmarks demonstrate that MaMOL significantly improves robustness and generalization under diverse missing-modality scenarios with minimal computational overhead. Transfer experiments on natural image datasets further validate its scalability and cross-domain applicability.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Qi Gao",
+      "first_author_affiliations": [
+        "State Key Laboratory of Integrated Ser- vice Network , Xidian University , Xi'an 710071 , China "
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "arXiv",
+      "reason": "通用多模态缺失模态分类方法；将双路由MoE结构应用于多传感器船舶检测：以视觉、雷达等传感器特征作为不同模态输入，共享专家学习场景不变表征，动态专家根据可用传感器激活；训练目标改为检测损失，并模拟传感器",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2511.11460",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 28,
+      "selection_source": "历史补荐",
+      "summary_zh": "论文从条件计算角度重新审视遥感多模态缺失分类，提出参数高效的Missing-aware Mixture-of-LoRAs框架，用双路由解耦共享与动态专家，实现单模型自适应多种模态缺失场景。",
+      "migration_zh": "研究推断：可将双路由MoE-LoRA思想迁移到多传感器融合船舶检测/分割的融合模块，针对Radar、AIS或视觉-AIS关联中输入模态随机缺失，用模态可用性作为路由监督，解耦共享与模态感知专家，保持检测头输入结构不变并提升鲁棒性。",
+      "abstract_zh": "多模态遥感分类常因传感器故障和环境干扰而出现模态缺失，导致性能严重下降。本文从条件计算视角重新思考缺失模态学习，并探究混合专家（MoE）模型能否内在地适应多样的模态缺失场景。我们首先系统研究了代表性MoE范式在多种缺失模态设置下的表现，揭示其潜力与局限。基于这些发现，我们提出Missing-aware Mixture-of-LoRAs（MaMOL），一种参数高效的MoE框架，将多种模态缺失情况统一于单一模型。MaMOL引入双路由机制，解耦模态不变的共享专家与模态感知的动态专家，从而根据可用模态自动激活专家。在多个遥感基准上的大量实验表明，MaMOL以极小的计算开销显著提升了多样缺失模态场景下的鲁棒性与泛化能力。在自然图像数据集上的迁移实验进一步验证了其可扩展性与跨域适用性。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 1756,
+    "ai_reviewed": 1026,
+    "ai_states": {
+      "evaluated": 1026,
+      "uncertain": 455,
+      "domain_excluded": 263,
+      "unassessed": 12
+    },
+    "stage_counts": {
+      "3": 154,
+      "0": 3,
+      "1": 279,
+      "2": 1320
+    },
+    "ai_rejected": 1022,
+    "translation_deferred": 1,
+    "qualified_count": 3,
+    "selected_count": 3,
+    "shortfall": 2,
+    "translation_replacements": [
+      {
+        "paper_id": "doi:10.1109/tits.2025.3628677",
+        "attempt_date": "2026-11-14",
+        "reason": "Missing source numbers",
+        "requires_enrichment": true,
+        "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "partial",
+  "reserve_papers": [
+    {
+      "paper_id": "doi:10.1109/tits.2025.3620759",
+      "title": "A Novel Approach for Monitoring Vessel Load Capacity Through Ship Dimension Extraction From Synthetic Aperture Radar Images",
+      "authors": [
+        "Di Zhang",
+        "Zidong Xu",
+        "Liang Fan",
+        "Liang Huang",
+        "Chengpeng Wan"
+      ],
+      "published": "2025-12",
+      "arxiv_url": "",
+      "doi": "10.1109/tits.2025.3620759",
+      "original_url": "https://doi.org/10.1109/tits.2025.3620759",
+      "pdf_url": "",
+      "open_access_url": "",
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "abstract": "Vessels are regulated to operate within designated water areas based on their types, dimensions, load-carrying capacity, etc. However, despite regulations, some ship operators still attempt to evade them to reduce operational costs or obtain additional benefits. This is achieved through certificate forgery, vessel information concealing or unauthorized illegal behavior, which poses a significant threat to maritime traffic safety. Monitoring through only Automatic Identification System (AIS) data has limitations, as it relies on vessels actively submitting information, and is unable to track vessels intentionally shutting down AIS or those without AIS equipment. This paper proposes a method for intelligent waterway transportation supervision that utilizes Synthetic Aperture Radar (SAR) remote sensing technology to automatically detect vessel targets and predict their Deadweight Tonnage (DWT). Vessel targets are identified and their main dimensions are extracted through instance segmentation models based on SAR marine images. Subsequently, a multiple regression analysis establishes the relationship between vessel type, dimensions, and DWT, effectively predicting their load capacity. The experimental results show that the Mean Absolute Percentage Error (MAPE) for the three primary types of ships (i.e., container ship, bulk carrier, tanker) are 4.99%, 6.09%, and 4.20%, respectively. The proposed method serves as an auxiliary to laborious traditional manual methods, which can automatically detect vessels and their load capacity on a large scale and in batches, regardless of whether the ships are in port or not. It can be applied in scheduling vessel routes and channel layouts, serving as an additional reference to avoid inspection oversights, and significantly enhance maritime regulatory efficiency.",
+      "resource_type": "journal_article",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Di Zhang",
+      "first_author_affiliations": [
+        "State Key Laboratory of Maritime Technology and Safety, the Intelligent Transportation Systems Research Center, and the School of Transportation and Logistics Engineering, Wuhan University of Technology, Wuhan, China"
+      ],
+      "affiliation_source": "Crossref first author",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "IEEE Transactions on Intelligent Transportation Systems · JCR一区 · IF 9.1",
+      "reason": "直接面向船舶视觉检测与分割，并结合SAR图像进行船舶尺寸与载重估计，与船舶视觉方向高度相关。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=doi%3A10.1109%2Ftits.2025.3620759",
+      "score": 5,
+      "rule_level": "一般相关",
+      "level": "直接相关",
+      "ai_score": 68,
+      "selection_source": "历史补荐",
+      "summary_zh": "该论文针对仅靠AIS难以监管关闭设备或未装AIS船舶的问题，提出利用SAR图像经实例分割提取船舶尺寸，再通过多元回归预测载重吨位，实现水域智能监管。",
+      "migration_zh": "研究推断：可将SAR实例分割提取船体尺寸并回归载重吨位的思路迁移至船舶检测/分割任务，以尺寸为监督信号，融合Radar与视觉或AIS关联模块，调整多任务输出头增强鲁棒性。",
+      "abstract_zh": "船舶被规定须根据其类型、尺寸、载运能力等在指定水域内运营。然而，尽管有相关规定，一些船东仍试图通过伪造证书、隐瞒船舶信息或未经授权的非法行为来规避规定，以降低运营成本或获取额外利益，这对海上交通安全构成重大威胁。仅通过自动识别系统（AIS）数据进行监测存在局限，因为它依赖于船舶主动提交信息，无法追踪故意关闭AIS或未配备AIS设备的船舶。本文提出一种智能水路运输监管方法，利用合成孔径雷达（SAR）遥感技术自动检测船舶目标并预测其载重吨位（DWT）。通过基于SAR海洋图像的实例分割模型识别船舶目标并提取其主要尺寸。随后，多元回归分析建立船舶类型、尺寸与DWT之间的关系，有效预测其载运能力。实验结果表明，三种主要船型（即集装箱船、散货船、油轮）的平均绝对百分比误差（MAPE）分别为4.99%、6.09%和4.20%。所提方法可作为繁琐传统人工方法的辅助，能够大规模、批量地自动检测船舶及其载运能力，无论船舶是否在港。该方法可应用于船舶航线调度和航道布局，作为避免检查疏漏的额外参考，并显著提升海事监管效率。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2602.05037",
+      "title": "UniTrack: Differentiable Graph Representation Learning for Multi-Object Tracking",
+      "authors": [
+        "Bishoy M. Galoaa",
+        "Xiangyu Bai",
+        "Utsav Nandi",
+        "Sai Siddhartha Vivek Dhir Rangoju",
+        "Somaieh Amraee",
+        "Sarah Ostadabbas"
+      ],
+      "published": "2026-02-04",
+      "arxiv_url": "https://arxiv.org/abs/2602.05037",
+      "doi": "10.48550/arxiv.2602.05037",
+      "original_url": "https://doi.org/10.48550/arxiv.2602.05037",
+      "pdf_url": "https://arxiv.org/pdf/2602.05037",
+      "open_access_url": "https://arxiv.org/pdf/2602.05037",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "We present UniTrack, a plug-and-play graph-theoretic loss function designed to significantly enhance multi-object tracking (MOT) performance by directly optimizing tracking-specific objectives through unified differentiable learning. Unlike prior graph-based MOT methods that redesign tracking architectures, UniTrack provides a universal training objective that integrates detection accuracy, identity preservation, and spatiotemporal consistency into a single end-to-end trainable loss function, enabling seamless integration with existing MOT systems without architectural modifications. Through differentiable graph representation learning, UniTrack enables networks to learn holistic representations of motion continuity and identity relationships across frames. We validate UniTrack across diverse tracking models and multiple challenging benchmarks, demonstrating consistent improvements across all tested architectures and datasets including Trackformer, MOTR, FairMOT, ByteTrack, GTR, and MOTE. Extensive evaluations show up to 53\\% reduction in identity switches and 12\\% IDF1 improvements across challenging benchmarks, with GTR achieving peak performance gains of 9.7\\% MOTA on SportsMOT.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Bishoy M. Galoaa",
+      "first_author_affiliations": [
+        "Augmented Cognition Lab (ACLab) , Electrical and Computer Engineering Department , Northeastern University"
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "arXiv",
+      "reason": "多目标跟踪的图表示学习损失；可将该即插即用图损失迁移到船舶多目标跟踪：以船舶检测框为图节点，构造跨帧身份关联图，将检测置信度、身份保持与时空一致性作为可微损失训练现有跟踪器；需替换输入为海事视频检测序",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2602.05037",
+      "score": 25,
+      "rule_level": "高度相关",
+      "level": "方法值得关注",
+      "ai_score": 28,
+      "selection_source": "历史补荐",
+      "summary_zh": "UniTrack提出一种即插即用的图论损失函数，通过统一可微学习直接优化跟踪目标，将检测精度、身份保持和时空一致性集成到端到端损失中，在不修改架构的情况下提升多种MOT模型的性能。",
+      "migration_zh": "研究推断：可将UniTrack的图表示损失函数迁移至船舶多目标跟踪任务，结合Radar与AIS数据构建跨模态图结构，在检测与身份关联模块中引入时空一致性监督，提升船舶身份保持能力。",
+      "abstract_zh": "我们提出UniTrack，一种即插即用的图论损失函数，旨在通过统一的可微学习直接优化跟踪特定目标，从而显著提升多目标跟踪（MOT）性能。与先前重新设计跟踪架构的基于图的MOT方法不同，UniTrack提供了一种通用的训练目标，将检测精度、身份保持和时空一致性集成到一个端到端可训练的损失函数中，无需架构修改即可与现有MOT系统无缝集成。通过可微图表示学习，UniTrack使网络能够学习跨帧运动连续性和身份关系的整体表示。我们在多种跟踪模型和多个具有挑战性的基准上验证了UniTrack，在包括Trackformer、MOTR、FairMOT、ByteTrack、GTR和MOTE在内的所有测试架构和数据集上均表现出持续改进。大量评估表明，在具有挑战性的基准上，身份切换最多减少53%，IDF1提升12%，其中GTR在SportsMOT上实现了9.7%的MOTA峰值性能提升。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    },
+    {
+      "paper_id": "2511.11460",
+      "title": "Rethinking Efficient Mixture-of-Experts for Remote Sensing Modality-Missing Classification",
+      "authors": [
+        "Qi Gao",
+        "Qu, Jiahui",
+        "Wenqian Dong"
+      ],
+      "published": "2025-11-14",
+      "arxiv_url": "https://arxiv.org/abs/2511.11460",
+      "doi": "10.48550/arxiv.2511.11460",
+      "original_url": "https://doi.org/10.48550/arxiv.2511.11460",
+      "pdf_url": "https://arxiv.org/pdf/2511.11460",
+      "open_access_url": "https://arxiv.org/pdf/2511.11460",
+      "venue": "arXiv (Cornell University)",
+      "abstract": "Multimodal remote sensing classification often suffers from missing modalities caused by sensor failures and environmental interference, leading to severe performance degradation. In this work, we rethink missing-modality learning from a conditional computation perspective and investigate whether Mixture-of-Experts (MoE) models can inherently adapt to diverse modality-missing scenarios. We first conduct a systematic study of representative MoE paradigms under various missing-modality settings, revealing both their potential and limitations. Building on these insights, we propose a Missing-aware Mixture-of-LoRAs (MaMOL), a parameter-efficient MoE framework that unifies multiple modality-missing cases within a single model. MaMOL introduces a dual-routing mechanism to decouple modality-invariant shared experts and modality-aware dynamic experts, enabling automatic expert activation conditioned on available modalities. Extensive experiments on multiple remote sensing benchmarks demonstrate that MaMOL significantly improves robustness and generalization under diverse missing-modality scenarios with minimal computational overhead. Transfer experiments on natural image datasets further validate its scalability and cross-domain applicability.",
+      "resource_type": "preprint",
+      "oa_evidence": true,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Qi Gao",
+      "first_author_affiliations": [
+        "State Key Laboratory of Integrated Ser- vice Network , Xidian University , Xi'an 710071 , China "
+      ],
+      "affiliation_source": "OpenAlex first authorship",
+      "affiliation_verified": true,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": false,
+      "source": "arXiv",
+      "reason": "通用多模态缺失模态分类方法；将双路由MoE结构应用于多传感器船舶检测：以视觉、雷达等传感器特征作为不同模态输入，共享专家学习场景不变表征，动态专家根据可用传感器激活；训练目标改为检测损失，并模拟传感器",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2511.11460",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "方法值得关注",
+      "ai_score": 28,
+      "selection_source": "历史补荐",
+      "summary_zh": "论文从条件计算角度重新审视遥感多模态缺失分类，提出参数高效的Missing-aware Mixture-of-LoRAs框架，用双路由解耦共享与动态专家，实现单模型自适应多种模态缺失场景。",
+      "migration_zh": "研究推断：可将双路由MoE-LoRA思想迁移到多传感器融合船舶检测/分割的融合模块，针对Radar、AIS或视觉-AIS关联中输入模态随机缺失，用模态可用性作为路由监督，解耦共享与模态感知专家，保持检测头输入结构不变并提升鲁棒性。",
+      "abstract_zh": "多模态遥感分类常因传感器故障和环境干扰而出现模态缺失，导致性能严重下降。本文从条件计算视角重新思考缺失模态学习，并探究混合专家（MoE）模型能否内在地适应多样的模态缺失场景。我们首先系统研究了代表性MoE范式在多种缺失模态设置下的表现，揭示其潜力与局限。基于这些发现，我们提出Missing-aware Mixture-of-LoRAs（MaMOL），一种参数高效的MoE框架，将多种模态缺失情况统一于单一模型。MaMOL引入双路由机制，解耦模态不变的共享专家与模态感知的动态专家，从而根据可用模态自动激活专家。在多个遥感基准上的大量实验表明，MaMOL以极小的计算开销显著提升了多样缺失模态场景下的鲁棒性与泛化能力。在自然图像数据集上的迁移实验进一步验证了其可扩展性与跨域适用性。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ]
+}
