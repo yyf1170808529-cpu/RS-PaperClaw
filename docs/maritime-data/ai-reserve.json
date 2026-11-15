@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-14",
+  "as_of": "2026-11-15",
   "target": 15,
   "records": {
     "2610.12871": {
@@ -1180,17 +1180,21 @@
       "paper_id": "2511.11460",
       "fingerprint": "13df64ae8abcf024c418f7981a818fd42371940a06a2fb393dd6c4b504ac3885",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-15"
+      ],
+      "available": false
     },
     "doi:10.1109/tits.2025.3620759": {
       "paper_id": "doi:10.1109/tits.2025.3620759",
       "fingerprint": "d2c224c2662c423f5bb4c0ff65e4d13fdd4b898107b3eb02e4fae84e897fcc0c",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-15"
+      ],
+      "available": false
     },
     "doi:10.1109/tits.2025.3628677": {
       "paper_id": "doi:10.1109/tits.2025.3628677",
@@ -1204,10 +1208,32 @@
       "paper_id": "2602.05037",
       "fingerprint": "37fdd22976c1ef167ccda3c5fb5358206d7bbb9d3735a1083077dc2ee445c739",
       "review_version": 2,
-      "qualified": true,
-      "pushed_dates": [],
-      "available": true
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-15"
+      ],
+      "available": false
+    },
+    "doi:10.1109/tits.2025.3635199": {
+      "paper_id": "doi:10.1109/tits.2025.3635199",
+      "fingerprint": "7a0119b06126066fa2bd46743dbd80fd92e6e84cbf011981795a745a1cc11159",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-15"
+      ],
+      "available": false
+    },
+    "doi:10.1145/3767308.3835333": {
+      "paper_id": "doi:10.1145/3767308.3835333",
+      "fingerprint": "323203503cfaa078d27e0f279901ce01e96d4fcd29e95b1ad01d3b92ee7f12c7",
+      "review_version": 2,
+      "qualified": false,
+      "pushed_dates": [
+        "2026-11-15"
+      ],
+      "available": false
     }
   },
-  "available_count": 4
+  "available_count": 1
 }

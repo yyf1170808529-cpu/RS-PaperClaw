@@ -1,33 +1,33 @@
 {
-  "attempt_date": "2026-11-14",
-  "status": "partial",
-  "published_date": "2026-11-12",
-  "published_revision": "4bbb9213769bf658",
+  "attempt_date": "2026-11-15",
+  "status": "complete",
+  "published_date": "2026-11-15",
+  "published_revision": "dd7b1f12f6ae94bf",
   "selection_audit": {
-    "candidate_count": 1756,
-    "ai_reviewed": 1026,
+    "candidate_count": 1762,
+    "ai_reviewed": 1031,
     "ai_states": {
-      "evaluated": 1026,
-      "uncertain": 455,
-      "domain_excluded": 263,
-      "unassessed": 12
+      "evaluated": 1031,
+      "domain_excluded": 274,
+      "uncertain": 456,
+      "unassessed": 1
     },
     "stage_counts": {
-      "3": 154,
-      "0": 3,
-      "1": 279,
-      "2": 1320
+      "0": 4,
+      "3": 159,
+      "1": 275,
+      "2": 1324
     },
-    "ai_rejected": 1022,
+    "ai_rejected": 1025,
     "translation_deferred": 1,
-    "qualified_count": 3,
-    "selected_count": 3,
-    "shortfall": 2,
+    "qualified_count": 5,
+    "selected_count": 5,
+    "shortfall": 0,
     "translation_replacements": [
       {
         "paper_id": "doi:10.1109/tits.2025.3628677",
-        "attempt_date": "2026-11-14",
-        "reason": "Missing source numbers",
+        "attempt_date": "2026-11-15",
+        "reason": "Previous enrichment attempt requires audit; paid POST not repeated",
         "requires_enrichment": true,
         "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680"
       }

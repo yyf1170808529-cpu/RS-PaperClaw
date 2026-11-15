@@ -80697,6 +80697,691 @@
       "model": "deepseek-flash",
       "request_id": "7547ef7b-d594-408a-aae0-1613cf6a764d",
       "compatible_fingerprints": []
+    },
+    "1e98130460829209bcc03b3e16dff1345d96412753d35081e5491bb52b8e424e": {
+      "paper_id": "2611.17163",
+      "title": "UAV-Flow++: A Unified Suite for Benchmarking and Learning Language-Guided UAV Flight",
+      "fingerprint": "1e98130460829209bcc03b3e16dff1345d96412753d35081e5491bb52b8e424e",
+      "evaluation": {
+        "paper_id": "2611.17163",
+        "task_type": "language-guided UAV navigation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "论文聚焦无人机语言引导的短程飞行机动，与海事多源关联融合、船舶视觉检测分割、陆上交通参与者感知无直接任务联系。",
+          "摘要未提供可用于跨模态匹配、船舶检测/分割等目标任务的通用学习机制细节。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究语言引导的无人机飞行控制，与海事融合、船舶视觉及陆上交通感知无直接联系，且无具体可迁移方法证据。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "语言引导的无人机短程物体相对飞行机动的基准与学习框架",
+        "target_task": "language-guided UAV flight maneuver",
+        "core_contribution": "提出Flow任务、UAV-Flow数据集和FlowVLA模型（模仿预训练+TGRPO在线后训练）",
+        "application_context": "无人机在室内外场景执行自然语言指令的物体交互飞行",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "5955ace9-898b-49e5-a5cb-3196aa427382",
+      "compatible_fingerprints": []
+    },
+    "c9c6e1787f3ce3f75601a118c245d7bc3d56f37204112cea05a8c5202d357fe1": {
+      "paper_id": "2611.17110",
+      "title": "SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models",
+      "fingerprint": "c9c6e1787f3ce3f75601a118c245d7bc3d56f37204112cea05a8c5202d357fe1",
+      "evaluation": {
+        "paper_id": "2611.17110",
+        "task_type": "embodied foundation model pretraining",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "论文研究具身智能基础模型的潜在动作对齐，与海事融合、船舶视觉、陆上交通感知无直接任务联系。",
+          "摘要中的语言描述估计语义相似性、软邻域结构引导潜在动作对齐等方法针对机器人操作，未提供可直接用于跨模态匹配或船舶检测的输入/训练目标/结构调整细节。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究具身基础模型的跨 embodiment 潜在动作对齐，与海事融合、船舶视觉及陆上交通感知无直接联系，迁移路径不具体。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "利用非配对人类视频和机器人视频学习语义对齐的潜在动作空间以训练具身基础模型",
+        "target_task": "cross-embodiment latent action alignment for robot policy learning",
+        "core_contribution": "提出SALA方法，用语言描述估计语义相似度并构建软邻域结构监督跨 embodiment 潜在动作对应",
+        "application_context": "基于人类视频和机器人视频的具身基础模型预训练与真实机器人任务后训练",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "5955ace9-898b-49e5-a5cb-3196aa427382",
+      "compatible_fingerprints": []
+    },
+    "53ad6e457a77181169834613adb1a552ce766d8a220c3b3ebfe21fcdb165f2a6": {
+      "paper_id": "2611.17057",
+      "title": "Gaussian ergotropy and spatial correlations: accelerated vacuum versus a thermal field",
+      "fingerprint": "53ad6e457a77181169834613adb1a552ce766d8a220c3b3ebfe21fcdb165f2a6",
+      "evaluation": {
+        "paper_id": "2611.17057",
+        "task_type": "quantum physics",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "论文属于量子物理领域，研究高斯 ergotropy 与空间关联，与海事融合、船舶视觉、陆上交通感知及通用视觉多模态学习方法无关。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子物理研究，与所有关注方向无关。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "量子环境中空间关联与功提取（高斯 ergotropy）的关系",
+        "target_task": "quantum work extraction and spatial correlation reconstruction",
+        "core_contribution": "建立高斯 ergotropy 与空间关联的定量联系，并提出双设置方案重建空间关联",
+        "application_context": "加速真空与热场中谐振子探测器的量子测量",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "5955ace9-898b-49e5-a5cb-3196aa427382",
+      "compatible_fingerprints": []
+    },
+    "86d20a9784a86d0d64beb4c96c75e64a167901b4bee257703752432a4832f0d3": {
+      "paper_id": "2611.17048",
+      "title": "AURA 2.0: From User-Driven Responses to Model-Initiated Conversations in Streaming Video",
+      "fingerprint": "86d20a9784a86d0d64beb4c96c75e64a167901b4bee257703752432a4832f0d3",
+      "evaluation": {
+        "paper_id": "2611.17048",
+        "task_type": "streaming video LLM interaction",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "论文研究流式视频大语言模型的模型发起对话与交互式视觉定位，与海事融合、船舶视觉、陆上交通感知无直接任务联系。",
+          "摘要未提供可用于跨模态匹配、船舶检测/分割等目标任务的通用匹配学习机制细节。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究流式视频大语言模型的交互与视觉定位，与海事融合、船舶视觉及陆上交通感知无直接联系，无具体可迁移方法证据。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "流式视频大语言模型在无用户提示时主动发起对话并保持交互连续性",
+        "target_task": "model-initiated conversation and interactive visual grounding in streaming video",
+        "core_contribution": "提出AURA 2.0，包含模型发起对话、流感知工具调用、交互式视觉定位和长时交互记忆",
+        "application_context": "流式视频AI助手的开放域交互与视觉 grounding",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "5955ace9-898b-49e5-a5cb-3196aa427382",
+      "compatible_fingerprints": []
+    },
+    "5c538d42340f5ea6c2f83990272f8bd932d3f8a4bb89e60b566b7623ce57fc9d": {
+      "paper_id": "2611.17045",
+      "title": "De Sitter Gravity and Emergent Time from Fusion Matrix Product States and SYK",
+      "fingerprint": "5c538d42340f5ea6c2f83990272f8bd932d3f8a4bb89e60b566b7623ce57fc9d",
+      "evaluation": {
+        "paper_id": "2611.17045",
+        "task_type": "theoretical_quantum_gravity",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为量子引力/理论物理内容，与视觉或多模态感知任务无关联",
+          "无任何船舶、雷达、AIS或视觉感知方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "量子引力与dS/CFT理论模型，与海事感知、视觉检测或通用视觉匹配方法完全无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "构建二维de Sitter引力的量子力学对偶模型",
+        "target_task": "none",
+        "core_contribution": "提出基于融合矩阵乘积态与SYK模型的dS引力对偶量子通道",
+        "application_context": "理论物理中的dS/CFT对应研究",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c0dc1db2-1c5a-45c1-b37f-e6d6da57d660",
+      "compatible_fingerprints": []
+    },
+    "e67d34deb52b18e9e0d4a6df48f657f2673155767f9003c16901da72ddb56fca": {
+      "paper_id": "2611.17029",
+      "title": "Contractual Structure and Obvious Manipulation in Many-to-Many Matching",
+      "fingerprint": "e67d34deb52b18e9e0d4a6df48f657f2673155767f9003c16901da72ddb56fca",
+      "evaluation": {
+        "paper_id": "2611.17029",
+        "task_type": "market_matching_theory",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "经济机制设计理论，非视觉或多模态匹配学习",
+          "'matching'指市场匹配机制，与跨模态对齐无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "多对多市场匹配机制设计，与视觉、跨模态表征或雷达/AIS关联无任何方法或任务联系。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "契约结构对多对多匹配中明显操纵的影响",
+        "target_task": "none",
+        "core_contribution": "分析稳定机制在可替代偏好域上的明显可操纵性",
+        "application_context": "经济学机制设计与匹配市场",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c0dc1db2-1c5a-45c1-b37f-e6d6da57d660",
+      "compatible_fingerprints": []
+    },
+    "a9e82b7eef2876d699123543d8ce02d102c71c82ca6c51dd5af35872446e054f": {
+      "paper_id": "2611.17026",
+      "title": "Accelerated Transformed Primal Dual Methods for Smooth Convex Optimization Problems with Affine Equality Constraints",
+      "fingerprint": "a9e82b7eef2876d699123543d8ce02d102c71c82ca6c51dd5af35872446e054f",
+      "evaluation": {
+        "paper_id": "2611.17026",
+        "task_type": "convex_optimization",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯凸优化算法与复杂度分析，非感知学习任务",
+          "实验为策略评估和信号重建，与船舶/多模态感知无关"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "加速原始对偶凸优化方法，属通用数学优化理论，摘要无可具体迁移到视觉匹配或船舶感知的机制证据。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "带仿射等式约束的平滑凸优化加速求解",
+        "target_task": "none",
+        "core_contribution": "提出ATPD方法并证明加速线性/次线性收敛率与复杂度下界",
+        "application_context": "策略评估与约束信号重建的数值实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c0dc1db2-1c5a-45c1-b37f-e6d6da57d660",
+      "compatible_fingerprints": []
+    },
+    "4f14648e308fdefd8acba6a9092920c94c900d6bc8ea5c29b4e465497529c573": {
+      "paper_id": "2611.17022",
+      "title": "Large diameter for $(Δ+2)$-colouring reconfiguration",
+      "fingerprint": "4f14648e308fdefd8acba6a9092920c94c900d6bc8ea5c29b4e465497529c573",
+      "evaluation": {
+        "paper_id": "2611.17022",
+        "task_type": "graph_theory",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "图着色重配置的组合数学问题",
+          "无任何视觉或多模态感知方法证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "图着色重配置直径的组合理论结果，与海事感知、目标检测或跨模态匹配完全无关。",
+        "confidence": 0.98,
+        "primary_domain": "other",
+        "primary_problem": "(Δ+2)-着色重配置图直径的界与猜想",
+        "target_task": "none",
+        "core_contribution": "反驳多数直径猜想并给出新的下界构造",
+        "application_context": "图论与组合数学",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "c0dc1db2-1c5a-45c1-b37f-e6d6da57d660",
+      "compatible_fingerprints": []
+    },
+    "aa1e90ee06f8bf023e92010f97e86e3edade0626341822957e03ef2b676c0932": {
+      "paper_id": "2611.17000",
+      "title": "Macroscopic $L^\\infty$ bounds for the homogeneous Landau--Coulomb equation",
+      "fingerprint": "aa1e90ee06f8bf023e92010f97e86e3edade0626341822957e03ef2b676c0932",
+      "evaluation": {
+        "paper_id": "2611.17000",
+        "task_type": "mathematical_analysis_of_landau_coulomb_equation",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "纯数学分析论文，研究Landau-Coulomb方程的L∞界，与感知、匹配或船舶视觉无任何联系。",
+          "摘要不含任何机器学习或计算机视觉方法证据。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "偏微分方程数学分析，与所有关注方向无直接相关，无迁移方法证据。",
+        "confidence": 0.99,
+        "primary_domain": "other",
+        "primary_problem": "三维空间齐次Landau-Coulomb方程解的瞬时全局L∞界估计",
+        "target_task": "none",
+        "core_contribution": "证明仅依赖初始质量、动量、能量和熵的瞬时全局L∞界，解决GGL开放问题",
+        "application_context": "数学理论分析，无应用场景",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "9a1dacd7-f123-4515-89b3-bd069761e0c8",
+      "compatible_fingerprints": []
+    },
+    "eb14807ae016ddeb4beb9809e9eb4b9ea71b785f424dec39a5896ebe98bc41b7": {
+      "paper_id": "2611.16890",
+      "title": "Look It Up: Multi-bit LLM Watermarking via Codebook Search",
+      "fingerprint": "eb14807ae016ddeb4beb9809e9eb4b9ea71b785f424dec39a5896ebe98bc41b7",
+      "evaluation": {
+        "paper_id": "2611.16890",
+        "task_type": "multi_bit_llm_text_watermarking",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [
+          {
+            "quote_en": "During extraction, the received bit sequence is matched to the nearest codeword in a precomputed secret codebook using Hamming or Levenshtein distance",
+            "interpretation_zh": "提取时将接收比特序列与预计算码本中的最近码字匹配，使用汉明或莱文斯坦距离。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "研究LLM文本水印，属于NLP与安全交叉，与海事感知或跨模态匹配无直接联系。",
+          "码本最近邻匹配针对离散比特序列，与视觉/雷达/AIS跨模态特征对齐机制差异大。",
+          "摘要方法依赖token级logit偏置和码本搜索，难以迁移到感知任务。"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "LLM文本水印与码本匹配，非视觉或多模态感知匹配，无直接相关与可迁移感知机制。",
+        "confidence": 0.97,
+        "primary_domain": "other",
+        "primary_problem": "短文本LLM生成内容的多比特水印嵌入与提取",
+        "target_task": "none",
+        "core_contribution": "提出基于码本的LLM水印方案，通过token级logit偏置嵌入，码本最近邻匹配提取",
+        "application_context": "短LLM生成文本的来源归因",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "9a1dacd7-f123-4515-89b3-bd069761e0c8",
+      "compatible_fingerprints": []
+    },
+    "7a0119b06126066fa2bd46743dbd80fd92e6e84cbf011981795a745a1cc11159": {
+      "paper_id": "doi:10.1109/tits.2025.3635199",
+      "title": "A Survey of Small Sea-Surface Target Detection for Maritime Search and Rescue",
+      "fingerprint": "7a0119b06126066fa2bd46743dbd80fd92e6e84cbf011981795a745a1cc11159",
+      "evaluation": {
+        "paper_id": "doi:10.1109/tits.2025.3635199",
+        "task_type": "survey_small_sea_surface_target_detection_for_maritime_search_and_rescue",
+        "direct_relevance": 4,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "Deep learning-based models facilitate accurate target detection and localization by transforming image or video frames into high-dimensional abstract representations",
+            "interpretation_zh": "深度学习模型通过将图像或视频帧转换为高维抽象表示来实现目标检测和定位。",
+            "inference": false
+          },
+          {
+            "quote_en": "this paper summarizes a range of effective approaches, including context information, multi-scale learning, anchor-free detection, super-resolution, attention mechanisms, and sample-oriented approaches",
+            "interpretation_zh": "综述了上下文信息、多尺度学习、无锚框检测、超分辨率、注意力机制和样本导向等有效方法。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "综述论文，未提出具体可迁移的新方法或算法。",
+          "摘要列举多种检测技术但未给出可在跨模态匹配任务中复用的具体机制细节。",
+          "主要关注小目标检测，对AIS关联融合的论述有限。"
+        ],
+        "decision": "重点推荐",
+        "reason_zh": "海事小目标检测综述，直接相关船舶视觉检测与海上搜救场景，系统梳理数据集与方法，有价值。",
+        "confidence": 0.9,
+        "primary_domain": "ship_vision",
+        "primary_problem": "海事搜救场景下的小海面目标检测",
+        "target_task": "ship_detection",
+        "core_contribution": "综述小海面目标检测的最新进展、挑战、方法（上下文、多尺度、无锚框、超分辨率、注意力等）及数据集分类",
+        "application_context": "海上搜救、无人机与无人补给船的小目标检测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "9a1dacd7-f123-4515-89b3-bd069761e0c8",
+      "compatible_fingerprints": []
+    },
+    "ddbcb7fc4b40d3413e4c7a461ba7863c5c408a96472180d0a8a56121cc5e502d": {
+      "paper_id": "doi:10.1109/tits.2025.3607755",
+      "title": "Q-Learning-Based Multi-Objective Heuristic Algorithm for Solving Multi-Resource Co-Scheduling Problem of Ship-Lock-Channel Considering Water Discharge",
+      "fingerprint": "ddbcb7fc4b40d3413e4c7a461ba7863c5c408a96472180d0a8a56121cc5e502d",
+      "evaluation": {
+        "paper_id": "doi:10.1109/tits.2025.3607755",
+        "task_type": "multi_resource_co_scheduling",
+        "direct_relevance": 0,
+        "transferability": 0,
+        "method_evidence": [],
+        "transfer_path": null,
+        "limitations": [
+          "摘要聚焦船闸-航道多资源协同调度与Q-learning启发式优化，未涉及船舶检测、分割、深度、视觉-AIS或雷达-AIS关联",
+          "调度算法依赖问题特定的双层编码与解码机制，摘要未提供可迁移到跨模态匹配或船舶视觉感知的通用学习机制",
+          "无多传感器关联、跨模态对齐或缺失模态处理证据"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "研究船闸航道资源调度，与海事多源感知、船舶视觉及跨模态匹配无直接或可复用学习机制联系。",
+        "confidence": 0.95,
+        "primary_domain": "other",
+        "primary_problem": "三峡-葛洲坝船闸-航道多资源协同调度优化",
+        "target_task": "multi_resource_co_scheduling",
+        "core_contribution": "提出Q-learning驱动的多目标启发式算法QLMHA，结合双层编码与多阶段解码求解船闸航道协同调度",
+        "application_context": "内河航运船闸与船舶调度管理",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cfd68fc3-7e56-4fdf-bd9f-8caa970cc8b4",
+      "compatible_fingerprints": []
+    },
+    "c78cd22e9e10dfb036f9cbb75cee734e6fa818414ad626378bc15d7b8ebe8f81": {
+      "paper_id": "2512.22688",
+      "title": "Autoregressive Flow Matching for Motion Prediction",
+      "fingerprint": "c78cd22e9e10dfb036f9cbb75cee734e6fa818414ad626378bc15d7b8ebe8f81",
+      "evaluation": {
+        "paper_id": "2512.22688",
+        "task_type": "motion_prediction",
+        "direct_relevance": 0,
+        "transferability": 1,
+        "method_evidence": [
+          {
+            "quote_en": "we develop autoregressive flow matching (ARFM), a new method for probabilistic modeling of sequential continuous data",
+            "interpretation_zh": "ARFM是一种用于序列连续数据概率建模的自回归流匹配方法，属于生成式序列建模，并非跨模态对齐或检测匹配机制。",
+            "inference": false
+          }
+        ],
+        "transfer_path": null,
+        "limitations": [
+          "摘要为人体与机器人运动预测，未涉及船舶、AIS、雷达或视觉-跨模态匹配",
+          "ARFM为序列轨迹生成的概率方法，缺乏可直接调整用于跨模态匹配或船舶感知的输入/训练目标证据",
+          "潜在迁移到轨迹预测仅属宽泛推测，摘要未提供任务适配细节"
+        ],
+        "decision": "不推荐",
+        "reason_zh": "聚焦人体/机器人轨迹生成预测，与海事多源关联、船舶视觉及跨模态匹配无直接联系，方法迁移证据不足。",
+        "confidence": 0.9,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "序列连续数据的概率运动预测",
+        "target_task": "motion_prediction",
+        "core_contribution": "提出自回归流匹配ARFM并对未来点轨迹进行长时程概率建模",
+        "application_context": "人体运动预测与机器人动作条件预测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "cfd68fc3-7e56-4fdf-bd9f-8caa970cc8b4",
+      "compatible_fingerprints": []
+    },
+    "323203503cfaa078d27e0f279901ce01e96d4fcd29e95b1ad01d3b92ee7f12c7": {
+      "paper_id": "doi:10.1145/3767308.3835333",
+      "title": "CLIP-SPSE: Fine-Grained Semantic Perturbation for Hard Negative Learning in Cross-Modal Retrieval",
+      "fingerprint": "323203503cfaa078d27e0f279901ce01e96d4fcd29e95b1ad01d3b92ee7f12c7",
+      "evaluation": {
+        "paper_id": "doi:10.1145/3767308.3835333",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "fine-grained semantic element-perturbed negative generation and semantic-enhanced contrastive encoding",
+            "interpretation_zh": "构建细粒度语义元素扰动的困难负样本，并用语义增强对比编码提升跨模态检索。",
+            "inference": false
+          },
+          {
+            "quote_en": "an LLM generates perturbed negative texts, which are validated by a multi-LLM ensemble for semantic plausibility and discriminative hardness",
+            "interpretation_zh": "通过多LLM集成验证负样本文本的语义合理性与判别难度。",
+            "inference": false
+          },
+          {
+            "quote_en": "an image editing model synthesizes visual negatives under weighted similarity constraints to preserve negativeness with minimal perturbation to global semantics",
+            "interpretation_zh": "在加权相似度约束下用图像编辑模型合成视觉负样本，保持负样本性质且对全局语义扰动最小。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "fine-grained semantic element-perturbed negative generation and semantic-enhanced contrastive encoding",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将LLM生成的文本扰动负样本替换为AIS文本元数据扰动或雷达轨迹属性扰动，图像编辑合成视觉负样本可替换为在视觉–AIS匹配中对视觉特征施加受控扰动；训练目标保留对比编码与难负样本约束，用于视觉–AIS跨模态匹配。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要未提供跨模态匹配在下游任务（如视觉–AIS关联）上的具体实验。",
+          "依赖LLM和图像编辑模型生成负样本，迁移到海事多源数据时生成成本与领域适应需验证。"
+        ],
+        "decision": "候选",
+        "reason_zh": "提出细粒度困难负样本生成与语义增强对比编码，可用于视觉–AIS跨模态匹配，迁移路径具体，但无海事实验。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "跨模态检索中困难负样本不足与细粒度语义区分能力弱",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出CLIP-SPSE框架，通过LLM生成并验证细粒度语义扰动负样本、图像编辑合成视觉负样本，结合语义增强对比编码提升跨模态检索。",
+        "application_context": "通用视觉–语言跨模态检索基准实验",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "16b487f5-129e-4b36-b5c5-8b3a160e1d1c"
+    },
+    "480674b634e5c1e3e9d5874368a6823381fad6dad38f4385f2d3986c3b05db00": {
+      "paper_id": "doi:10.1145/3767308.3835862",
+      "title": "DHSMM: A Dynamic Hard Sample Mining and Multimodal Framework for UAV Geo-Localization",
+      "fingerprint": "480674b634e5c1e3e9d5874368a6823381fad6dad38f4385f2d3986c3b05db00",
+      "evaluation": {
+        "paper_id": "doi:10.1145/3767308.3835862",
+        "task_type": "cross_modal_matching",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "dynamic hard sample mining strategy that actively constructs batches of mutually confusing negatives",
+            "interpretation_zh": "动态困难样本挖掘策略主动构建相互混淆的负样本批次。",
+            "inference": false
+          },
+          {
+            "quote_en": "Stage 2 fuses textual information through a text encoder and a fusion module to better distinguish visually similar locations",
+            "interpretation_zh": "第二阶段通过文本编码器和融合模块融合文本信息以区分视觉相似位置。",
+            "inference": false
+          },
+          {
+            "quote_en": "extends SUES-200 and University-1652 with dense image captions that describe scene content, while UAV captions also include metadata such as flight altitude and viewing angle",
+            "interpretation_zh": "为数据集增加稠密图像描述，并将飞行高度、视角等元数据纳入文本描述。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "dynamic hard sample mining strategy that actively constructs batches of mutually confusing negatives",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将动态困难样本挖掘用于视觉–AIS匹配：在同一批次中主动构造视觉相似但AIS身份不同的负样本对，文本编码器可输入AIS静态/动态属性描述，融合模块对齐视觉与AIS表征；训练目标改为视觉–AIS对比匹配。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要聚焦无人机–卫星跨视角地理定位，与海事视觉–AIS匹配场景差异较大。",
+          "方法依赖文本描述和元数据，迁移到AIS需构建对应文本化属性，摘要未验证海事数据。"
+        ],
+        "decision": "候选",
+        "reason_zh": "动态困难样本挖掘与多模态融合可迁移至视觉–AIS匹配，路径具体，但原任务为无人机地理定位，直接相关性较低。",
+        "confidence": 0.75,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "无人机跨视角地理定位中负样本训练信号弱且未充分利用文本元数据",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出DHSMM框架，通过动态困难样本挖掘和多模态文本融合提升跨视角地理定位检索性能。",
+        "application_context": "无人机–卫星跨视角地理定位与自主导航",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "16b487f5-129e-4b36-b5c5-8b3a160e1d1c"
+    },
+    "88e0b3df6d8235f889b235326eafb9fa738a241358c4a82d6e5a52dbc83a9e2e": {
+      "paper_id": "doi:10.1145/3767308.3834950",
+      "title": "VLRFusion: Velocity-Aware Multi-Level Fusion of LiDAR and 4D Radar for 3D Object Detection",
+      "fingerprint": "88e0b3df6d8235f889b235326eafb9fa738a241358c4a82d6e5a52dbc83a9e2e",
+      "evaluation": {
+        "paper_id": "doi:10.1145/3767308.3834950",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "a radar-guided alignment encoder and an attention-based fusion module are developed to mitigate intermodal misalignment and improve feature interaction",
+            "interpretation_zh": "设计雷达引导的对齐编码器和基于注意力的融合模块以缓解模态间错位并增强特征交互。",
+            "inference": false
+          },
+          {
+            "quote_en": "a 4D LiDAR generator that scatters radar velocity onto LiDAR's precise geometry to construct a new 4D LiDAR modality",
+            "interpretation_zh": "将雷达速度散布到LiDAR精确几何上构建新的4D LiDAR模态。",
+            "inference": false
+          },
+          {
+            "quote_en": "a velocity-decoupled backbone and a residual weighting mechanism to enhance motion object perception",
+            "interpretation_zh": "速度解耦骨干网络与残差加权机制增强运动目标感知。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a radar-guided alignment encoder and an attention-based fusion module are developed to mitigate intermodal misalignment and improve feature interaction",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将雷达引导的对齐编码器从LiDAR-4D雷达迁移到雷达–视觉船舶检测：输入改为雷达点云/回波与视觉图像，保留跨模态对齐与注意力融合结构；训练目标为船舶检测框回归与分类。",
+          "inference": true
+        },
+        "limitations": [
+          "原方法面向自动驾驶LiDAR-4D雷达融合，海事雷达与视觉数据特性不同，摘要未提供海事验证。",
+          "依赖4D雷达速度信息，海事雷达是否提供类似多普勒速度需适配。"
+        ],
+        "decision": "候选",
+        "reason_zh": "雷达引导对齐与多级融合可迁移至雷达–视觉船舶检测，路径较具体；但原任务为陆上自动驾驶，直接相关性低。",
+        "confidence": 0.75,
+        "primary_domain": "traffic_perception",
+        "primary_problem": "LiDAR与4D雷达融合中模态交互晚、错位严重，影响3D目标检测",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出VLRFusion，在数据、编码器和特征级融合LiDAR与4D雷达，引入4D LiDAR生成、速度解耦骨干、雷达引导对齐编码器和注意力融合模块。",
+        "application_context": "自动驾驶3D目标检测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "16b487f5-129e-4b36-b5c5-8b3a160e1d1c"
+    },
+    "fda27ee37f8b441baa9e06c6f6d107a9036f3e691ea91e387ba400358ab51edd": {
+      "paper_id": "doi:10.1109/tim.2026.3726219",
+      "title": "Phys-TriBEV: A Physics-Informed Tri-Modal BEV Fusion for Robust 3-D Object Detection in Degraded Underground Coal Mine",
+      "fingerprint": "fda27ee37f8b441baa9e06c6f6d107a9036f3e691ea91e387ba400358ab51edd",
+      "evaluation": {
+        "paper_id": "doi:10.1109/tim.2026.3726219",
+        "task_type": "multi_sensor_detection",
+        "direct_relevance": 2,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "a reliability-gated cross-modal attention mechanism adaptively modulates modality contributions to exploit complementary information while suppressing negative transfer from locally degraded modalities",
+            "interpretation_zh": "可靠性门控跨模态注意力自适应调节各模态贡献，抑制局部退化模态的负迁移。",
+            "inference": false
+          },
+          {
+            "quote_en": "a channel-selective temporal memory module selectively aggregates stable features across time to enhance resilience against transient occlusions and missing observations",
+            "interpretation_zh": "通道选择时序记忆模块跨时间聚合稳定特征，增强对瞬态遮挡和缺失观测的鲁棒性。",
+            "inference": false
+          },
+          {
+            "quote_en": "a physical consistency loss family comprising geometric, kinematic, and measurement constraints enforces physically plausible predictions across modalities and time",
+            "interpretation_zh": "几何、运动学和测量约束构成的物理一致性损失族强制跨模态和跨时间的物理合理预测。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "a reliability-gated cross-modal attention mechanism adaptively modulates modality contributions to exploit complementary information while suppressing negative transfer from locally degraded modalities",
+          "target_task": "multi_sensor_detection",
+          "adaptation_zh": "将可靠性门控跨模态注意力用于雷达–视觉船舶检测：输入改为雷达与视觉特征，门控依据各模态在海上退化条件（雨雾、遮挡）下的可靠性；训练目标为船舶检测，保留时序记忆与物理一致性损失。",
+          "inference": true
+        },
+        "limitations": [
+          "原场景为地下煤矿退化环境，与海上退化条件不同，迁移需验证。",
+          "依赖自采三模态数据集，摘要未涉及海事数据。"
+        ],
+        "decision": "候选",
+        "reason_zh": "可靠性门控、缺失模态时序记忆与物理约束对雷达–视觉船舶检测有迁移价值，路径具体；但原任务为煤矿环境，直接相关性有限。",
+        "confidence": 0.8,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "退化环境下多模态融合检测的误差放大与时序不稳定",
+        "target_task": "multi_sensor_detection",
+        "core_contribution": "提出Phys-TriBEV物理信息三模态BEV融合框架，结合可靠性门控跨模态注意力、时序记忆和物理一致性损失提升退化环境3D检测鲁棒性。",
+        "application_context": "地下煤矿退化环境自主导航3D目标检测",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "16b487f5-129e-4b36-b5c5-8b3a160e1d1c"
+    },
+    "87e302e3821b6691769a669cfee616c50b5b0fa88117a5cb4d49425b447ef57b": {
+      "paper_id": "2611.09191",
+      "title": "Bootstrap Your Own AV-Proxies: Adaptive Contrastive and Prototype Learning for Audio-Visual Segmentation",
+      "fingerprint": "87e302e3821b6691769a669cfee616c50b5b0fa88117a5cb4d49425b447ef57b",
+      "evaluation": {
+        "paper_id": "2611.09191",
+        "task_type": "音视频分割（跨模态语义对齐与原型约束）",
+        "direct_relevance": 1,
+        "transferability": 4,
+        "method_evidence": [
+          {
+            "quote_en": "introduces contrastive learning to adaptively align audio representations with gradient-blocked visual embeddings",
+            "interpretation_zh": "用对比学习对齐音频与视觉表征，并用梯度阻断的视觉嵌入作为稳定目标，属于跨模态对齐机制。",
+            "inference": false
+          },
+          {
+            "quote_en": "a Dynamic Prototype Constraint (DPC) module is developed to refine pixel-wise category perception via momentum-based prototype updating",
+            "interpretation_zh": "通过动量更新类原型约束像素级类别感知，可用于增强跨模态匹配中的类别一致性与鲁棒性。",
+            "inference": false
+          },
+          {
+            "quote_en": "enhancing localization of sounding regions through cross-modal interaction",
+            "interpretation_zh": "跨模态交互用于提升目标区域定位，可迁移到跨模态目标关联/定位。",
+            "inference": false
+          }
+        ],
+        "transfer_path": {
+          "source_quote_en": "introduces contrastive learning to adaptively align audio representations with gradient-blocked visual embeddings",
+          "target_task": "cross_modal_matching",
+          "adaptation_zh": "将音频-视觉对比对齐替换为雷达/AIS或视觉/AIS双模态表征对齐：把梯度阻断的视觉嵌入改为阻断一模态编码器，用正负样本对（同目标跨模态为正，异目标或时空不匹配为负）训练对比损失；保留原型约束用于类别/目标身份一致性。",
+          "inference": true
+        },
+        "limitations": [
+          "摘要仅涉及音视频分割，无雷达、AIS或船舶/交通场景证据。",
+          "未提供负样本构造、匹配度量、时空关联的具体细节，迁移需自行设计。",
+          "未说明在缺失模态或噪声条件下的表现。"
+        ],
+        "decision": "候选",
+        "reason_zh": "音视频分割的跨模态对比对齐与原型约束机制具体，可迁移到跨模态匹配，但无海事/交通直接证据。",
+        "confidence": 0.6,
+        "primary_domain": "general_visual_method",
+        "primary_problem": "音视频分割中的跨模态语义鸿沟与融合噪声抑制",
+        "target_task": "cross_modal_matching",
+        "core_contribution": "提出自适应对比学习与动量原型约束框架，对齐音视频表征并细化像素级类别感知",
+        "application_context": "音视频分割基准与子任务",
+        "security_centric": false,
+        "communication_centric": false
+      },
+      "review_version": "3.8.8",
+      "model": "deepseek-flash",
+      "request_id": "658981f0-0f0d-49f8-841d-4a0b5eab21cd"
     }
   }
 }
