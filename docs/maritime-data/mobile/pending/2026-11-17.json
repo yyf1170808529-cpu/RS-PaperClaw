@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-17",
+  "papers": [
+    {
+      "paper_id": "2611.18023",
+      "title": "RSSA: Robust Semantic and Spatial Aligner for Collaborative Perception",
+      "authors": [
+        "Zhihao Yang",
+        "Zhiyu Xiang",
+        "Peng Xu",
+        "Tianyu Pu",
+        "Kai Wang",
+        "Eryun Liu",
+        "Dongping Zhang",
+        "Yong Ding"
+      ],
+      "published": "2026-11-13",
+      "arxiv_url": "https://arxiv.org/abs/2611.18023",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2611.18023",
+      "pdf_url": "https://arxiv.org/pdf/2611.18023",
+      "open_access_url": "https://arxiv.org/pdf/2611.18023",
+      "venue": "",
+      "abstract": "V2X collaborative perception improves single-vehicle perception by aggregating multi-view features from collaborative agents. However, existing methods typically rely on simple spatial warping to align the collaborative features, which can cause semantic misalignment during fusion. Meanwhile, these deterministic warping-based methods are highly sensitive to the positional noises. In this paper, we propose a plug-in module called Robust Semantic and Spatial Aligner (RSSA), which performs semantic and probabilistic spatial transformations for robust feature alignment. Specifically, a Semantic Transformation (SemT) block modulates feature channels based on the observed relative pose to correct semantic inconsistencies. Subsequently, a Probabilistic Spatial Transformation (P-SpaT) block performs probabilistic warping by sampling from the Gaussian-modeled relative pose space. A Relative Transformation Augmentation (RT-Aug) strategy is further introduced to augment the relative poses and facilitate the training of the RSSA. Extensive experiments on both simulated and real-world datasets demonstrate that RSSA improves the state-of-the-art methods by a large margin under the configuration of both clean and noisy positions.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Zhihao Yang",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": null,
+      "source": "arXiv",
+      "reason": "V2X协同感知的特征语义与概率空间对齐方法可迁移至多传感器船舶检测融合，但原文非海事任务。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2611.18023",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "直接相关",
+      "ai_score": 44,
+      "selection_source": "近期候选",
+      "summary_zh": "针对V2X协同感知中简单空间变换导致语义错位且对位置噪声敏感的问题，提出即插即用模块RSSA，通过语义变换与概率空间变换实现鲁棒特征对齐。",
+      "migration_zh": "研究推断：可将RSSA的语义变换与概率空间变换模块迁移至多传感器融合或视觉–AIS关联中，以相对位姿为输入，对特征通道和采样位置进行不确定性调制。",
+      "abstract_zh": "V2X协同感知通过聚合来自协作智能体的多视角特征来提升单车感知能力。然而，现有方法通常依赖简单的空间变换来对齐协作特征，这可能在融合过程中导致语义错位。同时，这些基于确定性变换的方法对位置噪声高度敏感。本文提出一种名为鲁棒语义与空间对齐器（RSSA）的即插即用模块，它执行语义变换和概率空间变换以实现鲁棒的特征对齐。具体而言，语义变换（SemT）块根据观测到的相对位姿调制特征通道，以纠正语义不一致。随后，概率空间变换（P-SpaT）块通过从高斯建模的相对位姿空间中采样来执行概率变换。进一步引入相对变换增强（RT-Aug）策略来增强相对位姿并促进RSSA的训练。在模拟和真实世界数据集上的大量实验表明，RSSA在干净和噪声位置配置下均大幅提升了最先进方法的表现。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ],
+  "selection_audit": {
+    "candidate_count": 2107,
+    "ai_reviewed": 1059,
+    "ai_states": {
+      "evaluated": 1059,
+      "domain_excluded": 408,
+      "uncertain": 466,
+      "unassessed": 174
+    },
+    "stage_counts": {
+      "1": 433,
+      "3": 158,
+      "0": 175,
+      "2": 1341
+    },
+    "ai_rejected": 1057,
+    "translation_deferred": 1,
+    "qualified_count": 1,
+    "selected_count": 1,
+    "shortfall": 4,
+    "translation_replacements": [
+      {
+        "paper_id": "doi:10.1109/tits.2025.3628677",
+        "attempt_date": "2026-11-17",
+        "reason": "Previous enrichment attempt requires audit; paid POST not repeated",
+        "requires_enrichment": true,
+        "english_hash": "64d11ba358d023303d90ecf89f4f05361f0d5f33da23e1cb453660278c7a9680"
+      }
+    ],
+    "translation_environment_errors": [],
+    "translation_errors": []
+  },
+  "publication_status": "partial",
+  "reserve_papers": [
+    {
+      "paper_id": "2611.18023",
+      "title": "RSSA: Robust Semantic and Spatial Aligner for Collaborative Perception",
+      "authors": [
+        "Zhihao Yang",
+        "Zhiyu Xiang",
+        "Peng Xu",
+        "Tianyu Pu",
+        "Kai Wang",
+        "Eryun Liu",
+        "Dongping Zhang",
+        "Yong Ding"
+      ],
+      "published": "2026-11-13",
+      "arxiv_url": "https://arxiv.org/abs/2611.18023",
+      "doi": "",
+      "original_url": "https://arxiv.org/abs/2611.18023",
+      "pdf_url": "https://arxiv.org/pdf/2611.18023",
+      "open_access_url": "https://arxiv.org/pdf/2611.18023",
+      "venue": "",
+      "abstract": "V2X collaborative perception improves single-vehicle perception by aggregating multi-view features from collaborative agents. However, existing methods typically rely on simple spatial warping to align the collaborative features, which can cause semantic misalignment during fusion. Meanwhile, these deterministic warping-based methods are highly sensitive to the positional noises. In this paper, we propose a plug-in module called Robust Semantic and Spatial Aligner (RSSA), which performs semantic and probabilistic spatial transformations for robust feature alignment. Specifically, a Semantic Transformation (SemT) block modulates feature channels based on the observed relative pose to correct semantic inconsistencies. Subsequently, a Probabilistic Spatial Transformation (P-SpaT) block performs probabilistic warping by sampling from the Gaussian-modeled relative pose space. A Relative Transformation Augmentation (RT-Aug) strategy is further introduced to augment the relative poses and facilitate the training of the RSSA. Extensive experiments on both simulated and real-world datasets demonstrate that RSSA improves the state-of-the-art methods by a large margin under the configuration of both clean and noisy positions.",
+      "resource_type": "preprint",
+      "oa_evidence": false,
+      "validity": {
+        "status": "unverified"
+      },
+      "first_author": "Zhihao Yang",
+      "first_author_affiliations": [],
+      "affiliation_source": "",
+      "affiliation_verified": false,
+      "affiliation_evidence": null,
+      "corresponding_authors": null,
+      "corresponding_author_source": null,
+      "corresponding_author_verified": null,
+      "source": "arXiv",
+      "reason": "V2X协同感知的特征语义与概率空间对齐方法可迁移至多传感器船舶检测融合，但原文非海事任务。",
+      "reading_url": "https://yyf1170808529-cpu.github.io/RS-PaperClaw/maritime.html?paper=2611.18023",
+      "score": 0,
+      "rule_level": "不相关",
+      "level": "直接相关",
+      "ai_score": 44,
+      "selection_source": "近期候选",
+      "summary_zh": "针对V2X协同感知中简单空间变换导致语义错位且对位置噪声敏感的问题，提出即插即用模块RSSA，通过语义变换与概率空间变换实现鲁棒特征对齐。",
+      "migration_zh": "研究推断：可将RSSA的语义变换与概率空间变换模块迁移至多传感器融合或视觉–AIS关联中，以相对位姿为输入，对特征通道和采样位置进行不确定性调制。",
+      "abstract_zh": "V2X协同感知通过聚合来自协作智能体的多视角特征来提升单车感知能力。然而，现有方法通常依赖简单的空间变换来对齐协作特征，这可能在融合过程中导致语义错位。同时，这些基于确定性变换的方法对位置噪声高度敏感。本文提出一种名为鲁棒语义与空间对齐器（RSSA）的即插即用模块，它执行语义变换和概率空间变换以实现鲁棒的特征对齐。具体而言，语义变换（SemT）块根据观测到的相对位姿调制特征通道，以纠正语义不一致。随后，概率空间变换（P-SpaT）块通过从高斯建模的相对位姿空间中采样来执行概率变换。进一步引入相对变换增强（RT-Aug）策略来增强相对位姿并促进RSSA的训练。在模拟和真实世界数据集上的大量实验表明，RSSA在干净和噪声位置配置下均大幅提升了最先进方法的表现。",
+      "translation_source": "deepseek",
+      "translation_error": ""
+    }
+  ]
+}
